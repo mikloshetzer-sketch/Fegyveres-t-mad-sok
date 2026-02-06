@@ -1,11 +1,50 @@
 <!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <title>Armed attacks map</title>
-  </head>
-  <body>
-    <h1>OK — GitHub Pages működik 🎯</h1>
-    <p>Következő lépés: térkép alap (Leaflet) + adathuzal.</p>
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Armed attacks map</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      font-family: system-ui, Arial;
+    }
+
+    header {
+      padding: 10px 12px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    #map {
+      height: calc(100% - 60px);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h2>Fegyveres támadások világtérképe</h2>
+  <div>Következő lépés: teszt esemény pontok</div>
+</header>
+
+<div id="map"></div>
+
+<!-- Leaflet JS -->
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<script>
+  // térkép inicializálása
+  const map = L.map('map').setView([20, 0], 2);
+
+  // OpenStreetMap réteg
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+  }).addTo(map);
+</script>
+
+</body>
 </html>
