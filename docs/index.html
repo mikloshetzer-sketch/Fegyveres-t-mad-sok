@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Armed attacks map</title>
+  <title>OSINT Armed Attacks Map</title>
 
   <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-
   <!-- MarkerCluster CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
@@ -16,7 +15,7 @@
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
 
     header {
-      height: 70px;
+      height: 76px;
       padding: 10px 12px;
       border-bottom: 1px solid #ddd;
       display: flex;
@@ -27,10 +26,10 @@
     }
 
     .left { display: flex; flex-direction: column; gap: 4px; }
-    .title { font-size: 18px; font-weight: 600; line-height: 1.1; margin: 0; }
-    .subtitle { font-size: 12px; opacity: 0.75; }
+    .title { font-size: 18px; font-weight: 700; line-height: 1.1; }
+    .subtitle { font-size: 12px; opacity: 0.8; }
 
-    .right { display: flex; align-items: center; gap: 8px; font-size: 14px; white-space: nowrap; }
+    .right { display: flex; align-items: center; gap: 10px; font-size: 14px; white-space: nowrap; }
     select { padding: 6px 8px; font-size: 14px; }
 
     #status {
@@ -42,15 +41,18 @@
     #status.ok { color: #0a7a2f; }
     #status.err { color: #b00020; }
 
-    #map { height: calc(100% - 70px - 41px); background: #f3f3f3; }
+    #map { height: calc(100% - 76px - 41px); background: #f3f3f3; }
+
+    .src-list { margin: 6px 0 0 0; padding-left: 18px; }
+    .src-list li { margin: 4px 0; }
   </style>
 </head>
 <body>
 
 <header>
   <div class="left">
-    <div class="title">Fegyveres támadások világtérképe</div>
-    <div class="subtitle">2025 / 2026 (GeoJSON) — 2026: gyűjtőpontok</div>
+    <div class="title">OSINT fegyveres incidensek térképe</div>
+    <div class="subtitle">LIVE nézet: deduplikált események, több forráslinkkel</div>
   </div>
 
   <div class="right">
@@ -67,7 +69,6 @@
 
 <!-- Leaflet JS -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-
 <!-- MarkerCluster JS -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
@@ -84,7 +85,6 @@
       setStatusErr("HIBA: Leaflet (L) nem töltődött be.");
       return;
     }
-
     map = L.map('map').setView([20, 0], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -95,12 +95,43 @@
     setStatusOk("Térkép betöltve. Adatok betöltése…");
   }
 
+  function escapeHtml(s) {
+    return (s || "").toString()
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
   function makePopupHtml(p) {
-    const date = p.date || "-";
-    const loc = p.location || "-";
-    const type = p.attack_type || "-";
-    const src = p.sourceurl ? `<br>Forrás: <a href="${p.sourceurl}" target="_blank" rel="noopener">link</a>` : "";
-    return `<b>Esemény</b><br>Dátum: ${date}<br>Helyszín: ${loc}<br>Típus: ${type}${src}`;
+    const date = escapeHtml(p.date || "-");
+    const loc = escapeHtml(p.location || "-");
+    const type = escapeHtml(p.attack_type || "-");
+
+    const sources = Array.isArray(p.sources) ? p.sources : [];
+    const sourcesCount = (typeof p.sources_count === "number") ? p.sources_count : sources.length;
+
+    let sourcesHtml = "";
+    if (sources.length > 0) {
+      const items = sources.slice(0, 5).map((u, i) =>
+        `<li><a href="${u}" target="_blank" rel="noopener">Forrás ${i+1}</a></li>`
+      ).join("");
+      sourcesHtml = `
+        <div><b>Források:</b> ${sourcesCount}</div>
+        <ul class="src-list">${items}</ul>
+      `;
+    } else {
+      sourcesHtml = `<div><b>Források:</b> ${sourcesCount || 0}</div>`;
+    }
+
+    return `
+      <b>Esemény</b><br>
+      Dátum: ${date}<br>
+      Helyszín: ${loc}<br>
+      Típus: ${type}<br>
+      ${sourcesHtml}
+    `;
   }
 
   async function loadYear(year) {
@@ -120,23 +151,20 @@
       const features = data.features || [];
       const count = features.length;
 
-      // 2026: cluster, 2025: sima geojson réteg
       if (year === "2026") {
         const cluster = L.markerClusterGroup({
-          // finomhangolható később
           showCoverageOnHover: false,
           spiderfyOnMaxZoom: true,
           disableClusteringAtZoom: 10
         });
 
-        // pontonként marker (nem circleMarker), hogy a cluster plugin jól működjön
         for (const f of features) {
           const g = f.geometry || {};
-          if (!g.coordinates || g.coordinates.length < 2) continue;
-          const lon = g.coordinates[0];
-          const lat = g.coordinates[1];
-
+          const c = g.coordinates || [];
+          if (c.length < 2) continue;
+          const lon = c[0], lat = c[1];
           const p = f.properties || {};
+
           const m = L.marker([lat, lon]);
           m.bindPopup(makePopupHtml(p));
           cluster.addLayer(m);
@@ -144,7 +172,7 @@
 
         currentLayerOrGroup = cluster;
         map.addLayer(cluster);
-        setStatusOk(`OK: ${year} betöltve (${count} esemény) — gyűjtőpontok aktívak.`);
+        setStatusOk(`OK: ${year} betöltve (${count} esemény) — LIVE, deduplikált, forráslistával.`);
       } else {
         const layer = L.geoJSON(data, {
           pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
