@@ -5,15 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Armed attacks map</title>
 
-  <!-- Leaflet CSS (jsDelivr) -->
+  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
 
+  <!-- MarkerCluster CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      font-family: system-ui, Arial;
-    }
+    html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
 
     header {
       height: 70px;
@@ -26,36 +26,12 @@
       gap: 12px;
     }
 
-    .left {
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
+    .left { display: flex; flex-direction: column; gap: 4px; }
+    .title { font-size: 18px; font-weight: 600; line-height: 1.1; margin: 0; }
+    .subtitle { font-size: 12px; opacity: 0.75; }
 
-    .title {
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1.1;
-      margin: 0;
-    }
-
-    .subtitle {
-      font-size: 12px;
-      opacity: 0.75;
-    }
-
-    .right {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 14px;
-      white-space: nowrap;
-    }
-
-    select {
-      padding: 6px 8px;
-      font-size: 14px;
-    }
+    .right { display: flex; align-items: center; gap: 8px; font-size: 14px; white-space: nowrap; }
+    select { padding: 6px 8px; font-size: 14px; }
 
     #status {
       padding: 8px 12px;
@@ -63,14 +39,10 @@
       border-bottom: 1px solid #eee;
       background: #fafafa;
     }
-
     #status.ok { color: #0a7a2f; }
     #status.err { color: #b00020; }
 
-    #map {
-      height: calc(100% - 70px - 41px); /* header + status */
-      background: #f3f3f3;
-    }
+    #map { height: calc(100% - 70px - 41px); background: #f3f3f3; }
   </style>
 </head>
 <body>
@@ -78,7 +50,7 @@
 <header>
   <div class="left">
     <div class="title">Fegyveres támadások világtérképe</div>
-    <div class="subtitle">2025 / 2026 (GeoJSON fájlból)</div>
+    <div class="subtitle">2025 / 2026 (GeoJSON) — 2026: gyűjtőpontok</div>
   </div>
 
   <div class="right">
@@ -93,8 +65,11 @@
 <div id="status">Betöltés…</div>
 <div id="map"></div>
 
-<!-- Leaflet JS (jsDelivr) -->
+<!-- Leaflet JS -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
+
+<!-- MarkerCluster JS -->
+<script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
 <script>
   const statusEl = document.getElementById("status");
@@ -102,11 +77,11 @@
   function setStatusErr(msg) { statusEl.className = "err"; statusEl.textContent = msg; }
 
   let map = null;
-  let currentLayer = null;
+  let currentLayerOrGroup = null;
 
   function initMap() {
     if (!window.L) {
-      setStatusErr("HIBA: Leaflet (L) nem töltődött be. Valószínű CDN-blokkolás vagy hálózati hiba.");
+      setStatusErr("HIBA: Leaflet (L) nem töltődött be.");
       return;
     }
 
@@ -120,13 +95,21 @@
     setStatusOk("Térkép betöltve. Adatok betöltése…");
   }
 
+  function makePopupHtml(p) {
+    const date = p.date || "-";
+    const loc = p.location || "-";
+    const type = p.attack_type || "-";
+    const src = p.sourceurl ? `<br>Forrás: <a href="${p.sourceurl}" target="_blank" rel="noopener">link</a>` : "";
+    return `<b>Esemény</b><br>Dátum: ${date}<br>Helyszín: ${loc}<br>Típus: ${type}${src}`;
+  }
+
   async function loadYear(year) {
     try {
       if (!map) return;
 
-      if (currentLayer) {
-        map.removeLayer(currentLayer);
-        currentLayer = null;
+      if (currentLayerOrGroup) {
+        map.removeLayer(currentLayerOrGroup);
+        currentLayerOrGroup = null;
       }
 
       const url = `./data/attacks_${year}.geojson`;
@@ -134,24 +117,50 @@
       if (!r.ok) throw new Error(`Nem találom az adatfájlt (${url}). HTTP: ${r.status}`);
 
       const data = await r.json();
-      const count = (data.features || []).length;
+      const features = data.features || [];
+      const count = features.length;
 
-      currentLayer = L.geoJSON(data, {
-        pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
-        onEachFeature: (feature, layer) => {
-          const p = feature.properties || {};
-          layer.bindPopup(`
-            <b>Fegyveres támadás</b><br>
-            Dátum: ${p.date || "-"}<br>
-            Helyszín: ${p.location || "-"}<br>
-            Típus: ${p.attack_type || "-"}
-          `);
+      // 2026: cluster, 2025: sima geojson réteg
+      if (year === "2026") {
+        const cluster = L.markerClusterGroup({
+          // finomhangolható később
+          showCoverageOnHover: false,
+          spiderfyOnMaxZoom: true,
+          disableClusteringAtZoom: 10
+        });
+
+        // pontonként marker (nem circleMarker), hogy a cluster plugin jól működjön
+        for (const f of features) {
+          const g = f.geometry || {};
+          if (!g.coordinates || g.coordinates.length < 2) continue;
+          const lon = g.coordinates[0];
+          const lat = g.coordinates[1];
+
+          const p = f.properties || {};
+          const m = L.marker([lat, lon]);
+          m.bindPopup(makePopupHtml(p));
+          cluster.addLayer(m);
         }
-      }).addTo(map);
 
-      setStatusOk(`OK: ${year} betöltve (${count} esemény).`);
+        currentLayerOrGroup = cluster;
+        map.addLayer(cluster);
+        setStatusOk(`OK: ${year} betöltve (${count} esemény) — gyűjtőpontok aktívak.`);
+      } else {
+        const layer = L.geoJSON(data, {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
+          onEachFeature: (feature, layer) => {
+            const p = feature.properties || {};
+            layer.bindPopup(makePopupHtml(p));
+          }
+        });
+
+        currentLayerOrGroup = layer;
+        map.addLayer(layer);
+        setStatusOk(`OK: ${year} betöltve (${count} esemény).`);
+      }
+
     } catch (e) {
-      setStatusErr("HIBA adatbetöltéskor: " + e.message);
+      setStatusErr("HIBA: " + e.message);
     }
   }
 
