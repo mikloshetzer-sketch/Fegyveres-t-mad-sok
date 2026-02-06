@@ -2,7 +2,6 @@ name: Update 2026 attacks (daily)
 
 on:
   schedule:
-    # daily at 03:15 UTC
     - cron: "15 3 * * *"
   workflow_dispatch:
 
@@ -13,26 +12,24 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Python
-        uses: actions/setup-python@v5
+      - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Run updater
+      - name: Run updater (dual)
         run: |
-          python scripts/update_attacks_2026.py
+          python scripts/update_attacks_2026_dual.py
 
       - name: Commit & push if changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add docs/data/attacks_2026.geojson
+          git add docs/data/attacks_2026_live.geojson docs/data/attacks_2026_raw.geojson
           if git diff --cached --quiet; then
             echo "No changes."
           else
-            git commit -m "Daily update: attacks_2026.geojson"
+            git commit -m "Daily update: 2026 live+raw"
             git push
           fi
