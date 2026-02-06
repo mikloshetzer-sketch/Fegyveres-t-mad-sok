@@ -6,10 +6,13 @@ import zipfile
 from datetime import datetime, timedelta, timezone
 from urllib.request import urlopen, Request
 
-# HTTPS helyett HTTP (SSL hostname mismatch miatt GitHub Actions alatt)
+# HTTP-t használunk (SSL mismatch miatt)
 MASTERFILELIST_URL = "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt"
 DATA_DIR = "docs/data"
 OUTFILE = f"{DATA_DIR}/attacks_2026.geojson"
+
+# Indulásnak: 30 nap backfill (hogy biztosan legyen adat)
+LOOKBACK_DAYS = 30
 
 # CAMEO root codes:
 # 18 = Assault, 19 = Fight, 20 = Unconventional Mass Violence
@@ -30,10 +33,6 @@ def http_get_bytes(url: str) -> bytes:
         return r.read()
 
 def parse_masterfilelist(master_text: str):
-    """
-    masterfilelist format: <bytes> <md5> <url>
-    We only need urls for *.export.CSV.zip
-    """
     urls = []
     for line in master_text.splitlines():
         line = line.strip()
@@ -44,7 +43,7 @@ def parse_masterfilelist(master_text: str):
             continue
         url = parts[2].strip()
 
-        # ha a listában https szerepel, átírjuk http-ra
+        # https -> http
         if url.startswith("https://data.gdeltproject.org/"):
             url = "http://data.gdeltproject.org/" + url[len("https://data.gdeltproject.org/"):]
 
@@ -53,9 +52,6 @@ def parse_masterfilelist(master_text: str):
     return urls
 
 def extract_timestamp_from_url(url: str):
-    """
-    URL contains a 14-digit timestamp like 20260205091500.export.CSV.zip
-    """
     base = url.split("/")[-1]
     ts = base.split(".")[0]
     if len(ts) != 14 or not ts.isdigit():
@@ -83,11 +79,12 @@ def yyyymmdd_to_iso(s: str) -> str:
 
 def main():
     now = datetime.now(timezone.utc)
-    cutoff = now - timedelta(days=1)
+    cutoff = now - timedelta(days=LOOKBACK_DAYS)
 
     master = http_get_text(MASTERFILELIST_URL)
     export_urls = parse_masterfilelist(master)
 
+    # export fájlok kiválasztása az elmúlt LOOKBACK_DAYS napból
     recent = []
     for u in export_urls:
         ts = extract_timestamp_from_url(u)
@@ -96,20 +93,32 @@ def main():
     recent.sort(key=lambda x: x[0])
 
     if not recent:
-        print("No recent export files found in last 24h.")
+        print(f"No export files found in last {LOOKBACK_DAYS} days.")
         sys.exit(0)
 
     geojson, existing_ids = load_existing_geojson(OUTFILE)
 
     new_features = 0
     rows_seen = 0
+    files_processed = 0
 
+    # A GDELT 2.0 export TSV sorok szélesek; az alábbi indexek a gyakori export kiosztáshoz igazodnak:
+    # 0 GlobalEventID
+    # 1 Day (YYYYMMDD)
+    # 3 Year
+    # 26 EventCode
+    # 28 EventRootCode
+    # 52 ActionGeo_Fullname
+    # 56 ActionGeo_Lat
+    # 57 ActionGeo_Long
+    # 60 SourceURL
     for ts, url in recent:
         try:
             zbytes = http_get_bytes(url)
             zf = zipfile.ZipFile(io.BytesIO(zbytes))
             name = zf.namelist()[0]
             raw = zf.read(name).decode("utf-8", errors="replace")
+            files_processed += 1
         except Exception as e:
             print(f"WARN: failed downloading/parsing {url}: {e}")
             continue
@@ -121,8 +130,8 @@ def main():
                 continue
 
             gid = str(row[0]).strip()
-            day = str(row[1]).strip()          # YYYYMMDD
-            year = str(row[3]).strip()         # YYYY
+            day = str(row[1]).strip()
+            year = str(row[3]).strip()
             event_code = str(row[26]).strip()
             root = str(row[28]).strip()
             fullname = str(row[52]).strip()
@@ -174,7 +183,7 @@ def main():
     with open(OUTFILE, "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
 
-    print(f"Done. Rows seen: {rows_seen}. New features added: {new_features}. Output: {OUTFILE}")
+    print(f"Done. Files processed: {files_processed}. Rows seen: {rows_seen}. New features added: {new_features}. Output: {OUTFILE}")
 
 if __name__ == "__main__":
     main()
