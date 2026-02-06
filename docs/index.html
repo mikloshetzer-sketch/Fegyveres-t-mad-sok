@@ -4,7 +4,6 @@
   <meta charset="utf-8" />
   <title>Armed attacks map</title>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 
   <style>
@@ -15,32 +14,64 @@
     }
 
     header {
+      height: 70px;
       padding: 10px 12px;
       border-bottom: 1px solid #ddd;
       display: flex;
       align-items: center;
-      gap: 15px;
+      justify-content: space-between;
+      box-sizing: border-box;
+      gap: 12px;
+    }
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      opacity: 0.75;
+    }
+
+    .right {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    select {
+      padding: 6px 8px;
+      font-size: 14px;
     }
 
     #map {
       height: calc(100% - 70px);
-    }
-
-    select {
-      padding: 5px;
-      font-size: 14px;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <h2>Fegyveres támadások világtérképe</h2>
+  <div class="left">
+    <div class="title">Fegyveres támadások világtérképe</div>
+    <div class="subtitle">2025 / 2026 (GeoJSON fájlból)</div>
+  </div>
 
-  <div>
-    Év:
+  <div class="right">
+    <label for="yearSelect">Év:</label>
     <select id="yearSelect">
-      <option value="2025">2025</option>
+      <option value="2025" selected>2025</option>
       <option value="2026">2026</option>
     </select>
   </div>
@@ -48,7 +79,6 @@
 
 <div id="map"></div>
 
-<!-- Leaflet JS -->
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
 <script>
@@ -61,43 +91,13 @@
   let currentLayer = null;
 
   function loadYear(year) {
-
-    if (currentLayer) {
-      map.removeLayer(currentLayer);
-    }
+    if (currentLayer) map.removeLayer(currentLayer);
 
     fetch(`./data/attacks_${year}.geojson`)
-      .then(response => response.json())
+      .then(r => r.json())
       .then(data => {
-
         currentLayer = L.geoJSON(data, {
-          pointToLayer: function(feature, latlng) {
-            return L.circleMarker(latlng, { radius: 6 });
-          },
-          onEachFeature: function(feature, layer) {
+          pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
+          onEachFeature: (feature, layer) => {
             const p = feature.properties;
-
-            layer.bindPopup(`
-              <b>Fegyveres támadás</b><br>
-              Dátum: ${p.date}<br>
-              Helyszín: ${p.location}<br>
-              Típus: ${p.attack_type}
-            `);
-          }
-        }).addTo(map);
-
-      });
-  }
-
-  // alapértelmezett: 2025
-  loadYear("2025");
-
-  // év váltás figyelése
-  document.getElementById("yearSelect").addEventListener("change", function() {
-    loadYear(this.value);
-  });
-
-</script>
-
-</body>
-</html>
+            layer.bindPopup(
