@@ -52,7 +52,7 @@
 <header>
   <div class="left">
     <div class="title">OSINT fegyveres incidensek térképe</div>
-    <div class="subtitle">LIVE nézet: deduplikált események, több forráslinkkel</div>
+    <div class="subtitle">2026: gyűjtőpontok + forráslink(ek)</div>
   </div>
 
   <div class="right">
@@ -81,10 +81,6 @@
   let currentLayerOrGroup = null;
 
   function initMap() {
-    if (!window.L) {
-      setStatusErr("HIBA: Leaflet (L) nem töltődött be.");
-      return;
-    }
     map = L.map('map').setView([20, 0], 2);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -104,25 +100,43 @@
       .replaceAll("'", "&#039;");
   }
 
+  // ✅ Kompatibilis forrás-kezelés:
+  // - új formátum: sources[] + sources_count
+  // - régi formátum: sourceurl (1 link)
+  function getSources(p) {
+    const list = [];
+
+    if (Array.isArray(p.sources)) {
+      for (const u of p.sources) if (u && !list.includes(u)) list.push(u);
+    }
+
+    if (p.sourceurl && !list.includes(p.sourceurl)) {
+      list.push(p.sourceurl);
+    }
+
+    return list;
+  }
+
   function makePopupHtml(p) {
     const date = escapeHtml(p.date || "-");
     const loc = escapeHtml(p.location || "-");
     const type = escapeHtml(p.attack_type || "-");
 
-    const sources = Array.isArray(p.sources) ? p.sources : [];
-    const sourcesCount = (typeof p.sources_count === "number") ? p.sources_count : sources.length;
+    const sources = getSources(p);
+    const sourcesCount =
+      (typeof p.sources_count === "number") ? p.sources_count :
+      sources.length;
 
-    let sourcesHtml = "";
+    let sourcesHtml = `<div><b>Források:</b> ${sourcesCount}</div>`;
+
     if (sources.length > 0) {
-      const items = sources.slice(0, 5).map((u, i) =>
+      const items = sources.slice(0, 8).map((u, i) =>
         `<li><a href="${u}" target="_blank" rel="noopener">Forrás ${i+1}</a></li>`
       ).join("");
-      sourcesHtml = `
-        <div><b>Források:</b> ${sourcesCount}</div>
-        <ul class="src-list">${items}</ul>
-      `;
-    } else {
-      sourcesHtml = `<div><b>Források:</b> ${sourcesCount || 0}</div>`;
+      sourcesHtml += `<ul class="src-list">${items}</ul>`;
+      if (sourcesCount > 8) {
+        sourcesHtml += `<div style="opacity:.75; font-size:12px;">(további források elrejtve)</div>`;
+      }
     }
 
     return `
@@ -136,8 +150,6 @@
 
   async function loadYear(year) {
     try {
-      if (!map) return;
-
       if (currentLayerOrGroup) {
         map.removeLayer(currentLayerOrGroup);
         currentLayerOrGroup = null;
@@ -159,8 +171,7 @@
         });
 
         for (const f of features) {
-          const g = f.geometry || {};
-          const c = g.coordinates || [];
+          const c = (f.geometry || {}).coordinates || [];
           if (c.length < 2) continue;
           const lon = c[0], lat = c[1];
           const p = f.properties || {};
@@ -172,7 +183,7 @@
 
         currentLayerOrGroup = cluster;
         map.addLayer(cluster);
-        setStatusOk(`OK: ${year} betöltve (${count} esemény) — LIVE, deduplikált, forráslistával.`);
+        setStatusOk(`OK: ${year} betöltve (${count} pont).`);
       } else {
         const layer = L.geoJSON(data, {
           pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
@@ -184,7 +195,7 @@
 
         currentLayerOrGroup = layer;
         map.addLayer(layer);
-        setStatusOk(`OK: ${year} betöltve (${count} esemény).`);
+        setStatusOk(`OK: ${year} betöltve (${count} pont).`);
       }
 
     } catch (e) {
