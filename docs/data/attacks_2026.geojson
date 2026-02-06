@@ -1,0 +1,14 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [3.3792, 6.5244] },
+      "properties": {
+        "date": "2026-01-18",
+        "location": "Lagos",
+        "attack_type": "Explosion"
+      }
+    }
+  ]
+}
