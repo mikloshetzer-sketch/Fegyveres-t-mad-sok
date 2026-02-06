@@ -6,12 +6,13 @@ import zipfile
 from datetime import datetime, timedelta, timezone
 from urllib.request import urlopen, Request
 
-MASTERFILELIST_URL = "https://data.gdeltproject.org/gdeltv2/masterfilelist.txt"
+# HTTPS helyett HTTP (SSL hostname mismatch miatt GitHub Actions alatt)
+MASTERFILELIST_URL = "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt"
 DATA_DIR = "docs/data"
 OUTFILE = f"{DATA_DIR}/attacks_2026.geojson"
 
-# CAMEO root codes we treat as "armed attacks / violent conflict"
-# 18 = Assault, 19 = Fight, 20 = Unconventional Mass Violence  (CAMEO)
+# CAMEO root codes:
+# 18 = Assault, 19 = Fight, 20 = Unconventional Mass Violence
 ROOT_CODE_LABEL = {
     "18": "assault",
     "19": "fight",
@@ -41,7 +42,12 @@ def parse_masterfilelist(master_text: str):
         parts = line.split()
         if len(parts) < 3:
             continue
-        url = parts[2]
+        url = parts[2].strip()
+
+        # ha a listában https szerepel, átírjuk http-ra
+        if url.startswith("https://data.gdeltproject.org/"):
+            url = "http://data.gdeltproject.org/" + url[len("https://data.gdeltproject.org/"):]
+
         if url.endswith(".export.CSV.zip") and "/gdeltv2/" in url:
             urls.append(url)
     return urls
@@ -61,7 +67,6 @@ def load_existing_geojson(path: str):
         with open(path, "r", encoding="utf-8") as f:
             data = json.load(f)
         feats = data.get("features", [])
-        # dedupe by GlobalEventID
         existing_ids = set()
         for ft in feats:
             gid = (ft.get("properties") or {}).get("gdelt_id")
@@ -72,7 +77,6 @@ def load_existing_geojson(path: str):
         return {"type": "FeatureCollection", "features": []}, set()
 
 def yyyymmdd_to_iso(s: str) -> str:
-    # expects YYYYMMDD
     if not s or len(s) != 8:
         return ""
     return f"{s[0:4]}-{s[4:6]}-{s[6:8]}"
@@ -84,7 +88,6 @@ def main():
     master = http_get_text(MASTERFILELIST_URL)
     export_urls = parse_masterfilelist(master)
 
-    # pick last 24h export files
     recent = []
     for u in export_urls:
         ts = extract_timestamp_from_url(u)
@@ -101,14 +104,10 @@ def main():
     new_features = 0
     rows_seen = 0
 
-    # Columns for GDELT 2.0 exports include (among many):
-    # GlobalEventID, Day, Year, EventCode, EventRootCode, ActionGeo_Fullname, ActionGeo_Lat, ActionGeo_Long, SourceURL ...
-    # (See common header lists in public references.)
     for ts, url in recent:
         try:
             zbytes = http_get_bytes(url)
             zf = zipfile.ZipFile(io.BytesIO(zbytes))
-            # The zip contains a single CSV (TSV) file
             name = zf.namelist()[0]
             raw = zf.read(name).decode("utf-8", errors="replace")
         except Exception as e:
@@ -118,17 +117,6 @@ def main():
         reader = csv.reader(io.StringIO(raw), delimiter="\t")
         for row in reader:
             rows_seen += 1
-            # Defensive: GDELT rows are wide; we only access safe indices if present.
-            # Using the widely used header ordering for GDELT 2.0 exports:
-            # 0 GlobalEventID
-            # 1 Day (YYYYMMDD)
-            # 3 Year
-            # 26 EventCode
-            # 28 EventRootCode
-            # 52 ActionGeo_Fullname
-            # 56 ActionGeo_Lat
-            # 57 ActionGeo_Long
-            # 60 SourceURL
             if len(row) < 61:
                 continue
 
@@ -175,8 +163,13 @@ def main():
             existing_ids.add(gid)
             new_features += 1
 
-    # sort by date desc (string ISO yyyy-mm-dd)
-    geojson["features"].sort(key=lambda f: (f.get("properties", {}).get("date", ""), f.get("properties", {}).get("gdelt_id", "")), reverse=True)
+    geojson["features"].sort(
+        key=lambda f: (
+            (f.get("properties", {}) or {}).get("date", ""),
+            (f.get("properties", {}) or {}).get("gdelt_id", ""),
+        ),
+        reverse=True
+    )
 
     with open(OUTFILE, "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, indent=2)
