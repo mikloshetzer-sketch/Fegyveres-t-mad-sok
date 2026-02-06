@@ -14,37 +14,38 @@
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
 
-    header {
-      height: 76px;
+    header{
+      height: 86px;
       padding: 10px 12px;
       border-bottom: 1px solid #ddd;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      box-sizing: border-box;
-      gap: 12px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      box-sizing:border-box;
+      gap:12px;
     }
 
-    .left { display: flex; flex-direction: column; gap: 4px; }
-    .title { font-size: 18px; font-weight: 700; line-height: 1.1; }
-    .subtitle { font-size: 12px; opacity: 0.8; }
+    .left{ display:flex; flex-direction:column; gap:4px; }
+    .title{ font-size:18px; font-weight:800; line-height:1.1; }
+    .subtitle{ font-size:12px; opacity:.8; }
 
-    .right { display: flex; align-items: center; gap: 10px; font-size: 14px; white-space: nowrap; }
-    select { padding: 6px 8px; font-size: 14px; }
+    .right{ display:flex; align-items:center; gap:10px; font-size:14px; white-space:nowrap; flex-wrap:wrap; justify-content:flex-end;}
+    select{ padding:6px 8px; font-size:14px; }
 
-    #status {
+    #status{
       padding: 8px 12px;
       font-size: 13px;
       border-bottom: 1px solid #eee;
       background: #fafafa;
     }
-    #status.ok { color: #0a7a2f; }
-    #status.err { color: #b00020; }
+    #status.ok{ color:#0a7a2f; }
+    #status.err{ color:#b00020; }
 
-    #map { height: calc(100% - 76px - 41px); background: #f3f3f3; }
+    #map{ height: calc(100% - 86px - 41px); background:#f3f3f3; }
 
     .src-list { margin: 6px 0 0 0; padding-left: 18px; }
     .src-list li { margin: 4px 0; }
+    .hint { font-size: 12px; opacity: .75; margin-left: 6px; }
   </style>
 </head>
 <body>
@@ -52,7 +53,7 @@
 <header>
   <div class="left">
     <div class="title">OSINT fegyveres incidensek térképe</div>
-    <div class="subtitle">2026: gyűjtőpontok + forráslink(ek)</div>
+    <div class="subtitle">2026: LIVE (összevont) / Részletes (nyersebb) — gyűjtőpontokkal</div>
   </div>
 
   <div class="right">
@@ -61,6 +62,13 @@
       <option value="2025" selected>2025</option>
       <option value="2026">2026</option>
     </select>
+
+    <label for="viewSelect" id="viewLabel" style="display:none;">Nézet:</label>
+    <select id="viewSelect" style="display:none;">
+      <option value="live" selected>LIVE</option>
+      <option value="raw">Részletes</option>
+    </select>
+    <span class="hint" id="viewHint" style="display:none;">(csak 2026-nál)</span>
   </div>
 </header>
 
@@ -74,22 +82,22 @@
 
 <script>
   const statusEl = document.getElementById("status");
-  function setStatusOk(msg) { statusEl.className = "ok"; statusEl.textContent = msg; }
-  function setStatusErr(msg) { statusEl.className = "err"; statusEl.textContent = msg; }
+  const yearSelect = document.getElementById("yearSelect");
+  const viewSelect = document.getElementById("viewSelect");
+  const viewLabel = document.getElementById("viewLabel");
+  const viewHint  = document.getElementById("viewHint");
 
-  let map = null;
+  function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
+  function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
+
+  let map = L.map('map').setView([20, 0], 2);
+
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 18,
+    attribution: '&copy; OpenStreetMap'
+  }).addTo(map);
+
   let currentLayerOrGroup = null;
-
-  function initMap() {
-    map = L.map('map').setView([20, 0], 2);
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 18,
-      attribution: '&copy; OpenStreetMap'
-    }).addTo(map);
-
-    setStatusOk("Térkép betöltve. Adatok betöltése…");
-  }
 
   function escapeHtml(s) {
     return (s || "").toString()
@@ -100,26 +108,18 @@
       .replaceAll("'", "&#039;");
   }
 
-  // ✅ Kompatibilis forrás-kezelés:
-  // - új formátum: sources[] + sources_count
-  // - régi formátum: sourceurl (1 link)
-  function getSources(p) {
+  function getSources(p){
     const list = [];
-
     if (Array.isArray(p.sources)) {
       for (const u of p.sources) if (u && !list.includes(u)) list.push(u);
     }
-
-    if (p.sourceurl && !list.includes(p.sourceurl)) {
-      list.push(p.sourceurl);
-    }
-
+    if (p.sourceurl && !list.includes(p.sourceurl)) list.push(p.sourceurl);
     return list;
   }
 
-  function makePopupHtml(p) {
+  function makePopupHtml(p){
     const date = escapeHtml(p.date || "-");
-    const loc = escapeHtml(p.location || "-");
+    const loc  = escapeHtml(p.location || "-");
     const type = escapeHtml(p.attack_type || "-");
 
     const sources = getSources(p);
@@ -127,16 +127,12 @@
       (typeof p.sources_count === "number") ? p.sources_count :
       sources.length;
 
-    let sourcesHtml = `<div><b>Források:</b> ${sourcesCount}</div>`;
-
+    let sourcesHtml = `<div><b>Források:</b> ${sourcesCount || 0}</div>`;
     if (sources.length > 0) {
       const items = sources.slice(0, 8).map((u, i) =>
         `<li><a href="${u}" target="_blank" rel="noopener">Forrás ${i+1}</a></li>`
       ).join("");
       sourcesHtml += `<ul class="src-list">${items}</ul>`;
-      if (sourcesCount > 8) {
-        sourcesHtml += `<div style="opacity:.75; font-size:12px;">(további források elrejtve)</div>`;
-      }
     }
 
     return `
@@ -148,34 +144,53 @@
     `;
   }
 
-  async function loadYear(year) {
-    try {
-      if (currentLayerOrGroup) {
+  function setControlsForYear(year){
+    const show = (year === "2026");
+    viewSelect.style.display = show ? "" : "none";
+    viewLabel.style.display  = show ? "" : "none";
+    viewHint.style.display   = show ? "" : "none";
+  }
+
+  function dataUrl(year, view){
+    if (year === "2025") return "./data/attacks_2025.geojson";
+    // 2026
+    if (view === "raw")  return "./data/attacks_2026_raw.geojson";
+    return "./data/attacks_2026_live.geojson"; // default
+  }
+
+  async function loadLayer(){
+    try{
+      const year = yearSelect.value;
+      const view = viewSelect.value;
+
+      setControlsForYear(year);
+
+      if (currentLayerOrGroup){
         map.removeLayer(currentLayerOrGroup);
         currentLayerOrGroup = null;
       }
 
-      const url = `./data/attacks_${year}.geojson`;
+      const url = dataUrl(year, view);
       const r = await fetch(url, { cache: "no-store" });
-      if (!r.ok) throw new Error(`Nem találom az adatfájlt (${url}). HTTP: ${r.status}`);
+      if (!r.ok) throw new Error(`Nem találom az adatfájlt: ${url} (HTTP ${r.status})`);
 
       const data = await r.json();
       const features = data.features || [];
       const count = features.length;
 
-      if (year === "2026") {
+      // 2026: cluster (mind LIVE, mind RAW), 2025: sima
+      if (year === "2026"){
         const cluster = L.markerClusterGroup({
           showCoverageOnHover: false,
           spiderfyOnMaxZoom: true,
           disableClusteringAtZoom: 10
         });
 
-        for (const f of features) {
+        for (const f of features){
           const c = (f.geometry || {}).coordinates || [];
           if (c.length < 2) continue;
           const lon = c[0], lat = c[1];
           const p = f.properties || {};
-
           const m = L.marker([lat, lon]);
           m.bindPopup(makePopupHtml(p));
           cluster.addLayer(m);
@@ -183,32 +198,34 @@
 
         currentLayerOrGroup = cluster;
         map.addLayer(cluster);
-        setStatusOk(`OK: ${year} betöltve (${count} pont).`);
+
+        const label = (viewSelect.value === "raw") ? "Részletes" : "LIVE";
+        setStatusOk(`OK: ${year} betöltve (${count} pont) — Nézet: ${label}.`);
       } else {
         const layer = L.geoJSON(data, {
           pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
-          onEachFeature: (feature, layer) => {
-            const p = feature.properties || {};
-            layer.bindPopup(makePopupHtml(p));
-          }
+          onEachFeature: (feature, layer) => layer.bindPopup(makePopupHtml(feature.properties || {}))
         });
-
         currentLayerOrGroup = layer;
         map.addLayer(layer);
         setStatusOk(`OK: ${year} betöltve (${count} pont).`);
       }
-
-    } catch (e) {
+    } catch(e){
       setStatusErr("HIBA: " + e.message);
     }
   }
 
-  initMap();
-  loadYear("2025");
+  // init
+  setControlsForYear(yearSelect.value);
+  loadLayer();
 
-  document.getElementById("yearSelect").addEventListener("change", function() {
-    loadYear(this.value);
+  yearSelect.addEventListener("change", () => {
+    // 2026-ra váltáskor maradjon LIVE alapból
+    if (yearSelect.value === "2026") viewSelect.value = "live";
+    loadLayer();
   });
+
+  viewSelect.addEventListener("change", loadLayer);
 </script>
 
 </body>
