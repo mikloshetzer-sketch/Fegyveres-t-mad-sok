@@ -27,8 +27,8 @@
 <body>
 
 <header>
-  <h2>Fegyveres támadások világtérképe</h2>
-  <div>Teszt pontok (következő lépés: adatfájlból betöltés + 2025/2026 váltás)</div>
+  <h2>Fegyveres támadások világtérképe – 2025</h2>
+  <div>Adatok GeoJSON fájlból betöltve</div>
 </header>
 
 <div id="map"></div>
@@ -45,34 +45,29 @@
     maxZoom: 18,
   }).addTo(map);
 
-  // ===== TESZT TÁMADÁSI ESEMÉNYEK =====
+  // ===== GEOJSON BETÖLTÉSE =====
 
-  // 1. példa
-  L.marker([50.0755, 14.4378]).addTo(map)
-    .bindPopup(`
-      <b>Fegyveres támadás</b><br>
-      Dátum: 2025-03-12<br>
-      Helyszín: Prága<br>
-      Típus: Shooting
-    `);
+  fetch('./data/attacks_2025.geojson')
+    .then(response => response.json())
+    .then(data => {
 
-  // 2. példa
-  L.marker([31.7683, 35.2137]).addTo(map)
-    .bindPopup(`
-      <b>Fegyveres incidens</b><br>
-      Dátum: 2025-07-04<br>
-      Helyszín: Jeruzsálem<br>
-      Típus: Armed attack
-    `);
+      L.geoJSON(data, {
+        pointToLayer: function(feature, latlng) {
+          return L.circleMarker(latlng, { radius: 6 });
+        },
+        onEachFeature: function(feature, layer) {
+          const p = feature.properties;
 
-  // 3. példa
-  L.marker([6.5244, 3.3792]).addTo(map)
-    .bindPopup(`
-      <b>Robbantás</b><br>
-      Dátum: 2026-01-18<br>
-      Helyszín: Lagos<br>
-      Típus: Explosion
-    `);
+          layer.bindPopup(`
+            <b>Fegyveres támadás</b><br>
+            Dátum: ${p.date}<br>
+            Helyszín: ${p.location}<br>
+            Típus: ${p.attack_type}
+          `);
+        }
+      }).addTo(map);
+
+    });
 </script>
 
 </body>
