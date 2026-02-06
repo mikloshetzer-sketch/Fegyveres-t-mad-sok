@@ -1,0 +1,23 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [14.4378, 50.0755] },
+      "properties": {
+        "date": "2025-03-12",
+        "location": "Prága",
+        "attack_type": "Shooting"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [35.2137, 31.7683] },
+      "properties": {
+        "date": "2025-07-04",
+        "location": "Jeruzsálem",
+        "attack_type": "Armed attack"
+      }
+    }
+  ]
+}
