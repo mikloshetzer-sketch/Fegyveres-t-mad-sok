@@ -8,11 +8,9 @@ from urllib.request import urlopen, Request
 MASTERFILELIST_URL = "http://data.gdeltproject.org/gdeltv2/masterfilelist.txt"
 OUTFILE = "docs/data/attacks_2026.geojson"
 
-# LIVE ablak: kicsi és gyors
 LOOKBACK_DAYS = 14
-MAX_SOURCES_PER_EVENT = 6
+MAX_SOURCES_PER_EVENT = 8
 
-# CAMEO root codes (violent conflict)
 ROOT_CODE_LABEL = {
     "18": "assault",
     "19": "fight",
@@ -63,20 +61,17 @@ def safe_float(x: str):
     except Exception:
         return None
 
-def normalize_location(fullname: str) -> str:
-    """
-    GDELT ActionGeo_Fullname tipikusan: "Vienna, Wien, Austria"
-    Cél: stabil kulcs (város + ország), hogy a duplikált pontok összeolvadjanak.
-    """
-    if not fullname:
+def norm_loc(s: str) -> str:
+    # nagyon egyszerű, stabil normalizálás a "popup-duplák" eltüntetéséhez
+    if not s:
         return "unknown"
-    parts = [p.strip().lower() for p in fullname.split(",") if p.strip()]
-    if not parts:
-        return "unknown"
+    return " ".join(s.strip().lower().split())
 
-    city = parts[0]
-    country = parts[-1] if len(parts) >= 2 else "unknown"
-    return f"{city}|{country}"
+def add_unique(lst, url):
+    if not url:
+        return
+    if url not in lst and len(lst) < MAX_SOURCES_PER_EVENT:
+        lst.append(url)
 
 def main():
     now = datetime.now(timezone.utc)
@@ -98,9 +93,8 @@ def main():
         print("No export files found for window.")
         return
 
-    # 🔥 ÚJ DEDUPE: (date + root + normalized_location) kulcson vonunk össze
-    aggregated = {}  # key -> event dict
-
+    # 1) első aggregáció: (date + root + normalized FULL location string)
+    agg = {}  # key -> event
     rows_seen = 0
     files_processed = 0
 
@@ -142,42 +136,56 @@ def main():
             if not date_iso:
                 continue
 
-            loc_key = normalize_location(fullname)
-            key = f"{date_iso}|{root}|{loc_key}"
+            loc_norm = norm_loc(fullname)
+            key = f"{date_iso}|{root}|{loc_norm}"
 
-            if key not in aggregated:
-                aggregated[key] = {
+            if key not in agg:
+                agg[key] = {
                     "date": date_iso,
+                    "attack_type": ROOT_CODE_LABEL[root],
+                    "event_root_code": root,
+                    "location": fullname or "unknown",
+                    "loc_norm": loc_norm,
                     "lat_sum": lat,
                     "lon_sum": lon,
                     "n": 1,
-                    "location": fullname or "unknown",
-                    "attack_type": ROOT_CODE_LABEL[root],
-                    "event_root_code": root,
                     "event_codes": set([event_code]) if event_code else set(),
                     "gdelt_ids": set([gid]) if gid else set(),
                     "sources": [sourceurl] if sourceurl else [],
                 }
             else:
-                ev = aggregated[key]
+                ev = agg[key]
                 ev["lat_sum"] += lat
                 ev["lon_sum"] += lon
                 ev["n"] += 1
-
-                # tartsunk meg egy "normális" location stringet
                 if fullname and ev["location"] == "unknown":
                     ev["location"] = fullname
-
                 if event_code:
                     ev["event_codes"].add(event_code)
                 if gid:
                     ev["gdelt_ids"].add(gid)
-                if sourceurl and len(ev["sources"]) < MAX_SOURCES_PER_EVENT and sourceurl not in ev["sources"]:
-                    ev["sources"].append(sourceurl)
+                add_unique(ev["sources"], sourceurl)
 
-    # GeoJSON felépítése (átlag koordinátával)
+    # 2) MÁSODIK (HARD) DEDUPE:
+    # ha a popup-értékek azonosak (date + attack_type + location_norm), akkor 1 esemény legyen mindig
+    hard = {}  # key2 -> merged event
+    for ev in agg.values():
+        key2 = f"{ev['date']}|{ev['attack_type']}|{ev['loc_norm']}"
+        if key2 not in hard:
+            hard[key2] = ev
+        else:
+            m = hard[key2]
+            # összevonás: koordináta centroid, források, ids
+            m["lat_sum"] += ev["lat_sum"]
+            m["lon_sum"] += ev["lon_sum"]
+            m["n"] += ev["n"]
+            m["event_codes"] |= ev["event_codes"]
+            m["gdelt_ids"] |= ev["gdelt_ids"]
+            for u in ev["sources"]:
+                add_unique(m["sources"], u)
+
     features = []
-    for key, ev in aggregated.items():
+    for ev in hard.values():
         lat = ev["lat_sum"] / max(1, ev["n"])
         lon = ev["lon_sum"] / max(1, ev["n"])
 
@@ -196,7 +204,6 @@ def main():
             }
         })
 
-    # Legfrissebb elöl
     features.sort(
         key=lambda f: (
             f.get("properties", {}).get("date", ""),
@@ -210,7 +217,7 @@ def main():
     with open(OUTFILE, "w", encoding="utf-8") as f:
         json.dump(geojson, f, ensure_ascii=False, separators=(",", ":"))
 
-    print(f"Done. Files: {files_processed}. Rows: {rows_seen}. Aggregated events: {len(features)}. Output: {OUTFILE}")
+    print(f"Done. Files: {files_processed}. Rows: {rows_seen}. Events(after hard dedupe): {len(features)}. Output: {OUTFILE}")
 
 if __name__ == "__main__":
     main()
