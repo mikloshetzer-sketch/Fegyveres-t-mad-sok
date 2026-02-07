@@ -1,4 +1,4 @@
-name: Build 2025 quarterly data (one-off)
+name: Build 2025 quarterly data (one-off, parallel)
 
 on:
   workflow_dispatch:
@@ -7,20 +7,86 @@ permissions:
   contents: write
 
 jobs:
-  build:
+  build_months:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        month:
+          - "2025-01"
+          - "2025-02"
+          - "2025-03"
+          - "2025-04"
+          - "2025-05"
+          - "2025-06"
+          - "2025-07"
+          - "2025-08"
+          - "2025-09"
+          - "2025-10"
+          - "2025-11"
+          - "2025-12"
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      - name: Build 2025 quarters (fast)
+      - name: Build month
         run: |
-          python scripts/build_2025_quarters_fast.py
+          mkdir -p out
+          MONTH="${{ matrix.month }}" OUT="out/${{ matrix.month }}.geojson" python scripts/build_2025_month_from_exports.py
 
-      - name: Commit & push if changed
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: month-${{ matrix.month }}
+          path: out/${{ matrix.month }}.geojson
+
+  assemble_quarters:
+    needs: build_months
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download all month artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: _months
+
+      - name: Assemble Q1-Q4
+        run: |
+          python - << 'PY'
+          import json, glob, os
+          def load(p):
+            with open(p,'r',encoding='utf-8') as f:
+              return json.load(f).get("features",[])
+          def save(path, feats):
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path,'w',encoding='utf-8') as f:
+              json.dump({"type":"FeatureCollection","features":feats}, f, ensure_ascii=False, separators=(",",":"))
+
+          months = {os.path.basename(p).replace(".geojson",""): p for p in glob.glob("_months/**/2025-*.geojson", recursive=True)}
+          def q(month_list):
+            feats=[]
+            for m in month_list:
+              p = months.get(m)
+              if p: feats.extend(load(p))
+            return feats
+
+          q1 = q(["2025-01","2025-02","2025-03"])
+          q2 = q(["2025-04","2025-05","2025-06"])
+          q3 = q(["2025-07","2025-08","2025-09"])
+          q4 = q(["2025-10","2025-11","2025-12"])
+
+          save("docs/data/attacks_2025_Q1.geojson", q1)
+          save("docs/data/attacks_2025_Q2.geojson", q2)
+          save("docs/data/attacks_2025_Q3.geojson", q3)
+          save("docs/data/attacks_2025_Q4.geojson", q4)
+
+          print("Saved quarters:", len(q1), len(q2), len(q3), len(q4))
+          PY
+
+      - name: Commit & push quarter files
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
@@ -28,6 +94,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes."
           else
-            git commit -m "Build 2025 quarterly datasets"
+            git commit -m "Build 2025 quarterly datasets (parallel)"
             git push
           fi
