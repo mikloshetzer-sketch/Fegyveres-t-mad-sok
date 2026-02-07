@@ -12,7 +12,7 @@
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; background:#f2f2f2; }
 
-    /* ----- Force cluster colors even if WP/theme applies filters ----- */
+    /* Force cluster colors even if WP/theme applies filters */
     .marker-cluster, .marker-cluster * { filter: none !important; }
     .marker-cluster-small { background-color: rgba(181, 226, 140, 0.6) !important; }
     .marker-cluster-small div { background-color: rgba(110, 204, 57, 0.75) !important; }
@@ -21,7 +21,6 @@
     .marker-cluster-large { background-color: rgba(253, 156, 115, 0.6) !important; }
     .marker-cluster-large div { background-color: rgba(241, 128, 23, 0.75) !important; }
 
-    /* -------- Normal header (non-embed) -------- */
     header{
       height: 110px;
       padding: 10px 12px;
@@ -56,7 +55,6 @@
     #status.ok{ color:#0a7a2f; }
     #status.err{ color:#b00020; }
 
-    /* -------- Layout -------- */
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
@@ -79,8 +77,26 @@
       overflow: auto;
     }
 
-    /* Shared panel styles */
     .panel-title{ font-weight: 800; margin: 0 0 8px 0; font-size: 14px; }
+    .panel-drag{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      cursor: move;
+      user-select:none;
+      padding: 6px 8px;
+      margin: -12px -12px 10px -12px;
+      border-bottom: 1px solid #eee;
+      background: rgba(255,255,255,0.85);
+      position: sticky;
+      top: 0;
+      backdrop-filter: blur(4px);
+      z-index: 1;
+    }
+    .panel-drag b{ font-size: 13px; }
+    .panel-drag .hint{ font-size: 12px; opacity:.7; }
+
     .small{ font-size: 12px; opacity: .75; line-height: 1.35; margin: 0 0 12px 0; }
     .stat{ display:flex; justify-content:space-between; gap:12px; font-size: 13px; margin: 6px 0; }
     .divider{ height:1px; background:#eee; margin: 12px 0; }
@@ -99,24 +115,24 @@
       background:#fff;
     }
 
-    /* -------- Embed mode -------- */
+    /* Embed mode */
     body.embed header, body.embed #status { display:none; }
     body.embed #content { height: 100%; }
 
-    /* V2 badge (always visible; helps to verify correct build) */
+    /* Version badge -> bottom-left (doesn't clash with controls) */
     #v2badge{
       position: fixed;
-      z-index: 99999;
-      top: 10px;
+      z-index: 3000;
       left: 10px;
-      background: #ff0;
+      bottom: 10px;
+      background: rgba(255,255,0,0.85);
       padding: 6px 10px;
       font-weight: 900;
       border: 2px solid #000;
       border-radius: 10px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      pointer-events: none;
     }
-    body.embed #v2badge{ top: 10px; left: 10px; }
 
     /* Floating controls (embed only) */
     #embedControls{
@@ -124,7 +140,7 @@
       position:absolute;
       top: 10px;
       left: 10px;
-      z-index: 1000;
+      z-index: 2500; /* above map */
       background: rgba(255,255,255,0.94);
       border: 1px solid rgba(0,0,0,0.15);
       border-radius: 12px;
@@ -135,6 +151,7 @@
       gap:8px;
       flex-wrap:wrap;
       align-items:center;
+      pointer-events: auto;
     }
     body.embed #embedControls{ display:flex; }
 
@@ -148,7 +165,7 @@
       font-weight: 700;
     }
 
-    /* Panel overlay in embed */
+    /* Panel overlay in embed: MUST be above leaflet layers */
     body.embed #panel{
       position:absolute;
       top: 64px;
@@ -161,10 +178,19 @@
       overflow:auto;
       background: rgba(255,255,255,0.96);
       backdrop-filter: blur(4px);
+      z-index: 2600;          /* higher than embedControls */
+      pointer-events: auto;   /* capture mouse */
     }
     body.embed #panel.hidden{ display:none; }
 
-    /* Small widths */
+    /* Ensure leaflet elements stay below our UI */
+    body.embed .leaflet-pane,
+    body.embed .leaflet-control,
+    body.embed .leaflet-top,
+    body.embed .leaflet-bottom {
+      z-index: 1000 !important;
+    }
+
     @media (max-width: 900px){
       body.embed #panel{
         width: min(92vw, 360px);
@@ -181,7 +207,7 @@
 </head>
 <body>
 
-<div id="v2badge">V2 AKTÍV</div>
+<div id="v2badge">V2.1</div>
 
 <header>
   <div class="left">
@@ -233,7 +259,6 @@
 
 <div id="content">
 
-  <!-- Embed floating controls -->
   <div id="embedControls">
     <button id="panelToggle" type="button">📊 Panel</button>
     <select id="yearSelectEmbed"></select>
@@ -245,6 +270,11 @@
   <div id="map"></div>
 
   <aside id="panel">
+    <div class="panel-drag" id="panelDragHandle">
+      <b>Statisztika</b>
+      <span class="hint">Húzd ide-oda</span>
+    </div>
+
     <div class="panel-title">Összegzés</div>
     <div class="stat"><span><b>Nézet</b></span><span id="statScope">-</span></div>
     <div class="stat"><span><b>Régió</b></span><span id="statRegion">-</span></div>
@@ -289,6 +319,9 @@
   const quarterSelectEmbed = document.getElementById("quarterSelectEmbed");
   const viewSelectEmbed = document.getElementById("viewSelectEmbed");
   const regionSelectEmbed = document.getElementById("regionSelectEmbed");
+
+  // Panel drag
+  const panelDragHandle = document.getElementById("panelDragHandle");
 
   // Panel stats
   const statScope = document.getElementById("statScope");
@@ -397,7 +430,7 @@
     return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
   }
 
-  // Map: Esri satellite
+  // Map
   const map = L.map('map').setView([20,0],2);
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
@@ -514,7 +547,7 @@
     }
   }
 
-  // ---- Embed controls sync ----
+  // Embed controls sync
   function cloneOptions(fromSel, toSel){
     toSel.innerHTML = "";
     for (const opt of fromSel.options){
@@ -534,7 +567,6 @@
     setControls();
   }
 
-  // Main events
   yearSelect.addEventListener("change", () => {
     if (yearSelect.value === "2025") quarterSelect.value = "Q4";
     else viewSelect.value = "live";
@@ -545,7 +577,6 @@
   viewSelect.addEventListener("change", () => { syncMainToEmbed(); loadData(); });
   regionSelect.addEventListener("change", () => { syncMainToEmbed(); render(); });
 
-  // Embed events -> update main -> load/render
   if (EMBED){
     syncMainToEmbed();
 
@@ -580,7 +611,49 @@
     });
   }
 
-  // Init
+  // ---- DRAGGABLE PANEL (works best in embed) ----
+  (function enablePanelDrag(){
+    let dragging = false;
+    let startX = 0, startY = 0;
+    let startLeft = 0, startTop = 0;
+
+    function px(n){ return `${n}px`; }
+
+    panelDragHandle.addEventListener("mousedown", (e) => {
+      if (!EMBED) return; // csak embedben draggeljük
+      dragging = true;
+      panel.style.right = "auto"; // switch to left/top positioning
+      const rect = panel.getBoundingClientRect();
+      startLeft = rect.left;
+      startTop = rect.top;
+      startX = e.clientX;
+      startY = e.clientY;
+      panel.style.left = px(startLeft);
+      panel.style.top = px(startTop);
+      panel.style.position = "fixed";
+      panel.style.zIndex = 2600;
+      e.preventDefault();
+    });
+
+    window.addEventListener("mousemove", (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+
+      let newLeft = startLeft + dx;
+      let newTop  = startTop + dy;
+
+      // keep inside viewport a bit
+      newLeft = Math.max(6, Math.min(newLeft, window.innerWidth - panel.offsetWidth - 6));
+      newTop  = Math.max(6, Math.min(newTop, window.innerHeight - 80));
+
+      panel.style.left = px(newLeft);
+      panel.style.top  = px(newTop);
+    });
+
+    window.addEventListener("mouseup", () => dragging = false);
+  })();
+
   loadData();
 </script>
 
