@@ -7,11 +7,12 @@
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.default.css">
 
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; background:#f2f2f2; }
 
+    /* Normal header (not embed) */
     header{
       height: 110px;
       padding: 10px 12px;
@@ -21,7 +22,7 @@
       justify-content:space-between;
       box-sizing:border-box;
       gap:12px;
-      background:#f2f2f2;  /* WordPress szürkéhez passzol */
+      background:#f2f2f2;
     }
     .left{ display:flex; flex-direction:column; gap:4px; }
     .title{ font-size:18px; font-weight:800; line-height:1.1; }
@@ -41,74 +42,41 @@
       padding: 8px 12px;
       font-size: 13px;
       border-bottom: 1px solid #eee;
-      background: #f2f2f2; /* WordPress szürkéhez passzol */
+      background: #f2f2f2;
     }
     #status.ok{ color:#0a7a2f; }
     #status.err{ color:#b00020; }
 
-    /* Normál mód */
+    /* Layout */
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
       min-height: 0;
+      position: relative;
     }
     #map{
       flex: 1 1 auto;
       min-width: 0;
       background:#111;
     }
+
+    /* Right panel (normal mode) */
     #panel{
       width: 360px;
       border-left: 1px solid #e6e6e6;
-      background: rgba(255,255,255,0.96);
+      background: #fff;
       padding: 12px;
       box-sizing: border-box;
       overflow: auto;
-      backdrop-filter: blur(4px);
     }
 
-    /* Embed mód: térkép full, panel overlay */
-    body.embed header,
-    body.embed #status { display:none; }
-
-    body.embed #content{
-      height: 100%;
-      position: relative;
-    }
-    body.embed #panel{
-      position:absolute;
-      top: 12px;
-      right: 12px;
-      width: 360px;
-      max-height: calc(100% - 24px);
-      border: 1px solid rgba(0,0,0,0.15);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      overflow:auto;
-    }
-
-    /* Kis szélességnél (WordPress mobil / keskeny iframe):
-       ne rejtsük el a panelt, hanem legyen kisebb és lejjebb. */
-    @media (max-width: 900px){
-      body:not(.embed) #content{ flex-direction: column; }
-      body:not(.embed) #panel{ width: 100%; border-left: none; border-top: 1px solid #e6e6e6; }
-
-      body.embed #panel{
-        width: min(92vw, 360px);
-        top: 10px;
-        right: 10px;
-        max-height: 55%;
-      }
-    }
-
+    /* Shared panel styles */
     .panel-title{ font-weight: 800; margin: 0 0 8px 0; font-size: 14px; }
     .small{ font-size: 12px; opacity: .75; line-height: 1.35; margin: 0 0 12px 0; }
     .stat{ display:flex; justify-content:space-between; gap:12px; font-size: 13px; margin: 6px 0; }
     .divider{ height:1px; background:#eee; margin: 12px 0; }
-
     .src-list { margin: 6px 0 0 0; padding-left: 18px; }
     .src-list li { margin: 4px 0; }
-
     .toplist{ margin: 8px 0 0 0; padding-left: 18px; }
     .toplist li{ margin: 4px 0; font-size: 13px; }
     .pill{
@@ -120,6 +88,65 @@
       margin-left: 6px;
       opacity: .85;
       background:#fff;
+    }
+
+    /* EMBED MODE */
+    body.embed header, body.embed #status { display:none; }
+    body.embed #content { height: 100%; }
+
+    /* Floating controls in embed mode */
+    #embedControls{
+      display:none;
+      position:absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 12px;
+      padding: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      backdrop-filter: blur(4px);
+      max-width: calc(100% - 24px);
+    }
+    body.embed #embedControls{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
+
+    #embedControls select{
+      padding: 6px 8px;
+      font-size: 13px;
+      border-radius: 10px;
+    }
+
+    #panelToggle{
+      border: 1px solid rgba(0,0,0,0.15);
+      background: rgba(255,255,255,0.94);
+      border-radius: 10px;
+      padding: 6px 10px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+
+    /* Panel overlay in embed mode */
+    body.embed #panel{
+      position:absolute;
+      top: 64px; /* controls alatt */
+      right: 10px;
+      width: 360px;
+      max-height: calc(100% - 76px);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      overflow:auto;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(4px);
+    }
+    body.embed #panel.hidden{ display:none; }
+
+    /* Small iframe / mobile: make panel narrower */
+    @media (max-width: 900px){
+      body.embed #panel{ width: min(92vw, 360px); max-height: 55%; top: 64px; }
+      body:not(.embed) #content{ flex-direction: column; }
+      body:not(.embed) #panel{ width: 100%; border-left:none; border-top:1px solid #e6e6e6; }
     }
   </style>
 </head>
@@ -174,6 +201,16 @@
 <div id="status">Betöltés…</div>
 
 <div id="content">
+  <!-- Embed floating controls -->
+  <div id="embedControls">
+    <button id="panelToggle" type="button">📊 Panel</button>
+
+    <select id="yearSelectEmbed"></select>
+    <select id="quarterSelectEmbed"></select>
+    <select id="viewSelectEmbed"></select>
+    <select id="regionSelectEmbed"></select>
+  </div>
+
   <div id="map"></div>
 
   <aside id="panel">
@@ -201,11 +238,12 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script>
-  // --- Embed mód (WordPress iframe): add ?embed=1 a URL végére ---
   const EMBED = new URLSearchParams(location.search).get("embed") === "1";
   if (EMBED) document.body.classList.add("embed");
 
   const statusEl = document.getElementById("status");
+
+  // Main selects
   const yearSelect = document.getElementById("yearSelect");
   const quarterSelect = document.getElementById("quarterSelect");
   const quarterLabel = document.getElementById("quarterLabel");
@@ -213,14 +251,24 @@
   const viewLabel = document.getElementById("viewLabel");
   const regionSelect = document.getElementById("regionSelect");
 
+  // Embed controls
+  const embedControls = document.getElementById("embedControls");
+  const panelToggle = document.getElementById("panelToggle");
+  const yearSelectEmbed = document.getElementById("yearSelectEmbed");
+  const quarterSelectEmbed = document.getElementById("quarterSelectEmbed");
+  const viewSelectEmbed = document.getElementById("viewSelectEmbed");
+  const regionSelectEmbed = document.getElementById("regionSelectEmbed");
+
+  // Panel stats
   const statScope = document.getElementById("statScope");
   const statRegion = document.getElementById("statRegion");
   const statPoints = document.getElementById("statPoints");
   const statSources = document.getElementById("statSources");
   const topCountriesEl = document.getElementById("topCountries");
+  const panel = document.getElementById("panel");
 
-  function setStatusOk(msg){ if (!EMBED) { statusEl.className="ok"; statusEl.textContent=msg; } }
-  function setStatusErr(msg){ if (!EMBED) { statusEl.className="err"; statusEl.textContent=msg; } }
+  function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
+  function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
 
   function escapeHtml(s) {
     return (s || "").toString()
@@ -279,8 +327,8 @@
     oceania:{latMin:-50,latMax:5,lonMin:110,lonMax:180},
   };
 
-  function regionLabel(){
-    const opt = regionSelect.options[regionSelect.selectedIndex];
+  function regionLabel(sel){
+    const opt = sel.options[sel.selectedIndex];
     return opt ? opt.textContent : "-";
   }
 
@@ -296,6 +344,12 @@
     quarterLabel.style.display  = is2025 ? "" : "none";
     viewSelect.style.display    = is2025 ? "none" : "";
     viewLabel.style.display     = is2025 ? "none" : "";
+
+    // Embed selects visibility
+    if (EMBED){
+      quarterSelectEmbed.style.display = is2025 ? "" : "none";
+      viewSelectEmbed.style.display    = is2025 ? "none" : "";
+    }
   }
 
   function dataUrl(){
@@ -314,7 +368,7 @@
     return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
   }
 
-  // Műhold (Esri)
+  // Map (Esri satellite)
   const map = L.map('map').setView([20,0],2);
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
@@ -399,7 +453,7 @@
     map.addLayer(clusterLayer);
 
     statScope.textContent = scopeLabel();
-    statRegion.textContent = regionLabel();
+    statRegion.textContent = regionLabel(regionSelect);
     statPoints.textContent = String(shown);
     statSources.textContent = String(sourcesTotal);
 
@@ -413,7 +467,7 @@
       topCountriesEl.appendChild(li);
     }
 
-    setStatusOk(`OK: ${scopeLabel()} • Régió: ${regionLabel()} • Pontok: ${shown}`);
+    setStatusOk(`OK: ${scopeLabel()} • Régió: ${regionLabel(regionSelect)} • Pontok: ${shown}`);
   }
 
   async function loadData(){
@@ -431,15 +485,71 @@
     }
   }
 
+  // Sync embed controls
+  function cloneOptions(fromSel, toSel){
+    toSel.innerHTML = "";
+    for (const opt of fromSel.options){
+      const o = document.createElement("option");
+      o.value = opt.value;
+      o.textContent = opt.textContent;
+      if (opt.selected) o.selected = true;
+      toSel.appendChild(o);
+    }
+  }
+  function syncMainToEmbed(){
+    if (!EMBED) return;
+    cloneOptions(yearSelect, yearSelectEmbed);
+    cloneOptions(quarterSelect, quarterSelectEmbed);
+    cloneOptions(viewSelect, viewSelectEmbed);
+    cloneOptions(regionSelect, regionSelectEmbed);
+    setControls();
+  }
+
+  // Main events
   yearSelect.addEventListener("change", () => {
     if (yearSelect.value === "2025") quarterSelect.value = "Q4";
     else viewSelect.value = "live";
+    syncMainToEmbed();
     loadData();
   });
+  quarterSelect.addEventListener("change", () => { syncMainToEmbed(); loadData(); });
+  viewSelect.addEventListener("change", () => { syncMainToEmbed(); loadData(); });
+  regionSelect.addEventListener("change", () => { syncMainToEmbed(); render(); });
 
-  quarterSelect.addEventListener("change", loadData);
-  viewSelect.addEventListener("change", loadData);
-  regionSelect.addEventListener("change", render);
+  // Embed events -> update main -> load/render
+  if (EMBED){
+    syncMainToEmbed();
+
+    yearSelectEmbed.addEventListener("change", () => {
+      yearSelect.value = yearSelectEmbed.value;
+      if (yearSelect.value === "2025") quarterSelect.value = "Q4";
+      else viewSelect.value = "live";
+      syncMainToEmbed();
+      loadData();
+    });
+
+    quarterSelectEmbed.addEventListener("change", () => {
+      quarterSelect.value = quarterSelectEmbed.value;
+      syncMainToEmbed();
+      loadData();
+    });
+
+    viewSelectEmbed.addEventListener("change", () => {
+      viewSelect.value = viewSelectEmbed.value;
+      syncMainToEmbed();
+      loadData();
+    });
+
+    regionSelectEmbed.addEventListener("change", () => {
+      regionSelect.value = regionSelectEmbed.value;
+      syncMainToEmbed();
+      render();
+    });
+
+    panelToggle.addEventListener("click", () => {
+      panel.classList.toggle("hidden");
+    });
+  }
 
   loadData();
 </script>
