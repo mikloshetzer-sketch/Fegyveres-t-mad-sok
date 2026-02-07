@@ -16,9 +16,9 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Build 2025 quarters (exports)
+      - name: Build 2025 quarters (fast)
         run: |
-          python scripts/build_2025_quarters_from_exports.py
+          python scripts/build_2025_quarters_fast.py
 
       - name: Commit & push if changed
         run: |
