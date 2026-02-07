@@ -22,19 +22,8 @@
       box-sizing:border-box;
       gap:12px;
     }
-    .left{ display:flex; flex-direction:column; gap:4px; }
-    .title{ font-size:18px; font-weight:800; line-height:1.1; }
-    .subtitle{ font-size:12px; opacity:.8; }
-
-    .right{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-size:14px;
-      flex-wrap:wrap;
-      justify-content:flex-end;
-    }
-    select{ padding:6px 8px; font-size:14px; }
+    .title{ font-size:18px; font-weight:800; }
+    .right{ display:flex; gap:10px; flex-wrap:wrap; }
 
     #status{
       padding: 8px 12px;
@@ -42,74 +31,33 @@
       border-bottom: 1px solid #eee;
       background: #fafafa;
     }
-    #status.ok{ color:#0a7a2f; }
-    #status.err{ color:#b00020; }
 
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
-      min-height: 0;
-    }
-    #map{
-      flex: 1 1 auto;
-      min-width: 0;
-      background:#f3f3f3;
-    }
-    #panel{
-      width: 340px;
-      border-left: 1px solid #e6e6e6;
-      background: #fff;
-      padding: 12px;
-      box-sizing: border-box;
-      overflow: auto;
-    }
-    .panel-title{
-      font-weight: 800;
-      margin: 0 0 8px 0;
-      font-size: 14px;
-    }
-    .small{
-      font-size: 12px;
-      opacity: .75;
-      line-height: 1.35;
-      margin: 0 0 12px 0;
-    }
-    .stat{
-      display:flex;
-      justify-content:space-between;
-      gap:12px;
-      font-size: 13px;
-      margin: 6px 0;
-    }
-    .divider{
-      height:1px;
-      background:#eee;
-      margin: 12px 0;
     }
 
-    @media (max-width: 900px){
-      #panel{ display:none; }
-      header{ height: 140px; }
-      #content{ height: calc(100% - 140px - 41px); }
+    #map{ flex:1; }
+
+    #panel{
+      width: 340px;
+      border-left:1px solid #eee;
+      padding:10px;
+      background:white;
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="left">
-    <div class="title">OSINT fegyveres incidensek térképe</div>
-    <div class="subtitle">2025: Q1–Q4 • 2026: LIVE / Részletes • régió + típus statisztika</div>
-  </div>
+  <div class="title">OSINT fegyveres incidensek térképe</div>
 
   <div class="right">
-    <label>Év:</label>
     <select id="yearSelect">
       <option value="2025" selected>2025</option>
       <option value="2026">2026</option>
     </select>
 
-    <label id="quarterLabel">Negyedév:</label>
     <select id="quarterSelect">
       <option value="Q1">Q1</option>
       <option value="Q2">Q2</option>
@@ -117,27 +65,17 @@
       <option value="Q4" selected>Q4</option>
     </select>
 
-    <label id="viewLabel" style="display:none;">Nézet:</label>
     <select id="viewSelect" style="display:none;">
-      <option value="live" selected>LIVE</option>
-      <option value="raw">Részletes</option>
+      <option value="live">LIVE</option>
+      <option value="raw">RAW</option>
     </select>
 
-    <label>Régió:</label>
     <select id="regionSelect">
-      <option value="global" selected>Világ</option>
+      <option value="global">Világ</option>
       <option value="europe">Európa</option>
       <option value="eastern_europe">Kelet-Európa</option>
       <option value="balkans">Balkán</option>
       <option value="middle_east">Közel-Kelet</option>
-      <option value="north_africa">Észak-Afrika</option>
-      <option value="sub_saharan_africa">Szubszaharai Afrika</option>
-      <option value="north_america">Észak-Amerika</option>
-      <option value="latin_america">Latin-Amerika</option>
-      <option value="asia">Ázsia</option>
-      <option value="south_asia">Dél-Ázsia</option>
-      <option value="east_asia">Kelet-Ázsia</option>
-      <option value="oceania">Óceánia</option>
     </select>
   </div>
 </header>
@@ -146,18 +84,9 @@
 
 <div id="content">
   <div id="map"></div>
-
-  <aside id="panel">
-    <div class="panel-title">Statisztika</div>
-    <div class="stat"><span>Nézet</span><span id="statScope">-</span></div>
-    <div class="stat"><span>Régió</span><span id="statRegion">-</span></div>
-    <div class="stat"><span>Pontok</span><span id="statPoints">-</span></div>
-
-    <div class="divider"></div>
-
-    <div class="panel-title">Támadás típus</div>
-    <canvas id="typeChart" width="320" height="220"></canvas>
-  </aside>
+  <div id="panel">
+    <canvas id="typeChart" width="300" height="200"></canvas>
+  </div>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -165,32 +94,96 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script>
+const map = L.map('map').setView([20,0],2);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+
+let clusterLayer = null;
+let chart = null;
+let currentFeatures = [];
+
 const REGIONS = {
   global:null,
-
-  europe:{latMin:35, latMax:72, lonMin:-25, lonMax:45},
-
-  eastern_europe:{latMin:44, latMax:65, lonMin:20, lonMax:60},
-
-  balkans:{latMin:37, latMax:48, lonMin:13, lonMax:30},
-
-  middle_east:{latMin:12, latMax:42, lonMin:25, lonMax:70},
-  north_africa:{latMin:15, latMax:37, lonMin:-20, lonMax:40},
-  sub_saharan_africa:{latMin:-35, latMax:15, lonMin:-20, lonMax:55},
-
-  north_america:{latMin:7, latMax:75, lonMin:-170, lonMax:-50},
-  latin_america:{latMin:-60, latMax:33, lonMin:-120, lonMax:-30},
-
-  asia:{latMin:5, latMax:80, lonMin:45, lonMax:180},
-  south_asia:{latMin:5, latMax:35, lonMin:60, lonMax:100},
-  east_asia:{latMin:18, latMax:55, lonMin:100, lonMax:150},
-
-  oceania:{latMin:-50, latMax:5, lonMin:110, lonMax:180},
+  europe:{latMin:35,latMax:72,lonMin:-25,lonMax:45},
+  eastern_europe:{latMin:44,latMax:65,lonMin:20,lonMax:60},
+  balkans:{latMin:37,latMax:48,lonMin:13,lonMax:30},
+  middle_east:{latMin:12,latMax:42,lonMin:25,lonMax:70}
 };
-</script>
 
-<script>
-/* a JS többi része NEM változott – a régiók automatikusan működnek */
+function dataUrl(){
+  const year = yearSelect.value;
+  if(year==="2025") return `./data/attacks_2025_${quarterSelect.value}.geojson`;
+  return viewSelect.value==="raw"
+    ? "./data/attacks_2026_raw.geojson"
+    : "./data/attacks_2026_live.geojson";
+}
+
+function passesRegion(lat,lon){
+  const r = REGIONS[regionSelect.value];
+  if(!r) return true;
+  return lat>=r.latMin && lat<=r.latMax && lon>=r.lonMin && lon<=r.lonMax;
+}
+
+function render(){
+  if(clusterLayer) map.removeLayer(clusterLayer);
+  clusterLayer=L.markerClusterGroup();
+
+  const typeCounts={};
+
+  for(const f of currentFeatures){
+    const c=f.geometry.coordinates;
+    const lat=c[1],lon=c[0];
+    if(!passesRegion(lat,lon)) continue;
+
+    const p=f.properties||{};
+    const type=p.attack_type||"other";
+
+    typeCounts[type]=(typeCounts[type]||0)+1;
+
+    const m=L.marker([lat,lon]);
+    m.bindPopup(p.location+"<br>"+p.date);
+    clusterLayer.addLayer(m);
+  }
+
+  map.addLayer(clusterLayer);
+
+  updateChart(typeCounts);
+}
+
+function updateChart(counts){
+  const labels=Object.keys(counts);
+  const data=Object.values(counts);
+
+  if(!chart){
+    chart=new Chart(typeChart,{type:"bar",
+      data:{labels,datasets:[{data}]},
+      options:{responsive:false}
+    });
+  }else{
+    chart.data.labels=labels;
+    chart.data.datasets[0].data=data;
+    chart.update();
+  }
+}
+
+async function loadData(){
+  const r=await fetch(dataUrl());
+  const data=await r.json();
+  currentFeatures=data.features||[];
+  render();
+  status.innerText="Betöltve: "+currentFeatures.length+" pont";
+}
+
+yearSelect.onchange=()=>{
+  viewSelect.style.display=yearSelect.value==="2026"?"":"none";
+  quarterSelect.style.display=yearSelect.value==="2025"?"":"none";
+  loadData();
+};
+
+quarterSelect.onchange=loadData;
+viewSelect.onchange=loadData;
+regionSelect.onchange=render;
+
+loadData();
 </script>
 
 </body>
