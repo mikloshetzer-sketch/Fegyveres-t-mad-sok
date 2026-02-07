@@ -1,0 +1,33 @@
+name: Build 2025 quarterly data (one-off)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Build 2025 quarters
+        run: |
+          python scripts/build_2025_quarters.py
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/data/attacks_2025_Q1.geojson docs/data/attacks_2025_Q2.geojson docs/data/attacks_2025_Q3.geojson docs/data/attacks_2025_Q4.geojson
+          if git diff --cached --quiet; then
+            echo "No changes."
+          else
+            git commit -m "Build 2025 quarterly datasets"
+            git push
+          fi
