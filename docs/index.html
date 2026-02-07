@@ -22,8 +22,19 @@
       box-sizing:border-box;
       gap:12px;
     }
-    .title{ font-size:18px; font-weight:800; }
-    .right{ display:flex; gap:10px; flex-wrap:wrap; }
+    .left{ display:flex; flex-direction:column; gap:4px; }
+    .title{ font-size:18px; font-weight:800; line-height:1.1; }
+    .subtitle{ font-size:12px; opacity:.8; }
+
+    .right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    select{ padding:6px 8px; font-size:14px; }
 
     #status{
       padding: 8px 12px;
@@ -31,33 +42,72 @@
       border-bottom: 1px solid #eee;
       background: #fafafa;
     }
+    #status.ok{ color:#0a7a2f; }
+    #status.err{ color:#b00020; }
 
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
+      min-height: 0;
+    }
+    #map{
+      flex: 1 1 auto;
+      min-width: 0;
+      background:#111;
+    }
+    #panel{
+      width: 360px;
+      border-left: 1px solid #e6e6e6;
+      background: #fff;
+      padding: 12px;
+      box-sizing: border-box;
+      overflow: auto;
     }
 
-    #map{ flex:1; }
+    .panel-title{ font-weight: 800; margin: 0 0 8px 0; font-size: 14px; }
+    .small{ font-size: 12px; opacity: .75; line-height: 1.35; margin: 0 0 12px 0; }
+    .stat{ display:flex; justify-content:space-between; gap:12px; font-size: 13px; margin: 6px 0; }
+    .divider{ height:1px; background:#eee; margin: 12px 0; }
 
-    #panel{
-      width: 340px;
-      border-left:1px solid #eee;
-      padding:10px;
-      background:white;
+    .src-list { margin: 6px 0 0 0; padding-left: 18px; }
+    .src-list li { margin: 4px 0; }
+
+    /* Top list */
+    .toplist{ margin: 8px 0 0 0; padding-left: 18px; }
+    .toplist li{ margin: 4px 0; font-size: 13px; }
+    .pill{
+      display:inline-block;
+      padding: 2px 8px;
+      border: 1px solid #e6e6e6;
+      border-radius: 999px;
+      font-size: 12px;
+      margin-left: 6px;
+      opacity: .85;
+    }
+
+    @media (max-width: 980px){
+      #panel{ display:none; }
+      header{ height: 140px; }
+      #content{ height: calc(100% - 140px - 41px); }
     }
   </style>
 </head>
 <body>
 
 <header>
-  <div class="title">OSINT fegyveres incidensek térképe</div>
+  <div class="left">
+    <div class="title">OSINT fegyveres incidensek térképe</div>
+    <div class="subtitle">Műhold nézet • 2025: Q1–Q4 • 2026: LIVE/RAW (14 nap) • régió + statisztika</div>
+  </div>
 
   <div class="right">
+    <label>Év:</label>
     <select id="yearSelect">
       <option value="2025" selected>2025</option>
       <option value="2026">2026</option>
     </select>
 
+    <label id="quarterLabel">Negyedév:</label>
     <select id="quarterSelect">
       <option value="Q1">Q1</option>
       <option value="Q2">Q2</option>
@@ -65,17 +115,27 @@
       <option value="Q4" selected>Q4</option>
     </select>
 
+    <label id="viewLabel" style="display:none;">Nézet:</label>
     <select id="viewSelect" style="display:none;">
-      <option value="live">LIVE</option>
+      <option value="live" selected>LIVE</option>
       <option value="raw">RAW</option>
     </select>
 
+    <label>Régió:</label>
     <select id="regionSelect">
-      <option value="global">Világ</option>
+      <option value="global" selected>Világ</option>
       <option value="europe">Európa</option>
       <option value="eastern_europe">Kelet-Európa</option>
       <option value="balkans">Balkán</option>
       <option value="middle_east">Közel-Kelet</option>
+      <option value="north_africa">Észak-Afrika</option>
+      <option value="sub_saharan_africa">Szubszaharai Afrika</option>
+      <option value="north_america">Észak-Amerika</option>
+      <option value="latin_america">Latin-Amerika</option>
+      <option value="asia">Ázsia</option>
+      <option value="south_asia">Dél-Ázsia</option>
+      <option value="east_asia">Kelet-Ázsia</option>
+      <option value="oceania">Óceánia</option>
     </select>
   </div>
 </header>
@@ -84,9 +144,25 @@
 
 <div id="content">
   <div id="map"></div>
-  <div id="panel">
-    <canvas id="typeChart" width="300" height="200"></canvas>
-  </div>
+
+  <aside id="panel">
+    <div class="panel-title">Összegzés</div>
+    <div class="stat"><span><b>Nézet</b></span><span id="statScope">-</span></div>
+    <div class="stat"><span><b>Régió</b></span><span id="statRegion">-</span></div>
+    <div class="stat"><span><b>Pontok</b></span><span id="statPoints">-</span></div>
+    <div class="stat"><span><b>Forráslinkek</b></span><span id="statSources">-</span></div>
+
+    <div class="divider"></div>
+
+    <div class="panel-title">Támadás típus szerinti bontás</div>
+    <canvas id="typeChart" width="330" height="220"></canvas>
+
+    <div class="divider"></div>
+
+    <div class="panel-title">Top országok (kiválasztott régióban)</div>
+    <div class="small">Az ország mező a helyszín szövegéből (utolsó elem) van becsülve, ezért közelítő.</div>
+    <ol class="toplist" id="topCountries"></ol>
+  </aside>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -94,96 +170,257 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script>
-const map = L.map('map').setView([20,0],2);
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+  const statusEl = document.getElementById("status");
+  const yearSelect = document.getElementById("yearSelect");
+  const quarterSelect = document.getElementById("quarterSelect");
+  const quarterLabel = document.getElementById("quarterLabel");
+  const viewSelect = document.getElementById("viewSelect");
+  const viewLabel = document.getElementById("viewLabel");
+  const regionSelect = document.getElementById("regionSelect");
 
-let clusterLayer = null;
-let chart = null;
-let currentFeatures = [];
+  const statScope = document.getElementById("statScope");
+  const statRegion = document.getElementById("statRegion");
+  const statPoints = document.getElementById("statPoints");
+  const statSources = document.getElementById("statSources");
+  const topCountriesEl = document.getElementById("topCountries");
 
-const REGIONS = {
-  global:null,
-  europe:{latMin:35,latMax:72,lonMin:-25,lonMax:45},
-  eastern_europe:{latMin:44,latMax:65,lonMin:20,lonMax:60},
-  balkans:{latMin:37,latMax:48,lonMin:13,lonMax:30},
-  middle_east:{latMin:12,latMax:42,lonMin:25,lonMax:70}
-};
+  function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
+  function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
 
-function dataUrl(){
-  const year = yearSelect.value;
-  if(year==="2025") return `./data/attacks_2025_${quarterSelect.value}.geojson`;
-  return viewSelect.value==="raw"
-    ? "./data/attacks_2026_raw.geojson"
-    : "./data/attacks_2026_live.geojson";
-}
-
-function passesRegion(lat,lon){
-  const r = REGIONS[regionSelect.value];
-  if(!r) return true;
-  return lat>=r.latMin && lat<=r.latMax && lon>=r.lonMin && lon<=r.lonMax;
-}
-
-function render(){
-  if(clusterLayer) map.removeLayer(clusterLayer);
-  clusterLayer=L.markerClusterGroup();
-
-  const typeCounts={};
-
-  for(const f of currentFeatures){
-    const c=f.geometry.coordinates;
-    const lat=c[1],lon=c[0];
-    if(!passesRegion(lat,lon)) continue;
-
-    const p=f.properties||{};
-    const type=p.attack_type||"other";
-
-    typeCounts[type]=(typeCounts[type]||0)+1;
-
-    const m=L.marker([lat,lon]);
-    m.bindPopup(p.location+"<br>"+p.date);
-    clusterLayer.addLayer(m);
+  function escapeHtml(s) {
+    return (s || "").toString()
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
   }
 
-  map.addLayer(clusterLayer);
+  function getSources(p){
+    const list = [];
+    if (Array.isArray(p.sources)) {
+      for (const u of p.sources) if (u && !list.includes(u)) list.push(u);
+    }
+    if (p.sourceurl && !list.includes(p.sourceurl)) list.push(p.sourceurl);
+    return list;
+  }
 
-  updateChart(typeCounts);
-}
+  function popupHtml(p){
+    const date = escapeHtml(p.date || "-");
+    const loc  = escapeHtml(p.location || "-");
+    const type = escapeHtml(p.attack_type || "-");
+    const sources = getSources(p);
+    const sourcesCount =
+      (typeof p.sources_count === "number") ? p.sources_count : sources.length;
 
-function updateChart(counts){
-  const labels=Object.keys(counts);
-  const data=Object.values(counts);
+    let srcHtml = `<div><b>Források:</b> ${sourcesCount || 0}</div>`;
+    if (sources.length){
+      const items = sources.slice(0, 8).map((u,i)=>(
+        `<li><a href="${u}" target="_blank" rel="noopener">Forrás ${i+1}</a></li>`
+      )).join("");
+      srcHtml += `<ul class="src-list">${items}</ul>`;
+    }
 
-  if(!chart){
-    chart=new Chart(typeChart,{type:"bar",
-      data:{labels,datasets:[{data}]},
-      options:{responsive:false}
+    return `<b>Esemény</b><br>
+      Dátum: ${date}<br>
+      Helyszín: ${loc}<br>
+      Típus: ${type}<br>
+      ${srcHtml}`;
+  }
+
+  // Régiók: bounding box
+  const REGIONS = {
+    global:null,
+    europe:{latMin:35,latMax:72,lonMin:-25,lonMax:45},
+    eastern_europe:{latMin:44,latMax:65,lonMin:20,lonMax:60},
+    balkans:{latMin:37,latMax:48,lonMin:13,lonMax:30},
+    middle_east:{latMin:12,latMax:42,lonMin:25,lonMax:70},
+    north_africa:{latMin:15,latMax:37,lonMin:-20,lonMax:40},
+    sub_saharan_africa:{latMin:-35,latMax:15,lonMin:-20,lonMax:55},
+    north_america:{latMin:7,latMax:75,lonMin:-170,lonMax:-50},
+    latin_america:{latMin:-60,latMax:33,lonMin:-120,lonMax:-30},
+    asia:{latMin:5,latMax:80,lonMin:45,lonMax:180},
+    south_asia:{latMin:5,latMax:35,lonMin:60,lonMax:100},
+    east_asia:{latMin:18,latMax:55,lonMin:100,lonMax:150},
+    oceania:{latMin:-50,latMax:5,lonMin:110,lonMax:180},
+  };
+
+  function regionLabel(){
+    const opt = regionSelect.options[regionSelect.selectedIndex];
+    return opt ? opt.textContent : "-";
+  }
+
+  function scopeLabel(){
+    const year = yearSelect.value;
+    if (year === "2025") return `2025 ${quarterSelect.value}`;
+    return `2026 ${viewSelect.value === "raw" ? "RAW" : "LIVE"}`;
+  }
+
+  function setControls(){
+    const is2025 = yearSelect.value === "2025";
+    quarterSelect.style.display = is2025 ? "" : "none";
+    quarterLabel.style.display  = is2025 ? "" : "none";
+    viewSelect.style.display    = is2025 ? "none" : "";
+    viewLabel.style.display     = is2025 ? "none" : "";
+  }
+
+  function dataUrl(){
+    const year = yearSelect.value;
+    if (year === "2025"){
+      return `./data/attacks_2025_${quarterSelect.value}.geojson`;
+    }
+    return (viewSelect.value === "raw")
+      ? "./data/attacks_2026_raw.geojson"
+      : "./data/attacks_2026_live.geojson";
+  }
+
+  function passesRegion(lat, lon){
+    const box = REGIONS[regionSelect.value];
+    if (!box) return true;
+    return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
+  }
+
+  // --- Map: műhold (Esri World Imagery) ---
+  const map = L.map('map').setView([20,0],2);
+
+  L.tileLayer(
+    "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
+    { maxZoom: 18, attribution: "Tiles &copy; Esri" }
+  ).addTo(map);
+
+  let clusterLayer = null;
+  let chart = null;
+  let currentFeatures = [];
+
+  function updateChart(counts){
+    const labels = ["assault","fight","mass_violence","other"];
+    const data = [
+      counts.assault || 0,
+      counts.fight || 0,
+      counts.mass_violence || 0,
+      counts.other || 0
+    ];
+
+    if (!chart){
+      chart = new Chart(document.getElementById("typeChart"), {
+        type: "bar",
+        data: { labels, datasets: [{ label: "Események", data }] },
+        options: {
+          responsive: false,
+          plugins: { legend: { display: false } },
+          scales: { y: { beginAtZero: true } }
+        }
+      });
+    } else {
+      chart.data.labels = labels;
+      chart.data.datasets[0].data = data;
+      chart.update();
+    }
+  }
+
+  function guessCountryFromLocation(loc){
+    // pl. "Vienna, Wien, Austria" -> "Austria"
+    if (!loc) return "Unknown";
+    const parts = loc.split(",").map(s => s.trim()).filter(Boolean);
+    if (!parts.length) return "Unknown";
+    return parts[parts.length - 1];
+  }
+
+  function render(){
+    if (clusterLayer) map.removeLayer(clusterLayer);
+    clusterLayer = L.markerClusterGroup({
+      showCoverageOnHover: false,
+      spiderfyOnMaxZoom: true,
+      disableClusteringAtZoom: 10
     });
-  }else{
-    chart.data.labels=labels;
-    chart.data.datasets[0].data=data;
-    chart.update();
+
+    const counts = {assault:0, fight:0, mass_violence:0, other:0};
+    let shown = 0;
+    let sourcesTotal = 0;
+
+    const countryCounts = new Map();
+
+    for (const f of currentFeatures){
+      const c = (f.geometry || {}).coordinates || [];
+      if (c.length < 2) continue;
+      const lon = c[0], lat = c[1];
+      if (!passesRegion(lat, lon)) continue;
+
+      const p = f.properties || {};
+      const t = p.attack_type || "other";
+
+      if (t === "assault") counts.assault++;
+      else if (t === "fight") counts.fight++;
+      else if (t === "mass_violence") counts.mass_violence++;
+      else counts.other++;
+
+      const srcs = getSources(p);
+      sourcesTotal += srcs.length;
+
+      const country = guessCountryFromLocation(p.location || "");
+      countryCounts.set(country, (countryCounts.get(country) || 0) + 1);
+
+      const m = L.marker([lat, lon]);
+      m.bindPopup(popupHtml(p));
+      clusterLayer.addLayer(m);
+      shown++;
+    }
+
+    map.addLayer(clusterLayer);
+
+    // panel
+    statScope.textContent = scopeLabel();
+    statRegion.textContent = regionLabel();
+    statPoints.textContent = String(shown);
+    statSources.textContent = String(sourcesTotal);
+
+    updateChart(counts);
+
+    // Top countries
+    topCountriesEl.innerHTML = "";
+    const top = Array.from(countryCounts.entries())
+      .sort((a,b)=>b[1]-a[1])
+      .slice(0, 5);
+
+    for (const [country, n] of top){
+      const li = document.createElement("li");
+      li.innerHTML = `${escapeHtml(country)} <span class="pill">${n}</span>`;
+      topCountriesEl.appendChild(li);
+    }
+
+    setStatusOk(`OK: ${scopeLabel()} • Régió: ${regionLabel()} • Pontok: ${shown}`);
   }
-}
 
-async function loadData(){
-  const r=await fetch(dataUrl());
-  const data=await r.json();
-  currentFeatures=data.features||[];
-  render();
-  status.innerText="Betöltve: "+currentFeatures.length+" pont";
-}
+  async function loadData(){
+    try{
+      setControls();
+      setStatusOk("Betöltés…");
 
-yearSelect.onchange=()=>{
-  viewSelect.style.display=yearSelect.value==="2026"?"":"none";
-  quarterSelect.style.display=yearSelect.value==="2025"?"":"none";
+      const url = dataUrl();
+      const r = await fetch(url, { cache: "no-store" });
+      if (!r.ok) throw new Error(`Nem találom az adatfájlt: ${url} (HTTP ${r.status})`);
+
+      const data = await r.json();
+      currentFeatures = data.features || [];
+      render();
+    } catch(e){
+      setStatusErr("HIBA: " + e.message);
+    }
+  }
+
+  // Events
+  yearSelect.addEventListener("change", () => {
+    if (yearSelect.value === "2025") quarterSelect.value = "Q4";
+    else viewSelect.value = "live";
+    loadData();
+  });
+
+  quarterSelect.addEventListener("change", loadData);
+  viewSelect.addEventListener("change", loadData);
+  regionSelect.addEventListener("change", render);
+
+  // Init
   loadData();
-};
-
-quarterSelect.onchange=loadData;
-viewSelect.onchange=loadData;
-regionSelect.onchange=render;
-
-loadData();
 </script>
 
 </body>
