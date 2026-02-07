@@ -1,18 +1,27 @@
 <!doctype html>
-<html>
+<html lang="hu">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>OSINT Armed Attacks Map</title>
+  <title>OSINT fegyveres incidensek térképe</title>
 
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.default.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
   <style>
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; background:#f2f2f2; }
 
-    /* Normal header (not embed) */
+    /* ----- Force cluster colors even if WP/theme applies filters ----- */
+    .marker-cluster, .marker-cluster * { filter: none !important; }
+    .marker-cluster-small { background-color: rgba(181, 226, 140, 0.6) !important; }
+    .marker-cluster-small div { background-color: rgba(110, 204, 57, 0.75) !important; }
+    .marker-cluster-medium { background-color: rgba(241, 211, 87, 0.6) !important; }
+    .marker-cluster-medium div { background-color: rgba(240, 194, 12, 0.75) !important; }
+    .marker-cluster-large { background-color: rgba(253, 156, 115, 0.6) !important; }
+    .marker-cluster-large div { background-color: rgba(241, 128, 23, 0.75) !important; }
+
+    /* -------- Normal header (non-embed) -------- */
     header{
       height: 110px;
       padding: 10px 12px;
@@ -36,7 +45,7 @@
       flex-wrap:wrap;
       justify-content:flex-end;
     }
-    select{ padding:6px 8px; font-size:14px; }
+    select{ padding:6px 8px; font-size:14px; border-radius:10px; border:1px solid #ddd; background:#fff; }
 
     #status{
       padding: 8px 12px;
@@ -47,7 +56,7 @@
     #status.ok{ color:#0a7a2f; }
     #status.err{ color:#b00020; }
 
-    /* Layout */
+    /* -------- Layout -------- */
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
@@ -60,7 +69,7 @@
       background:#111;
     }
 
-    /* Right panel (normal mode) */
+    /* Right panel (normal) */
     #panel{
       width: 360px;
       border-left: 1px solid #e6e6e6;
@@ -90,11 +99,26 @@
       background:#fff;
     }
 
-    /* EMBED MODE */
+    /* -------- Embed mode -------- */
     body.embed header, body.embed #status { display:none; }
     body.embed #content { height: 100%; }
 
-    /* Floating controls in embed mode */
+    /* V2 badge (always visible; helps to verify correct build) */
+    #v2badge{
+      position: fixed;
+      z-index: 99999;
+      top: 10px;
+      left: 10px;
+      background: #ff0;
+      padding: 6px 10px;
+      font-weight: 900;
+      border: 2px solid #000;
+      border-radius: 10px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    }
+    body.embed #v2badge{ top: 10px; left: 10px; }
+
+    /* Floating controls (embed only) */
     #embedControls{
       display:none;
       position:absolute;
@@ -108,14 +132,11 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.18);
       backdrop-filter: blur(4px);
       max-width: calc(100% - 24px);
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
     }
-    body.embed #embedControls{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }
-
-    #embedControls select{
-      padding: 6px 8px;
-      font-size: 13px;
-      border-radius: 10px;
-    }
+    body.embed #embedControls{ display:flex; }
 
     #panelToggle{
       border: 1px solid rgba(0,0,0,0.15);
@@ -124,12 +145,13 @@
       padding: 6px 10px;
       cursor: pointer;
       font-size: 13px;
+      font-weight: 700;
     }
 
-    /* Panel overlay in embed mode */
+    /* Panel overlay in embed */
     body.embed #panel{
       position:absolute;
-      top: 64px; /* controls alatt */
+      top: 64px;
       right: 10px;
       width: 360px;
       max-height: calc(100% - 76px);
@@ -142,15 +164,24 @@
     }
     body.embed #panel.hidden{ display:none; }
 
-    /* Small iframe / mobile: make panel narrower */
+    /* Small widths */
     @media (max-width: 900px){
-      body.embed #panel{ width: min(92vw, 360px); max-height: 55%; top: 64px; }
+      body.embed #panel{
+        width: min(92vw, 360px);
+        max-height: 55%;
+      }
       body:not(.embed) #content{ flex-direction: column; }
-      body:not(.embed) #panel{ width: 100%; border-left:none; border-top:1px solid #e6e6e6; }
+      body:not(.embed) #panel{
+        width: 100%;
+        border-left:none;
+        border-top:1px solid #e6e6e6;
+      }
     }
   </style>
 </head>
 <body>
+
+<div id="v2badge">V2 AKTÍV</div>
 
 <header>
   <div class="left">
@@ -201,10 +232,10 @@
 <div id="status">Betöltés…</div>
 
 <div id="content">
+
   <!-- Embed floating controls -->
   <div id="embedControls">
     <button id="panelToggle" type="button">📊 Panel</button>
-
     <select id="yearSelectEmbed"></select>
     <select id="quarterSelectEmbed"></select>
     <select id="viewSelectEmbed"></select>
@@ -252,7 +283,7 @@
   const regionSelect = document.getElementById("regionSelect");
 
   // Embed controls
-  const embedControls = document.getElementById("embedControls");
+  const panel = document.getElementById("panel");
   const panelToggle = document.getElementById("panelToggle");
   const yearSelectEmbed = document.getElementById("yearSelectEmbed");
   const quarterSelectEmbed = document.getElementById("quarterSelectEmbed");
@@ -265,7 +296,6 @@
   const statPoints = document.getElementById("statPoints");
   const statSources = document.getElementById("statSources");
   const topCountriesEl = document.getElementById("topCountries");
-  const panel = document.getElementById("panel");
 
   function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
   function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
@@ -345,10 +375,9 @@
     viewSelect.style.display    = is2025 ? "none" : "";
     viewLabel.style.display     = is2025 ? "none" : "";
 
-    // Embed selects visibility
     if (EMBED){
       quarterSelectEmbed.style.display = is2025 ? "" : "none";
-      viewSelectEmbed.style.display    = is2025 ? "none" : "";
+      viewSelectEmbed.style.display = is2025 ? "none" : "";
     }
   }
 
@@ -368,11 +397,11 @@
     return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
   }
 
-  // Map (Esri satellite)
+  // Map: Esri satellite
   const map = L.map('map').setView([20,0],2);
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
-    { maxZoom: 18, attribution: "Tiles &copy; Esri" }
+    { maxZoom: 18, attribution: "Tiles © Esri" }
   ).addTo(map);
 
   let clusterLayer = null;
@@ -485,7 +514,7 @@
     }
   }
 
-  // Sync embed controls
+  // ---- Embed controls sync ----
   function cloneOptions(fromSel, toSel){
     toSel.innerHTML = "";
     for (const opt of fromSel.options){
@@ -551,6 +580,7 @@
     });
   }
 
+  // Init
   loadData();
 </script>
 
