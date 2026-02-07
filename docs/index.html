@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>OSINT Armed Attacks Map</title>
 
-  <!-- Leaflet CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css">
-  <!-- MarkerCluster CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
@@ -15,7 +13,7 @@
     html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
 
     header{
-      height: 86px;
+      height: 96px;
       padding: 10px 12px;
       border-bottom: 1px solid #ddd;
       display:flex;
@@ -24,12 +22,19 @@
       box-sizing:border-box;
       gap:12px;
     }
-
     .left{ display:flex; flex-direction:column; gap:4px; }
     .title{ font-size:18px; font-weight:800; line-height:1.1; }
     .subtitle{ font-size:12px; opacity:.8; }
 
-    .right{ display:flex; align-items:center; gap:10px; font-size:14px; white-space:nowrap; flex-wrap:wrap; justify-content:flex-end;}
+    .right{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-size:14px;
+      white-space:nowrap;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
     select{ padding:6px 8px; font-size:14px; }
 
     #status{
@@ -41,7 +46,7 @@
     #status.ok{ color:#0a7a2f; }
     #status.err{ color:#b00020; }
 
-    #map{ height: calc(100% - 86px - 41px); background:#f3f3f3; }
+    #map{ height: calc(100% - 96px - 41px); background:#f3f3f3; }
 
     .src-list { margin: 6px 0 0 0; padding-left: 18px; }
     .src-list li { margin: 4px 0; }
@@ -53,7 +58,7 @@
 <header>
   <div class="left">
     <div class="title">OSINT fegyveres incidensek térképe</div>
-    <div class="subtitle">2026: LIVE (összevont) / Részletes (nyersebb) — gyűjtőpontokkal</div>
+    <div class="subtitle">2025: negyedévek (Q1–Q4) • 2026: LIVE / Részletes (14 nap)</div>
   </div>
 
   <div class="right">
@@ -61,6 +66,14 @@
     <select id="yearSelect">
       <option value="2025" selected>2025</option>
       <option value="2026">2026</option>
+    </select>
+
+    <label for="quarterSelect" id="quarterLabel">Negyedév:</label>
+    <select id="quarterSelect">
+      <option value="Q1">Q1</option>
+      <option value="Q2">Q2</option>
+      <option value="Q3">Q3</option>
+      <option value="Q4" selected>Q4</option>
     </select>
 
     <label for="viewSelect" id="viewLabel" style="display:none;">Nézet:</label>
@@ -75,14 +88,14 @@
 <div id="status">Betöltés…</div>
 <div id="map"></div>
 
-<!-- Leaflet JS -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js"></script>
-<!-- MarkerCluster JS -->
 <script src="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
 
 <script>
   const statusEl = document.getElementById("status");
   const yearSelect = document.getElementById("yearSelect");
+  const quarterSelect = document.getElementById("quarterSelect");
+  const quarterLabel = document.getElementById("quarterLabel");
   const viewSelect = document.getElementById("viewSelect");
   const viewLabel = document.getElementById("viewLabel");
   const viewHint  = document.getElementById("viewHint");
@@ -97,7 +110,7 @@
     attribution: '&copy; OpenStreetMap'
   }).addTo(map);
 
-  let currentLayerOrGroup = null;
+  let currentLayer = null;
 
   function escapeHtml(s) {
     return (s || "").toString()
@@ -144,33 +157,44 @@
     `;
   }
 
-  function setControlsForYear(year){
-    const show = (year === "2026");
-    viewSelect.style.display = show ? "" : "none";
-    viewLabel.style.display  = show ? "" : "none";
-    viewHint.style.display   = show ? "" : "none";
+  function setControls(){
+    const year = yearSelect.value;
+    const is2025 = (year === "2025");
+    const is2026 = (year === "2026");
+
+    // 2025: negyedév látszik
+    quarterSelect.style.display = is2025 ? "" : "none";
+    quarterLabel.style.display  = is2025 ? "" : "none";
+
+    // 2026: nézet (live/raw) látszik
+    viewSelect.style.display = is2026 ? "" : "none";
+    viewLabel.style.display  = is2026 ? "" : "none";
+    viewHint.style.display   = is2026 ? "" : "none";
   }
 
-  function dataUrl(year, view){
-    if (year === "2025") return "./data/attacks_2025.geojson";
+  function dataUrl(){
+    const year = yearSelect.value;
+    if (year === "2025"){
+      const q = quarterSelect.value;
+      return `./data/attacks_2025_${q}.geojson`;
+    }
     // 2026
-    if (view === "raw")  return "./data/attacks_2026_raw.geojson";
-    return "./data/attacks_2026_live.geojson"; // default
+    const view = viewSelect.value;
+    return (view === "raw")
+      ? "./data/attacks_2026_raw.geojson"
+      : "./data/attacks_2026_live.geojson";
   }
 
   async function loadLayer(){
     try{
-      const year = yearSelect.value;
-      const view = viewSelect.value;
+      setControls();
 
-      setControlsForYear(year);
-
-      if (currentLayerOrGroup){
-        map.removeLayer(currentLayerOrGroup);
-        currentLayerOrGroup = null;
+      if (currentLayer){
+        map.removeLayer(currentLayer);
+        currentLayer = null;
       }
 
-      const url = dataUrl(year, view);
+      const url = dataUrl();
       const r = await fetch(url, { cache: "no-store" });
       if (!r.ok) throw new Error(`Nem találom az adatfájlt: ${url} (HTTP ${r.status})`);
 
@@ -178,53 +202,55 @@
       const features = data.features || [];
       const count = features.length;
 
-      // 2026: cluster (mind LIVE, mind RAW), 2025: sima
-      if (year === "2026"){
-        const cluster = L.markerClusterGroup({
-          showCoverageOnHover: false,
-          spiderfyOnMaxZoom: true,
-          disableClusteringAtZoom: 10
-        });
+      // ✅ Mindkét év: CLUSTER + spiderfy (szétesős buborék)
+      const cluster = L.markerClusterGroup({
+        showCoverageOnHover: false,
+        spiderfyOnMaxZoom: true,
+        disableClusteringAtZoom: 10
+      });
 
-        for (const f of features){
-          const c = (f.geometry || {}).coordinates || [];
-          if (c.length < 2) continue;
-          const lon = c[0], lat = c[1];
-          const p = f.properties || {};
-          const m = L.marker([lat, lon]);
-          m.bindPopup(makePopupHtml(p));
-          cluster.addLayer(m);
-        }
-
-        currentLayerOrGroup = cluster;
-        map.addLayer(cluster);
-
-        const label = (viewSelect.value === "raw") ? "Részletes" : "LIVE";
-        setStatusOk(`OK: ${year} betöltve (${count} pont) — Nézet: ${label}.`);
-      } else {
-        const layer = L.geoJSON(data, {
-          pointToLayer: (feature, latlng) => L.circleMarker(latlng, { radius: 6 }),
-          onEachFeature: (feature, layer) => layer.bindPopup(makePopupHtml(feature.properties || {}))
-        });
-        currentLayerOrGroup = layer;
-        map.addLayer(layer);
-        setStatusOk(`OK: ${year} betöltve (${count} pont).`);
+      for (const f of features){
+        const c = (f.geometry || {}).coordinates || [];
+        if (c.length < 2) continue;
+        const lon = c[0], lat = c[1];
+        const p = f.properties || {};
+        const m = L.marker([lat, lon]);
+        m.bindPopup(makePopupHtml(p));
+        cluster.addLayer(m);
       }
+
+      currentLayer = cluster;
+      map.addLayer(cluster);
+
+      const year = yearSelect.value;
+      if (year === "2025"){
+        setStatusOk(`OK: 2025 ${quarterSelect.value} betöltve (${count} pont).`);
+      } else {
+        const label = (viewSelect.value === "raw") ? "Részletes" : "LIVE";
+        setStatusOk(`OK: 2026 betöltve (${count} pont) — Nézet: ${label}.`);
+      }
+
     } catch(e){
       setStatusErr("HIBA: " + e.message);
     }
   }
 
   // init
-  setControlsForYear(yearSelect.value);
+  setControls();
   loadLayer();
 
   yearSelect.addEventListener("change", () => {
-    // 2026-ra váltáskor maradjon LIVE alapból
-    if (yearSelect.value === "2026") viewSelect.value = "live";
+    if (yearSelect.value === "2025"){
+      // 2025-nél alap: Q4
+      quarterSelect.value = "Q4";
+    } else {
+      // 2026-nál alap: LIVE
+      viewSelect.value = "live";
+    }
     loadLayer();
   });
 
+  quarterSelect.addEventListener("change", loadLayer);
   viewSelect.addEventListener("change", loadLayer);
 </script>
 
