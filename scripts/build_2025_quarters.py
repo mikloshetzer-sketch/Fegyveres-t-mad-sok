@@ -2,16 +2,11 @@ import json
 import time
 import urllib.parse
 from urllib.request import Request, urlopen
-from datetime import datetime
+from urllib.error import HTTPError, URLError
 
-# ✅ Stabilabb: GDELT DOC 2.0 API (cikkek) + GEO mezők
-# Megjegyzés: ez nem a klasszikus “events export”, hanem cikk-alapú feed.
-# Viszont: van GEO, van SourceURL, és deduplikálva tudjuk térképre vinni.
 DOC_API = "https://api.gdeltproject.org/api/v2/doc/doc"
-
 OUT_DIR = "docs/data"
 
-# 2025 negyedévek (UTC)
 QUARTERS = {
     "Q1": ("20250101000000", "20250331235959"),
     "Q2": ("20250401000000", "20250630235959"),
@@ -19,8 +14,6 @@ QUARTERS = {
     "Q4": ("20251001000000", "20251231235959"),
 }
 
-# Fegyveres / erőszakos relevancia (kulcsszavak, többnyelvű)
-# (később finomhangoljuk, ha túl “zajos” vagy túl szűk)
 QUERY = """
 (
   ("armed attack" OR "shooting" OR "gunman" OR "mass shooting" OR "bombing" OR "explosion" OR "IED" OR "car bomb" OR "rocket attack" OR "mortar" OR "airstrike")
@@ -29,15 +22,9 @@ QUERY = """
 """
 
 MAX_RECORDS_PER_CALL = 250
-SLEEP_SEC = 1.0
-
-# Dedupe: date + title_norm + geo (city/country) közelítése
+SLEEP_SEC = 1.2
 MAX_SOURCES_PER_EVENT = 8
-
-def http_get_json(url: str):
-    req = Request(url, headers={"User-Agent": "github-actions"})
-    with urlopen(req, timeout=120) as r:
-        return json.loads(r.read().decode("utf-8", errors="replace"))
+MAX_RETRIES = 5
 
 def norm(s: str) -> str:
     if not s:
@@ -64,13 +51,45 @@ def build_url(start_dt: str, end_dt: str, start_record: int):
     return DOC_API + "?" + urllib.parse.urlencode(params)
 
 def to_iso_date(dt_str: str) -> str:
-    # DOC API: "seendate": "20250206153000" jellegű
     if not dt_str or len(dt_str) < 8:
         return ""
     y, m, d = dt_str[0:4], dt_str[4:6], dt_str[6:8]
     if not (y.isdigit() and m.isdigit() and d.isdigit()):
         return ""
     return f"{y}-{m}-{d}"
+
+def fetch_json(url: str):
+    """
+    Visszaad (data_dict, debug_info).
+    Ha nem JSON / átmeneti hiba: retry.
+    """
+    last_err = None
+    for attempt in range(1, MAX_RETRIES + 1):
+        try:
+            req = Request(url, headers={"User-Agent": "github-actions"})
+            with urlopen(req, timeout=120) as r:
+                status = getattr(r, "status", 200)
+                raw = r.read().decode("utf-8", errors="replace")
+
+            # gyors ellenőrzés: JSON-nak kell indulnia
+            s = raw.lstrip()
+            if not (s.startswith("{") or s.startswith("[")):
+                last_err = f"Non-JSON response (HTTP {status}). First 120 chars: {raw[:120]!r}"
+                raise ValueError(last_err)
+
+            return json.loads(raw), f"ok (HTTP {status})"
+
+        except (HTTPError, URLError, TimeoutError) as e:
+            last_err = f"Network/HTTP error: {e}"
+        except json.JSONDecodeError as e:
+            last_err = f"JSON decode error: {e}"
+        except ValueError as e:
+            last_err = str(e)
+
+        # backoff
+        time.sleep(SLEEP_SEC * attempt)
+
+    raise RuntimeError(f"fetch_json failed after {MAX_RETRIES} retries. Last error: {last_err}")
 
 def write_geojson(path, features):
     with open(path, "w", encoding="utf-8") as f:
@@ -80,13 +99,11 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
     start_record = 1
     pages = 0
     total_articles = 0
-
-    # HARD DEDUPE: date + title_norm + (geo)  -> 1 pont, több forrás
     agg = {}
 
     while True:
         url = build_url(start_dt, end_dt, start_record)
-        data = http_get_json(url)
+        data, info = fetch_json(url)
         pages += 1
 
         articles = data.get("articles", []) or []
@@ -94,25 +111,21 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
             break
 
         for a in articles:
-            # Kulcs mezők (DOC API tipikus)
             seendate = a.get("seendate", "") or a.get("seenDate", "")
             date_iso = to_iso_date(seendate)
             if not date_iso:
                 continue
 
             title = a.get("title", "") or ""
-            url_src = a.get("url", "") or a.get("sourceCountry", "")  # url a fontos, sourceCountry nem link
-            if not url_src or not url_src.startswith("http"):
-                url_src = a.get("url", "") or ""
-
-            # GEO (DOC API: "location" tömbben lehet; ha nincs, skip)
-            # Tipikus: a["location"] = [{"name": "...", "lat":..., "lon":..., "country":...}, ...]
-            locs = a.get("location", []) or a.get("locations", []) or []
-            if not locs:
+            title_key = norm(title)
+            if not title_key:
                 continue
 
-            # vegyük az első geo-t (a laterieket később bővíthetjük)
-            loc0 = locs[0] if isinstance(locs, list) else None
+            locs = a.get("location", []) or a.get("locations", []) or []
+            if not isinstance(locs, list) or not locs:
+                continue
+
+            loc0 = locs[0]
             if not isinstance(loc0, dict):
                 continue
 
@@ -128,13 +141,9 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
             country = loc0.get("country", "") or ""
             geo_key = norm(f"{place}|{country}")
 
-            title_key = norm(title)
-            if not title_key:
-                # cím nélkül túl zajos dedupe
-                continue
-
             key = f"{date_iso}|{title_key}|{geo_key}"
 
+            src = a.get("url", "") or ""
             if key not in agg:
                 agg[key] = {
                     "date": date_iso,
@@ -143,23 +152,20 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
                     "lat_sum": lat,
                     "lon_sum": lon,
                     "n": 1,
-                    "sources": [a.get("url","")] if a.get("url","") else [],
-                    "sources_count": 1 if a.get("url","") else 0,
+                    "sources": [src] if src else [],
                 }
             else:
                 ev = agg[key]
                 ev["lat_sum"] += lat
                 ev["lon_sum"] += lon
                 ev["n"] += 1
-                add_unique(ev["sources"], a.get("url",""))
-                ev["sources_count"] = len(ev["sources"])
+                add_unique(ev["sources"], src)
 
             total_articles += 1
 
         start_record += MAX_RECORDS_PER_CALL
         time.sleep(SLEEP_SEC)
 
-        # védőkorlát
         if pages > 4000:
             break
 
