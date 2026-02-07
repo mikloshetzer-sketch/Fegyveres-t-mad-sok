@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
   <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, Arial; }
+    html, body { height: 100%; margin: 0; font-family: system-ui, Arial; background:#f2f2f2; }
 
     header{
       height: 110px;
@@ -21,6 +21,7 @@
       justify-content:space-between;
       box-sizing:border-box;
       gap:12px;
+      background:#f2f2f2;  /* WordPress szürkéhez passzol */
     }
     .left{ display:flex; flex-direction:column; gap:4px; }
     .title{ font-size:18px; font-weight:800; line-height:1.1; }
@@ -40,11 +41,12 @@
       padding: 8px 12px;
       font-size: 13px;
       border-bottom: 1px solid #eee;
-      background: #fafafa;
+      background: #f2f2f2; /* WordPress szürkéhez passzol */
     }
     #status.ok{ color:#0a7a2f; }
     #status.err{ color:#b00020; }
 
+    /* Normál mód */
     #content{
       height: calc(100% - 110px - 41px);
       display:flex;
@@ -58,10 +60,45 @@
     #panel{
       width: 360px;
       border-left: 1px solid #e6e6e6;
-      background: #fff;
+      background: rgba(255,255,255,0.96);
       padding: 12px;
       box-sizing: border-box;
       overflow: auto;
+      backdrop-filter: blur(4px);
+    }
+
+    /* Embed mód: térkép full, panel overlay */
+    body.embed header,
+    body.embed #status { display:none; }
+
+    body.embed #content{
+      height: 100%;
+      position: relative;
+    }
+    body.embed #panel{
+      position:absolute;
+      top: 12px;
+      right: 12px;
+      width: 360px;
+      max-height: calc(100% - 24px);
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      overflow:auto;
+    }
+
+    /* Kis szélességnél (WordPress mobil / keskeny iframe):
+       ne rejtsük el a panelt, hanem legyen kisebb és lejjebb. */
+    @media (max-width: 900px){
+      body:not(.embed) #content{ flex-direction: column; }
+      body:not(.embed) #panel{ width: 100%; border-left: none; border-top: 1px solid #e6e6e6; }
+
+      body.embed #panel{
+        width: min(92vw, 360px);
+        top: 10px;
+        right: 10px;
+        max-height: 55%;
+      }
     }
 
     .panel-title{ font-weight: 800; margin: 0 0 8px 0; font-size: 14px; }
@@ -72,7 +109,6 @@
     .src-list { margin: 6px 0 0 0; padding-left: 18px; }
     .src-list li { margin: 4px 0; }
 
-    /* Top list */
     .toplist{ margin: 8px 0 0 0; padding-left: 18px; }
     .toplist li{ margin: 4px 0; font-size: 13px; }
     .pill{
@@ -83,12 +119,7 @@
       font-size: 12px;
       margin-left: 6px;
       opacity: .85;
-    }
-
-    @media (max-width: 980px){
-      #panel{ display:none; }
-      header{ height: 140px; }
-      #content{ height: calc(100% - 140px - 41px); }
+      background:#fff;
     }
   </style>
 </head>
@@ -170,6 +201,10 @@
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 
 <script>
+  // --- Embed mód (WordPress iframe): add ?embed=1 a URL végére ---
+  const EMBED = new URLSearchParams(location.search).get("embed") === "1";
+  if (EMBED) document.body.classList.add("embed");
+
   const statusEl = document.getElementById("status");
   const yearSelect = document.getElementById("yearSelect");
   const quarterSelect = document.getElementById("quarterSelect");
@@ -184,8 +219,8 @@
   const statSources = document.getElementById("statSources");
   const topCountriesEl = document.getElementById("topCountries");
 
-  function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
-  function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
+  function setStatusOk(msg){ if (!EMBED) { statusEl.className="ok"; statusEl.textContent=msg; } }
+  function setStatusErr(msg){ if (!EMBED) { statusEl.className="err"; statusEl.textContent=msg; } }
 
   function escapeHtml(s) {
     return (s || "").toString()
@@ -228,7 +263,6 @@
       ${srcHtml}`;
   }
 
-  // Régiók: bounding box
   const REGIONS = {
     global:null,
     europe:{latMin:35,latMax:72,lonMin:-25,lonMax:45},
@@ -280,9 +314,8 @@
     return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
   }
 
-  // --- Map: műhold (Esri World Imagery) ---
+  // Műhold (Esri)
   const map = L.map('map').setView([20,0],2);
-
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
     { maxZoom: 18, attribution: "Tiles &copy; Esri" }
@@ -319,11 +352,9 @@
   }
 
   function guessCountryFromLocation(loc){
-    // pl. "Vienna, Wien, Austria" -> "Austria"
     if (!loc) return "Unknown";
     const parts = loc.split(",").map(s => s.trim()).filter(Boolean);
-    if (!parts.length) return "Unknown";
-    return parts[parts.length - 1];
+    return parts.length ? parts[parts.length - 1] : "Unknown";
   }
 
   function render(){
@@ -337,7 +368,6 @@
     const counts = {assault:0, fight:0, mass_violence:0, other:0};
     let shown = 0;
     let sourcesTotal = 0;
-
     const countryCounts = new Map();
 
     for (const f of currentFeatures){
@@ -368,7 +398,6 @@
 
     map.addLayer(clusterLayer);
 
-    // panel
     statScope.textContent = scopeLabel();
     statRegion.textContent = regionLabel();
     statPoints.textContent = String(shown);
@@ -376,12 +405,8 @@
 
     updateChart(counts);
 
-    // Top countries
     topCountriesEl.innerHTML = "";
-    const top = Array.from(countryCounts.entries())
-      .sort((a,b)=>b[1]-a[1])
-      .slice(0, 5);
-
+    const top = Array.from(countryCounts.entries()).sort((a,b)=>b[1]-a[1]).slice(0,5);
     for (const [country, n] of top){
       const li = document.createElement("li");
       li.innerHTML = `${escapeHtml(country)} <span class="pill">${n}</span>`;
@@ -395,11 +420,9 @@
     try{
       setControls();
       setStatusOk("Betöltés…");
-
       const url = dataUrl();
       const r = await fetch(url, { cache: "no-store" });
       if (!r.ok) throw new Error(`Nem találom az adatfájlt: ${url} (HTTP ${r.status})`);
-
       const data = await r.json();
       currentFeatures = data.features || [];
       render();
@@ -408,7 +431,6 @@
     }
   }
 
-  // Events
   yearSelect.addEventListener("change", () => {
     if (yearSelect.value === "2025") quarterSelect.value = "Q4";
     else viewSelect.value = "live";
@@ -419,7 +441,6 @@
   viewSelect.addEventListener("change", loadData);
   regionSelect.addEventListener("change", render);
 
-  // Init
   loadData();
 </script>
 
