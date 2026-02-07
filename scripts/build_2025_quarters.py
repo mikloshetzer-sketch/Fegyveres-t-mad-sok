@@ -14,12 +14,10 @@ QUARTERS = {
     "Q4": ("20251001000000", "20251231235959"),
 }
 
-QUERY = """
-(
-  ("armed attack" OR "shooting" OR "gunman" OR "mass shooting" OR "bombing" OR "explosion" OR "IED" OR "car bomb" OR "rocket attack" OR "mortar" OR "airstrike")
-  OR ("fegyveres támadás" OR "lövöldözés" OR "robbantás" OR "merénylet" OR "rakétatámadás" OR "tüzérségi" OR "légicsapás")
-)
-"""
+# ✅ Rövid, stabil query (nem túl hosszú)
+# A DOC API-nál ez jóval megbízhatóbb, mint a sok OR-os, idézőjeles minta.
+# Később finomhangoljuk, de most a cél: működjön és adatot adjon.
+QUERY = '("attack" OR "shooting" OR "bomb" OR "airstrike" OR "explosion")'
 
 MAX_RECORDS_PER_CALL = 250
 SLEEP_SEC = 1.2
@@ -59,10 +57,6 @@ def to_iso_date(dt_str: str) -> str:
     return f"{y}-{m}-{d}"
 
 def fetch_json(url: str):
-    """
-    Visszaad (data_dict, debug_info).
-    Ha nem JSON / átmeneti hiba: retry.
-    """
     last_err = None
     for attempt in range(1, MAX_RETRIES + 1):
         try:
@@ -71,13 +65,12 @@ def fetch_json(url: str):
                 status = getattr(r, "status", 200)
                 raw = r.read().decode("utf-8", errors="replace")
 
-            # gyors ellenőrzés: JSON-nak kell indulnia
             s = raw.lstrip()
             if not (s.startswith("{") or s.startswith("[")):
                 last_err = f"Non-JSON response (HTTP {status}). First 120 chars: {raw[:120]!r}"
                 raise ValueError(last_err)
 
-            return json.loads(raw), f"ok (HTTP {status})"
+            return json.loads(raw)
 
         except (HTTPError, URLError, TimeoutError) as e:
             last_err = f"Network/HTTP error: {e}"
@@ -86,7 +79,6 @@ def fetch_json(url: str):
         except ValueError as e:
             last_err = str(e)
 
-        # backoff
         time.sleep(SLEEP_SEC * attempt)
 
     raise RuntimeError(f"fetch_json failed after {MAX_RETRIES} retries. Last error: {last_err}")
@@ -103,7 +95,7 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
 
     while True:
         url = build_url(start_dt, end_dt, start_record)
-        data, info = fetch_json(url)
+        data = fetch_json(url)
         pages += 1
 
         articles = data.get("articles", []) or []
@@ -129,11 +121,9 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
             if not isinstance(loc0, dict):
                 continue
 
-            lat = loc0.get("lat", None)
-            lon = loc0.get("lon", None)
             try:
-                lat = float(lat)
-                lon = float(lon)
+                lat = float(loc0.get("lat"))
+                lon = float(loc0.get("lon"))
             except Exception:
                 continue
 
@@ -141,6 +131,7 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
             country = loc0.get("country", "") or ""
             geo_key = norm(f"{place}|{country}")
 
+            # DEDUPE: date + title + geo
             key = f"{date_iso}|{title_key}|{geo_key}"
 
             src = a.get("url", "") or ""
@@ -173,7 +164,6 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
     for ev in agg.values():
         lat = ev["lat_sum"] / max(1, ev["n"])
         lon = ev["lon_sum"] / max(1, ev["n"])
-
         features.append({
             "type": "Feature",
             "geometry": {"type": "Point", "coordinates": [lon, lat]},
