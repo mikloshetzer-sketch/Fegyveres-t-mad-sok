@@ -14,15 +14,19 @@ QUARTERS = {
     "Q4": ("20251001000000", "20251231235959"),
 }
 
-# ✅ Rövid, stabil query (nem túl hosszú)
-# A DOC API-nál ez jóval megbízhatóbb, mint a sok OR-os, idézőjeles minta.
-# Később finomhangoljuk, de most a cél: működjön és adatot adjon.
-QUERY = '("attack" OR "shooting" OR "bomb" OR "airstrike" OR "explosion")'
+# ✅ Hosszabb, de még mindig egyszerű query + lang filter
+# (túl rövid / túl hosszú hibák elkerülése)
+QUERY = """
+(lang:eng) AND (
+  ("armed attack" OR "mass shooting" OR "car bomb" OR "suicide bombing")
+  OR (shooting OR bombing OR explosion OR airstrike OR gunmen OR militants OR insurgents)
+)
+"""
 
 MAX_RECORDS_PER_CALL = 250
-SLEEP_SEC = 1.2
+SLEEP_SEC = 1.4
 MAX_SOURCES_PER_EVENT = 8
-MAX_RETRIES = 5
+MAX_RETRIES = 6
 
 def norm(s: str) -> str:
     if not s:
@@ -36,8 +40,9 @@ def add_unique(lst, url):
         lst.append(url)
 
 def build_url(start_dt: str, end_dt: str, start_record: int):
+    q = " ".join(QUERY.split())  # egysorosítjuk
     params = {
-        "query": QUERY,
+        "query": q,
         "format": "json",
         "mode": "ArtList",
         "startdatetime": start_dt,
@@ -67,7 +72,7 @@ def fetch_json(url: str):
 
             s = raw.lstrip()
             if not (s.startswith("{") or s.startswith("[")):
-                last_err = f"Non-JSON response (HTTP {status}). First 120 chars: {raw[:120]!r}"
+                last_err = f"Non-JSON response (HTTP {status}). First 160 chars: {raw[:160]!r}"
                 raise ValueError(last_err)
 
             return json.loads(raw)
@@ -131,7 +136,6 @@ def build_quarter(qname: str, start_dt: str, end_dt: str):
             country = loc0.get("country", "") or ""
             geo_key = norm(f"{place}|{country}")
 
-            # DEDUPE: date + title + geo
             key = f"{date_iso}|{title_key}|{geo_key}"
 
             src = a.get("url", "") or ""
