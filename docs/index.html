@@ -10,9 +10,25 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css">
 
   <style>
-    html, body { height: 100%; margin: 0; font-family: system-ui, Arial; background:#f2f2f2; }
+    :root{
+      --bg:#09111f;
+      --bg-2:#0f1b2e;
+      --panel:#101a2b;
+      --panel-2:#13233a;
+      --line:rgba(148,163,184,.22);
+      --text:#e5edf8;
+      --muted:#9fb0c8;
+      --accent:#38bdf8;
+      --accent-2:#22c55e;
+      --warn:#f59e0b;
+      --danger:#ef4444;
+      --shadow:0 18px 42px rgba(0,0,0,.35);
+      --radius:18px;
+    }
 
-    /* Force cluster colors even if WP/theme applies filters */
+    *{ box-sizing:border-box; }
+    html, body { height: 100%; margin: 0; font-family: Inter, system-ui, Arial, sans-serif; background: radial-gradient(circle at top, #12233b 0%, var(--bg) 52%, #050b15 100%); color:var(--text); }
+
     .marker-cluster, .marker-cluster * { filter: none !important; }
     .marker-cluster-small { background-color: rgba(181, 226, 140, 0.6) !important; }
     .marker-cluster-small div { background-color: rgba(110, 204, 57, 0.75) !important; }
@@ -21,63 +37,261 @@
     .marker-cluster-large { background-color: rgba(253, 156, 115, 0.6) !important; }
     .marker-cluster-large div { background-color: rgba(241, 128, 23, 0.75) !important; }
 
-    header{
-      height: 110px;
-      padding: 10px 12px;
-      border-bottom: 1px solid #ddd;
-      display:flex;
-      align-items:flex-start;
-      justify-content:space-between;
-      box-sizing:border-box;
-      gap:12px;
-      background:#f2f2f2;
+    body{
+      display:grid;
+      grid-template-rows: 84px 1fr;
+      overflow:hidden;
     }
-    .left{ display:flex; flex-direction:column; gap:4px; }
-    .title{ font-size:18px; font-weight:800; line-height:1.1; }
-    .subtitle{ font-size:12px; opacity:.8; }
 
-    .right{
+    .topbar{
+      display:grid;
+      grid-template-columns: minmax(260px, 1.15fr) minmax(420px, 1fr);
+      gap:14px;
+      padding:12px 14px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(11,20,36,.96), rgba(8,15,28,.88));
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 32px rgba(0,0,0,.28);
+      z-index:1100;
+    }
+
+    .brand, .toolbar{
+      background:linear-gradient(180deg, rgba(19,35,58,.96), rgba(14,25,43,.92));
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow: var(--shadow);
+      min-height:58px;
+    }
+
+    .brand{
       display:flex;
       align-items:center;
-      gap:10px;
-      font-size:14px;
+      justify-content:space-between;
+      gap:14px;
+      padding:12px 16px;
+    }
+
+    .brand-left{ min-width:0; }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      font-size:11px;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      color:var(--accent);
+      font-weight:800;
+      margin-bottom:4px;
+    }
+    .dot{
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--accent-2);
+      box-shadow:0 0 12px rgba(34,197,94,.85);
+      display:inline-block;
+    }
+    .title{ font-size:20px; font-weight:800; line-height:1.1; }
+    .subtitle{ font-size:12px; color:var(--muted); margin-top:3px; }
+
+    .badge-row{
+      display:flex;
+      gap:8px;
       flex-wrap:wrap;
       justify-content:flex-end;
+      align-items:center;
     }
-    select{ padding:6px 8px; font-size:14px; border-radius:10px; border:1px solid #ddd; background:#fff; }
+    .metric-pill, .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:7px 11px;
+      border:1px solid var(--line);
+      border-radius:999px;
+      font-size:12px;
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      white-space:nowrap;
+    }
+    .metric-pill b{ color:#fff; }
+
+    .toolbar{
+      display:flex;
+      align-items:center;
+      justify-content:flex-end;
+      gap:10px;
+      padding:10px 14px;
+      flex-wrap:wrap;
+    }
+    .control-group{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+    }
+    .control-group label{
+      font-size:12px;
+      font-weight:700;
+      color:var(--muted);
+    }
+
+    select, #panelToggle{
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.06);
+      color:var(--text);
+      font-size:13px;
+      font-weight:700;
+      box-shadow:none;
+      outline:none;
+    }
+    select option{ color:#111827; }
+    #panelToggle{ cursor:pointer; }
 
     #status{
-      padding: 8px 12px;
-      font-size: 13px;
-      border-bottom: 1px solid #eee;
-      background: #f2f2f2;
+      margin-top:10px;
+      padding:9px 12px;
+      font-size:12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      color:var(--muted);
     }
-    #status.ok{ color:#0a7a2f; }
-    #status.err{ color:#b00020; }
+    #status.ok{ color:#86efac; }
+    #status.err{ color:#fca5a5; }
 
     #content{
-      height: calc(100% - 110px - 41px);
+      min-height:0;
+      display:grid;
+      grid-template-columns: 340px 1fr 360px;
+      gap:14px;
+      padding:14px;
+      position:relative;
+    }
+
+    .sidebar, #panel{
+      min-height:0;
+      overflow:auto;
+      border:1px solid var(--line);
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(16,26,43,.95), rgba(10,18,31,.94));
+      box-shadow:var(--shadow);
+    }
+
+    .sidebar{ padding:16px; }
+
+    .section-head{
       display:flex;
-      min-height: 0;
-      position: relative;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:12px;
+    }
+    .section-head h3,
+    .panel-title{
+      margin:0;
+      font-size:13px;
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      color:#dbe7f5;
+      font-weight:800;
+    }
+    .hint-badge{
+      padding:4px 8px;
+      border-radius:999px;
+      font-size:11px;
+      border:1px solid var(--line);
+      background:rgba(56,189,248,.08);
+      color:var(--accent);
+      font-weight:800;
+    }
+
+    .info-card{
+      padding:12px 14px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:rgba(255,255,255,.03);
+      margin-bottom:12px;
+    }
+
+    .stat-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:10px;
+      margin-bottom:14px;
+    }
+    .stat-box{
+      padding:12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+    }
+    .stat-box .k{
+      font-size:11px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      margin-bottom:6px;
+      font-weight:700;
+    }
+    .stat-box .v{
+      font-size:22px;
+      font-weight:800;
+      line-height:1;
+    }
+    .small{
+      font-size:12px;
+      color:var(--muted);
+      line-height:1.45;
+      margin:0;
+    }
+
+    .divider{
+      height:1px;
+      background:var(--line);
+      margin:14px 0;
+    }
+
+    #mapWrap{
+      position:relative;
+      min-width:0;
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow);
+      background:#02060d;
     }
     #map{
-      flex: 1 1 auto;
-      min-width: 0;
+      width:100%;
+      height:100%;
+      min-height:400px;
       background:#111;
     }
 
-    /* Right panel (normal) */
-    #panel{
-      width: 360px;
-      border-left: 1px solid #e6e6e6;
-      background: #fff;
-      padding: 12px;
-      box-sizing: border-box;
-      overflow: auto;
+    .map-overlay{
+      position:absolute;
+      left:14px;
+      top:14px;
+      z-index:1200;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      pointer-events:none;
+    }
+    .map-overlay .metric-pill{
+      pointer-events:auto;
+      background:rgba(9,17,31,.82);
+      backdrop-filter:blur(8px);
     }
 
-    .panel-title{ font-weight: 800; margin: 0 0 8px 0; font-size: 14px; }
+    #panel{
+      padding:0 0 14px 0;
+      position:relative;
+      width:auto;
+      border-left:1px solid var(--line);
+    }
+
     .panel-drag{
       display:flex;
       align-items:center;
@@ -85,69 +299,76 @@
       gap:10px;
       cursor: move;
       user-select:none;
-      padding: 6px 8px;
-      margin: -12px -12px 10px -12px;
-      border-bottom: 1px solid #eee;
-      background: rgba(255,255,255,0.85);
+      padding: 14px 16px;
+      border-bottom:1px solid var(--line);
+      background:linear-gradient(180deg, rgba(19,35,58,.96), rgba(15,27,46,.9));
       position: sticky;
       top: 0;
-      backdrop-filter: blur(4px);
-      z-index: 1;
+      z-index: 2;
+      backdrop-filter: blur(8px);
+      border-top-left-radius:22px;
+      border-top-right-radius:22px;
     }
-    .panel-drag b{ font-size: 13px; }
-    .panel-drag .hint{ font-size: 12px; opacity:.7; }
+    .panel-drag b{ font-size: 13px; letter-spacing:.04em; text-transform:uppercase; }
+    .panel-drag .hint{ font-size: 12px; color:var(--muted); }
 
-    .small{ font-size: 12px; opacity: .75; line-height: 1.35; margin: 0 0 12px 0; }
-    .stat{ display:flex; justify-content:space-between; gap:12px; font-size: 13px; margin: 6px 0; }
-    .divider{ height:1px; background:#eee; margin: 12px 0; }
+    .panel-body{ padding:14px 16px 0 16px; }
+    .stat{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      font-size:13px;
+      margin:8px 0;
+      padding:9px 0;
+      border-bottom:1px dashed rgba(148,163,184,.16);
+    }
+    .stat span:last-child{ text-align:right; font-weight:700; }
+
     .src-list { margin: 6px 0 0 0; padding-left: 18px; }
     .src-list li { margin: 4px 0; }
+    .src-list a{ color:#7dd3fc; }
     .toplist{ margin: 8px 0 0 0; padding-left: 18px; }
-    .toplist li{ margin: 4px 0; font-size: 13px; }
-    .pill{
-      display:inline-block;
-      padding: 2px 8px;
-      border: 1px solid #e6e6e6;
-      border-radius: 999px;
-      font-size: 12px;
-      margin-left: 6px;
-      opacity: .85;
-      background:#fff;
+    .toplist li{ margin: 6px 0; font-size: 13px; }
+
+    #typeChart{
+      width:100% !important;
+      max-width:100%;
+      height:auto !important;
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:8px;
     }
 
-    /* Embed mode */
-    body.embed header, body.embed #status { display:none; }
-    body.embed #content { height: 100%; }
-
-    /* Version badge -> bottom-left (doesn't clash with controls) */
     #v2badge{
       position: fixed;
       z-index: 3000;
-      left: 10px;
-      bottom: 10px;
-      background: rgba(255,255,0,0.85);
-      padding: 6px 10px;
+      left: 16px;
+      bottom: 16px;
+      background: linear-gradient(180deg, #fde047, #facc15);
+      color:#111827;
+      padding: 7px 12px;
       font-weight: 900;
-      border: 2px solid #000;
-      border-radius: 10px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      border: 2px solid rgba(17,24,39,.85);
+      border-radius: 12px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.35);
       pointer-events: none;
     }
 
-    /* Floating controls (embed only) */
     #embedControls{
       display:none;
       position:absolute;
-      top: 10px;
-      left: 10px;
-      z-index: 2500; /* above map */
-      background: rgba(255,255,255,0.94);
-      border: 1px solid rgba(0,0,0,0.15);
-      border-radius: 12px;
+      top: 14px;
+      left: 14px;
+      z-index: 2500;
+      background: rgba(9,17,31,0.92);
+      border: 1px solid var(--line);
+      border-radius: 16px;
       padding: 10px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      backdrop-filter: blur(4px);
-      max-width: calc(100% - 24px);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+      max-width: calc(100% - 28px);
       gap:8px;
       flex-wrap:wrap;
       align-items:center;
@@ -155,35 +376,27 @@
     }
     body.embed #embedControls{ display:flex; }
 
-    #panelToggle{
-      border: 1px solid rgba(0,0,0,0.15);
-      background: rgba(255,255,255,0.94);
-      border-radius: 10px;
-      padding: 6px 10px;
-      cursor: pointer;
-      font-size: 13px;
-      font-weight: 700;
+    body.embed{
+      grid-template-rows: 1fr;
     }
-
-    /* Panel overlay in embed: MUST be above leaflet layers */
+    body.embed .topbar{ display:none; }
+    body.embed #content{
+      height:100%;
+      grid-template-columns: 1fr;
+      padding:10px;
+    }
+    body.embed .sidebar{ display:none; }
+    body.embed #mapWrap{ border-radius:18px; }
     body.embed #panel{
       position:absolute;
-      top: 64px;
+      top: 78px;
       right: 10px;
       width: 360px;
-      max-height: calc(100% - 76px);
-      border: 1px solid rgba(0,0,0,0.15);
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
-      overflow:auto;
-      background: rgba(255,255,255,0.96);
-      backdrop-filter: blur(4px);
-      z-index: 2600;          /* higher than embedControls */
-      pointer-events: auto;   /* capture mouse */
+      max-height: calc(100% - 90px);
+      z-index: 2600;
+      pointer-events: auto;
     }
     body.embed #panel.hidden{ display:none; }
-
-    /* Ensure leaflet elements stay below our UI */
     body.embed .leaflet-pane,
     body.embed .leaflet-control,
     body.embed .leaflet-top,
@@ -191,17 +404,26 @@
       z-index: 1000 !important;
     }
 
-    @media (max-width: 900px){
-      body.embed #panel{
-        width: min(92vw, 360px);
-        max-height: 55%;
+    @media (max-width: 1200px){
+      #content{ grid-template-columns: 300px 1fr 340px; }
+      .topbar{ grid-template-columns:1fr; }
+      .toolbar{ justify-content:flex-start; }
+    }
+    @media (max-width: 980px){
+      body:not(.embed){
+        grid-template-rows: auto 1fr;
       }
-      body:not(.embed) #content{ flex-direction: column; }
-      body:not(.embed) #panel{
-        width: 100%;
-        border-left:none;
-        border-top:1px solid #e6e6e6;
+      #content{
+        grid-template-columns:1fr;
+        grid-template-rows:auto minmax(380px, 52vh) auto;
       }
+      #panel, .sidebar{ width:auto; }
+      .stat-grid{ grid-template-columns:repeat(4, 1fr); }
+    }
+    @media (max-width: 700px){
+      .stat-grid{ grid-template-columns:1fr 1fr; }
+      .brand{ flex-direction:column; align-items:flex-start; }
+      .badge-row{ justify-content:flex-start; }
     }
   </style>
 </head>
@@ -209,65 +431,136 @@
 
 <div id="v2badge">V2.1</div>
 
-<header>
-  <div class="left">
-    <div class="title">OSINT fegyveres incidensek térképe</div>
-    <div class="subtitle">Műhold nézet • 2025: Q1–Q4 • 2026: LIVE/RAW (14 nap) • régió + statisztika</div>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-left">
+      <div class="eyebrow"><span class="dot"></span>OSINT monitor</div>
+      <div class="title">OSINT fegyveres incidensek térképe</div>
+      <div class="subtitle">Műhold nézet • 2025: Q1–Q4 • 2026: LIVE/RAW (14 nap) • régió + statisztika</div>
+    </div>
+    <div class="badge-row">
+      <div class="metric-pill"><span>Státusz</span><b id="topScope">–</b></div>
+      <div class="metric-pill"><span>Régió</span><b id="topRegion">–</b></div>
+      <div class="metric-pill"><span>Pontok</span><b id="topPoints">–</b></div>
+    </div>
   </div>
 
-  <div class="right">
-    <label>Év:</label>
-    <select id="yearSelect">
-      <option value="2025" selected>2025</option>
-      <option value="2026">2026</option>
-    </select>
+  <div class="toolbar">
+    <div class="control-group">
+      <label>Év</label>
+      <select id="yearSelect">
+        <option value="2025" selected>2025</option>
+        <option value="2026">2026</option>
+      </select>
+    </div>
 
-    <label id="quarterLabel">Negyedév:</label>
-    <select id="quarterSelect">
-      <option value="Q1">Q1</option>
-      <option value="Q2">Q2</option>
-      <option value="Q3">Q3</option>
-      <option value="Q4" selected>Q4</option>
-    </select>
+    <div class="control-group">
+      <label id="quarterLabel">Negyedév</label>
+      <select id="quarterSelect">
+        <option value="Q1">Q1</option>
+        <option value="Q2">Q2</option>
+        <option value="Q3">Q3</option>
+        <option value="Q4" selected>Q4</option>
+      </select>
+    </div>
 
-    <label id="viewLabel" style="display:none;">Nézet:</label>
-    <select id="viewSelect" style="display:none;">
-      <option value="live" selected>LIVE</option>
-      <option value="raw">RAW</option>
-    </select>
+    <div class="control-group">
+      <label id="viewLabel" style="display:none;">Nézet</label>
+      <select id="viewSelect" style="display:none;">
+        <option value="live" selected>LIVE</option>
+        <option value="raw">RAW</option>
+      </select>
+    </div>
 
-    <label>Régió:</label>
-    <select id="regionSelect">
-      <option value="global" selected>Világ</option>
-      <option value="europe">Európa</option>
-      <option value="eastern_europe">Kelet-Európa</option>
-      <option value="balkans">Balkán</option>
-      <option value="middle_east">Közel-Kelet</option>
-      <option value="north_africa">Észak-Afrika</option>
-      <option value="sub_saharan_africa">Szubszaharai Afrika</option>
-      <option value="north_america">Észak-Amerika</option>
-      <option value="latin_america">Latin-Amerika</option>
-      <option value="asia">Ázsia</option>
-      <option value="south_asia">Dél-Ázsia</option>
-      <option value="east_asia">Kelet-Ázsia</option>
-      <option value="oceania">Óceánia</option>
-    </select>
+    <div class="control-group">
+      <label>Régió</label>
+      <select id="regionSelect">
+        <option value="global" selected>Világ</option>
+        <option value="europe">Európa</option>
+        <option value="eastern_europe">Kelet-Európa</option>
+        <option value="balkans">Balkán</option>
+        <option value="middle_east">Közel-Kelet</option>
+        <option value="north_africa">Észak-Afrika</option>
+        <option value="sub_saharan_africa">Szubszaharai Afrika</option>
+        <option value="north_america">Észak-Amerika</option>
+        <option value="latin_america">Latin-Amerika</option>
+        <option value="asia">Ázsia</option>
+        <option value="south_asia">Dél-Ázsia</option>
+        <option value="east_asia">Kelet-Ázsia</option>
+        <option value="oceania">Óceánia</option>
+      </select>
+    </div>
   </div>
 </header>
 
-<div id="status">Betöltés…</div>
-
 <div id="content">
 
-  <div id="embedControls">
-    <button id="panelToggle" type="button">📊 Panel</button>
-    <select id="yearSelectEmbed"></select>
-    <select id="quarterSelectEmbed"></select>
-    <select id="viewSelectEmbed"></select>
-    <select id="regionSelectEmbed"></select>
-  </div>
+  <aside class="sidebar">
+    <div class="section-head">
+      <h3>Vezérlőközpont</h3>
+      <span class="hint-badge">dashboard</span>
+    </div>
 
-  <div id="map"></div>
+    <div class="info-card">
+      <div class="section-head" style="margin-bottom:10px;">
+        <h3>Összkép</h3>
+        <span class="hint-badge">live</span>
+      </div>
+      <div class="stat-grid">
+        <div class="stat-box">
+          <div class="k">Nézet</div>
+          <div class="v" id="sideScope">–</div>
+        </div>
+        <div class="stat-box">
+          <div class="k">Régió</div>
+          <div class="v" id="sideRegion" style="font-size:16px; line-height:1.15;">–</div>
+        </div>
+        <div class="stat-box">
+          <div class="k">Pontok</div>
+          <div class="v" id="sidePoints">–</div>
+        </div>
+        <div class="stat-box">
+          <div class="k">Források</div>
+          <div class="v" id="sideSources">–</div>
+        </div>
+      </div>
+      <div id="status">Betöltés…</div>
+    </div>
+
+    <div class="info-card">
+      <div class="section-head">
+        <h3>Adatlogika</h3>
+        <span class="hint-badge">OSINT</span>
+      </div>
+      <p class="small">2025-ben negyedéves nézetek, 2026-ban LIVE vagy RAW adatfájl töltődik. A régiószűrés térbeli bounding box alapján működik, a jobb oldali panel a kiválasztott nézet statisztikáit mutatja.</p>
+    </div>
+
+    <div class="info-card">
+      <div class="section-head">
+        <h3>Régiós szűrés</h3>
+        <span class="hint-badge">geo</span>
+      </div>
+      <p class="small">A szűrő a megadott régiók földrajzi kereteire alkalmazódik. A klaszterezés, a popupok és az országlista működése változatlanul megmaradt.</p>
+    </div>
+  </aside>
+
+  <div id="mapWrap">
+    <div id="embedControls">
+      <button id="panelToggle" type="button">📊 Panel</button>
+      <select id="yearSelectEmbed"></select>
+      <select id="quarterSelectEmbed"></select>
+      <select id="viewSelectEmbed"></select>
+      <select id="regionSelectEmbed"></select>
+    </div>
+
+    <div class="map-overlay">
+      <div class="metric-pill">Műhold nézet</div>
+      <div class="metric-pill">Marker cluster</div>
+      <div class="metric-pill">Popup forrásokkal</div>
+    </div>
+
+    <div id="map"></div>
+  </div>
 
   <aside id="panel">
     <div class="panel-drag" id="panelDragHandle">
@@ -275,22 +568,24 @@
       <span class="hint">Húzd ide-oda</span>
     </div>
 
-    <div class="panel-title">Összegzés</div>
-    <div class="stat"><span><b>Nézet</b></span><span id="statScope">-</span></div>
-    <div class="stat"><span><b>Régió</b></span><span id="statRegion">-</span></div>
-    <div class="stat"><span><b>Pontok</b></span><span id="statPoints">-</span></div>
-    <div class="stat"><span><b>Forráslinkek</b></span><span id="statSources">-</span></div>
+    <div class="panel-body">
+      <div class="panel-title">Összegzés</div>
+      <div class="stat"><span><b>Nézet</b></span><span id="statScope">-</span></div>
+      <div class="stat"><span><b>Régió</b></span><span id="statRegion">-</span></div>
+      <div class="stat"><span><b>Pontok</b></span><span id="statPoints">-</span></div>
+      <div class="stat"><span><b>Forráslinkek</b></span><span id="statSources">-</span></div>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="panel-title">Támadás típus szerinti bontás</div>
-    <canvas id="typeChart" width="330" height="220"></canvas>
+      <div class="panel-title">Támadás típus szerinti bontás</div>
+      <canvas id="typeChart" width="330" height="220"></canvas>
 
-    <div class="divider"></div>
+      <div class="divider"></div>
 
-    <div class="panel-title">Top országok (kiválasztott régióban)</div>
-    <div class="small">Az ország mező a helyszín szövegéből (utolsó elem) van becsülve, ezért közelítő.</div>
-    <ol class="toplist" id="topCountries"></ol>
+      <div class="panel-title">Top országok (kiválasztott régióban)</div>
+      <div class="small">Az ország mező a helyszín szövegéből (utolsó elem) van becsülve, ezért közelítő.</div>
+      <ol class="toplist" id="topCountries"></ol>
+    </div>
   </aside>
 </div>
 
@@ -329,6 +624,15 @@
   const statPoints = document.getElementById("statPoints");
   const statSources = document.getElementById("statSources");
   const topCountriesEl = document.getElementById("topCountries");
+
+  // Extra mirrored metrics
+  const topScope = document.getElementById("topScope");
+  const topRegion = document.getElementById("topRegion");
+  const topPoints = document.getElementById("topPoints");
+  const sideScope = document.getElementById("sideScope");
+  const sideRegion = document.getElementById("sideRegion");
+  const sidePoints = document.getElementById("sidePoints");
+  const sideSources = document.getElementById("sideSources");
 
   function setStatusOk(msg){ statusEl.className="ok"; statusEl.textContent=msg; }
   function setStatusErr(msg){ statusEl.className="err"; statusEl.textContent=msg; }
@@ -430,7 +734,6 @@
     return (lat >= box.latMin && lat <= box.latMax && lon >= box.lonMin && lon <= box.lonMax);
   }
 
-  // Map
   const map = L.map('map').setView([20,0],2);
   L.tileLayer(
     "https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}",
@@ -471,6 +774,16 @@
     if (!loc) return "Unknown";
     const parts = loc.split(",").map(s => s.trim()).filter(Boolean);
     return parts.length ? parts[parts.length - 1] : "Unknown";
+  }
+
+  function mirrorStats(scope, region, shown, sourcesTotal){
+    topScope.textContent = scope;
+    topRegion.textContent = region;
+    topPoints.textContent = String(shown);
+    sideScope.textContent = scope;
+    sideRegion.textContent = region;
+    sidePoints.textContent = String(shown);
+    sideSources.textContent = String(sourcesTotal);
   }
 
   function render(){
@@ -514,10 +827,14 @@
 
     map.addLayer(clusterLayer);
 
-    statScope.textContent = scopeLabel();
-    statRegion.textContent = regionLabel(regionSelect);
+    const scope = scopeLabel();
+    const region = regionLabel(regionSelect);
+
+    statScope.textContent = scope;
+    statRegion.textContent = region;
     statPoints.textContent = String(shown);
     statSources.textContent = String(sourcesTotal);
+    mirrorStats(scope, region, shown, sourcesTotal);
 
     updateChart(counts);
 
@@ -529,7 +846,7 @@
       topCountriesEl.appendChild(li);
     }
 
-    setStatusOk(`OK: ${scopeLabel()} • Régió: ${regionLabel(regionSelect)} • Pontok: ${shown}`);
+    setStatusOk(`OK: ${scope} • Régió: ${region} • Pontok: ${shown}`);
   }
 
   async function loadData(){
@@ -547,7 +864,6 @@
     }
   }
 
-  // Embed controls sync
   function cloneOptions(fromSel, toSel){
     toSel.innerHTML = "";
     for (const opt of fromSel.options){
@@ -611,7 +927,6 @@
     });
   }
 
-  // ---- DRAGGABLE PANEL (works best in embed) ----
   (function enablePanelDrag(){
     let dragging = false;
     let startX = 0, startY = 0;
@@ -620,9 +935,9 @@
     function px(n){ return `${n}px`; }
 
     panelDragHandle.addEventListener("mousedown", (e) => {
-      if (!EMBED) return; // csak embedben draggeljük
+      if (!EMBED) return;
       dragging = true;
-      panel.style.right = "auto"; // switch to left/top positioning
+      panel.style.right = "auto";
       const rect = panel.getBoundingClientRect();
       startLeft = rect.left;
       startTop = rect.top;
@@ -643,7 +958,6 @@
       let newLeft = startLeft + dx;
       let newTop  = startTop + dy;
 
-      // keep inside viewport a bit
       newLeft = Math.max(6, Math.min(newLeft, window.innerWidth - panel.offsetWidth - 6));
       newTop  = Math.max(6, Math.min(newTop, window.innerHeight - 80));
 
@@ -659,3 +973,4 @@
 
 </body>
 </html>
+
