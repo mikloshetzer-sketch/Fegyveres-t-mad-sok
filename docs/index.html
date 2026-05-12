@@ -149,6 +149,28 @@
     select option{ color:#111827; }
     #panelToggle{ cursor:pointer; }
 
+    .report-button{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:6px;
+      padding:9px 13px;
+      border-radius:12px;
+      border:1px solid rgba(56,189,248,.45);
+      background:linear-gradient(180deg, rgba(56,189,248,.22), rgba(37,99,235,.22));
+      color:#e0f2fe;
+      font-size:13px;
+      font-weight:800;
+      text-decoration:none;
+      white-space:nowrap;
+      box-shadow:0 8px 18px rgba(37,99,235,.22);
+    }
+
+    .report-button:hover{
+      background:linear-gradient(180deg, rgba(56,189,248,.34), rgba(37,99,235,.34));
+      color:#ffffff;
+    }
+
     #status{
       margin-top:10px;
       padding:9px 12px;
@@ -490,6 +512,10 @@
         <option value="oceania">Óceánia</option>
       </select>
     </div>
+
+    <a class="report-button" href="reports/" target="_blank" rel="noopener">
+      📰 Napi jelentések
+    </a>
   </div>
 </header>
 
@@ -599,7 +625,6 @@
 
   const statusEl = document.getElementById("status");
 
-  // Main selects
   const yearSelect = document.getElementById("yearSelect");
   const quarterSelect = document.getElementById("quarterSelect");
   const quarterLabel = document.getElementById("quarterLabel");
@@ -607,7 +632,6 @@
   const viewLabel = document.getElementById("viewLabel");
   const regionSelect = document.getElementById("regionSelect");
 
-  // Embed controls
   const panel = document.getElementById("panel");
   const panelToggle = document.getElementById("panelToggle");
   const yearSelectEmbed = document.getElementById("yearSelectEmbed");
@@ -615,17 +639,14 @@
   const viewSelectEmbed = document.getElementById("viewSelectEmbed");
   const regionSelectEmbed = document.getElementById("regionSelectEmbed");
 
-  // Panel drag
   const panelDragHandle = document.getElementById("panelDragHandle");
 
-  // Panel stats
   const statScope = document.getElementById("statScope");
   const statRegion = document.getElementById("statRegion");
   const statPoints = document.getElementById("statPoints");
   const statSources = document.getElementById("statSources");
   const topCountriesEl = document.getElementById("topCountries");
 
-  // Extra mirrored metrics
   const topScope = document.getElementById("topScope");
   const topRegion = document.getElementById("topRegion");
   const topPoints = document.getElementById("topPoints");
@@ -874,6 +895,7 @@
       toSel.appendChild(o);
     }
   }
+
   function syncMainToEmbed(){
     if (!EMBED) return;
     cloneOptions(yearSelect, yearSelectEmbed);
@@ -889,6 +911,7 @@
     syncMainToEmbed();
     loadData();
   });
+
   quarterSelect.addEventListener("change", () => { syncMainToEmbed(); loadData(); });
   viewSelect.addEventListener("change", () => { syncMainToEmbed(); loadData(); });
   regionSelect.addEventListener("change", () => { syncMainToEmbed(); render(); });
@@ -973,4 +996,3 @@
 
 </body>
 </html>
-
