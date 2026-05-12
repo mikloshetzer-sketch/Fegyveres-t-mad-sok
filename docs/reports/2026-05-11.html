@@ -85,6 +85,7 @@
             border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
+            text-decoration: none;
         }
 
         .btn.secondary {
@@ -214,7 +215,7 @@
 
         .three-col {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 18px;
         }
 
@@ -244,29 +245,27 @@
             color: #0f172a;
         }
 
-        .country-block {
-            margin-bottom: 20px;
+        .region-summary {
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 18px;
+            margin-bottom: 12px;
         }
 
-        .country-block h3 {
+        .region-summary h3 {
             margin: 0 0 8px;
             color: #1e3a8a;
         }
 
-        .country-block ul {
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.55;
+        .region-summary p {
+            line-height: 1.6;
+            margin: 8px 0;
         }
 
-        .country-block li {
-            margin-bottom: 9px;
-        }
-
-        .country-block span {
-            display: block;
-            color: #64748b;
-            font-size: 13px;
+        .region-table {
+            margin-bottom: 26px;
         }
 
         .footer {
@@ -320,7 +319,7 @@
             }
 
             .three-col {
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }
         }
 
@@ -338,6 +337,10 @@
             }
 
             .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .three-col {
                 grid-template-columns: 1fr;
             }
 
@@ -375,7 +378,7 @@
                 <div class="card">
                     <div class="label">Mai események száma</div>
                     <div class="big">1803</div>
-                    <div class="small">azonosított incidens</div>
+                    <div class="small">deduplikált incidens</div>
                 </div>
 
                 <div class="card">
@@ -385,8 +388,8 @@
                 </div>
 
                 <div class="card">
-                    <div class="label">Leginkább érintett ország</div>
-                    <div class="big" style="font-size:24px;">Ismeretlen ország</div>
+                    <div class="label">Fő régiós súlypont</div>
+                    <div class="big" style="font-size:22px;">Egyéb térségek</div>
                     <div class="small">napi találatok alapján</div>
                 </div>
 
@@ -403,8 +406,9 @@
                 <div class="analysis">
                     
     <p>Az incidensek száma emelkedett. A rendszer 566 darabbal több eseményt azonosított, ami 45.8% növekedést jelent.</p>
-    <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>Ismeretlen ország</strong> (1803 esemény).</p>
-    <p>A leggyakoribb eseménykategória: <strong>Fegyveres incidens</strong> (1803 találat).</p>
+    <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>United States</strong> (583 esemény).</p>
+    <p>A napi aktivitás legerősebb regionális súlypontja: <strong>Egyéb térségek</strong> (638 esemény).</p>
+    <p>A leggyakoribb eseménykategória: <strong>Fegyveres összecsapás</strong> (1250 találat).</p>
     <p>
         A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
         A magasabb elemszám jelezhet tényleges biztonsági romlást,
@@ -415,17 +419,615 @@
             </section>
 
             <section class="section">
+                <h2>Régiós helyzetkép</h2>
+                
+    <div class="region-summary">
+        <h3>Európai Unió</h3>
+        <p>Az Európai Unió térségében a jelentés elsősorban biztonsági, rendészeti vagy fegyveres incidensekhez kapcsolódó nyílt forrású találatokat azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>109</strong>.
+            Leginkább érintett országok: <strong>Ireland (23), France (12), Greece (12)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (71), Támadás (37), Tömeges erőszak (1)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Warsaw, (PL67), Poland</td>
+                <td>Poland</td>
+                <td>Warsaw, (PL67), Poland</td>
+                <td>Fegyveres összecsapás</td>
+                <td>wowo.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Netherlands</td>
+                <td>Netherlands</td>
+                <td>Netherlands</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.wgal.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – France</td>
+                <td>France</td>
+                <td>France</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.fox6now.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Germany</td>
+                <td>Germany</td>
+                <td>Germany</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.hindustantimes.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Paris, France (general), France</td>
+                <td>France</td>
+                <td>Paris, France (general), France</td>
+                <td>Fegyveres összecsapás</td>
+                <td>investinglive.com:443</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Kelet-Európa / orosz–ukrán térség</h3>
+        <p>A kelet-európai biztonsági blokkban az orosz–ukrán háborúhoz és annak közvetlen környezetéhez kapcsolódó események adhatják a napi aktivitás jelentős részét.</p>
+        <p>
+            Azonosított események száma: <strong>80</strong>.
+            Leginkább érintett országok: <strong>Ukraine (42), Russia (38)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (53), Támadás (27)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.irishtimes.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.irishtimes.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.bignewsnetwork.com</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Támadás</td>
+                <td>www.freemalaysiatoday.com</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Támadás</td>
+                <td>www.freemalaysiatoday.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Balkán</h3>
+        <p>A Balkán esetében a napi kép különösen fontos, mert a térségben az alacsonyabb intenzitású incidensek is gyorsan politikai és biztonsági jelentőséget kaphatnak.</p>
+        <p>
+            Azonosított események száma: <strong>13</strong>.
+            Leginkább érintett országok: <strong>Turkey (12), Albania (1)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (9), Támadás (3), Tömeges erőszak (1)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Istanbul, Istanbul, Turkey</td>
+                <td>Turkey</td>
+                <td>Istanbul, Istanbul, Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>economictimes.indiatimes.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Ankara, Ankara, Turkey</td>
+                <td>Turkey</td>
+                <td>Ankara, Ankara, Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.wsws.org</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Turkey</td>
+                <td>Turkey</td>
+                <td>Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>nypost.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Anadolu, Turkey (general), Turkey</td>
+                <td>Turkey</td>
+                <td>Anadolu, Turkey (general), Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.yahoo.com</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Esenyurt, Istanbul, Turkey</td>
+                <td>Turkey</td>
+                <td>Esenyurt, Istanbul, Turkey</td>
+                <td>Támadás</td>
+                <td>bianet.org</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Közel-Kelet</h3>
+        <p>A Közel-Kelet továbbra is kiemelt biztonsági térség. A jelentésben megjelenő események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai tevékenységhez kapcsolódnak.</p>
+        <p>
+            Azonosított események száma: <strong>196</strong>.
+            Leginkább érintett országok: <strong>Iran (37), Israel (37), West Bank (19)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (134), Támadás (58), Tömeges erőszak (4)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Tehran, Tehran, Iran</td>
+                <td>Iran</td>
+                <td>Tehran, Tehran, Iran</td>
+                <td>Fegyveres összecsapás</td>
+                <td>slguardian.org</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Gaza, Israel (general), Israel</td>
+                <td>Israel</td>
+                <td>Gaza, Israel (general), Israel</td>
+                <td>Támadás</td>
+                <td>thepressproject.gr</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Lebanon</td>
+                <td>Lebanon</td>
+                <td>Lebanon</td>
+                <td>Fegyveres összecsapás</td>
+                <td>gcaptain.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Iraq</td>
+                <td>Iraq</td>
+                <td>Iraq</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.dailyexcelsior.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Iran</td>
+                <td>Iran</td>
+                <td>Iran</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.trend.az</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Afrika</h3>
+        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>240</strong>.
+            Leginkább érintett országok: <strong>Nigeria (118), South Africa (27), Mali (9)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (163), Támadás (75), Tömeges erőszak (2)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Otjiwarongo, Omaheke, Namibia</td>
+                <td>Namibia</td>
+                <td>Otjiwarongo, Omaheke, Namibia</td>
+                <td>Fegyveres összecsapás</td>
+                <td>informante.web.na</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Ilorin, Kwara, Nigeria</td>
+                <td>Nigeria</td>
+                <td>Ilorin, Kwara, Nigeria</td>
+                <td>Fegyveres összecsapás</td>
+                <td>punchng.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Kwara State, Kwara, Nigeria</td>
+                <td>Nigeria</td>
+                <td>Kwara State, Kwara, Nigeria</td>
+                <td>Fegyveres összecsapás</td>
+                <td>punchng.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Abyei, Wilayat Warab, South Sudan</td>
+                <td>South Sudan</td>
+                <td>Abyei, Wilayat Warab, South Sudan</td>
+                <td>Fegyveres összecsapás</td>
+                <td>allafrica.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Abuja, Abuja Federal Capital Territory, Nigeria</td>
+                <td>Nigeria</td>
+                <td>Abuja, Abuja Federal Capital Territory, Nigeria</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.newsghana.com.gh</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Ázsia</h3>
+        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>249</strong>.
+            Leginkább érintett országok: <strong>India (108), Pakistan (27), China (21)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (180), Támadás (69)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Támadás – Bombay, Maharashtra, India</td>
+                <td>India</td>
+                <td>Bombay, Maharashtra, India</td>
+                <td>Támadás</td>
+                <td>www.heraldgoa.in</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Bombay, Maharashtra, India</td>
+                <td>India</td>
+                <td>Bombay, Maharashtra, India</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.heraldgoa.in</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Peshawar, North-West Frontier, Pakistan</td>
+                <td>Pakistan</td>
+                <td>Peshawar, North-West Frontier, Pakistan</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.independent.co.uk</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – India</td>
+                <td>India</td>
+                <td>India</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.ecumenicalnews.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Delhi, Delhi, India</td>
+                <td>India</td>
+                <td>Delhi, Delhi, India</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.dailyexcelsior.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Amerika</h3>
+        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>168</strong>.
+            Leginkább érintett országok: <strong>United States (108), Mexico (9), Venezuela (5)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (115), Támadás (53)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Broward County, Florida, United States</td>
+                <td>United States</td>
+                <td>Broward County, Florida, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.wlrn.org</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Alabama, United States</td>
+                <td>United States</td>
+                <td>Alabama, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.wgrz.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Florida, United States</td>
+                <td>United States</td>
+                <td>Florida, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.fox43.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Georgia, United States</td>
+                <td>United States</td>
+                <td>Georgia, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.scsu.edu</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Miami, Florida, United States</td>
+                <td>United States</td>
+                <td>Miami, Florida, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.hellomagazine.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Európa – egyéb</h3>
+        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>110</strong>.
+            Leginkább érintett országok: <strong>United Kingdom (90), Switzerland (5), Norway (4)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (77), Támadás (32), Tömeges erőszak (1)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Warwickshire, Warwickshire, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Warwickshire, Warwickshire, United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.thebusinessdesk.com</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Támadás</td>
+                <td>www.gazettelive.co.uk</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.tvguide.co.uk</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – London, London, City of, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>London, London, City of, United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>goss.ie</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – London, London, City of, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>London, London, City of, United Kingdom</td>
+                <td>Támadás</td>
+                <td>www.yahoo.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Egyéb térségek</h3>
+        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
+        <p>
+            Azonosított események száma: <strong>638</strong>.
+            Leginkább érintett országok: <strong>United States (474), Australia (98), Canada (33)</strong>.
+            Domináns eseménytípusok: <strong>Fegyveres összecsapás (448), Támadás (186), Tömeges erőszak (4)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>Fegyveres összecsapás – Delaware, United States</td>
+                <td>United States</td>
+                <td>Delaware, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.pottsmerc.com</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Illawarra, Victoria, Australia</td>
+                <td>Australia</td>
+                <td>Illawarra, Victoria, Australia</td>
+                <td>Támadás</td>
+                <td>www.illawarramercury.com.au</td>
+            </tr>
+            
+            <tr>
+                <td>Támadás – Newark, New Jersey, United States</td>
+                <td>United States</td>
+                <td>Newark, New Jersey, United States</td>
+                <td>Támadás</td>
+                <td>wpst.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Newark, New Jersey, United States</td>
+                <td>United States</td>
+                <td>Newark, New Jersey, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>wpst.com</td>
+            </tr>
+            
+            <tr>
+                <td>Fegyveres összecsapás – Delaware County, Indiana, United States</td>
+                <td>United States</td>
+                <td>Delaware County, Indiana, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.wbiw.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+            </section>
+
+            <section class="section">
                 <h2>Grafikonos áttekintés</h2>
                 <div class="charts">
                     
-        <div class="chart wide">
-            <img src="charts/2026-05-11-7-day-trend.svg" alt="7 napos trend">
-        </div>
-        
-        <div class="chart">
-            <img src="charts/2026-05-11-top-countries.svg" alt="Top országok">
-        </div>
-        
+            <div class="chart wide">
+                <img src="charts/2026-05-11-7-day-trend.svg" alt="7 napos trend">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-05-11-regions.svg" alt="Régiós bontás">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-05-11-top-countries.svg" alt="Top országok">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-05-11-event-types.svg" alt="Eseménytípusok">
+            </div>
+            
                 </div>
             </section>
 
@@ -447,52 +1049,52 @@
                         
         <tr>
             <td>1</td>
-            <td>Cím nélküli esemény</td>
-            <td>Ismeretlen ország</td>
-            <td>Bombay, Maharashtra, India</td>
-            <td>Fegyveres incidens</td>
-            <td class="score">6</td>
-            <td>Forrás</td>
+            <td>Fegyveres összecsapás – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Fegyveres összecsapás</td>
+            <td class="score">11</td>
+            <td>www.irishtimes.com</td>
         </tr>
         
         <tr>
             <td>2</td>
-            <td>Cím nélküli esemény</td>
-            <td>Ismeretlen ország</td>
-            <td>Bombay, Maharashtra, India</td>
-            <td>Fegyveres incidens</td>
-            <td class="score">6</td>
-            <td>Forrás</td>
+            <td>Fegyveres összecsapás – Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Fegyveres összecsapás</td>
+            <td class="score">11</td>
+            <td>www.irishtimes.com</td>
         </tr>
         
         <tr>
             <td>3</td>
-            <td>Cím nélküli esemény</td>
-            <td>Ismeretlen ország</td>
-            <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
-            <td>Fegyveres incidens</td>
-            <td class="score">3</td>
-            <td>Forrás</td>
+            <td>Fegyveres összecsapás – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+            <td>Russia</td>
+            <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+            <td>Fegyveres összecsapás</td>
+            <td class="score">10</td>
+            <td>www.bignewsnetwork.com</td>
         </tr>
         
         <tr>
             <td>4</td>
-            <td>Cím nélküli esemény</td>
-            <td>Ismeretlen ország</td>
-            <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
-            <td>Fegyveres incidens</td>
-            <td class="score">3</td>
-            <td>Forrás</td>
+            <td>Támadás – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Támadás</td>
+            <td class="score">10</td>
+            <td>www.freemalaysiatoday.com</td>
         </tr>
         
         <tr>
             <td>5</td>
-            <td>Cím nélküli esemény</td>
-            <td>Ismeretlen ország</td>
+            <td>Támadás – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+            <td>Russia</td>
             <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-            <td>Fegyveres incidens</td>
-            <td class="score">3</td>
-            <td>Forrás</td>
+            <td>Támadás</td>
+            <td class="score">10</td>
+            <td>www.freemalaysiatoday.com</td>
         </tr>
         
                     </tbody>
@@ -503,79 +1105,31 @@
                 <h2>Napi bontások</h2>
                 <div class="three-col">
                     <div>
-                        <h3>Leginkább érintett országok</h3>
-                        <ol class="rank-list"><li><span>Ismeretlen ország</span><strong>1803</strong></li></ol>
+                        <h3>Régiók</h3>
+                        <ol class="rank-list"><li><span>Egyéb térségek</span><strong>638</strong></li><li><span>Ázsia</span><strong>249</strong></li><li><span>Afrika</span><strong>240</strong></li><li><span>Közel-Kelet</span><strong>196</strong></li><li><span>Amerika</span><strong>168</strong></li><li><span>Európa – egyéb</span><strong>110</strong></li><li><span>Európai Unió</span><strong>109</strong></li><li><span>Kelet-Európa / orosz–ukrán térség</span><strong>80</strong></li><li><span>Balkán</span><strong>13</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Országok</h3>
+                        <ol class="rank-list"><li><span>United States</span><strong>583</strong></li><li><span>Nigeria</span><strong>118</strong></li><li><span>India</span><strong>109</strong></li><li><span>Australia</span><strong>98</strong></li><li><span>United Kingdom</span><strong>90</strong></li><li><span>Ukraine</span><strong>42</strong></li><li><span>Pakistan</span><strong>42</strong></li><li><span>Russia</span><strong>38</strong></li><li><span>Iran</span><strong>37</strong></li><li><span>Israel</span><strong>37</strong></li></ol>
                     </div>
                     <div>
                         <h3>Eseménytípusok</h3>
-                        <ol class="rank-list"><li><span>Fegyveres incidens</span><strong>1803</strong></li></ol>
+                        <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>1250</strong></li><li><span>Támadás</span><strong>540</strong></li><li><span>Tömeges erőszak</span><strong>13</strong></li></ol>
                     </div>
                     <div>
-                        <h3>Leggyakoribb források</h3>
-                        <ol class="rank-list"><li><span>Ismeretlen forrás</span><strong>1803</strong></li></ol>
+                        <h3>Források</h3>
+                        <ol class="rank-list"><li><span>www.yahoo.com</span><strong>67</strong></li><li><span>www.dailymail.com</span><strong>43</strong></li><li><span>allafrica.com</span><strong>41</strong></li><li><span>dailytrust.com</span><strong>31</strong></li><li><span>eturbonews.com</span><strong>31</strong></li><li><span>www.dailykos.com</span><strong>29</strong></li><li><span>www.hindustantimes.com</span><strong>27</strong></li><li><span>www.rediff.com</span><strong>26</strong></li><li><span>www.jpost.com</span><strong>24</strong></li><li><span>english.news.cn</span><strong>22</strong></li></ol>
                     </div>
                 </div>
-            </section>
-
-            <section class="section">
-                <h2>Részletes eseménylista országonként</h2>
-                
-        <section class="country-block">
-            <h3>Ismeretlen ország</h3>
-            <ul>
-        
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Netherlands · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Tehran, Tehran, Iran · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Australia · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Alabama, United States · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Gaza, Israel (general), Israel · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>India · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Delhi, Delhi, India · Fegyveres incidens</span>
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong>
-                <span>Lebanon · Fegyveres incidens</span>
-            </li>
-            
-            </ul>
-        </section>
-        
             </section>
 
             <section class="section method">
                 <h2>Módszertani megjegyzés</h2>
                 <p>
                     Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
+                    A rendszer deduplikálja az azonos helyszínhez, eseménytípushoz és címhez
+                    kapcsolódó találatokat, de az összevonás nem tökéletes.
                     Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
-                    A találatok hírforrásokból származnak, ezért előfordulhat ismétlés,
-                    pontatlan földrajzi besorolás vagy késleltetett megjelenés.
                 </p>
             </section>
         </main>
