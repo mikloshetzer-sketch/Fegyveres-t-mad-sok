@@ -207,7 +207,7 @@
 
         .three-col {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 18px;
         }
 
@@ -352,7 +352,7 @@
                 <div class="card warning-card">
                     <div class="label">Módszertani jelzés</div>
                     <div class="small">
-                        Nem hivatalos statisztika. Nyílt forrású, automatizált OSINT-jelzés.
+                        Drón-, terrorjellegű és háborús események kulcsszavas azonosítással.
                     </div>
                 </div>
             </section>
@@ -361,14 +361,14 @@
                 <h2>Rövid napi értékelés</h2>
                 <div class="analysis">
                     
-    <p>Az incidensek száma emelkedett. A rendszer 566 darabbal több eseményt azonosított, ami 45.8% növekedést jelent.</p>
+    <p>Az incidensek száma emelkedett: +566 esemény, 45.8% növekedés.</p>
     <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>United States</strong> (583 esemény).</p>
-    <p>A napi aktivitás legerősebb regionális súlypontja: <strong>Egyéb térségek</strong> (1295 esemény).</p>
-    <p>A leggyakoribb részletes támadástípus: <strong>Fegyveres összecsapás</strong> (1200 találat).</p>
+    <p>A legerősebb regionális súlypont: <strong>Egyéb térségek</strong> (1295 esemény).</p>
+    <p>A leggyakoribb részletes támadástípus: <strong>Fegyveres összecsapás</strong> (1202 találat).</p>
+    <p>A leggyakoribb eseményjelleg: <strong>Egyéb biztonsági esemény</strong> (1793 találat).</p>
     <p>
-        A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
-        A részletes támadástípusok kulcsszavas besorolással készülnek, ezért elemzési
-        támpontot adnak, de nem helyettesítik a kézi ellenőrzést.
+        A drón-, terrorjellegű és háborús események felismerése kulcsszavas besorolással történik.
+        Ez jó elemzési szűrő, de kézi ellenőrzést továbbra is igényelhet.
     </p>
     
                 </div>
@@ -379,11 +379,13 @@
                 
     <div class="region-summary">
         <h3>Európai Unió</h3>
-        <p>Az Európai Unió térségében a jelentés elsősorban biztonsági, rendészeti vagy fegyveres incidensekhez kapcsolódó nyílt forrású találatokat azonosított.</p>
         <p>
             Azonosított események száma: <strong>109</strong>.
             Leginkább érintett országok: <strong>Ireland (23), France (12), Greece (12)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Fegyveres összecsapás (71), Rajtaütés / fegyveres támadás (37), Tömeges erőszak (1)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (109)</strong>.
         </p>
     </div>
     
@@ -394,6 +396,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -404,6 +407,7 @@
                 <td>Netherlands</td>
                 <td>Netherlands</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.wgal.com</td>
             </tr>
             
@@ -412,6 +416,7 @@
                 <td>France</td>
                 <td>France</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.fox6now.com</td>
             </tr>
             
@@ -420,6 +425,7 @@
                 <td>Germany</td>
                 <td>Germany</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.hindustantimes.com</td>
             </tr>
             
@@ -428,6 +434,7 @@
                 <td>France</td>
                 <td>Paris, France (general), France</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>investinglive.com:443</td>
             </tr>
             
@@ -436,6 +443,7 @@
                 <td>Italy</td>
                 <td>Italy</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.dailyliberal.com.au</td>
             </tr>
             
@@ -444,11 +452,13 @@
         
     <div class="region-summary">
         <h3>Ukrajna</h3>
-        <p>Ukrajna külön kiemelt kategóriaként szerepel, mert a háborús aktivitás jelentősen torzíthatná az általános európai képet.</p>
         <p>
             Azonosított események száma: <strong>42</strong>.
             Leginkább érintett országok: <strong>Ukraine (42)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Robbantás / IED (30), Fegyveres összecsapás (7), Rajtaütés / fegyveres támadás (5)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (42)</strong>.
         </p>
     </div>
     
@@ -459,6 +469,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -469,6 +480,7 @@
                 <td>Ukraine</td>
                 <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.irishtimes.com</td>
             </tr>
             
@@ -477,6 +489,7 @@
                 <td>Ukraine</td>
                 <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.irishtimes.com</td>
             </tr>
             
@@ -485,6 +498,7 @@
                 <td>Ukraine</td>
                 <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.freemalaysiatoday.com</td>
             </tr>
             
@@ -493,6 +507,7 @@
                 <td>Ukraine</td>
                 <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>en.interfax.com.ua</td>
             </tr>
             
@@ -501,6 +516,7 @@
                 <td>Ukraine</td>
                 <td>Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.globalsecurity.org</td>
             </tr>
             
@@ -509,11 +525,13 @@
         
     <div class="region-summary">
         <h3>Balkán</h3>
-        <p>A Balkán esetében a napi kép különösen fontos, mert a térségben az alacsonyabb intenzitású incidensek is gyorsan politikai és biztonsági jelentőséget kaphatnak.</p>
         <p>
             Azonosított események száma: <strong>16</strong>.
             Leginkább érintett országok: <strong>Turkey (12), Bosnia-Herzegovina (3), Albania (1)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Fegyveres összecsapás (12), Rajtaütés / fegyveres támadás (3), Tömeges erőszak (1)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (16)</strong>.
         </p>
     </div>
     
@@ -524,6 +542,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -534,6 +553,7 @@
                 <td>Turkey</td>
                 <td>Istanbul, Istanbul, Turkey</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>economictimes.indiatimes.com</td>
             </tr>
             
@@ -542,6 +562,7 @@
                 <td>Turkey</td>
                 <td>Ankara, Ankara, Turkey</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.wsws.org</td>
             </tr>
             
@@ -550,6 +571,7 @@
                 <td>Turkey</td>
                 <td>Turkey</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>nypost.com</td>
             </tr>
             
@@ -558,6 +580,7 @@
                 <td>Turkey</td>
                 <td>Anadolu, Turkey (general), Turkey</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.yahoo.com</td>
             </tr>
             
@@ -566,6 +589,7 @@
                 <td>Turkey</td>
                 <td>Esenyurt, Istanbul, Turkey</td>
                 <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>bianet.org</td>
             </tr>
             
@@ -574,11 +598,13 @@
         
     <div class="region-summary">
         <h3>Közel-Kelet</h3>
-        <p>A Közel-Kelet továbbra is kiemelt biztonsági térség. A jelentésben megjelenő események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai tevékenységhez kapcsolódnak.</p>
         <p>
             Azonosított események száma: <strong>198</strong>.
             Leginkább érintett országok: <strong>Iran (37), Israel (37), West Bank (19)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Fegyveres összecsapás (133), Rajtaütés / fegyveres támadás (58), Tömeges erőszak (5)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (196), Dróntámadás (1), Civil zavargás / tüntetés (1)</strong>.
         </p>
     </div>
     
@@ -589,6 +615,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -599,6 +626,7 @@
                 <td>Iran</td>
                 <td>Shahed, Fars, Iran</td>
                 <td>Dróntámadás</td>
+                <td>Dróntámadás</td>
                 <td>www.rnz.co.nz</td>
             </tr>
             
@@ -607,6 +635,7 @@
                 <td>Iran</td>
                 <td>Tehran, Tehran, Iran</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>slguardian.org</td>
             </tr>
             
@@ -615,6 +644,7 @@
                 <td>Israel</td>
                 <td>Gaza, Israel (general), Israel</td>
                 <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>thepressproject.gr</td>
             </tr>
             
@@ -623,6 +653,7 @@
                 <td>Lebanon</td>
                 <td>Lebanon</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>gcaptain.com</td>
             </tr>
             
@@ -631,6 +662,7 @@
                 <td>Iraq</td>
                 <td>Iraq</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.dailyexcelsior.com</td>
             </tr>
             
@@ -639,11 +671,13 @@
         
     <div class="region-summary">
         <h3>Kelet-Európa / orosz–ukrán térség</h3>
-        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
             Azonosított események száma: <strong>38</strong>.
             Leginkább érintett országok: <strong>Russia (38)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Robbantás / IED (21), Fegyveres összecsapás (11), Rajtaütés / fegyveres támadás (6)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (38)</strong>.
         </p>
     </div>
     
@@ -654,6 +688,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -664,6 +699,7 @@
                 <td>Russia</td>
                 <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.bignewsnetwork.com</td>
             </tr>
             
@@ -672,6 +708,7 @@
                 <td>Russia</td>
                 <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.freemalaysiatoday.com</td>
             </tr>
             
@@ -680,6 +717,7 @@
                 <td>Russia</td>
                 <td>Kursk, Kurskaya Oblast&#x27;, Russia</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.dailykos.com</td>
             </tr>
             
@@ -688,6 +726,7 @@
                 <td>Russia</td>
                 <td>Rostov, Rostovskaya Oblast&#x27;, Russia</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.globalsecurity.org</td>
             </tr>
             
@@ -696,6 +735,7 @@
                 <td>Russia</td>
                 <td>Tsentr, Novosibirskaya Oblast&#x27;, Russia</td>
                 <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.globalsecurity.org</td>
             </tr>
             
@@ -704,11 +744,13 @@
         
     <div class="region-summary">
         <h3>Európa – egyéb</h3>
-        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
             Azonosított események száma: <strong>105</strong>.
             Leginkább érintett országok: <strong>United Kingdom (90), Switzerland (5), Norway (4)</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>Fegyveres összecsapás (73), Rajtaütés / fegyveres támadás (32)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (105)</strong>.
         </p>
     </div>
     
@@ -719,6 +761,7 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -729,6 +772,7 @@
                 <td>United Kingdom</td>
                 <td>United Kingdom</td>
                 <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.gazettelive.co.uk</td>
             </tr>
             
@@ -737,6 +781,7 @@
                 <td>United Kingdom</td>
                 <td>United Kingdom</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.tvguide.co.uk</td>
             </tr>
             
@@ -745,6 +790,7 @@
                 <td>United Kingdom</td>
                 <td>London, London, City of, United Kingdom</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>goss.ie</td>
             </tr>
             
@@ -753,6 +799,7 @@
                 <td>United Kingdom</td>
                 <td>London, London, City of, United Kingdom</td>
                 <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.yahoo.com</td>
             </tr>
             
@@ -761,6 +808,7 @@
                 <td>United Kingdom</td>
                 <td>Greater Manchester, United Kingdom (general), United Kingdom</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.thenational.scot</td>
             </tr>
             
@@ -769,11 +817,13 @@
         
     <div class="region-summary">
         <h3>Egyéb térségek</h3>
-        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
             Azonosított események száma: <strong>1295</strong>.
             Leginkább érintett országok: <strong>United States (583), Nigeria (118), India (108)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (893), Rajtaütés / fegyveres támadás (383), Tömeges erőszak (6)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (895), Rajtaütés / fegyveres támadás (383), Tömeges erőszak (6)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (1287), Rendészeti / belbiztonsági esemény (4), Civil zavargás / tüntetés (2)</strong>.
         </p>
     </div>
     
@@ -784,41 +834,28 @@
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
             <tbody>
         
             <tr>
-                <td>fight – Bahamas, The</td>
-                <td>The</td>
-                <td>Bahamas, The</td>
-                <td>Terrorcselekmény / milíciaaktivitás</td>
-                <td>www.thenassauguardian.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – South Beach, Bahamas, The (general), Bahamas, The</td>
-                <td>The</td>
-                <td>South Beach, Bahamas, The (general), Bahamas, The</td>
-                <td>Terrorcselekmény / milíciaaktivitás</td>
-                <td>www.tribune242.com</td>
-            </tr>
-            
-            <tr>
-                <td>assault – Bombay, Maharashtra, India</td>
-                <td>India</td>
-                <td>Bombay, Maharashtra, India</td>
-                <td>Rajtaütés / fegyveres támadás</td>
-                <td>www.heraldgoa.in</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Bombay, Maharashtra, India</td>
-                <td>India</td>
-                <td>Bombay, Maharashtra, India</td>
+                <td>fight – Brooke Army Medical Center, Texas, United States</td>
+                <td>United States</td>
+                <td>Brooke Army Medical Center, Texas, United States</td>
                 <td>Fegyveres összecsapás</td>
-                <td>www.heraldgoa.in</td>
+                <td>Háborús cselekmény</td>
+                <td>www.kens5.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Battle Creek, Nebraska, United States</td>
+                <td>United States</td>
+                <td>Battle Creek, Nebraska, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Háborús cselekmény</td>
+                <td>tribalcollegejournal.org</td>
             </tr>
             
             <tr>
@@ -826,7 +863,26 @@
                 <td>Australia</td>
                 <td>Australia</td>
                 <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
                 <td>www.northerndailyleader.com.au</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Alabama, United States</td>
+                <td>United States</td>
+                <td>Alabama, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.wgrz.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – India</td>
+                <td>India</td>
+                <td>India</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.ecumenicalnews.com</td>
             </tr>
             
             </tbody>
@@ -847,11 +903,11 @@
             </div>
             
             <div class="chart">
-                <img src="charts/2026-05-11-top-countries.svg" alt="Top országok">
+                <img src="charts/2026-05-11-event-types.svg" alt="Részletes támadástípusok">
             </div>
             
             <div class="chart">
-                <img src="charts/2026-05-11-event-types.svg" alt="Részletes támadástípusok">
+                <img src="charts/2026-05-11-event-nature.svg" alt="Eseményjelleg">
             </div>
             
                 </div>
@@ -867,6 +923,7 @@
                             <th>Ország</th>
                             <th>Helyszín</th>
                             <th>Részletes típus</th>
+                            <th>Eseményjelleg</th>
                             <th>Súly</th>
                             <th>Forrás</th>
                         </tr>
@@ -879,7 +936,8 @@
             <td>Ukraine</td>
             <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">17</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">21</td>
             <td>www.irishtimes.com</td>
         </tr>
         
@@ -889,7 +947,8 @@
             <td>Ukraine</td>
             <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">17</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">21</td>
             <td>www.irishtimes.com</td>
         </tr>
         
@@ -899,7 +958,8 @@
             <td>Ukraine</td>
             <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">16</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">20</td>
             <td>www.freemalaysiatoday.com</td>
         </tr>
         
@@ -909,18 +969,20 @@
             <td>Ukraine</td>
             <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">16</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">20</td>
             <td>en.interfax.com.ua</td>
         </tr>
         
         <tr>
             <td>5</td>
-            <td>fight – Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
-            <td>Ukraine</td>
-            <td>Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
-            <td>Robbantás / IED</td>
-            <td class="score">14</td>
-            <td>www.globalsecurity.org</td>
+            <td>fight – Shahed, Fars, Iran</td>
+            <td>Iran</td>
+            <td>Shahed, Fars, Iran</td>
+            <td>Dróntámadás</td>
+            <td>Dróntámadás</td>
+            <td class="score">18</td>
+            <td>www.rnz.co.nz</td>
         </tr>
         
                     </tbody>
@@ -939,8 +1001,12 @@
                         <ol class="rank-list"><li><span>United States</span><strong>583</strong></li><li><span>Nigeria</span><strong>118</strong></li><li><span>India</span><strong>109</strong></li><li><span>Australia</span><strong>98</strong></li><li><span>United Kingdom</span><strong>90</strong></li><li><span>Ukraine</span><strong>42</strong></li><li><span>Pakistan</span><strong>42</strong></li><li><span>Russia</span><strong>38</strong></li><li><span>Iran</span><strong>37</strong></li><li><span>Israel</span><strong>37</strong></li></ol>
                     </div>
                     <div>
-                        <h3>Részletes támadástípusok</h3>
-                        <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>1200</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>524</strong></li><li><span>Robbantás / IED</span><strong>51</strong></li><li><span>Tömeges erőszak</span><strong>13</strong></li><li><span>Határincidens</span><strong>6</strong></li><li><span>Rendészeti / belbiztonsági incidens</span><strong>4</strong></li><li><span>Tüntetés / zavargás</span><strong>2</strong></li><li><span>Terrorcselekmény / milíciaaktivitás</span><strong>2</strong></li><li><span>Dróntámadás</span><strong>1</strong></li></ol>
+                        <h3>Részletes típusok</h3>
+                        <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>1202</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>524</strong></li><li><span>Robbantás / IED</span><strong>51</strong></li><li><span>Tömeges erőszak</span><strong>13</strong></li><li><span>Határincidens</span><strong>6</strong></li><li><span>Rendészeti / belbiztonsági incidens</span><strong>4</strong></li><li><span>Tüntetés / zavargás</span><strong>2</strong></li><li><span>Dróntámadás</span><strong>1</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Eseményjelleg</h3>
+                        <ol class="rank-list"><li><span>Egyéb biztonsági esemény</span><strong>1793</strong></li><li><span>Rendészeti / belbiztonsági esemény</span><strong>4</strong></li><li><span>Civil zavargás / tüntetés</span><strong>3</strong></li><li><span>Háborús cselekmény</span><strong>2</strong></li><li><span>Dróntámadás</span><strong>1</strong></li></ol>
                     </div>
                     <div>
                         <h3>Források</h3>
@@ -967,10 +1033,9 @@
                 <h2>Módszertani megjegyzés</h2>
                 <p>
                     Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
-                    A részletes támadástípus-besorolás kulcsszavak alapján történik.
-                    A rendszer deduplikálja az azonos helyszínhez, eseménytípushoz és címhez
-                    kapcsolódó találatokat, de az összevonás nem tökéletes.
-                    Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
+                    A dróntámadások, terrorjellegű események és háborús cselekmények azonosítása
+                    kulcsszavas besorolással történik. Ez elemzési támpont, nem hivatalos
+                    minősítés.
                 </p>
             </section>
         </main>
