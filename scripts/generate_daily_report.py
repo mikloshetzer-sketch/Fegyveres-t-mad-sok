@@ -58,38 +58,147 @@ def pick(properties, fields, default="Nincs adat"):
     return default
 
 
+def collect_events_by_day(features, target_day):
+    events = []
+
+    for feature in features:
+        props = feature.get("properties", {})
+        event_date = get_event_date(props)
+
+        if event_date == target_day:
+            events.append(feature)
+
+    return events
+
+
+def summarize_events(events):
+    country_counter = Counter()
+    type_counter = Counter()
+    source_counter = Counter()
+    events_by_country = defaultdict(list)
+
+    for feature in events:
+        props = feature.get("properties", {})
+
+        country = pick(
+            props,
+            ["country", "country_name", "location_country"],
+            "Ismeretlen ország",
+        )
+
+        event_type = pick(
+            props,
+            ["type", "event_type", "category", "theme"],
+            "Fegyveres incidens",
+        )
+
+        source = pick(
+            props,
+            ["source", "domain", "source_domain"],
+            "Ismeretlen forrás",
+        )
+
+        country_counter[country] += 1
+        type_counter[event_type] += 1
+        source_counter[source] += 1
+        events_by_country[country].append(feature)
+
+    return country_counter, type_counter, source_counter, events_by_country
+
+
+def generate_analysis_block(
+    today_total,
+    yesterday_total,
+    country_counter,
+    type_counter,
+):
+    if today_total == 0:
+        return """
+        <p>
+            A vizsgált napon a rendszer nem azonosított új támadási vagy fegyveres
+            incidenshez kapcsolódó eseményt. Ez nem feltétlenül jelenti azt, hogy nem
+            történt incidens. Inkább azt mutatja, hogy az automatizált nyílt forrású
+            gyűjtésben nem jelent meg megfelelő találat.
+        </p>
+        """
+
+    if yesterday_total == 0:
+        trend_text = (
+            "Az előző naphoz képest érdemi összevetés nem készíthető, "
+            "mert a korábbi napi adat nulla vagy nem volt elérhető."
+        )
+    elif today_total > yesterday_total:
+        diff = today_total - yesterday_total
+        trend_text = (
+            f"Az incidensek száma az előző naphoz képest emelkedett. "
+            f"A rendszer {diff} darabbal több eseményt azonosított."
+        )
+    elif today_total < yesterday_total:
+        diff = yesterday_total - today_total
+        trend_text = (
+            f"Az incidensek száma az előző naphoz képest csökkent. "
+            f"A rendszer {diff} darabbal kevesebb eseményt azonosított."
+        )
+    else:
+        trend_text = (
+            "Az incidensek száma az előző naphoz képest lényegében nem változott."
+        )
+
+    top_country = country_counter.most_common(1)
+    top_type = type_counter.most_common(1)
+
+    if top_country:
+        country_text = (
+            f"A legtöbb találat ehhez az országhoz kapcsolódott: "
+            f"<strong>{escape(top_country[0][0])}</strong> "
+            f"({top_country[0][1]} esemény)."
+        )
+    else:
+        country_text = "Nem rajzolódott ki egyértelműen domináns ország."
+
+    if top_type:
+        type_text = (
+            f"A leggyakoribb eseménytípus: "
+            f"<strong>{escape(top_type[0][0])}</strong> "
+            f"({top_type[0][1]} találat)."
+        )
+    else:
+        type_text = "Nem volt egyértelműen azonosítható domináns eseménytípus."
+
+    return f"""
+    <p>{escape(trend_text)}</p>
+    <p>{country_text}</p>
+    <p>{type_text}</p>
+    <p>
+        Az adatok alapján a napi biztonsági kép elsősorban nem hivatalos statisztikaként,
+        hanem korai figyelmeztető OSINT-jelzésként értelmezhető. A magasabb elemszám
+        fokozott médiafigyelmet, több forrásból megjelenő eseményeket vagy valódi
+        biztonsági romlást is jelezhet.
+    </p>
+    """
+
+
 def generate_report():
     data = load_geojson()
     features = data.get("features", [])
 
     today = datetime.utcnow().date()
     report_day = today - timedelta(days=1)
+    previous_day = report_day - timedelta(days=1)
 
-    daily_events = []
+    daily_events = collect_events_by_day(features, report_day)
+    previous_events = collect_events_by_day(features, previous_day)
 
-    for feature in features:
-        props = feature.get("properties", {})
-        event_date = get_event_date(props)
+    country_counter, type_counter, source_counter, events_by_country = summarize_events(
+        daily_events
+    )
 
-        if event_date == report_day:
-            daily_events.append(feature)
-
-    country_counter = Counter()
-    type_counter = Counter()
-    source_counter = Counter()
-    events_by_country = defaultdict(list)
-
-    for feature in daily_events:
-        props = feature.get("properties", {})
-
-        country = pick(props, ["country", "country_name", "location_country"], "Ismeretlen ország")
-        event_type = pick(props, ["type", "event_type", "category", "theme"], "Fegyveres incidens")
-        source = pick(props, ["source", "domain", "source_domain"], "Ismeretlen forrás")
-
-        country_counter[country] += 1
-        type_counter[event_type] += 1
-        source_counter[source] += 1
-        events_by_country[country].append(feature)
+    analysis_block = generate_analysis_block(
+        today_total=len(daily_events),
+        yesterday_total=len(previous_events),
+        country_counter=country_counter,
+        type_counter=type_counter,
+    )
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -98,11 +207,14 @@ def generate_report():
 
     html = build_html_report(
         report_day=report_day,
+        previous_day=previous_day,
         daily_events=daily_events,
+        previous_events=previous_events,
         country_counter=country_counter,
         type_counter=type_counter,
         source_counter=source_counter,
         events_by_country=events_by_country,
+        analysis_block=analysis_block,
     )
 
     with report_path.open("w", encoding="utf-8") as f:
@@ -115,13 +227,17 @@ def generate_report():
 
 def build_html_report(
     report_day,
+    previous_day,
     daily_events,
+    previous_events,
     country_counter,
     type_counter,
     source_counter,
     events_by_country,
+    analysis_block,
 ):
     total = len(daily_events)
+    previous_total = len(previous_events)
 
     top_countries_html = "".join(
         f"<li><strong>{escape(country)}</strong>: {count} esemény</li>"
@@ -146,13 +262,35 @@ def build_html_report(
         for feature in events[:12]:
             props = feature.get("properties", {})
 
-            title = pick(props, ["title", "headline", "name", "summary"], "Cím nélküli esemény")
-            url = pick(props, ["url", "source_url", "link"], "")
-            event_type = pick(props, ["type", "event_type", "category", "theme"], "Fegyveres incidens")
-            location = pick(props, ["location", "place", "city", "admin1"], "Nincs pontos helyadat")
+            title = pick(
+                props,
+                ["title", "headline", "name", "summary"],
+                "Cím nélküli esemény",
+            )
+
+            url = pick(
+                props,
+                ["url", "source_url", "link"],
+                "",
+            )
+
+            event_type = pick(
+                props,
+                ["type", "event_type", "category", "theme"],
+                "Fegyveres incidens",
+            )
+
+            location = pick(
+                props,
+                ["location", "place", "city", "admin1"],
+                "Nincs pontos helyadat",
+            )
 
             if url.startswith("http"):
-                title_html = f'<a href="{escape(url)}" target="_blank">{escape(title)}</a>'
+                title_html = (
+                    f'<a href="{escape(url)}" target="_blank">'
+                    f"{escape(title)}</a>"
+                )
             else:
                 title_html = escape(title)
 
@@ -220,6 +358,13 @@ def build_html_report(
             border-radius: 8px;
             margin-top: 20px;
         }}
+        .analysis {{
+            background: #ecfdf5;
+            border-left: 5px solid #10b981;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }}
         ul {{
             line-height: 1.7;
         }}
@@ -253,6 +398,15 @@ def build_html_report(
                 A rendszer a vizsgált napon <strong>{total}</strong> fegyveres támadáshoz,
                 erőszakos incidenshez vagy biztonsági eseményhez kapcsolódó találatot azonosított.
             </p>
+            <p>
+                Összevetési alap: {previous_day.isoformat()} – 
+                <strong>{previous_total}</strong> azonosított esemény.
+            </p>
+        </div>
+
+        <h2>Rövid napi értékelés</h2>
+        <div class="analysis">
+            {analysis_block}
         </div>
 
         <h2>Leginkább érintett országok</h2>
