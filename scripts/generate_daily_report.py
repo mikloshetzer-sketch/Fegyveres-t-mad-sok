@@ -40,6 +40,29 @@ EASTERN_EUROPE_SECURITY = {
 }
 
 
+DRONE_TERMS = [
+    "drone", "drones", "uav", "uas", "unmanned aerial", "unmanned aircraft",
+    "loitering munition", "kamikaze drone", "fpv drone", "shahed", "geran",
+    "quadcopter", "fixed-wing drone", "one-way attack drone"
+]
+
+TERROR_TERMS = [
+    "terror", "terrorist", "terrorism", "suicide bombing", "suicide bomber",
+    "car bomb", "truck bomb", "ied", "improvised explosive", "roadside bomb",
+    "stabbing attack", "mass shooting", "hostage", "hostages", "isis",
+    "islamic state", "al-qaeda", "al qaeda", "lone wolf", "militant attack",
+    "jihadist", "extremist", "explosive vest"
+]
+
+WAR_TERMS = [
+    "airstrike", "air strike", "missile strike", "rocket attack", "shelling",
+    "artillery", "mortar", "frontline", "front line", "troops", "military base",
+    "combat", "battle", "offensive", "counteroffensive", "armored vehicle",
+    "tank", "warplane", "fighter jet", "brigade", "battalion", "army",
+    "naval", "air defense", "air defence", "ballistic missile", "cruise missile"
+]
+
+
 def load_geojson():
     if not INPUT_FILE.exists():
         raise FileNotFoundError(f"Nincs ilyen fájl: {INPUT_FILE}")
@@ -142,56 +165,90 @@ def get_title(properties):
     return f"{raw_type} – {location}"
 
 
-def classify_detailed_event_type(properties):
+def event_text(properties):
     title = get_title(properties)
     raw_type = get_raw_event_type(properties)
     location = get_location(properties)
     country = get_country(properties)
+    return f"{title} {raw_type} {location} {country}".lower()
 
-    text = f"{title} {raw_type} {location} {country}".lower()
 
-    if any(word in text for word in ["drone", "uav", "unmanned aerial", "shahed", "loitering munition"]):
+def contains_any(text, terms):
+    return any(term in text for term in terms)
+
+
+def classify_event_nature(properties):
+    text = event_text(properties)
+
+    is_drone = contains_any(text, DRONE_TERMS)
+    is_terror = contains_any(text, TERROR_TERMS)
+    is_war = contains_any(text, WAR_TERMS)
+
+    if is_drone and is_war:
+        return "Dróntámadás / háborús cselekmény"
+
+    if is_drone:
         return "Dróntámadás"
 
-    if any(word in text for word in ["missile", "ballistic", "cruise missile", "rocket", "rockets"]):
+    if is_terror:
+        return "Terrorjellegű támadás"
+
+    if is_war:
+        return "Háborús cselekmény"
+
+    if contains_any(text, ["police", "arrest", "detained", "security forces", "law enforcement"]):
+        return "Rendészeti / belbiztonsági esemény"
+
+    if contains_any(text, ["protest", "riot", "unrest", "demonstration", "rally"]):
+        return "Civil zavargás / tüntetés"
+
+    return "Egyéb biztonsági esemény"
+
+
+def classify_detailed_event_type(properties):
+    text = event_text(properties)
+    raw_type = get_raw_event_type(properties).lower()
+
+    if contains_any(text, DRONE_TERMS):
+        return "Dróntámadás"
+
+    if contains_any(text, ["missile", "ballistic", "cruise missile", "rocket", "rockets"]):
         return "Rakéta- vagy ballisztikus támadás"
 
-    if any(word in text for word in ["airstrike", "air strike", "air raid", "aerial attack", "air attack", "warplane", "fighter jet"]):
+    if contains_any(text, ["airstrike", "air strike", "air raid", "aerial attack", "air attack", "warplane", "fighter jet"]):
         return "Légicsapás"
 
-    if any(word in text for word in ["shelling", "artillery", "mortar", "howitzer", "mlrs", "multiple launch"]):
+    if contains_any(text, ["shelling", "artillery", "mortar", "howitzer", "mlrs", "multiple launch"]):
         return "Tüzérségi / aknavetős támadás"
 
-    if any(word in text for word in ["ied", "improvised explosive", "roadside bomb", "car bomb", "suicide bomb", "bombing", "explosion", "blast", "detonation"]):
+    if contains_any(text, ["ied", "improvised explosive", "roadside bomb", "car bomb", "suicide bomb", "bombing", "explosion", "blast", "detonation"]):
         return "Robbantás / IED"
 
-    if any(word in text for word in ["clash", "clashes", "combat", "battle", "firefight", "gunfight", "fighting", "armed confrontation"]):
+    if contains_any(text, ["clash", "clashes", "combat", "battle", "firefight", "gunfight", "fighting", "armed confrontation"]):
         return "Fegyveres összecsapás"
 
-    if any(word in text for word in ["ambush", "raid", "assault", "stormed", "attack on", "attacked", "opened fire", "shooting"]):
+    if contains_any(text, ["ambush", "raid", "assault", "stormed", "attack on", "attacked", "opened fire", "shooting"]):
         return "Rajtaütés / fegyveres támadás"
 
-    if any(word in text for word in ["terror", "terrorist", "isis", "islamic state", "al-qaeda", "al qaeda", "hamas", "hezbollah"]):
+    if contains_any(text, TERROR_TERMS):
         return "Terrorcselekmény / milíciaaktivitás"
 
-    if any(word in text for word in ["border", "cross-border", "frontier", "checkpoint", "ceasefire line"]):
+    if contains_any(text, ["border", "cross-border", "frontier", "checkpoint", "ceasefire line"]):
         return "Határincidens"
 
-    if any(word in text for word in ["protest", "riot", "riots", "unrest", "demonstration", "demonstrators", "crowd", "rally"]):
+    if contains_any(text, ["protest", "riot", "riots", "unrest", "demonstration", "demonstrators", "crowd", "rally"]):
         return "Tüntetés / zavargás"
 
-    if any(word in text for word in ["police", "arrest", "arrested", "detained", "security forces", "law enforcement", "raid by police"]):
+    if contains_any(text, ["police", "arrest", "arrested", "detained", "security forces", "law enforcement", "raid by police"]):
         return "Rendészeti / belbiztonsági incidens"
 
-    raw = raw_type.lower()
-
-    if raw == "assault":
+    if raw_type == "assault":
         return "Rajtaütés / fegyveres támadás"
-    if raw == "fight":
+    if raw_type == "fight":
         return "Fegyveres összecsapás"
-    if raw == "mass_violence":
+    if raw_type == "mass_violence":
         return "Tömeges erőszak"
-    if raw == "other":
+    if raw_type == "other":
         return "Egyéb biztonsági esemény"
 
     return "Egyéb biztonsági esemény"
@@ -245,6 +302,7 @@ def deduplicate_events(events):
             grouped[key]["properties"]["merged_count"] = 1
             grouped[key]["properties"]["merged_sources"] = get_sources(props)
             grouped[key]["properties"]["detailed_event_type"] = event_type
+            grouped[key]["properties"]["event_nature"] = classify_event_nature(props)
         else:
             grouped[key]["properties"]["merged_count"] += 1
             old_sources = grouped[key]["properties"].setdefault("merged_sources", [])
@@ -258,6 +316,7 @@ def deduplicate_events(events):
 def summarize_events(events):
     country_counter = Counter()
     type_counter = Counter()
+    nature_counter = Counter()
     source_counter = Counter()
     events_by_country = defaultdict(list)
 
@@ -266,10 +325,12 @@ def summarize_events(events):
 
         country = get_country(props)
         event_type = get_event_type(props)
+        event_nature = props.get("event_nature") or classify_event_nature(props)
         sources = props.get("merged_sources") or get_sources(props)
 
         country_counter[country] += 1
         type_counter[event_type] += 1
+        nature_counter[event_nature] += 1
 
         for source in sources:
             domain = source.replace("https://", "").replace("http://", "").split("/")[0]
@@ -280,7 +341,7 @@ def summarize_events(events):
 
         events_by_country[country].append(feature)
 
-    return country_counter, type_counter, source_counter, events_by_country
+    return country_counter, type_counter, nature_counter, source_counter, events_by_country
 
 
 def region_for_event(feature):
@@ -390,33 +451,34 @@ def score_event(feature):
 
     title = get_title(props)
     event_type = get_event_type(props)
+    event_nature = props.get("event_nature") or classify_event_nature(props)
     location = get_location(props)
     country = get_country(props)
     sources = props.get("merged_sources") or get_sources(props)
     merged_count = int(props.get("merged_count", 1))
 
-    text = f"{title} {event_type} {location} {country}".lower()
+    text = f"{title} {event_type} {event_nature} {location} {country}".lower()
 
     score = 0
 
-    high_words = [
-        "drone", "missile", "rocket", "airstrike", "explosion", "bomb",
-        "killed", "dead", "fatal", "wounded", "injured", "military",
-        "terror", "clash", "shelling", "artillery", "ambush", "raid"
-    ]
+    for word in DRONE_TERMS:
+        if word in text:
+            score += 6
 
-    medium_words = [
-        "protest", "riot", "unrest", "security", "police", "evacuation",
-        "fire", "blast", "threat", "checkpoint"
-    ]
+    for word in TERROR_TERMS:
+        if word in text:
+            score += 6
 
-    for word in high_words:
+    for word in WAR_TERMS:
         if word in text:
             score += 5
 
-    for word in medium_words:
-        if word in text:
-            score += 2
+    if event_nature in {
+        "Dróntámadás / háborús cselekmény",
+        "Terrorjellegű támadás",
+        "Háborús cselekmény",
+    }:
+        score += 6
 
     if event_type in {
         "Dróntámadás",
@@ -463,7 +525,7 @@ def get_top_events(events, limit=5):
 def save_bar_chart(title, labels, values, output_path):
     width = 900
     height = 420
-    margin_left = 230
+    margin_left = 250
     margin_right = 70
     margin_top = 70
 
@@ -486,7 +548,7 @@ def save_bar_chart(title, labels, values, output_path):
 
         svg_items.append(
             f'<text x="{margin_left - 14}" y="{y + 20}" text-anchor="end" '
-            f'font-size="13" fill="#334155">{escape(str(label)[:36])}</text>'
+            f'font-size="13" fill="#334155">{escape(str(label)[:42])}</text>'
         )
 
         svg_items.append(
@@ -576,7 +638,7 @@ def save_line_chart(title, trend, output_path):
     output_path.write_text(svg, encoding="utf-8")
 
 
-def generate_charts(report_day, country_counter, type_counter, region_counter, trend):
+def generate_charts(report_day, country_counter, type_counter, nature_counter, region_counter, trend):
     CHARTS_DIR.mkdir(parents=True, exist_ok=True)
 
     chart_files = {}
@@ -584,12 +646,6 @@ def generate_charts(report_day, country_counter, type_counter, region_counter, t
     filename = f"{report_day.isoformat()}-7-day-trend.svg"
     save_line_chart("7 napos incidensaktivitási trend", trend, CHARTS_DIR / filename)
     chart_files["trend"] = f"charts/{filename}"
-
-    country_items = country_counter.most_common(6)
-    if country_items:
-        filename = f"{report_day.isoformat()}-top-countries.svg"
-        save_bar_chart("Top országok", [i[0] for i in country_items], [i[1] for i in country_items], CHARTS_DIR / filename)
-        chart_files["countries"] = f"charts/{filename}"
 
     region_items = region_counter.most_common(6)
     if region_items:
@@ -602,6 +658,12 @@ def generate_charts(report_day, country_counter, type_counter, region_counter, t
         filename = f"{report_day.isoformat()}-event-types.svg"
         save_bar_chart("Részletes támadástípusok", [i[0] for i in type_items], [i[1] for i in type_items], CHARTS_DIR / filename)
         chart_files["types"] = f"charts/{filename}"
+
+    nature_items = nature_counter.most_common(8)
+    if nature_items:
+        filename = f"{report_day.isoformat()}-event-nature.svg"
+        save_bar_chart("Eseményjelleg", [i[0] for i in nature_items], [i[1] for i in nature_items], CHARTS_DIR / filename)
+        chart_files["nature"] = f"charts/{filename}"
 
     return chart_files
 
@@ -626,20 +688,20 @@ def risk_color(count):
     return "#94a3b8"
 
 
-def get_key_message(region, count, top_type):
+def get_key_message(region, count, top_nature):
     if count == 0:
         return "A vizsgált napon nem jelent meg releváns OSINT-találat."
 
     if region == "Európai Unió":
-        return "Az EU térségében a biztonsági és rendészeti jellegű incidensek követése indokolt."
+        return f"Az EU-ban a fő jelleg: {top_nature}."
     if region == "Balkán":
-        return "A Balkánon az alacsonyabb intenzitású incidensek is gyorsan politikai jelentőséget kaphatnak."
+        return f"A Balkánon a fő jelleg: {top_nature}; a térség politikailag érzékeny marad."
     if region == "Közel-Kelet":
-        return "A Közel-Keleten továbbra is a fegyveres és katonai jellegű aktivitás adja a fő kockázatot."
+        return f"A Közel-Keleten a fő jelleg: {top_nature}; a katonai aktivitás továbbra is kiemelt kockázat."
     if region == "Ukrajna":
-        return "Ukrajnában a háborús környezet miatt a tüzérségi, rakéta- és dróntámadások kiemelt figyelmet igényelnek."
+        return f"Ukrajnában a fő jelleg: {top_nature}; a háborús dinamika továbbra is meghatározó."
 
-    return f"A fő azonosított eseménytípus: {top_type}."
+    return f"A fő azonosított eseményjelleg: {top_nature}."
 
 
 def build_sparkline(points, x, y, w, h, color):
@@ -681,31 +743,29 @@ def generate_sharecard(report_day, features, events_by_region):
     region_data = []
 
     total_focus_events = 0
-    combined_type_counter = Counter()
+    combined_nature_counter = Counter()
 
     for region, color in focus_regions:
         events = events_by_region.get(region, [])
         total_focus_events += len(events)
 
-        country_counter, type_counter, _, _ = summarize_events(events)
-        top_type = type_counter.most_common(1)[0][0] if type_counter else "Nincs adat"
-        top_type_count = type_counter.most_common(1)[0][1] if type_counter else 0
+        _, type_counter, nature_counter, _, _ = summarize_events(events)
+        top_nature = nature_counter.most_common(1)[0][0] if nature_counter else "Nincs adat"
         trend = collect_7_day_trend_for_region(features, report_day, region)
 
-        combined_type_counter.update(type_counter)
+        combined_nature_counter.update(nature_counter)
 
         region_data.append({
             "name": region,
             "color": color,
             "count": len(events),
-            "top_type": top_type,
-            "top_type_count": top_type_count,
+            "top_nature": top_nature,
             "risk": risk_label(len(events)),
             "risk_color": risk_color(len(events)),
-            "message": get_key_message(region, len(events), top_type),
+            "message": get_key_message(region, len(events), top_nature),
             "trend": trend,
             "types": type_counter,
-            "countries": country_counter,
+            "natures": nature_counter,
         })
 
     width = 1600
@@ -713,7 +773,6 @@ def generate_sharecard(report_day, features, events_by_region):
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <rect width="1600" height="2100" fill="#07111f"/>
-<rect x="0" y="0" width="1600" height="2100" fill="url(#bggrad)"/>
 <defs>
   <linearGradient id="bggrad" x1="0" x2="1" y1="0" y2="1">
     <stop offset="0%" stop-color="#0f172a"/>
@@ -724,6 +783,7 @@ def generate_sharecard(report_day, features, events_by_region):
     <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
   </filter>
 </defs>
+<rect width="1600" height="2100" fill="url(#bggrad)"/>
 
 <text x="70" y="95" font-size="48" font-weight="900" fill="#ffffff">FŐ RÉGIÓK ÖSSZEFOGLALÓJA</text>
 <text x="70" y="142" font-size="24" fill="#cbd5e1">Napi fegyveres incidens jelentés – {report_day.isoformat()}</text>
@@ -744,7 +804,7 @@ def generate_sharecard(report_day, features, events_by_region):
         x = start_x + i * (card_w + gap)
         color = item["color"]
 
-        types = item["types"].most_common(4)
+        natures = item["natures"].most_common(4)
 
         svg += f"""
 <g filter="url(#shadow)">
@@ -760,16 +820,16 @@ def generate_sharecard(report_day, features, events_by_region):
 <rect x="{x + 28}" y="{card_y + 215}" width="160" height="34" rx="12" fill="{item["risk_color"]}"/>
 <text x="{x + 108}" y="{card_y + 238}" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">{item["risk"]}</text>
 
-<text x="{x + 28}" y="{card_y + 300}" font-size="18" font-weight="900" fill="#111827">Fő támadástípusok</text>
+<text x="{x + 28}" y="{card_y + 300}" font-size="18" font-weight="900" fill="#111827">Fő eseményjelleg</text>
 """
 
         y_type = card_y + 336
-        max_type_value = max([v for _, v in types], default=1)
+        max_type_value = max([v for _, v in natures], default=1)
 
-        for type_name, value in types:
+        for nature_name, value in natures:
             bar_w = int((value / max_type_value) * 205) if max_type_value else 0
             svg += f"""
-<text x="{x + 28}" y="{y_type}" font-size="15" font-weight="700" fill="#334155">{escape(type_name[:32])}</text>
+<text x="{x + 28}" y="{y_type}" font-size="15" font-weight="700" fill="#334155">{escape(nature_name[:32])}</text>
 <rect x="{x + 28}" y="{y_type + 12}" width="240" height="10" rx="5" fill="#e2e8f0"/>
 <rect x="{x + 28}" y="{y_type + 12}" width="{bar_w}" height="10" rx="5" fill="{color}"/>
 <text x="{x + 285}" y="{y_type + 20}" font-size="15" font-weight="900" fill="#0f172a">{value}</text>
@@ -807,19 +867,19 @@ def generate_sharecard(report_day, features, events_by_region):
 
     svg += f"""
 <rect x="830" y="{lower_y}" width="690" height="360" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="870" y="{lower_y + 55}" font-size="28" font-weight="900" fill="#0f172a">Összesített támadástípusok</text>
+<text x="870" y="{lower_y + 55}" font-size="28" font-weight="900" fill="#0f172a">Összesített eseményjelleg</text>
 """
 
-    top_types = combined_type_counter.most_common(6)
-    max_type_total = max([v for _, v in top_types], default=1)
+    top_natures = combined_nature_counter.most_common(6)
+    max_nature_total = max([v for _, v in top_natures], default=1)
 
     y = lower_y + 105
 
-    for type_name, value in top_types:
-        bw = int((value / max_type_total) * 420)
+    for nature_name, value in top_natures:
+        bw = int((value / max_nature_total) * 420)
 
         svg += f"""
-<text x="870" y="{y}" font-size="18" font-weight="800" fill="#334155">{escape(type_name[:36])}</text>
+<text x="870" y="{y}" font-size="18" font-weight="800" fill="#334155">{escape(nature_name[:38])}</text>
 <rect x="870" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
 <rect x="870" y="{y + 12}" width="{bw}" height="18" rx="9" fill="#2563eb"/>
 <text x="1310" y="{y + 27}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
@@ -846,7 +906,7 @@ def generate_sharecard(report_day, features, events_by_region):
     svg += f"""
 <rect x="70" y="1930" width="1450" height="95" rx="22" fill="#111827" stroke="#334155"/>
 <text x="110" y="1970" font-size="19" font-weight="800" fill="#e5e7eb">Módszertani megjegyzés</text>
-<text x="110" y="2005" font-size="17" fill="#cbd5e1">Automatikus OSINT-alapú, deduplikált napi összefoglaló. Nem hivatalos konfliktus- vagy veszteségstatisztika.</text>
+<text x="110" y="2005" font-size="17" fill="#cbd5e1">Automatikus OSINT-alapú napi összefoglaló. Drón-, terrorjellegű és háborús események kulcsszavas besorolással.</text>
 <text x="1180" y="2005" font-size="18" font-weight="800" fill="#93c5fd">OSINT konfliktusfigyelő rendszer</text>
 </svg>
 """
@@ -858,65 +918,55 @@ def generate_sharecard(report_day, features, events_by_region):
     return f"sharecards/{filename}"
 
 
-def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter, region_counter):
+def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter, nature_counter, region_counter):
     if today_total == 0:
         return """
         <p>
             A vizsgált napon a rendszer nem azonosított új fegyveres incidenshez
-            kapcsolódó eseményt. Ez nem bizonyítja, hogy nem történt támadás.
-            Inkább azt jelzi, hogy az automatizált OSINT-gyűjtésben nem jelent meg
-            megfelelő találat.
+            kapcsolódó eseményt.
         </p>
         """
 
     if yesterday_total == 0:
-        trend_text = (
-            "Az előző naphoz képest nem készíthető erős összevetés, "
-            "mert a korábbi napi adat nulla vagy hiányos volt."
-        )
+        trend_text = "Az előző naphoz képest nem készíthető erős összevetés."
     elif today_total > yesterday_total:
         diff = today_total - yesterday_total
         percent = round((diff / yesterday_total) * 100, 1)
-        trend_text = (
-            f"Az incidensek száma emelkedett. A rendszer {diff} darabbal több "
-            f"eseményt azonosított, ami {percent}% növekedést jelent."
-        )
+        trend_text = f"Az incidensek száma emelkedett: +{diff} esemény, {percent}% növekedés."
     elif today_total < yesterday_total:
         diff = yesterday_total - today_total
         percent = round((diff / yesterday_total) * 100, 1)
-        trend_text = (
-            f"Az incidensek száma csökkent. A rendszer {diff} darabbal kevesebb "
-            f"eseményt azonosított, ami {percent}% visszaesést jelent."
-        )
+        trend_text = f"Az incidensek száma csökkent: -{diff} esemény, {percent}% visszaesés."
     else:
         trend_text = "Az incidensek száma az előző naphoz képest nem változott."
 
     top_country = country_counter.most_common(1)
     top_type = type_counter.most_common(1)
+    top_nature = nature_counter.most_common(1)
     top_region = region_counter.most_common(1)
 
     country_text = (
         f"A legtöbb találat ehhez az országhoz kapcsolódott: "
-        f"<strong>{escape(top_country[0][0])}</strong> "
-        f"({top_country[0][1]} esemény)."
-        if top_country else
-        "Nem rajzolódott ki domináns ország."
+        f"<strong>{escape(top_country[0][0])}</strong> ({top_country[0][1]} esemény)."
+        if top_country else "Nem rajzolódott ki domináns ország."
+    )
+
+    region_text = (
+        f"A legerősebb regionális súlypont: "
+        f"<strong>{escape(top_region[0][0])}</strong> ({top_region[0][1]} esemény)."
+        if top_region else "Nem volt azonosítható domináns régiós súlypont."
     )
 
     type_text = (
         f"A leggyakoribb részletes támadástípus: "
-        f"<strong>{escape(top_type[0][0])}</strong> "
-        f"({top_type[0][1]} találat)."
-        if top_type else
-        "Nem volt azonosítható domináns eseménytípus."
+        f"<strong>{escape(top_type[0][0])}</strong> ({top_type[0][1]} találat)."
+        if top_type else "Nem volt azonosítható domináns támadástípus."
     )
 
-    region_text = (
-        f"A napi aktivitás legerősebb regionális súlypontja: "
-        f"<strong>{escape(top_region[0][0])}</strong> "
-        f"({top_region[0][1]} esemény)."
-        if top_region else
-        "Nem volt azonosítható domináns régiós súlypont."
+    nature_text = (
+        f"A leggyakoribb eseményjelleg: "
+        f"<strong>{escape(top_nature[0][0])}</strong> ({top_nature[0][1]} találat)."
+        if top_nature else "Nem volt azonosítható domináns eseményjelleg."
     )
 
     return f"""
@@ -924,10 +974,10 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
     <p>{country_text}</p>
     <p>{region_text}</p>
     <p>{type_text}</p>
+    <p>{nature_text}</p>
     <p>
-        A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
-        A részletes támadástípusok kulcsszavas besorolással készülnek, ezért elemzési
-        támpontot adnak, de nem helyettesítik a kézi ellenőrzést.
+        A drón-, terrorjellegű és háborús események felismerése kulcsszavas besorolással történik.
+        Ez jó elemzési szűrő, de kézi ellenőrzést továbbra is igényelhet.
     </p>
     """
 
@@ -936,56 +986,33 @@ def build_region_summary(region_name, events):
     if not events:
         return ""
 
-    country_counter, type_counter, _, _ = summarize_events(events)
+    country_counter, type_counter, nature_counter, _, _ = summarize_events(events)
 
     top_countries = ", ".join(
         f"{escape(country)} ({count})"
         for country, count in country_counter.most_common(3)
-    )
+    ) or "nem azonosítható"
 
     top_types = ", ".join(
         f"{escape(event_type)} ({count})"
         for event_type, count in type_counter.most_common(3)
-    )
+    ) or "nem azonosítható"
 
-    if not top_countries:
-        top_countries = "nem azonosítható"
-    if not top_types:
-        top_types = "nem azonosítható"
-
-    text_by_region = {
-        "Európai Unió": (
-            "Az Európai Unió térségében a jelentés elsősorban biztonsági, rendészeti "
-            "vagy fegyveres incidensekhez kapcsolódó nyílt forrású találatokat azonosított."
-        ),
-        "Balkán": (
-            "A Balkán esetében a napi kép különösen fontos, mert a térségben az alacsonyabb "
-            "intenzitású incidensek is gyorsan politikai és biztonsági jelentőséget kaphatnak."
-        ),
-        "Közel-Kelet": (
-            "A Közel-Kelet továbbra is kiemelt biztonsági térség. A jelentésben megjelenő "
-            "események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai "
-            "tevékenységhez kapcsolódnak."
-        ),
-        "Ukrajna": (
-            "Ukrajna külön kiemelt kategóriaként szerepel, mert a háborús aktivitás "
-            "jelentősen torzíthatná az általános európai képet."
-        ),
-    }
-
-    intro = text_by_region.get(
-        region_name,
-        "A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított."
-    )
+    top_natures = ", ".join(
+        f"{escape(nature)} ({count})"
+        for nature, count in nature_counter.most_common(3)
+    ) or "nem azonosítható"
 
     return f"""
     <div class="region-summary">
         <h3>{escape(region_name)}</h3>
-        <p>{intro}</p>
         <p>
             Azonosított események száma: <strong>{len(events)}</strong>.
             Leginkább érintett országok: <strong>{top_countries}</strong>.
+        </p>
+        <p>
             Domináns támadástípusok: <strong>{top_types}</strong>.
+            Domináns eseményjelleg: <strong>{top_natures}</strong>.
         </p>
     </div>
     """
@@ -995,7 +1022,7 @@ def build_top_events_rows(top_events):
     if not top_events:
         return """
         <tr>
-            <td colspan="7">Nincs kiemelhető esemény.</td>
+            <td colspan="8">Nincs kiemelhető esemény.</td>
         </tr>
         """
 
@@ -1007,6 +1034,7 @@ def build_top_events_rows(top_events):
         title = get_title(props)
         url = get_event_url(props)
         event_type = get_event_type(props)
+        event_nature = props.get("event_nature") or classify_event_nature(props)
         country = get_country(props)
         location = get_location(props)
         sources = props.get("merged_sources") or get_sources(props)
@@ -1029,6 +1057,7 @@ def build_top_events_rows(top_events):
             <td>{escape(country)}</td>
             <td>{escape(location)}</td>
             <td>{escape(event_type)}</td>
+            <td>{escape(event_nature)}</td>
             <td class="score">{score}</td>
             <td>{source_html}</td>
         </tr>
@@ -1055,8 +1084,8 @@ def build_charts_html(chart_files):
     for key, alt in [
         ("trend", "7 napos trend"),
         ("regions", "Régiós bontás"),
-        ("countries", "Top országok"),
         ("types", "Részletes támadástípusok"),
+        ("nature", "Eseményjelleg"),
     ]:
         if key in chart_files:
             wide = " wide" if key == "trend" else ""
@@ -1091,6 +1120,7 @@ def build_region_blocks(events_by_region):
                     <th>Ország</th>
                     <th>Helyszín</th>
                     <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -1104,6 +1134,7 @@ def build_region_blocks(events_by_region):
             country = get_country(props)
             location = get_location(props)
             event_type = get_event_type(props)
+            event_nature = props.get("event_nature") or classify_event_nature(props)
             sources = props.get("merged_sources") or get_sources(props)
 
             source_label = "Forrás"
@@ -1123,6 +1154,7 @@ def build_region_blocks(events_by_region):
                 <td>{escape(country)}</td>
                 <td>{escape(location)}</td>
                 <td>{escape(event_type)}</td>
+                <td>{escape(event_nature)}</td>
                 <td>{source_html}</td>
             </tr>
             """
@@ -1142,6 +1174,7 @@ def build_html_report(
     previous_events,
     country_counter,
     type_counter,
+    nature_counter,
     source_counter,
     region_counter,
     events_by_region,
@@ -1168,6 +1201,7 @@ def build_html_report(
     charts_html = build_charts_html(chart_files)
     country_list = build_counter_list(country_counter)
     type_list = build_counter_list(type_counter)
+    nature_list = build_counter_list(nature_counter)
     source_list = build_counter_list(source_counter)
     region_list = build_counter_list(region_counter)
     region_blocks = build_region_blocks(events_by_region)
@@ -1381,7 +1415,7 @@ def build_html_report(
 
         .three-col {{
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 18px;
         }}
 
@@ -1526,7 +1560,7 @@ def build_html_report(
                 <div class="card warning-card">
                     <div class="label">Módszertani jelzés</div>
                     <div class="small">
-                        Nem hivatalos statisztika. Nyílt forrású, automatizált OSINT-jelzés.
+                        Drón-, terrorjellegű és háborús események kulcsszavas azonosítással.
                     </div>
                 </div>
             </section>
@@ -1560,6 +1594,7 @@ def build_html_report(
                             <th>Ország</th>
                             <th>Helyszín</th>
                             <th>Részletes típus</th>
+                            <th>Eseményjelleg</th>
                             <th>Súly</th>
                             <th>Forrás</th>
                         </tr>
@@ -1582,8 +1617,12 @@ def build_html_report(
                         <ol class="rank-list">{country_list}</ol>
                     </div>
                     <div>
-                        <h3>Részletes támadástípusok</h3>
+                        <h3>Részletes típusok</h3>
                         <ol class="rank-list">{type_list}</ol>
+                    </div>
+                    <div>
+                        <h3>Eseményjelleg</h3>
+                        <ol class="rank-list">{nature_list}</ol>
                     </div>
                     <div>
                         <h3>Források</h3>
@@ -1610,10 +1649,9 @@ def build_html_report(
                 <h2>Módszertani megjegyzés</h2>
                 <p>
                     Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
-                    A részletes támadástípus-besorolás kulcsszavak alapján történik.
-                    A rendszer deduplikálja az azonos helyszínhez, eseménytípushoz és címhez
-                    kapcsolódó találatokat, de az összevonás nem tökéletes.
-                    Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
+                    A dróntámadások, terrorjellegű események és háborús cselekmények azonosítása
+                    kulcsszavas besorolással történik. Ez elemzési támpont, nem hivatalos
+                    minősítés.
                 </p>
             </section>
         </main>
@@ -1709,7 +1747,7 @@ def generate_report():
     daily_events = deduplicate_events(daily_raw_events)
     previous_events = deduplicate_events(previous_raw_events)
 
-    country_counter, type_counter, source_counter, _ = summarize_events(daily_events)
+    country_counter, type_counter, nature_counter, source_counter, _ = summarize_events(daily_events)
     events_by_region = group_events_by_region(daily_events)
 
     region_counter = Counter()
@@ -1723,6 +1761,7 @@ def generate_report():
         report_day=report_day,
         country_counter=country_counter,
         type_counter=type_counter,
+        nature_counter=nature_counter,
         region_counter=region_counter,
         trend=trend,
     )
@@ -1738,6 +1777,7 @@ def generate_report():
         yesterday_total=len(previous_events),
         country_counter=country_counter,
         type_counter=type_counter,
+        nature_counter=nature_counter,
         region_counter=region_counter,
     )
 
@@ -1753,6 +1793,7 @@ def generate_report():
         previous_events=previous_events,
         country_counter=country_counter,
         type_counter=type_counter,
+        nature_counter=nature_counter,
         source_counter=source_counter,
         region_counter=region_counter,
         events_by_region=events_by_region,
