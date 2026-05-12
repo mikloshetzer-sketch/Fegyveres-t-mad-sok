@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 CHARTS_DIR = REPORTS_DIR / "charts"
+SHARECARDS_DIR = REPORTS_DIR / "sharecards"
 
 
 EU_COUNTRIES = {
@@ -48,12 +49,7 @@ def load_geojson():
 
 
 def get_event_date(properties):
-    possible_fields = [
-        "date", "event_date", "published", "seendate",
-        "datetime", "timestamp", "created_at"
-    ]
-
-    for field in possible_fields:
+    for field in ["date", "event_date", "published", "seendate", "datetime", "timestamp", "created_at"]:
         value = properties.get(field)
         if not value:
             continue
@@ -84,9 +80,7 @@ def pick(properties, fields, default="Nincs adat"):
 def clean_text(value):
     if not value:
         return ""
-    value = str(value)
-    value = re.sub(r"\s+", " ", value).strip()
-    return value
+    return re.sub(r"\s+", " ", str(value)).strip()
 
 
 def normalize_key(value):
@@ -114,12 +108,7 @@ def get_sources(properties):
 
 
 def get_country(properties):
-    country = pick(
-        properties,
-        ["country", "country_name", "location_country"],
-        "",
-    )
-
+    country = pick(properties, ["country", "country_name", "location_country"], "")
     if country:
         return clean_text(country)
 
@@ -133,39 +122,23 @@ def get_country(properties):
 
 
 def get_location(properties):
-    location = pick(
-        properties,
-        ["location", "place", "city", "admin1"],
-        "",
-    )
-
+    location = pick(properties, ["location", "place", "city", "admin1"], "")
     if location:
         return clean_text(location)
-
     return "Nincs pontos helyadat"
 
 
 def get_raw_event_type(properties):
-    return pick(
-        properties,
-        ["attack_type", "type", "event_type", "category", "theme"],
-        "",
-    )
+    return pick(properties, ["attack_type", "type", "event_type", "category", "theme"], "")
 
 
 def get_title(properties):
-    title = pick(
-        properties,
-        ["title", "headline", "name", "summary"],
-        "",
-    )
-
+    title = pick(properties, ["title", "headline", "name", "summary"], "")
     if title:
         return clean_text(title)
 
     raw_type = get_raw_event_type(properties) or "Fegyveres incidens"
     location = get_location(properties)
-
     return f"{raw_type} – {location}"
 
 
@@ -177,66 +150,37 @@ def classify_detailed_event_type(properties):
 
     text = f"{title} {raw_type} {location} {country}".lower()
 
-    if any(word in text for word in [
-        "drone", "uav", "unmanned aerial", "shahed", "loitering munition"
-    ]):
+    if any(word in text for word in ["drone", "uav", "unmanned aerial", "shahed", "loitering munition"]):
         return "Dróntámadás"
 
-    if any(word in text for word in [
-        "missile", "ballistic", "cruise missile", "rocket", "rockets"
-    ]):
+    if any(word in text for word in ["missile", "ballistic", "cruise missile", "rocket", "rockets"]):
         return "Rakéta- vagy ballisztikus támadás"
 
-    if any(word in text for word in [
-        "airstrike", "air strike", "air raid", "aerial attack", "air attack",
-        "warplane", "fighter jet"
-    ]):
+    if any(word in text for word in ["airstrike", "air strike", "air raid", "aerial attack", "air attack", "warplane", "fighter jet"]):
         return "Légicsapás"
 
-    if any(word in text for word in [
-        "shelling", "artillery", "mortar", "howitzer", "mlrs", "multiple launch"
-    ]):
+    if any(word in text for word in ["shelling", "artillery", "mortar", "howitzer", "mlrs", "multiple launch"]):
         return "Tüzérségi / aknavetős támadás"
 
-    if any(word in text for word in [
-        "ied", "improvised explosive", "roadside bomb", "car bomb",
-        "suicide bomb", "bombing", "explosion", "blast", "detonation"
-    ]):
+    if any(word in text for word in ["ied", "improvised explosive", "roadside bomb", "car bomb", "suicide bomb", "bombing", "explosion", "blast", "detonation"]):
         return "Robbantás / IED"
 
-    if any(word in text for word in [
-        "clash", "clashes", "combat", "battle", "firefight", "gunfight",
-        "fighting", "armed confrontation"
-    ]):
+    if any(word in text for word in ["clash", "clashes", "combat", "battle", "firefight", "gunfight", "fighting", "armed confrontation"]):
         return "Fegyveres összecsapás"
 
-    if any(word in text for word in [
-        "ambush", "raid", "assault", "stormed", "attack on", "attacked",
-        "opened fire", "shooting"
-    ]):
+    if any(word in text for word in ["ambush", "raid", "assault", "stormed", "attack on", "attacked", "opened fire", "shooting"]):
         return "Rajtaütés / fegyveres támadás"
 
-    if any(word in text for word in [
-        "terror", "terrorist", "isis", "islamic state", "al-qaeda",
-        "al qaeda", "hamas", "hezbollah"
-    ]):
+    if any(word in text for word in ["terror", "terrorist", "isis", "islamic state", "al-qaeda", "al qaeda", "hamas", "hezbollah"]):
         return "Terrorcselekmény / milíciaaktivitás"
 
-    if any(word in text for word in [
-        "border", "cross-border", "frontier", "checkpoint", "ceasefire line"
-    ]):
+    if any(word in text for word in ["border", "cross-border", "frontier", "checkpoint", "ceasefire line"]):
         return "Határincidens"
 
-    if any(word in text for word in [
-        "protest", "riot", "riots", "unrest", "demonstration",
-        "demonstrators", "crowd", "rally"
-    ]):
+    if any(word in text for word in ["protest", "riot", "riots", "unrest", "demonstration", "demonstrators", "crowd", "rally"]):
         return "Tüntetés / zavargás"
 
-    if any(word in text for word in [
-        "police", "arrest", "arrested", "detained", "security forces",
-        "law enforcement", "raid by police"
-    ]):
+    if any(word in text for word in ["police", "arrest", "arrested", "detained", "security forces", "law enforcement", "raid by police"]):
         return "Rendészeti / belbiztonsági incidens"
 
     raw = raw_type.lower()
@@ -348,6 +292,9 @@ def region_for_event(feature):
     lon = coords[0] if len(coords) >= 2 else None
     lat = coords[1] if len(coords) >= 2 else None
 
+    if country == "Ukraine":
+        return "Ukrajna"
+
     if country in EU_COUNTRIES:
         return "Európai Unió"
 
@@ -361,18 +308,14 @@ def region_for_event(feature):
         return "Kelet-Európa / orosz–ukrán térség"
 
     if lat is not None and lon is not None:
-        if 35 <= lat <= 72 and -25 <= lon <= 45:
-            return "Európa – egyéb"
+        if 44 <= lat <= 53 and 22 <= lon <= 41:
+            return "Ukrajna"
         if 37 <= lat <= 48 and 13 <= lon <= 30:
             return "Balkán"
         if 12 <= lat <= 42 and 25 <= lon <= 70:
             return "Közel-Kelet"
-        if -35 <= lat <= 37 and -20 <= lon <= 55:
-            return "Afrika"
-        if 5 <= lat <= 80 and 45 <= lon <= 180:
-            return "Ázsia"
-        if -60 <= lat <= 33 and -120 <= lon <= -30:
-            return "Amerika"
+        if 35 <= lat <= 72 and -25 <= lon <= 45:
+            return "Európa – egyéb"
 
     return "Egyéb térségek"
 
@@ -385,12 +328,10 @@ def group_events_by_region(events):
 
     preferred_order = [
         "Európai Unió",
-        "Kelet-Európa / orosz–ukrán térség",
+        "Ukrajna",
         "Balkán",
         "Közel-Kelet",
-        "Afrika",
-        "Ázsia",
-        "Amerika",
+        "Kelet-Európa / orosz–ukrán térség",
         "Európa – egyéb",
         "Egyéb térségek",
     ]
@@ -419,6 +360,26 @@ def collect_7_day_trend(features, report_day):
         event_date = get_event_date(props)
 
         if event_date and event_date.isoformat() in trend:
+            trend[event_date.isoformat()] += 1
+
+    return trend
+
+
+def collect_7_day_trend_for_region(features, report_day, target_region):
+    trend = {}
+
+    for i in range(6, -1, -1):
+        day = report_day - timedelta(days=i)
+        trend[day.isoformat()] = 0
+
+    for feature in features:
+        props = feature.get("properties", {})
+        event_date = get_event_date(props)
+
+        if not event_date or event_date.isoformat() not in trend:
+            continue
+
+        if region_for_event(feature) == target_region:
             trend[event_date.isoformat()] += 1
 
     return trend
@@ -481,8 +442,8 @@ def score_event(feature):
     if country in MIDDLE_EAST_COUNTRIES:
         score += 2
 
-    if country in EASTERN_EUROPE_SECURITY:
-        score += 2
+    if country == "Ukraine":
+        score += 3
 
     return score
 
@@ -505,7 +466,6 @@ def save_bar_chart(title, labels, values, output_path):
     margin_left = 230
     margin_right = 70
     margin_top = 70
-    margin_bottom = 50
 
     chart_width = width - margin_left - margin_right
     max_value = max(values) if values else 1
@@ -622,47 +582,280 @@ def generate_charts(report_day, country_counter, type_counter, region_counter, t
     chart_files = {}
 
     filename = f"{report_day.isoformat()}-7-day-trend.svg"
-    save_line_chart(
-        "7 napos incidensaktivitási trend",
-        trend,
-        CHARTS_DIR / filename,
-    )
+    save_line_chart("7 napos incidensaktivitási trend", trend, CHARTS_DIR / filename)
     chart_files["trend"] = f"charts/{filename}"
 
     country_items = country_counter.most_common(6)
     if country_items:
         filename = f"{report_day.isoformat()}-top-countries.svg"
-        save_bar_chart(
-            "Top országok",
-            [item[0] for item in country_items],
-            [item[1] for item in country_items],
-            CHARTS_DIR / filename,
-        )
+        save_bar_chart("Top országok", [i[0] for i in country_items], [i[1] for i in country_items], CHARTS_DIR / filename)
         chart_files["countries"] = f"charts/{filename}"
 
     region_items = region_counter.most_common(6)
     if region_items:
         filename = f"{report_day.isoformat()}-regions.svg"
-        save_bar_chart(
-            "Régiós bontás",
-            [item[0] for item in region_items],
-            [item[1] for item in region_items],
-            CHARTS_DIR / filename,
-        )
+        save_bar_chart("Régiós bontás", [i[0] for i in region_items], [i[1] for i in region_items], CHARTS_DIR / filename)
         chart_files["regions"] = f"charts/{filename}"
 
     type_items = type_counter.most_common(8)
     if type_items:
         filename = f"{report_day.isoformat()}-event-types.svg"
-        save_bar_chart(
-            "Részletes támadástípusok",
-            [item[0] for item in type_items],
-            [item[1] for item in type_items],
-            CHARTS_DIR / filename,
-        )
+        save_bar_chart("Részletes támadástípusok", [i[0] for i in type_items], [i[1] for i in type_items], CHARTS_DIR / filename)
         chart_files["types"] = f"charts/{filename}"
 
     return chart_files
+
+
+def risk_label(count):
+    if count >= 40:
+        return "MAGAS"
+    if count >= 15:
+        return "KÖZEPES"
+    if count >= 1:
+        return "ALACSONY"
+    return "NINCS ADAT"
+
+
+def risk_color(count):
+    if count >= 40:
+        return "#ef4444"
+    if count >= 15:
+        return "#f97316"
+    if count >= 1:
+        return "#22c55e"
+    return "#94a3b8"
+
+
+def get_key_message(region, count, top_type):
+    if count == 0:
+        return "A vizsgált napon nem jelent meg releváns OSINT-találat."
+
+    if region == "Európai Unió":
+        return "Az EU térségében a biztonsági és rendészeti jellegű incidensek követése indokolt."
+    if region == "Balkán":
+        return "A Balkánon az alacsonyabb intenzitású incidensek is gyorsan politikai jelentőséget kaphatnak."
+    if region == "Közel-Kelet":
+        return "A Közel-Keleten továbbra is a fegyveres és katonai jellegű aktivitás adja a fő kockázatot."
+    if region == "Ukrajna":
+        return "Ukrajnában a háborús környezet miatt a tüzérségi, rakéta- és dróntámadások kiemelt figyelmet igényelnek."
+
+    return f"A fő azonosított eseménytípus: {top_type}."
+
+
+def build_sparkline(points, x, y, w, h, color):
+    values = list(points.values())
+    if not values:
+        values = [0]
+
+    max_value = max(max(values), 1)
+
+    coords = []
+    labels = list(points.keys())
+
+    for i, value in enumerate(values):
+        px = x + i * (w / max(len(values) - 1, 1))
+        py = y + h - ((value / max_value) * h)
+        coords.append((px, py, value, labels[i]))
+
+    poly = " ".join(f"{px:.1f},{py:.1f}" for px, py, _, _ in coords)
+
+    svg = f'<polyline points="{poly}" fill="none" stroke="{color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>'
+
+    for px, py, value, label in coords:
+        svg += f'<circle cx="{px:.1f}" cy="{py:.1f}" r="3.8" fill="{color}"/>'
+        svg += f'<text x="{px:.1f}" y="{py - 8:.1f}" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">{value}</text>'
+
+    return svg
+
+
+def generate_sharecard(report_day, features, events_by_region):
+    SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
+
+    focus_regions = [
+        ("Európai Unió", "#2563eb"),
+        ("Balkán", "#16a34a"),
+        ("Közel-Kelet", "#f97316"),
+        ("Ukrajna", "#dc2626"),
+    ]
+
+    region_data = []
+
+    total_focus_events = 0
+    combined_type_counter = Counter()
+
+    for region, color in focus_regions:
+        events = events_by_region.get(region, [])
+        total_focus_events += len(events)
+
+        country_counter, type_counter, _, _ = summarize_events(events)
+        top_type = type_counter.most_common(1)[0][0] if type_counter else "Nincs adat"
+        top_type_count = type_counter.most_common(1)[0][1] if type_counter else 0
+        trend = collect_7_day_trend_for_region(features, report_day, region)
+
+        combined_type_counter.update(type_counter)
+
+        region_data.append({
+            "name": region,
+            "color": color,
+            "count": len(events),
+            "top_type": top_type,
+            "top_type_count": top_type_count,
+            "risk": risk_label(len(events)),
+            "risk_color": risk_color(len(events)),
+            "message": get_key_message(region, len(events), top_type),
+            "trend": trend,
+            "types": type_counter,
+            "countries": country_counter,
+        })
+
+    width = 1600
+    height = 2100
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<rect width="1600" height="2100" fill="#07111f"/>
+<rect x="0" y="0" width="1600" height="2100" fill="url(#bggrad)"/>
+<defs>
+  <linearGradient id="bggrad" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#0f172a"/>
+    <stop offset="55%" stop-color="#07111f"/>
+    <stop offset="100%" stop-color="#020617"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+  </filter>
+</defs>
+
+<text x="70" y="95" font-size="48" font-weight="900" fill="#ffffff">FŐ RÉGIÓK ÖSSZEFOGLALÓJA</text>
+<text x="70" y="142" font-size="24" fill="#cbd5e1">Napi fegyveres incidens jelentés – {report_day.isoformat()}</text>
+<text x="70" y="185" font-size="20" fill="#93c5fd">Európai Unió • Balkán • Közel-Kelet • Ukrajna</text>
+
+<rect x="1190" y="60" width="330" height="115" rx="22" fill="#111827" stroke="#334155"/>
+<text x="1230" y="102" font-size="18" fill="#94a3b8">Összes kiemelt régiós esemény</text>
+<text x="1230" y="153" font-size="46" font-weight="900" fill="#ffffff">{total_focus_events}</text>
+"""
+
+    card_y = 250
+    card_w = 350
+    card_h = 690
+    gap = 30
+    start_x = 70
+
+    for i, item in enumerate(region_data):
+        x = start_x + i * (card_w + gap)
+        color = item["color"]
+
+        types = item["types"].most_common(4)
+
+        svg += f"""
+<g filter="url(#shadow)">
+<rect x="{x}" y="{card_y}" width="{card_w}" height="{card_h}" rx="24" fill="#f8fafc"/>
+<rect x="{x}" y="{card_y}" width="{card_w}" height="92" rx="24" fill="{color}"/>
+<rect x="{x}" y="{card_y + 58}" width="{card_w}" height="34" fill="{color}"/>
+<text x="{x + 28}" y="{card_y + 58}" font-size="30" font-weight="900" fill="#ffffff">{escape(item["name"].upper())}</text>
+
+<text x="{x + 28}" y="{card_y + 145}" font-size="62" font-weight="900" fill="{color}">{item["count"]}</text>
+<text x="{x + 130}" y="{card_y + 140}" font-size="22" font-weight="800" fill="#334155">esemény</text>
+
+<text x="{x + 28}" y="{card_y + 195}" font-size="18" font-weight="800" fill="#334155">Aktuális kockázati szint</text>
+<rect x="{x + 28}" y="{card_y + 215}" width="160" height="34" rx="12" fill="{item["risk_color"]}"/>
+<text x="{x + 108}" y="{card_y + 238}" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">{item["risk"]}</text>
+
+<text x="{x + 28}" y="{card_y + 300}" font-size="18" font-weight="900" fill="#111827">Fő támadástípusok</text>
+"""
+
+        y_type = card_y + 336
+        max_type_value = max([v for _, v in types], default=1)
+
+        for type_name, value in types:
+            bar_w = int((value / max_type_value) * 205) if max_type_value else 0
+            svg += f"""
+<text x="{x + 28}" y="{y_type}" font-size="15" font-weight="700" fill="#334155">{escape(type_name[:32])}</text>
+<rect x="{x + 28}" y="{y_type + 12}" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="{x + 28}" y="{y_type + 12}" width="{bar_w}" height="10" rx="5" fill="{color}"/>
+<text x="{x + 285}" y="{y_type + 20}" font-size="15" font-weight="900" fill="#0f172a">{value}</text>
+"""
+            y_type += 62
+
+        svg += f"""
+<text x="{x + 28}" y="{card_y + 575}" font-size="18" font-weight="900" fill="#111827">7 napos trend</text>
+<rect x="{x + 28}" y="{card_y + 595}" width="292" height="70" rx="14" fill="#eef2ff"/>
+{build_sparkline(item["trend"], x + 48, card_y + 610, 252, 38, color)}
+</g>
+"""
+
+    lower_y = 1010
+
+    svg += f"""
+<rect x="70" y="{lower_y}" width="700" height="360" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="110" y="{lower_y + 55}" font-size="28" font-weight="900" fill="#0f172a">Kiemelt régiók megoszlása</text>
+"""
+
+    total = max(total_focus_events, 1)
+    bar_y = lower_y + 105
+
+    for item in region_data:
+        pct = round((item["count"] / total) * 100)
+        bar_w = int((item["count"] / total) * 520)
+
+        svg += f"""
+<text x="110" y="{bar_y}" font-size="20" font-weight="800" fill="#334155">{escape(item["name"])}</text>
+<rect x="300" y="{bar_y - 18}" width="520" height="22" rx="11" fill="#e2e8f0"/>
+<rect x="300" y="{bar_y - 18}" width="{bar_w}" height="22" rx="11" fill="{item["color"]}"/>
+<text x="835" y="{bar_y}" font-size="20" font-weight="900" fill="#0f172a">{item["count"]} / {pct}%</text>
+"""
+        bar_y += 62
+
+    svg += f"""
+<rect x="830" y="{lower_y}" width="690" height="360" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="870" y="{lower_y + 55}" font-size="28" font-weight="900" fill="#0f172a">Összesített támadástípusok</text>
+"""
+
+    top_types = combined_type_counter.most_common(6)
+    max_type_total = max([v for _, v in top_types], default=1)
+
+    y = lower_y + 105
+
+    for type_name, value in top_types:
+        bw = int((value / max_type_total) * 420)
+
+        svg += f"""
+<text x="870" y="{y}" font-size="18" font-weight="800" fill="#334155">{escape(type_name[:36])}</text>
+<rect x="870" y="{y + 12}" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="870" y="{y + 12}" width="{bw}" height="18" rx="9" fill="#2563eb"/>
+<text x="1310" y="{y + 27}" font-size="18" font-weight="900" fill="#0f172a">{value}</text>
+"""
+        y += 48
+
+    message_y = 1440
+
+    svg += f"""
+<rect x="70" y="{message_y}" width="1450" height="420" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="110" y="{message_y + 58}" font-size="30" font-weight="900" fill="#0f172a">Régiós kulcsüzenetek</text>
+"""
+
+    y = message_y + 112
+
+    for item in region_data:
+        svg += f"""
+<circle cx="120" cy="{y - 7}" r="10" fill="{item["color"]}"/>
+<text x="145" y="{y}" font-size="22" font-weight="900" fill="#0f172a">{escape(item["name"])}</text>
+<text x="320" y="{y}" font-size="20" fill="#334155">{escape(item["message"])}</text>
+"""
+        y += 74
+
+    svg += f"""
+<rect x="70" y="1930" width="1450" height="95" rx="22" fill="#111827" stroke="#334155"/>
+<text x="110" y="1970" font-size="19" font-weight="800" fill="#e5e7eb">Módszertani megjegyzés</text>
+<text x="110" y="2005" font-size="17" fill="#cbd5e1">Automatikus OSINT-alapú, deduplikált napi összefoglaló. Nem hivatalos konfliktus- vagy veszteségstatisztika.</text>
+<text x="1180" y="2005" font-size="18" font-weight="800" fill="#93c5fd">OSINT konfliktusfigyelő rendszer</text>
+</svg>
+"""
+
+    filename = f"{report_day.isoformat()}-summary.svg"
+    path = SHARECARDS_DIR / filename
+    path.write_text(svg, encoding="utf-8")
+
+    return f"sharecards/{filename}"
 
 
 def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter, region_counter):
@@ -743,7 +936,8 @@ def build_region_summary(region_name, events):
     if not events:
         return ""
 
-    country_counter, type_counter, source_counter, _ = summarize_events(events)
+    country_counter, type_counter, _, _ = summarize_events(events)
+
     top_countries = ", ".join(
         f"{escape(country)} ({count})"
         for country, count in country_counter.most_common(3)
@@ -773,9 +967,9 @@ def build_region_summary(region_name, events):
             "események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai "
             "tevékenységhez kapcsolódnak."
         ),
-        "Kelet-Európa / orosz–ukrán térség": (
-            "A kelet-európai biztonsági blokkban az orosz–ukrán háborúhoz és annak "
-            "közvetlen környezetéhez kapcsolódó események adhatják a napi aktivitás jelentős részét."
+        "Ukrajna": (
+            "Ukrajna külön kiemelt kategóriaként szerepel, mert a háborús aktivitás "
+            "jelentősen torzíthatná az általános európai képet."
         ),
     }
 
@@ -954,6 +1148,7 @@ def build_html_report(
     analysis_block,
     top_events,
     chart_files,
+    sharecard_path,
 ):
     total = len(daily_events)
     previous_total = len(previous_events)
@@ -1232,6 +1427,19 @@ def build_html_report(
             margin-bottom: 26px;
         }}
 
+        .sharecard {{
+            background: #020617;
+            padding: 18px;
+            border-radius: 18px;
+        }}
+
+        .sharecard img {{
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            border: 1px solid #334155;
+        }}
+
         .footer {{
             background: #0f172a;
             color: #cbd5e1;
@@ -1384,6 +1592,20 @@ def build_html_report(
                 </div>
             </section>
 
+            <section class="section">
+                <h2>Blogra használható összefoglaló kép</h2>
+                <p>
+                    Ez az automatikusan generált kép csak a négy kiemelt térséget mutatja:
+                    Európai Unió, Balkán, Közel-Kelet és Ukrajna.
+                </p>
+                <p>
+                    <a href="{escape(sharecard_path)}" target="_blank">Kép megnyitása külön oldalon</a>
+                </p>
+                <div class="sharecard">
+                    <img src="{escape(sharecard_path)}" alt="Blogra használható napi OSINT összefoglaló">
+                </div>
+            </section>
+
             <section class="section method">
                 <h2>Módszertani megjegyzés</h2>
                 <p>
@@ -1505,6 +1727,12 @@ def generate_report():
         trend=trend,
     )
 
+    sharecard_path = generate_sharecard(
+        report_day=report_day,
+        features=features,
+        events_by_region=events_by_region,
+    )
+
     analysis_block = generate_analysis_block(
         today_total=len(daily_events),
         yesterday_total=len(previous_events),
@@ -1531,6 +1759,7 @@ def generate_report():
         analysis_block=analysis_block,
         top_events=top_events,
         chart_files=chart_files,
+        sharecard_path=sharecard_path,
     )
 
     with report_path.open("w", encoding="utf-8") as f:
@@ -1539,6 +1768,7 @@ def generate_report():
     update_index()
 
     print(f"Napi jelentés elkészült: {report_path}")
+    print(f"Blogkép elkészült: {REPORTS_DIR / sharecard_path}")
 
 
 if __name__ == "__main__":
