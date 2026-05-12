@@ -11,6 +11,44 @@ INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 
 
+HIGH_PRIORITY_WORDS = [
+    "drone",
+    "missile",
+    "rocket",
+    "airstrike",
+    "strike",
+    "explosion",
+    "bomb",
+    "attack",
+    "killed",
+    "dead",
+    "fatal",
+    "wounded",
+    "injured",
+    "military",
+    "border",
+    "capital",
+    "terror",
+    "armed",
+    "clash",
+    "shelling",
+    "artillery",
+]
+
+
+MEDIUM_PRIORITY_WORDS = [
+    "protest",
+    "riot",
+    "unrest",
+    "security",
+    "police",
+    "evacuation",
+    "fire",
+    "blast",
+    "threat",
+]
+
+
 def load_geojson():
     if not INPUT_FILE.exists():
         raise FileNotFoundError(f"Nincs ilyen fájl: {INPUT_FILE}")
@@ -106,6 +144,54 @@ def summarize_events(events):
     return country_counter, type_counter, source_counter, events_by_country
 
 
+def score_event(feature):
+    props = feature.get("properties", {})
+
+    title = pick(props, ["title", "headline", "name", "summary"], "")
+    event_type = pick(props, ["type", "event_type", "category", "theme"], "")
+    location = pick(props, ["location", "place", "city", "admin1"], "")
+    country = pick(props, ["country", "country_name", "location_country"], "")
+    source = pick(props, ["source", "domain", "source_domain"], "")
+
+    text = f"{title} {event_type} {location} {country} {source}".lower()
+
+    score = 0
+
+    for word in HIGH_PRIORITY_WORDS:
+        if word in text:
+            score += 5
+
+    for word in MEDIUM_PRIORITY_WORDS:
+        if word in text:
+            score += 2
+
+    if "capital" in text:
+        score += 4
+
+    if source and source != "Ismeretlen forrás":
+        score += 1
+
+    if country and country != "Ismeretlen ország":
+        score += 1
+
+    if location and location != "Nincs pontos helyadat":
+        score += 1
+
+    return score
+
+
+def get_top_events(events, limit=5):
+    scored_events = []
+
+    for feature in events:
+        score = score_event(feature)
+        scored_events.append((score, feature))
+
+    scored_events.sort(key=lambda item: item[0], reverse=True)
+
+    return scored_events[:limit]
+
+
 def generate_analysis_block(
     today_total,
     yesterday_total,
@@ -178,6 +264,68 @@ def generate_analysis_block(
     """
 
 
+def build_top_events_html(top_events):
+    if not top_events:
+        return "<p>Nincs kiemelhető esemény.</p>"
+
+    html = "<ol>"
+
+    for score, feature in top_events:
+        props = feature.get("properties", {})
+
+        title = pick(
+            props,
+            ["title", "headline", "name", "summary"],
+            "Cím nélküli esemény",
+        )
+
+        url = pick(
+            props,
+            ["url", "source_url", "link"],
+            "",
+        )
+
+        event_type = pick(
+            props,
+            ["type", "event_type", "category", "theme"],
+            "Fegyveres incidens",
+        )
+
+        country = pick(
+            props,
+            ["country", "country_name", "location_country"],
+            "Ismeretlen ország",
+        )
+
+        location = pick(
+            props,
+            ["location", "place", "city", "admin1"],
+            "Nincs pontos helyadat",
+        )
+
+        if url.startswith("http"):
+            title_html = (
+                f'<a href="{escape(url)}" target="_blank">'
+                f"{escape(title)}</a>"
+            )
+        else:
+            title_html = escape(title)
+
+        html += f"""
+        <li>
+            <strong>{title_html}</strong><br>
+            Ország: {escape(country)}<br>
+            Helyszín: {escape(location)}<br>
+            Típus: {escape(event_type)}<br>
+            Súlypontszám: {score}
+        </li>
+        """
+
+    html += "</ol>"
+
+    return html
+
+
 def generate_report():
     data = load_geojson()
     features = data.get("features", [])
@@ -192,6 +340,8 @@ def generate_report():
     country_counter, type_counter, source_counter, events_by_country = summarize_events(
         daily_events
     )
+
+    top_events = get_top_events(daily_events, limit=5)
 
     analysis_block = generate_analysis_block(
         today_total=len(daily_events),
@@ -215,6 +365,7 @@ def generate_report():
         source_counter=source_counter,
         events_by_country=events_by_country,
         analysis_block=analysis_block,
+        top_events=top_events,
     )
 
     with report_path.open("w", encoding="utf-8") as f:
@@ -235,9 +386,12 @@ def build_html_report(
     source_counter,
     events_by_country,
     analysis_block,
+    top_events,
 ):
     total = len(daily_events)
     previous_total = len(previous_events)
+
+    top_events_html = build_top_events_html(top_events)
 
     top_countries_html = "".join(
         f"<li><strong>{escape(country)}</strong>: {count} esemény</li>"
@@ -365,7 +519,14 @@ def build_html_report(
             border-radius: 8px;
             margin-top: 20px;
         }}
-        ul {{
+        .top-events {{
+            background: #eff6ff;
+            border-left: 5px solid #2563eb;
+            padding: 16px;
+            border-radius: 8px;
+            margin-top: 20px;
+        }}
+        ul, ol {{
             line-height: 1.7;
         }}
         li {{
@@ -399,7 +560,7 @@ def build_html_report(
                 erőszakos incidenshez vagy biztonsági eseményhez kapcsolódó találatot azonosított.
             </p>
             <p>
-                Összevetési alap: {previous_day.isoformat()} – 
+                Összevetési alap: {previous_day.isoformat()} –
                 <strong>{previous_total}</strong> azonosított esemény.
             </p>
         </div>
@@ -407,6 +568,11 @@ def build_html_report(
         <h2>Rövid napi értékelés</h2>
         <div class="analysis">
             {analysis_block}
+        </div>
+
+        <h2>Top 5 kiemelt esemény</h2>
+        <div class="top-events">
+            {top_events_html}
         </div>
 
         <h2>Leginkább érintett országok</h2>
