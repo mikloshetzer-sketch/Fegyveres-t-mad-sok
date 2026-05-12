@@ -253,6 +253,19 @@
             margin-bottom: 26px;
         }
 
+        .sharecard {
+            background: #020617;
+            padding: 18px;
+            border-radius: 18px;
+        }
+
+        .sharecard img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            border: 1px solid #334155;
+        }
+
         .footer {
             background: #0f172a;
             color: #cbd5e1;
@@ -350,7 +363,7 @@
                     
     <p>Az incidensek száma emelkedett. A rendszer 566 darabbal több eseményt azonosított, ami 45.8% növekedést jelent.</p>
     <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>United States</strong> (583 esemény).</p>
-    <p>A napi aktivitás legerősebb regionális súlypontja: <strong>Egyéb térségek</strong> (638 esemény).</p>
+    <p>A napi aktivitás legerősebb regionális súlypontja: <strong>Egyéb térségek</strong> (1295 esemény).</p>
     <p>A leggyakoribb részletes támadástípus: <strong>Fegyveres összecsapás</strong> (1200 találat).</p>
     <p>
         A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
@@ -430,12 +443,12 @@
         </table>
         
     <div class="region-summary">
-        <h3>Kelet-Európa / orosz–ukrán térség</h3>
-        <p>A kelet-európai biztonsági blokkban az orosz–ukrán háborúhoz és annak közvetlen környezetéhez kapcsolódó események adhatják a napi aktivitás jelentős részét.</p>
+        <h3>Ukrajna</h3>
+        <p>Ukrajna külön kiemelt kategóriaként szerepel, mert a háborús aktivitás jelentősen torzíthatná az általános európai képet.</p>
         <p>
-            Azonosított események száma: <strong>80</strong>.
-            Leginkább érintett országok: <strong>Ukraine (42), Russia (38)</strong>.
-            Domináns támadástípusok: <strong>Robbantás / IED (51), Fegyveres összecsapás (18), Rajtaütés / fegyveres támadás (11)</strong>.
+            Azonosított események száma: <strong>42</strong>.
+            Leginkább érintett országok: <strong>Ukraine (42)</strong>.
+            Domináns támadástípusok: <strong>Robbantás / IED (30), Fegyveres összecsapás (7), Rajtaütés / fegyveres támadás (5)</strong>.
         </p>
     </div>
     
@@ -468,14 +481,6 @@
             </tr>
             
             <tr>
-                <td>fight – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-                <td>Russia</td>
-                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-                <td>Robbantás / IED</td>
-                <td>www.bignewsnetwork.com</td>
-            </tr>
-            
-            <tr>
                 <td>assault – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
                 <td>Ukraine</td>
                 <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
@@ -484,11 +489,19 @@
             </tr>
             
             <tr>
-                <td>assault – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-                <td>Russia</td>
-                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>fight – Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
                 <td>Robbantás / IED</td>
-                <td>www.freemalaysiatoday.com</td>
+                <td>en.interfax.com.ua</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>www.globalsecurity.org</td>
             </tr>
             
             </tbody>
@@ -498,9 +511,9 @@
         <h3>Balkán</h3>
         <p>A Balkán esetében a napi kép különösen fontos, mert a térségben az alacsonyabb intenzitású incidensek is gyorsan politikai és biztonsági jelentőséget kaphatnak.</p>
         <p>
-            Azonosított események száma: <strong>13</strong>.
-            Leginkább érintett országok: <strong>Turkey (12), Albania (1)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (9), Rajtaütés / fegyveres támadás (3), Tömeges erőszak (1)</strong>.
+            Azonosított események száma: <strong>16</strong>.
+            Leginkább érintett országok: <strong>Turkey (12), Bosnia-Herzegovina (3), Albania (1)</strong>.
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (12), Rajtaütés / fegyveres támadás (3), Tömeges erőszak (1)</strong>.
         </p>
     </div>
     
@@ -563,9 +576,9 @@
         <h3>Közel-Kelet</h3>
         <p>A Közel-Kelet továbbra is kiemelt biztonsági térség. A jelentésben megjelenő események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai tevékenységhez kapcsolódnak.</p>
         <p>
-            Azonosított események száma: <strong>196</strong>.
+            Azonosított események száma: <strong>198</strong>.
             Leginkább érintett országok: <strong>Iran (37), Israel (37), West Bank (19)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (132), Rajtaütés / fegyveres támadás (58), Tömeges erőszak (4)</strong>.
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (133), Rajtaütés / fegyveres támadás (58), Tömeges erőszak (5)</strong>.
         </p>
     </div>
     
@@ -625,12 +638,12 @@
         </table>
         
     <div class="region-summary">
-        <h3>Afrika</h3>
+        <h3>Kelet-Európa / orosz–ukrán térség</h3>
         <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
-            Azonosított események száma: <strong>240</strong>.
-            Leginkább érintett országok: <strong>Nigeria (118), South Africa (27), Mali (9)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (163), Rajtaütés / fegyveres támadás (75), Tömeges erőszak (2)</strong>.
+            Azonosított események száma: <strong>38</strong>.
+            Leginkább érintett országok: <strong>Russia (38)</strong>.
+            Domináns támadástípusok: <strong>Robbantás / IED (21), Fegyveres összecsapás (11), Rajtaütés / fegyveres támadás (6)</strong>.
         </p>
     </div>
     
@@ -647,173 +660,43 @@
             <tbody>
         
             <tr>
-                <td>fight – Abuja, Abuja Federal Capital Territory, Nigeria</td>
-                <td>Nigeria</td>
-                <td>Abuja, Abuja Federal Capital Territory, Nigeria</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.newsghana.com.gh</td>
+                <td>fight – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>www.bignewsnetwork.com</td>
             </tr>
             
             <tr>
-                <td>fight – South Africa</td>
-                <td>South Africa</td>
-                <td>South Africa</td>
-                <td>Fegyveres összecsapás</td>
-                <td>thesun.ng</td>
+                <td>assault – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>www.freemalaysiatoday.com</td>
             </tr>
             
             <tr>
-                <td>fight – Nigeria</td>
-                <td>Nigeria</td>
-                <td>Nigeria</td>
-                <td>Fegyveres összecsapás</td>
-                <td>dailytrust.com</td>
+                <td>fight – Kursk, Kurskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Kursk, Kurskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>www.dailykos.com</td>
             </tr>
             
             <tr>
-                <td>assault – Abuja, Abuja Federal Capital Territory, Nigeria</td>
-                <td>Nigeria</td>
-                <td>Abuja, Abuja Federal Capital Territory, Nigeria</td>
-                <td>Rajtaütés / fegyveres támadás</td>
-                <td>www.thisdaylive.com</td>
+                <td>fight – Rostov, Rostovskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Rostov, Rostovskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>www.globalsecurity.org</td>
             </tr>
             
             <tr>
-                <td>fight – Shiroro, Niger, Nigeria</td>
-                <td>Nigeria</td>
-                <td>Shiroro, Niger, Nigeria</td>
-                <td>Fegyveres összecsapás</td>
-                <td>dailypost.ng</td>
-            </tr>
-            
-            </tbody>
-        </table>
-        
-    <div class="region-summary">
-        <h3>Ázsia</h3>
-        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
-        <p>
-            Azonosított események száma: <strong>249</strong>.
-            Leginkább érintett országok: <strong>India (108), Pakistan (27), China (21)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (173), Rajtaütés / fegyveres támadás (69), Határincidens (6)</strong>.
-        </p>
-    </div>
-    
-        <table class="region-table">
-            <thead>
-                <tr>
-                    <th>Cím</th>
-                    <th>Ország</th>
-                    <th>Helyszín</th>
-                    <th>Részletes típus</th>
-                    <th>Forrás</th>
-                </tr>
-            </thead>
-            <tbody>
-        
-            <tr>
-                <td>assault – Bombay, Maharashtra, India</td>
-                <td>India</td>
-                <td>Bombay, Maharashtra, India</td>
-                <td>Rajtaütés / fegyveres támadás</td>
-                <td>www.heraldgoa.in</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Bombay, Maharashtra, India</td>
-                <td>India</td>
-                <td>Bombay, Maharashtra, India</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.heraldgoa.in</td>
-            </tr>
-            
-            <tr>
-                <td>fight – India</td>
-                <td>India</td>
-                <td>India</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.ecumenicalnews.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Delhi, Delhi, India</td>
-                <td>India</td>
-                <td>Delhi, Delhi, India</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.dailyexcelsior.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Islamabad, Islamabad, Pakistan</td>
-                <td>Pakistan</td>
-                <td>Islamabad, Islamabad, Pakistan</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.trend.az</td>
-            </tr>
-            
-            </tbody>
-        </table>
-        
-    <div class="region-summary">
-        <h3>Amerika</h3>
-        <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
-        <p>
-            Azonosított események száma: <strong>168</strong>.
-            Leginkább érintett országok: <strong>United States (108), Mexico (9), Venezuela (5)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (112), Rajtaütés / fegyveres támadás (53), Terrorcselekmény / milíciaaktivitás (2)</strong>.
-        </p>
-    </div>
-    
-        <table class="region-table">
-            <thead>
-                <tr>
-                    <th>Cím</th>
-                    <th>Ország</th>
-                    <th>Helyszín</th>
-                    <th>Részletes típus</th>
-                    <th>Forrás</th>
-                </tr>
-            </thead>
-            <tbody>
-        
-            <tr>
-                <td>fight – Bahamas, The</td>
-                <td>The</td>
-                <td>Bahamas, The</td>
-                <td>Terrorcselekmény / milíciaaktivitás</td>
-                <td>www.thenassauguardian.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – South Beach, Bahamas, The (general), Bahamas, The</td>
-                <td>The</td>
-                <td>South Beach, Bahamas, The (general), Bahamas, The</td>
-                <td>Terrorcselekmény / milíciaaktivitás</td>
-                <td>www.tribune242.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Alabama, United States</td>
-                <td>United States</td>
-                <td>Alabama, United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.wgrz.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Florida, United States</td>
-                <td>United States</td>
-                <td>Florida, United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.fox43.com</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Georgia, United States</td>
-                <td>United States</td>
-                <td>Georgia, United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.scsu.edu</td>
+                <td>fight – Tsentr, Novosibirskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Tsentr, Novosibirskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>www.globalsecurity.org</td>
             </tr>
             
             </tbody>
@@ -823,9 +706,9 @@
         <h3>Európa – egyéb</h3>
         <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
-            Azonosított események száma: <strong>110</strong>.
+            Azonosított események száma: <strong>105</strong>.
             Leginkább érintett országok: <strong>United Kingdom (90), Switzerland (5), Norway (4)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (77), Rajtaütés / fegyveres támadás (32), Tömeges erőszak (1)</strong>.
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (73), Rajtaütés / fegyveres támadás (32)</strong>.
         </p>
     </div>
     
@@ -888,9 +771,9 @@
         <h3>Egyéb térségek</h3>
         <p>A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított.</p>
         <p>
-            Azonosított események száma: <strong>638</strong>.
-            Leginkább érintett országok: <strong>United States (474), Australia (98), Canada (33)</strong>.
-            Domináns támadástípusok: <strong>Fegyveres összecsapás (445), Rajtaütés / fegyveres támadás (186), Tömeges erőszak (4)</strong>.
+            Azonosított események száma: <strong>1295</strong>.
+            Leginkább érintett országok: <strong>United States (583), Nigeria (118), India (108)</strong>.
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (893), Rajtaütés / fegyveres támadás (383), Tömeges erőszak (6)</strong>.
         </p>
     </div>
     
@@ -907,43 +790,43 @@
             <tbody>
         
             <tr>
+                <td>fight – Bahamas, The</td>
+                <td>The</td>
+                <td>Bahamas, The</td>
+                <td>Terrorcselekmény / milíciaaktivitás</td>
+                <td>www.thenassauguardian.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – South Beach, Bahamas, The (general), Bahamas, The</td>
+                <td>The</td>
+                <td>South Beach, Bahamas, The (general), Bahamas, The</td>
+                <td>Terrorcselekmény / milíciaaktivitás</td>
+                <td>www.tribune242.com</td>
+            </tr>
+            
+            <tr>
+                <td>assault – Bombay, Maharashtra, India</td>
+                <td>India</td>
+                <td>Bombay, Maharashtra, India</td>
+                <td>Rajtaütés / fegyveres támadás</td>
+                <td>www.heraldgoa.in</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Bombay, Maharashtra, India</td>
+                <td>India</td>
+                <td>Bombay, Maharashtra, India</td>
+                <td>Fegyveres összecsapás</td>
+                <td>www.heraldgoa.in</td>
+            </tr>
+            
+            <tr>
                 <td>fight – Australia</td>
                 <td>Australia</td>
                 <td>Australia</td>
                 <td>Fegyveres összecsapás</td>
                 <td>www.northerndailyleader.com.au</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Washington, District of Columbia, United States</td>
-                <td>United States</td>
-                <td>Washington, District of Columbia, United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.dailyexcelsior.com</td>
-            </tr>
-            
-            <tr>
-                <td>assault – United States</td>
-                <td>United States</td>
-                <td>United States</td>
-                <td>Rajtaütés / fegyveres támadás</td>
-                <td>slguardian.org</td>
-            </tr>
-            
-            <tr>
-                <td>fight – United States</td>
-                <td>United States</td>
-                <td>United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>slguardian.org</td>
-            </tr>
-            
-            <tr>
-                <td>fight – Michigan, United States</td>
-                <td>United States</td>
-                <td>Michigan, United States</td>
-                <td>Fegyveres összecsapás</td>
-                <td>www.thv11.com</td>
             </tr>
             
             </tbody>
@@ -996,7 +879,7 @@
             <td>Ukraine</td>
             <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">16</td>
+            <td class="score">17</td>
             <td>www.irishtimes.com</td>
         </tr>
         
@@ -1006,38 +889,38 @@
             <td>Ukraine</td>
             <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">16</td>
+            <td class="score">17</td>
             <td>www.irishtimes.com</td>
         </tr>
         
         <tr>
             <td>3</td>
-            <td>fight – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-            <td>Russia</td>
-            <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-            <td>Robbantás / IED</td>
-            <td class="score">15</td>
-            <td>www.bignewsnetwork.com</td>
-        </tr>
-        
-        <tr>
-            <td>4</td>
             <td>assault – Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Ukraine</td>
             <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">15</td>
+            <td class="score">16</td>
             <td>www.freemalaysiatoday.com</td>
         </tr>
         
         <tr>
-            <td>5</td>
-            <td>assault – Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
-            <td>Russia</td>
-            <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+            <td>4</td>
+            <td>fight – Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
             <td>Robbantás / IED</td>
-            <td class="score">15</td>
-            <td>www.freemalaysiatoday.com</td>
+            <td class="score">16</td>
+            <td>en.interfax.com.ua</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>fight – Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Zelene, Chernihivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Robbantás / IED</td>
+            <td class="score">14</td>
+            <td>www.globalsecurity.org</td>
         </tr>
         
                     </tbody>
@@ -1049,7 +932,7 @@
                 <div class="three-col">
                     <div>
                         <h3>Régiók</h3>
-                        <ol class="rank-list"><li><span>Egyéb térségek</span><strong>638</strong></li><li><span>Ázsia</span><strong>249</strong></li><li><span>Afrika</span><strong>240</strong></li><li><span>Közel-Kelet</span><strong>196</strong></li><li><span>Amerika</span><strong>168</strong></li><li><span>Európa – egyéb</span><strong>110</strong></li><li><span>Európai Unió</span><strong>109</strong></li><li><span>Kelet-Európa / orosz–ukrán térség</span><strong>80</strong></li><li><span>Balkán</span><strong>13</strong></li></ol>
+                        <ol class="rank-list"><li><span>Egyéb térségek</span><strong>1295</strong></li><li><span>Közel-Kelet</span><strong>198</strong></li><li><span>Európai Unió</span><strong>109</strong></li><li><span>Európa – egyéb</span><strong>105</strong></li><li><span>Ukrajna</span><strong>42</strong></li><li><span>Kelet-Európa / orosz–ukrán térség</span><strong>38</strong></li><li><span>Balkán</span><strong>16</strong></li></ol>
                     </div>
                     <div>
                         <h3>Országok</h3>
@@ -1063,6 +946,20 @@
                         <h3>Források</h3>
                         <ol class="rank-list"><li><span>www.yahoo.com</span><strong>67</strong></li><li><span>www.dailymail.com</span><strong>43</strong></li><li><span>allafrica.com</span><strong>41</strong></li><li><span>dailytrust.com</span><strong>31</strong></li><li><span>eturbonews.com</span><strong>31</strong></li><li><span>www.dailykos.com</span><strong>29</strong></li><li><span>www.hindustantimes.com</span><strong>27</strong></li><li><span>www.rediff.com</span><strong>26</strong></li><li><span>www.jpost.com</span><strong>24</strong></li><li><span>english.news.cn</span><strong>22</strong></li></ol>
                     </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Blogra használható összefoglaló kép</h2>
+                <p>
+                    Ez az automatikusan generált kép csak a négy kiemelt térséget mutatja:
+                    Európai Unió, Balkán, Közel-Kelet és Ukrajna.
+                </p>
+                <p>
+                    <a href="sharecards/2026-05-11-summary.svg" target="_blank">Kép megnyitása külön oldalon</a>
+                </p>
+                <div class="sharecard">
+                    <img src="sharecards/2026-05-11-summary.svg" alt="Blogra használható napi OSINT összefoglaló">
                 </div>
             </section>
 
