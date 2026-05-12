@@ -9,6 +9,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 
 INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
+CHARTS_DIR = REPORTS_DIR / "charts"
 
 
 HIGH_PRIORITY_WORDS = [
@@ -34,7 +35,6 @@ HIGH_PRIORITY_WORDS = [
     "shelling",
     "artillery",
 ]
-
 
 MEDIUM_PRIORITY_WORDS = [
     "protest",
@@ -109,6 +109,23 @@ def collect_events_by_day(features, target_day):
     return events
 
 
+def collect_7_day_trend(features, report_day):
+    trend = {}
+
+    for i in range(6, -1, -1):
+        day = report_day - timedelta(days=i)
+        trend[day.isoformat()] = 0
+
+    for feature in features:
+        props = feature.get("properties", {})
+        event_date = get_event_date(props)
+
+        if event_date and event_date.isoformat() in trend:
+            trend[event_date.isoformat()] += 1
+
+    return trend
+
+
 def summarize_events(events):
     country_counter = Counter()
     type_counter = Counter()
@@ -165,9 +182,6 @@ def score_event(feature):
         if word in text:
             score += 2
 
-    if "capital" in text:
-        score += 4
-
     if source and source != "Ismeretlen forrás":
         score += 1
 
@@ -190,6 +204,168 @@ def get_top_events(events, limit=5):
     scored_events.sort(key=lambda item: item[0], reverse=True)
 
     return scored_events[:limit]
+
+
+def save_bar_chart(title, labels, values, output_path):
+    width = 900
+    height = 420
+    margin_left = 170
+    margin_right = 40
+    margin_top = 70
+    margin_bottom = 60
+
+    chart_width = width - margin_left - margin_right
+    chart_height = height - margin_top - margin_bottom
+
+    max_value = max(values) if values else 1
+    bar_height = 28
+    gap = 14
+
+    svg_items = []
+
+    svg_items.append(
+        f'<text x="{width / 2}" y="35" text-anchor="middle" '
+        f'font-size="24" font-weight="700" fill="#0f172a">{escape(title)}</text>'
+    )
+
+    for index, (label, value) in enumerate(zip(labels, values)):
+        y = margin_top + index * (bar_height + gap)
+
+        if y > height - margin_bottom:
+            break
+
+        bar_width = int((value / max_value) * chart_width) if max_value else 0
+
+        svg_items.append(
+            f'<text x="{margin_left - 12}" y="{y + 20}" text-anchor="end" '
+            f'font-size="14" fill="#334155">{escape(str(label)[:28])}</text>'
+        )
+
+        svg_items.append(
+            f'<rect x="{margin_left}" y="{y}" width="{bar_width}" height="{bar_height}" '
+            f'rx="6" fill="#2563eb"></rect>'
+        )
+
+        svg_items.append(
+            f'<text x="{margin_left + bar_width + 8}" y="{y + 20}" '
+            f'font-size="14" fill="#0f172a">{value}</text>'
+        )
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<rect width="100%" height="100%" fill="#ffffff"/>
+{''.join(svg_items)}
+</svg>"""
+
+    output_path.write_text(svg, encoding="utf-8")
+
+
+def save_line_chart(title, trend, output_path):
+    width = 900
+    height = 420
+    margin_left = 70
+    margin_right = 40
+    margin_top = 70
+    margin_bottom = 70
+
+    chart_width = width - margin_left - margin_right
+    chart_height = height - margin_top - margin_bottom
+
+    labels = list(trend.keys())
+    values = list(trend.values())
+
+    max_value = max(values) if values else 1
+    max_value = max(max_value, 1)
+
+    points = []
+
+    for index, value in enumerate(values):
+        if len(values) == 1:
+            x = margin_left + chart_width / 2
+        else:
+            x = margin_left + index * (chart_width / (len(values) - 1))
+
+        y = margin_top + chart_height - ((value / max_value) * chart_height)
+        points.append((x, y, value, labels[index]))
+
+    polyline_points = " ".join(f"{x},{y}" for x, y, _, _ in points)
+
+    svg_items = []
+
+    svg_items.append(
+        f'<text x="{width / 2}" y="35" text-anchor="middle" '
+        f'font-size="24" font-weight="700" fill="#0f172a">{escape(title)}</text>'
+    )
+
+    svg_items.append(
+        f'<line x1="{margin_left}" y1="{margin_top + chart_height}" '
+        f'x2="{width - margin_right}" y2="{margin_top + chart_height}" '
+        f'stroke="#cbd5e1" stroke-width="2"/>'
+    )
+
+    svg_items.append(
+        f'<line x1="{margin_left}" y1="{margin_top}" '
+        f'x2="{margin_left}" y2="{margin_top + chart_height}" '
+        f'stroke="#cbd5e1" stroke-width="2"/>'
+    )
+
+    svg_items.append(
+        f'<polyline points="{polyline_points}" fill="none" '
+        f'stroke="#2563eb" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>'
+    )
+
+    for x, y, value, label in points:
+        svg_items.append(
+            f'<circle cx="{x}" cy="{y}" r="6" fill="#2563eb"/>'
+        )
+
+        svg_items.append(
+            f'<text x="{x}" y="{y - 12}" text-anchor="middle" '
+            f'font-size="14" fill="#0f172a">{value}</text>'
+        )
+
+        short_label = label[5:]
+        svg_items.append(
+            f'<text x="{x}" y="{margin_top + chart_height + 28}" text-anchor="middle" '
+            f'font-size="13" fill="#334155">{escape(short_label)}</text>'
+        )
+
+    svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<rect width="100%" height="100%" fill="#ffffff"/>
+{''.join(svg_items)}
+</svg>"""
+
+    output_path.write_text(svg, encoding="utf-8")
+
+
+def generate_charts(report_day, country_counter, type_counter, trend):
+    CHARTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    chart_files = {}
+
+    country_items = country_counter.most_common(8)
+    if country_items:
+        labels = [item[0] for item in country_items]
+        values = [item[1] for item in country_items]
+        filename = f"{report_day.isoformat()}-top-countries.svg"
+        output_path = CHARTS_DIR / filename
+        save_bar_chart("Top országok napi incidensszám alapján", labels, values, output_path)
+        chart_files["countries"] = f"charts/{filename}"
+
+    type_items = type_counter.most_common(8)
+    if type_items:
+        labels = [item[0] for item in type_items]
+        values = [item[1] for item in type_items]
+        filename = f"{report_day.isoformat()}-event-types.svg"
+        output_path = CHARTS_DIR / filename
+        save_bar_chart("Eseménytípusok megoszlása", labels, values, output_path)
+        chart_files["types"] = f"charts/{filename}"
+
+    filename = f"{report_day.isoformat()}-7-day-trend.svg"
+    output_path = CHARTS_DIR / filename
+    save_line_chart("7 napos incidensaktivitási trend", trend, output_path)
+    chart_files["trend"] = f"charts/{filename}"
+
+    return chart_files
 
 
 def generate_analysis_block(
@@ -326,6 +502,24 @@ def build_top_events_html(top_events):
     return html
 
 
+def build_charts_html(chart_files):
+    if not chart_files:
+        return "<p>Nincs elérhető grafikon.</p>"
+
+    html = ""
+
+    for key in ["trend", "countries", "types"]:
+        if key in chart_files:
+            src = chart_files[key]
+            html += f"""
+            <div class="chart-box">
+                <img src="{escape(src)}" alt="Napi jelentés grafikon">
+            </div>
+            """
+
+    return html
+
+
 def generate_report():
     data = load_geojson()
     features = data.get("features", [])
@@ -342,6 +536,15 @@ def generate_report():
     )
 
     top_events = get_top_events(daily_events, limit=5)
+
+    trend = collect_7_day_trend(features, report_day)
+
+    chart_files = generate_charts(
+        report_day=report_day,
+        country_counter=country_counter,
+        type_counter=type_counter,
+        trend=trend,
+    )
 
     analysis_block = generate_analysis_block(
         today_total=len(daily_events),
@@ -366,6 +569,7 @@ def generate_report():
         events_by_country=events_by_country,
         analysis_block=analysis_block,
         top_events=top_events,
+        chart_files=chart_files,
     )
 
     with report_path.open("w", encoding="utf-8") as f:
@@ -387,11 +591,13 @@ def build_html_report(
     events_by_country,
     analysis_block,
     top_events,
+    chart_files,
 ):
     total = len(daily_events)
     previous_total = len(previous_events)
 
     top_events_html = build_top_events_html(top_events)
+    charts_html = build_charts_html(chart_files)
 
     top_countries_html = "".join(
         f"<li><strong>{escape(country)}</strong>: {count} esemény</li>"
@@ -526,6 +732,25 @@ def build_html_report(
             border-radius: 8px;
             margin-top: 20px;
         }}
+        .charts {{
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 20px;
+        }}
+        .chart-box {{
+            margin-bottom: 24px;
+            overflow-x: auto;
+        }}
+        .chart-box img {{
+            width: 100%;
+            max-width: 900px;
+            display: block;
+            margin: 0 auto;
+            border: 1px solid #e2e8f0;
+            border-radius: 10px;
+        }}
         ul, ol {{
             line-height: 1.7;
         }}
@@ -568,6 +793,11 @@ def build_html_report(
         <h2>Rövid napi értékelés</h2>
         <div class="analysis">
             {analysis_block}
+        </div>
+
+        <h2>Grafikonos áttekintés</h2>
+        <div class="charts">
+            {charts_html}
         </div>
 
         <h2>Top 5 kiemelt esemény</h2>
