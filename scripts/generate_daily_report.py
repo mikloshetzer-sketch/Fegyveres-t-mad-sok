@@ -1,4 +1,5 @@
 import json
+import re
 from pathlib import Path
 from datetime import datetime, timedelta
 from collections import Counter, defaultdict
@@ -12,16 +13,41 @@ REPORTS_DIR = BASE_DIR / "docs" / "reports"
 CHARTS_DIR = REPORTS_DIR / "charts"
 
 
+EU_COUNTRIES = {
+    "Austria", "Belgium", "Bulgaria", "Croatia", "Cyprus", "Czechia",
+    "Czech Republic", "Denmark", "Estonia", "Finland", "France", "Germany",
+    "Greece", "Hungary", "Ireland", "Italy", "Latvia", "Lithuania",
+    "Luxembourg", "Malta", "Netherlands", "Poland", "Portugal", "Romania",
+    "Slovakia", "Slovenia", "Spain", "Sweden"
+}
+
+BALKANS_COUNTRIES = {
+    "Albania", "Bosnia and Herzegovina", "Bosnia", "Bulgaria", "Croatia",
+    "Greece", "Kosovo", "Montenegro", "North Macedonia", "Macedonia",
+    "Romania", "Serbia", "Slovenia", "Turkey", "Türkiye"
+}
+
+MIDDLE_EAST_COUNTRIES = {
+    "Bahrain", "Iran", "Iraq", "Israel", "Jordan", "Kuwait", "Lebanon",
+    "Oman", "Palestine", "Palestinian Territory", "Qatar", "Saudi Arabia",
+    "Syria", "Syrian Arab Republic", "Turkey", "Türkiye", "United Arab Emirates",
+    "UAE", "Yemen"
+}
+
+EASTERN_EUROPE_SECURITY = {
+    "Ukraine", "Russia", "Russian Federation", "Belarus", "Moldova"
+}
+
 HIGH_PRIORITY_WORDS = [
     "drone", "missile", "rocket", "airstrike", "strike", "explosion",
     "bomb", "attack", "killed", "dead", "fatal", "wounded", "injured",
     "military", "border", "terror", "armed", "clash", "shelling",
-    "artillery", "ambush", "raid"
+    "artillery", "ambush", "raid", "war", "invasion"
 ]
 
 MEDIUM_PRIORITY_WORDS = [
     "protest", "riot", "unrest", "security", "police", "evacuation",
-    "fire", "blast", "threat", "checkpoint"
+    "fire", "blast", "threat", "checkpoint", "detained", "arrested"
 ]
 
 
@@ -67,6 +93,114 @@ def pick(properties, fields, default="Nincs adat"):
     return default
 
 
+def clean_text(value):
+    if not value:
+        return ""
+    value = str(value)
+    value = re.sub(r"\s+", " ", value).strip()
+    return value
+
+
+def normalize_key(value):
+    value = clean_text(value).lower()
+    value = re.sub(r"https?://\S+", "", value)
+    value = re.sub(r"[^a-z0-9áéíóöőúüű\s-]", "", value)
+    value = re.sub(r"\s+", " ", value).strip()
+    return value
+
+
+def get_sources(properties):
+    sources = []
+
+    if isinstance(properties.get("sources"), list):
+        for item in properties["sources"]:
+            if item and item not in sources:
+                sources.append(str(item))
+
+    for field in ["url", "source_url", "link", "sourceurl"]:
+        value = properties.get(field)
+        if value and str(value).startswith("http") and str(value) not in sources:
+            sources.append(str(value))
+
+    return sources
+
+
+def get_country(properties):
+    country = pick(
+        properties,
+        ["country", "country_name", "location_country"],
+        "",
+    )
+
+    if country:
+        return clean_text(country)
+
+    location = pick(properties, ["location", "place", "city", "admin1"], "")
+    if location:
+        parts = [p.strip() for p in location.split(",") if p.strip()]
+        if parts:
+            return parts[-1]
+
+    return "Ismeretlen ország"
+
+
+def get_location(properties):
+    location = pick(
+        properties,
+        ["location", "place", "city", "admin1"],
+        "",
+    )
+
+    if location:
+        return clean_text(location)
+
+    return "Nincs pontos helyadat"
+
+
+def get_title(properties):
+    title = pick(
+        properties,
+        ["title", "headline", "name", "summary"],
+        "",
+    )
+
+    if title:
+        return clean_text(title)
+
+    event_type = get_event_type(properties)
+    location = get_location(properties)
+
+    return f"{event_type} – {location}"
+
+
+def get_event_type(properties):
+    event_type = pick(
+        properties,
+        ["attack_type", "type", "event_type", "category", "theme"],
+        "",
+    )
+
+    if not event_type:
+        return "Fegyveres incidens"
+
+    label_map = {
+        "assault": "Támadás",
+        "fight": "Fegyveres összecsapás",
+        "mass_violence": "Tömeges erőszak",
+        "other": "Egyéb biztonsági esemény",
+    }
+
+    return label_map.get(event_type, clean_text(event_type))
+
+
+def get_event_url(properties):
+    for field in ["url", "source_url", "link", "sourceurl"]:
+        value = properties.get(field)
+        if value and str(value).startswith("http"):
+            return str(value)
+    return ""
+
+
 def collect_events_by_day(features, target_day):
     events = []
 
@@ -78,6 +212,134 @@ def collect_events_by_day(features, target_day):
             events.append(feature)
 
     return events
+
+
+def deduplicate_events(events):
+    grouped = {}
+
+    for feature in events:
+        props = feature.get("properties", {})
+        title = get_title(props)
+        location = get_location(props)
+        country = get_country(props)
+        event_type = get_event_type(props)
+
+        key = (
+            normalize_key(country),
+            normalize_key(location),
+            normalize_key(event_type),
+            normalize_key(title)[:80],
+        )
+
+        if key not in grouped:
+            grouped[key] = feature
+            grouped[key]["properties"] = dict(props)
+            grouped[key]["properties"]["merged_count"] = 1
+            grouped[key]["properties"]["merged_sources"] = get_sources(props)
+        else:
+            grouped[key]["properties"]["merged_count"] += 1
+            old_sources = grouped[key]["properties"].setdefault("merged_sources", [])
+            for src in get_sources(props):
+                if src not in old_sources:
+                    old_sources.append(src)
+
+    return list(grouped.values())
+
+
+def summarize_events(events):
+    country_counter = Counter()
+    type_counter = Counter()
+    source_counter = Counter()
+    events_by_country = defaultdict(list)
+
+    for feature in events:
+        props = feature.get("properties", {})
+
+        country = get_country(props)
+        event_type = get_event_type(props)
+        sources = props.get("merged_sources") or get_sources(props)
+
+        country_counter[country] += 1
+        type_counter[event_type] += 1
+
+        for source in sources:
+            domain = source.replace("https://", "").replace("http://", "").split("/")[0]
+            source_counter[domain] += 1
+
+        if not sources:
+            source_counter["Ismeretlen forrás"] += 1
+
+        events_by_country[country].append(feature)
+
+    return country_counter, type_counter, source_counter, events_by_country
+
+
+def region_for_event(feature):
+    props = feature.get("properties", {})
+    country = get_country(props)
+
+    geometry = feature.get("geometry") or {}
+    coords = geometry.get("coordinates") or []
+    lon = coords[0] if len(coords) >= 2 else None
+    lat = coords[1] if len(coords) >= 2 else None
+
+    if country in EU_COUNTRIES:
+        return "Európai Unió"
+
+    if country in BALKANS_COUNTRIES:
+        return "Balkán"
+
+    if country in MIDDLE_EAST_COUNTRIES:
+        return "Közel-Kelet"
+
+    if country in EASTERN_EUROPE_SECURITY:
+        return "Kelet-Európa / orosz–ukrán térség"
+
+    if lat is not None and lon is not None:
+        if 35 <= lat <= 72 and -25 <= lon <= 45:
+            return "Európa – egyéb"
+        if 37 <= lat <= 48 and 13 <= lon <= 30:
+            return "Balkán"
+        if 12 <= lat <= 42 and 25 <= lon <= 70:
+            return "Közel-Kelet"
+        if -35 <= lat <= 37 and -20 <= lon <= 55:
+            return "Afrika"
+        if 5 <= lat <= 80 and 45 <= lon <= 180:
+            return "Ázsia"
+        if -60 <= lat <= 33 and -120 <= lon <= -30:
+            return "Amerika"
+
+    return "Egyéb térségek"
+
+
+def group_events_by_region(events):
+    regions = defaultdict(list)
+
+    for feature in events:
+        regions[region_for_event(feature)].append(feature)
+
+    preferred_order = [
+        "Európai Unió",
+        "Kelet-Európa / orosz–ukrán térség",
+        "Balkán",
+        "Közel-Kelet",
+        "Afrika",
+        "Ázsia",
+        "Amerika",
+        "Európa – egyéb",
+        "Egyéb térségek",
+    ]
+
+    ordered = {}
+    for region in preferred_order:
+        if region in regions:
+            ordered[region] = regions[region]
+
+    for region, items in regions.items():
+        if region not in ordered:
+            ordered[region] = items
+
+    return ordered
 
 
 def collect_7_day_trend(features, report_day):
@@ -97,51 +359,17 @@ def collect_7_day_trend(features, report_day):
     return trend
 
 
-def summarize_events(events):
-    country_counter = Counter()
-    type_counter = Counter()
-    source_counter = Counter()
-    events_by_country = defaultdict(list)
-
-    for feature in events:
-        props = feature.get("properties", {})
-
-        country = pick(
-            props,
-            ["country", "country_name", "location_country"],
-            "Ismeretlen ország",
-        )
-
-        event_type = pick(
-            props,
-            ["type", "event_type", "category", "theme"],
-            "Fegyveres incidens",
-        )
-
-        source = pick(
-            props,
-            ["source", "domain", "source_domain"],
-            "Ismeretlen forrás",
-        )
-
-        country_counter[country] += 1
-        type_counter[event_type] += 1
-        source_counter[source] += 1
-        events_by_country[country].append(feature)
-
-    return country_counter, type_counter, source_counter, events_by_country
-
-
 def score_event(feature):
     props = feature.get("properties", {})
 
-    title = pick(props, ["title", "headline", "name", "summary"], "")
-    event_type = pick(props, ["type", "event_type", "category", "theme"], "")
-    location = pick(props, ["location", "place", "city", "admin1"], "")
-    country = pick(props, ["country", "country_name", "location_country"], "")
-    source = pick(props, ["source", "domain", "source_domain"], "")
+    title = get_title(props)
+    event_type = get_event_type(props)
+    location = get_location(props)
+    country = get_country(props)
+    sources = props.get("merged_sources") or get_sources(props)
+    merged_count = int(props.get("merged_count", 1))
 
-    text = f"{title} {event_type} {location} {country} {source}".lower()
+    text = f"{title} {event_type} {location} {country}".lower()
 
     score = 0
 
@@ -153,14 +381,23 @@ def score_event(feature):
         if word in text:
             score += 2
 
-    if source and source != "Ismeretlen forrás":
+    if sources:
+        score += min(len(sources), 5)
+
+    if merged_count > 1:
+        score += min(merged_count, 5)
+
+    if country != "Ismeretlen ország":
         score += 1
 
-    if country and country != "Ismeretlen ország":
+    if location != "Nincs pontos helyadat":
         score += 1
 
-    if location and location != "Nincs pontos helyadat":
-        score += 1
+    if country in MIDDLE_EAST_COUNTRIES:
+        score += 2
+
+    if country in EASTERN_EUROPE_SECURITY:
+        score += 2
 
     return score
 
@@ -200,7 +437,6 @@ def save_bar_chart(title, labels, values, output_path):
 
     for index, (label, value) in enumerate(zip(labels, values)):
         y = margin_top + index * (bar_height + gap)
-
         bar_width = int((value / max_value) * chart_width) if max_value else 0
 
         svg_items.append(
@@ -295,7 +531,7 @@ def save_line_chart(title, trend, output_path):
     output_path.write_text(svg, encoding="utf-8")
 
 
-def generate_charts(report_day, country_counter, type_counter, trend):
+def generate_charts(report_day, country_counter, type_counter, region_counter, trend):
     CHARTS_DIR.mkdir(parents=True, exist_ok=True)
 
     chart_files = {}
@@ -319,8 +555,19 @@ def generate_charts(report_day, country_counter, type_counter, trend):
         )
         chart_files["countries"] = f"charts/{filename}"
 
+    region_items = region_counter.most_common(6)
+    if region_items:
+        filename = f"{report_day.isoformat()}-regions.svg"
+        save_bar_chart(
+            "Régiós bontás",
+            [item[0] for item in region_items],
+            [item[1] for item in region_items],
+            CHARTS_DIR / filename,
+        )
+        chart_files["regions"] = f"charts/{filename}"
+
     type_items = type_counter.most_common(6)
-    if type_items and not (len(type_items) == 1):
+    if type_items and len(type_items) > 1:
         filename = f"{report_day.isoformat()}-event-types.svg"
         save_bar_chart(
             "Eseménytípusok",
@@ -333,7 +580,7 @@ def generate_charts(report_day, country_counter, type_counter, trend):
     return chart_files
 
 
-def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter):
+def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter, region_counter):
     if today_total == 0:
         return """
         <p>
@@ -368,6 +615,7 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
 
     top_country = country_counter.most_common(1)
     top_type = type_counter.most_common(1)
+    top_region = region_counter.most_common(1)
 
     country_text = (
         f"A legtöbb találat ehhez az országhoz kapcsolódott: "
@@ -385,9 +633,18 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
         "Nem volt azonosítható domináns eseménytípus."
     )
 
+    region_text = (
+        f"A napi aktivitás legerősebb regionális súlypontja: "
+        f"<strong>{escape(top_region[0][0])}</strong> "
+        f"({top_region[0][1]} esemény)."
+        if top_region else
+        "Nem volt azonosítható domináns régiós súlypont."
+    )
+
     return f"""
     <p>{escape(trend_text)}</p>
     <p>{country_text}</p>
+    <p>{region_text}</p>
     <p>{type_text}</p>
     <p>
         A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
@@ -397,11 +654,69 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
     """
 
 
+def build_region_summary(region_name, events):
+    if not events:
+        return ""
+
+    country_counter, type_counter, source_counter, _ = summarize_events(events)
+    top_countries = ", ".join(
+        f"{escape(country)} ({count})"
+        for country, count in country_counter.most_common(3)
+    )
+
+    top_types = ", ".join(
+        f"{escape(event_type)} ({count})"
+        for event_type, count in type_counter.most_common(3)
+    )
+
+    if not top_countries:
+        top_countries = "nem azonosítható"
+    if not top_types:
+        top_types = "nem azonosítható"
+
+    text_by_region = {
+        "Európai Unió": (
+            "Az Európai Unió térségében a jelentés elsősorban biztonsági, rendészeti "
+            "vagy fegyveres incidensekhez kapcsolódó nyílt forrású találatokat azonosított."
+        ),
+        "Balkán": (
+            "A Balkán esetében a napi kép különösen fontos, mert a térségben az alacsonyabb "
+            "intenzitású incidensek is gyorsan politikai és biztonsági jelentőséget kaphatnak."
+        ),
+        "Közel-Kelet": (
+            "A Közel-Kelet továbbra is kiemelt biztonsági térség. A jelentésben megjelenő "
+            "események főként fegyveres összecsapásokhoz, támadásokhoz vagy katonai "
+            "tevékenységhez kapcsolódnak."
+        ),
+        "Kelet-Európa / orosz–ukrán térség": (
+            "A kelet-európai biztonsági blokkban az orosz–ukrán háborúhoz és annak "
+            "közvetlen környezetéhez kapcsolódó események adhatják a napi aktivitás jelentős részét."
+        ),
+    }
+
+    intro = text_by_region.get(
+        region_name,
+        "A térségben a rendszer nyílt forrású biztonsági eseményeket azonosított."
+    )
+
+    return f"""
+    <div class="region-summary">
+        <h3>{escape(region_name)}</h3>
+        <p>{intro}</p>
+        <p>
+            Azonosított események száma: <strong>{len(events)}</strong>.
+            Leginkább érintett országok: <strong>{top_countries}</strong>.
+            Domináns eseménytípusok: <strong>{top_types}</strong>.
+        </p>
+    </div>
+    """
+
+
 def build_top_events_rows(top_events):
     if not top_events:
         return """
         <tr>
-            <td colspan="6">Nincs kiemelhető esemény.</td>
+            <td colspan="7">Nincs kiemelhető esemény.</td>
         </tr>
         """
 
@@ -410,14 +725,17 @@ def build_top_events_rows(top_events):
     for index, (score, feature) in enumerate(top_events, start=1):
         props = feature.get("properties", {})
 
-        title = pick(props, ["title", "headline", "name", "summary"], "Cím nélküli esemény")
-        url = pick(props, ["url", "source_url", "link"], "")
-        event_type = pick(props, ["type", "event_type", "category", "theme"], "Fegyveres incidens")
-        country = pick(props, ["country", "country_name", "location_country"], "Ismeretlen ország")
-        location = pick(props, ["location", "place", "city", "admin1"], "Nincs pontos helyadat")
-        source = pick(props, ["source", "domain", "source_domain"], "Forrás")
+        title = get_title(props)
+        url = get_event_url(props)
+        event_type = get_event_type(props)
+        country = get_country(props)
+        location = get_location(props)
+        sources = props.get("merged_sources") or get_sources(props)
+        source = "Forrás"
+        if sources:
+            source = sources[0].replace("https://", "").replace("http://", "").split("/")[0]
 
-        if url.startswith("http"):
+        if url:
             title_html = f'<a href="{escape(url)}" target="_blank">{escape(title)}</a>'
             source_html = f'<a href="{escape(url)}" target="_blank">{escape(source)}</a>'
         else:
@@ -454,26 +772,19 @@ def build_counter_list(counter, limit=10):
 def build_charts_html(chart_files):
     html = ""
 
-    if "trend" in chart_files:
-        html += f"""
-        <div class="chart wide">
-            <img src="{escape(chart_files["trend"])}" alt="7 napos trend">
-        </div>
-        """
-
-    if "countries" in chart_files:
-        html += f"""
-        <div class="chart">
-            <img src="{escape(chart_files["countries"])}" alt="Top országok">
-        </div>
-        """
-
-    if "types" in chart_files:
-        html += f"""
-        <div class="chart">
-            <img src="{escape(chart_files["types"])}" alt="Eseménytípusok">
-        </div>
-        """
+    for key, alt in [
+        ("trend", "7 napos trend"),
+        ("regions", "Régiós bontás"),
+        ("countries", "Top országok"),
+        ("types", "Eseménytípusok"),
+    ]:
+        if key in chart_files:
+            wide = " wide" if key == "trend" else ""
+            html += f"""
+            <div class="chart{wide}">
+                <img src="{escape(chart_files[key])}" alt="{escape(alt)}">
+            </div>
+            """
 
     if not html:
         html = "<p>Nincs elérhető grafikon.</p>"
@@ -481,49 +792,67 @@ def build_charts_html(chart_files):
     return html
 
 
-def build_event_blocks(events_by_country):
-    if not events_by_country:
-        return """
-        <p>
-            A vizsgált napon nem került be részletesen listázható esemény.
-        </p>
+def build_region_blocks(events_by_region):
+    if not events_by_region:
+        return "<p>Nincs régió szerint csoportosítható esemény.</p>"
+
+    html = ""
+
+    for region_name, events in events_by_region.items():
+        html += build_region_summary(region_name, events)
+
+        top_events = get_top_events(events, limit=5)
+
+        html += """
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Típus</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
         """
 
-    blocks = ""
-
-    for country, events in sorted(events_by_country.items()):
-        blocks += f"""
-        <section class="country-block">
-            <h3>{escape(country)}</h3>
-            <ul>
-        """
-
-        for feature in events[:8]:
+        for score, feature in top_events:
             props = feature.get("properties", {})
+            title = get_title(props)
+            url = get_event_url(props)
+            country = get_country(props)
+            location = get_location(props)
+            event_type = get_event_type(props)
+            sources = props.get("merged_sources") or get_sources(props)
 
-            title = pick(props, ["title", "headline", "name", "summary"], "Cím nélküli esemény")
-            url = pick(props, ["url", "source_url", "link"], "")
-            event_type = pick(props, ["type", "event_type", "category", "theme"], "Fegyveres incidens")
-            location = pick(props, ["location", "place", "city", "admin1"], "Nincs pontos helyadat")
+            source_label = "Forrás"
+            if sources:
+                source_label = sources[0].replace("https://", "").replace("http://", "").split("/")[0]
 
-            if url.startswith("http"):
+            if url:
                 title_html = f'<a href="{escape(url)}" target="_blank">{escape(title)}</a>'
+                source_html = f'<a href="{escape(url)}" target="_blank">{escape(source_label)}</a>'
             else:
                 title_html = escape(title)
+                source_html = escape(source_label)
 
-            blocks += f"""
-            <li>
-                <strong>{title_html}</strong>
-                <span>{escape(location)} · {escape(event_type)}</span>
-            </li>
+            html += f"""
+            <tr>
+                <td>{title_html}</td>
+                <td>{escape(country)}</td>
+                <td>{escape(location)}</td>
+                <td>{escape(event_type)}</td>
+                <td>{source_html}</td>
+            </tr>
             """
 
-        blocks += """
-            </ul>
-        </section>
+        html += """
+            </tbody>
+        </table>
         """
 
-    return blocks
+    return html
 
 
 def build_html_report(
@@ -534,7 +863,8 @@ def build_html_report(
     country_counter,
     type_counter,
     source_counter,
-    events_by_country,
+    region_counter,
+    events_by_region,
     analysis_block,
     top_events,
     chart_files,
@@ -551,14 +881,15 @@ def build_html_report(
         change_text = "N/A"
         change_detail = "nincs összevetési alap"
 
-    top_country = country_counter.most_common(1)[0][0] if country_counter else "Nincs adat"
+    top_region = region_counter.most_common(1)[0][0] if region_counter else "Nincs adat"
 
     top_events_rows = build_top_events_rows(top_events)
     charts_html = build_charts_html(chart_files)
     country_list = build_counter_list(country_counter)
     type_list = build_counter_list(type_counter)
     source_list = build_counter_list(source_counter)
-    event_blocks = build_event_blocks(events_by_country)
+    region_list = build_counter_list(region_counter)
+    region_blocks = build_region_blocks(events_by_region)
 
     return f"""<!DOCTYPE html>
 <html lang="hu">
@@ -647,6 +978,7 @@ def build_html_report(
             border-radius: 10px;
             cursor: pointer;
             font-weight: 700;
+            text-decoration: none;
         }}
 
         .btn.secondary {{
@@ -776,7 +1108,7 @@ def build_html_report(
 
         .three-col {{
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 18px;
         }}
 
@@ -806,29 +1138,27 @@ def build_html_report(
             color: #0f172a;
         }}
 
-        .country-block {{
-            margin-bottom: 20px;
+        .region-summary {{
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 18px;
+            margin-bottom: 12px;
         }}
 
-        .country-block h3 {{
+        .region-summary h3 {{
             margin: 0 0 8px;
             color: #1e3a8a;
         }}
 
-        .country-block ul {{
-            margin: 0;
-            padding-left: 20px;
-            line-height: 1.55;
+        .region-summary p {{
+            line-height: 1.6;
+            margin: 8px 0;
         }}
 
-        .country-block li {{
-            margin-bottom: 9px;
-        }}
-
-        .country-block span {{
-            display: block;
-            color: #64748b;
-            font-size: 13px;
+        .region-table {{
+            margin-bottom: 26px;
         }}
 
         .footer {{
@@ -882,7 +1212,7 @@ def build_html_report(
             }}
 
             .three-col {{
-                grid-template-columns: 1fr;
+                grid-template-columns: 1fr 1fr;
             }}
         }}
 
@@ -900,6 +1230,10 @@ def build_html_report(
             }}
 
             .cards {{
+                grid-template-columns: 1fr;
+            }}
+
+            .three-col {{
                 grid-template-columns: 1fr;
             }}
 
@@ -937,7 +1271,7 @@ def build_html_report(
                 <div class="card">
                     <div class="label">Mai események száma</div>
                     <div class="big">{total}</div>
-                    <div class="small">azonosított incidens</div>
+                    <div class="small">deduplikált incidens</div>
                 </div>
 
                 <div class="card">
@@ -947,8 +1281,8 @@ def build_html_report(
                 </div>
 
                 <div class="card">
-                    <div class="label">Leginkább érintett ország</div>
-                    <div class="big" style="font-size:24px;">{escape(top_country)}</div>
+                    <div class="label">Fő régiós súlypont</div>
+                    <div class="big" style="font-size:22px;">{escape(top_region)}</div>
                     <div class="small">napi találatok alapján</div>
                 </div>
 
@@ -965,6 +1299,11 @@ def build_html_report(
                 <div class="analysis">
                     {analysis_block}
                 </div>
+            </section>
+
+            <section class="section">
+                <h2>Régiós helyzetkép</h2>
+                {region_blocks}
             </section>
 
             <section class="section">
@@ -998,7 +1337,11 @@ def build_html_report(
                 <h2>Napi bontások</h2>
                 <div class="three-col">
                     <div>
-                        <h3>Leginkább érintett országok</h3>
+                        <h3>Régiók</h3>
+                        <ol class="rank-list">{region_list}</ol>
+                    </div>
+                    <div>
+                        <h3>Országok</h3>
                         <ol class="rank-list">{country_list}</ol>
                     </div>
                     <div>
@@ -1006,24 +1349,19 @@ def build_html_report(
                         <ol class="rank-list">{type_list}</ol>
                     </div>
                     <div>
-                        <h3>Leggyakoribb források</h3>
+                        <h3>Források</h3>
                         <ol class="rank-list">{source_list}</ol>
                     </div>
                 </div>
-            </section>
-
-            <section class="section">
-                <h2>Részletes eseménylista országonként</h2>
-                {event_blocks}
             </section>
 
             <section class="section method">
                 <h2>Módszertani megjegyzés</h2>
                 <p>
                     Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
+                    A rendszer deduplikálja az azonos helyszínhez, eseménytípushoz és címhez
+                    kapcsolódó találatokat, de az összevonás nem tökéletes.
                     Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
-                    A találatok hírforrásokból származnak, ezért előfordulhat ismétlés,
-                    pontatlan földrajzi besorolás vagy késleltetett megjelenés.
                 </p>
             </section>
         </main>
@@ -1120,12 +1458,18 @@ def generate_report():
     report_day = today - timedelta(days=1)
     previous_day = report_day - timedelta(days=1)
 
-    daily_events = collect_events_by_day(features, report_day)
-    previous_events = collect_events_by_day(features, previous_day)
+    daily_raw_events = collect_events_by_day(features, report_day)
+    previous_raw_events = collect_events_by_day(features, previous_day)
 
-    country_counter, type_counter, source_counter, events_by_country = summarize_events(
-        daily_events
-    )
+    daily_events = deduplicate_events(daily_raw_events)
+    previous_events = deduplicate_events(previous_raw_events)
+
+    country_counter, type_counter, source_counter, _ = summarize_events(daily_events)
+    events_by_region = group_events_by_region(daily_events)
+
+    region_counter = Counter()
+    for region_name, events in events_by_region.items():
+        region_counter[region_name] = len(events)
 
     top_events = get_top_events(daily_events, limit=5)
     trend = collect_7_day_trend(features, report_day)
@@ -1134,6 +1478,7 @@ def generate_report():
         report_day=report_day,
         country_counter=country_counter,
         type_counter=type_counter,
+        region_counter=region_counter,
         trend=trend,
     )
 
@@ -1142,6 +1487,7 @@ def generate_report():
         yesterday_total=len(previous_events),
         country_counter=country_counter,
         type_counter=type_counter,
+        region_counter=region_counter,
     )
 
     REPORTS_DIR.mkdir(parents=True, exist_ok=True)
@@ -1157,7 +1503,8 @@ def generate_report():
         country_counter=country_counter,
         type_counter=type_counter,
         source_counter=source_counter,
-        events_by_country=events_by_country,
+        region_counter=region_counter,
+        events_by_region=events_by_region,
         analysis_block=analysis_block,
         top_events=top_events,
         chart_files=chart_files,
