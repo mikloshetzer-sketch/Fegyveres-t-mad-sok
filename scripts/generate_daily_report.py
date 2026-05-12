@@ -38,18 +38,6 @@ EASTERN_EUROPE_SECURITY = {
     "Ukraine", "Russia", "Russian Federation", "Belarus", "Moldova"
 }
 
-HIGH_PRIORITY_WORDS = [
-    "drone", "missile", "rocket", "airstrike", "strike", "explosion",
-    "bomb", "attack", "killed", "dead", "fatal", "wounded", "injured",
-    "military", "border", "terror", "armed", "clash", "shelling",
-    "artillery", "ambush", "raid", "war", "invasion"
-]
-
-MEDIUM_PRIORITY_WORDS = [
-    "protest", "riot", "unrest", "security", "police", "evacuation",
-    "fire", "blast", "threat", "checkpoint", "detained", "arrested"
-]
-
 
 def load_geojson():
     if not INPUT_FILE.exists():
@@ -157,6 +145,14 @@ def get_location(properties):
     return "Nincs pontos helyadat"
 
 
+def get_raw_event_type(properties):
+    return pick(
+        properties,
+        ["attack_type", "type", "event_type", "category", "theme"],
+        "",
+    )
+
+
 def get_title(properties):
     title = pick(
         properties,
@@ -167,30 +163,98 @@ def get_title(properties):
     if title:
         return clean_text(title)
 
-    event_type = get_event_type(properties)
+    raw_type = get_raw_event_type(properties) or "Fegyveres incidens"
     location = get_location(properties)
 
-    return f"{event_type} – {location}"
+    return f"{raw_type} – {location}"
+
+
+def classify_detailed_event_type(properties):
+    title = get_title(properties)
+    raw_type = get_raw_event_type(properties)
+    location = get_location(properties)
+    country = get_country(properties)
+
+    text = f"{title} {raw_type} {location} {country}".lower()
+
+    if any(word in text for word in [
+        "drone", "uav", "unmanned aerial", "shahed", "loitering munition"
+    ]):
+        return "Dróntámadás"
+
+    if any(word in text for word in [
+        "missile", "ballistic", "cruise missile", "rocket", "rockets"
+    ]):
+        return "Rakéta- vagy ballisztikus támadás"
+
+    if any(word in text for word in [
+        "airstrike", "air strike", "air raid", "aerial attack", "air attack",
+        "warplane", "fighter jet"
+    ]):
+        return "Légicsapás"
+
+    if any(word in text for word in [
+        "shelling", "artillery", "mortar", "howitzer", "mlrs", "multiple launch"
+    ]):
+        return "Tüzérségi / aknavetős támadás"
+
+    if any(word in text for word in [
+        "ied", "improvised explosive", "roadside bomb", "car bomb",
+        "suicide bomb", "bombing", "explosion", "blast", "detonation"
+    ]):
+        return "Robbantás / IED"
+
+    if any(word in text for word in [
+        "clash", "clashes", "combat", "battle", "firefight", "gunfight",
+        "fighting", "armed confrontation"
+    ]):
+        return "Fegyveres összecsapás"
+
+    if any(word in text for word in [
+        "ambush", "raid", "assault", "stormed", "attack on", "attacked",
+        "opened fire", "shooting"
+    ]):
+        return "Rajtaütés / fegyveres támadás"
+
+    if any(word in text for word in [
+        "terror", "terrorist", "isis", "islamic state", "al-qaeda",
+        "al qaeda", "hamas", "hezbollah"
+    ]):
+        return "Terrorcselekmény / milíciaaktivitás"
+
+    if any(word in text for word in [
+        "border", "cross-border", "frontier", "checkpoint", "ceasefire line"
+    ]):
+        return "Határincidens"
+
+    if any(word in text for word in [
+        "protest", "riot", "riots", "unrest", "demonstration",
+        "demonstrators", "crowd", "rally"
+    ]):
+        return "Tüntetés / zavargás"
+
+    if any(word in text for word in [
+        "police", "arrest", "arrested", "detained", "security forces",
+        "law enforcement", "raid by police"
+    ]):
+        return "Rendészeti / belbiztonsági incidens"
+
+    raw = raw_type.lower()
+
+    if raw == "assault":
+        return "Rajtaütés / fegyveres támadás"
+    if raw == "fight":
+        return "Fegyveres összecsapás"
+    if raw == "mass_violence":
+        return "Tömeges erőszak"
+    if raw == "other":
+        return "Egyéb biztonsági esemény"
+
+    return "Egyéb biztonsági esemény"
 
 
 def get_event_type(properties):
-    event_type = pick(
-        properties,
-        ["attack_type", "type", "event_type", "category", "theme"],
-        "",
-    )
-
-    if not event_type:
-        return "Fegyveres incidens"
-
-    label_map = {
-        "assault": "Támadás",
-        "fight": "Fegyveres összecsapás",
-        "mass_violence": "Tömeges erőszak",
-        "other": "Egyéb biztonsági esemény",
-    }
-
-    return label_map.get(event_type, clean_text(event_type))
+    return classify_detailed_event_type(properties)
 
 
 def get_event_url(properties):
@@ -236,6 +300,7 @@ def deduplicate_events(events):
             grouped[key]["properties"] = dict(props)
             grouped[key]["properties"]["merged_count"] = 1
             grouped[key]["properties"]["merged_sources"] = get_sources(props)
+            grouped[key]["properties"]["detailed_event_type"] = event_type
         else:
             grouped[key]["properties"]["merged_count"] += 1
             old_sources = grouped[key]["properties"].setdefault("merged_sources", [])
@@ -373,13 +438,33 @@ def score_event(feature):
 
     score = 0
 
-    for word in HIGH_PRIORITY_WORDS:
+    high_words = [
+        "drone", "missile", "rocket", "airstrike", "explosion", "bomb",
+        "killed", "dead", "fatal", "wounded", "injured", "military",
+        "terror", "clash", "shelling", "artillery", "ambush", "raid"
+    ]
+
+    medium_words = [
+        "protest", "riot", "unrest", "security", "police", "evacuation",
+        "fire", "blast", "threat", "checkpoint"
+    ]
+
+    for word in high_words:
         if word in text:
             score += 5
 
-    for word in MEDIUM_PRIORITY_WORDS:
+    for word in medium_words:
         if word in text:
             score += 2
+
+    if event_type in {
+        "Dróntámadás",
+        "Rakéta- vagy ballisztikus támadás",
+        "Légicsapás",
+        "Robbantás / IED",
+        "Terrorcselekmény / milíciaaktivitás",
+    }:
+        score += 5
 
     if sources:
         score += min(len(sources), 5)
@@ -417,7 +502,7 @@ def get_top_events(events, limit=5):
 def save_bar_chart(title, labels, values, output_path):
     width = 900
     height = 420
-    margin_left = 180
+    margin_left = 230
     margin_right = 70
     margin_top = 70
     margin_bottom = 50
@@ -441,7 +526,7 @@ def save_bar_chart(title, labels, values, output_path):
 
         svg_items.append(
             f'<text x="{margin_left - 14}" y="{y + 20}" text-anchor="end" '
-            f'font-size="14" fill="#334155">{escape(str(label)[:30])}</text>'
+            f'font-size="13" fill="#334155">{escape(str(label)[:36])}</text>'
         )
 
         svg_items.append(
@@ -566,11 +651,11 @@ def generate_charts(report_day, country_counter, type_counter, region_counter, t
         )
         chart_files["regions"] = f"charts/{filename}"
 
-    type_items = type_counter.most_common(6)
-    if type_items and len(type_items) > 1:
+    type_items = type_counter.most_common(8)
+    if type_items:
         filename = f"{report_day.isoformat()}-event-types.svg"
         save_bar_chart(
-            "Eseménytípusok",
+            "Részletes támadástípusok",
             [item[0] for item in type_items],
             [item[1] for item in type_items],
             CHARTS_DIR / filename,
@@ -626,7 +711,7 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
     )
 
     type_text = (
-        f"A leggyakoribb eseménykategória: "
+        f"A leggyakoribb részletes támadástípus: "
         f"<strong>{escape(top_type[0][0])}</strong> "
         f"({top_type[0][1]} találat)."
         if top_type else
@@ -648,8 +733,8 @@ def generate_analysis_block(today_total, yesterday_total, country_counter, type_
     <p>{type_text}</p>
     <p>
         A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
-        A magasabb elemszám jelezhet tényleges biztonsági romlást,
-        de okozhatja fokozott médiafigyelem vagy forrásduplikáció is.
+        A részletes támadástípusok kulcsszavas besorolással készülnek, ezért elemzési
+        támpontot adnak, de nem helyettesítik a kézi ellenőrzést.
     </p>
     """
 
@@ -706,7 +791,7 @@ def build_region_summary(region_name, events):
         <p>
             Azonosított események száma: <strong>{len(events)}</strong>.
             Leginkább érintett országok: <strong>{top_countries}</strong>.
-            Domináns eseménytípusok: <strong>{top_types}</strong>.
+            Domináns támadástípusok: <strong>{top_types}</strong>.
         </p>
     </div>
     """
@@ -731,6 +816,7 @@ def build_top_events_rows(top_events):
         country = get_country(props)
         location = get_location(props)
         sources = props.get("merged_sources") or get_sources(props)
+
         source = "Forrás"
         if sources:
             source = sources[0].replace("https://", "").replace("http://", "").split("/")[0]
@@ -776,7 +862,7 @@ def build_charts_html(chart_files):
         ("trend", "7 napos trend"),
         ("regions", "Régiós bontás"),
         ("countries", "Top országok"),
-        ("types", "Eseménytípusok"),
+        ("types", "Részletes támadástípusok"),
     ]:
         if key in chart_files:
             wide = " wide" if key == "trend" else ""
@@ -810,7 +896,7 @@ def build_region_blocks(events_by_region):
                     <th>Cím</th>
                     <th>Ország</th>
                     <th>Helyszín</th>
-                    <th>Típus</th>
+                    <th>Részletes típus</th>
                     <th>Forrás</th>
                 </tr>
             </thead>
@@ -897,9 +983,7 @@ def build_html_report(
     <meta charset="UTF-8">
     <title>Napi fegyveres incidens jelentés – {report_day.isoformat()}</title>
     <style>
-        * {{
-            box-sizing: border-box;
-        }}
+        * {{ box-sizing: border-box; }}
 
         body {{
             margin: 0;
@@ -981,9 +1065,7 @@ def build_html_report(
             text-decoration: none;
         }}
 
-        .btn.secondary {{
-            background: #0f172a;
-        }}
+        .btn.secondary {{ background: #0f172a; }}
 
         .cards {{
             display: grid;
@@ -1059,9 +1141,7 @@ def build_html_report(
             background: white;
         }}
 
-        .chart.wide {{
-            grid-column: 1 / -1;
-        }}
+        .chart.wide {{ grid-column: 1 / -1; }}
 
         .chart img {{
             width: 100%;
@@ -1102,9 +1182,7 @@ def build_html_report(
             font-weight: 700;
         }}
 
-        a:hover {{
-            text-decoration: underline;
-        }}
+        a:hover {{ text-decoration: underline; }}
 
         .three-col {{
             display: grid;
@@ -1126,17 +1204,10 @@ def build_html_report(
             border-bottom: 1px solid #e2e8f0;
         }}
 
-        .rank-list li:last-child {{
-            border-bottom: 0;
-        }}
+        .rank-list li:last-child {{ border-bottom: 0; }}
 
-        .rank-list span {{
-            color: #334155;
-        }}
-
-        .rank-list strong {{
-            color: #0f172a;
-        }}
+        .rank-list span {{ color: #334155; }}
+        .rank-list strong {{ color: #0f172a; }}
 
         .region-summary {{
             background: #f8fafc;
@@ -1176,25 +1247,11 @@ def build_html_report(
         }}
 
         @media print {{
-            body {{
-                background: white;
-            }}
-
-            .page {{
-                max-width: none;
-            }}
-
-            .actions {{
-                display: none;
-            }}
-
-            .section, .card {{
-                box-shadow: none;
-            }}
-
-            a {{
-                color: #111827;
-            }}
+            body {{ background: white; }}
+            .page {{ max-width: none; }}
+            .actions {{ display: none; }}
+            .section, .card {{ box-shadow: none; }}
+            a {{ color: #111827; }}
         }}
 
         @media (max-width: 900px) {{
@@ -1203,47 +1260,19 @@ def build_html_report(
                 align-items: flex-start;
             }}
 
-            .cards {{
-                grid-template-columns: 1fr 1fr;
-            }}
-
-            .charts {{
-                grid-template-columns: 1fr;
-            }}
-
-            .three-col {{
-                grid-template-columns: 1fr 1fr;
-            }}
+            .cards {{ grid-template-columns: 1fr 1fr; }}
+            .charts {{ grid-template-columns: 1fr; }}
+            .three-col {{ grid-template-columns: 1fr 1fr; }}
         }}
 
         @media (max-width: 600px) {{
-            .content {{
-                padding: 20px;
-            }}
-
-            .hero {{
-                padding: 28px 22px;
-            }}
-
-            .hero h1 {{
-                font-size: 30px;
-            }}
-
-            .cards {{
-                grid-template-columns: 1fr;
-            }}
-
-            .three-col {{
-                grid-template-columns: 1fr;
-            }}
-
-            table {{
-                font-size: 12px;
-            }}
-
-            th, td {{
-                padding: 8px;
-            }}
+            .content {{ padding: 20px; }}
+            .hero {{ padding: 28px 22px; }}
+            .hero h1 {{ font-size: 30px; }}
+            .cards {{ grid-template-columns: 1fr; }}
+            .three-col {{ grid-template-columns: 1fr; }}
+            table {{ font-size: 12px; }}
+            th, td {{ padding: 8px; }}
         }}
     </style>
 </head>
@@ -1322,7 +1351,7 @@ def build_html_report(
                             <th>Cím</th>
                             <th>Ország</th>
                             <th>Helyszín</th>
-                            <th>Típus</th>
+                            <th>Részletes típus</th>
                             <th>Súly</th>
                             <th>Forrás</th>
                         </tr>
@@ -1345,7 +1374,7 @@ def build_html_report(
                         <ol class="rank-list">{country_list}</ol>
                     </div>
                     <div>
-                        <h3>Eseménytípusok</h3>
+                        <h3>Részletes támadástípusok</h3>
                         <ol class="rank-list">{type_list}</ol>
                     </div>
                     <div>
@@ -1359,6 +1388,7 @@ def build_html_report(
                 <h2>Módszertani megjegyzés</h2>
                 <p>
                     Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
+                    A részletes támadástípus-besorolás kulcsszavak alapján történik.
                     A rendszer deduplikálja az azonos helyszínhez, eseménytípushoz és címhez
                     kapcsolódó találatokat, de az összevonás nem tökéletes.
                     Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
@@ -1413,13 +1443,8 @@ def update_index():
             box-shadow: 0 10px 24px rgba(15,23,42,0.1);
         }}
 
-        h1 {{
-            margin-top: 0;
-        }}
-
-        ul {{
-            line-height: 1.8;
-        }}
+        h1 {{ margin-top: 0; }}
+        ul {{ line-height: 1.8; }}
 
         a {{
             color: #2563eb;
@@ -1427,9 +1452,7 @@ def update_index():
             text-decoration: none;
         }}
 
-        a:hover {{
-            text-decoration: underline;
-        }}
+        a:hover {{ text-decoration: underline; }}
     </style>
 </head>
 <body>
