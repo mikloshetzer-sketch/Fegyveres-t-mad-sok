@@ -4,295 +4,585 @@
     <meta charset="UTF-8">
     <title>Napi fegyveres incidens jelentés – 2026-05-11</title>
     <style>
+        * {
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background: #f8fafc;
-            color: #1e293b;
             margin: 0;
-            padding: 0;
+            background: #e5e7eb;
+            color: #111827;
+            font-family: Arial, Helvetica, sans-serif;
         }
-        .container {
-            max-width: 1050px;
-            margin: 32px auto;
-            background: #ffffff;
-            padding: 28px;
-            border-radius: 14px;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+
+        .page {
+            max-width: 1180px;
+            margin: 0 auto;
+            background: #f8fafc;
+            min-height: 100vh;
         }
-        h1 {
-            color: #0f172a;
-            margin-bottom: 8px;
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(2, 6, 23, 0.97), rgba(15, 23, 42, 0.88)),
+                radial-gradient(circle at right, #1d4ed8, transparent 40%);
+            color: white;
+            padding: 34px 42px;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
         }
-        h2 {
-            margin-top: 32px;
+
+        .hero h1 {
+            margin: 0;
+            font-size: 38px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            margin: 12px 0 0;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .date-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            border-radius: 18px;
+            padding: 20px 24px;
+            min-width: 210px;
+            text-align: center;
+        }
+
+        .date-card small {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+        }
+
+        .date-card strong {
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 28px 40px 36px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            border: 0;
+            background: #2563eb;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .btn.secondary {
+            background: #0f172a;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+        }
+
+        .card .label {
+            font-size: 13px;
+            font-weight: 800;
             color: #334155;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 6px;
+            text-transform: uppercase;
+            margin-bottom: 10px;
         }
-        h3 {
-            margin-top: 24px;
-            color: #475569;
+
+        .card .big {
+            font-size: 34px;
+            font-weight: 900;
+            color: #1d4ed8;
+            line-height: 1;
         }
-        .meta {
+
+        .card .small {
+            margin-top: 8px;
             color: #64748b;
             font-size: 14px;
         }
-        .summary {
-            background: #f1f5f9;
-            border-left: 5px solid #475569;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
+
+        .warning-card {
+            background: #fffbeb;
+            border-color: #fde68a;
         }
+
+        .section {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px;
+            margin-top: 20px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .section h2 {
+            margin: 0 0 16px;
+            font-size: 21px;
+            color: #0f172a;
+        }
+
         .analysis {
-            background: #ecfdf5;
-            border-left: 5px solid #10b981;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
+            font-size: 17px;
+            line-height: 1.65;
         }
-        .top-events {
-            background: #eff6ff;
-            border-left: 5px solid #2563eb;
-            padding: 16px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
+
         .charts {
-            background: #ffffff;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .chart {
             border: 1px solid #e2e8f0;
-            padding: 16px;
-            border-radius: 12px;
-            margin-top: 20px;
+            border-radius: 14px;
+            overflow: hidden;
+            background: white;
         }
-        .chart-box {
-            margin-bottom: 24px;
-            overflow-x: auto;
+
+        .chart.wide {
+            grid-column: 1 / -1;
         }
-        .chart-box img {
+
+        .chart img {
             width: 100%;
-            max-width: 900px;
             display: block;
-            margin: 0 auto;
-            border: 1px solid #e2e8f0;
-            border-radius: 10px;
         }
-        ul, ol {
-            line-height: 1.7;
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
         }
-        li {
-            margin-bottom: 10px;
+
+        th {
+            text-align: left;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 12px;
         }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .score {
+            font-size: 18px;
+            font-weight: 900;
+            color: #dc2626;
+        }
+
         a {
             color: #2563eb;
             text-decoration: none;
+            font-weight: 700;
         }
+
         a:hover {
             text-decoration: underline;
         }
-        .warning {
-            margin-top: 32px;
-            padding: 14px;
-            background: #fff7ed;
-            border-left: 5px solid #f97316;
-            border-radius: 8px;
-            color: #7c2d12;
+
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .rank-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .rank-list li:last-child {
+            border-bottom: 0;
+        }
+
+        .rank-list span {
+            color: #334155;
+        }
+
+        .rank-list strong {
+            color: #0f172a;
+        }
+
+        .country-block {
+            margin-bottom: 20px;
+        }
+
+        .country-block h3 {
+            margin: 0 0 8px;
+            color: #1e3a8a;
+        }
+
+        .country-block ul {
+            margin: 0;
+            padding-left: 20px;
+            line-height: 1.55;
+        }
+
+        .country-block li {
+            margin-bottom: 9px;
+        }
+
+        .country-block span {
+            display: block;
+            color: #64748b;
+            font-size: 13px;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 22px 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .method {
+            background: #fffbeb;
+            border-color: #fde68a;
+            color: #713f12;
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+
+            .page {
+                max-width: none;
+            }
+
+            .actions {
+                display: none;
+            }
+
+            .section, .card {
+                box-shadow: none;
+            }
+
+            a {
+                color: #111827;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .charts {
+                grid-template-columns: 1fr;
+            }
+
+            .three-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .content {
+                padding: 20px;
+            }
+
+            .hero {
+                padding: 28px 22px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            table {
+                font-size: 12px;
+            }
+
+            th, td {
+                padding: 8px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Napi fegyveres incidens jelentés</h1>
-        <p class="meta">Dátum: 2026-05-11</p>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <h1>Napi fegyveres<br>incidens jelentés</h1>
+                <p>OSINT alapú konfliktusfigyelő rendszer</p>
+            </div>
+            <div class="date-card">
+                <small>Dátum</small>
+                <strong>2026-05-11</strong>
+                <small>UTC alapú riport</small>
+            </div>
+        </header>
 
-        <div class="summary">
-            <p>
-                A rendszer a vizsgált napon <strong>1803</strong> fegyveres támadáshoz,
-                erőszakos incidenshez vagy biztonsági eseményhez kapcsolódó találatot azonosított.
-            </p>
-            <p>
-                Összevetési alap: 2026-05-10 –
-                <strong>1237</strong> azonosított esemény.
-            </p>
-        </div>
+        <main class="content">
+            <div class="actions">
+                <button class="btn" onclick="window.print()">Letöltés PDF-ként</button>
+                <a class="btn secondary" href="index.html">Riportarchívum</a>
+            </div>
 
-        <h2>Rövid napi értékelés</h2>
-        <div class="analysis">
-            
-    <p>Az incidensek száma az előző naphoz képest emelkedett. A rendszer 566 darabbal több eseményt azonosított.</p>
+            <section class="cards">
+                <div class="card">
+                    <div class="label">Mai események száma</div>
+                    <div class="big">1803</div>
+                    <div class="small">azonosított incidens</div>
+                </div>
+
+                <div class="card">
+                    <div class="label">Változás előző naphoz képest</div>
+                    <div class="big">+45.8%</div>
+                    <div class="small">+566 esemény</div>
+                </div>
+
+                <div class="card">
+                    <div class="label">Leginkább érintett ország</div>
+                    <div class="big" style="font-size:24px;">Ismeretlen ország</div>
+                    <div class="small">napi találatok alapján</div>
+                </div>
+
+                <div class="card warning-card">
+                    <div class="label">Módszertani jelzés</div>
+                    <div class="small">
+                        Nem hivatalos statisztika. Nyílt forrású, automatizált OSINT-jelzés.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Rövid napi értékelés</h2>
+                <div class="analysis">
+                    
+    <p>Az incidensek száma emelkedett. A rendszer 566 darabbal több eseményt azonosított, ami 45.8% növekedést jelent.</p>
     <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>Ismeretlen ország</strong> (1803 esemény).</p>
-    <p>A leggyakoribb eseménytípus: <strong>Fegyveres incidens</strong> (1803 találat).</p>
+    <p>A leggyakoribb eseménykategória: <strong>Fegyveres incidens</strong> (1803 találat).</p>
     <p>
-        Az adatok alapján a napi biztonsági kép elsősorban nem hivatalos statisztikaként,
-        hanem korai figyelmeztető OSINT-jelzésként értelmezhető. A magasabb elemszám
-        fokozott médiafigyelmet, több forrásból megjelenő eseményeket vagy valódi
-        biztonsági romlást is jelezhet.
+        A napi kép korai figyelmeztető OSINT-jelzésként értelmezhető.
+        A magasabb elemszám jelezhet tényleges biztonsági romlást,
+        de okozhatja fokozott médiafigyelem vagy forrásduplikáció is.
     </p>
     
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Grafikonos áttekintés</h2>
+                <div class="charts">
+                    
+        <div class="chart wide">
+            <img src="charts/2026-05-11-7-day-trend.svg" alt="7 napos trend">
         </div>
-
-        <h2>Grafikonos áttekintés</h2>
-        <div class="charts">
-            
-            <div class="chart-box">
-                <img src="charts/2026-05-11-7-day-trend.svg" alt="Napi jelentés grafikon">
-            </div>
-            
-            <div class="chart-box">
-                <img src="charts/2026-05-11-top-countries.svg" alt="Napi jelentés grafikon">
-            </div>
-            
-            <div class="chart-box">
-                <img src="charts/2026-05-11-event-types.svg" alt="Napi jelentés grafikon">
-            </div>
-            
+        
+        <div class="chart">
+            <img src="charts/2026-05-11-top-countries.svg" alt="Top országok">
         </div>
-
-        <h2>Top 5 kiemelt esemény</h2>
-        <div class="top-events">
-            <ol>
-        <li>
-            <strong>Cím nélküli esemény</strong><br>
-            Ország: Ismeretlen ország<br>
-            Helyszín: Abuja, Abuja Federal Capital Territory, Nigeria<br>
-            Típus: Fegyveres incidens<br>
-            Súlypontszám: 6
-        </li>
         
-        <li>
-            <strong>Cím nélküli esemény</strong><br>
-            Ország: Ismeretlen ország<br>
-            Helyszín: Abuja, Abuja Federal Capital Territory, Nigeria<br>
-            Típus: Fegyveres incidens<br>
-            Súlypontszám: 6
-        </li>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Top 5 kiemelt esemény</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cím</th>
+                            <th>Ország</th>
+                            <th>Helyszín</th>
+                            <th>Típus</th>
+                            <th>Súly</th>
+                            <th>Forrás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>1</td>
+            <td>Cím nélküli esemény</td>
+            <td>Ismeretlen ország</td>
+            <td>Bombay, Maharashtra, India</td>
+            <td>Fegyveres incidens</td>
+            <td class="score">6</td>
+            <td>Forrás</td>
+        </tr>
         
-        <li>
-            <strong>Cím nélküli esemény</strong><br>
-            Ország: Ismeretlen ország<br>
-            Helyszín: Canberra, Australian Capital Territory, Australia<br>
-            Típus: Fegyveres incidens<br>
-            Súlypontszám: 6
-        </li>
+        <tr>
+            <td>2</td>
+            <td>Cím nélküli esemény</td>
+            <td>Ismeretlen ország</td>
+            <td>Bombay, Maharashtra, India</td>
+            <td>Fegyveres incidens</td>
+            <td class="score">6</td>
+            <td>Forrás</td>
+        </tr>
         
-        <li>
-            <strong>Cím nélküli esemény</strong><br>
-            Ország: Ismeretlen ország<br>
-            Helyszín: Brussels, Bruxelles-Capitale, Belgium<br>
-            Típus: Fegyveres incidens<br>
-            Súlypontszám: 6
-        </li>
+        <tr>
+            <td>3</td>
+            <td>Cím nélküli esemény</td>
+            <td>Ismeretlen ország</td>
+            <td>Kherson, Khersons&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Fegyveres incidens</td>
+            <td class="score">3</td>
+            <td>Forrás</td>
+        </tr>
         
-        <li>
-            <strong>Cím nélküli esemény</strong><br>
-            Ország: Ismeretlen ország<br>
-            Helyszín: Canberra, Australian Capital Territory, Australia<br>
-            Típus: Fegyveres incidens<br>
-            Súlypontszám: 6
-        </li>
-        </ol>
-        </div>
+        <tr>
+            <td>4</td>
+            <td>Cím nélküli esemény</td>
+            <td>Ismeretlen ország</td>
+            <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Fegyveres incidens</td>
+            <td class="score">3</td>
+            <td>Forrás</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>Cím nélküli esemény</td>
+            <td>Ismeretlen ország</td>
+            <td>Belgorod, Belgorodskaya Oblast&#x27;, Russia</td>
+            <td>Fegyveres incidens</td>
+            <td class="score">3</td>
+            <td>Forrás</td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </section>
 
-        <h2>Leginkább érintett országok</h2>
-        <ul>
-            <li><strong>Ismeretlen ország</strong>: 1803 esemény</li>
-        </ul>
+            <section class="section">
+                <h2>Napi bontások</h2>
+                <div class="three-col">
+                    <div>
+                        <h3>Leginkább érintett országok</h3>
+                        <ol class="rank-list"><li><span>Ismeretlen ország</span><strong>1803</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Eseménytípusok</h3>
+                        <ol class="rank-list"><li><span>Fegyveres incidens</span><strong>1803</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Leggyakoribb források</h3>
+                        <ol class="rank-list"><li><span>Ismeretlen forrás</span><strong>1803</strong></li></ol>
+                    </div>
+                </div>
+            </section>
 
-        <h2>Eseménytípusok</h2>
-        <ul>
-            <li><strong>Fegyveres incidens</strong>: 1803 eset</li>
-        </ul>
-
-        <h2>Leggyakoribb források</h2>
-        <ul>
-            <li><strong>Ismeretlen forrás</strong>: 1803 hivatkozás</li>
-        </ul>
-
-        <h2>Kiemelt napi események országonként</h2>
-        <h3>Ismeretlen ország</h3>
-<ul>
-
+            <section class="section">
+                <h2>Részletes eseménylista országonként</h2>
+                
+        <section class="country-block">
+            <h3>Ismeretlen ország</h3>
+            <ul>
+        
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Netherlands
+                <strong>Cím nélküli esemény</strong>
+                <span>Netherlands · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Tehran, Tehran, Iran
+                <strong>Cím nélküli esemény</strong>
+                <span>Tehran, Tehran, Iran · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Australia
+                <strong>Cím nélküli esemény</strong>
+                <span>Australia · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Alabama, United States
+                <strong>Cím nélküli esemény</strong>
+                <span>Alabama, United States · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Gaza, Israel (general), Israel
+                <strong>Cím nélküli esemény</strong>
+                <span>Gaza, Israel (general), Israel · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: India
+                <strong>Cím nélküli esemény</strong>
+                <span>India · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Delhi, Delhi, India
+                <strong>Cím nélküli esemény</strong>
+                <span>Delhi, Delhi, India · Fegyveres incidens</span>
             </li>
             
             <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Lebanon
+                <strong>Cím nélküli esemény</strong>
+                <span>Lebanon · Fegyveres incidens</span>
             </li>
             
-            <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Washington, District of Columbia, United States
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Iraq
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: United States
-            </li>
-            
-            <li>
-                <strong>Cím nélküli esemény</strong><br>
-                Típus: Fegyveres incidens<br>
-                Helyszín: Kyiv, Kyyiv, Misto, Ukraine
-            </li>
             </ul>
+        </section>
+        
+            </section>
 
+            <section class="section method">
+                <h2>Módszertani megjegyzés</h2>
+                <p>
+                    Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
+                    Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
+                    A találatok hírforrásokból származnak, ezért előfordulhat ismétlés,
+                    pontatlan földrajzi besorolás vagy késleltetett megjelenés.
+                </p>
+            </section>
+        </main>
 
-        <div class="warning">
-            <strong>Fontos módszertani megjegyzés:</strong>
-            ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
-            Nem tekinthető hivatalos veszteség-, támadás- vagy konfliktusstatisztikának.
-            A találatok hírforrásokból származnak, ezért előfordulhat ismétlés,
-            pontatlan földrajzi besorolás vagy késleltetett megjelenés.
-        </div>
+        <footer class="footer">
+            OSINT konfliktusfigyelő rendszer – napi automatikus jelentés
+        </footer>
     </div>
 </body>
 </html>
