@@ -2,7 +2,7 @@ name: Daily Attack Report
 
 on:
   schedule:
-    - cron: "30 4 * * *"
+    - cron: "30 5 * * *"
   workflow_dispatch:
 
 permissions:
