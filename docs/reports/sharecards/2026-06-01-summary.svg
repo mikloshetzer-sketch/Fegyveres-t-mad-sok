@@ -1,0 +1,197 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="2100" viewBox="0 0 1600 2100">
+<rect width="1600" height="2100" fill="#07111f"/>
+<defs>
+  <linearGradient id="bggrad" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#0f172a"/>
+    <stop offset="55%" stop-color="#07111f"/>
+    <stop offset="100%" stop-color="#020617"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="12" stdDeviation="10" flood-color="#000000" flood-opacity="0.35"/>
+  </filter>
+</defs>
+<rect width="1600" height="2100" fill="url(#bggrad)"/>
+
+<text x="70" y="95" font-size="48" font-weight="900" fill="#ffffff">FŐ RÉGIÓK ÖSSZEFOGLALÓJA</text>
+<text x="70" y="142" font-size="24" fill="#cbd5e1">Napi fegyveres incidens jelentés – 2026-06-01</text>
+<text x="70" y="185" font-size="20" fill="#93c5fd">Európai Unió • Balkán • Közel-Kelet • Ukrajna</text>
+
+<rect x="1190" y="60" width="330" height="115" rx="22" fill="#111827" stroke="#334155"/>
+<text x="1230" y="102" font-size="18" fill="#94a3b8">Összes kiemelt régiós esemény</text>
+<text x="1230" y="153" font-size="46" font-weight="900" fill="#ffffff">379</text>
+
+<g filter="url(#shadow)">
+<rect x="70" y="250" width="350" height="690" rx="24" fill="#f8fafc"/>
+<rect x="70" y="250" width="350" height="92" rx="24" fill="#2563eb"/>
+<rect x="70" y="308" width="350" height="34" fill="#2563eb"/>
+<text x="98" y="308" font-size="30" font-weight="900" fill="#ffffff">EURÓPAI UNIÓ</text>
+
+<text x="98" y="395" font-size="62" font-weight="900" fill="#2563eb">101</text>
+<text x="200" y="390" font-size="22" font-weight="800" fill="#334155">esemény</text>
+
+<text x="98" y="445" font-size="18" font-weight="800" fill="#334155">Aktuális kockázati szint</text>
+<rect x="98" y="465" width="160" height="34" rx="12" fill="#ef4444"/>
+<text x="178" y="488" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">MAGAS</text>
+
+<text x="98" y="550" font-size="18" font-weight="900" fill="#111827">Fő eseményjelleg</text>
+
+<text x="98" y="586" font-size="15" font-weight="700" fill="#334155">Egyéb biztonsági esemény</text>
+<rect x="98" y="598" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="98" y="598" width="205" height="10" rx="5" fill="#2563eb"/>
+<text x="355" y="606" font-size="15" font-weight="900" fill="#0f172a">100</text>
+
+<text x="98" y="648" font-size="15" font-weight="700" fill="#334155">Terrorjellegű támadás</text>
+<rect x="98" y="660" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="98" y="660" width="2" height="10" rx="5" fill="#2563eb"/>
+<text x="355" y="668" font-size="15" font-weight="900" fill="#0f172a">1</text>
+
+<text x="98" y="825" font-size="18" font-weight="900" fill="#111827">7 napos trend</text>
+<rect x="98" y="845" width="292" height="70" rx="14" fill="#eef2ff"/>
+<polyline points="118.0,863.1 160.0,865.3 202.0,865.3 244.0,860.0 286.0,869.7 328.0,878.7 370.0,866.5" fill="none" stroke="#2563eb" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="118.0" cy="863.1" r="3.8" fill="#2563eb"/><text x="118.0" y="855.1" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">112</text><circle cx="160.0" cy="865.3" r="3.8" fill="#2563eb"/><text x="160.0" y="857.3" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">105</text><circle cx="202.0" cy="865.3" r="3.8" fill="#2563eb"/><text x="202.0" y="857.3" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">105</text><circle cx="244.0" cy="860.0" r="3.8" fill="#2563eb"/><text x="244.0" y="852.0" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">122</text><circle cx="286.0" cy="869.7" r="3.8" fill="#2563eb"/><text x="286.0" y="861.7" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">91</text><circle cx="328.0" cy="878.7" r="3.8" fill="#2563eb"/><text x="328.0" y="870.7" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">62</text><circle cx="370.0" cy="866.5" r="3.8" fill="#2563eb"/><text x="370.0" y="858.5" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">101</text>
+</g>
+
+<g filter="url(#shadow)">
+<rect x="450" y="250" width="350" height="690" rx="24" fill="#f8fafc"/>
+<rect x="450" y="250" width="350" height="92" rx="24" fill="#16a34a"/>
+<rect x="450" y="308" width="350" height="34" fill="#16a34a"/>
+<text x="478" y="308" font-size="30" font-weight="900" fill="#ffffff">BALKÁN</text>
+
+<text x="478" y="395" font-size="62" font-weight="900" fill="#16a34a">25</text>
+<text x="580" y="390" font-size="22" font-weight="800" fill="#334155">esemény</text>
+
+<text x="478" y="445" font-size="18" font-weight="800" fill="#334155">Aktuális kockázati szint</text>
+<rect x="478" y="465" width="160" height="34" rx="12" fill="#f97316"/>
+<text x="558" y="488" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">KÖZEPES</text>
+
+<text x="478" y="550" font-size="18" font-weight="900" fill="#111827">Fő eseményjelleg</text>
+
+<text x="478" y="586" font-size="15" font-weight="700" fill="#334155">Egyéb biztonsági esemény</text>
+<rect x="478" y="598" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="478" y="598" width="205" height="10" rx="5" fill="#16a34a"/>
+<text x="735" y="606" font-size="15" font-weight="900" fill="#0f172a">25</text>
+
+<text x="478" y="825" font-size="18" font-weight="900" fill="#111827">7 napos trend</text>
+<rect x="478" y="845" width="292" height="70" rx="14" fill="#eef2ff"/>
+<polyline points="498.0,869.1 540.0,869.1 582.0,873.7 624.0,879.8 666.0,890.4 708.0,870.6 750.0,860.0" fill="none" stroke="#16a34a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="498.0" cy="869.1" r="3.8" fill="#16a34a"/><text x="498.0" y="861.1" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">19</text><circle cx="540.0" cy="869.1" r="3.8" fill="#16a34a"/><text x="540.0" y="861.1" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">19</text><circle cx="582.0" cy="873.7" r="3.8" fill="#16a34a"/><text x="582.0" y="865.7" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">16</text><circle cx="624.0" cy="879.8" r="3.8" fill="#16a34a"/><text x="624.0" y="871.8" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">12</text><circle cx="666.0" cy="890.4" r="3.8" fill="#16a34a"/><text x="666.0" y="882.4" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">5</text><circle cx="708.0" cy="870.6" r="3.8" fill="#16a34a"/><text x="708.0" y="862.6" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">18</text><circle cx="750.0" cy="860.0" r="3.8" fill="#16a34a"/><text x="750.0" y="852.0" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">25</text>
+</g>
+
+<g filter="url(#shadow)">
+<rect x="830" y="250" width="350" height="690" rx="24" fill="#f8fafc"/>
+<rect x="830" y="250" width="350" height="92" rx="24" fill="#f97316"/>
+<rect x="830" y="308" width="350" height="34" fill="#f97316"/>
+<text x="858" y="308" font-size="30" font-weight="900" fill="#ffffff">KÖZEL-KELET</text>
+
+<text x="858" y="395" font-size="62" font-weight="900" fill="#f97316">215</text>
+<text x="960" y="390" font-size="22" font-weight="800" fill="#334155">esemény</text>
+
+<text x="858" y="445" font-size="18" font-weight="800" fill="#334155">Aktuális kockázati szint</text>
+<rect x="858" y="465" width="160" height="34" rx="12" fill="#ef4444"/>
+<text x="938" y="488" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">MAGAS</text>
+
+<text x="858" y="550" font-size="18" font-weight="900" fill="#111827">Fő eseményjelleg</text>
+
+<text x="858" y="586" font-size="15" font-weight="700" fill="#334155">Egyéb biztonsági esemény</text>
+<rect x="858" y="598" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="858" y="598" width="205" height="10" rx="5" fill="#f97316"/>
+<text x="1115" y="606" font-size="15" font-weight="900" fill="#0f172a">214</text>
+
+<text x="858" y="648" font-size="15" font-weight="700" fill="#334155">Dróntámadás</text>
+<rect x="858" y="660" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="858" y="660" width="0" height="10" rx="5" fill="#f97316"/>
+<text x="1115" y="668" font-size="15" font-weight="900" fill="#0f172a">1</text>
+
+<text x="858" y="825" font-size="18" font-weight="900" fill="#111827">7 napos trend</text>
+<rect x="858" y="845" width="292" height="70" rx="14" fill="#eef2ff"/>
+<polyline points="878.0,861.2 920.0,860.0 962.0,863.8 1004.0,869.8 1046.0,872.8 1088.0,868.7 1130.0,861.2" fill="none" stroke="#f97316" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="878.0" cy="861.2" r="3.8" fill="#f97316"/><text x="878.0" y="853.2" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">215</text><circle cx="920.0" cy="860.0" r="3.8" fill="#f97316"/><text x="920.0" y="852.0" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">222</text><circle cx="962.0" cy="863.8" r="3.8" fill="#f97316"/><text x="962.0" y="855.8" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">200</text><circle cx="1004.0" cy="869.8" r="3.8" fill="#f97316"/><text x="1004.0" y="861.8" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">165</text><circle cx="1046.0" cy="872.8" r="3.8" fill="#f97316"/><text x="1046.0" y="864.8" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">147</text><circle cx="1088.0" cy="868.7" r="3.8" fill="#f97316"/><text x="1088.0" y="860.7" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">171</text><circle cx="1130.0" cy="861.2" r="3.8" fill="#f97316"/><text x="1130.0" y="853.2" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">215</text>
+</g>
+
+<g filter="url(#shadow)">
+<rect x="1210" y="250" width="350" height="690" rx="24" fill="#f8fafc"/>
+<rect x="1210" y="250" width="350" height="92" rx="24" fill="#dc2626"/>
+<rect x="1210" y="308" width="350" height="34" fill="#dc2626"/>
+<text x="1238" y="308" font-size="30" font-weight="900" fill="#ffffff">UKRAJNA</text>
+
+<text x="1238" y="395" font-size="62" font-weight="900" fill="#dc2626">38</text>
+<text x="1340" y="390" font-size="22" font-weight="800" fill="#334155">esemény</text>
+
+<text x="1238" y="445" font-size="18" font-weight="800" fill="#334155">Aktuális kockázati szint</text>
+<rect x="1238" y="465" width="160" height="34" rx="12" fill="#f97316"/>
+<text x="1318" y="488" text-anchor="middle" font-size="17" font-weight="900" fill="#ffffff">KÖZEPES</text>
+
+<text x="1238" y="550" font-size="18" font-weight="900" fill="#111827">Fő eseményjelleg</text>
+
+<text x="1238" y="586" font-size="15" font-weight="700" fill="#334155">Egyéb biztonsági esemény</text>
+<rect x="1238" y="598" width="240" height="10" rx="5" fill="#e2e8f0"/>
+<rect x="1238" y="598" width="205" height="10" rx="5" fill="#dc2626"/>
+<text x="1495" y="606" font-size="15" font-weight="900" fill="#0f172a">38</text>
+
+<text x="1238" y="825" font-size="18" font-weight="900" fill="#111827">7 napos trend</text>
+<rect x="1238" y="845" width="292" height="70" rx="14" fill="#eef2ff"/>
+<polyline points="1258.0,865.8 1300.0,870.2 1342.0,869.5 1384.0,860.0 1426.0,865.1 1468.0,863.7 1510.0,870.2" fill="none" stroke="#dc2626" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/><circle cx="1258.0" cy="865.8" r="3.8" fill="#dc2626"/><text x="1258.0" y="857.8" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">44</text><circle cx="1300.0" cy="870.2" r="3.8" fill="#dc2626"/><text x="1300.0" y="862.2" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">38</text><circle cx="1342.0" cy="869.5" r="3.8" fill="#dc2626"/><text x="1342.0" y="861.5" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">39</text><circle cx="1384.0" cy="860.0" r="3.8" fill="#dc2626"/><text x="1384.0" y="852.0" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">52</text><circle cx="1426.0" cy="865.1" r="3.8" fill="#dc2626"/><text x="1426.0" y="857.1" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">45</text><circle cx="1468.0" cy="863.7" r="3.8" fill="#dc2626"/><text x="1468.0" y="855.7" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">47</text><circle cx="1510.0" cy="870.2" r="3.8" fill="#dc2626"/><text x="1510.0" y="862.2" text-anchor="middle" font-size="10" font-weight="700" fill="#0f172a">38</text>
+</g>
+
+<rect x="70" y="1010" width="700" height="360" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="110" y="1065" font-size="28" font-weight="900" fill="#0f172a">Kiemelt régiók megoszlása</text>
+
+<text x="110" y="1115" font-size="20" font-weight="800" fill="#334155">Európai Unió</text>
+<rect x="300" y="1097" width="520" height="22" rx="11" fill="#e2e8f0"/>
+<rect x="300" y="1097" width="138" height="22" rx="11" fill="#2563eb"/>
+<text x="835" y="1115" font-size="20" font-weight="900" fill="#0f172a">101 / 27%</text>
+
+<text x="110" y="1177" font-size="20" font-weight="800" fill="#334155">Balkán</text>
+<rect x="300" y="1159" width="520" height="22" rx="11" fill="#e2e8f0"/>
+<rect x="300" y="1159" width="34" height="22" rx="11" fill="#16a34a"/>
+<text x="835" y="1177" font-size="20" font-weight="900" fill="#0f172a">25 / 7%</text>
+
+<text x="110" y="1239" font-size="20" font-weight="800" fill="#334155">Közel-Kelet</text>
+<rect x="300" y="1221" width="520" height="22" rx="11" fill="#e2e8f0"/>
+<rect x="300" y="1221" width="294" height="22" rx="11" fill="#f97316"/>
+<text x="835" y="1239" font-size="20" font-weight="900" fill="#0f172a">215 / 57%</text>
+
+<text x="110" y="1301" font-size="20" font-weight="800" fill="#334155">Ukrajna</text>
+<rect x="300" y="1283" width="520" height="22" rx="11" fill="#e2e8f0"/>
+<rect x="300" y="1283" width="52" height="22" rx="11" fill="#dc2626"/>
+<text x="835" y="1301" font-size="20" font-weight="900" fill="#0f172a">38 / 10%</text>
+
+<rect x="830" y="1010" width="690" height="360" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="870" y="1065" font-size="28" font-weight="900" fill="#0f172a">Összesített eseményjelleg</text>
+
+<text x="870" y="1115" font-size="18" font-weight="800" fill="#334155">Egyéb biztonsági esemény</text>
+<rect x="870" y="1127" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="870" y="1127" width="420" height="18" rx="9" fill="#2563eb"/>
+<text x="1310" y="1142" font-size="18" font-weight="900" fill="#0f172a">377</text>
+
+<text x="870" y="1163" font-size="18" font-weight="800" fill="#334155">Terrorjellegű támadás</text>
+<rect x="870" y="1175" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="870" y="1175" width="1" height="18" rx="9" fill="#2563eb"/>
+<text x="1310" y="1190" font-size="18" font-weight="900" fill="#0f172a">1</text>
+
+<text x="870" y="1211" font-size="18" font-weight="800" fill="#334155">Dróntámadás</text>
+<rect x="870" y="1223" width="420" height="18" rx="9" fill="#e2e8f0"/>
+<rect x="870" y="1223" width="1" height="18" rx="9" fill="#2563eb"/>
+<text x="1310" y="1238" font-size="18" font-weight="900" fill="#0f172a">1</text>
+
+<rect x="70" y="1440" width="1450" height="420" rx="24" fill="#f8fafc" filter="url(#shadow)"/>
+<text x="110" y="1498" font-size="30" font-weight="900" fill="#0f172a">Régiós kulcsüzenetek</text>
+
+<circle cx="120" cy="1545" r="10" fill="#2563eb"/>
+<text x="145" y="1552" font-size="22" font-weight="900" fill="#0f172a">Európai Unió</text>
+<text x="320" y="1552" font-size="20" fill="#334155">Az EU-ban a fő jelleg: Egyéb biztonsági esemény.</text>
+
+<circle cx="120" cy="1619" r="10" fill="#16a34a"/>
+<text x="145" y="1626" font-size="22" font-weight="900" fill="#0f172a">Balkán</text>
+<text x="320" y="1626" font-size="20" fill="#334155">A Balkánon a fő jelleg: Egyéb biztonsági esemény; a térség politikailag érzékeny marad.</text>
+
+<circle cx="120" cy="1693" r="10" fill="#f97316"/>
+<text x="145" y="1700" font-size="22" font-weight="900" fill="#0f172a">Közel-Kelet</text>
+<text x="320" y="1700" font-size="20" fill="#334155">A Közel-Keleten a fő jelleg: Egyéb biztonsági esemény; a katonai aktivitás továbbra is kiemelt kockázat.</text>
+
+<circle cx="120" cy="1767" r="10" fill="#dc2626"/>
+<text x="145" y="1774" font-size="22" font-weight="900" fill="#0f172a">Ukrajna</text>
+<text x="320" y="1774" font-size="20" fill="#334155">Ukrajnában a fő jelleg: Egyéb biztonsági esemény; a háborús dinamika továbbra is meghatározó.</text>
+
+<rect x="70" y="1930" width="1450" height="95" rx="22" fill="#111827" stroke="#334155"/>
+<text x="110" y="1970" font-size="19" font-weight="800" fill="#e5e7eb">Módszertani megjegyzés</text>
+<text x="110" y="2005" font-size="17" fill="#cbd5e1">Automatikus OSINT-alapú napi összefoglaló. Drón-, terrorjellegű és háborús események kulcsszavas besorolással.</text>
+<text x="1180" y="2005" font-size="18" font-weight="800" fill="#93c5fd">OSINT konfliktusfigyelő rendszer</text>
+</svg>
