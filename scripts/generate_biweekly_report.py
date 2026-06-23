@@ -11,6 +11,7 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 BIWEEKLY_DIR = REPORTS_DIR / "biweekly"
+BIWEEKLY_SHARECARDS_DIR = BIWEEKLY_DIR / "sharecards"
 
 
 FOCUS_REGIONS = [
@@ -631,6 +632,194 @@ def build_trend_bars(trend):
     return html
 
 
+def svg_text(value, max_len=34):
+    value = clean_text(value)
+    if len(value) > max_len:
+        return value[:max_len - 1] + "…"
+    return value
+
+
+def build_sharecard_bar_rows(items, x, y, max_width, color, max_items=5):
+    if not items:
+        return f'<text x="{x}" y="{y}" font-size="22" fill="#94a3b8">No data</text>'
+
+    max_value = max([value for _, value in items[:max_items]], default=1)
+    svg = ""
+
+    for idx, (label, value) in enumerate(items[:max_items], start=1):
+        row_y = y + (idx - 1) * 54
+        bar_w = int((value / max_value) * max_width) if max_value else 0
+
+        svg += f'''
+<text x="{x}" y="{row_y}" font-size="21" font-weight="800" fill="#e5e7eb">{idx}. {escape(svg_text(label, 28))}</text>
+<rect x="{x}" y="{row_y + 14}" width="{max_width}" height="14" rx="7" fill="#1e293b"/>
+<rect x="{x}" y="{row_y + 14}" width="{bar_w}" height="14" rx="7" fill="{color}"/>
+<text x="{x + max_width + 22}" y="{row_y + 27}" font-size="20" font-weight="900" fill="#ffffff">{value}</text>
+'''
+    return svg
+
+
+def build_region_card_svg(region_name, events, x, y, w, h, color):
+    country_counter, type_counter, nature_counter, location_counter, _ = summarize_events(events)
+    main_attack = type_counter.most_common(1)[0][0] if type_counter else "No data"
+    top_locations = location_counter.most_common(3)
+
+    loc_svg = ""
+    loc_y = y + 315
+
+    if top_locations:
+        for index, (location, value) in enumerate(top_locations, start=1):
+            loc_svg += f'''
+<text x="{x + 32}" y="{loc_y}" font-size="21" font-weight="800" fill="#cbd5e1">{index}. {escape(svg_text(location, 24))}</text>
+<text x="{x + w - 38}" y="{loc_y}" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">{value}</text>
+'''
+            loc_y += 38
+    else:
+        loc_svg = f'<text x="{x + 32}" y="{loc_y}" font-size="21" fill="#94a3b8">No location data</text>'
+
+    return f'''
+<g>
+  <rect x="{x}" y="{y}" width="{w}" height="{h}" rx="26" fill="#0f172a" stroke="#334155"/>
+  <rect x="{x}" y="{y}" width="{w}" height="88" rx="26" fill="{color}"/>
+  <rect x="{x}" y="{y + 54}" width="{w}" height="34" fill="{color}"/>
+  <text x="{x + 32}" y="{y + 56}" font-size="28" font-weight="900" fill="#ffffff">{escape(region_name.upper())}</text>
+
+  <text x="{x + 32}" y="{y + 145}" font-size="70" font-weight="900" fill="#ffffff">{len(events)}</text>
+  <text x="{x + 32}" y="{y + 178}" font-size="21" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="{x + 32}" y="{y + 225}" font-size="18" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="{x + 32}" y="{y + 258}" font-size="23" font-weight="900" fill="#ffffff">{escape(svg_text(main_attack, 28))}</text>
+
+  <text x="{x + 32}" y="{y + 300}" font-size="18" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  {loc_svg}
+</g>
+'''
+
+
+def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
+    BIWEEKLY_SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
+
+    total = len(events)
+    country_counter, type_counter, nature_counter, location_counter, _ = summarize_events(events)
+
+    region_counter = Counter()
+    for region_name, region_events in events_by_region.items():
+        region_counter[region_name] = len(region_events)
+
+    top_region = region_counter.most_common(1)[0][0] if region_counter else "No data"
+    top_type = type_counter.most_common(1)[0][0] if type_counter else "No data"
+
+    focus_config = [
+        ("Európai Unió", "EUROPEAN UNION", "#2563eb"),
+        ("Ukrajna", "UKRAINE", "#dc2626"),
+        ("Balkán", "BALKANS", "#16a34a"),
+        ("Közel-Kelet", "MIDDLE EAST", "#f97316"),
+    ]
+
+    width = 1600
+    height = 1500
+
+    region_cards = ""
+    card_w = 350
+    card_h = 470
+    gap = 30
+    start_x = 70
+    card_y = 330
+
+    for idx, (region_key, display_name, color) in enumerate(focus_config):
+        x = start_x + idx * (card_w + gap)
+        region_cards += build_region_card_svg(
+            display_name,
+            events_by_region.get(region_key, []),
+            x,
+            card_y,
+            card_w,
+            card_h,
+            color,
+        )
+
+    hotspots_svg = build_sharecard_bar_rows(location_counter.most_common(6), 110, 915, 500, "#38bdf8", 6)
+    countries_svg = build_sharecard_bar_rows(country_counter.most_common(6), 870, 915, 420, "#a78bfa", 6)
+    attack_svg = build_sharecard_bar_rows(type_counter.most_common(5), 110, 1275, 500, "#f97316", 5)
+
+    early_warning = []
+    if region_counter and "Közel-Kelet" in region_counter and region_counter["Közel-Kelet"] == max(region_counter.values()):
+        early_warning.append("Middle East remains the main pressure zone")
+    if any("Drón" in key or "drone" in key.lower() for key in type_counter.keys()):
+        early_warning.append("Drone-related activity present in the sample")
+    if location_counter.most_common(1):
+        early_warning.append(f"Repeated hotspot: {svg_text(location_counter.most_common(1)[0][0], 24)}")
+    if type_counter.most_common(1):
+        early_warning.append(f"Dominant pattern: {svg_text(type_counter.most_common(1)[0][0], 26)}")
+
+    if not early_warning:
+        early_warning = ["No clear automated early-warning signal"]
+
+    ew_svg = ""
+    ew_y = 1275
+    for item in early_warning[:4]:
+        ew_svg += f'''
+<circle cx="882" cy="{ew_y - 7}" r="8" fill="#facc15"/>
+<text x="905" y="{ew_y}" font-size="23" font-weight="800" fill="#e5e7eb">{escape(item)}</text>
+'''
+        ew_y += 58
+
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#111827"/>
+    <stop offset="55%" stop-color="#07111f"/>
+    <stop offset="100%" stop-color="#020617"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.35"/>
+  </filter>
+</defs>
+
+<rect width="1600" height="1500" fill="url(#bg)"/>
+<circle cx="1370" cy="120" r="250" fill="#1d4ed8" opacity="0.18"/>
+<circle cx="80" cy="1420" r="280" fill="#f97316" opacity="0.10"/>
+
+<text x="70" y="90" font-size="22" font-weight="900" fill="#93c5fd" letter-spacing="4">STRATEGIC INTELLIGENCE CARD</text>
+<text x="70" y="158" font-size="56" font-weight="900" fill="#ffffff">14 Day Global Security Assessment</text>
+<text x="70" y="208" font-size="25" fill="#cbd5e1">{start_day.isoformat()} → {end_day.isoformat()} • OSINT armed incident monitor</text>
+
+<rect x="1040" y="72" width="480" height="174" rx="26" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="1082" y="118" font-size="18" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
+<text x="1082" y="187" font-size="72" font-weight="900" fill="#ffffff">{total}</text>
+<text x="1300" y="158" font-size="18" font-weight="900" fill="#94a3b8">MAIN REGION</text>
+<text x="1300" y="190" font-size="24" font-weight="900" fill="#93c5fd">{escape(svg_text(top_region, 18))}</text>
+<text x="1300" y="222" font-size="20" font-weight="800" fill="#cbd5e1">{escape(svg_text(top_type, 22))}</text>
+
+{region_cards}
+
+<rect x="70" y="850" width="700" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="110" y="895" font-size="28" font-weight="900" fill="#ffffff">Strategic Hotspots</text>
+{hotspots_svg}
+
+<rect x="830" y="850" width="690" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="870" y="895" font-size="28" font-weight="900" fill="#ffffff">Top Countries</text>
+{countries_svg}
+
+<rect x="70" y="1210" width="700" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="110" y="1255" font-size="28" font-weight="900" fill="#ffffff">Main Attack Types</text>
+{attack_svg}
+
+<rect x="830" y="1210" width="690" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="870" y="1255" font-size="28" font-weight="900" fill="#ffffff">Early Warning</text>
+{ew_svg}
+
+<text x="70" y="1470" font-size="18" fill="#94a3b8">Automated OSINT summary. Actor and motive assessments require source-level verification.</text>
+<text x="1225" y="1470" font-size="20" font-weight="900" fill="#93c5fd">Törésvonalak Monitor Network</text>
+</svg>'''
+
+    filename = f"{start_day.isoformat()}_{end_day.isoformat()}-executive.svg"
+    path = BIWEEKLY_SHARECARDS_DIR / filename
+    path.write_text(svg, encoding="utf-8")
+
+    return f"sharecards/{filename}"
+
+
 def build_top_events_for_region(region_name, events):
     if not events:
         return f"""
@@ -742,7 +931,7 @@ def build_top_events_for_region(region_name, events):
     """
 
 
-def build_biweekly_html(start_day, end_day, events, events_by_region):
+def build_biweekly_html(start_day, end_day, events, events_by_region, sharecard_path):
     total = len(events)
     country_counter, type_counter, nature_counter, location_counter, source_counter = summarize_events(events)
     trend = collect_daily_trend(events, start_day, end_day)
@@ -1282,6 +1471,23 @@ def build_biweekly_html(start_day, end_day, events, events_by_region):
                 <h2>Fourteen-day incident trend</h2>
                 {build_trend_bars(trend)}
             </section>
+            <section class="section">
+                <h2>Strategic Intelligence Card</h2>
+                <div class="brief-text">
+                    <p>
+                        This visual executive card summarizes the two-week period for blog use and social sharing.
+                        It highlights the four focus regions, strategic hotspots, top countries, main attack types
+                        and early-warning signals.
+                    </p>
+                    <p>
+                        <a href="{escape(sharecard_path)}" target="_blank" rel="noopener">Open the Strategic Intelligence Card separately</a>
+                    </p>
+                </div>
+                <div class="sharecard-preview">
+                    <img src="{escape(sharecard_path)}" alt="Strategic Intelligence Card">
+                </div>
+            </section>
+
 
             <section class="section">
                 <h2>Two-week breakdown</h2>
@@ -1493,6 +1699,13 @@ def generate_biweekly_report():
 
     BIWEEKLY_DIR.mkdir(parents=True, exist_ok=True)
 
+    sharecard_path = generate_biweekly_sharecard(
+        start_day=start_day,
+        end_day=end_day,
+        events=events,
+        events_by_region=events_by_region,
+    )
+
     filename = f"{start_day.isoformat()}_{end_day.isoformat()}.html"
     report_path = BIWEEKLY_DIR / filename
 
@@ -1501,12 +1714,14 @@ def generate_biweekly_report():
         end_day=end_day,
         events=events,
         events_by_region=events_by_region,
+        sharecard_path=sharecard_path,
     )
 
     report_path.write_text(html, encoding="utf-8")
     update_biweekly_index()
 
     print(f"Kéthetes jelentés elkészült: {report_path}")
+    print(f"Strategic Intelligence Card elkészült: {BIWEEKLY_DIR / sharecard_path}")
     print(f"Kéthetes archívum frissítve: {BIWEEKLY_DIR / 'index.html'}")
 
 
