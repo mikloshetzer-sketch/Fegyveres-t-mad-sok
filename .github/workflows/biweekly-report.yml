@@ -1,0 +1,42 @@
+name: Generate Biweekly Armed Incident Report
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "20 5 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  generate-biweekly-report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Generate biweekly report
+        run: |
+          python scripts/generate_biweekly_report.py
+
+      - name: Commit and push report
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add docs/reports/biweekly/
+
+          if git diff --cached --quiet; then
+            echo "No biweekly report changes to commit."
+          else
+            git commit -m "Update biweekly armed incident report"
+            git push
+          fi
