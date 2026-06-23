@@ -696,6 +696,7 @@ def build_region_card_svg(region_name, events, x, y, w, h, color):
 '''
 
 
+
 def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     BIWEEKLY_SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -708,6 +709,7 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
 
     top_region = region_counter.most_common(1)[0][0] if region_counter else "No data"
     top_type = type_counter.most_common(1)[0][0] if type_counter else "No data"
+    top_hotspot = location_counter.most_common(1)[0][0] if location_counter else "No data"
 
     focus_config = [
         ("Európai Unió", "EUROPEAN UNION", "#2563eb"),
@@ -716,53 +718,100 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
         ("Közel-Kelet", "MIDDLE EAST", "#f97316"),
     ]
 
-    width = 1600
-    height = 1500
+    width = 1200
+    height = 1650
 
-    region_cards = ""
-    card_w = 350
-    card_h = 470
-    gap = 30
-    start_x = 70
-    card_y = 330
+    def short(value, max_len=32):
+        value = clean_text(value)
+        if len(value) > max_len:
+            return value[:max_len - 1] + "…"
+        return value
 
-    for idx, (region_key, display_name, color) in enumerate(focus_config):
-        x = start_x + idx * (card_w + gap)
-        region_cards += build_region_card_svg(
-            display_name,
-            events_by_region.get(region_key, []),
-            x,
-            card_y,
-            card_w,
-            card_h,
-            color,
-        )
+    def region_card(region_key, display_name, color, x, y):
+        region_events = events_by_region.get(region_key, [])
+        _, region_type_counter, _, region_location_counter, _ = summarize_events(region_events)
 
-    hotspots_svg = build_sharecard_bar_rows(location_counter.most_common(6), 110, 915, 500, "#38bdf8", 6)
-    countries_svg = build_sharecard_bar_rows(country_counter.most_common(6), 870, 915, 420, "#a78bfa", 6)
-    attack_svg = build_sharecard_bar_rows(type_counter.most_common(5), 110, 1275, 500, "#f97316", 5)
+        main_attack = region_type_counter.most_common(1)[0][0] if region_type_counter else "No data"
+        top_locations = region_location_counter.most_common(3)
+
+        rows = ""
+        row_y = y + 295
+        if top_locations:
+            for index, (loc, val) in enumerate(top_locations, start=1):
+                rows += f'''
+<text x="{x + 26}" y="{row_y}" font-size="18" font-weight="800" fill="#dbeafe">{index}. {escape(short(loc, 28))}</text>
+<text x="{x + 480}" y="{row_y}" text-anchor="end" font-size="18" font-weight="900" fill="#ffffff">{val}</text>
+'''
+                row_y += 35
+        else:
+            rows = f'<text x="{x + 26}" y="{row_y}" font-size="18" fill="#94a3b8">No location data</text>'
+
+        return f'''
+<g>
+  <rect x="{x}" y="{y}" width="510" height="420" rx="24" fill="#0f172a" stroke="#334155"/>
+  <rect x="{x}" y="{y}" width="510" height="74" rx="24" fill="{color}"/>
+  <rect x="{x}" y="{y + 48}" width="510" height="26" fill="{color}"/>
+  <text x="{x + 26}" y="{y + 48}" font-size="25" font-weight="900" fill="#ffffff">{escape(display_name)}</text>
+
+  <text x="{x + 26}" y="{y + 135}" font-size="58" font-weight="900" fill="#ffffff">{len(region_events)}</text>
+  <text x="{x + 26}" y="{y + 166}" font-size="18" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="{x + 26}" y="{y + 218}" font-size="16" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="{x + 26}" y="{y + 250}" font-size="21" font-weight="900" fill="#ffffff">{escape(short(main_attack, 30))}</text>
+
+  <text x="{x + 26}" y="{y + 282}" font-size="16" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  {rows}
+</g>
+'''
+
+    def bar_rows(items, x, y, max_width, color, max_items=5, label_len=34):
+        if not items:
+            return f'<text x="{x}" y="{y}" font-size="18" fill="#94a3b8">No data</text>'
+
+        max_value = max([value for _, value in items[:max_items]], default=1)
+        svg_rows = ""
+
+        for idx, (label, value) in enumerate(items[:max_items], start=1):
+            row_y = y + (idx - 1) * 44
+            bar_w = int((value / max_value) * max_width) if max_value else 0
+
+            svg_rows += f'''
+<text x="{x}" y="{row_y}" font-size="18" font-weight="800" fill="#e5e7eb">{idx}. {escape(short(label, label_len))}</text>
+<rect x="{x}" y="{row_y + 12}" width="{max_width}" height="12" rx="6" fill="#1e293b"/>
+<rect x="{x}" y="{row_y + 12}" width="{bar_w}" height="12" rx="6" fill="{color}"/>
+<text x="{x + max_width + 18}" y="{row_y + 24}" font-size="17" font-weight="900" fill="#ffffff">{value}</text>
+'''
+        return svg_rows
 
     early_warning = []
     if region_counter and "Közel-Kelet" in region_counter and region_counter["Közel-Kelet"] == max(region_counter.values()):
-        early_warning.append("Middle East remains the main pressure zone")
+        early_warning.append("Middle East is the main pressure zone")
     if any("Drón" in key or "drone" in key.lower() for key in type_counter.keys()):
-        early_warning.append("Drone-related activity present in the sample")
-    if location_counter.most_common(1):
-        early_warning.append(f"Repeated hotspot: {svg_text(location_counter.most_common(1)[0][0], 24)}")
-    if type_counter.most_common(1):
-        early_warning.append(f"Dominant pattern: {svg_text(type_counter.most_common(1)[0][0], 26)}")
+        early_warning.append("Drone-related activity appears in the sample")
+    if top_hotspot != "No data":
+        early_warning.append(f"Repeated hotspot: {short(top_hotspot, 26)}")
+    if top_type != "No data":
+        early_warning.append(f"Dominant pattern: {short(top_type, 28)}")
 
     if not early_warning:
         early_warning = ["No clear automated early-warning signal"]
 
-    ew_svg = ""
-    ew_y = 1275
+    early_warning_svg = ""
+    ew_y = 1355
     for item in early_warning[:4]:
-        ew_svg += f'''
-<circle cx="882" cy="{ew_y - 7}" r="8" fill="#facc15"/>
-<text x="905" y="{ew_y}" font-size="23" font-weight="800" fill="#e5e7eb">{escape(item)}</text>
+        early_warning_svg += f'''
+<circle cx="640" cy="{ew_y - 7}" r="7" fill="#facc15"/>
+<text x="662" y="{ew_y}" font-size="20" font-weight="800" fill="#e5e7eb">{escape(item)}</text>
 '''
-        ew_y += 58
+        ew_y += 45
+
+    region_cards = ""
+    positions = [(70, 330), (620, 330), (70, 790), (620, 790)]
+    for (region_key, display_name, color), (x, y) in zip(focus_config, positions):
+        region_cards += region_card(region_key, display_name, color, x, y)
+
+    hotspots_svg = bar_rows(location_counter.most_common(5), 105, 1315, 390, "#38bdf8", 5, 30)
+    attacks_svg = bar_rows(type_counter.most_common(3), 105, 1505, 390, "#f97316", 3, 30)
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>
@@ -772,45 +821,40 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     <stop offset="100%" stop-color="#020617"/>
   </linearGradient>
   <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-    <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.35"/>
+    <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000000" flood-opacity="0.30"/>
   </filter>
 </defs>
 
-<rect width="1600" height="1500" fill="url(#bg)"/>
-<circle cx="1370" cy="120" r="250" fill="#1d4ed8" opacity="0.18"/>
-<circle cx="80" cy="1420" r="280" fill="#f97316" opacity="0.10"/>
+<rect width="{width}" height="{height}" fill="url(#bg)"/>
+<circle cx="1040" cy="135" r="210" fill="#1d4ed8" opacity="0.15"/>
+<circle cx="80" cy="1560" r="240" fill="#f97316" opacity="0.10"/>
 
-<text x="70" y="90" font-size="22" font-weight="900" fill="#93c5fd" letter-spacing="4">STRATEGIC INTELLIGENCE CARD</text>
-<text x="70" y="158" font-size="56" font-weight="900" fill="#ffffff">14 Day Global Security Assessment</text>
-<text x="70" y="208" font-size="25" fill="#cbd5e1">{start_day.isoformat()} → {end_day.isoformat()} • OSINT armed incident monitor</text>
+<text x="70" y="82" font-size="18" font-weight="900" fill="#93c5fd" letter-spacing="4">STRATEGIC INTELLIGENCE CARD</text>
+<text x="70" y="145" font-size="46" font-weight="900" fill="#ffffff">14 Day Security Assessment</text>
+<text x="70" y="190" font-size="22" fill="#cbd5e1">{start_day.isoformat()} → {end_day.isoformat()} • OSINT armed incident monitor</text>
 
-<rect x="1040" y="72" width="480" height="174" rx="26" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="1082" y="118" font-size="18" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
-<text x="1082" y="187" font-size="72" font-weight="900" fill="#ffffff">{total}</text>
-<text x="1300" y="158" font-size="18" font-weight="900" fill="#94a3b8">MAIN REGION</text>
-<text x="1300" y="190" font-size="24" font-weight="900" fill="#93c5fd">{escape(svg_text(top_region, 18))}</text>
-<text x="1300" y="222" font-size="20" font-weight="800" fill="#cbd5e1">{escape(svg_text(top_type, 22))}</text>
+<rect x="70" y="230" width="1060" height="72" rx="22" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="105" y="276" font-size="20" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
+<text x="300" y="279" font-size="42" font-weight="900" fill="#ffffff">{total}</text>
+<text x="510" y="276" font-size="20" font-weight="900" fill="#94a3b8">MAIN REGION</text>
+<text x="680" y="276" font-size="22" font-weight="900" fill="#93c5fd">{escape(short(top_region, 20))}</text>
+<text x="900" y="276" font-size="20" font-weight="900" fill="#94a3b8">TOP TYPE</text>
+<text x="995" y="276" font-size="20" font-weight="900" fill="#ffffff">{escape(short(top_type, 18))}</text>
 
 {region_cards}
 
-<rect x="70" y="850" width="700" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="110" y="895" font-size="28" font-weight="900" fill="#ffffff">Strategic Hotspots</text>
+<rect x="70" y="1260" width="510" height="320" rx="24" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="105" y="1300" font-size="26" font-weight="900" fill="#ffffff">Strategic Hotspots</text>
 {hotspots_svg}
+<text x="105" y="1492" font-size="26" font-weight="900" fill="#ffffff">Main Attack Types</text>
+{attacks_svg}
 
-<rect x="830" y="850" width="690" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="870" y="895" font-size="28" font-weight="900" fill="#ffffff">Top Countries</text>
-{countries_svg}
+<rect x="620" y="1260" width="510" height="320" rx="24" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="640" y="1300" font-size="26" font-weight="900" fill="#ffffff">Early Warning</text>
+{early_warning_svg}
 
-<rect x="70" y="1210" width="700" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="110" y="1255" font-size="28" font-weight="900" fill="#ffffff">Main Attack Types</text>
-{attack_svg}
-
-<rect x="830" y="1210" width="690" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="870" y="1255" font-size="28" font-weight="900" fill="#ffffff">Early Warning</text>
-{ew_svg}
-
-<text x="70" y="1470" font-size="18" fill="#94a3b8">Automated OSINT summary. Actor and motive assessments require source-level verification.</text>
-<text x="1225" y="1470" font-size="20" font-weight="900" fill="#93c5fd">Törésvonalak Monitor Network</text>
+<text x="70" y="1620" font-size="16" fill="#94a3b8">Automated OSINT summary. Actor and motive assessments require source-level verification.</text>
+<text x="820" y="1620" font-size="18" font-weight="900" fill="#93c5fd">Törésvonalak Monitor Network</text>
 </svg>'''
 
     filename = f"{start_day.isoformat()}_{end_day.isoformat()}-executive.svg"
@@ -818,7 +862,6 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     path.write_text(svg, encoding="utf-8")
 
     return f"sharecards/{filename}"
-
 
 def build_top_events_for_region(region_name, events):
     if not events:
@@ -1727,3 +1770,4 @@ def generate_biweekly_report():
 
 if __name__ == "__main__":
     generate_biweekly_report()
+
