@@ -493,6 +493,22 @@ def collect_daily_trend(events, start_day, end_day):
     return trend
 
 
+def build_region_scoring_context(events):
+    context = {
+        "location_counts": Counter(),
+        "country_counts": Counter(),
+        "type_counts": Counter(),
+    }
+
+    for feature in events:
+        props = feature.get("properties", {})
+        context["location_counts"][get_location(props)] += 1
+        context["country_counts"][get_country(props)] += 1
+        context["type_counts"][get_event_type(props)] += 1
+
+    return context
+
+
 def calculate_location_score(text):
     score = 0
 
@@ -524,8 +540,8 @@ def calculate_international_score(text, country):
     return min(score, 25)
 
 
-def calculate_repeat_score(feature, regional_events):
-    if not regional_events:
+def calculate_repeat_score(feature, regional_context=None):
+    if not regional_context:
         return 0
 
     props = feature.get("properties", {})
@@ -533,21 +549,9 @@ def calculate_repeat_score(feature, regional_events):
     country = get_country(props)
     event_type = get_event_type(props)
 
-    same_location_count = 0
-    same_country_count = 0
-    same_type_count = 0
-
-    for item in regional_events:
-        item_props = item.get("properties", {})
-
-        if get_location(item_props) == location:
-            same_location_count += 1
-
-        if get_country(item_props) == country:
-            same_country_count += 1
-
-        if get_event_type(item_props) == event_type:
-            same_type_count += 1
+    same_location_count = regional_context["location_counts"].get(location, 0)
+    same_country_count = regional_context["country_counts"].get(country, 0)
+    same_type_count = regional_context["type_counts"].get(event_type, 0)
 
     repeat_score = 0
 
@@ -572,7 +576,6 @@ def calculate_repeat_score(feature, regional_events):
 
     return min(repeat_score, 20)
 
-
 def calculate_source_score(feature):
     props = feature.get("properties", {})
     sources = props.get("merged_sources") or get_sources(props)
@@ -589,7 +592,7 @@ def calculate_source_score(feature):
     return min(score, 20)
 
 
-def score_event(feature, regional_events=None):
+def score_event(feature, regional_context=None):
     props = feature.get("properties", {})
 
     title = get_title(props)
@@ -622,7 +625,7 @@ def score_event(feature, regional_events=None):
 
     strategic_score = calculate_location_score(text)
     international_score = calculate_international_score(text, country)
-    repeat_score = calculate_repeat_score(feature, regional_events or [])
+    repeat_score = calculate_repeat_score(feature, regional_context)
     source_score = calculate_source_score(feature)
 
     final_score = (
@@ -701,9 +704,9 @@ def infer_motivation(properties):
     return "The motivation cannot be established safely from the available automated fields."
 
 
-def event_analysis_text(feature, region_events):
+def event_analysis_text(feature, region_events, regional_context=None):
     props = feature.get("properties", {})
-    score = score_event(feature, region_events)
+    score = score_event(feature, regional_context or build_region_scoring_context(region_events))
     sources = props.get("merged_sources") or get_sources(props)
 
     what_happened = get_title(props)
@@ -882,14 +885,14 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
         top_locations = region_location_counter.most_common(3)
 
         loc_lines = ""
-        ly = y + 226
+        ly = y + 240
         if top_locations:
             for idx, (loc, val) in enumerate(top_locations, start=1):
                 loc_lines += f'''
-<text x="{x + 26}" y="{ly}" font-size="13" font-weight="700" fill="#cbd5e1">{idx}. {escape(short(loc, 30))}</text>
-<text x="{x + 330}" y="{ly}" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">{val}</text>
+<text x="{x + 26}" y="{ly}" font-size="12" font-weight="700" fill="#cbd5e1">{idx}. {escape(short(loc, 30))}</text>
+<text x="{x + 330}" y="{ly}" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">{val}</text>
 '''
-                ly += 27
+                ly += 25
         else:
             loc_lines = f'<text x="{x + 26}" y="{ly}" font-size="13" fill="#94a3b8">No location data</text>'
 
@@ -911,7 +914,7 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
 
   <line x1="{x + 24}" y1="{y + 196}" x2="{x + 340}" y2="{y + 196}" stroke="#1f334d"/>
 
-  <text x="{x + 24}" y="{y + 216}" font-size="11" font-weight="900" fill="#38bdf8">TOP LOCATIONS</text>
+  <text x="{x + 24}" y="{y + 220}" font-size="10" font-weight="900" fill="#38bdf8" letter-spacing="0.8">LOCATION FOCUS</text>
   {loc_lines}
 </g>
 '''
@@ -1023,13 +1026,14 @@ def build_top_events_for_region(region_name, events):
         </section>
         """
 
-    top_events = sorted(events, key=lambda f: score_event(f, events), reverse=True)[:5]
+    regional_context = build_region_scoring_context(events)
+    top_events = sorted(events, key=lambda f: score_event(f, regional_context), reverse=True)[:5]
     country_counter, type_counter, nature_counter, location_counter, source_counter = summarize_events(events)
 
     cards = ""
 
     for index, feature in enumerate(top_events, start=1):
-        analysis = event_analysis_text(feature, events)
+        analysis = event_analysis_text(feature, events, regional_context)
 
         sources_html = ""
         for i, src in enumerate(analysis["sources"][:4], start=1):
@@ -1095,7 +1099,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 events selected by strategic score: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+                <p>Top 5 events selected by optimized strategic score: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
