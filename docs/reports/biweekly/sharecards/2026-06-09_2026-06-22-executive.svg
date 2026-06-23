@@ -1,0 +1,242 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1500" viewBox="0 0 1600 1500">
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#111827"/>
+    <stop offset="55%" stop-color="#07111f"/>
+    <stop offset="100%" stop-color="#020617"/>
+  </linearGradient>
+  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="14" stdDeviation="13" flood-color="#000000" flood-opacity="0.35"/>
+  </filter>
+</defs>
+
+<rect width="1600" height="1500" fill="url(#bg)"/>
+<circle cx="1370" cy="120" r="250" fill="#1d4ed8" opacity="0.18"/>
+<circle cx="80" cy="1420" r="280" fill="#f97316" opacity="0.10"/>
+
+<text x="70" y="90" font-size="22" font-weight="900" fill="#93c5fd" letter-spacing="4">STRATEGIC INTELLIGENCE CARD</text>
+<text x="70" y="158" font-size="56" font-weight="900" fill="#ffffff">14 Day Global Security Assessment</text>
+<text x="70" y="208" font-size="25" fill="#cbd5e1">2026-06-09 → 2026-06-22 • OSINT armed incident monitor</text>
+
+<rect x="1040" y="72" width="480" height="174" rx="26" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="1082" y="118" font-size="18" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
+<text x="1082" y="187" font-size="72" font-weight="900" fill="#ffffff">10010</text>
+<text x="1300" y="158" font-size="18" font-weight="900" fill="#94a3b8">MAIN REGION</text>
+<text x="1300" y="190" font-size="24" font-weight="900" fill="#93c5fd">Egyéb térségek</text>
+<text x="1300" y="222" font-size="20" font-weight="800" fill="#cbd5e1">Fegyveres összecsapás</text>
+
+
+<g>
+  <rect x="70" y="330" width="350" height="470" rx="26" fill="#0f172a" stroke="#334155"/>
+  <rect x="70" y="330" width="350" height="88" rx="26" fill="#2563eb"/>
+  <rect x="70" y="384" width="350" height="34" fill="#2563eb"/>
+  <text x="102" y="386" font-size="28" font-weight="900" fill="#ffffff">EUROPEAN UNION</text>
+
+  <text x="102" y="475" font-size="70" font-weight="900" fill="#ffffff">608</text>
+  <text x="102" y="508" font-size="21" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="102" y="555" font-size="18" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="102" y="588" font-size="23" font-weight="900" fill="#ffffff">Fegyveres összecsapás</text>
+
+  <text x="102" y="630" font-size="18" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  
+<text x="102" y="645" font-size="21" font-weight="800" fill="#cbd5e1">1. Paris, France (general)…</text>
+<text x="382" y="645" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="102" y="683" font-size="21" font-weight="800" fill="#cbd5e1">2. France</text>
+<text x="382" y="683" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="102" y="721" font-size="21" font-weight="800" fill="#cbd5e1">3. Berlin, Berlin, Germany</text>
+<text x="382" y="721" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+</g>
+
+<g>
+  <rect x="450" y="330" width="350" height="470" rx="26" fill="#0f172a" stroke="#334155"/>
+  <rect x="450" y="330" width="350" height="88" rx="26" fill="#dc2626"/>
+  <rect x="450" y="384" width="350" height="34" fill="#dc2626"/>
+  <text x="482" y="386" font-size="28" font-weight="900" fill="#ffffff">UKRAINE</text>
+
+  <text x="482" y="475" font-size="70" font-weight="900" fill="#ffffff">222</text>
+  <text x="482" y="508" font-size="21" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="482" y="555" font-size="18" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="482" y="588" font-size="23" font-weight="900" fill="#ffffff">Robbantás / IED</text>
+
+  <text x="482" y="630" font-size="18" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  
+<text x="482" y="645" font-size="21" font-weight="800" fill="#cbd5e1">1. Kyiv, Kyyiv, Misto, Ukr…</text>
+<text x="762" y="645" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="482" y="683" font-size="21" font-weight="800" fill="#cbd5e1">2. Kiev, Ukraine (general)…</text>
+<text x="762" y="683" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="482" y="721" font-size="21" font-weight="800" fill="#cbd5e1">3. Volhynia, Ukraine (gene…</text>
+<text x="762" y="721" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+</g>
+
+<g>
+  <rect x="830" y="330" width="350" height="470" rx="26" fill="#0f172a" stroke="#334155"/>
+  <rect x="830" y="330" width="350" height="88" rx="26" fill="#16a34a"/>
+  <rect x="830" y="384" width="350" height="34" fill="#16a34a"/>
+  <text x="862" y="386" font-size="28" font-weight="900" fill="#ffffff">BALKANS</text>
+
+  <text x="862" y="475" font-size="70" font-weight="900" fill="#ffffff">66</text>
+  <text x="862" y="508" font-size="21" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="862" y="555" font-size="18" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="862" y="588" font-size="23" font-weight="900" fill="#ffffff">Fegyveres összecsapás</text>
+
+  <text x="862" y="630" font-size="18" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  
+<text x="862" y="645" font-size="21" font-weight="800" fill="#cbd5e1">1. Kosovo</text>
+<text x="1142" y="645" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="862" y="683" font-size="21" font-weight="800" fill="#cbd5e1">2. Albania</text>
+<text x="1142" y="683" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="862" y="721" font-size="21" font-weight="800" fill="#cbd5e1">3. Turkey</text>
+<text x="1142" y="721" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">2</text>
+
+</g>
+
+<g>
+  <rect x="1210" y="330" width="350" height="470" rx="26" fill="#0f172a" stroke="#334155"/>
+  <rect x="1210" y="330" width="350" height="88" rx="26" fill="#f97316"/>
+  <rect x="1210" y="384" width="350" height="34" fill="#f97316"/>
+  <text x="1242" y="386" font-size="28" font-weight="900" fill="#ffffff">MIDDLE EAST</text>
+
+  <text x="1242" y="475" font-size="70" font-weight="900" fill="#ffffff">891</text>
+  <text x="1242" y="508" font-size="21" font-weight="800" fill="#94a3b8">incidents</text>
+
+  <text x="1242" y="555" font-size="18" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
+  <text x="1242" y="588" font-size="23" font-weight="900" fill="#ffffff">Fegyveres összecsapás</text>
+
+  <text x="1242" y="630" font-size="18" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
+  
+<text x="1242" y="645" font-size="21" font-weight="800" fill="#cbd5e1">1. Jerusalem, Israel (gene…</text>
+<text x="1522" y="645" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="1242" y="683" font-size="21" font-weight="800" fill="#cbd5e1">2. Iran</text>
+<text x="1522" y="683" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+<text x="1242" y="721" font-size="21" font-weight="800" fill="#cbd5e1">3. Israel</text>
+<text x="1522" y="721" text-anchor="end" font-size="21" font-weight="900" fill="#ffffff">3</text>
+
+</g>
+
+
+<rect x="70" y="850" width="700" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="110" y="895" font-size="28" font-weight="900" fill="#ffffff">Strategic Hotspots</text>
+
+<text x="110" y="915" font-size="21" font-weight="800" fill="#e5e7eb">1. United States</text>
+<rect x="110" y="929" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="929" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="942" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+<text x="110" y="969" font-size="21" font-weight="800" fill="#e5e7eb">2. Jerusalem, Israel (general)…</text>
+<rect x="110" y="983" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="983" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="996" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+<text x="110" y="1023" font-size="21" font-weight="800" fill="#e5e7eb">3. Iran</text>
+<rect x="110" y="1037" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1037" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="1050" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+<text x="110" y="1077" font-size="21" font-weight="800" fill="#e5e7eb">4. Toronto, Ontario, Canada</text>
+<rect x="110" y="1091" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1091" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="1104" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+<text x="110" y="1131" font-size="21" font-weight="800" fill="#e5e7eb">5. Israel</text>
+<rect x="110" y="1145" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1145" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="1158" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+<text x="110" y="1185" font-size="21" font-weight="800" fill="#e5e7eb">6. Washington, District of Col…</text>
+<rect x="110" y="1199" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1199" width="500" height="14" rx="7" fill="#38bdf8"/>
+<text x="632" y="1212" font-size="20" font-weight="900" fill="#ffffff">3</text>
+
+
+<rect x="830" y="850" width="690" height="305" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="870" y="895" font-size="28" font-weight="900" fill="#ffffff">Top Countries</text>
+
+<text x="870" y="915" font-size="21" font-weight="800" fill="#e5e7eb">1. United States</text>
+<rect x="870" y="929" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="929" width="420" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="942" font-size="20" font-weight="900" fill="#ffffff">3477</text>
+
+<text x="870" y="969" font-size="21" font-weight="800" fill="#e5e7eb">2. India</text>
+<rect x="870" y="983" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="983" width="81" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="996" font-size="20" font-weight="900" fill="#ffffff">673</text>
+
+<text x="870" y="1023" font-size="21" font-weight="800" fill="#e5e7eb">3. United Kingdom</text>
+<rect x="870" y="1037" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="1037" width="68" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="1050" font-size="20" font-weight="900" fill="#ffffff">566</text>
+
+<text x="870" y="1077" font-size="21" font-weight="800" fill="#e5e7eb">4. Nigeria</text>
+<rect x="870" y="1091" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="1091" width="53" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="1104" font-size="20" font-weight="900" fill="#ffffff">444</text>
+
+<text x="870" y="1131" font-size="21" font-weight="800" fill="#e5e7eb">5. Australia</text>
+<rect x="870" y="1145" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="1145" width="43" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="1158" font-size="20" font-weight="900" fill="#ffffff">360</text>
+
+<text x="870" y="1185" font-size="21" font-weight="800" fill="#e5e7eb">6. Russia</text>
+<rect x="870" y="1199" width="420" height="14" rx="7" fill="#1e293b"/>
+<rect x="870" y="1199" width="33" height="14" rx="7" fill="#a78bfa"/>
+<text x="1312" y="1212" font-size="20" font-weight="900" fill="#ffffff">278</text>
+
+
+<rect x="70" y="1210" width="700" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="110" y="1255" font-size="28" font-weight="900" fill="#ffffff">Main Attack Types</text>
+
+<text x="110" y="1275" font-size="21" font-weight="800" fill="#e5e7eb">1. Fegyveres összecsapás</text>
+<rect x="110" y="1289" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1289" width="500" height="14" rx="7" fill="#f97316"/>
+<text x="632" y="1302" font-size="20" font-weight="900" fill="#ffffff">6687</text>
+
+<text x="110" y="1329" font-size="21" font-weight="800" fill="#e5e7eb">2. Rajtaütés / fegyveres támad…</text>
+<rect x="110" y="1343" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1343" width="206" height="14" rx="7" fill="#f97316"/>
+<text x="632" y="1356" font-size="20" font-weight="900" fill="#ffffff">2762</text>
+
+<text x="110" y="1383" font-size="21" font-weight="800" fill="#e5e7eb">3. Robbantás / IED</text>
+<rect x="110" y="1397" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1397" width="26" height="14" rx="7" fill="#f97316"/>
+<text x="632" y="1410" font-size="20" font-weight="900" fill="#ffffff">351</text>
+
+<text x="110" y="1437" font-size="21" font-weight="800" fill="#e5e7eb">4. Tömeges erőszak</text>
+<rect x="110" y="1451" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1451" width="9" height="14" rx="7" fill="#f97316"/>
+<text x="632" y="1464" font-size="20" font-weight="900" fill="#ffffff">121</text>
+
+<text x="110" y="1491" font-size="21" font-weight="800" fill="#e5e7eb">5. Rendészeti / belbiztonsági …</text>
+<rect x="110" y="1505" width="500" height="14" rx="7" fill="#1e293b"/>
+<rect x="110" y="1505" width="3" height="14" rx="7" fill="#f97316"/>
+<text x="632" y="1518" font-size="20" font-weight="900" fill="#ffffff">42</text>
+
+
+<rect x="830" y="1210" width="690" height="220" rx="28" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
+<text x="870" y="1255" font-size="28" font-weight="900" fill="#ffffff">Early Warning</text>
+
+<circle cx="882" cy="1268" r="8" fill="#facc15"/>
+<text x="905" y="1275" font-size="23" font-weight="800" fill="#e5e7eb">Drone-related activity present in the sample</text>
+
+<circle cx="882" cy="1326" r="8" fill="#facc15"/>
+<text x="905" y="1333" font-size="23" font-weight="800" fill="#e5e7eb">Repeated hotspot: United States</text>
+
+<circle cx="882" cy="1384" r="8" fill="#facc15"/>
+<text x="905" y="1391" font-size="23" font-weight="800" fill="#e5e7eb">Dominant pattern: Fegyveres összecsapás</text>
+
+
+<text x="70" y="1470" font-size="18" fill="#94a3b8">Automated OSINT summary. Actor and motive assessments require source-level verification.</text>
+<text x="1225" y="1470" font-size="20" font-weight="900" fill="#93c5fd">Törésvonalak Monitor Network</text>
+</svg>
