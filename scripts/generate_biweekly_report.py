@@ -69,6 +69,79 @@ WAR_TERMS = [
 ]
 
 
+
+EVENT_TYPE_WEIGHTS = {
+    "Rakéta- vagy ballisztikus támadás": 10,
+    "Dróntámadás": 9,
+    "Légicsapás": 9,
+    "Robbantás / IED": 9,
+    "Tüzérségi / aknavetős támadás": 8,
+    "Terrorcselekmény / milíciaaktivitás": 8,
+    "Fegyveres összecsapás": 7,
+    "Rajtaütés / fegyveres támadás": 7,
+    "Határincidens": 6,
+    "Tömeges erőszak": 5,
+    "Rendészeti / belbiztonsági incidens": 4,
+    "Tüntetés / zavargás": 3,
+    "Egyéb biztonsági esemény": 2,
+}
+
+STRATEGIC_LOCATION_TERMS = {
+    "capital": [
+        "capital", "kyiv", "kiev", "tehran", "jerusalem", "tel aviv",
+        "beirut", "damascus", "baghdad", "amman", "ankara", "paris",
+        "berlin", "rome", "athens", "warsaw", "budapest", "vienna",
+        "belgrade", "pristina", "sarajevo"
+    ],
+    "frontline": [
+        "frontline", "front line", "sumy", "kharkiv", "odesa", "odessa",
+        "donetsk", "kherson", "zaporizhzhia", "luhansk", "pokrovsk",
+        "kupiansk", "avdiivka"
+    ],
+    "port": [
+        "port", "harbor", "harbour", "odesa", "odessa", "haifa", "eilat",
+        "beirut", "hodeidah", "red sea", "strait", "hormuz", "black sea"
+    ],
+    "energy": [
+        "energy", "oil", "gas", "pipeline", "refinery", "power plant",
+        "substation", "electricity", "nuclear plant", "grid"
+    ],
+    "nuclear": ["nuclear", "reactor", "zaporizhzhia nuclear"],
+    "military_base": ["military base", "air base", "army base", "naval base", "airport", "airfield", "barracks"],
+}
+
+STRATEGIC_LOCATION_WEIGHTS = {
+    "capital": 10,
+    "frontline": 8,
+    "port": 6,
+    "energy": 10,
+    "nuclear": 10,
+    "military_base": 8,
+}
+
+INTERNATIONAL_CONTEXT_TERMS = {
+    "russia_ukraine": ["russia", "russian", "ukraine", "ukrainian", "crimea", "black sea"],
+    "israel_iran": ["israel", "iran", "iranian", "tehran", "jerusalem", "tel aviv", "haifa"],
+    "nato": ["nato", "poland", "romania", "baltic", "estonia", "latvia", "lithuania"],
+    "usa": ["united states", "u.s.", "usa", "american"],
+    "energy": ["oil", "gas", "pipeline", "refinery", "energy", "hormuz", "red sea"],
+}
+
+INTERNATIONAL_CONTEXT_WEIGHTS = {
+    "russia_ukraine": 15,
+    "israel_iran": 15,
+    "nato": 12,
+    "usa": 12,
+    "energy": 10,
+}
+
+RELIABLE_SOURCE_TERMS = [
+    "reuters.com", "apnews.com", "bbc.", "dw.com", "euronews.com",
+    "understandingwar.org", "aljazeera.com", "france24.com",
+    "theguardian.com", "politico.eu", "ft.com", "cnn.com",
+]
+
+
 def load_geojson():
     if not INPUT_FILE.exists():
         raise FileNotFoundError(f"Nincs ilyen fájl: {INPUT_FILE}")
@@ -420,6 +493,102 @@ def collect_daily_trend(events, start_day, end_day):
     return trend
 
 
+def calculate_location_score(text):
+    score = 0
+
+    for category, terms in STRATEGIC_LOCATION_TERMS.items():
+        if contains_any(text, terms):
+            score += STRATEGIC_LOCATION_WEIGHTS.get(category, 0)
+
+    return min(score, 20)
+
+
+def calculate_international_score(text, country):
+    score = 0
+    normalized_country = clean_text(country).lower()
+    full_text = f"{text} {normalized_country}"
+
+    for category, terms in INTERNATIONAL_CONTEXT_TERMS.items():
+        if contains_any(full_text, terms):
+            score += INTERNATIONAL_CONTEXT_WEIGHTS.get(category, 0)
+
+    if country in EU_COUNTRIES:
+        score += 5
+
+    if country in MIDDLE_EAST_COUNTRIES:
+        score += 5
+
+    if country == "Ukraine":
+        score += 15
+
+    return min(score, 25)
+
+
+def calculate_repeat_score(feature, regional_events):
+    if not regional_events:
+        return 0
+
+    props = feature.get("properties", {})
+    location = get_location(props)
+    country = get_country(props)
+    event_type = get_event_type(props)
+
+    same_location_count = 0
+    same_country_count = 0
+    same_type_count = 0
+
+    for item in regional_events:
+        item_props = item.get("properties", {})
+
+        if get_location(item_props) == location:
+            same_location_count += 1
+
+        if get_country(item_props) == country:
+            same_country_count += 1
+
+        if get_event_type(item_props) == event_type:
+            same_type_count += 1
+
+    repeat_score = 0
+
+    if same_location_count >= 4:
+        repeat_score += 15
+    elif same_location_count == 3:
+        repeat_score += 10
+    elif same_location_count == 2:
+        repeat_score += 5
+
+    if same_country_count >= 10:
+        repeat_score += 8
+    elif same_country_count >= 5:
+        repeat_score += 5
+    elif same_country_count >= 2:
+        repeat_score += 2
+
+    if same_type_count >= 10:
+        repeat_score += 5
+    elif same_type_count >= 5:
+        repeat_score += 3
+
+    return min(repeat_score, 20)
+
+
+def calculate_source_score(feature):
+    props = feature.get("properties", {})
+    sources = props.get("merged_sources") or get_sources(props)
+    merged_count = int(props.get("merged_count", 1))
+
+    score = min(len(sources), 5) * 2
+    score += min(merged_count, 5)
+
+    domains = " ".join(source_domain(src).lower() for src in sources)
+
+    if any(term in domains for term in RELIABLE_SOURCE_TERMS):
+        score += 5
+
+    return min(score, 20)
+
+
 def score_event(feature, regional_events=None):
     props = feature.get("properties", {})
 
@@ -428,69 +597,43 @@ def score_event(feature, regional_events=None):
     event_nature = props.get("event_nature") or classify_event_nature(props)
     location = get_location(props)
     country = get_country(props)
-    sources = props.get("merged_sources") or get_sources(props)
-    merged_count = int(props.get("merged_count", 1))
 
     text = f"{title} {event_type} {event_nature} {location} {country}".lower()
 
-    score = 0
-
-    score += min(len(sources), 10) * 2
-    score += min(merged_count, 10) * 2
-
-    if contains_any(text, DRONE_TERMS):
-        score += 15
-
-    if contains_any(text, TERROR_TERMS):
-        score += 15
-
-    if contains_any(text, WAR_TERMS):
-        score += 15
-
-    if event_type in {
-        "Dróntámadás",
-        "Rakéta- vagy ballisztikus támadás",
-        "Légicsapás",
-        "Robbantás / IED",
-        "Terrorcselekmény / milíciaaktivitás",
-    }:
-        score += 12
+    event_score = EVENT_TYPE_WEIGHTS.get(event_type, 2)
 
     if event_nature in {
         "Dróntámadás / háborús cselekmény",
         "Terrorjellegű támadás",
         "Háborús cselekmény",
     }:
-        score += 10
+        event_score += 5
 
-    if country in MIDDLE_EAST_COUNTRIES:
-        score += 8
+    if contains_any(text, DRONE_TERMS):
+        event_score += 4
 
-    if country == "Ukraine":
-        score += 8
+    if contains_any(text, TERROR_TERMS):
+        event_score += 4
 
-    if country != "Ismeretlen ország":
-        score += 4
+    if contains_any(text, WAR_TERMS):
+        event_score += 4
 
-    if location != "Nincs pontos helyadat":
-        score += 4
+    event_score = min(event_score, 20)
 
-    if regional_events:
-        same_location_count = 0
-        same_country_count = 0
+    strategic_score = calculate_location_score(text)
+    international_score = calculate_international_score(text, country)
+    repeat_score = calculate_repeat_score(feature, regional_events or [])
+    source_score = calculate_source_score(feature)
 
-        for item in regional_events:
-            item_props = item.get("properties", {})
-            if get_location(item_props) == location:
-                same_location_count += 1
-            if get_country(item_props) == country:
-                same_country_count += 1
+    final_score = (
+        event_score
+        + strategic_score
+        + international_score
+        + repeat_score
+        + source_score
+    )
 
-        score += min(same_location_count, 5)
-        score += min(same_country_count, 5)
-
-    return min(score, 100)
-
+    return min(final_score, 100)
 
 def strategic_label(score):
     if score >= 80:
@@ -952,7 +1095,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 strongest events selected by source density, conflict keywords, regional relevance and repeated location patterns.</p>
+                <p>Top 5 events selected by strategic score: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
@@ -1508,8 +1651,8 @@ def build_biweekly_html(start_day, end_day, events, events_by_region, sharecard_
                     </p>
                     <p>
                         The event selection below is not a legal or official attribution. It is an analytical ranking
-                        based on source density, repeated mentions, conflict-related keywords, regional relevance and
-                        location recurrence. Actor and motivation assessments are only stated when supported by the
+                        based on event type, strategic location, international relevance, repeated hotspot patterns
+                        and source density. Actor and motivation assessments are only stated when supported by the
                         available fields; otherwise they are marked as not confirmed.
                     </p>
                 </div>
@@ -1775,3 +1918,4 @@ def generate_biweekly_report():
 
 if __name__ == "__main__":
     generate_biweekly_report()
+
