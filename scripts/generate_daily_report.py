@@ -689,6 +689,7 @@ def svg_text_lines(text, x, y, size, fill, max_chars=46, line_height=30, weight=
 def generate_sharecard(report_day, features, events_by_region):
     """
     Blog-ready, think tank style SVG summary card.
+    V3: region cards include top event nature, top attack types, top locations and 7-day trend.
     Output: docs/reports/sharecards/YYYY-MM-DD-summary.svg
     """
     SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
@@ -700,20 +701,70 @@ def generate_sharecard(report_day, features, events_by_region):
         ("Ukrajna", "#ef4444"),
     ]
 
+    def shorten_label(value, max_len=30):
+        value = clean_text(value)
+        if not value:
+            return "Nincs adat"
+        return value if len(value) <= max_len else value[: max_len - 1].rstrip() + "…"
+
+    def location_label(properties):
+        location = get_location(properties)
+        country = get_country(properties)
+
+        if not location or location == "Nincs pontos helyadat":
+            return country or "Nincs adat"
+
+        parts = [p.strip() for p in location.split(",") if p.strip()]
+
+        if len(parts) >= 2:
+            city = parts[0]
+            country_part = parts[-1]
+            if country_part.lower() == city.lower():
+                return city
+            return f"{city}, {country_part}"
+
+        return parts[0] if parts else location
+
+    def draw_metric_rows(items, x, y, width, color, max_value=None, label_max=28, row_gap=34):
+        if not items:
+            return f'<text x="{x}" y="{y}" font-size="15" font-weight="750" fill="#64748b">Nincs adat</text>'
+
+        max_value = max_value or max([v for _, v in items], default=1) or 1
+        out = ""
+
+        for idx, (label, value) in enumerate(items):
+            yy = y + idx * row_gap
+            bar_width = max(4, int((value / max_value) * width)) if max_value else 4
+            out += f"""
+<text x="{x}" y="{yy}" font-size="14" font-weight="800" fill="#334155">{escape(shorten_label(str(label), label_max))}</text>
+<text x="{x + width + 34}" y="{yy}" text-anchor="end" font-size="14" font-weight="950" fill="#0f172a">{value}</text>
+<rect x="{x}" y="{yy + 8}" width="{width}" height="8" rx="4" fill="#e2e8f0"/>
+<rect x="{x}" y="{yy + 8}" width="{bar_width}" height="8" rx="4" fill="{color}"/>
+"""
+        return out
+
     region_data = []
     total_focus_events = 0
     combined_nature_counter = Counter()
+    combined_type_counter = Counter()
 
     for region, color in focus_regions:
         events = events_by_region.get(region, [])
         total_focus_events += len(events)
 
         _, type_counter, nature_counter, _, _ = summarize_events(events)
+        location_counter = Counter()
+
+        for feature in events:
+            props = feature.get("properties", {})
+            location_counter[location_label(props)] += 1
+
         top_nature = nature_counter.most_common(1)[0][0] if nature_counter else "Nincs adat"
         top_type = type_counter.most_common(1)[0][0] if type_counter else "Nincs adat"
         trend = collect_7_day_trend_for_region(features, report_day, region)
 
         combined_nature_counter.update(nature_counter)
+        combined_type_counter.update(type_counter)
 
         region_data.append({
             "name": region,
@@ -721,6 +772,8 @@ def generate_sharecard(report_day, features, events_by_region):
             "count": len(events),
             "top_nature": top_nature,
             "top_type": top_type,
+            "top_types": type_counter.most_common(2),
+            "top_locations": location_counter.most_common(2),
             "risk": risk_label(len(events)),
             "risk_color": risk_color(len(events)),
             "message": get_key_message(region, len(events), top_nature),
@@ -731,9 +784,10 @@ def generate_sharecard(report_day, features, events_by_region):
 
     top_region = max(region_data, key=lambda item: item["count"]) if region_data else None
     top_nature_global = combined_nature_counter.most_common(1)[0][0] if combined_nature_counter else "Nincs adat"
+    top_type_global = combined_type_counter.most_common(1)[0][0] if combined_type_counter else "Nincs adat"
 
     width = 1600
-    height = 1000
+    height = 1180
 
     svg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
 <defs>
@@ -752,10 +806,10 @@ def generate_sharecard(report_day, features, events_by_region):
   </filter>
 </defs>
 
-<rect width="1600" height="1000" fill="url(#bg)"/>
-<rect width="1600" height="1000" fill="url(#glow)"/>
+<rect width="1600" height="1180" fill="url(#bg)"/>
+<rect width="1600" height="1180" fill="url(#glow)"/>
 
-<rect x="56" y="54" width="1488" height="892" rx="34" fill="#0b1220" stroke="#334155" stroke-width="2" opacity="0.96"/>
+<rect x="56" y="54" width="1488" height="1072" rx="34" fill="#0b1220" stroke="#334155" stroke-width="2" opacity="0.96"/>
 
 <text x="92" y="112" font-size="24" font-weight="900" fill="#38bdf8" letter-spacing="3">OSINT INTELLIGENCE BRIEF</text>
 <text x="92" y="175" font-size="58" font-weight="950" fill="#ffffff">Fegyveres incidensek napi összképe</text>
@@ -775,8 +829,9 @@ def generate_sharecard(report_day, features, events_by_region):
 <text x="494" y="408" font-size="21" font-weight="700" fill="#64748b">{top_region["count"] if top_region else 0} azonosított esemény</text>
 
 <rect x="988" y="270" width="502" height="160" rx="26" fill="#f8fafc" filter="url(#shadow)"/>
-<text x="1022" y="318" font-size="20" font-weight="900" fill="#475569">DOMINÁNS ESEMÉNYJELLEG</text>
-{svg_text_lines(top_nature_global, 1022, 370, 32, "#0f172a", max_chars=32, line_height=36, weight="950")}
+<text x="1022" y="318" font-size="20" font-weight="900" fill="#475569">DOMINÁNS TÁMADÁSTÍPUS</text>
+{svg_text_lines(top_type_global, 1022, 368, 30, "#0f172a", max_chars=34, line_height=34, weight="950")}
+<text x="1022" y="410" font-size="17" font-weight="700" fill="#64748b">Fő eseményjelleg: {escape(shorten_label(top_nature_global, 32))}</text>
 
 <text x="92" y="492" font-size="28" font-weight="950" fill="#ffffff">Régiós kockázati gyorsnézet</text>
 <text x="92" y="526" font-size="18" fill="#94a3b8">A kártyák az adott napi, deduplikált OSINT-találatokból készülnek.</text>
@@ -785,7 +840,7 @@ def generate_sharecard(report_day, features, events_by_region):
     start_x = 92
     card_y = 560
     card_w = 340
-    card_h = 260
+    card_h = 430
     gap = 28
 
     for i, item in enumerate(region_data):
@@ -801,18 +856,31 @@ def generate_sharecard(report_day, features, events_by_region):
   <text x="{x + 112}" y="{card_y + 115}" font-size="19" font-weight="900" fill="#475569">esemény</text>
   <rect x="{x + 218}" y="{card_y + 82}" width="94" height="34" rx="14" fill="{item["risk_color"]}"/>
   <text x="{x + 265}" y="{card_y + 105}" text-anchor="middle" font-size="15" font-weight="950" fill="#ffffff">{item["risk"]}</text>
-  <text x="{x + 26}" y="{card_y + 158}" font-size="16" font-weight="900" fill="#64748b">Fő jelleg</text>
-  {svg_text_lines(item["top_nature"], x + 26, card_y + 188, 19, "#0f172a", max_chars=26, line_height=23, weight="850")}
-  <rect x="{x + 26}" y="{card_y + 212}" width="286" height="34" rx="12" fill="#e2e8f0"/>
-  {build_sparkline(item["trend"], x + 42, card_y + 218, 254, 18, color, text_color="#0f172a")}
+
+  <text x="{x + 26}" y="{card_y + 158}" font-size="16" font-weight="900" fill="#64748b">Fő eseményjelleg</text>
+  {svg_text_lines(item["top_nature"], x + 26, card_y + 188, 19, "#0f172a", max_chars=27, line_height=23, weight="850")}
+
+  <text x="{x + 26}" y="{card_y + 238}" font-size="16" font-weight="900" fill="#64748b">Top támadástípusok</text>
+  {draw_metric_rows(item["top_types"], x + 26, card_y + 266, 230, color, label_max=25, row_gap=34)}
+
+  <text x="{x + 26}" y="{card_y + 344}" font-size="16" font-weight="900" fill="#64748b">Top helyszínek</text>
+  {draw_metric_rows(item["top_locations"], x + 26, card_y + 372, 230, color, label_max=25, row_gap=34)}
+</g>
+"""
+
+        svg += f"""
+<g filter="url(#shadow)">
+  <text x="{x + 26}" y="{card_y + 403}" font-size="14" font-weight="900" fill="#64748b">7 napos trend</text>
+  <rect x="{x + 26}" y="{card_y + 412}" width="286" height="34" rx="12" fill="#e2e8f0"/>
+  {build_sparkline(item["trend"], x + 42, card_y + 419, 254, 18, color, text_color="#0f172a")}
 </g>
 """
 
     svg += f"""
-<rect x="92" y="858" width="1398" height="58" rx="18" fill="#111827" stroke="#334155"/>
-<text x="124" y="895" font-size="18" font-weight="850" fill="#e5e7eb">Módszertan:</text>
-<text x="242" y="895" font-size="17" fill="#cbd5e1">Automatikus OSINT-összesítés. Kulcsszavas drón-, terrorjellegű és háborús besorolás. Nem hivatalos minősítés.</text>
-<text x="1225" y="895" font-size="18" font-weight="900" fill="#38bdf8">Törésvonalak Monitor</text>
+<rect x="92" y="1024" width="1398" height="58" rx="18" fill="#111827" stroke="#334155"/>
+<text x="124" y="1061" font-size="18" font-weight="850" fill="#e5e7eb">Módszertan:</text>
+<text x="242" y="1061" font-size="17" fill="#cbd5e1">Automatikus OSINT-összesítés. Top támadástípus és top helyszín kulcsszavas, illetve helymező-alapú besorolással.</text>
+<text x="1225" y="1061" font-size="18" font-weight="900" fill="#38bdf8">Törésvonalak Monitor</text>
 </svg>
 """
 
@@ -821,7 +889,6 @@ def generate_sharecard(report_day, features, events_by_region):
     path.write_text(svg, encoding="utf-8")
 
     return f"sharecards/{filename}"
-
 
 def generate_analysis_block(today_total, yesterday_total, country_counter, type_counter, nature_counter, region_counter):
     if today_total == 0:
