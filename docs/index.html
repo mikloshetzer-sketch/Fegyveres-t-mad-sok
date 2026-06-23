@@ -171,6 +171,25 @@
       color:#ffffff;
     }
 
+    .report-group{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .report-button.biweekly{
+      border:1px solid rgba(34,197,94,.45);
+      background:linear-gradient(180deg, rgba(34,197,94,.22), rgba(22,163,74,.22));
+      color:#dcfce7;
+      box-shadow:0 8px 18px rgba(22,163,74,.22);
+    }
+
+    .report-button.biweekly:hover{
+      background:linear-gradient(180deg, rgba(34,197,94,.34), rgba(22,163,74,.34));
+      color:#ffffff;
+    }
+
     #status{
       margin-top:10px;
       padding:9px 12px;
@@ -513,9 +532,15 @@
       </select>
     </div>
 
-    <a class="report-button" href="reports/" target="_blank" rel="noopener">
-      📰 Napi jelentések
-    </a>
+    <div class="report-group">
+      <a class="report-button" href="reports/" target="_blank" rel="noopener">
+        📰 Napi jelentések
+      </a>
+
+      <a class="report-button biweekly" href="reports/biweekly/" target="_blank" rel="noopener">
+        📊 Kéthetes elemzés
+      </a>
+    </div>
   </div>
 </header>
 
