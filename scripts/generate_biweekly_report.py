@@ -697,6 +697,7 @@ def build_region_card_svg(region_name, events, x, y, w, h, color):
 
 
 
+
 def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     BIWEEKLY_SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -709,17 +710,18 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
 
     top_region = region_counter.most_common(1)[0][0] if region_counter else "No data"
     top_type = type_counter.most_common(1)[0][0] if type_counter else "No data"
+    top_country = country_counter.most_common(1)[0][0] if country_counter else "No data"
     top_hotspot = location_counter.most_common(1)[0][0] if location_counter else "No data"
 
     focus_config = [
-        ("Európai Unió", "EUROPEAN UNION", "#2563eb"),
-        ("Ukrajna", "UKRAINE", "#dc2626"),
-        ("Balkán", "BALKANS", "#16a34a"),
-        ("Közel-Kelet", "MIDDLE EAST", "#f97316"),
+        ("Európai Unió", "EUROPEAN UNION"),
+        ("Ukrajna", "UKRAINE"),
+        ("Balkán", "BALKANS"),
+        ("Közel-Kelet", "MIDDLE EAST"),
     ]
 
     width = 1200
-    height = 1650
+    height = 900
 
     def short(value, max_len=32):
         value = clean_text(value)
@@ -727,134 +729,115 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
             return value[:max_len - 1] + "…"
         return value
 
-    def region_card(region_key, display_name, color, x, y):
+    def region_tile(region_key, display_name, x, y):
         region_events = events_by_region.get(region_key, [])
         _, region_type_counter, _, region_location_counter, _ = summarize_events(region_events)
 
         main_attack = region_type_counter.most_common(1)[0][0] if region_type_counter else "No data"
-        top_locations = region_location_counter.most_common(3)
+        top_locations = region_location_counter.most_common(2)
 
-        rows = ""
-        row_y = y + 295
+        loc_lines = ""
+        ly = y + 170
         if top_locations:
-            for index, (loc, val) in enumerate(top_locations, start=1):
-                rows += f'''
-<text x="{x + 26}" y="{row_y}" font-size="18" font-weight="800" fill="#dbeafe">{index}. {escape(short(loc, 28))}</text>
-<text x="{x + 480}" y="{row_y}" text-anchor="end" font-size="18" font-weight="900" fill="#ffffff">{val}</text>
+            for idx, (loc, val) in enumerate(top_locations, start=1):
+                loc_lines += f'''
+<text x="{x + 28}" y="{ly}" font-size="16" font-weight="700" fill="#334155">{idx}. {escape(short(loc, 27))}</text>
+<text x="{x + 330}" y="{ly}" text-anchor="end" font-size="16" font-weight="800" fill="#0f172a">{val}</text>
 '''
-                row_y += 35
+                ly += 31
         else:
-            rows = f'<text x="{x + 26}" y="{row_y}" font-size="18" fill="#94a3b8">No location data</text>'
+            loc_lines = f'<text x="{x + 28}" y="{ly}" font-size="16" fill="#64748b">No location data</text>'
 
         return f'''
 <g>
-  <rect x="{x}" y="{y}" width="510" height="420" rx="24" fill="#0f172a" stroke="#334155"/>
-  <rect x="{x}" y="{y}" width="510" height="74" rx="24" fill="{color}"/>
-  <rect x="{x}" y="{y + 48}" width="510" height="26" fill="{color}"/>
-  <text x="{x + 26}" y="{y + 48}" font-size="25" font-weight="900" fill="#ffffff">{escape(display_name)}</text>
+  <rect x="{x}" y="{y}" width="365" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
+  <rect x="{x}" y="{y}" width="365" height="42" rx="4" fill="#2f8197"/>
+  <rect x="{x}" y="{y + 34}" width="365" height="8" fill="#2f8197"/>
+  <text x="{x + 24}" y="{y + 28}" font-size="20" font-weight="900" fill="#ffffff">{escape(display_name)}</text>
 
-  <text x="{x + 26}" y="{y + 135}" font-size="58" font-weight="900" fill="#ffffff">{len(region_events)}</text>
-  <text x="{x + 26}" y="{y + 166}" font-size="18" font-weight="800" fill="#94a3b8">incidents</text>
+  <text x="{x + 24}" y="{y + 88}" font-size="42" font-weight="900" fill="#0b3142">{len(region_events)}</text>
+  <text x="{x + 116}" y="{y + 84}" font-size="15" font-weight="800" fill="#64748b">incidents</text>
 
-  <text x="{x + 26}" y="{y + 218}" font-size="16" font-weight="900" fill="#93c5fd">MAIN ATTACK TYPE</text>
-  <text x="{x + 26}" y="{y + 250}" font-size="21" font-weight="900" fill="#ffffff">{escape(short(main_attack, 30))}</text>
+  <line x1="{x + 24}" y1="{y + 105}" x2="{x + 340}" y2="{y + 105}" stroke="#e5e7eb"/>
 
-  <text x="{x + 26}" y="{y + 282}" font-size="16" font-weight="900" fill="#93c5fd">TOP LOCATIONS</text>
-  {rows}
+  <text x="{x + 24}" y="{y + 132}" font-size="13" font-weight="900" fill="#2f8197">MAIN ATTACK TYPE</text>
+  <text x="{x + 24}" y="{y + 154}" font-size="17" font-weight="800" fill="#0f172a">{escape(short(main_attack, 30))}</text>
+
+  <text x="{x + 24}" y="{y + 193}" font-size="13" font-weight="900" fill="#2f8197">TOP LOCATIONS</text>
+  {loc_lines}
 </g>
 '''
 
-    def bar_rows(items, x, y, max_width, color, max_items=5, label_len=34):
+    def compact_list(items, x, y, max_items=5, label_len=30):
         if not items:
-            return f'<text x="{x}" y="{y}" font-size="18" fill="#94a3b8">No data</text>'
+            return f'<text x="{x}" y="{y}" font-size="15" fill="#64748b">No data</text>'
 
-        max_value = max([value for _, value in items[:max_items]], default=1)
         svg_rows = ""
-
         for idx, (label, value) in enumerate(items[:max_items], start=1):
-            row_y = y + (idx - 1) * 44
-            bar_w = int((value / max_value) * max_width) if max_value else 0
-
+            row_y = y + (idx - 1) * 28
             svg_rows += f'''
-<text x="{x}" y="{row_y}" font-size="18" font-weight="800" fill="#e5e7eb">{idx}. {escape(short(label, label_len))}</text>
-<rect x="{x}" y="{row_y + 12}" width="{max_width}" height="12" rx="6" fill="#1e293b"/>
-<rect x="{x}" y="{row_y + 12}" width="{bar_w}" height="12" rx="6" fill="{color}"/>
-<text x="{x + max_width + 18}" y="{row_y + 24}" font-size="17" font-weight="900" fill="#ffffff">{value}</text>
+<text x="{x}" y="{row_y}" font-size="16" font-weight="700" fill="#334155">{idx}. {escape(short(label, label_len))}</text>
+<text x="{x + 245}" y="{row_y}" text-anchor="end" font-size="16" font-weight="900" fill="#0f172a">{value}</text>
 '''
         return svg_rows
 
-    early_warning = []
-    if region_counter and "Közel-Kelet" in region_counter and region_counter["Közel-Kelet"] == max(region_counter.values()):
-        early_warning.append("Middle East is the main pressure zone")
-    if any("Drón" in key or "drone" in key.lower() for key in type_counter.keys()):
-        early_warning.append("Drone-related activity appears in the sample")
+    warning_items = []
+    if top_region != "No data":
+        warning_items.append(f"Main pressure zone: {short(top_region, 24)}")
     if top_hotspot != "No data":
-        early_warning.append(f"Repeated hotspot: {short(top_hotspot, 26)}")
+        warning_items.append(f"Repeated hotspot: {short(top_hotspot, 24)}")
     if top_type != "No data":
-        early_warning.append(f"Dominant pattern: {short(top_type, 28)}")
+        warning_items.append(f"Dominant pattern: {short(top_type, 26)}")
 
-    if not early_warning:
-        early_warning = ["No clear automated early-warning signal"]
-
-    early_warning_svg = ""
-    ew_y = 1355
-    for item in early_warning[:4]:
-        early_warning_svg += f'''
-<circle cx="640" cy="{ew_y - 7}" r="7" fill="#facc15"/>
-<text x="662" y="{ew_y}" font-size="20" font-weight="800" fill="#e5e7eb">{escape(item)}</text>
+    warning_svg = ""
+    wy = 597
+    for item in warning_items[:3]:
+        warning_svg += f'''
+<circle cx="864" cy="{wy - 5}" r="5" fill="#2f8197"/>
+<text x="882" y="{wy}" font-size="16" font-weight="700" fill="#334155">{escape(item)}</text>
 '''
-        ew_y += 45
+        wy += 34
 
-    region_cards = ""
-    positions = [(70, 330), (620, 330), (70, 790), (620, 790)]
-    for (region_key, display_name, color), (x, y) in zip(focus_config, positions):
-        region_cards += region_card(region_key, display_name, color, x, y)
-
-    hotspots_svg = bar_rows(location_counter.most_common(5), 105, 1315, 390, "#38bdf8", 5, 30)
-    attacks_svg = bar_rows(type_counter.most_common(3), 105, 1505, 390, "#f97316", 3, 30)
+    region_tiles = ""
+    positions = [(70, 265), (455, 265), (70, 520), (455, 520)]
+    for (region_key, display_name), (x, y) in zip(focus_config, positions):
+        region_tiles += region_tile(region_key, display_name, x, y)
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
-<defs>
-  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
-    <stop offset="0%" stop-color="#111827"/>
-    <stop offset="55%" stop-color="#07111f"/>
-    <stop offset="100%" stop-color="#020617"/>
-  </linearGradient>
-  <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
-    <feDropShadow dx="0" dy="10" stdDeviation="9" flood-color="#000000" flood-opacity="0.30"/>
-  </filter>
-</defs>
+<rect width="1200" height="900" fill="#f6f3ed"/>
+<path d="M0 0 H1200 V120 H0 Z" fill="#ffffff"/>
+<path d="M0 118 H1200" stroke="#c7b28b" stroke-width="2"/>
 
-<rect width="{width}" height="{height}" fill="url(#bg)"/>
-<circle cx="1040" cy="135" r="210" fill="#1d4ed8" opacity="0.15"/>
-<circle cx="80" cy="1560" r="240" fill="#f97316" opacity="0.10"/>
+<text x="70" y="74" font-size="23" font-weight="900" fill="#8b795b" letter-spacing="10">TÖRÉSVONALAK MONITOR</text>
+<text x="70" y="142" font-size="44" font-weight="900" fill="#06324a">14 Day Armed Incident Brief</text>
+<text x="70" y="184" font-size="21" font-weight="700" fill="#64748b">{start_day.isoformat()} – {end_day.isoformat()} • OSINT-based strategic overview</text>
 
-<text x="70" y="82" font-size="18" font-weight="900" fill="#93c5fd" letter-spacing="4">STRATEGIC INTELLIGENCE CARD</text>
-<text x="70" y="145" font-size="46" font-weight="900" fill="#ffffff">14 Day Security Assessment</text>
-<text x="70" y="190" font-size="22" fill="#cbd5e1">{start_day.isoformat()} → {end_day.isoformat()} • OSINT armed incident monitor</text>
+<rect x="835" y="58" width="295" height="126" rx="6" fill="#ffffff" stroke="#d6dee6"/>
+<text x="860" y="92" font-size="13" font-weight="900" fill="#64748b">TOTAL INCIDENTS</text>
+<text x="860" y="145" font-size="52" font-weight="900" fill="#06324a">{total}</text>
+<text x="1010" y="104" font-size="13" font-weight="900" fill="#64748b">MAIN REGION</text>
+<text x="1010" y="130" font-size="19" font-weight="900" fill="#2f8197">{escape(short(top_region, 16))}</text>
+<text x="1010" y="161" font-size="15" font-weight="800" fill="#334155">{escape(short(top_country, 18))}</text>
 
-<rect x="70" y="230" width="1060" height="72" rx="22" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="105" y="276" font-size="20" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
-<text x="300" y="279" font-size="42" font-weight="900" fill="#ffffff">{total}</text>
-<text x="510" y="276" font-size="20" font-weight="900" fill="#94a3b8">MAIN REGION</text>
-<text x="680" y="276" font-size="22" font-weight="900" fill="#93c5fd">{escape(short(top_region, 20))}</text>
-<text x="900" y="276" font-size="20" font-weight="900" fill="#94a3b8">TOP TYPE</text>
-<text x="995" y="276" font-size="20" font-weight="900" fill="#ffffff">{escape(short(top_type, 18))}</text>
+<rect x="70" y="220" width="1060" height="1" fill="#d6dee6"/>
+<text x="70" y="244" font-size="15" font-weight="900" fill="#64748b">FOCUS REGIONS</text>
 
-{region_cards}
+{region_tiles}
 
-<rect x="70" y="1260" width="510" height="320" rx="24" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="105" y="1300" font-size="26" font-weight="900" fill="#ffffff">Strategic Hotspots</text>
-{hotspots_svg}
-<text x="105" y="1492" font-size="26" font-weight="900" fill="#ffffff">Main Attack Types</text>
-{attacks_svg}
+<rect x="840" y="265" width="290" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
+<rect x="840" y="265" width="290" height="42" fill="#2f8197"/>
+<text x="864" y="292" font-size="19" font-weight="900" fill="#ffffff">STRATEGIC HOTSPOTS</text>
+{compact_list(location_counter.most_common(5), 864, 340, 5, 23)}
 
-<rect x="620" y="1260" width="510" height="320" rx="24" fill="#0f172a" stroke="#334155" filter="url(#shadow)"/>
-<text x="640" y="1300" font-size="26" font-weight="900" fill="#ffffff">Early Warning</text>
-{early_warning_svg}
+<rect x="840" y="520" width="290" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
+<rect x="840" y="520" width="290" height="42" fill="#2f8197"/>
+<text x="864" y="547" font-size="19" font-weight="900" fill="#ffffff">EARLY WARNING</text>
+{warning_svg}
 
-<text x="70" y="1620" font-size="16" fill="#94a3b8">Automated OSINT summary. Actor and motive assessments require source-level verification.</text>
-<text x="820" y="1620" font-size="18" font-weight="900" fill="#93c5fd">Törésvonalak Monitor Network</text>
+<rect x="70" y="790" width="1060" height="50" rx="4" fill="#ffffff" stroke="#d6dee6"/>
+<text x="92" y="822" font-size="15" font-weight="900" fill="#06324a">Method note:</text>
+<text x="205" y="822" font-size="15" fill="#475569">Automated OSINT summary. Actor, motive and intent require source-level verification.</text>
+<text x="930" y="822" font-size="16" font-weight="900" fill="#2f8197">Intelligence Card</text>
 </svg>'''
 
     filename = f"{start_day.isoformat()}_{end_day.isoformat()}-executive.svg"
