@@ -226,7 +226,6 @@
         }
 
         .rank-list li:last-child { border-bottom: 0; }
-
         .rank-list span { color: #334155; }
         .rank-list strong { color: #0f172a; }
 
@@ -253,10 +252,49 @@
             margin-bottom: 26px;
         }
 
+        .sharecard-section {
+            background:
+                linear-gradient(180deg, #0f172a, #020617);
+            color: #e5e7eb;
+            border-color: #334155;
+        }
+
+        .sharecard-section h2 {
+            color: #ffffff;
+        }
+
+        .sharecard-intro {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .sharecard-intro p {
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .sharecard-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #38bdf8;
+            color: #020617;
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-weight: 900;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
         .sharecard {
             background: #020617;
-            padding: 18px;
+            padding: 14px;
             border-radius: 18px;
+            border: 1px solid #334155;
         }
 
         .sharecard img {
@@ -264,6 +302,13 @@
             display: block;
             border-radius: 14px;
             border: 1px solid #334155;
+        }
+
+        .sharecard-note {
+            margin-top: 12px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
         }
 
         .footer {
@@ -293,10 +338,10 @@
                 flex-direction: column;
                 align-items: flex-start;
             }
-
             .cards { grid-template-columns: 1fr 1fr; }
             .charts { grid-template-columns: 1fr; }
             .three-col { grid-template-columns: 1fr 1fr; }
+            .sharecard-intro { grid-template-columns: 1fr; }
         }
 
         @media (max-width: 600px) {
@@ -1015,17 +1060,21 @@
                 </div>
             </section>
 
-            <section class="section">
-                <h2>Blogra használható összefoglaló kép</h2>
-                <p>
-                    Ez az automatikusan generált kép csak a négy kiemelt térséget mutatja:
-                    Európai Unió, Balkán, Közel-Kelet és Ukrajna.
-                </p>
-                <p>
-                    <a href="sharecards/2026-06-22-summary.svg" target="_blank">Kép megnyitása külön oldalon</a>
-                </p>
+            <section class="section sharecard-section">
+                <h2>Blogra használható intelligence card</h2>
+                <div class="sharecard-intro">
+                    <p>
+                        Ez a modern, blogba illeszthető összefoglaló kártya a négy kiemelt térséget mutatja.
+                        Nem külön képgenerálás, hanem automatikusan előállított SVG-infografika.
+                    </p>
+                    <a class="sharecard-link" href="sharecards/2026-06-22-summary.svg" target="_blank">SVG megnyitása</a>
+                </div>
                 <div class="sharecard">
-                    <img src="sharecards/2026-06-22-summary.svg" alt="Blogra használható napi OSINT összefoglaló">
+                    <img src="sharecards/2026-06-22-summary.svg" alt="Blogra használható napi OSINT intelligence card">
+                </div>
+                <div class="sharecard-note">
+                    Bloghoz ezt az SVG-t érdemes használni. Jobban illik elemzői, think tank jellegű bejegyzéshez,
+                    mint a korábbi nagy poszteres összefoglaló.
                 </div>
             </section>
 
