@@ -698,6 +698,7 @@ def build_region_card_svg(region_name, events, x, y, w, h, color):
 
 
 
+
 def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     BIWEEKLY_SHARECARDS_DIR.mkdir(parents=True, exist_ok=True)
 
@@ -721,7 +722,7 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
     ]
 
     width = 1200
-    height = 900
+    height = 920
 
     def short(value, max_len=32):
         value = clean_text(value)
@@ -737,47 +738,48 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
         top_locations = region_location_counter.most_common(2)
 
         loc_lines = ""
-        ly = y + 170
+        ly = y + 184
         if top_locations:
             for idx, (loc, val) in enumerate(top_locations, start=1):
                 loc_lines += f'''
-<text x="{x + 28}" y="{ly}" font-size="16" font-weight="700" fill="#334155">{idx}. {escape(short(loc, 27))}</text>
-<text x="{x + 330}" y="{ly}" text-anchor="end" font-size="16" font-weight="800" fill="#0f172a">{val}</text>
+<text x="{x + 26}" y="{ly}" font-size="14" font-weight="700" fill="#cbd5e1">{idx}. {escape(short(loc, 27))}</text>
+<text x="{x + 330}" y="{ly}" text-anchor="end" font-size="14" font-weight="900" fill="#e0f2fe">{val}</text>
 '''
-                ly += 31
+                ly += 28
         else:
-            loc_lines = f'<text x="{x + 28}" y="{ly}" font-size="16" fill="#64748b">No location data</text>'
+            loc_lines = f'<text x="{x + 26}" y="{ly}" font-size="14" fill="#94a3b8">No location data</text>'
 
         return f'''
 <g>
-  <rect x="{x}" y="{y}" width="365" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
-  <rect x="{x}" y="{y}" width="365" height="42" rx="4" fill="#2f8197"/>
-  <rect x="{x}" y="{y + 34}" width="365" height="8" fill="#2f8197"/>
-  <text x="{x + 24}" y="{y + 28}" font-size="20" font-weight="900" fill="#ffffff">{escape(display_name)}</text>
+  <rect x="{x}" y="{y}" width="365" height="240" rx="16" fill="#111827" stroke="#263b58"/>
+  <rect x="{x}" y="{y}" width="365" height="48" rx="16" fill="#12324d"/>
+  <rect x="{x}" y="{y + 34}" width="365" height="14" fill="#12324d"/>
+  <rect x="{x}" y="{y}" width="6" height="240" rx="3" fill="#38bdf8"/>
+  <text x="{x + 24}" y="{y + 31}" font-size="17" font-weight="900" fill="#e0f2fe" letter-spacing="1">{escape(display_name)}</text>
 
-  <text x="{x + 24}" y="{y + 88}" font-size="42" font-weight="900" fill="#0b3142">{len(region_events)}</text>
-  <text x="{x + 116}" y="{y + 84}" font-size="15" font-weight="800" fill="#64748b">incidents</text>
+  <text x="{x + 26}" y="{y + 92}" font-size="40" font-weight="900" fill="#ffffff">{len(region_events)}</text>
+  <text x="{x + 118}" y="{y + 88}" font-size="13" font-weight="800" fill="#94a3b8">incidents</text>
 
-  <line x1="{x + 24}" y1="{y + 105}" x2="{x + 340}" y2="{y + 105}" stroke="#e5e7eb"/>
+  <line x1="{x + 24}" y1="{y + 112}" x2="{x + 340}" y2="{y + 112}" stroke="#263b58"/>
 
-  <text x="{x + 24}" y="{y + 132}" font-size="13" font-weight="900" fill="#2f8197">MAIN ATTACK TYPE</text>
-  <text x="{x + 24}" y="{y + 154}" font-size="17" font-weight="800" fill="#0f172a">{escape(short(main_attack, 30))}</text>
+  <text x="{x + 24}" y="{y + 137}" font-size="11" font-weight="900" fill="#38bdf8">MAIN ATTACK TYPE</text>
+  <text x="{x + 24}" y="{y + 160}" font-size="15" font-weight="800" fill="#f8fafc">{escape(short(main_attack, 32))}</text>
 
-  <text x="{x + 24}" y="{y + 193}" font-size="13" font-weight="900" fill="#2f8197">TOP LOCATIONS</text>
+  <text x="{x + 24}" y="{y + 179}" font-size="11" font-weight="900" fill="#38bdf8">TOP LOCATIONS</text>
   {loc_lines}
 </g>
 '''
 
     def compact_list(items, x, y, max_items=5, label_len=30):
         if not items:
-            return f'<text x="{x}" y="{y}" font-size="15" fill="#64748b">No data</text>'
+            return f'<text x="{x}" y="{y}" font-size="14" fill="#94a3b8">No data</text>'
 
         svg_rows = ""
         for idx, (label, value) in enumerate(items[:max_items], start=1):
             row_y = y + (idx - 1) * 28
             svg_rows += f'''
-<text x="{x}" y="{row_y}" font-size="16" font-weight="700" fill="#334155">{idx}. {escape(short(label, label_len))}</text>
-<text x="{x + 245}" y="{row_y}" text-anchor="end" font-size="16" font-weight="900" fill="#0f172a">{value}</text>
+<text x="{x}" y="{row_y}" font-size="14" font-weight="700" fill="#cbd5e1">{idx}. {escape(short(label, label_len))}</text>
+<text x="{x + 245}" y="{row_y}" text-anchor="end" font-size="14" font-weight="900" fill="#e0f2fe">{value}</text>
 '''
         return svg_rows
 
@@ -790,54 +792,71 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
         warning_items.append(f"Dominant pattern: {short(top_type, 26)}")
 
     warning_svg = ""
-    wy = 597
+    wy = 612
     for item in warning_items[:3]:
         warning_svg += f'''
-<circle cx="864" cy="{wy - 5}" r="5" fill="#2f8197"/>
-<text x="882" y="{wy}" font-size="16" font-weight="700" fill="#334155">{escape(item)}</text>
+<circle cx="865" cy="{wy - 5}" r="5" fill="#38bdf8"/>
+<text x="882" y="{wy}" font-size="14" font-weight="700" fill="#cbd5e1">{escape(item)}</text>
 '''
         wy += 34
 
     region_tiles = ""
-    positions = [(70, 265), (455, 265), (70, 520), (455, 520)]
+    positions = [(70, 278), (455, 278), (70, 548), (455, 548)]
     for (region_key, display_name), (x, y) in zip(focus_config, positions):
         region_tiles += region_tile(region_key, display_name, x, y)
 
     svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{width}" height="{height}" viewBox="0 0 {width} {height}">
-<rect width="1200" height="900" fill="#f6f3ed"/>
-<path d="M0 0 H1200 V120 H0 Z" fill="#ffffff"/>
-<path d="M0 118 H1200" stroke="#c7b28b" stroke-width="2"/>
+<defs>
+  <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+    <stop offset="0%" stop-color="#07111f"/>
+    <stop offset="55%" stop-color="#0b1728"/>
+    <stop offset="100%" stop-color="#020617"/>
+  </linearGradient>
+  <filter id="softShadow" x="-20%" y="-20%" width="140%" height="140%">
+    <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#000000" flood-opacity="0.28"/>
+  </filter>
+</defs>
 
-<text x="70" y="74" font-size="23" font-weight="900" fill="#8b795b" letter-spacing="10">TÖRÉSVONALAK MONITOR</text>
-<text x="70" y="142" font-size="44" font-weight="900" fill="#06324a">14 Day Armed Incident Brief</text>
-<text x="70" y="184" font-size="21" font-weight="700" fill="#64748b">{start_day.isoformat()} – {end_day.isoformat()} • OSINT-based strategic overview</text>
+<rect width="1200" height="920" fill="url(#bg)"/>
+<circle cx="1040" cy="110" r="250" fill="#0ea5e9" opacity="0.10"/>
+<circle cx="120" cy="890" r="240" fill="#38bdf8" opacity="0.06"/>
 
-<rect x="835" y="58" width="295" height="126" rx="6" fill="#ffffff" stroke="#d6dee6"/>
-<text x="860" y="92" font-size="13" font-weight="900" fill="#64748b">TOTAL INCIDENTS</text>
-<text x="860" y="145" font-size="52" font-weight="900" fill="#06324a">{total}</text>
-<text x="1010" y="104" font-size="13" font-weight="900" fill="#64748b">MAIN REGION</text>
-<text x="1010" y="130" font-size="19" font-weight="900" fill="#2f8197">{escape(short(top_region, 16))}</text>
-<text x="1010" y="161" font-size="15" font-weight="800" fill="#334155">{escape(short(top_country, 18))}</text>
+<rect x="44" y="42" width="1112" height="836" rx="24" fill="none" stroke="#263b58"/>
 
-<rect x="70" y="220" width="1060" height="1" fill="#d6dee6"/>
-<text x="70" y="244" font-size="15" font-weight="900" fill="#64748b">FOCUS REGIONS</text>
+<text x="70" y="94" font-size="16" font-weight="900" fill="#38bdf8" letter-spacing="7">TÖRÉSVONALAK MONITOR</text>
+<text x="70" y="151" font-size="40" font-weight="900" fill="#ffffff">14 Day Armed Incident Brief</text>
+<text x="70" y="190" font-size="19" font-weight="700" fill="#94a3b8">{start_day.isoformat()} – {end_day.isoformat()} • OSINT-based strategic overview</text>
+
+<rect x="820" y="70" width="310" height="130" rx="18" fill="#111827" stroke="#263b58" filter="url(#softShadow)"/>
+<text x="846" y="104" font-size="12" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
+<text x="846" y="157" font-size="48" font-weight="900" fill="#ffffff">{total}</text>
+<text x="994" y="109" font-size="12" font-weight="900" fill="#94a3b8">MAIN REGION</text>
+<text x="994" y="136" font-size="18" font-weight="900" fill="#38bdf8">{escape(short(top_region, 16))}</text>
+<text x="994" y="164" font-size="14" font-weight="800" fill="#cbd5e1">{escape(short(top_country, 18))}</text>
+
+<rect x="70" y="226" width="1060" height="1" fill="#263b58"/>
+<text x="70" y="252" font-size="13" font-weight="900" fill="#94a3b8" letter-spacing="2">FOCUS REGIONS</text>
 
 {region_tiles}
 
-<rect x="840" y="265" width="290" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
-<rect x="840" y="265" width="290" height="42" fill="#2f8197"/>
-<text x="864" y="292" font-size="19" font-weight="900" fill="#ffffff">STRATEGIC HOTSPOTS</text>
-{compact_list(location_counter.most_common(5), 864, 340, 5, 23)}
+<rect x="840" y="278" width="290" height="240" rx="16" fill="#111827" stroke="#263b58"/>
+<rect x="840" y="278" width="290" height="48" rx="16" fill="#12324d"/>
+<rect x="840" y="312" width="290" height="14" fill="#12324d"/>
+<rect x="840" y="278" width="6" height="240" rx="3" fill="#38bdf8"/>
+<text x="864" y="309" font-size="16" font-weight="900" fill="#e0f2fe" letter-spacing="1">STRATEGIC HOTSPOTS</text>
+{compact_list(location_counter.most_common(5), 864, 362, 5, 22)}
 
-<rect x="840" y="520" width="290" height="230" rx="4" fill="#ffffff" stroke="#d6dee6"/>
-<rect x="840" y="520" width="290" height="42" fill="#2f8197"/>
-<text x="864" y="547" font-size="19" font-weight="900" fill="#ffffff">EARLY WARNING</text>
+<rect x="840" y="548" width="290" height="240" rx="16" fill="#111827" stroke="#263b58"/>
+<rect x="840" y="548" width="290" height="48" rx="16" fill="#12324d"/>
+<rect x="840" y="582" width="290" height="14" fill="#12324d"/>
+<rect x="840" y="548" width="6" height="240" rx="3" fill="#38bdf8"/>
+<text x="864" y="579" font-size="16" font-weight="900" fill="#e0f2fe" letter-spacing="1">EARLY WARNING</text>
 {warning_svg}
 
-<rect x="70" y="790" width="1060" height="50" rx="4" fill="#ffffff" stroke="#d6dee6"/>
-<text x="92" y="822" font-size="15" font-weight="900" fill="#06324a">Method note:</text>
-<text x="205" y="822" font-size="15" fill="#475569">Automated OSINT summary. Actor, motive and intent require source-level verification.</text>
-<text x="930" y="822" font-size="16" font-weight="900" fill="#2f8197">Intelligence Card</text>
+<rect x="70" y="816" width="1060" height="42" rx="14" fill="#111827" stroke="#263b58"/>
+<text x="92" y="842" font-size="13" font-weight="900" fill="#38bdf8">Method note:</text>
+<text x="190" y="842" font-size="13" fill="#94a3b8">Automated OSINT summary. Actor, motive and intent require source-level verification.</text>
+<text x="955" y="842" font-size="14" font-weight="900" fill="#38bdf8">Intelligence Card</text>
 </svg>'''
 
     filename = f"{start_day.isoformat()}_{end_day.isoformat()}-executive.svg"
@@ -1753,4 +1772,3 @@ def generate_biweekly_report():
 
 if __name__ == "__main__":
     generate_biweekly_report()
-
