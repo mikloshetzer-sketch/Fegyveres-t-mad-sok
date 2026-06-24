@@ -1014,6 +1014,77 @@ def generate_biweekly_sharecard(start_day, end_day, events, events_by_region):
 
     return f"sharecards/{filename}"
 
+def select_diverse_top_events(events, regional_context, limit=5):
+    """
+    Selects high-scoring events while reducing near-duplicates.
+    It avoids filling the regional Top 5 with the same location and very similar event pattern.
+    """
+
+    scored = sorted(
+        events,
+        key=lambda feature: score_event(feature, regional_context),
+        reverse=True,
+    )
+
+    selected = []
+    used_exact_keys = set()
+    location_usage = Counter()
+    country_type_usage = Counter()
+
+    for feature in scored:
+        props = feature.get("properties", {})
+
+        country = normalize_key(get_country(props))
+        location = normalize_key(get_location(props))
+        event_type = normalize_key(get_event_type(props))
+        title = normalize_key(get_title(props))[:60]
+
+        exact_key = (country, location, event_type, title)
+        location_key = (country, location)
+        country_type_key = (country, event_type)
+
+        if exact_key in used_exact_keys:
+            continue
+
+        if location_usage[location_key] >= 1:
+            continue
+
+        if country_type_usage[country_type_key] >= 2:
+            continue
+
+        selected.append(feature)
+        used_exact_keys.add(exact_key)
+        location_usage[location_key] += 1
+        country_type_usage[country_type_key] += 1
+
+        if len(selected) >= limit:
+            return selected
+
+    # Fallback: if the diversity filter is too strict, fill remaining slots.
+    for feature in scored:
+        if feature in selected:
+            continue
+
+        props = feature.get("properties", {})
+        country = normalize_key(get_country(props))
+        location = normalize_key(get_location(props))
+        event_type = normalize_key(get_event_type(props))
+        title = normalize_key(get_title(props))[:60]
+        exact_key = (country, location, event_type, title)
+
+        if exact_key in used_exact_keys:
+            continue
+
+        selected.append(feature)
+        used_exact_keys.add(exact_key)
+
+        if len(selected) >= limit:
+            break
+
+    return selected
+
+
+
 def build_top_events_for_region(region_name, events):
     if not events:
         return f"""
@@ -1027,7 +1098,7 @@ def build_top_events_for_region(region_name, events):
         """
 
     regional_context = build_region_scoring_context(events)
-    top_events = sorted(events, key=lambda f: score_event(f, regional_context), reverse=True)[:5]
+    top_events = select_diverse_top_events(events, regional_context, limit=5)
     country_counter, type_counter, nature_counter, location_counter, source_counter = summarize_events(events)
 
     cards = ""
@@ -1099,7 +1170,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 events selected by optimized strategic score: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
