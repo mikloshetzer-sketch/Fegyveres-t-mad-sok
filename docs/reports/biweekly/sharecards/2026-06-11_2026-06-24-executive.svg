@@ -22,7 +22,7 @@
 
 <rect x="820" y="70" width="310" height="130" rx="18" fill="#111827" stroke="#263b58" filter="url(#softShadow)"/>
 <text x="846" y="104" font-size="12" font-weight="900" fill="#94a3b8">TOTAL INCIDENTS</text>
-<text x="846" y="157" font-size="48" font-weight="900" fill="#ffffff">9710</text>
+<text x="846" y="157" font-size="48" font-weight="900" fill="#ffffff">9983</text>
 <text x="994" y="109" font-size="12" font-weight="900" fill="#94a3b8">MAIN REGION</text>
 <text x="994" y="136" font-size="18" font-weight="900" fill="#38bdf8">Egyéb térségek</text>
 <text x="994" y="164" font-size="14" font-weight="800" fill="#cbd5e1">United States</text>
@@ -38,7 +38,7 @@
   <rect x="70" y="286" width="6" height="300" rx="3" fill="#38bdf8"/>
   <text x="94" y="318" font-size="17" font-weight="900" fill="#e0f2fe" letter-spacing="1">EUROPEAN UNION</text>
 
-  <text x="96" y="388" font-size="42" font-weight="900" fill="#ffffff">577</text>
+  <text x="96" y="388" font-size="42" font-weight="900" fill="#ffffff">609</text>
   <text x="192" y="384" font-size="13" font-weight="800" fill="#94a3b8">incidents</text>
 
   <line x1="94" y1="412" x2="410" y2="412" stroke="#263b58"/>
@@ -50,13 +50,13 @@
 
   <text x="94" y="506" font-size="10" font-weight="900" fill="#38bdf8" letter-spacing="0.8">LOCATION FOCUS</text>
   
-<text x="96" y="526" font-size="12" font-weight="700" fill="#cbd5e1">1. Paris, France (general), Fran…</text>
+<text x="96" y="526" font-size="12" font-weight="700" fill="#cbd5e1">1. Germany</text>
 <text x="400" y="526" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="96" y="551" font-size="12" font-weight="700" fill="#cbd5e1">2. Germany</text>
+<text x="96" y="551" font-size="12" font-weight="700" fill="#cbd5e1">2. France</text>
 <text x="400" y="551" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="96" y="576" font-size="12" font-weight="700" fill="#cbd5e1">3. France</text>
+<text x="96" y="576" font-size="12" font-weight="700" fill="#cbd5e1">3. Paris, France (general), Fran…</text>
 <text x="400" y="576" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
 </g>
@@ -68,7 +68,7 @@
   <rect x="455" y="286" width="6" height="300" rx="3" fill="#38bdf8"/>
   <text x="479" y="318" font-size="17" font-weight="900" fill="#e0f2fe" letter-spacing="1">UKRAINE</text>
 
-  <text x="481" y="388" font-size="42" font-weight="900" fill="#ffffff">221</text>
+  <text x="481" y="388" font-size="42" font-weight="900" fill="#ffffff">227</text>
   <text x="577" y="384" font-size="13" font-weight="800" fill="#94a3b8">incidents</text>
 
   <line x1="479" y1="412" x2="795" y2="412" stroke="#263b58"/>
@@ -83,10 +83,10 @@
 <text x="481" y="526" font-size="12" font-weight="700" fill="#cbd5e1">1. Kyiv, Kyyiv, Misto, Ukraine</text>
 <text x="785" y="526" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="481" y="551" font-size="12" font-weight="700" fill="#cbd5e1">2. Kiev, Ukraine (general), Ukra…</text>
+<text x="481" y="551" font-size="12" font-weight="700" fill="#cbd5e1">2. Volhynia, Ukraine (general), …</text>
 <text x="785" y="551" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="481" y="576" font-size="12" font-weight="700" fill="#cbd5e1">3. Volhynia, Ukraine (general), …</text>
+<text x="481" y="576" font-size="12" font-weight="700" fill="#cbd5e1">3. Kiev, Ukraine (general), Ukra…</text>
 <text x="785" y="576" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
 </g>
@@ -98,7 +98,7 @@
   <rect x="70" y="620" width="6" height="300" rx="3" fill="#38bdf8"/>
   <text x="94" y="652" font-size="17" font-weight="900" fill="#e0f2fe" letter-spacing="1">BALKANS</text>
 
-  <text x="96" y="722" font-size="42" font-weight="900" fill="#ffffff">65</text>
+  <text x="96" y="722" font-size="42" font-weight="900" fill="#ffffff">70</text>
   <text x="192" y="718" font-size="13" font-weight="800" fill="#94a3b8">incidents</text>
 
   <line x1="94" y1="746" x2="410" y2="746" stroke="#263b58"/>
@@ -128,7 +128,7 @@
   <rect x="455" y="620" width="6" height="300" rx="3" fill="#38bdf8"/>
   <text x="479" y="652" font-size="17" font-weight="900" fill="#e0f2fe" letter-spacing="1">MIDDLE EAST</text>
 
-  <text x="481" y="722" font-size="42" font-weight="900" fill="#ffffff">851</text>
+  <text x="481" y="722" font-size="42" font-weight="900" fill="#ffffff">876</text>
   <text x="577" y="718" font-size="13" font-weight="800" fill="#94a3b8">incidents</text>
 
   <line x1="479" y1="746" x2="795" y2="746" stroke="#263b58"/>
@@ -140,13 +140,13 @@
 
   <text x="479" y="840" font-size="10" font-weight="900" fill="#38bdf8" letter-spacing="0.8">LOCATION FOCUS</text>
   
-<text x="481" y="860" font-size="12" font-weight="700" fill="#cbd5e1">1. Iran</text>
+<text x="481" y="860" font-size="12" font-weight="700" fill="#cbd5e1">1. Afghanistan</text>
 <text x="785" y="860" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="481" y="885" font-size="12" font-weight="700" fill="#cbd5e1">2. Tehran, Tehran, Iran</text>
+<text x="481" y="885" font-size="12" font-weight="700" fill="#cbd5e1">2. Iran</text>
 <text x="785" y="885" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="481" y="910" font-size="12" font-weight="700" fill="#cbd5e1">3. Israel</text>
+<text x="481" y="910" font-size="12" font-weight="700" fill="#cbd5e1">3. Tehran, Tehran, Iran</text>
 <text x="785" y="910" text-anchor="end" font-size="12" font-weight="900" fill="#e0f2fe">3</text>
 
 </g>
@@ -158,22 +158,22 @@
 <rect x="840" y="286" width="6" height="300" rx="3" fill="#38bdf8"/>
 <text x="864" y="318" font-size="16" font-weight="900" fill="#e0f2fe" letter-spacing="1">STRATEGIC HOTSPOTS</text>
 
-<text x="864" y="378" font-size="13" font-weight="700" fill="#cbd5e1">1. Toronto, Ontario, Can…</text>
+<text x="864" y="378" font-size="13" font-weight="700" fill="#cbd5e1">1. Beijing, Beijing, Chi…</text>
 <text x="1109" y="378" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="864" y="409" font-size="13" font-weight="700" fill="#cbd5e1">2. Washington, District …</text>
+<text x="864" y="409" font-size="13" font-weight="700" fill="#cbd5e1">2. New Delhi, Delhi, Ind…</text>
 <text x="1109" y="409" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="864" y="440" font-size="13" font-weight="700" fill="#cbd5e1">3. United States</text>
+<text x="864" y="440" font-size="13" font-weight="700" fill="#cbd5e1">3. Toronto, Ontario, Can…</text>
 <text x="1109" y="440" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="864" y="471" font-size="13" font-weight="700" fill="#cbd5e1">4. Iran</text>
+<text x="864" y="471" font-size="13" font-weight="700" fill="#cbd5e1">4. Washington, District …</text>
 <text x="1109" y="471" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="864" y="502" font-size="13" font-weight="700" fill="#cbd5e1">5. United Kingdom</text>
+<text x="864" y="502" font-size="13" font-weight="700" fill="#cbd5e1">5. White House, District…</text>
 <text x="1109" y="502" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
-<text x="864" y="533" font-size="13" font-weight="700" fill="#cbd5e1">6. Tehran, Tehran, Iran</text>
+<text x="864" y="533" font-size="13" font-weight="700" fill="#cbd5e1">6. Michigan, United Stat…</text>
 <text x="1109" y="533" text-anchor="end" font-size="13" font-weight="900" fill="#e0f2fe">3</text>
 
 
@@ -187,7 +187,7 @@
 <text x="882" y="683" font-size="13" font-weight="700" fill="#cbd5e1">Main pressure zone: Egyéb térségek</text>
 
 <circle cx="865" cy="713" r="5" fill="#38bdf8"/>
-<text x="882" y="718" font-size="13" font-weight="700" fill="#cbd5e1">Repeated hotspot: Toronto, Ontario, Canada</text>
+<text x="882" y="718" font-size="13" font-weight="700" fill="#cbd5e1">Repeated hotspot: Beijing, Beijing, China</text>
 
 <circle cx="865" cy="748" r="5" fill="#38bdf8"/>
 <text x="882" y="753" font-size="13" font-weight="700" fill="#cbd5e1">Dominant pattern: Fegyveres összecsapás</text>
