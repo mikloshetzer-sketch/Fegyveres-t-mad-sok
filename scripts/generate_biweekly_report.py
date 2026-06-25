@@ -1171,7 +1171,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 selected as event clusters: grouped by date, country, normalized location and event type, then ranked by strategic score and source diversity.</p>
+                <p>Top 5 selected as quality-filtered event clusters: grouped by date, country, normalized location and event type, filtered by conflict relevance, geographic consistency and source quality, then ranked by strategic score.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
@@ -2048,13 +2048,184 @@ def score_event_cluster(cluster, context=None):
     )
 
 
+HIGH_VALUE_SOURCE_TERMS = [
+    "reuters", "apnews", "associated press", "afp", "bbc", "dw.com",
+    "euronews", "france24", "kyivpost", "kyivindependent",
+    "timesofisrael", "jpost", "ynet", "dailysabah", "interfax",
+    "xinhua", "aa.com.tr", "aljazeera", "arabnews",
+]
+
+LOW_RELEVANCE_TERMS = [
+    "movie", "film", "netflix", "book", "books", "fashion", "vogue",
+    "celebrity", "kiss", "lifestyle", "weather", "heatwave", "sports",
+    "football", "basketball", "comic", "marvel", "museum", "painting",
+    "art", "tourist", "travel", "music", "entertainment",
+]
+
+QUALITY_CONFLICT_TERMS = [
+    "attack", "strike", "drone", "uav", "missile", "rocket", "airstrike",
+    "shelling", "explosion", "blast", "bombing", "ied", "shooting",
+    "raid", "clash", "ambush", "killed", "injured", "wounded", "terror",
+    "hostage", "sabotage", "police", "security forces", "militant",
+    "isis", "daesh", "hamas", "hezbollah", "idf",
+]
+
+QUALITY_ACTOR_TERMS = [
+    "russia", "russian", "ukraine", "ukrainian", "israel", "israeli",
+    "iran", "iranian", "idf", "hamas", "hezbollah", "houthi", "isis",
+    "daesh", "police", "army", "military", "security forces", "nato",
+    "turkey", "turkish", "serbia", "serbian", "kosovo",
+]
+
+
+def cluster_text_blob(cluster):
+    parts = [
+        cluster.get("title", ""),
+        cluster.get("location", ""),
+        cluster.get("country", ""),
+        cluster.get("event_type", ""),
+        cluster.get("event_nature", ""),
+    ]
+
+    parts.extend(cluster.get("raw_titles", []) or [])
+    parts.extend(cluster.get("source_domains", []) or [])
+
+    return " ".join(clean_text(part) for part in parts if part).lower()
+
+
+def token_hit_count(text, terms):
+    return sum(1 for term in terms if term.lower() in text)
+
+
+def calculate_cluster_quality(cluster):
+    """
+    0-100 quality score showing whether the cluster looks like a real,
+    identifiable security incident rather than a broad topic cluster.
+    """
+
+    text = cluster_text_blob(cluster)
+    country = clean_text(cluster.get("country")).lower()
+    location = clean_text(cluster.get("location")).lower()
+    raw_titles = cluster.get("raw_titles", []) or []
+    source_domains = cluster.get("source_domains", []) or []
+
+    conflict_hits = token_hit_count(text, QUALITY_CONFLICT_TERMS)
+    actor_hits = token_hit_count(text, QUALITY_ACTOR_TERMS)
+    low_relevance_hits = token_hit_count(text, LOW_RELEVANCE_TERMS)
+    high_value_hits = token_hit_count(" ".join(source_domains).lower(), HIGH_VALUE_SOURCE_TERMS)
+
+    quality = 0
+
+    source_domain_count = cluster.get("source_domain_count", 0) or 0
+    source_count = cluster.get("source_count", 0) or 0
+
+    if source_domain_count >= 5:
+        quality += 18
+    elif source_domain_count >= 3:
+        quality += 12
+    elif source_domain_count >= 2:
+        quality += 7
+
+    if source_count >= 10:
+        quality += 7
+    elif source_count >= 3:
+        quality += 4
+
+    if conflict_hits >= 4:
+        quality += 25
+    elif conflict_hits >= 2:
+        quality += 17
+    elif conflict_hits == 1:
+        quality += 8
+
+    location_score = 0
+    if country and country in text:
+        location_score += 8
+
+    location_parts = [part.strip().lower() for part in re.split(r"[,/]", location) if part.strip()]
+    for part in location_parts[:2]:
+        if part and part in text:
+            location_score += 6
+            break
+
+    generic_locations = {"poland", "ukraine", "france", "germany", "italy", "iran", "israel", "turkey"}
+    if location and location not in generic_locations:
+        location_score += 4
+
+    quality += min(location_score, 20)
+
+    if actor_hits >= 3:
+        quality += 15
+    elif actor_hits >= 2:
+        quality += 10
+    elif actor_hits == 1:
+        quality += 5
+
+    if high_value_hits >= 2:
+        quality += 5
+    elif high_value_hits == 1:
+        quality += 3
+
+    if low_relevance_hits >= 3:
+        quality -= 35
+    elif low_relevance_hits == 2:
+        quality -= 20
+    elif low_relevance_hits == 1:
+        quality -= 10
+
+    if len(raw_titles) == 1:
+        raw = raw_titles[0].lower()
+        if raw.startswith("fight –") or raw.startswith("assault –"):
+            quality -= 10
+
+    normalized_location = normalize_key(cluster.get("location", ""))
+    normalized_country = normalize_key(cluster.get("country", ""))
+
+    if normalized_location == normalized_country:
+        quality -= 20
+
+    title_text = " ".join(raw_titles).lower()
+    if token_hit_count(title_text, QUALITY_CONFLICT_TERMS) >= 2:
+        quality += 8
+
+    return max(min(quality, 100), 0)
+
+
+def cluster_quality_label(score):
+    if score >= 80:
+        return "High"
+    if score >= 60:
+        return "Medium"
+    if score >= 40:
+        return "Low"
+    return "Rejected"
+
+
+def is_valid_event_cluster(cluster, min_quality=45):
+    return calculate_cluster_quality(cluster) >= min_quality
+
+
+def cluster_sort_score(cluster, context):
+    strategic_score = score_event_cluster(cluster, context)
+    quality_score = calculate_cluster_quality(cluster)
+
+    return (strategic_score * 0.60) + (quality_score * 0.40)
+
+
 def select_top_event_clusters(events, limit=5):
     clusters = build_event_clusters(events)
     context = build_cluster_scoring_context(clusters)
 
+    quality_filtered = [
+        cluster for cluster in clusters
+        if is_valid_event_cluster(cluster, min_quality=45)
+    ]
+
+    candidate_clusters = quality_filtered if quality_filtered else clusters
+
     scored = sorted(
-        clusters,
-        key=lambda cluster: score_event_cluster(cluster, context),
+        candidate_clusters,
+        key=lambda cluster: cluster_sort_score(cluster, context),
         reverse=True,
     )
 
@@ -2198,7 +2369,7 @@ def export_selected_events(start_day, end_day, events_by_region):
         "method": (
             "Regional Top 5 selected as validated event clusters. "
             "Clusters are grouped by date, country, normalized location and event type. "
-            "Score includes event type, strategic location, international relevance, repeated hotspot pattern and source diversity."
+            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity and cluster quality filtering."
         ),
         "regions": {},
         "events": [],
@@ -2222,6 +2393,8 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "region": region_name,
                 "rank": rank,
                 "score": score_event_cluster(cluster, cluster_context),
+                "quality_score": calculate_cluster_quality(cluster),
+                "quality_label": cluster_quality_label(calculate_cluster_quality(cluster)),
                 "cluster_key": cluster.get("key"),
                 "title": cluster.get("title"),
                 "date": cluster.get("date"),
