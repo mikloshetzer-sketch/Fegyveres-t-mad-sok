@@ -3,9 +3,11 @@ import re
 import time
 import urllib.parse
 import urllib.request
+from collections import Counter
 from pathlib import Path
 from datetime import datetime
 from html import escape
+from urllib.parse import urlparse
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -14,6 +16,11 @@ SELECTED_EVENTS_FILE = BASE_DIR / "docs" / "reports" / "biweekly" / "selected-ev
 OUTPUT_DIR = BASE_DIR / "docs" / "reports" / "biweekly" / "enrichment" / "local-media"
 
 GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
+
+MAX_ORIGINAL_SOURCES_TO_INSPECT = 10
+MAX_GDELT_QUERIES_PER_EVENT = 4
+MAX_GDELT_RECORDS_PER_QUERY = 6
+HTTP_TIMEOUT_SECONDS = 10
 
 
 EVENT_TYPE_QUERY_MAP = {
@@ -29,17 +36,87 @@ EVENT_TYPE_QUERY_MAP = {
 }
 
 
+STOPWORDS = {
+    "the", "and", "for", "with", "from", "that", "this", "have", "has", "had",
+    "are", "was", "were", "will", "not", "but", "about", "after", "before",
+    "into", "over", "under", "amid", "near", "news", "world", "live", "latest",
+    "said", "says", "say", "report", "reports", "according", "update", "updates",
+    "video", "photo", "photos", "watch", "analysis", "opinion", "explainer",
+    "more", "most", "than", "their", "they", "them", "his", "her", "its",
+}
+
+
+ACTOR_HINTS = [
+    "israel", "israeli", "idf", "iran", "iranian", "hamas", "hezbollah",
+    "houthi", "russia", "russian", "ukraine", "ukrainian", "sbu", "nato",
+    "police", "army", "military", "militia", "security forces", "government",
+    "trump", "putin", "zelensky", "zelenskyy", "netanyahu",
+]
+
+
+CONFLICT_HINTS = [
+    "missile", "rocket", "drone", "uav", "strike", "airstrike", "attack",
+    "shooting", "explosion", "bombing", "blast", "shelling", "clash",
+    "assault", "raid", "intercept", "killed", "injured", "wounded",
+    "fire", "war", "terror", "hostage", "evacuated", "sabotage",
+]
+
+
+LOW_VALUE_DOMAINS = {
+    "freerepublic.com",
+    "www.freerepublic.com",
+    "dailykos.com",
+    "www.dailykos.com",
+    "movieweb.com",
+    "www.movieweb.com",
+}
+
+
 def clean_text(value):
     if not value:
         return ""
-    return re.sub(r"\s+", " ", str(value)).strip()
+    text = re.sub(r"<[^>]+>", " ", str(value))
+    text = re.sub(r"&[^;\s]+;", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
 def source_domain(url):
-    return str(url).replace("https://", "").replace("http://", "").split("/")[0].lower()
+    parsed = urlparse(str(url))
+    domain = parsed.netloc or str(url).replace("https://", "").replace("http://", "").split("/")[0]
+    return domain.lower().strip()
 
 
-def fetch_json(url, timeout=25):
+def normalize_location(value):
+    value = clean_text(value)
+    value = re.sub(r"\s*\(general\)\s*", "", value, flags=re.IGNORECASE)
+    value = value.replace("Kyyiv", "Kyiv").replace("Kiev", "Kyiv")
+    value = value.replace("Odes'ka", "Odesa").replace("Odessa", "Odesa")
+    parts = [part.strip() for part in value.split(",") if part.strip()]
+
+    compact = []
+    for part in parts:
+        if not compact or compact[-1].lower() != part.lower():
+            compact.append(part)
+
+    return ", ".join(compact) if compact else value
+
+
+def fetch_text(url, timeout=HTTP_TIMEOUT_SECONDS):
+    request = urllib.request.Request(
+        url,
+        headers={
+            "User-Agent": "ToresvonalakMonitor/1.0 OSINT source verification; public data only",
+            "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        },
+    )
+
+    with urllib.request.urlopen(request, timeout=timeout) as response:
+        raw = response.read(500_000)
+        return raw.decode("utf-8", errors="replace")
+
+
+def fetch_json(url, timeout=HTTP_TIMEOUT_SECONDS):
     request = urllib.request.Request(
         url,
         headers={"User-Agent": "ToresvonalakMonitor/1.0 OSINT enrichment; public data only"},
@@ -49,7 +126,183 @@ def fetch_json(url, timeout=25):
         return json.loads(response.read().decode("utf-8", errors="replace"))
 
 
-def search_gdelt(query, max_records=10):
+def extract_meta(html):
+    title = ""
+
+    title_match = re.search(r"<title[^>]*>(.*?)</title>", html, flags=re.IGNORECASE | re.DOTALL)
+    if title_match:
+        title = clean_text(title_match.group(1))
+
+    description = ""
+
+    desc_patterns = [
+        r'<meta[^>]+name=["\']description["\'][^>]+content=["\'](.*?)["\']',
+        r'<meta[^>]+property=["\']og:description["\'][^>]+content=["\'](.*?)["\']',
+        r'<meta[^>]+content=["\'](.*?)["\'][^>]+name=["\']description["\']',
+        r'<meta[^>]+content=["\'](.*?)["\'][^>]+property=["\']og:description["\']',
+    ]
+
+    for pattern in desc_patterns:
+        match = re.search(pattern, html, flags=re.IGNORECASE | re.DOTALL)
+        if match:
+            description = clean_text(match.group(1))
+            break
+
+    published = ""
+
+    date_patterns = [
+        r'<meta[^>]+property=["\']article:published_time["\'][^>]+content=["\'](.*?)["\']',
+        r'<meta[^>]+name=["\']pubdate["\'][^>]+content=["\'](.*?)["\']',
+        r'<time[^>]+datetime=["\'](.*?)["\']',
+    ]
+
+    for pattern in date_patterns:
+        match = re.search(pattern, html, flags=re.IGNORECASE | re.DOTALL)
+        if match:
+            published = clean_text(match.group(1))
+            break
+
+    return {
+        "title": title,
+        "description": description,
+        "published": published,
+    }
+
+
+def inspect_original_source(url):
+    domain = source_domain(url)
+
+    try:
+        html = fetch_text(url)
+        meta = extract_meta(html)
+        status = "ok"
+        error = None
+    except Exception as exc:
+        meta = {"title": "", "description": "", "published": ""}
+        status = "error"
+        error = str(exc)
+
+    return {
+        "url": url,
+        "domain": domain,
+        "status": status,
+        "error": error,
+        "title": meta.get("title", ""),
+        "description": meta.get("description", ""),
+        "published": meta.get("published", ""),
+    }
+
+
+def tokenize(text):
+    words = re.findall(r"[A-Za-z][A-Za-z0-9\-]{2,}", clean_text(text).lower())
+    return [word for word in words if word not in STOPWORDS and len(word) >= 3]
+
+
+def build_source_fingerprint(event, inspected_sources):
+    all_titles = []
+    all_text = []
+
+    for item in inspected_sources:
+        if item.get("title"):
+            all_titles.append(item["title"])
+            all_text.append(item["title"])
+        if item.get("description"):
+            all_text.append(item["description"])
+
+    for raw_title in event.get("raw_titles", [])[:10]:
+        all_titles.append(raw_title)
+        all_text.append(raw_title)
+
+    joined = " ".join(all_text)
+    tokens = tokenize(joined)
+    token_counter = Counter(tokens)
+
+    actor_hits = []
+    for actor in ACTOR_HINTS:
+        if actor in joined.lower() and actor not in actor_hits:
+            actor_hits.append(actor)
+
+    conflict_hits = []
+    for hint in CONFLICT_HINTS:
+        if hint in joined.lower() and hint not in conflict_hits:
+            conflict_hits.append(hint)
+
+    top_keywords = [
+        word for word, _ in token_counter.most_common(18)
+        if word not in actor_hits and word not in conflict_hits
+    ][:10]
+
+    title_counter = Counter(all_titles)
+    representative_title = ""
+    if title_counter:
+        representative_title = title_counter.most_common(1)[0][0]
+
+    if not representative_title:
+        representative_title = event.get("title") or "Unidentified event cluster"
+
+    confidence = "Low"
+    usable_sources = [item for item in inspected_sources if item.get("status") == "ok" and item.get("title")]
+    if len(usable_sources) >= 4 and len(actor_hits) >= 1 and len(conflict_hits) >= 1:
+        confidence = "Medium"
+    if len(usable_sources) >= 6 and len(actor_hits) >= 2 and len(conflict_hits) >= 2:
+        confidence = "Medium-High"
+
+    return {
+        "representative_title": representative_title,
+        "top_keywords": top_keywords,
+        "actor_hints": actor_hits[:8],
+        "conflict_hints": conflict_hits[:8],
+        "usable_source_count": len(usable_sources),
+        "confidence": confidence,
+    }
+
+
+def build_fingerprint_queries(event, fingerprint):
+    location = normalize_location(event.get("location"))
+    country = clean_text(event.get("country"))
+    date = clean_text(event.get("date"))
+
+    actor_terms = fingerprint.get("actor_hints", [])
+    conflict_terms = fingerprint.get("conflict_hints", [])
+    keyword_terms = fingerprint.get("top_keywords", [])
+
+    queries = []
+
+    if location and country and actor_terms and conflict_terms:
+        queries.append(f'"{location}" "{country}" "{actor_terms[0]}" "{conflict_terms[0]}"')
+
+    if country and actor_terms and conflict_terms:
+        queries.append(f'"{country}" "{actor_terms[0]}" "{conflict_terms[0]}"')
+
+    if location and conflict_terms:
+        queries.append(f'"{location}" "{conflict_terms[0]}"')
+
+    if actor_terms and conflict_terms and date:
+        queries.append(f'"{actor_terms[0]}" "{conflict_terms[0]}" {date}')
+
+    if fingerprint.get("representative_title"):
+        title = fingerprint["representative_title"]
+        if len(title) <= 140:
+            queries.append(f'"{title}"')
+
+    if not queries:
+        translated_types = EVENT_TYPE_QUERY_MAP.get(clean_text(event.get("event_type")), [clean_text(event.get("event_type"))])
+        for mapped_type in translated_types[:2]:
+            if location and country and mapped_type:
+                queries.append(f'"{location}" "{country}" "{mapped_type}"')
+            if country and mapped_type:
+                queries.append(f'"{country}" "{mapped_type}"')
+
+    deduped = []
+    for query in queries:
+        query = clean_text(query)
+        if query and query not in deduped:
+            deduped.append(query)
+
+    return deduped[:MAX_GDELT_QUERIES_PER_EVENT]
+
+
+def search_gdelt(query, max_records=MAX_GDELT_RECORDS_PER_QUERY):
     params = {
         "query": query,
         "mode": "ArtList",
@@ -87,93 +340,96 @@ def search_gdelt(query, max_records=10):
     return {"query": query, "error": None, "articles": cleaned}
 
 
-def build_cluster_queries(event):
-    location = clean_text(event.get("location"))
-    country = clean_text(event.get("country"))
-    event_type = clean_text(event.get("event_type"))
-    date = clean_text(event.get("date"))
-    raw_titles = event.get("raw_titles") or []
+def article_match_score(event, fingerprint, article):
+    title = clean_text(article.get("title")).lower()
+    domain = source_domain(article.get("url") or article.get("domain") or "")
+    score = 0
 
-    translated_types = EVENT_TYPE_QUERY_MAP.get(event_type, [event_type])
-    queries = []
+    location_parts = [part.strip().lower() for part in normalize_location(event.get("location")).split(",") if part.strip()]
+    country = clean_text(event.get("country")).lower()
 
-    for mapped_type in translated_types[:3]:
-        if location and country and mapped_type:
-            queries.append(f'"{location}" "{country}" "{mapped_type}"')
-        if country and mapped_type:
-            queries.append(f'"{country}" "{mapped_type}"')
+    if country and country in title:
+        score += 15
 
-    if location and country:
-        queries.append(f'"{location}" "{country}"')
+    for part in location_parts[:2]:
+        if part and part in title:
+            score += 20
+            break
 
-    for title in raw_titles[:3]:
-        title = clean_text(title)
-        if title:
-            queries.append(f'"{title}"')
+    for actor in fingerprint.get("actor_hints", []):
+        if actor.lower() in title:
+            score += 10
 
-    if location and date:
-        queries.append(f'"{location}" {date}')
+    for hint in fingerprint.get("conflict_hints", []):
+        if hint.lower() in title:
+            score += 10
 
-    deduped = []
-    for query in queries:
-        query = clean_text(query)
-        if query and query not in deduped:
-            deduped.append(query)
+    for keyword in fingerprint.get("top_keywords", [])[:5]:
+        if keyword.lower() in title:
+            score += 5
 
-    return deduped[:6]
+    if domain in LOW_VALUE_DOMAINS:
+        score -= 15
+
+    return max(min(score, 100), 0)
 
 
-def summarize_source_base(event):
-    source_domains = event.get("source_domains") or []
+def infer_enrichment_summary(event, inspected_sources, fingerprint, matched_articles):
     source_count = event.get("source_count") or 0
     source_domain_count = event.get("source_domain_count") or 0
-    raw_titles = event.get("raw_titles") or []
+    usable_source_count = fingerprint.get("usable_source_count", 0)
+    confidence = fingerprint.get("confidence", "Low")
 
-    if source_count == 0:
-        return "The selected cluster has no usable source URLs in the exported event record."
-
-    domains = ", ".join(source_domains[:5]) if source_domains else "unknown domains"
-    title_note = ""
-
-    if raw_titles:
-        title_note = f" Main raw title pattern: {raw_titles[0]}."
-
-    return (
-        f"The original event cluster contains {source_count} source URLs across {source_domain_count} source domains. "
-        f"Visible domains include: {domains}.{title_note}"
-    )
-
-
-def infer_enrichment_summary(event, findings):
-    article_count = sum(len(item.get("articles", [])) for item in findings)
-    source_base = summarize_source_base(event)
-
-    if article_count == 0:
+    if not matched_articles:
         return (
-            f"{source_base} The supplementary public media search did not identify additional matching articles. "
-            "The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer."
+            f"The original cluster contains {source_count} source URLs across {source_domain_count} domains. "
+            f"{usable_source_count} original source pages were readable enough to build a fingerprint. "
+            f"Fingerprint confidence: {confidence}. No strong supplementary article match was found. "
+            "This cluster needs manual verification before it is treated as a confirmed single incident."
         )
 
-    domains = []
-    for finding in findings:
-        for article in finding.get("articles", []):
-            domain = article.get("domain")
-            if domain and domain not in domains:
-                domains.append(domain)
-
     return (
-        f"{source_base} The supplementary public media search found {article_count} additional related items across "
-        f"{len(domains)} domains. Main additional domains: {', '.join(domains[:5])}. "
-        "These findings provide context only and do not independently confirm actor or motive."
+        f"The original cluster contains {source_count} source URLs across {source_domain_count} domains. "
+        f"{usable_source_count} original source pages were readable enough to build a fingerprint. "
+        f"Fingerprint confidence: {confidence}. The supplementary search found {len(matched_articles)} articles with non-zero match score. "
+        "These matches help identify the cluster, but actor and motive still require source-level verification."
     )
 
 
 def enrich_event_cluster(event):
-    findings = []
+    original_sources = event.get("sources", [])
+    inspected_sources = []
 
-    for query in build_cluster_queries(event):
-        findings.append(search_gdelt(query))
-        time.sleep(1.0)
+    for url in original_sources[:MAX_ORIGINAL_SOURCES_TO_INSPECT]:
+        inspected_sources.append(inspect_original_source(url))
+        time.sleep(0.4)
+
+    fingerprint = build_source_fingerprint(event, inspected_sources)
+
+    findings = []
+    matched_articles = []
+
+    for query in build_fingerprint_queries(event, fingerprint):
+        result = search_gdelt(query)
+        findings.append(result)
+
+        for article in result.get("articles", []):
+            score = article_match_score(event, fingerprint, article)
+            if score > 0:
+                enriched_article = dict(article)
+                enriched_article["match_score"] = score
+                matched_articles.append(enriched_article)
+
+        time.sleep(0.8)
+
+    seen_urls = set()
+    unique_matches = []
+    for article in sorted(matched_articles, key=lambda item: item.get("match_score", 0), reverse=True):
+        url = article.get("url")
+        if not url or url in seen_urls:
+            continue
+        seen_urls.add(url)
+        unique_matches.append(article)
 
     return {
         "record_type": event.get("record_type"),
@@ -183,21 +439,24 @@ def enrich_event_cluster(event):
         "title": event.get("title"),
         "date": event.get("date"),
         "country": event.get("country"),
-        "location": event.get("location"),
+        "location": normalize_location(event.get("location")),
         "event_type": event.get("event_type"),
         "event_nature": event.get("event_nature"),
         "feature_count": event.get("feature_count"),
         "source_count": event.get("source_count"),
         "source_domain_count": event.get("source_domain_count"),
         "source_domains": event.get("source_domains", []),
-        "original_sources": event.get("sources", []),
+        "original_sources": original_sources,
         "raw_titles": event.get("raw_titles", []),
+        "inspected_sources": inspected_sources,
+        "event_fingerprint": fingerprint,
         "queries": [item.get("query") for item in findings],
         "local_media_findings": findings,
-        "analytical_summary": infer_enrichment_summary(event, findings),
+        "matched_articles": unique_matches[:10],
+        "analytical_summary": infer_enrichment_summary(event, inspected_sources, fingerprint, unique_matches),
         "method_note": (
-            "This enrichment starts from the selected event cluster's original source set, then adds public GDELT media search. "
-            "It does not assign legal responsibility, actor identity or motive without source-level verification."
+            "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, "
+            "then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
         ),
     }
 
@@ -216,42 +475,41 @@ def build_html_report(payload):
         cards = ""
 
         for event in events:
-            source_rows = ""
-            for url in (event.get("original_sources") or [])[:6]:
-                domain = escape(source_domain(url))
-                source_rows += f'<li><a href="{escape(url)}" target="_blank" rel="noopener">{domain}</a></li>'
+            fingerprint = event.get("event_fingerprint", {})
 
-            if not source_rows:
-                source_rows = "<li>No original source URL available.</li>"
+            inspected_rows = ""
+            for item in (event.get("inspected_sources") or [])[:8]:
+                title = escape(item.get("title") or "No title extracted")
+                url = escape(item.get("url") or "#")
+                domain = escape(item.get("domain") or "unknown")
+                status = escape(item.get("status") or "unknown")
+                inspected_rows += f"""
+                <li>
+                    <a href="{url}" target="_blank" rel="noopener">{title}</a>
+                    <small>{domain} · {status}</small>
+                </li>
+                """
 
-            article_rows = ""
-            seen = set()
+            if not inspected_rows:
+                inspected_rows = "<li>No original source inspected.</li>"
 
-            for finding in event.get("local_media_findings", []):
-                for article in finding.get("articles", []):
-                    url = article.get("url")
-                    if not url or url in seen:
-                        continue
+            match_rows = ""
+            for article in (event.get("matched_articles") or [])[:8]:
+                title = escape(article.get("title") or "Untitled")
+                url = escape(article.get("url") or "#")
+                domain = escape(article.get("domain") or "unknown")
+                date = escape(article.get("seendate") or "")
+                score = escape(str(article.get("match_score") or 0))
 
-                    seen.add(url)
-                    title = escape(article.get("title") or "Untitled")
-                    domain = escape(article.get("domain") or "unknown")
-                    date = escape(article.get("seendate") or "")
+                match_rows += f"""
+                <li>
+                    <a href="{url}" target="_blank" rel="noopener">{title}</a>
+                    <small>{domain} {date} · match score {score}</small>
+                </li>
+                """
 
-                    article_rows += f"""
-                    <li>
-                        <a href="{escape(url)}" target="_blank" rel="noopener">{title}</a>
-                        <small>{domain} {date}</small>
-                    </li>
-                    """
-
-                    if len(seen) >= 8:
-                        break
-                if len(seen) >= 8:
-                    break
-
-            if not article_rows:
-                article_rows = "<li>No supplementary media item found.</li>"
+            if not match_rows:
+                match_rows = "<li>No supplementary article passed the match filter.</li>"
 
             raw_title_rows = ""
             for raw_title in (event.get("raw_titles") or [])[:5]:
@@ -265,27 +523,38 @@ def build_html_report(payload):
             if not query_rows:
                 query_rows = "<li>No query generated.</li>"
 
+            actor_text = ", ".join(fingerprint.get("actor_hints", [])) or "No actor hint"
+            conflict_text = ", ".join(fingerprint.get("conflict_hints", [])) or "No conflict hint"
+            keyword_text = ", ".join(fingerprint.get("top_keywords", [])) or "No keyword fingerprint"
+
             cards += f"""
             <article class="event-card">
                 <div class="event-head">
                     <span>#{event.get("rank")}</span>
-                    <strong>{escape(event.get("title") or "Untitled event cluster")}</strong>
+                    <strong>{escape(fingerprint.get("representative_title") or event.get("title") or "Untitled event cluster")}</strong>
                 </div>
 
                 <div class="meta">
                     {escape(event.get("location") or "")} / {escape(event.get("country") or "")}
                     · {escape(event.get("event_type") or "")}
                     · Score {escape(str(event.get("score") or ""))}
-                    · Cluster records {escape(str(event.get("feature_count") or ""))}
-                    · Source domains {escape(str(event.get("source_domain_count") or ""))}
+                    · Original domains {escape(str(event.get("source_domain_count") or ""))}
+                    · Fingerprint confidence {escape(fingerprint.get("confidence", "Low"))}
                 </div>
 
                 <p>{escape(event.get("analytical_summary") or "")}</p>
 
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: {escape(actor_text)}</span>
+                    <span>Conflict terms: {escape(conflict_text)}</span>
+                    <span>Keywords: {escape(keyword_text)}</span>
+                </div>
+
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol>{source_rows}</ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>{inspected_rows}</ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -295,11 +564,11 @@ def build_html_report(payload):
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>{article_rows}</ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol>{match_rows}</ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
+                        <h4>Fingerprint queries</h4>
                         <ol>{query_rows}</ol>
                     </div>
                 </div>
@@ -398,6 +667,19 @@ p {{
     color:#334155;
     line-height:1.65;
 }}
+.fingerprint {{
+    background:#eff6ff;
+    border:1px solid #bae6fd;
+    border-radius:12px;
+    padding:12px;
+    margin-top:14px;
+    display:grid;
+    gap:6px;
+    color:#0f172a;
+}}
+.fingerprint strong {{
+    color:#0369a1;
+}}
 .grid {{
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -428,9 +710,9 @@ small {{
 <body>
 <main class="page">
 <header class="hero">
-    <span>OSINT enrichment layer</span>
+    <span>OSINT source-first enrichment layer</span>
     <h1>Local Media Enrichment</h1>
-    <p>Selected regional Top 5 event clusters enriched with the original source set and supplementary public media search. Period: {escape(period.get("start", ""))} – {escape(period.get("end", ""))}.</p>
+    <p>Selected regional Top 5 event clusters enriched by first inspecting the original source set, then searching supplementary media with an event fingerprint. Period: {escape(period.get("start", ""))} – {escape(period.get("end", ""))}.</p>
 </header>
 <div class="content">
 {sections}
@@ -459,8 +741,8 @@ def enrich_selected_events():
         "source_file": str(SELECTED_EVENTS_FILE.relative_to(BASE_DIR)),
         "period": period,
         "method": (
-            "Cluster-based local media enrichment. The script first displays the original source set exported with each selected event cluster, "
-            "then performs supplementary public GDELT media search with translated event-type queries."
+            "Source-first local media enrichment. Original source URLs are inspected for title and metadata. "
+            "An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score."
         ),
         "enriched_events": enriched_events,
     }
