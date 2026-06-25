@@ -8,7 +8,7 @@ from html import escape
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
+INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_refined.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 BIWEEKLY_DIR = REPORTS_DIR / "biweekly"
 BIWEEKLY_SHARECARDS_DIR = BIWEEKLY_DIR / "sharecards"
@@ -1171,7 +1171,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 selected as quality-filtered event clusters: grouped by date, country, normalized location and event type, strictly filtered by source-title security relevance, geographic consistency, source quality and topic-noise rejection, then ranked by strategic score.</p>
+                <p>Top 5 selected as quality-filtered event clusters: grouped by date, country, normalized location and event type, filtered by conflict relevance, geographic consistency and source quality, then ranked by strategic score.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
@@ -2062,25 +2062,6 @@ LOW_RELEVANCE_TERMS = [
     "art", "tourist", "travel", "music", "entertainment",
 ]
 
-
-SECURITY_TITLE_TERMS = [
-    "attack", "attacks", "strike", "strikes", "drone", "drones", "uav",
-    "missile", "rocket", "airstrike", "shelling", "explosion", "blast",
-    "bombing", "ied", "shooting", "raid", "raids", "clash", "clashes",
-    "ambush", "killed", "kill", "injured", "wounded", "terror", "isis",
-    "daesh", "hamas", "hezbollah", "idf", "police", "security forces",
-    "sabotage", "evacuated", "hostage", "militant", "war-on-terror",
-]
-
-WEAK_ONLY_CONFLICT_TERMS = {"war", "government", "military", "army", "nato"}
-
-POLITICAL_TOPIC_TERMS = [
-    "dispute", "row", "honour", "honor", "history", "historical",
-    "election", "president", "medal", "award", "order", "narrative",
-    "opinion", "explainer", "analysis", "sanctions", "summit",
-]
-
-
 QUALITY_CONFLICT_TERMS = [
     "attack", "strike", "drone", "uav", "missile", "rocket", "airstrike",
     "shelling", "explosion", "blast", "bombing", "ied", "shooting",
@@ -2120,7 +2101,6 @@ def calculate_cluster_quality(cluster):
     """
     0-100 quality score showing whether the cluster looks like a real,
     identifiable security incident rather than a broad topic cluster.
-    Strict version: weak political/topic clusters are heavily penalized.
     """
 
     text = cluster_text_blob(cluster)
@@ -2129,14 +2109,9 @@ def calculate_cluster_quality(cluster):
     raw_titles = cluster.get("raw_titles", []) or []
     source_domains = cluster.get("source_domains", []) or []
 
-    raw_title_text = " ".join(raw_titles).lower()
-    representative_text = f"{cluster.get('title', '')} {raw_title_text}".lower()
-
     conflict_hits = token_hit_count(text, QUALITY_CONFLICT_TERMS)
-    title_security_hits = token_hit_count(representative_text, SECURITY_TITLE_TERMS)
     actor_hits = token_hit_count(text, QUALITY_ACTOR_TERMS)
     low_relevance_hits = token_hit_count(text, LOW_RELEVANCE_TERMS)
-    political_topic_hits = token_hit_count(representative_text, POLITICAL_TOPIC_TERMS)
     high_value_hits = token_hit_count(" ".join(source_domains).lower(), HIGH_VALUE_SOURCE_TERMS)
 
     quality = 0
@@ -2145,53 +2120,46 @@ def calculate_cluster_quality(cluster):
     source_count = cluster.get("source_count", 0) or 0
 
     if source_domain_count >= 5:
-        quality += 16
+        quality += 18
     elif source_domain_count >= 3:
-        quality += 10
+        quality += 12
     elif source_domain_count >= 2:
-        quality += 5
+        quality += 7
 
     if source_count >= 10:
-        quality += 5
+        quality += 7
     elif source_count >= 3:
-        quality += 3
-
-    if title_security_hits >= 3:
-        quality += 30
-    elif title_security_hits == 2:
-        quality += 22
-    elif title_security_hits == 1:
-        quality += 10
-
-    if conflict_hits >= 5:
-        quality += 12
-    elif conflict_hits >= 3:
-        quality += 8
-    elif conflict_hits >= 2:
         quality += 4
+
+    if conflict_hits >= 4:
+        quality += 25
+    elif conflict_hits >= 2:
+        quality += 17
+    elif conflict_hits == 1:
+        quality += 8
 
     location_score = 0
     if country and country in text:
-        location_score += 6
+        location_score += 8
 
     location_parts = [part.strip().lower() for part in re.split(r"[,/]", location) if part.strip()]
     for part in location_parts[:2]:
         if part and part in text:
-            location_score += 7
+            location_score += 6
             break
 
     generic_locations = {"poland", "ukraine", "france", "germany", "italy", "iran", "israel", "turkey"}
     if location and location not in generic_locations:
         location_score += 4
 
-    quality += min(location_score, 17)
+    quality += min(location_score, 20)
 
     if actor_hits >= 3:
         quality += 15
     elif actor_hits >= 2:
-        quality += 9
+        quality += 10
     elif actor_hits == 1:
-        quality += 4
+        quality += 5
 
     if high_value_hits >= 2:
         quality += 5
@@ -2199,44 +2167,29 @@ def calculate_cluster_quality(cluster):
         quality += 3
 
     if low_relevance_hits >= 3:
-        quality -= 45
+        quality -= 35
     elif low_relevance_hits == 2:
-        quality -= 30
+        quality -= 20
     elif low_relevance_hits == 1:
-        quality -= 15
-
-    if political_topic_hits >= 3 and title_security_hits == 0:
-        quality -= 40
-    elif political_topic_hits >= 2 and title_security_hits == 0:
-        quality -= 25
-    elif political_topic_hits >= 1 and title_security_hits == 0:
-        quality -= 15
-
-    strong_conflict_terms = [
-        term for term in SECURITY_TITLE_TERMS
-        if term not in WEAK_ONLY_CONFLICT_TERMS and term in representative_text
-    ]
-
-    if not strong_conflict_terms:
-        quality -= 25
+        quality -= 10
 
     if len(raw_titles) == 1:
         raw = raw_titles[0].lower()
-        if (raw.startswith("fight –") or raw.startswith("assault –") or raw.startswith("mass_violence –")) and title_security_hits == 0:
-            quality -= 20
-        elif raw.startswith("fight –") or raw.startswith("assault –") or raw.startswith("mass_violence –"):
-            quality -= 8
+        if raw.startswith("fight –") or raw.startswith("assault –"):
+            quality -= 10
 
     normalized_location = normalize_key(cluster.get("location", ""))
     normalized_country = normalize_key(cluster.get("country", ""))
 
     if normalized_location == normalized_country:
-        quality -= 25
+        quality -= 20
 
-    if token_hit_count(raw_title_text, SECURITY_TITLE_TERMS) >= 2:
+    title_text = " ".join(raw_titles).lower()
+    if token_hit_count(title_text, QUALITY_CONFLICT_TERMS) >= 2:
         quality += 8
 
     return max(min(quality, 100), 0)
+
 
 def cluster_quality_label(score):
     if score >= 80:
@@ -2248,25 +2201,8 @@ def cluster_quality_label(score):
     return "Rejected"
 
 
-def is_valid_event_cluster(cluster, min_quality=60):
-    quality = calculate_cluster_quality(cluster)
-    text = cluster_text_blob(cluster)
-    representative_text = f"{cluster.get('title', '')} {' '.join(cluster.get('raw_titles', []) or [])}".lower()
-
-    title_security_hits = token_hit_count(representative_text, SECURITY_TITLE_TERMS)
-    low_relevance_hits = token_hit_count(text, LOW_RELEVANCE_TERMS)
-    political_topic_hits = token_hit_count(representative_text, POLITICAL_TOPIC_TERMS)
-
-    if title_security_hits == 0:
-        return False
-
-    if low_relevance_hits >= 2:
-        return False
-
-    if political_topic_hits >= 2 and title_security_hits < 2:
-        return False
-
-    return quality >= min_quality
+def is_valid_event_cluster(cluster, min_quality=45):
+    return calculate_cluster_quality(cluster) >= min_quality
 
 
 def cluster_sort_score(cluster, context):
@@ -2282,10 +2218,10 @@ def select_top_event_clusters(events, limit=5):
 
     quality_filtered = [
         cluster for cluster in clusters
-        if is_valid_event_cluster(cluster, min_quality=60)
+        if is_valid_event_cluster(cluster, min_quality=45)
     ]
 
-    candidate_clusters = quality_filtered
+    candidate_clusters = quality_filtered if quality_filtered else clusters if quality_filtered else clusters
 
     scored = sorted(
         candidate_clusters,
@@ -2431,9 +2367,9 @@ def export_selected_events(start_day, end_day, events_by_region):
             "end": end_day.isoformat(),
         },
         "method": (
-            "Regional Top 5 selected as validated event clusters. "
-            "Clusters are grouped by date, country, normalized location and event type. "
-            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity and strict cluster quality filtering with hard rejection for non-security topic clusters."
+            "Regional Top 5 selected from refined event clusters. "
+            "Input comes from attacks_2026_refined.geojson. Clusters are grouped by date, country, normalized location and event type. "
+            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity and cluster quality filtering."
         ),
         "regions": {},
         "events": [],
