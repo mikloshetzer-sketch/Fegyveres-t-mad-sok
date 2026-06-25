@@ -83,6 +83,19 @@ p {
     color:#334155;
     line-height:1.65;
 }
+.fingerprint {
+    background:#eff6ff;
+    border:1px solid #bae6fd;
+    border-radius:12px;
+    padding:12px;
+    margin-top:14px;
+    display:grid;
+    gap:6px;
+    color:#0f172a;
+}
+.fingerprint strong {
+    color:#0369a1;
+}
 .grid {
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -113,9 +126,9 @@ small {
 <body>
 <main class="page">
 <header class="hero">
-    <span>OSINT enrichment layer</span>
+    <span>OSINT source-first enrichment layer</span>
     <h1>Local Media Enrichment</h1>
-    <p>Selected regional Top 5 event clusters enriched with the original source set and supplementary public media search. Period: 2026-06-11 – 2026-06-24.</p>
+    <p>Selected regional Top 5 event clusters enriched by first inspecting the original source set, then searching supplementary media with an event fingerprint. Period: 2026-06-11 – 2026-06-24.</p>
 </header>
 <div class="content">
 
@@ -125,23 +138,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#1</span>
-                    <strong>Fegyveres összecsapás – Warsaw, (PL67), Poland</strong>
+                    <strong>Poland, Ukraine: Dispute between two close allies deepens - Times of Oman</strong>
                 </div>
 
                 <div class="meta">
                     Warsaw, (PL67), Poland / Poland
                     · Fegyveres összecsapás
                     · Score 79
-                    · Cluster records 1
-                    · Source domains 47
+                    · Original domains 47
+                    · Fingerprint confidence Medium
                 </div>
 
-                <p>The original event cluster contains 55 source URLs across 47 source domains. Visible domains include: aa.com.tr, dominicanrepublicpost.com, en.philenews.com, english.news.cn, foreignpolicy.com. Main raw title pattern: fight – Warsaw, (PL67), Poland. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: news1.kr, news.cn, kommersant.ru, m24.ru, money.pl. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 55 source URLs across 47 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: ukraine, ukrainian, army, government, putin, zelensky, zelenskyy</span>
+                    <span>Conflict terms: war</span>
+                    <span>Keywords: poland, between, polish, president, nawrocki, dispute, warsaw, karol, social, media</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://timesofoman.com/article/173455-poland-ukraine-dispute-between-two-close-allies-deepens" target="_blank" rel="noopener">timesofoman.com</a></li><li><a href="https://www.aei.org/op-eds/poland-is-hedging-its-bets-on-the-us/" target="_blank" rel="noopener">www.aei.org</a></li><li><a href="https://www.eng.kavkaz-uzel.eu/articles/76355" target="_blank" rel="noopener">www.eng.kavkaz-uzel.eu</a></li><li><a href="https://www.euronews.com/my-europe/2026/06/23/poland-ukraine-row-is-not-helpful-and-plays-into-putins-hands-brussels-warns" target="_blank" rel="noopener">www.euronews.com</a></li><li><a href="https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859" target="_blank" rel="noopener">aa.com.tr</a></li><li><a href="https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/" target="_blank" rel="noopener">foreignpolicy.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://timesofoman.com/article/173455-poland-ukraine-dispute-between-two-close-allies-deepens" target="_blank" rel="noopener">Poland, Ukraine: Dispute between two close allies deepens - Times of Oman</a>
+                    <small>timesofoman.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.aei.org/op-eds/poland-is-hedging-its-bets-on-the-us/" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.aei.org · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.eng.kavkaz-uzel.eu/articles/76355" target="_blank" rel="noopener">Caucasian Knot | Social media users compared Skrepetsky s murder to the high-profile cases of Nemtsov and Politkovskaya.</a>
+                    <small>www.eng.kavkaz-uzel.eu · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.euronews.com/my-europe/2026/06/23/poland-ukraine-row-is-not-helpful-and-plays-into-putins-hands-brussels-warns" target="_blank" rel="noopener">Poland-Ukraine row is not helpful and plays into Putin s hands, Brussels warns | Euronews</a>
+                    <small>www.euronews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859" target="_blank" rel="noopener">EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine</a>
+                    <small>aa.com.tr · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/" target="_blank" rel="noopener">Warsaw, Kyiv, and the Ongoing Battle Over the Ukrainian Insurgent Army</a>
+                    <small>foreignpolicy.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://morningstaronline.co.uk/article/music-memory-and-mass-murder" target="_blank" rel="noopener">Music, Memory and Mass Murder | Morning Star</a>
+                    <small>morningstaronline.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.scoop.co.nz/stories/HL2606/S00053/the-cult-of-banderism-the-upa-and-poland-ukraine-relations.htm" target="_blank" rel="noopener">The Cult Of Banderism: The UPA And Poland-Ukraine Relations | Scoop News</a>
+                    <small>www.scoop.co.nz · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -151,52 +211,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.news1.kr/politics/president/6134496" target="_blank" rel="noopener">[ 뉴스1 PICK ] 이재명 대통령 韓 - 폴란드 중동전쟁 대처 글로벌 공급망 협력키로</a>
-                        <small>news1.kr 20260413T060000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.news.cn/photo/20260403/e5b9b6aca6ba46958494784b023834f3/c.html" target="_blank" rel="noopener">探访波兰 鹰巢之路 上的古堡 - 新华网</a>
-                        <small>news.cn 20260403T060000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.kommersant.ru/doc/8738474" target="_blank" rel="noopener">В Польше при уличной стрельбе погиб гражданин России</a>
-                        <small>kommersant.ru 20260615T160000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.m24.ru/news/15062026/910766" target="_blank" rel="noopener">Россиянин погиб во время уличной стрельбы в Польше</a>
-                        <small>m24.ru 20260615T153000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.money.pl/gospodarka/rynek-pracy-ma-problem-polska-potrzebuje-migrantow-bardziej-niz-mysli-7275251911524929v.html" target="_blank" rel="noopener">Rynek pracy ma problem . Polska potrzebuje migrantów bardziej niż myśli ?</a>
-                        <small>money.pl 20260415T121500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.gunes.com/spor/fenerbahce-besiktas-ve-basaksehir-icin-heyecan-dorukta-avrupa-kupalarindaki-rakipleri-belli-oldu-1227652" target="_blank" rel="noopener">Fenerbahçe , Beşiktaş ve Başakşehir için heyecan dorukta : Avrupa kupalarındaki rakipleri belli oldu</a>
-                        <small>gunes.com 20260617T151500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.unian.ua/weapons/gvozdika-polshcha-vivodit-zi-stroyu-sau-radyanskogo-virobnictva-13409631.html" target="_blank" rel="noopener">Гвоздика – Польща виводить зі строю САУ радянського виробництва</a>
-                        <small>unian.ua 20260612T011500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.tatar-inform.ru/news/rossiyanin-stal-zertvoi-strelby-na-parkovke-v-vostocnoi-polse-6030995" target="_blank" rel="noopener">Россиянин стал жертвой стрельбы на парковке в восточной Польше</a>
-                        <small>tatar-inform.ru 20260615T164500Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Warsaw, (PL67), Poland&quot; &quot;Poland&quot; &quot;armed clash&quot;</li><li>&quot;Poland&quot; &quot;armed clash&quot;</li><li>&quot;Warsaw, (PL67), Poland&quot; &quot;Poland&quot; &quot;shooting&quot;</li><li>&quot;Poland&quot; &quot;shooting&quot;</li><li>&quot;Warsaw, (PL67), Poland&quot; &quot;Poland&quot; &quot;security incident&quot;</li><li>&quot;Poland&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Warsaw, (PL67), Poland&quot; &quot;Poland&quot; &quot;ukraine&quot; &quot;war&quot;</li><li>&quot;Poland&quot; &quot;ukraine&quot; &quot;war&quot;</li><li>&quot;Warsaw, (PL67), Poland&quot; &quot;war&quot;</li><li>&quot;ukraine&quot; &quot;war&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -204,23 +224,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#2</span>
-                    <strong>Fegyveres összecsapás – Poland</strong>
+                    <strong>Journalist Who Exposed Putin&#x27;s Secret Relationship With Kabaeva Dies in Exile - Oneindia News</strong>
                 </div>
 
                 <div class="meta">
                     Poland / Poland
                     · Fegyveres összecsapás
                     · Score 69
-                    · Cluster records 1
-                    · Source domains 42
+                    · Original domains 42
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 45 source URLs across 42 source domains. Visible domains include: athens-times.com, bnn-news.com, en.interfax.com.ua, freerepublic.com, indianexpress.com. Main raw title pattern: fight – Poland. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: news1.kr, news.cn, kommersant.ru, m24.ru, money.pl. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 45 source URLs across 42 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 1 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian, army, government, putin, zelensky</span>
+                    <span>Conflict terms: strike, attack, killed, war</span>
+                    <span>Keywords: president, who, least, ecuador, suicide, journalist, exposed, secret, relationship, exile</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.oneindia.com/international/journalist-who-exposed-putins-secret-relationship-with-kabaeva-dies-in-exile-8127989.html" target="_blank" rel="noopener">www.oneindia.com</a></li><li><a href="https://nypost.com/2026/06/24/us-news/us-armys-commanding-general-of-forces-in-europe-africa-stepping-down-at-hegseths-request/" target="_blank" rel="noopener">nypost.com</a></li><li><a href="https://www.dailykos.com/stories/2026/6/24/800059963/community/russian-stuff-blowing-up/" target="_blank" rel="noopener">www.dailykos.com</a></li><li><a href="https://www.theguardian.com/world/2026/jun/23/monika-silva-koniuszek-ecuador-president-family-business" target="_blank" rel="noopener">www.theguardian.com</a></li><li><a href="https://www.ibtimes.co.uk/new-forensic-evidence-murder-activist-monika-silva-koniuszek-1804634" target="_blank" rel="noopener">www.ibtimes.co.uk</a></li><li><a href="https://www.taipeitimes.com/News/world/archives/2026/06/24/2003859661" target="_blank" rel="noopener">www.taipeitimes.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.oneindia.com/international/journalist-who-exposed-putins-secret-relationship-with-kabaeva-dies-in-exile-8127989.html" target="_blank" rel="noopener">Journalist Who Exposed Putin&#x27;s Secret Relationship With Kabaeva Dies in Exile - Oneindia News</a>
+                    <small>www.oneindia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://nypost.com/2026/06/24/us-news/us-armys-commanding-general-of-forces-in-europe-africa-stepping-down-at-hegseths-request/" target="_blank" rel="noopener">Army’s top general in Europe steps down amid simmering Pentagon tensions</a>
+                    <small>nypost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/24/800059963/community/russian-stuff-blowing-up/" target="_blank" rel="noopener">Russian stuff blowing up: Moscow refinery is kaput for at least six months - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.theguardian.com/world/2026/jun/23/monika-silva-koniuszek-ecuador-president-family-business" target="_blank" rel="noopener">Whistleblower investigating Ecuadorian president’s family business was murdered, activists say | Ecuador | The Guardian</a>
+                    <small>www.theguardian.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.ibtimes.co.uk/new-forensic-evidence-murder-activist-monika-silva-koniuszek-1804634" target="_blank" rel="noopener">Not Suicide? Ecuador Activist &#x27;Followed and Observed&#x27; Before Death After Investigating President&#x27;s Family Business | IBTimes UK</a>
+                    <small>www.ibtimes.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.taipeitimes.com/News/world/archives/2026/06/24/2003859661" target="_blank" rel="noopener">Whistle-blower murdered in Ecuador: activists - Taipei Times</a>
+                    <small>www.taipeitimes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://freerepublic.com/focus/f-news/4384857/posts" target="_blank" rel="noopener">Polish president strips Zelenskyy of Poland&#x27;s highest state honour</a>
+                    <small>freerepublic.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.worthynews.com/115243-ukraines-zelenskyy-warns-belarus-as-russian-strikes-kill-civilians-across-ukraine-worthy-news-radio" target="_blank" rel="noopener">Ukraine’s Zelenskyy Warns Belarus As Russian Strikes Kill Civilians Across Ukraine (Worthy News Radio) - Worthy Christian News</a>
+                    <small>www.worthynews.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -230,52 +297,17 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
+                        <h4>Matched supplementary media</h4>
                         <ol>
-                    <li>
-                        <a href="https://www.news1.kr/politics/president/6134496" target="_blank" rel="noopener">[ 뉴스1 PICK ] 이재명 대통령 韓 - 폴란드 중동전쟁 대처 글로벌 공급망 협력키로</a>
-                        <small>news1.kr 20260413T060000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.news.cn/photo/20260403/e5b9b6aca6ba46958494784b023834f3/c.html" target="_blank" rel="noopener">探访波兰 鹰巢之路 上的古堡 - 新华网</a>
-                        <small>news.cn 20260403T060000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.kommersant.ru/doc/8738474" target="_blank" rel="noopener">В Польше при уличной стрельбе погиб гражданин России</a>
-                        <small>kommersant.ru 20260615T160000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.m24.ru/news/15062026/910766" target="_blank" rel="noopener">Россиянин погиб во время уличной стрельбы в Польше</a>
-                        <small>m24.ru 20260615T153000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.money.pl/gospodarka/rynek-pracy-ma-problem-polska-potrzebuje-migrantow-bardziej-niz-mysli-7275251911524929v.html" target="_blank" rel="noopener">Rynek pracy ma problem . Polska potrzebuje migrantów bardziej niż myśli ?</a>
-                        <small>money.pl 20260415T121500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.gunes.com/spor/fenerbahce-besiktas-ve-basaksehir-icin-heyecan-dorukta-avrupa-kupalarindaki-rakipleri-belli-oldu-1227652" target="_blank" rel="noopener">Fenerbahçe , Beşiktaş ve Başakşehir için heyecan dorukta : Avrupa kupalarındaki rakipleri belli oldu</a>
-                        <small>gunes.com 20260617T151500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.unian.ua/weapons/gvozdika-polshcha-vivodit-zi-stroyu-sau-radyanskogo-virobnictva-13409631.html" target="_blank" rel="noopener">Гвоздика – Польща виводить зі строю САУ радянського виробництва</a>
-                        <small>unian.ua 20260612T011500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.tatar-inform.ru/news/rossiyanin-stal-zertvoi-strelby-na-parkovke-v-vostocnoi-polse-6030995" target="_blank" rel="noopener">Россиянин стал жертвой стрельбы на парковке в восточной Польше</a>
-                        <small>tatar-inform.ru 20260615T164500Z</small>
-                    </li>
-                    </ol>
+                <li>
+                    <a href="https://timesofindia.indiatimes.com/world/us-streamers/counter-strike-legend-pashabiceps-donates-21k-to-poland-cancer-fighters-stream-after-knife-skin-sale/articleshow/130564274.cms" target="_blank" rel="noopener">Pashabiceps Donation : Counter - Strike legend pashaBiceps donates $21K to Poland Cancer Fighters stream after knife skin sale</a>
+                    <small>timesofindia.indiatimes.com 20260427T234500Z · match score 45</small>
+                </li>
+                </ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Poland&quot; &quot;Poland&quot; &quot;armed clash&quot;</li><li>&quot;Poland&quot; &quot;armed clash&quot;</li><li>&quot;Poland&quot; &quot;Poland&quot; &quot;shooting&quot;</li><li>&quot;Poland&quot; &quot;shooting&quot;</li><li>&quot;Poland&quot; &quot;Poland&quot; &quot;security incident&quot;</li><li>&quot;Poland&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Poland&quot; &quot;Poland&quot; &quot;russia&quot; &quot;strike&quot;</li><li>&quot;Poland&quot; &quot;russia&quot; &quot;strike&quot;</li><li>&quot;Poland&quot; &quot;strike&quot;</li><li>&quot;russia&quot; &quot;strike&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -283,23 +315,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#3</span>
-                    <strong>Fegyveres összecsapás – Paris, France, France</strong>
+                    <strong>‘Beautiful and terrifying’: the best American LGBTQ+ books, chosen by Samuel R Delany, Kaveh Akbar, Eileen Myles and more | Books | The Guardian</strong>
                 </div>
 
                 <div class="meta">
-                    Paris, France, France / France
+                    Paris, France / France
                     · Fegyveres összecsapás
                     · Score 67
-                    · Cluster records 1
-                    · Source domains 83
+                    · Original domains 83
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 96 source URLs across 83 source domains. Visible domains include: aa.com.tr, apollo-magazine.com, aviationweek.com, breakingdefense.com, collider.com. Main raw title pattern: fight – Paris, France (general), France. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: pittsburghstar.com, hongkongherald.com, nepalnational.com, malaysiasun.com, floridastatesman.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 96 source URLs across 83 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: police, army, trump</span>
+                    <span>Conflict terms: attack, raid</span>
+                    <span>Keywords: france, new, books, science, action, lgbtq, authors, art, during, cited</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.theguardian.com/books/ng-interactive/2026/jun/24/best-american-lgbtq-books-authors" target="_blank" rel="noopener">www.theguardian.com</a></li><li><a href="https://www.theartnewspaper.com/2026/06/24/picasso-painting-recovered-in-french-drug-raid-was-stolen-opportunistically-say-police-source" target="_blank" rel="noopener">www.theartnewspaper.com</a></li><li><a href="https://www.carbonbrief.org/cited-23-june-project-cosmos-launch-science-under-attack-at-bonn-emissions-inequality/" target="_blank" rel="noopener">www.carbonbrief.org</a></li><li><a href="https://movieweb.com/netflix-ad-vitam-most-watched-ever-stream-action/" target="_blank" rel="noopener">movieweb.com</a></li><li><a href="https://nypost.com/2026/06/24/lifestyle/looksmaxxing-influencer-clavicular-films-getting-rejected-by-women/" target="_blank" rel="noopener">nypost.com</a></li><li><a href="https://www.arabnews.com/node/2648452/middle-east" target="_blank" rel="noopener">www.arabnews.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.theguardian.com/books/ng-interactive/2026/jun/24/best-american-lgbtq-books-authors" target="_blank" rel="noopener">‘Beautiful and terrifying’: the best American LGBTQ+ books, chosen by Samuel R Delany, Kaveh Akbar, Eileen Myles and more | Books | The Guardian</a>
+                    <small>www.theguardian.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.theartnewspaper.com/2026/06/24/picasso-painting-recovered-in-french-drug-raid-was-stolen-opportunistically-say-police-source" target="_blank" rel="noopener">Picasso painting recovered in French drug raid was stolen ‘opportunistically’, police source says - The Art Newspaper - International art news and events</a>
+                    <small>www.theartnewspaper.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.carbonbrief.org/cited-23-june-project-cosmos-launch-science-under-attack-at-bonn-emissions-inequality/" target="_blank" rel="noopener">Cited 23 June 2026: Project Cosmos launch | Science ‘under attack’ at Bonn | Emissions inequality - Carbon Brief</a>
+                    <small>www.carbonbrief.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://movieweb.com/netflix-ad-vitam-most-watched-ever-stream-action/" target="_blank" rel="noopener">Netflix s 98-Minute Action Thriller Is Officially One of the Biggest Streaming Hits of All Time</a>
+                    <small>movieweb.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://nypost.com/2026/06/24/lifestyle/looksmaxxing-influencer-clavicular-films-getting-rejected-by-women/" target="_blank" rel="noopener">Looksmaxxing influencer Clavicular films getting rejected by women</a>
+                    <small>nypost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.arabnews.com/node/2648452/middle-east" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.arabnews.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.vogue.com/fashion-shows/resort-2027/ann-demeulemeester" target="_blank" rel="noopener">Ann Demeulemeester Resort 2027 Collection | Vogue</a>
+                    <small>www.vogue.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://apollo-magazine.com/new-humans-new-museum-new-york-reopening-review/" target="_blank" rel="noopener">Me robot, you humane? - Apollo Magazine</a>
+                    <small>apollo-magazine.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -309,52 +388,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="http://www.pittsburghstar.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>pittsburghstar.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.hongkongherald.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>hongkongherald.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.nepalnational.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>nepalnational.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.malaysiasun.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>malaysiasun.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.floridastatesman.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>floridastatesman.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.calcuttanews.net/news/278967739/france-issues-condemnation-for-execution-of-its-national-in-china" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>calcuttanews.net 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.coloradostar.com/news/278967739/france-protests-execution-of-national-in-china-for-drug-trafficking" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>coloradostar.com 20260406T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.thailandnews.net/news/278967739/france-issues-condemnation-for-execution-of-its-national-in-china" target="_blank" rel="noopener">France condemns execution of its citizen in China for drug trafficking</a>
-                        <small>thailandnews.net 20260406T223000Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Paris, France, France&quot; &quot;France&quot; &quot;armed clash&quot;</li><li>&quot;France&quot; &quot;armed clash&quot;</li><li>&quot;Paris, France, France&quot; &quot;France&quot; &quot;shooting&quot;</li><li>&quot;France&quot; &quot;shooting&quot;</li><li>&quot;Paris, France, France&quot; &quot;France&quot; &quot;security incident&quot;</li><li>&quot;France&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Paris, France&quot; &quot;France&quot; &quot;police&quot; &quot;attack&quot;</li><li>&quot;France&quot; &quot;police&quot; &quot;attack&quot;</li><li>&quot;Paris, France&quot; &quot;attack&quot;</li><li>&quot;police&quot; &quot;attack&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -362,23 +401,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#4</span>
-                    <strong>Fegyveres összecsapás – Berlin, Germany</strong>
+                    <strong>Germany battles aggressive outbreak of poisonous caterpillars</strong>
                 </div>
 
                 <div class="meta">
                     Berlin, Germany / Germany
                     · Fegyveres összecsapás
                     · Score 67
-                    · Cluster records 1
-                    · Source domains 56
+                    · Original domains 56
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 65 source URLs across 56 source domains. Visible domains include: aero-news.net:443, aninews.in, arynews.tv, breakingdefense.com, comicbook.com. Main raw title pattern: fight – Berlin, Berlin, Germany. The supplementary public media search found 10 additional related items across 9 domains. Main additional domains: jpost.com, time.mk, english.news.cn, rundschau-online.de, politika.rs. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 65 source URLs across 56 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, army</span>
+                    <span>Conflict terms: raid, war, sabotage</span>
+                    <span>Keywords: germany, german, pistorius, lithuania, brigade, hitler, first, aggressive, outbreak, poisonous</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.yahoo.com/news/world/articles/germany-battles-aggressive-outbreak-poisonous-125705371.html" target="_blank" rel="noopener">www.yahoo.com</a></li><li><a href="https://timesofindia.indiatimes.com/world/us/the-200-word-telegram-that-pulled-america-into-world-war-i/articleshow/131966972.cms" target="_blank" rel="noopener">timesofindia.indiatimes.com</a></li><li><a href="https://www.popularmechanics.com/science/a71606308/hitler-diaries-hoax/" target="_blank" rel="noopener">www.popularmechanics.com</a></li><li><a href="https://www.euronews.com/my-europe/2026/06/24/german-authorities-carry-out-raids-over-alleged-russian-gas-sabotage" target="_blank" rel="noopener">www.euronews.com</a></li><li><a href="https://www.brandonsun.com/entertainment/2026/06/22/human-rights-museum-board-trustee-resigns-over-exhibit-on-displaced-palestinians" target="_blank" rel="noopener">www.brandonsun.com</a></li><li><a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">www.wsws.org</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.yahoo.com/news/world/articles/germany-battles-aggressive-outbreak-poisonous-125705371.html" target="_blank" rel="noopener">Germany battles aggressive outbreak of poisonous caterpillars</a>
+                    <small>www.yahoo.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://timesofindia.indiatimes.com/world/us/the-200-word-telegram-that-pulled-america-into-world-war-i/articleshow/131966972.cms" target="_blank" rel="noopener">The 200-word telegram that pulled America into World War I | World News - The Times of India</a>
+                    <small>timesofindia.indiatimes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.popularmechanics.com/science/a71606308/hitler-diaries-hoax/" target="_blank" rel="noopener">A Magazine Published Hitler’s Diaries—and Got Conned for $3.7 Million</a>
+                    <small>www.popularmechanics.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.euronews.com/my-europe/2026/06/24/german-authorities-carry-out-raids-over-alleged-russian-gas-sabotage" target="_blank" rel="noopener">German authorities carry out raids over alleged Russian gas sabotage | Euronews</a>
+                    <small>www.euronews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.brandonsun.com/entertainment/2026/06/22/human-rights-museum-board-trustee-resigns-over-exhibit-on-displaced-palestinians" target="_blank" rel="noopener">Human rights museum board trustee resigns over exhibit on displaced Palestinians Brandon Sun</a>
+                    <small>www.brandonsun.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">Anniversary of the Nazi invasion of the Soviet Union: Pistorius prepares war against Russia in Lithuania - World Socialist Web Site</a>
+                    <small>www.wsws.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.flightglobal.com/archive/2026/06/airbus-helicopters-chief-plays-down-prospects-of-high-speed-programme-without-military-money/" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.flightglobal.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://comicbook.com/comics/list/10-best-marvel-villains-without-superpowers/" target="_blank" rel="noopener">10 Best Marvel Villains Without Superpowers - ComicBook.com</a>
+                    <small>comicbook.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -388,52 +474,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.jpost.com/international/article-899215" target="_blank" rel="noopener">Hamburg airport terminal evacuated after security incident</a>
-                        <small>jpost.com 20260612T114500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/c/24758b6f6f/zaloznickata-kriza-vo-dortmund-srpski-drzavjanin-rani-policaec-i-drzi-dve-deca.html" target="_blank" rel="noopener">Заложничката криза во Дортмунд . Српски државјанин рани полицаец и држи две деца</a>
-                        <small>time.mk 20260603T053000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/ai/8bb7a71c6f/mk/" target="_blank" rel="noopener">Time . ai</a>
-                        <small>time.mk 20260603T053000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://english.news.cn/europe/20260612/d88979ada3b648d0b04ef4efb6c39d08/c.html" target="_blank" rel="noopener">Flash : Airport in Germany Hamburg evacuated after security incident : reports citing police - Xinhua</a>
-                        <small>english.news.cn 20260612T104500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.rundschau-online.de:443/wirtschaft/uber-in-deutschland-neue-audio-aufnahme-funktion-soll-fuer-mehr-sicherheit-sorgen-datenschuetzer-alarmiert-1289583" target="_blank" rel="noopener">Uber in Deutschland : Neue Audio - Aufnahme - Funktion soll für mehr Sicherheit sorgen – Datenschützer alarmiert</a>
-                        <small>rundschau-online.de 20260529T091500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.politika.rs/scc/clanak/746500/razbijeni-izlozi-na-izraelskom-restoranu-i-ubacena-pirotehnika" target="_blank" rel="noopener">Разбијени излози на израелском ресторану и убачена пиротехника</a>
-                        <small>politika.rs 20260410T184500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://internetua.com/amerikanski-piloti-vipadkovo-opriluadnili-tocski-yadernoyi-zbroyi-ssha-v-yevropi" target="_blank" rel="noopener">Американські пілоти випадково оприлюднили точки ядерної зброї США в Європі</a>
-                        <small>internetua.com 20260429T233000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.zeit.de/news/2026-05/29/uber-erlaubt-tonaufnahmen-neue-sicherheitsfunktion-startet" target="_blank" rel="noopener">Fahrdienstvermittler : Uber erlaubt Tonaufnahmen – neue Sicherheitsfunktion startet</a>
-                        <small>zeit.de 20260529T074500Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Berlin, Germany&quot; &quot;Germany&quot; &quot;armed clash&quot;</li><li>&quot;Germany&quot; &quot;armed clash&quot;</li><li>&quot;Berlin, Germany&quot; &quot;Germany&quot; &quot;shooting&quot;</li><li>&quot;Germany&quot; &quot;shooting&quot;</li><li>&quot;Berlin, Germany&quot; &quot;Germany&quot; &quot;security incident&quot;</li><li>&quot;Germany&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Berlin, Germany&quot; &quot;Germany&quot; &quot;russia&quot; &quot;raid&quot;</li><li>&quot;Germany&quot; &quot;russia&quot; &quot;raid&quot;</li><li>&quot;Berlin, Germany&quot; &quot;raid&quot;</li><li>&quot;russia&quot; &quot;raid&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -441,23 +487,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#5</span>
-                    <strong>Fegyveres összecsapás – Rome, Lazio, Italy</strong>
+                    <strong>Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever</strong>
                 </div>
 
                 <div class="meta">
                     Rome, Lazio, Italy / Italy
                     · Fegyveres összecsapás
                     · Score 67
-                    · Cluster records 1
-                    · Source domains 41
+                    · Original domains 41
+                    · Fingerprint confidence Low
                 </div>
 
-                <p>The original event cluster contains 47 source URLs across 41 source domains. Visible domains include: abcnews.com, aleteia.org, allafrica.com, chattooga1180.com, countercurrents.org. Main raw title pattern: fight – Rome, Lazio, Italy. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 47 source URLs across 41 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: No actor hint</span>
+                    <span>Conflict terms: war</span>
+                    <span>Keywords: italian, prosecutors, long, jail, terms, student, june, one, life, murder</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/" target="_blank" rel="noopener">www.usmagazine.com</a></li><li><a href="http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions" target="_blank" rel="noopener">www.bgnes.com</a></li><li><a href="https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student" target="_blank" rel="noopener">www.internazionale.it</a></li><li><a href="https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/" target="_blank" rel="noopener">www.eurasiareview.com</a></li><li><a href="https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/" target="_blank" rel="noopener">www.eurasiareview.com</a></li><li><a href="https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html" target="_blank" rel="noopener">www.dailymail.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/" target="_blank" rel="noopener">Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever</a>
+                    <small>www.usmagazine.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions" target="_blank" rel="noopener">Heatwave hits Europe: record temperatures, closed schools and tourist attractions | BGNES</a>
+                    <small>www.bgnes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student" target="_blank" rel="noopener">Italian prosecutors demand long jail terms for Egyptians over murder of Italian student - Internazionale</a>
+                    <small>www.internazionale.it · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.eurasiareview.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.eurasiareview.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html" target="_blank" rel="noopener">ANDREW NEIL: The radical reforms of Blair and Thatcher are impossible now. That&#x27;s why, with seven PMs in a decade, even the Italians are laughing at us | Daily Mail Online</a>
+                    <small>www.dailymail.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://allafrica.com/stories/202606230099.html" target="_blank" rel="noopener">Africa: All of Africa Today - June 23, 2026 - allAfrica.com</a>
+                    <small>allafrica.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/" target="_blank" rel="noopener">Students’ lives on hold in Gaza | Countercurrents</a>
+                    <small>countercurrents.org · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -467,12 +560,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Rome, Lazio, Italy&quot; &quot;Italy&quot; &quot;armed clash&quot;</li><li>&quot;Italy&quot; &quot;armed clash&quot;</li><li>&quot;Rome, Lazio, Italy&quot; &quot;Italy&quot; &quot;shooting&quot;</li><li>&quot;Italy&quot; &quot;shooting&quot;</li><li>&quot;Rome, Lazio, Italy&quot; &quot;Italy&quot; &quot;security incident&quot;</li><li>&quot;Italy&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Rome, Lazio, Italy&quot; &quot;war&quot;</li><li>&quot;Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever&quot;</li></ol>
                     </div>
                 </div>
             </article>
@@ -485,23 +578,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#1</span>
-                    <strong>Robbantás / IED – Odesa, Odesa Oblast, Ukraine</strong>
+                    <strong>Moscow shoots down dozens of drones, flights briefly halted</strong>
                 </div>
 
                 <div class="meta">
                     Odesa, Odesa Oblast, Ukraine / Ukraine
                     · Robbantás / IED
                     · Score 97
-                    · Cluster records 1
-                    · Source domains 21
+                    · Original domains 21
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 25 source URLs across 21 source domains. Visible domains include: aninews.in, athens-times.com, en.interfax.com.ua, euobserver.com, georgiatoday.ge. Main raw title pattern: fight – Odesa, Odes&#x27;ka Oblast, Ukraine. The supplementary public media search found 10 additional related items across 5 domains. Main additional domains: iz.ru, ria.ru, unian.net, ynet.co.il, unian.ua. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 25 source URLs across 21 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian, nato, zelensky</span>
+                    <span>Conflict terms: missile, drone, uav, strike, attack, blast, assault, intercept</span>
+                    <span>Keywords: moscow, drones, down, airports, authorities, dozens, briefly, attacks, odesa, shoots</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations" target="_blank" rel="noopener">www.floridastatesman.com</a></li><li><a href="https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/" target="_blank" rel="noopener">neweasterneurope.eu</a></li><li><a href="https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn" target="_blank" rel="noopener">www.bankingnews.gr</a></li><li><a href="https://www.kyivpost.com/post/78794" target="_blank" rel="noopener">www.kyivpost.com</a></li><li><a href="https://timesofindia.indiatimes.com/world/europe/drone-scare-over-moscow-four-airports-shut-nearly-60-uavs-shot-down/articleshow/131900345.cms" target="_blank" rel="noopener">timesofindia.indiatimes.com</a></li><li><a href="https://athens-times.com/four-moscow-airports-closed-after-massive-ukrainian-drone-attack/" target="_blank" rel="noopener">athens-times.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations" target="_blank" rel="noopener">Moscow shoots down dozens of drones, flights briefly halted</a>
+                    <small>www.floridastatesman.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/" target="_blank" rel="noopener">Building trust across borders: Rethinking Ukrainian–Romanian relations in a changing Europe - New Eastern Europe</a>
+                    <small>neweasterneurope.eu · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn" target="_blank" rel="noopener">Zelensky strategic blunder if he attacks Belarus or Crimean Bridge, Russia warns: Western Ukraine and Odesa will burn</a>
+                    <small>www.bankingnews.gr · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.kyivpost.com/post/78794" target="_blank" rel="noopener">Russian Drone Shrapnel Kills 26-Year-Old Woman on Odesa Beach</a>
+                    <small>www.kyivpost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://timesofindia.indiatimes.com/world/europe/drone-scare-over-moscow-four-airports-shut-nearly-60-uavs-shot-down/articleshow/131900345.cms" target="_blank" rel="noopener">Russia Ukraine War: Drone scare over Moscow: Four airports shut, nearly 60 UAVs shot down - The Times of India</a>
+                    <small>timesofindia.indiatimes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://athens-times.com/four-moscow-airports-closed-after-massive-ukrainian-drone-attack/" target="_blank" rel="noopener">4 Moscow Airports Closed After Drone Attack</a>
+                    <small>athens-times.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.merimbulanewsweekly.com.au/story/9296344/moscow-shoots-down-nearly-60-drones-airports-reopen/" target="_blank" rel="noopener">Moscow shoots down almost 60 drones, airports reopen | Merimbula News Weekly | Merimbula, NSW</a>
+                    <small>www.merimbulanewsweekly.com.au · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.internazionale.it/ultime-notizie-reuters/2026/06/22/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.internazionale.it · error</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -511,52 +651,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://iz.ru/2085570/2026-04-24/ukrainskie-smi-soobshchili-o-proizoshedshem-v-nikolaeve-vzryve" target="_blank" rel="noopener">В Николаеве на Украине слышен взрыв : что известно</a>
-                        <small>iz.ru 20260424T204500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://ria.ru/20260618/vzryv-2099663469.html" target="_blank" rel="noopener">В Сумах прогремел взрыв</a>
-                        <small>ria.ru 20260618T120000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://ria.ru/20260618/ukraina-2099566141.html" target="_blank" rel="noopener">В Сумах прогремел еще один взрыв</a>
-                        <small>ria.ru 20260617T234500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://ria.ru/20260415/vzryv-2087274670.html" target="_blank" rel="noopener">В Чернигове прогремел взрыв</a>
-                        <small>ria.ru 20260415T201500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.unian.net/incidents/brovary-v-gorode-proizoshel-terakt-est-ranenyy-novosti-kieva-13348239.html" target="_blank" rel="noopener">Бровары - в городе произошел теракт , есть раненый</a>
-                        <small>unian.net 20260414T090000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.ynet.co.il/news/article/skgydulwmg" target="_blank" rel="noopener">מלחמת אוקראינה – רוסיה : חיסול גנרל סמוך למוסקבה</a>
-                        <small>ynet.co.il 20260610T111500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://ria.ru/20260415/ukraina-2087109269.html" target="_blank" rel="noopener">В Черкассах снова прогремел взрыв</a>
-                        <small>ria.ru 20260415T023000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://ria.ru/20260415/vzryv-2087274141.html" target="_blank" rel="noopener">В Сумах прогремел новый взрыв</a>
-                        <small>ria.ru 20260415T200000Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Odesa, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;explosion&quot;</li><li>&quot;Ukraine&quot; &quot;explosion&quot;</li><li>&quot;Odesa, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;bombing&quot;</li><li>&quot;Ukraine&quot; &quot;bombing&quot;</li><li>&quot;Odesa, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;IED&quot;</li><li>&quot;Ukraine&quot; &quot;IED&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Odesa, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Odesa, Odesa Oblast, Ukraine&quot; &quot;missile&quot;</li><li>&quot;russia&quot; &quot;missile&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -564,23 +664,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#2</span>
-                    <strong>Robbantás / IED – Novoselivka, Odesa Oblast, Ukraine</strong>
+                    <strong>Ukraine Invasion Day 1,580: Is Crimea burning? Are the little green men leaving? - Daily Kos</strong>
                 </div>
 
                 <div class="meta">
                     Novoselivka, Odesa Oblast, Ukraine / Ukraine
                     · Robbantás / IED
                     · Score 92
-                    · Cluster records 1
-                    · Source domains 3
+                    · Original domains 3
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 8 source URLs across 3 source domains. Visible domains include: en.interfax.com.ua, www.dailykos.com, www.rightspeak.net. Main raw title pattern: fight – Novoselivka, Odes&#x27;ka Oblast, Ukraine. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 8 source URLs across 3 domains. 7 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian</span>
+                    <span>Conflict terms: attack, blast, war</span>
+                    <span>Keywords: day, forces, pokrovsk, general, staff, axes, invasion, daily, kos, hulyaipole</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="http://www.rightspeak.net/2026/06/158-c-clashes-in-f-line-25-in-pokrovsk.html" target="_blank" rel="noopener">www.rightspeak.net</a></li><li><a href="https://www.dailykos.com/stories/2026/6/22/800059362/community/1580/" target="_blank" rel="noopener">www.dailykos.com</a></li><li><a href="https://en.interfax.com.ua/news/general/1178771.html" target="_blank" rel="noopener">en.interfax.com.ua</a></li><li><a href="https://www.dailykos.com/stories/2026/6/22/800058649/community/1579/" target="_blank" rel="noopener">www.dailykos.com</a></li><li><a href="https://www.dailykos.com/stories/2026/6/19/800058109/community/ukraine-invasion-day-1577/" target="_blank" rel="noopener">www.dailykos.com</a></li><li><a href="https://en.interfax.com.ua/news/general/1177817.html" target="_blank" rel="noopener">en.interfax.com.ua</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="http://www.rightspeak.net/2026/06/158-c-clashes-in-f-line-25-in-pokrovsk.html" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.rightspeak.net · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/22/800059362/community/1580/" target="_blank" rel="noopener">Ukraine Invasion Day 1,580: Is Crimea burning? Are the little green men leaving? - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://en.interfax.com.ua/news/general/1178771.html" target="_blank" rel="noopener">Some 158 battles occur on front over day, most on Pokrovsk and Huliaipole axes – General Staff</a>
+                    <small>en.interfax.com.ua · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/22/800058649/community/1579/" target="_blank" rel="noopener">Ukraine Invasion Day 1,579: Low-cost mass + defenders’ prior attrition + adaptive routing - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/19/800058109/community/ukraine-invasion-day-1577/" target="_blank" rel="noopener">Ukraine Invasion Day 1,577: Moscow refineries hit again - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://en.interfax.com.ua/news/general/1177817.html" target="_blank" rel="noopener">204 engagements recorded on the front over the past day, most on Pokrovsk and Hulyaipole axes – General Staff</a>
+                    <small>en.interfax.com.ua · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/16/800056613/community/1574/" target="_blank" rel="noopener">Ukraine Invasion Day 1,574: “political codification of a battlefield reality” - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://en.interfax.com.ua/news/general/1177135.html" target="_blank" rel="noopener">182 engagements recorded on the front over the past day, most on Pokrovsk and Hulyaipole axes – General Staff</a>
+                    <small>en.interfax.com.ua · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -590,12 +737,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Novoselivka, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;explosion&quot;</li><li>&quot;Ukraine&quot; &quot;explosion&quot;</li><li>&quot;Novoselivka, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;bombing&quot;</li><li>&quot;Ukraine&quot; &quot;bombing&quot;</li><li>&quot;Novoselivka, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;IED&quot;</li><li>&quot;Ukraine&quot; &quot;IED&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Novoselivka, Odesa Oblast, Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;attack&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;attack&quot;</li><li>&quot;Novoselivka, Odesa Oblast, Ukraine&quot; &quot;attack&quot;</li><li>&quot;russia&quot; &quot;attack&quot; 2026-06-23</li></ol>
                     </div>
                 </div>
             </article>
@@ -603,23 +750,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#3</span>
-                    <strong>Fegyveres összecsapás – Kyiv, Misto, Ukraine</strong>
+                    <strong>Britain must be ready to strike Russia within 30 minutes, Army chief | UK | News | Express.co.uk</strong>
                 </div>
 
                 <div class="meta">
                     Kyiv, Misto, Ukraine / Ukraine
                     · Fegyveres összecsapás
                     · Score 87
-                    · Cluster records 1
-                    · Source domains 84
+                    · Original domains 84
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 112 source URLs across 84 source domains. Visible domains include: aa.com.tr, abcnews.com, athens-times.com, cyprus-mail.com, dominicanrepublicpost.com. Main raw title pattern: fight – Kyiv, Kyyiv, Misto, Ukraine. The supplementary public media search found 10 additional related items across 9 domains. Main additional domains: yahoo.com, canberratimes.com.au, republika.mk, time.mk, dailysabah.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 112 source URLs across 84 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian, army, military, trump, putin</span>
+                    <span>Conflict terms: missile, drone, strike, attack, injured, war</span>
+                    <span>Keywords: crimea, kyiv, power, crimean, hit, peninsula, plant, targets, been, railway</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning" target="_blank" rel="noopener">www.express.co.uk</a></li><li><a href="https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/" target="_blank" rel="noopener">www.dailykos.com</a></li><li><a href="https://www.freemalaysiatoday.com/category/world/2026/06/24/ukrainian-strike-cuts-power-to-crimean-city" target="_blank" rel="noopener">www.freemalaysiatoday.com</a></li><li><a href="https://dominicanrepublicpost.com/ukraines-recovery-to-be-deliberated-in-poland-amid-kyiv-warsaw-spat/" target="_blank" rel="noopener">dominicanrepublicpost.com</a></li><li><a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-peace-talks-b3001811.html" target="_blank" rel="noopener">www.independent.co.uk</a></li><li><a href="https://www.wgauradio.com/news/business/ukraine-says-it-hit/ZZ6AOH4IAIZUZLCE2PUQVZRROE/" target="_blank" rel="noopener">www.wgauradio.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning" target="_blank" rel="noopener">Britain must be ready to strike Russia within 30 minutes, Army chief | UK | News | Express.co.uk</a>
+                    <small>www.express.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/" target="_blank" rel="noopener">Ukraine Invasion Day 1,581: RU leveraging Belarusian territory, airspace, and repeaters to strike UKR - Daily Kos</a>
+                    <small>www.dailykos.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.freemalaysiatoday.com/category/world/2026/06/24/ukrainian-strike-cuts-power-to-crimean-city" target="_blank" rel="noopener">Ukrainian strike cuts power to Crimean city | FMT</a>
+                    <small>www.freemalaysiatoday.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://dominicanrepublicpost.com/ukraines-recovery-to-be-deliberated-in-poland-amid-kyiv-warsaw-spat/" target="_blank" rel="noopener">Ukraine’s recovery to be deliberated in Poland amid Kyiv-Warsaw spat - Dominican Republic Post – Caribbean News, Business, Travel Culture</a>
+                    <small>dominicanrepublicpost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-peace-talks-b3001811.html" target="_blank" rel="noopener">Ukraine-Russia war latest: Zelensky threatens Kyiv will pre-emptively attack Putin’s facilities linked to war | The Independent</a>
+                    <small>www.independent.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.wgauradio.com/news/business/ukraine-says-it-hit/ZZ6AOH4IAIZUZLCE2PUQVZRROE/" target="_blank" rel="noopener">Ukraine says it hit a railway bridge to Crimea, seeking to isolate the Russian-held peninsula – WGAU</a>
+                    <small>www.wgauradio.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.kyivpost.com/post/78839" target="_blank" rel="noopener">Ukraine Targets Crimean Supply Lines</a>
+                    <small>www.kyivpost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.newcastleherald.com.au/story/9298784/ukrainian-strikes-knock-out-power-in-russia-held-crimea/" target="_blank" rel="noopener">Ukrainian strikes knock out power in Russia-held Crimea | Newcastle Herald | Newcastle, NSW</a>
+                    <small>www.newcastleherald.com.au · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -629,52 +823,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.yahoo.com/news/articles/marine-drone-self-detonates-romanian-085425100.html" target="_blank" rel="noopener">Marine drone self - detonates in Romanian port as Black Sea threat widens</a>
-                        <small>yahoo.com 20260605T114500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.canberratimes.com.au/story/9215167/explosives-found-near-pipeline-as-hungary-vote-looms/" target="_blank" rel="noopener">Explosives found near pipeline as Hungary vote looms</a>
-                        <small>canberratimes.com.au 20260405T221500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://republika.mk/vesti/svet/romanija-go-zatvora-ruskiot-konzulat-i-go-proteruva-konzulot/" target="_blank" rel="noopener">Романија го затвора рускиот конзулат и го протерува конзулот</a>
-                        <small>republika.mk 20260529T173000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/ai/c4c146bf60/mk/" target="_blank" rel="noopener">Time . ai</a>
-                        <small>time.mk 20260406T101500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.dailysabah.com/world/europe/french-nato-jet-shoots-down-stray-drone-over-latvian-airspace" target="_blank" rel="noopener">French - NATO jet shoots down stray drone over Latvian airspace</a>
-                        <small>dailysabah.com 20260608T113000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.obozrevatel.com/ukr/novosti-mir/u-rumunii-prezident-sklikav-naradu-cherez-vibuh-ukrainskogo-morskogo-drona.htm" target="_blank" rel="noopener">Румунія - через вибух українського дрона президент скликав нараду</a>
-                        <small>obozrevatel.com 20260606T104500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.vizionplus.tv/dron-i-paidentifikuar-ne-hapesiren-ajrore-te-letonise-nato-ngre-avionet-luftarake/" target="_blank" rel="noopener">Dron i paidentifikuar në hapësirën ajrore të Letonisë , NATO ngre avionët luftarakë</a>
-                        <small>vizionplus.tv 20260521T151500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/ai/a3ced4b9ae/mk/" target="_blank" rel="noopener">Time . ai</a>
-                        <small>time.mk 20260406T093000Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Kyiv, Misto, Ukraine&quot; &quot;Ukraine&quot; &quot;armed clash&quot;</li><li>&quot;Ukraine&quot; &quot;armed clash&quot;</li><li>&quot;Kyiv, Misto, Ukraine&quot; &quot;Ukraine&quot; &quot;shooting&quot;</li><li>&quot;Ukraine&quot; &quot;shooting&quot;</li><li>&quot;Kyiv, Misto, Ukraine&quot; &quot;Ukraine&quot; &quot;security incident&quot;</li><li>&quot;Ukraine&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Kyiv, Misto, Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Kyiv, Misto, Ukraine&quot; &quot;missile&quot;</li><li>&quot;russia&quot; &quot;missile&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -682,23 +836,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#4</span>
-                    <strong>Fegyveres összecsapás – Kyiv, Ukraine, Ukraine</strong>
+                    <strong>‘Neo-Nazi Kiev knowingly pursuing the deliberate, intentional destruction of civilians’ – Dmitry Medvedev - Workers Revolutionary Party</strong>
                 </div>
 
                 <div class="meta">
-                    Kyiv, Ukraine, Ukraine / Ukraine
+                    Kyiv, Ukraine / Ukraine
                     · Fegyveres összecsapás
                     · Score 87
-                    · Cluster records 1
-                    · Source domains 23
+                    · Original domains 23
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 43 source URLs across 23 source domains. Visible domains include: english.news.cn, jewishworldreview.com, kesq.com, nuclear-news.net, sputnikglobe.com. Main raw title pattern: fight – Kiev, Ukraine (general), Ukraine. The supplementary public media search found 10 additional related items across 8 domains. Main additional domains: blic.rs, glavred.info, tsn.ua, metrotvnews.com, gazeta.ua. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 43 source URLs across 23 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian, nato, army, military, putin</span>
+                    <span>Conflict terms: drone, strike, fire, war</span>
+                    <span>Keywords: waiting, against, soviet, union, drones, moscow, kiev, agreements, implemented, victory</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://wrp.org.uk/features/neo-nazi-kiev-knowingly-pursuing-the-deliberate-intentional-destruction-of-civilians-dmitry-medvedev/" target="_blank" rel="noopener">wrp.org.uk</a></li><li><a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">www.wsws.org</a></li><li><a href="https://www.bankingnews.gr/diethni/articles/883627/trump-drowned-starmer-in-the-north-sea-oil-production-collapses-by-90-london-loses-its-last-strategic-weapon" target="_blank" rel="noopener">www.bankingnews.gr</a></li><li><a href="https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260622-presstv01.htm" target="_blank" rel="noopener">www.globalsecurity.org</a></li><li><a href="https://sputnikglobe.com/20260623/enemy-is-losing-territory-piece-by-piece---putin-1124349439.html" target="_blank" rel="noopener">sputnikglobe.com</a></li><li><a href="https://www.yahoo.com/news/politics/articles/putin-says-nato-preparing-war-175734067.html" target="_blank" rel="noopener">www.yahoo.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://wrp.org.uk/features/neo-nazi-kiev-knowingly-pursuing-the-deliberate-intentional-destruction-of-civilians-dmitry-medvedev/" target="_blank" rel="noopener">‘Neo-Nazi Kiev knowingly pursuing the deliberate, intentional destruction of civilians’ – Dmitry Medvedev - Workers Revolutionary Party</a>
+                    <small>wrp.org.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">Anniversary of the Nazi invasion of the Soviet Union: Pistorius prepares war against Russia in Lithuania - World Socialist Web Site</a>
+                    <small>www.wsws.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.bankingnews.gr/diethni/articles/883627/trump-drowned-starmer-in-the-north-sea-oil-production-collapses-by-90-london-loses-its-last-strategic-weapon" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.bankingnews.gr · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260622-presstv01.htm" target="_blank" rel="noopener">Russian air defense shoots down 84 drones approaching capital: Moscow Mayor</a>
+                    <small>www.globalsecurity.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://sputnikglobe.com/20260623/enemy-is-losing-territory-piece-by-piece---putin-1124349439.html" target="_blank" rel="noopener">No title extracted</a>
+                    <small>sputnikglobe.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.yahoo.com/news/politics/articles/putin-says-nato-preparing-war-175734067.html" target="_blank" rel="noopener">Putin says NATO is preparing for war against Russia</a>
+                    <small>www.yahoo.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.odnako.org/moscow-under-a-rain-of-drones-zelensky-it-will-burn-with-us-refinery-set-on-fire-lavrov-promises-harsh-response/" target="_blank" rel="noopener">Moscow under a rain of drones. Zelensky: It will burn with us. Refinery set on fire, Lavrov promises harsh response</a>
+                    <small>www.odnako.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.zerohedge.com/energy/fuel-sales-abruptly-halted-crimean-population-ukraine-drone-waves-wreak-havoc" target="_blank" rel="noopener">Fuel Sales Abruptly Halted For Crimean Population As Ukrainian Drones Wreak Havoc | ZeroHedge</a>
+                    <small>www.zerohedge.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -708,52 +909,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.blic.rs/vesti/svet/ukrajinska-sbu-danasnju-pucnjavu-u-kijevu-klasifikovala-kao-teroristicki-cin/ppdv9v8" target="_blank" rel="noopener">Ukrajinska SBU današnju pucnjavu u Kijevu klasifikovala kao teroristički čin</a>
-                        <small>blic.rs 20260418T223000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://glavred.info/ukraine/strelba-v-shkole-v-zakarpate-uchenik-9-go-klassa-vystrelil-iz-pistoleta-v-odnoklassnika-10757078.html" target="_blank" rel="noopener">Новости Украины - в Закарпатье школьник устроил стрельбу</a>
-                        <small>glavred.info 20260416T084500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://tsn.ua/exclusive/strilianyna-u-kyyevi-napadnyky-tayemno-peretnuly-kordon-odyn-z-nykh-u-shliubi-z-ukrayinkoiu-3105812.html" target="_blank" rel="noopener">Стрілянина в Києві – вбито двох квартирних крадіїв Ексклюзив ТСН</a>
-                        <small>tsn.ua 20260614T133000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.metrotvnews.com/read/NP6CLVX0-penembakan-di-kyiv-tewaskan-enam-orang-pelaku-dilumpuhkan-pasukan-khusus" target="_blank" rel="noopener">Penembakan di Kyiv Tewaskan Enam Orang , Pelaku Dilumpuhkan Pasukan Khusus</a>
-                        <small>metrotvnews.com 20260419T100000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://gazeta.ua/articles/kiev-life/_u-kiyevi-vidbulasya-strilyanina-vnaslidok-yakoyi-zaginuli-dvoye-cholovikiv/1252645" target="_blank" rel="noopener">Стрілянина у Києві - застрелили мігрантів | Новини на Gazeta . ua</a>
-                        <small>gazeta.ua 20260613T190000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://haqqin.az/newsarchive/381634" target="_blank" rel="noopener">Стрельба в Киеве : подробности - видео ; обновлено 20 : 29</a>
-                        <small>haqqin.az 20260418T171500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://life.ru/p/1874299" target="_blank" rel="noopener">На Украине произошла стрельба в горсовете под Кировоградом</a>
-                        <small>life.ru 20260512T123000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://glavred.info/ukraine/strelba-na-oboloni-v-kieve-voditel-otkryl-ogon-posle-ssory-na-doroge-10769348.html" target="_blank" rel="noopener">Стрельба в Киеве - на Оболони дорожный спор закончился ранением</a>
-                        <small>glavred.info 20260601T081500Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Kyiv, Ukraine, Ukraine&quot; &quot;Ukraine&quot; &quot;armed clash&quot;</li><li>&quot;Ukraine&quot; &quot;armed clash&quot;</li><li>&quot;Kyiv, Ukraine, Ukraine&quot; &quot;Ukraine&quot; &quot;shooting&quot;</li><li>&quot;Ukraine&quot; &quot;shooting&quot;</li><li>&quot;Kyiv, Ukraine, Ukraine&quot; &quot;Ukraine&quot; &quot;security incident&quot;</li><li>&quot;Ukraine&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Kyiv, Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;drone&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;drone&quot;</li><li>&quot;Kyiv, Ukraine&quot; &quot;drone&quot;</li><li>&quot;russia&quot; &quot;drone&quot; 2026-06-23</li></ol>
                     </div>
                 </div>
             </article>
@@ -761,23 +922,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#5</span>
-                    <strong>Rajtaütés / fegyveres támadás – Ukraine</strong>
+                    <strong>Caucasian Knot | A fighter from Dagestan was killed in the SVO zone.</strong>
                 </div>
 
                 <div class="meta">
                     Ukraine / Ukraine
                     · Rajtaütés / fegyveres támadás
                     · Score 75
-                    · Cluster records 1
-                    · Source domains 49
+                    · Original domains 49
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 59 source URLs across 49 source domains. Visible domains include: 1190talkradio.iheart.com, aa.com.tr, article.wn.com, dailytimes.com.pk, eaworldview.com. Main raw title pattern: assault – Ukraine. The supplementary public media search found 20 additional related items across 18 domains. Main additional domains: kompas.com, merdeka.com, wartakota.tribunnews.com, dw.com, tribunnews.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 59 source URLs across 49 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine, ukrainian, military, zelensky, zelenskyy</span>
+                    <span>Conflict terms: missile, drone, uav, strike, attack, assault, killed, injured</span>
+                    <span>Keywords: tanks, attacks, dagestan, since, been, five, city, times</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.eng.kavkaz-uzel.eu/articles/76377" target="_blank" rel="noopener">www.eng.kavkaz-uzel.eu</a></li><li><a href="https://www.sb.by/en/russian-investigative-committee-individuals-involved-in-attack-on-passenger-bus-in-bryansk-region-id.html" target="_blank" rel="noopener">www.sb.by</a></li><li><a href="https://dailytimes.com.pk/1512127/five-killed-in-ukrainian-missile-strike-on-russian-city/" target="_blank" rel="noopener">dailytimes.com.pk</a></li><li><a href="https://www.shephardmedia.com/news/air-warfare/eurosatory-2026-wartime-iteration-gives-ukraine-an-edge-as-future-uav-exporter/" target="_blank" rel="noopener">www.shephardmedia.com</a></li><li><a href="https://1190talkradio.iheart.com/content/2026-06-21-ukraine-sees-military-milestones-in-deadly-drone-distance/" target="_blank" rel="noopener">1190talkradio.iheart.com</a></li><li><a href="https://en.interfax.com.ua/news/general/1178619.html" target="_blank" rel="noopener">en.interfax.com.ua</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.eng.kavkaz-uzel.eu/articles/76377" target="_blank" rel="noopener">Caucasian Knot | A fighter from Dagestan was killed in the SVO zone.</a>
+                    <small>www.eng.kavkaz-uzel.eu · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.sb.by/en/russian-investigative-committee-individuals-involved-in-attack-on-passenger-bus-in-bryansk-region-id.html" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.sb.by · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://dailytimes.com.pk/1512127/five-killed-in-ukrainian-missile-strike-on-russian-city/" target="_blank" rel="noopener">Five killed in Ukrainian missile strike on Russian city - Daily Times</a>
+                    <small>dailytimes.com.pk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.shephardmedia.com/news/air-warfare/eurosatory-2026-wartime-iteration-gives-ukraine-an-edge-as-future-uav-exporter/" target="_blank" rel="noopener">Eurosatory 2026: Wartime iteration gives Ukraine an edge as future UAV exporter | Shephard</a>
+                    <small>www.shephardmedia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://1190talkradio.iheart.com/content/2026-06-21-ukraine-sees-military-milestones-in-deadly-drone-distance/" target="_blank" rel="noopener">Ukraine Sees Military Milestones in Russian War Drone Distance | Talk Radio 1190</a>
+                    <small>1190talkradio.iheart.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://en.interfax.com.ua/news/general/1178619.html" target="_blank" rel="noopener">Nawrocki claims harm from Ukrainian nationalists and says situation with order does not concern elections</a>
+                    <small>en.interfax.com.ua · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.strategypage.com/%5Chtmw%5Chtarm%5Carticles%5C2026062054344.aspx" target="_blank" rel="noopener">Armor: Once More Tanks Remain Relevant</a>
+                    <small>www.strategypage.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://timesofindia.indiatimes.com/world/uk/ukraine-born-duo-jailed-over-russia-backed-arson-attacks-on-properties-linked-to-uk-pm-keirstarmer/articleshow/131873493.cms" target="_blank" rel="noopener">Ukraine-born duo jailed over Russia-backed arson attacks on properties linked to UK PM Keir Starmer - The Times of India</a>
+                    <small>timesofindia.indiatimes.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -787,52 +995,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.kompas.com/global/read/2026/06/23/130126570/ukraina-mulai-kehilangan-kesabaran-tawaran-damai-bisa-berubah" target="_blank" rel="noopener">Ukraina Mulai Kehilangan Kesabaran , Tawaran Damai Bisa Berubah</a>
-                        <small>kompas.com 20260623T063000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.merdeka.com/dunia/foto-rudal-rusia-hantam-katedral-bersejarah-di-kyiv-puluhan-warga-terluka-583589-mvk.html" target="_blank" rel="noopener">FOTO : Rudal Rusia Hantam Katedral Bersejarah di Kyiv Puluhan Warga Terluka</a>
-                        <small>merdeka.com 20260615T031500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://wartakota.tribunnews.com/news/893435/ukraina-pakai-taktik-iran-untuk-lawan-negara-adidaya-rusia" target="_blank" rel="noopener">Ukraina Pakai Taktik Iran untuk Lawan Negara Adidaya Rusia</a>
-                        <small>wartakota.tribunnews.com 20260623T124500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://wartakota.tribunnews.com/news/893076/rusia-bersumpah-akan-balas-serangan-ribuan-drone-ukraina" target="_blank" rel="noopener">Rusia Bersumpah akan Balas Serangan Ribuan Drone Ukraina</a>
-                        <small>wartakota.tribunnews.com 20260619T090000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.dw.com/id/serangan-rusia-ke-ukraina-tewaskan-lebih-dari-20-orang/a-77166559" target="_blank" rel="noopener">Serangan Rusia ke Ukraina Tewaskan Lebih dari 20 Orang</a>
-                        <small>dw.com 20260515T104500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.tribunnews.com/internasional/7844669/ukraina-serang-kilang-minyak-rusia-berjarak-2000-kilometer-dari-perbatasan-krimea-ikut-digempur" target="_blank" rel="noopener">Ukraina Serang Kilang Minyak Rusia Berjarak 2 . 000 Kilometer dari Perbatasan , Krimea Ikut Digempur</a>
-                        <small>tribunnews.com 20260621T051500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.protothema.gr/world/article/1839839/rosiki-epithesi-prokalei-ton-thanato-trion-anthropon-stin-oukraniki-poli-krivih-rih/" target="_blank" rel="noopener">Ρωσική επίθεση προκαλεί τον θάνατο τριών ανθρώπων στην ουκρανική πόλη Κριβίχ Ριχ</a>
-                        <small>protothema.gr 20260623T154500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.antaranews.com/berita/5579581/china-kecam-serangan-ukraina-ke-asrama-mahasiswa-luhansk" target="_blank" rel="noopener">China kecam serangan Ukraina ke asrama mahasiswa Luhansk</a>
-                        <small>antaranews.com 20260523T093000Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Ukraine&quot; &quot;Ukraine&quot; &quot;armed attack&quot;</li><li>&quot;Ukraine&quot; &quot;armed attack&quot;</li><li>&quot;Ukraine&quot; &quot;Ukraine&quot; &quot;assault&quot;</li><li>&quot;Ukraine&quot; &quot;assault&quot;</li><li>&quot;Ukraine&quot; &quot;Ukraine&quot; &quot;shooting&quot;</li><li>&quot;Ukraine&quot; &quot;shooting&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;missile&quot;</li><li>&quot;Ukraine&quot; &quot;missile&quot;</li><li>&quot;russia&quot; &quot;missile&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -845,23 +1013,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#1</span>
-                    <strong>Fegyveres összecsapás – Ankara, Turkey</strong>
+                    <strong>Turkey detains 209 in raids ahead of July s NATO summit - News Today | First with the news</strong>
                 </div>
 
                 <div class="meta">
                     Ankara, Turkey / Turkey
                     · Fegyveres összecsapás
                     · Score 65
-                    · Cluster records 1
-                    · Source domains 17
+                    · Original domains 17
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 22 source URLs across 17 source domains. Visible domains include: bianet.org, cyprus-mail.com, english.aawsat.com, english.news.cn, news.az. Main raw title pattern: fight – Ankara, Ankara, Turkey. The supplementary public media search found 20 additional related items across 18 domains. Main additional domains: theshillongtimes.com, newkerala.com, middleeasteye.net, yahoo.com, jpost.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 22 source URLs across 17 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: nato, police, security forces, trump</span>
+                    <span>Conflict terms: drone, shooting, clash, raid, killed, wounded, terror</span>
+                    <span>Keywords: turkish, summit, capital, raids, ahead, ankara, turkey, tuesday, suspected, group</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/" target="_blank" rel="noopener">newstodaynet.com</a></li><li><a href="https://www.arabnews.com/node/2648399/middle-east" target="_blank" rel="noopener">www.arabnews.com</a></li><li><a href="https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html" target="_blank" rel="noopener">english.news.cn</a></li><li><a href="https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit" target="_blank" rel="noopener">english.aawsat.com</a></li><li><a href="https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara" target="_blank" rel="noopener">www.dailysabah.com</a></li><li><a href="https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827" target="_blank" rel="noopener">bianet.org</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/" target="_blank" rel="noopener">Turkey detains 209 in raids ahead of July s NATO summit - News Today | First with the news</a>
+                    <small>newstodaynet.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.arabnews.com/node/2648399/middle-east" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.arabnews.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html" target="_blank" rel="noopener">IS suspect killed in clash with Turkish police in Ankara-Xinhua</a>
+                    <small>english.news.cn · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit" target="_blank" rel="noopener">ISIS Suspect Killed in Raid Ahead of Ankara NATO Summit</a>
+                    <small>english.aawsat.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara" target="_blank" rel="noopener">Daesh member killed in clash with Turkish police in Ankara | Daily Sabah</a>
+                    <small>www.dailysabah.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827" target="_blank" rel="noopener">Back-to-back drone crashes in Turkey&#x27;s Black Sea region</a>
+                    <small>bianet.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit" target="_blank" rel="noopener">Turkey detains 209 in raids in the capital ahead of July s NATO summit Winnipeg Free Press</a>
+                    <small>www.winnipegfreepress.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailysabah.com/politics/war-on-terror/turkish-authorities-detain-209-in-major-anti-terror-sweep" target="_blank" rel="noopener">Turkish authorities detain 209 in major anti-terror sweep | Daily Sabah</a>
+                    <small>www.dailysabah.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -871,52 +1086,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://theshillongtimes.com/2026/04/07/terror-will-not-deter-us-israel-condemns-attack-on-its-consulate-in-turkey/" target="_blank" rel="noopener">Terror will not deter us : Israel condemns attack on its Consulate in Turkey</a>
-                        <small>theshillongtimes.com 20260407T170000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.newkerala.com/news/a/terror-will-not-deter-us-israel-condemns-attack-936.htm" target="_blank" rel="noopener">Israel Condemns Terror Attack on Istanbul Consulate</a>
-                        <small>newkerala.com 20260407T160000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.middleeasteye.net/live-blog/live-blog-update/turkish-police-shoot-three-gunmen-clash-outside-israels-istanbul" target="_blank" rel="noopener">Turkish police shoot three gunmen in clash outside Israel Istanbul consulate</a>
-                        <small>middleeasteye.net 20260407T130000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.middleeasteye.net/news/turkey-gunfight-reported-outside-israels-consulate-istanbul" target="_blank" rel="noopener">Turkish police shoot three gunmen in clash outside Israel Istanbul consulate</a>
-                        <small>middleeasteye.net 20260407T110000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.yahoo.com/news/articles/gunmen-open-fire-near-israeli-124527765.html" target="_blank" rel="noopener">Gunmen open fire near Israeli consulate in Istanbul in possible ISIS - linked attack</a>
-                        <small>yahoo.com 20260407T134500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="http://www.jpost.com/middle-east/article-892312" target="_blank" rel="noopener">Gunmen open fire near Israeli consulate in Istanbul</a>
-                        <small>jpost.com 20260407T123000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.indiablooms.com/world/gunfight-outside-israeli-consulate-in-istanbul-attacker-killed-two-captured/details" target="_blank" rel="noopener">Gunfight outside Israeli Consulate in Istanbul : Attacker killed , two captured | Indiablooms - First Portal on Digital News Management</a>
-                        <small>indiablooms.com 20260407T153000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.manchestereveningnews.co.uk/news/world-news/shooting-near-israeli-consulate-istanbul-33726264" target="_blank" rel="noopener">Shooting near Israeli consulate in Istanbul leaves three dead as people run for cover</a>
-                        <small>manchestereveningnews.co.uk 20260407T120000Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Ankara, Turkey&quot; &quot;Turkey&quot; &quot;armed clash&quot;</li><li>&quot;Turkey&quot; &quot;armed clash&quot;</li><li>&quot;Ankara, Turkey&quot; &quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Ankara, Turkey&quot; &quot;Turkey&quot; &quot;security incident&quot;</li><li>&quot;Turkey&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Ankara, Turkey&quot; &quot;Turkey&quot; &quot;nato&quot; &quot;drone&quot;</li><li>&quot;Turkey&quot; &quot;nato&quot; &quot;drone&quot;</li><li>&quot;Ankara, Turkey&quot; &quot;drone&quot;</li><li>&quot;nato&quot; &quot;drone&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -924,23 +1099,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#2</span>
-                    <strong>Fegyveres összecsapás – Tirana, Tirane, Albania</strong>
+                    <strong>Albania s Rama rejects criticism of Kushner-linked luxury resort plans Tirana Examiner</strong>
                 </div>
 
                 <div class="meta">
                     Tirana, Tirane, Albania / Albania
                     · Fegyveres összecsapás
                     · Score 65
-                    · Cluster records 1
-                    · Source domains 8
+                    · Original domains 8
+                    · Fingerprint confidence Low
                 </div>
 
-                <p>The original event cluster contains 8 source URLs across 8 source domains. Visible domains include: ibcworldnews.com, newrepublic.com, tiranaexaminer.com, tol.org, www.independent.co.uk. Main raw title pattern: fight – Tirana, Tirane, Albania. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: panorama.com.al, balkanweb.com, bristolpost.co.uk, telegraf.rs, jabar.tribunnews.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 8 source URLs across 8 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: iran, government, trump</span>
+                    <span>Conflict terms: No conflict hint</span>
+                    <span>Keywords: albania, resort, luxury, kushner, albanian, protests, against, environmental, tirana, kushner-linked</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://tiranaexaminer.com/albanias-rama-rejects-criticism-of-kushner-linked-luxury-resort-plans/" target="_blank" rel="noopener">tiranaexaminer.com</a></li><li><a href="https://www.kvnf.org/2026-06-16/protests-continue-against-albanias-government-over-a-kushner-linked-resort-project" target="_blank" rel="noopener">www.kvnf.org</a></li><li><a href="https://www.independent.co.uk/news/world/europe/ivanka-trump-albania-island-protests-government-jared-kushner-b2996455.html" target="_blank" rel="noopener">www.independent.co.uk</a></li><li><a href="https://newrepublic.com/article/211857/jared-kushner-inadvertently-touch-off-albanian-revolution" target="_blank" rel="noopener">newrepublic.com</a></li><li><a href="https://tol.org/client/article/beyond-the-kushner-resort-why-thousands-of-albanians-are-taking-to-the-streets.html" target="_blank" rel="noopener">tol.org</a></li><li><a href="https://www.wsiu.org/science-technology/2026-06-16/in-albania-anger-grows-against-the-government-for-supporting-a-kushner-linked-luxury-resort" target="_blank" rel="noopener">www.wsiu.org</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://tiranaexaminer.com/albanias-rama-rejects-criticism-of-kushner-linked-luxury-resort-plans/" target="_blank" rel="noopener">Albania s Rama rejects criticism of Kushner-linked luxury resort plans Tirana Examiner</a>
+                    <small>tiranaexaminer.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.kvnf.org/2026-06-16/protests-continue-against-albanias-government-over-a-kushner-linked-resort-project" target="_blank" rel="noopener">Protests continue against Albania s government over a Kushner-linked resort project</a>
+                    <small>www.kvnf.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.independent.co.uk/news/world/europe/ivanka-trump-albania-island-protests-government-jared-kushner-b2996455.html" target="_blank" rel="noopener">Albanian protests sparked by Ivanka Trump’s private island plan grow into huge anti-government demonstration | The Independent</a>
+                    <small>www.independent.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://newrepublic.com/article/211857/jared-kushner-inadvertently-touch-off-albanian-revolution" target="_blank" rel="noopener">Did Jared Kushner Inadvertently Touch Off an Albanian Revolution? | The New Republic</a>
+                    <small>newrepublic.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://tol.org/client/article/beyond-the-kushner-resort-why-thousands-of-albanians-are-taking-to-the-streets.html" target="_blank" rel="noopener">Beyond the Kushner Resort: Why Thousands of Albanians Are Taking to the Streets - Transitions</a>
+                    <small>tol.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.wsiu.org/science-technology/2026-06-16/in-albania-anger-grows-against-the-government-for-supporting-a-kushner-linked-luxury-resort" target="_blank" rel="noopener">In Albania, anger grows against the government for supporting a Kushner-linked luxury resort | WSIU</a>
+                    <small>www.wsiu.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://ibcworldnews.com/2026/06/13/albanian-land-dispute-threatens-kushner-project/" target="_blank" rel="noopener">Albanian land dispute threatens Kushner Project | IBC World News</a>
+                    <small>ibcworldnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.tiranatimes.com/berishas-return-and-albanias-unfinished-transition/" target="_blank" rel="noopener">Berisha’s Return and Albania’s Unfinished Transition - Tirana Times</a>
+                    <small>www.tiranatimes.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -950,52 +1172,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://www.panorama.com.al/protestat-per-largimin-e-tij-edi-rama-sulmon-elisa-spiropalin-ditmir-bushatin-dhe-fatos-lubonjen-ka-shpirtra-te-humbur-ne-familjen-tone-qe-duan-marreveshje-te-re-dhe-shqi/" target="_blank" rel="noopener">Protestat për largimin e tij , Edi Rama sulmon Elisa Spiropalin , Ditmir Bushatin dhe Fatos Lubonjën : Ka shpirtra të humbur në familjen tonë që duan Marrëveshje të re dhe Shqipëri të re , por …</a>
-                        <small>panorama.com.al 20260620T120000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.balkanweb.com/edhe-te-vetet-i-kerkuan-te-largohet-pasi-nisen-protestat-masive-rama-sulmon-spiropalin-bushatin-dhe-daden-shpirtra-te-humbur-duan-nje-shqiperi-te-re-por/" target="_blank" rel="noopener">Edhe të vetët i kërkuan të largohet pasi nisën protestat masive , Rama sulmon Spiropalin , Bushatin dhe Daden : Shpirtra të humbur … duan një Shqipëri të re , por …</a>
-                        <small>balkanweb.com 20260620T114500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.bristolpost.co.uk/news/bristol-news/bristol-trio-not-extradited-albania-10938676" target="_blank" rel="noopener">Bristol trio will not be extradited to Albania over murder case</a>
-                        <small>bristolpost.co.uk 20260427T200000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.telegraf.rs/vesti/hronika/4344633-ovo-je-ranjeni-u-pucnjavi-kod-pristine-poznat-organima-reda-trazi-ga-i-nemacka" target="_blank" rel="noopener">Ovo je ranjeni u pucnjavi kod Prištine : Poznat organima reda , traži ga i Nemačka !</a>
-                        <small>telegraf.rs 20260617T130000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://jabar.tribunnews.com/superball/1175804/dari-5-pemain-eropa-bidikan-persib-bandung-sosok-kapten-berkelas-ini-paling-kuat-merapat" target="_blank" rel="noopener">Dari 5 Pemain Eropa Bidikan Persib Bandung , Sosok Kapten Berkelas Ini Paling Kuat Merapat</a>
-                        <small>jabar.tribunnews.com 20260615T103000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://top-channel.tv/2026/04/23/dejvi-bregu-heroi-i-dinamos-skuadra-e-ilir-dajes-shkon-ne-finalen-e-kupes-se-shqiperise/" target="_blank" rel="noopener">Dejvi Bregu , heroi i Dinamos , skuadra e Ilir Dajës shkon në finalen e Kupës së Shqipërisë</a>
-                        <small>top-channel.tv 20260423T204500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.blitzquotidiano.it/politica/centri-migranti-in-albania-rama-corregge-il-suo-ministro-degli-esteri-accordo-durera-3783425/" target="_blank" rel="noopener">Centri migranti in Albania , Rama corregge il suo ministro degli Esteri : Accordo durerà</a>
-                        <small>blitzquotidiano.it 20260513T064500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/c/90662d7727/pukanje-od-vozilo-vo-dvizenje-vo-albanija-maz-i-zena-ubieni.html" target="_blank" rel="noopener">Пукање од возило во движење во Албанија , маж и жена убиени !</a>
-                        <small>time.mk 20260426T194500Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Tirana, Tirane, Albania&quot; &quot;Albania&quot; &quot;armed clash&quot;</li><li>&quot;Albania&quot; &quot;armed clash&quot;</li><li>&quot;Tirana, Tirane, Albania&quot; &quot;Albania&quot; &quot;shooting&quot;</li><li>&quot;Albania&quot; &quot;shooting&quot;</li><li>&quot;Tirana, Tirane, Albania&quot; &quot;Albania&quot; &quot;security incident&quot;</li><li>&quot;Albania&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Albania s Rama rejects criticism of Kushner-linked luxury resort plans Tirana Examiner&quot;</li></ol>
                     </div>
                 </div>
             </article>
@@ -1003,23 +1185,40 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#3</span>
-                    <strong>Fegyveres összecsapás – Sazagasi, Ankara, Turkey</strong>
+                    <strong>IS suspect killed in clash with Turkish police in Ankara-Xinhua</strong>
                 </div>
 
                 <div class="meta">
                     Sazagasi, Ankara, Turkey / Turkey
                     · Fegyveres összecsapás
                     · Score 63
-                    · Cluster records 1
-                    · Source domains 2
+                    · Original domains 2
+                    · Fingerprint confidence Low
                 </div>
 
-                <p>The original event cluster contains 2 source URLs across 2 source domains. Visible domains include: english.news.cn, www.arabnews.com. Main raw title pattern: fight – Sazagasi, Ankara, Turkey. The supplementary public media search found 10 additional related items across 9 domains. Main additional domains: naslovi.net, world.people.com.cn, haberler.com, politika.rs, newtalk.tw. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 2 source URLs across 2 domains. 1 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: police</span>
+                    <span>Conflict terms: clash, killed</span>
+                    <span>Keywords: suspect, turkish, ankara-xinhua, ankara-, fight, sazagasi, ankara, turkey</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.arabnews.com/node/2648399/middle-east" target="_blank" rel="noopener">www.arabnews.com</a></li><li><a href="https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html" target="_blank" rel="noopener">english.news.cn</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.arabnews.com/node/2648399/middle-east" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.arabnews.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html" target="_blank" rel="noopener">IS suspect killed in clash with Turkish police in Ankara-Xinhua</a>
+                    <small>english.news.cn · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1029,52 +1228,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol>
-                    <li>
-                        <a href="https://naslovi.net/tema/2487813" target="_blank" rel="noopener">U pucnjavi u srednjoj školi na jugoistoku Turske povređeno 16 osoba - Povezane vesti</a>
-                        <small>naslovi.net 20260414T093000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://world.people.com.cn/n1/2026/0416/c1002-40702530.html" target="_blank" rel="noopener">土耳其中学枪击案已致9死13伤 -- 国际 -- 人民网</a>
-                        <small>world.people.com.cn 20260416T050000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.haberler.com/spor/kayserili-aticilar-turkiye-rekoru-kirdi-19832412-haberi/" target="_blank" rel="noopener">Kayserili atıcılık sporcularından Türkiye rekoru</a>
-                        <small>haberler.com 20260510T063000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.politika.rs/scc/clanak/747721/vucic-izrazio-saucesce-povodom-stradanja-u-pucnjavi-u-srednjoj-skoli-u-turskoj" target="_blank" rel="noopener">Вучић изразио саучешће поводом страдања у пуцњави у средњој школи у Турској</a>
-                        <small>politika.rs 20260415T184500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://newtalk.tw/news/view/2026-04-16/1030086" target="_blank" rel="noopener">( 影 ) 土耳其驚爆校園槍擊案 ! 國二生持槍至校釀9死13傷 2天內接連2起 | 國際</a>
-                        <small>newtalk.tw 20260416T044500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.news.cn/20260415/2b9b62119b7e4d1db7bcf34fe9198d38/c.html" target="_blank" rel="noopener">土耳其中学枪击案已致9死13伤 - 新华网</a>
-                        <small>news.cn 20260416T001500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://tvn24.pl/swiat/turcja-strzelanina-w-szkole-w-turcji-sa-ofiary-smiertelne-st8999532" target="_blank" rel="noopener">Turcja . Strzelanina w szkole w Turcji . Są ofiary śmiertelne</a>
-                        <small>tvn24.pl 20260415T131500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.antaranews.com/berita/5528089/penembakan-di-sekolah-turki-sebabkan-empat-orang-meninggal" target="_blank" rel="noopener">Penembakan di sekolah Turki sebabkan empat orang meninggal</a>
-                        <small>antaranews.com 20260415T134500Z</small>
-                    </li>
-                    </ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Sazagasi, Ankara, Turkey&quot; &quot;Turkey&quot; &quot;armed clash&quot;</li><li>&quot;Turkey&quot; &quot;armed clash&quot;</li><li>&quot;Sazagasi, Ankara, Turkey&quot; &quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Sazagasi, Ankara, Turkey&quot; &quot;Turkey&quot; &quot;security incident&quot;</li><li>&quot;Turkey&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Sazagasi, Ankara, Turkey&quot; &quot;Turkey&quot; &quot;police&quot; &quot;clash&quot;</li><li>&quot;Turkey&quot; &quot;police&quot; &quot;clash&quot;</li><li>&quot;Sazagasi, Ankara, Turkey&quot; &quot;clash&quot;</li><li>&quot;police&quot; &quot;clash&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1082,23 +1241,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#4</span>
-                    <strong>Rajtaütés / fegyveres támadás – Istanbul, Turkey</strong>
+                    <strong>Ankara NATO Summit: Hundreds Arrested</strong>
                 </div>
 
                 <div class="meta">
                     Istanbul, Turkey / Turkey
                     · Rajtaütés / fegyveres támadás
                     · Score 55
-                    · Cluster records 1
-                    · Source domains 6
+                    · Original domains 6
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 8 source URLs across 6 source domains. Visible domains include: aa.com.tr, athens-times.com, consortiumnews.com, news.az, www.al-monitor.com. Main raw title pattern: assault – Istanbul, Istanbul, Turkey. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: thetimes-tribune.com, infobae.com, ynetnews.com, columbian.com, newsday.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 8 source URLs across 6 domains. 7 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 8 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, israeli, iran, nato, police, army, military</span>
+                    <span>Conflict terms: drone, strike, attack, shelling, assault, killed, wounded, fire</span>
+                    <span>Keywords: istanbul, attacks, ankara, summit, crackdowns, municipality, official, rescued, hedges, consortium</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://news.az/news/how-does-turkiye-approach-counterterrorism" target="_blank" rel="noopener">news.az</a></li><li><a href="https://athens-times.com/ankara-hundreds-arrested-ahead-of-nato-summit/" target="_blank" rel="noopener">athens-times.com</a></li><li><a href="https://www.hurriyetdailynews.com/senior-istanbul-municipality-official-rescued-after-33-hour-kidnapping-223468" target="_blank" rel="noopener">www.hurriyetdailynews.com</a></li><li><a href="https://consortiumnews.com/2026/06/19/hedges-report-kidnapped-at-sea/" target="_blank" rel="noopener">consortiumnews.com</a></li><li><a href="https://aa.com.tr/en/middle-east/several-wounded-in-israeli-strikes-on-southern-lebanon-despite-us-iran-agreement/3969719" target="_blank" rel="noopener">aa.com.tr</a></li><li><a href="https://consortiumnews.com/2026/06/16/craig-murray-the-uk-joins-the-pirates/" target="_blank" rel="noopener">consortiumnews.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://news.az/news/how-does-turkiye-approach-counterterrorism" target="_blank" rel="noopener">No title extracted</a>
+                    <small>news.az · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://athens-times.com/ankara-hundreds-arrested-ahead-of-nato-summit/" target="_blank" rel="noopener">Ankara NATO Summit: Hundreds Arrested</a>
+                    <small>athens-times.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.hurriyetdailynews.com/senior-istanbul-municipality-official-rescued-after-33-hour-kidnapping-223468" target="_blank" rel="noopener">Senior Istanbul Municipality official rescued after 33-hour kidnapping - T rkiye News</a>
+                    <small>www.hurriyetdailynews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://consortiumnews.com/2026/06/19/hedges-report-kidnapped-at-sea/" target="_blank" rel="noopener">Hedges Report: Kidnapped at Sea Consortium News</a>
+                    <small>consortiumnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://aa.com.tr/en/middle-east/several-wounded-in-israeli-strikes-on-southern-lebanon-despite-us-iran-agreement/3969719" target="_blank" rel="noopener">Several wounded in Israeli strikes on southern Lebanon despite US-Iran agreement</a>
+                    <small>aa.com.tr · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://consortiumnews.com/2026/06/16/craig-murray-the-uk-joins-the-pirates/" target="_blank" rel="noopener">Craig Murray: The UK Joins the Pirates Consortium News</a>
+                    <small>consortiumnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://aa.com.tr/en/middle-east/israeli-army-kills-6-palestinians-including-child-in-attacks-across-gaza/3966709" target="_blank" rel="noopener">Israeli army kills 6 Palestinians, including child, in attacks across Gaza</a>
+                    <small>aa.com.tr · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.al-monitor.com/newsletter/2026-06-12/turkey-rocked-abuse-allegations-imamoglu-crackdown" target="_blank" rel="noopener">Turkey rocked by abuse allegations in Imamoglu crackdown - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012</a>
+                    <small>www.al-monitor.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1108,52 +1314,52 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
+                        <h4>Matched supplementary media</h4>
                         <ol>
-                    <li>
-                        <a href="https://www.thetimes-tribune.com/2026/04/07/israeli-consulate-attack-istanbul/" target="_blank" rel="noopener">Gunmen attack building housing Israeli Consulate in Istanbul</a>
-                        <small>thetimes-tribune.com 20260407T151500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.infobae.com/america/mundo/2026/04/08/turquia-detuvo-a-doce-personas-tras-el-ataque-con-armas-de-asalto-contra-el-consulado-de-israel-en-estambul/" target="_blank" rel="noopener">Turquía detuvo a doce personas tras el ataque con armas de asalto contra el consulado de Israel en Estambul</a>
-                        <small>infobae.com 20260409T020000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.ynetnews.com/article/hjvzb8z2zx" target="_blank" rel="noopener">One attacker killed , two wounded in gunfight near Israeli consulate in Istanbul</a>
-                        <small>ynetnews.com 20260407T130000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.columbian.com/news/2026/apr/07/gunmen-attack-building-housing-israeli-consulate-in-istanbul/" target="_blank" rel="noopener">Gunmen attack building housing Israeli Consulate in Istanbul</a>
-                        <small>columbian.com 20260407T171500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.newsday.com/news/nation/turkey-israel-istanbul-consulate-attack-k57643" target="_blank" rel="noopener">Gunmen attack police near building housing Israeli Consulate in Istanbul</a>
-                        <small>newsday.com 20260407T213000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.capital.gr/diethni/3996501/tourkia-amerikanika-f35-kai-rosika-s400-den-pane-mazi/" target="_blank" rel="noopener">Τουρκία : Αμερικανικά F - 35 και ρωσικά S - 400 δεν πάνε μαζί</a>
-                        <small>capital.gr 20260604T153000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://dailyinqilab.com/international/news/880444" target="_blank" rel="noopener">ইউক্রেনে রাশিয়ার ব্যাপক হামলা , নিহত ১৫</a>
-                        <small>dailyinqilab.com 20260405T034500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.aol.co.uk/articles/gunfire-outside-israeli-consulate-istanbul-105317100.html" target="_blank" rel="noopener">Gunfire outside Israeli consulate in Istanbul</a>
-                        <small>aol.co.uk 20260407T111500Z</small>
-                    </li>
-                    </ol>
+                <li>
+                    <a href="https://www.yahoo.com/news/articles/hamas-operatives-being-trained-turkey-023550334.html" target="_blank" rel="noopener">Hamas operatives are being trained in Turkey to launch attacks against Israel</a>
+                    <small>yahoo.com 20260508T040000Z · match score 60</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.algemeiner.com/2026/04/07/gunfight-outside-israeli-consulate-istanbul-leaves-one-attacker-dead/" target="_blank" rel="noopener">Gunfight Outside Israeli Consulate in Istanbul Leaves One Attacker Dead</a>
+                    <small>algemeiner.com 20260407T191500Z · match score 55</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.jpost.com/middle-east/article-895545" target="_blank" rel="noopener">Hamas operatives are being trained in Turkey to fight against Israel</a>
+                    <small>jpost.com 20260508T021500Z · match score 45</small>
+                </li>
+                
+                <li>
+                    <a href="https://en.tempo.co/read/2105243/global-sumud-flotilla-activist-recalls-torture-after-israeli-sea-interception" target="_blank" rel="noopener">Global Sumud Flotilla Activist Recalls Torture After Israeli Sea Interception</a>
+                    <small>en.tempo.co 20260525T024500Z · match score 20</small>
+                </li>
+                
+                <li>
+                    <a href="https://nypost.com/2026/05/21/world-news/gaza-flotilla-activists-to-be-deported-as-governments-voice-outrage-over-taunting-by-israeli-minister/" target="_blank" rel="noopener">Gaza flotilla activists to be deported as governments voice outrage over taunting by Israeli minister</a>
+                    <small>nypost.com 20260521T181500Z · match score 20</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.jpost.com/defense-and-tech/article-898087" target="_blank" rel="noopener">Motorola to acquire counter - drone pioneer D - Fend for $1 . 5 billion</a>
+                    <small>jpost.com 20260602T161500Z · match score 10</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.israelnationalnews.com/news/426750" target="_blank" rel="noopener">Report : Hamas terrorists using Turkish ranges and drone schools for training</a>
+                    <small>israelnationalnews.com 20260508T033000Z · match score 10</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.middleeasteye.net/news/canada-weighs-buying-turkish-drones-it-sanctioned-2019" target="_blank" rel="noopener">Canada weighs buying Turkish drones it sanctioned in 2019</a>
+                    <small>middleeasteye.net 20260514T123000Z · match score 10</small>
+                </li>
+                </ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Istanbul, Turkey&quot; &quot;Turkey&quot; &quot;armed attack&quot;</li><li>&quot;Turkey&quot; &quot;armed attack&quot;</li><li>&quot;Istanbul, Turkey&quot; &quot;Turkey&quot; &quot;assault&quot;</li><li>&quot;Turkey&quot; &quot;assault&quot;</li><li>&quot;Istanbul, Turkey&quot; &quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Turkey&quot; &quot;shooting&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Istanbul, Turkey&quot; &quot;Turkey&quot; &quot;israel&quot; &quot;drone&quot;</li><li>&quot;Turkey&quot; &quot;israel&quot; &quot;drone&quot;</li><li>&quot;Istanbul, Turkey&quot; &quot;drone&quot;</li><li>&quot;israel&quot; &quot;drone&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1161,23 +1367,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#5</span>
-                    <strong>Rajtaütés / fegyveres támadás – Turkey</strong>
+                    <strong>Pastor Saeed Abedini accused of abducting daughter</strong>
                 </div>
 
                 <div class="meta">
                     Turkey / Turkey
                     · Rajtaütés / fegyveres támadás
                     · Score 55
-                    · Cluster records 1
-                    · Source domains 16
+                    · Original domains 16
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 19 source URLs across 16 source domains. Visible domains include: abc13.com, athens-times.com, english.aawsat.com, religionnews.com, scroll.in. Main raw title pattern: assault – Turkey. The supplementary public media search found 20 additional related items across 16 domains. Main additional domains: adalet.az, 1in.am, sana.sy, haberler.com, iha.com.tr. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 19 source URLs across 16 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 4 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, russia, russian, ukraine, police</span>
+                    <span>Conflict terms: drone, strike, attack, shooting, assault, fire, war</span>
+                    <span>Keywords: pastor, turkish, must, turkey, daughter, child, musk, nuremberg-style, trials, rape</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://religionnews.com/2026/06/24/pastor-saeed-a-former-political-prisoner-in-iran-accused-of-abducting-daughter/" target="_blank" rel="noopener">religionnews.com</a></li><li><a href="https://www.sott.net/article/507006-Musk-calls-for-Nuremberg-style-trials-after-UK-rape-gang-inquiry-report-is-released" target="_blank" rel="noopener">www.sott.net</a></li><li><a href="https://www.deccanchronicle.com/world/russian-drone-strike-kills-egyptian-crew-member-on-vessel-bound-for-ukraine-1965334" target="_blank" rel="noopener">www.deccanchronicle.com</a></li><li><a href="https://thefederalist.com/2026/06/19/the-mass-rape-of-british-girls-by-pakistani-immigrants-is-an-act-of-war/" target="_blank" rel="noopener">thefederalist.com</a></li><li><a href="https://scroll.in/latest/1093697/maharashtra-principal-booked-as-students-perform-to-alleged-pakistani-song-at-event" target="_blank" rel="noopener">scroll.in</a></li><li><a href="https://athens-times.com/androulakis-pm-must-secure-eu-council-condemnation-of-turkey-over-blue-homeland/" target="_blank" rel="noopener">athens-times.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://religionnews.com/2026/06/24/pastor-saeed-a-former-political-prisoner-in-iran-accused-of-abducting-daughter/" target="_blank" rel="noopener">Pastor Saeed Abedini accused of abducting daughter</a>
+                    <small>religionnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.sott.net/article/507006-Musk-calls-for-Nuremberg-style-trials-after-UK-rape-gang-inquiry-report-is-released" target="_blank" rel="noopener">Musk calls for Nuremberg-style trials after UK rape gang inquiry report is released — Society s Child — Sott.net</a>
+                    <small>www.sott.net · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.deccanchronicle.com/world/russian-drone-strike-kills-egyptian-crew-member-on-vessel-bound-for-ukraine-1965334" target="_blank" rel="noopener">Russian Drone Strike Kills Egyptian Crew Member on Vessel Bound for Ukraine</a>
+                    <small>www.deccanchronicle.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://thefederalist.com/2026/06/19/the-mass-rape-of-british-girls-by-pakistani-immigrants-is-an-act-of-war/" target="_blank" rel="noopener">The Mass Rape Of British Girls By Pakistani Immigrants Is An Act Of War</a>
+                    <small>thefederalist.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://scroll.in/latest/1093697/maharashtra-principal-booked-as-students-perform-to-alleged-pakistani-song-at-event" target="_blank" rel="noopener">Maharashtra principal booked as students perform to ‘Pakistani’ song</a>
+                    <small>scroll.in · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://athens-times.com/androulakis-pm-must-secure-eu-council-condemnation-of-turkey-over-blue-homeland/" target="_blank" rel="noopener">Androulakis: EU Council Must Condemn Turkey s Blue Homeland</a>
+                    <small>athens-times.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.zerohedge.com/geopolitical/musk-supports-nuremberg-style-trials-after-uk-rape-gang-inquiry-release" target="_blank" rel="noopener">Musk Supports Nuremberg-Style Trials After UK Rape-Gang Inquiry Release | ZeroHedge</a>
+                    <small>www.zerohedge.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.breakingnews.ie/ireland/female-lodger-played-dead-during-alleged-strangulation-attack-in-dublin-home-1914974.html" target="_blank" rel="noopener">Female lodger &#x27;played dead&#x27; during alleged strangulation attack in Dublin home</a>
+                    <small>www.breakingnews.ie · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1187,52 +1440,32 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
+                        <h4>Matched supplementary media</h4>
                         <ol>
-                    <li>
-                        <a href="https://www.adalet.az/az/posts/detail/turkiyede-daha-bir-mektebe-silahli-hucum-edildi-1776251958" target="_blank" rel="noopener">Türkiyədə məktəbə silahlı hücum edən şəxs öznü ldürd - YENİLƏNİB</a>
-                        <small>adalet.az 20260415T154500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.1in.am/3705274.html" target="_blank" rel="noopener">Թուրքիայում ևս մեկ զինված հարձակում է տեղի ունեցել դպրոցի վրա . կան զոհեր և վիրավորներ</a>
-                        <small>1in.am 20260415T141500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.adalet.az/az/posts/detail/erdogan-mektebe-silahli-hucumdan-reytinq-ucun-istifade-edilmemesi-vicdan-borcdur-1776270812" target="_blank" rel="noopener">Ərdoğan : Məktəbə silahlı hücumdan reytinq n istifadə edilməməsi vicdan borcdur</a>
-                        <small>adalet.az 20260415T193000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://sana.sy/tr/international/2292244/" target="_blank" rel="noopener">BAE , Türkiyede Okuldaki Silahlı Saldiriyi Kınadı</a>
-                        <small>sana.sy 20260416T100000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.haberler.com/guncel/kahramanmaras-taki-silahli-saldirinin-19756297-haberi/" target="_blank" rel="noopener">Kahramanmaraş taki silahlı saldırının gerçekleştiği okula Türk bayrağı asıldı ve karanfil bırakıldı</a>
-                        <small>haberler.com 20260416T174500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.iha.com.tr/haber-azerbaycandan-turkiyeye-bassagligi-mesaji-1195766" target="_blank" rel="noopener">Azerbaycandan , Türkiyeye başsağlığı mesajı İhlas Haber Ajansı</a>
-                        <small>iha.com.tr 20260415T203000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.haberler.com/guncel/katar-kahramanmaras-taki-silahli-saldiriyi-kinadi-19754251-haberi/" target="_blank" rel="noopener">Katardan Türkiyeye Taziye Mesajı</a>
-                        <small>haberler.com 20260416T101500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://argumenti.ru/politics/2026/04/995150" target="_blank" rel="noopener">Эрдоган осудил вооруженное нападение на мероприятии , где присутствовал Трамп</a>
-                        <small>argumenti.ru 20260426T123000Z</small>
-                    </li>
-                    </ol>
+                <li>
+                    <a href="https://www.yahoo.com/news/articles/hamas-operatives-being-trained-turkey-023550334.html" target="_blank" rel="noopener">Hamas operatives are being trained in Turkey to launch attacks against Israel</a>
+                    <small>yahoo.com 20260508T040000Z · match score 60</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.jpost.com/middle-east/article-895545" target="_blank" rel="noopener">Hamas operatives are being trained in Turkey to fight against Israel</a>
+                    <small>jpost.com 20260508T021500Z · match score 50</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.israelnationalnews.com/news/426750" target="_blank" rel="noopener">Report : Hamas terrorists using Turkish ranges and drone schools for training</a>
+                    <small>israelnationalnews.com 20260508T033000Z · match score 15</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.middleeasteye.net/news/canada-weighs-buying-turkish-drones-it-sanctioned-2019" target="_blank" rel="noopener">Canada weighs buying Turkish drones it sanctioned in 2019</a>
+                    <small>middleeasteye.net 20260514T123000Z · match score 15</small>
+                </li>
+                </ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Turkey&quot; &quot;Turkey&quot; &quot;armed attack&quot;</li><li>&quot;Turkey&quot; &quot;armed attack&quot;</li><li>&quot;Turkey&quot; &quot;Turkey&quot; &quot;assault&quot;</li><li>&quot;Turkey&quot; &quot;assault&quot;</li><li>&quot;Turkey&quot; &quot;Turkey&quot; &quot;shooting&quot;</li><li>&quot;Turkey&quot; &quot;shooting&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Turkey&quot; &quot;Turkey&quot; &quot;israel&quot; &quot;drone&quot;</li><li>&quot;Turkey&quot; &quot;israel&quot; &quot;drone&quot;</li><li>&quot;Turkey&quot; &quot;drone&quot;</li><li>&quot;israel&quot; &quot;drone&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1245,23 +1478,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#1</span>
-                    <strong>Fegyveres összecsapás – Jerusalem, Israel, Israel</strong>
+                    <strong>UN panel accuses Israel of deliberately targeting Palestinian children</strong>
                 </div>
 
                 <div class="meta">
-                    Jerusalem, Israel, Israel / Israel
+                    Jerusalem, Israel / Israel
                     · Fegyveres összecsapás
                     · Score 87
-                    · Cluster records 1
-                    · Source domains 70
+                    · Original domains 70
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 112 source URLs across 70 source domains. Visible domains include: aa.com.tr, city.udn.com, dunyanews.tv, ejpress.org, english.aawsat.com. Main raw title pattern: fight – Jerusalem, Israel (general), Israel. The supplementary public media search found 10 additional related items across 10 domains. Main additional domains: israelnationalnews.com, aktuality.sk, time.mk, moneycontrol.com, newsx.com. These findings provide context only and do not independently confirm actor or motive.</p>
+                <p>The original cluster contains 112 source URLs across 70 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 3 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, israeli, iran, iranian, hezbollah, army, military, trump</span>
+                    <span>Conflict terms: shooting, raid, killed, injured, fire, war</span>
+                    <span>Keywords: lebanon, while, wants, talks, crimes, against, x27, lebanese, troops, would</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.ynetnews.com/article/skmaaiumgl" target="_blank" rel="noopener">www.ynetnews.com</a></li><li><a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">pjmedia.com</a></li><li><a href="https://www.livemint.com/global/israels-military-is-caught-in-a-political-no-man-s-land-in-lebanon-11782282820135.html" target="_blank" rel="noopener">www.livemint.com</a></li><li><a href="https://www.ynetnews.com/article/rjg2ccdggx" target="_blank" rel="noopener">www.ynetnews.com</a></li><li><a href="https://dunyanews.tv/en/World/958983-israel-lebanon-discuss-usbacked-proposal-for-transfer-of-some-southe" target="_blank" rel="noopener">dunyanews.tv</a></li><li><a href="http://www.bignewsnetwork.com/news/279144444/israeli-troops-kill-two-in-lebanon-putting-strain-on-us-iran-talks" target="_blank" rel="noopener">www.bignewsnetwork.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.ynetnews.com/article/skmaaiumgl" target="_blank" rel="noopener">UN panel accuses Israel of deliberately targeting Palestinian children</a>
+                    <small>www.ynetnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">Iran&#x27;s &#x27;Deconfliction&#x27; Means a More Vulnerable Israel PJ Media</a>
+                    <small>pjmedia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.livemint.com/global/israels-military-is-caught-in-a-political-no-man-s-land-in-lebanon-11782282820135.html" target="_blank" rel="noopener">Israel’s military is caught in a political no man’s land in Lebanon | Mint</a>
+                    <small>www.livemint.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.ynetnews.com/article/rjg2ccdggx" target="_blank" rel="noopener">Israel demands Lebanon take ‘concrete action’ against Hezbollah before any withdrawal</a>
+                    <small>www.ynetnews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://dunyanews.tv/en/World/958983-israel-lebanon-discuss-usbacked-proposal-for-transfer-of-some-southe" target="_blank" rel="noopener">Israel, Lebanon discuss US-backed proposal for transfer of some southern territory to Lebanese army | Dunya News</a>
+                    <small>dunyanews.tv · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.bignewsnetwork.com/news/279144444/israeli-troops-kill-two-in-lebanon-putting-strain-on-us-iran-talks" target="_blank" rel="noopener">Israeli troops kill two in Lebanon, putting strain on US-Iran talks</a>
+                    <small>www.bignewsnetwork.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.arabnews.com/node/2648375/middle-east" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.arabnews.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://english.wafa.ps/Pages/Details/171964" target="_blank" rel="noopener">Israeli colonists raid Mikhmas, northeast of occupied Jerusalem</a>
+                    <small>english.wafa.ps · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1271,52 +1551,27 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
+                        <h4>Matched supplementary media</h4>
                         <ol>
-                    <li>
-                        <a href="https://www.israelnationalnews.com/flashes/684735" target="_blank" rel="noopener">IAF conducting training exercises in central Israel for change of command flyover</a>
-                        <small>israelnationalnews.com 20260504T161500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.aktuality.sk/clanok/NMIcijr/strelba-izraelskych-vojakov-v-gaze-ma-obet-z-radov-who-zdravotne-evakuacie-cez-rafah-su-pozastavene/" target="_blank" rel="noopener">WHO po smrti pracovníka zastavila evakuácie pacientov z Gazy do Egypta</a>
-                        <small>aktuality.sk 20260407T194500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://time.mk/ai/01ec433602/mk/" target="_blank" rel="noopener">Time . ai</a>
-                        <small>time.mk 20260412T191500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.moneycontrol.com/world/massive-mushroom-cloud-blast-near-jerusalem-ex-cia-analyst-questions-israel-s-pre-planned-test-claim-article-13921424.html" target="_blank" rel="noopener">Massive mushroom - cloud blast near Jerusalem : Ex - CIA analyst questions Israel pre - planned test claim</a>
-                        <small>moneycontrol.com 20260517T084500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.newsx.com/world/missiles-hit-without-warning-10-killed-near-school-housing-displaced-families-as-israeli-strikes-intensify-194931/" target="_blank" rel="noopener">Missiles Hit Without Warning : 10 Killed Near School Housing Displaced Families As Israeli Strikes Intensify</a>
-                        <small>newsx.com 20260407T020000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.albawaba.com/news/israeli-airstrikes-kill-3-gaza-and-7-1626200" target="_blank" rel="noopener">Israeli airstrikes kill 3 in Gaza and 7 in southern Lebanon</a>
-                        <small>albawaba.com 20260426T114500Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.botasot.info/azia-bota/2492338/izraeli-mbyll-perkohesisht-hapesiren-ajrore-pas-interceptimit-te-raketes-nga-jemeni/" target="_blank" rel="noopener">Izraeli mbyll përkohësisht hapësirën ajrore pas interceptimit të raketës nga Jemeni</a>
-                        <small>botasot.info 20260608T083000Z</small>
-                    </li>
-                    
-                    <li>
-                        <a href="https://www.yahoo.com/news/articles/kensington-gardens-shut-police-assess-115104233.html" target="_blank" rel="noopener">Kensington Gardens shut as police assess items</a>
-                        <small>yahoo.com 20260417T124500Z</small>
-                    </li>
-                    </ol>
+                <li>
+                    <a href="https://cbn.com/news/israel/border-battles-heat-between-israel-hezbollah-trump-announces-progress-iran-deal" target="_blank" rel="noopener">Border Battles Heat Up between Israel , Hezbollah as Trump Announces Progress on Iran Deal</a>
+                    <small>cbn.com 20260526T110000Z · match score 75</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.defensenews.com/global/mideast-africa/2026/05/14/israel-to-extend-f-35i-range-amid-war-with-iran/" target="_blank" rel="noopener">Israel to extend F - 35I range amid war with Iran</a>
+                    <small>defensenews.com 20260514T163000Z · match score 65</small>
+                </li>
+                
+                <li>
+                    <a href="https://naslovi.net/tema/2525531" target="_blank" rel="noopener">Završena prva runda pregovora SAD i Irana u Švajcarskoj - Povezane vesti</a>
+                    <small>naslovi.net 20260621T173000Z · match score 10</small>
+                </li>
+                </ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Jerusalem, Israel, Israel&quot; &quot;Israel&quot; &quot;armed clash&quot;</li><li>&quot;Israel&quot; &quot;armed clash&quot;</li><li>&quot;Jerusalem, Israel, Israel&quot; &quot;Israel&quot; &quot;shooting&quot;</li><li>&quot;Israel&quot; &quot;shooting&quot;</li><li>&quot;Jerusalem, Israel, Israel&quot; &quot;Israel&quot; &quot;security incident&quot;</li><li>&quot;Israel&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Jerusalem, Israel&quot; &quot;Israel&quot; &quot;israel&quot; &quot;shooting&quot;</li><li>&quot;Israel&quot; &quot;israel&quot; &quot;shooting&quot;</li><li>&quot;Jerusalem, Israel&quot; &quot;shooting&quot;</li><li>&quot;israel&quot; &quot;shooting&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1324,23 +1579,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#2</span>
-                    <strong>Fegyveres összecsapás – Tehran, Iran</strong>
+                    <strong>US and Iran dispute nuclear inspections and use of unfrozen funds</strong>
                 </div>
 
                 <div class="meta">
                     Tehran, Iran / Iran
                     · Fegyveres összecsapás
                     · Score 82
-                    · Cluster records 1
-                    · Source domains 99
+                    · Original domains 99
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 112 source URLs across 99 source domains. Visible domains include: abc7ny.com, crooksandliars.com, economictimes.indiatimes.com, en.apa.az, english.elpais.com. Main raw title pattern: fight – Tehran, Tehran, Iran. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 112 source URLs across 99 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: iran, iranian, nato, military, trump</span>
+                    <span>Conflict terms: missile, fire, war</span>
+                    <span>Keywords: resolution, cnn, nuclear, president, reported, inspections, tehran, vote, deal, would</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.wbaltv.com/article/us-and-iran-dispute-nuclear-inspections-unfrozen-funds/71685196" target="_blank" rel="noopener">www.wbaltv.com</a></li><li><a href="https://www.newindianexpress.com/world/2026/Jun/23/irans-missile-programme-never-part-of-us-iran-talks-pakistan-pm-sharif" target="_blank" rel="noopener">www.newindianexpress.com</a></li><li><a href="https://www.eldoradonews.com/news/2026/jun/23/us-and-iran-in-dispute-over-whether-tehran-has/" target="_blank" rel="noopener">www.eldoradonews.com</a></li><li><a href="http://www.russiaherald.com/news/279143651/us-senate-passes-resolution-seeking-to-limit-trump-iran-war-powers" target="_blank" rel="noopener">www.russiaherald.com</a></li><li><a href="https://www.manilatimes.net/2026/06/24/world/americas-emea/rubio-rejects-iran-tolls-on-hormuz-as-deal-strains-multiply/2371538" target="_blank" rel="noopener">www.manilatimes.net</a></li><li><a href="https://english.elpais.com/international/2026-06-23/united-states-versus-iran-the-war-of-unequal-forces-that-neither-side-could-win.html" target="_blank" rel="noopener">english.elpais.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.wbaltv.com/article/us-and-iran-dispute-nuclear-inspections-unfrozen-funds/71685196" target="_blank" rel="noopener">US and Iran dispute nuclear inspections and use of unfrozen funds</a>
+                    <small>www.wbaltv.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.newindianexpress.com/world/2026/Jun/23/irans-missile-programme-never-part-of-us-iran-talks-pakistan-pm-sharif" target="_blank" rel="noopener">Iran s missile programme never part of US-Iran talks: Pakistan PM Sharif</a>
+                    <small>www.newindianexpress.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.eldoradonews.com/news/2026/jun/23/us-and-iran-in-dispute-over-whether-tehran-has/" target="_blank" rel="noopener">US and Iran in dispute over whether Tehran has agreed to nuclear inspections | El Dorado News</a>
+                    <small>www.eldoradonews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.russiaherald.com/news/279143651/us-senate-passes-resolution-seeking-to-limit-trump-iran-war-powers" target="_blank" rel="noopener">US Senate passes resolution seeking to limit Trump&#x27;s Iran war powers</a>
+                    <small>www.russiaherald.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.manilatimes.net/2026/06/24/world/americas-emea/rubio-rejects-iran-tolls-on-hormuz-as-deal-strains-multiply/2371538" target="_blank" rel="noopener">Rubio rejects Iran tolls on Hormuz as deal strains multiply | The Manila Times</a>
+                    <small>www.manilatimes.net · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://english.elpais.com/international/2026-06-23/united-states-versus-iran-the-war-of-unequal-forces-that-neither-side-could-win.html" target="_blank" rel="noopener">United States versus Iran, the war of unequal forces that neither side could win | International | EL PAÍS English</a>
+                    <small>english.elpais.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.theglobeandmail.com/world/us-politics/article-any-us-iran-agreement-will-be-open-to-interpretation/" target="_blank" rel="noopener">Any U.S.-Iran agreement will be open to interpretation - The Globe and Mail</a>
+                    <small>www.theglobeandmail.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://mumbaimirror.indiatimes.com/news/world/done-in-by-the-deal/articleshow/131945373.html" target="_blank" rel="noopener">DONE IN BY THE DEAL</a>
+                    <small>mumbaimirror.indiatimes.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1350,12 +1652,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Tehran, Iran&quot; &quot;Iran&quot; &quot;armed clash&quot;</li><li>&quot;Iran&quot; &quot;armed clash&quot;</li><li>&quot;Tehran, Iran&quot; &quot;Iran&quot; &quot;shooting&quot;</li><li>&quot;Iran&quot; &quot;shooting&quot;</li><li>&quot;Tehran, Iran&quot; &quot;Iran&quot; &quot;security incident&quot;</li><li>&quot;Iran&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Tehran, Iran&quot; &quot;Iran&quot; &quot;iran&quot; &quot;missile&quot;</li><li>&quot;Iran&quot; &quot;iran&quot; &quot;missile&quot;</li><li>&quot;Tehran, Iran&quot; &quot;missile&quot;</li><li>&quot;iran&quot; &quot;missile&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1363,23 +1665,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#3</span>
-                    <strong>Fegyveres összecsapás – Tel Aviv, Israel</strong>
+                    <strong>Ceasefire but Not a Grand Bargain Between the United States and Iran | Countercurrents</strong>
                 </div>
 
                 <div class="meta">
                     Tel Aviv, Israel / Israel
                     · Fegyveres összecsapás
                     · Score 80
-                    · Cluster records 1
-                    · Source domains 62
+                    · Original domains 62
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 100 source URLs across 62 source domains. Visible domains include: aa.com.tr, aninews.in, countercurrents.org, english.aawsat.com, jewishpress.com. Main raw title pattern: fight – Tel Aviv, Tel Aviv, Israel. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 100 source URLs across 62 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, israeli, iran, iranian, army, military, trump, netanyahu</span>
+                    <span>Conflict terms: fire, war</span>
+                    <span>Keywords: lebanon, minister, united, withdrawal, southern, president, ceasefire, states, vance, talks</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://countercurrents.org/2026/06/ceasefire-but-not-a-grand-bargain-between-the-united-states-and-iran/" target="_blank" rel="noopener">countercurrents.org</a></li><li><a href="https://www.egyptindependent.com/israel-violates-ceasefire-agreement-in-lebanon/" target="_blank" rel="noopener">www.egyptindependent.com</a></li><li><a href="https://www.presstv.ir/Detail/2026/06/24/771014/Israeli-war-minister--We-won-t-pull-out-of-southern-Lebanon,-even-if-requested-by-United-States" target="_blank" rel="noopener">www.presstv.ir</a></li><li><a href="https://radiofreesyria.com/israel-says-troops-will-stay-in-southern-lebanon-despite-regional-push-for-withdrawal/" target="_blank" rel="noopener">radiofreesyria.com</a></li><li><a href="https://www.bssnews.net/international/399444" target="_blank" rel="noopener">www.bssnews.net</a></li><li><a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-900425" target="_blank" rel="noopener">www.jpost.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://countercurrents.org/2026/06/ceasefire-but-not-a-grand-bargain-between-the-united-states-and-iran/" target="_blank" rel="noopener">Ceasefire but Not a Grand Bargain Between the United States and Iran | Countercurrents</a>
+                    <small>countercurrents.org · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.egyptindependent.com/israel-violates-ceasefire-agreement-in-lebanon/" target="_blank" rel="noopener">Israel violates ceasefire agreement in Lebanon - Egypt Independent</a>
+                    <small>www.egyptindependent.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.presstv.ir/Detail/2026/06/24/771014/Israeli-war-minister--We-won-t-pull-out-of-southern-Lebanon,-even-if-requested-by-United-States" target="_blank" rel="noopener">Israel will not pull forces out of southern Lebanon, even if requested by US: War minister</a>
+                    <small>www.presstv.ir · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://radiofreesyria.com/israel-says-troops-will-stay-in-southern-lebanon-despite-regional-push-for-withdrawal/" target="_blank" rel="noopener">Israel Says Troops Will Stay in Southern Lebanon Despite Regional Push for Withdrawal - Radio Free Syria | Radio Free Syria</a>
+                    <small>radiofreesyria.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.bssnews.net/international/399444" target="_blank" rel="noopener">Israeli defence minister says no US demand to withdraw from Lebanon | International</a>
+                    <small>www.bssnews.net · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.jpost.com/israel-news/politics-and-diplomacy/article-900425" target="_blank" rel="noopener">Netanyahu’s credibility will shape rest of trial as PM finishes testimony | The Jerusalem Post</a>
+                    <small>www.jpost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.middleeastmonitor.com/20260624-israeli-media-highlight-concerns-over-egypts-growing-military-capabilities/" target="_blank" rel="noopener">Israeli media highlight concerns over Egypt s growing military capabilities Middle East Monitor</a>
+                    <small>www.middleeastmonitor.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.middleeastmonitor.com/20260624-israeli-minister-says-army-wont-leave-occupied-territory-in-lebanon-even-if-us-demands-it/" target="_blank" rel="noopener">Israeli minister says army won’t leave occupied territory in Lebanon ‘even if US demands’ it Middle East Monitor</a>
+                    <small>www.middleeastmonitor.com · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1389,12 +1738,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Tel Aviv, Israel&quot; &quot;Israel&quot; &quot;armed clash&quot;</li><li>&quot;Israel&quot; &quot;armed clash&quot;</li><li>&quot;Tel Aviv, Israel&quot; &quot;Israel&quot; &quot;shooting&quot;</li><li>&quot;Israel&quot; &quot;shooting&quot;</li><li>&quot;Tel Aviv, Israel&quot; &quot;Israel&quot; &quot;security incident&quot;</li><li>&quot;Israel&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Tel Aviv, Israel&quot; &quot;Israel&quot; &quot;israel&quot; &quot;fire&quot;</li><li>&quot;Israel&quot; &quot;israel&quot; &quot;fire&quot;</li><li>&quot;Tel Aviv, Israel&quot; &quot;fire&quot;</li><li>&quot;israel&quot; &quot;fire&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
@@ -1402,23 +1751,55 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#4</span>
-                    <strong>Fegyveres összecsapás – Karaj, Tehran, Iran</strong>
+                    <strong>Up Tempo on the Gulf, Down Tempo on Ukraine The Greanville Post</strong>
                 </div>
 
                 <div class="meta">
                     Karaj, Tehran, Iran / Iran
                     · Fegyveres összecsapás
                     · Score 75
-                    · Cluster records 1
-                    · Source domains 5
+                    · Original domains 5
+                    · Fingerprint confidence Medium
                 </div>
 
-                <p>The original event cluster contains 5 source URLs across 5 source domains. Visible domains include: pakobserver.net, tribune.com.pk, www.dailysabah.com, www.greanvillepost.com, www.thestar.com.my. Main raw title pattern: fight – Karaj, Tehran, Iran. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 5 source URLs across 5 domains. 5 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, iran, ukraine, army, military, government, trump</span>
+                    <span>Conflict terms: strike, bombing, fire, war, sabotage</span>
+                    <span>Keywords: who, tempo, just, case, involved, could, very, helped, taliban, power</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.greanvillepost.com/up-tempo-on-the-gulf-down-tempo-on-ukraine/" target="_blank" rel="noopener">www.greanvillepost.com</a></li><li><a href="https://www.thestar.com.my/aseanplus/aseanplus-news/2026/06/11/us-and-iran-exchange-more-strikes-tehran-tightens-hold-on-hormuz" target="_blank" rel="noopener">www.thestar.com.my</a></li><li><a href="https://tribune.com.pk/story/2612589/china-renews-call-on-us-iran-to-halt-fighting-return-to-dialogue" target="_blank" rel="noopener">tribune.com.pk</a></li><li><a href="https://www.dailysabah.com/politics/diplomacy/turkish-fm-advises-us-iran-to-stop-reignited-conflict" target="_blank" rel="noopener">www.dailysabah.com</a></li><li><a href="https://pakobserver.net/trump-vows-to-hit-iran-very-hard-threatens-to-seize-kharg-island/" target="_blank" rel="noopener">pakobserver.net</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.greanvillepost.com/up-tempo-on-the-gulf-down-tempo-on-ukraine/" target="_blank" rel="noopener">Up Tempo on the Gulf, Down Tempo on Ukraine The Greanville Post</a>
+                    <small>www.greanvillepost.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.thestar.com.my/aseanplus/aseanplus-news/2026/06/11/us-and-iran-exchange-more-strikes-tehran-tightens-hold-on-hormuz" target="_blank" rel="noopener">US and Iran exchange more strikes, Tehran tightens hold on Hormuz | The Star</a>
+                    <small>www.thestar.com.my · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://tribune.com.pk/story/2612589/china-renews-call-on-us-iran-to-halt-fighting-return-to-dialogue" target="_blank" rel="noopener">China renews call on US, Iran to halt fighting, return to dialogue</a>
+                    <small>tribune.com.pk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.dailysabah.com/politics/diplomacy/turkish-fm-advises-us-iran-to-stop-reignited-conflict" target="_blank" rel="noopener">Turkish FM advises US, Iran to stop reignited conflict | Daily Sabah</a>
+                    <small>www.dailysabah.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://pakobserver.net/trump-vows-to-hit-iran-very-hard-threatens-to-seize-kharg-island/" target="_blank" rel="noopener">Trump vows to hit Iran very hard, threatens to seize Kharg Island - Pakistan Observer</a>
+                    <small>pakobserver.net · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1428,12 +1809,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Karaj, Tehran, Iran&quot; &quot;Iran&quot; &quot;armed clash&quot;</li><li>&quot;Iran&quot; &quot;armed clash&quot;</li><li>&quot;Karaj, Tehran, Iran&quot; &quot;Iran&quot; &quot;shooting&quot;</li><li>&quot;Iran&quot; &quot;shooting&quot;</li><li>&quot;Karaj, Tehran, Iran&quot; &quot;Iran&quot; &quot;security incident&quot;</li><li>&quot;Iran&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Karaj, Tehran, Iran&quot; &quot;Iran&quot; &quot;israel&quot; &quot;strike&quot;</li><li>&quot;Iran&quot; &quot;israel&quot; &quot;strike&quot;</li><li>&quot;Karaj, Tehran, Iran&quot; &quot;strike&quot;</li><li>&quot;israel&quot; &quot;strike&quot; 2026-06-18</li></ol>
                     </div>
                 </div>
             </article>
@@ -1441,23 +1822,70 @@ small {
             <article class="event-card">
                 <div class="event-head">
                     <span>#5</span>
-                    <strong>Fegyveres összecsapás – Beirut, Beyrouth, Lebanon</strong>
+                    <strong>Israel-Lebanon Talks Open In Washington As Hezbollah Disarmament Plan Faces Early Test - Worthy Christian News</strong>
                 </div>
 
                 <div class="meta">
                     Beirut, Beyrouth, Lebanon / Lebanon
                     · Fegyveres összecsapás
                     · Score 73
-                    · Cluster records 1
-                    · Source domains 88
+                    · Original domains 88
+                    · Fingerprint confidence Medium-High
                 </div>
 
-                <p>The original event cluster contains 112 source URLs across 88 source domains. Visible domains include: aa.com.tr, abc7ny.com, aleteia.org, athens-times.com, baystreet.ca. Main raw title pattern: fight – Beirut, Beyrouth, Lebanon. The supplementary public media search did not identify additional matching articles. The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer.</p>
+                <p>The original cluster contains 112 source URLs across 88 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, israeli, iran, iranian, hezbollah, army, military</span>
+                    <span>Conflict terms: killed, fire, war</span>
+                    <span>Keywords: lebanon, talks, ceasefire, washington, deal, round, pilot, forces, us-iran, new</span>
+                </div>
 
                 <div class="grid">
                     <div>
-                        <h4>Original source set</h4>
-                        <ol><li><a href="https://www.worthynews.com/115325-israel-lebanon-talks-open-in-washington-as-hezbollah-disarmament-plan-faces-early-test" target="_blank" rel="noopener">www.worthynews.com</a></li><li><a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">pjmedia.com</a></li><li><a href="https://theshillongtimes.com/2026/06/24/irans-prez-in-pak-as-us-iran-teams-work-to-finalise-deal/" target="_blank" rel="noopener">theshillongtimes.com</a></li><li><a href="https://www.oneindia.com/international/lebanons-lose-lose-is-there-another-way-out-of-conflict-8127841.html" target="_blank" rel="noopener">www.oneindia.com</a></li><li><a href="http://www.bignewsnetwork.com/news/279144444/israeli-troops-kill-two-in-lebanon-putting-strain-on-us-iran-talks" target="_blank" rel="noopener">www.bignewsnetwork.com</a></li><li><a href="https://www.egyptindependent.com/israel-violates-ceasefire-agreement-in-lebanon/" target="_blank" rel="noopener">www.egyptindependent.com</a></li></ol>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.worthynews.com/115325-israel-lebanon-talks-open-in-washington-as-hezbollah-disarmament-plan-faces-early-test" target="_blank" rel="noopener">Israel-Lebanon Talks Open In Washington As Hezbollah Disarmament Plan Faces Early Test - Worthy Christian News</a>
+                    <small>www.worthynews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">Iran&#x27;s &#x27;Deconfliction&#x27; Means a More Vulnerable Israel PJ Media</a>
+                    <small>pjmedia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://theshillongtimes.com/2026/06/24/irans-prez-in-pak-as-us-iran-teams-work-to-finalise-deal/" target="_blank" rel="noopener">Iran’s prez in Pak as US-Iran teams work to finalise deal | The Shillong Times</a>
+                    <small>theshillongtimes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.oneindia.com/international/lebanons-lose-lose-is-there-another-way-out-of-conflict-8127841.html" target="_blank" rel="noopener">Lebanon&#x27;s Lose-Lose: Is There Another Way Out of Conflict? - Oneindia News</a>
+                    <small>www.oneindia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.bignewsnetwork.com/news/279144444/israeli-troops-kill-two-in-lebanon-putting-strain-on-us-iran-talks" target="_blank" rel="noopener">Israeli troops kill two in Lebanon, putting strain on US-Iran talks</a>
+                    <small>www.bignewsnetwork.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.egyptindependent.com/israel-violates-ceasefire-agreement-in-lebanon/" target="_blank" rel="noopener">Israel violates ceasefire agreement in Lebanon - Egypt Independent</a>
+                    <small>www.egyptindependent.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://cyprus-mail.com/2026/06/24/israel-lebanon-discussing-pilot-scheme-for-handover-of-territory" target="_blank" rel="noopener">Israel, Lebanon discussing pilot scheme for handover of territory | Cyprus Mail</a>
+                    <small>cyprus-mail.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.globalsecurity.org/military/library/news/2026/06/mil-260623-presstv06.htm" target="_blank" rel="noopener">Lebanon launches 5th round of talks with Israel as ceasefire violations persist</a>
+                    <small>www.globalsecurity.org · ok</small>
+                </li>
+                </ol>
                     </div>
                     <div>
                         <h4>Raw title pattern</h4>
@@ -1467,12 +1895,12 @@ small {
 
                 <div class="grid">
                     <div>
-                        <h4>Supplementary media search</h4>
-                        <ol><li>No supplementary media item found.</li></ol>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
                     </div>
                     <div>
-                        <h4>Queries used</h4>
-                        <ol><li>&quot;Beirut, Beyrouth, Lebanon&quot; &quot;Lebanon&quot; &quot;armed clash&quot;</li><li>&quot;Lebanon&quot; &quot;armed clash&quot;</li><li>&quot;Beirut, Beyrouth, Lebanon&quot; &quot;Lebanon&quot; &quot;shooting&quot;</li><li>&quot;Lebanon&quot; &quot;shooting&quot;</li><li>&quot;Beirut, Beyrouth, Lebanon&quot; &quot;Lebanon&quot; &quot;security incident&quot;</li><li>&quot;Lebanon&quot; &quot;security incident&quot;</li></ol>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Beirut, Beyrouth, Lebanon&quot; &quot;Lebanon&quot; &quot;israel&quot; &quot;killed&quot;</li><li>&quot;Lebanon&quot; &quot;israel&quot; &quot;killed&quot;</li><li>&quot;Beirut, Beyrouth, Lebanon&quot; &quot;killed&quot;</li><li>&quot;israel&quot; &quot;killed&quot; 2026-06-24</li></ol>
                     </div>
                 </div>
             </article>
