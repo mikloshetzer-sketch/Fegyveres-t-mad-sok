@@ -1171,7 +1171,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+                <p>Top 5 selected as event clusters: grouped by date, country, normalized location and event type, then ranked by strategic score and source diversity.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
@@ -1801,6 +1801,325 @@ def build_biweekly_html(start_day, end_day, events, events_by_region, sharecard_
 """
 
 
+def normalize_cluster_location(value):
+    value = clean_text(value)
+    value = re.sub(r"\s*\(general\)\s*", "", value, flags=re.IGNORECASE)
+    value = value.replace("Kyyiv", "Kyiv").replace("Kiev", "Kyiv")
+    value = value.replace("Odes'ka", "Odesa").replace("Odessa", "Odesa")
+    value = re.sub(r"\s+", " ", value).strip()
+
+    parts = [part.strip() for part in value.split(",") if part.strip()]
+    if len(parts) >= 2 and parts[0].lower() == parts[1].lower():
+        parts = [parts[0]] + parts[2:]
+
+    return ", ".join(parts) if parts else value
+
+
+def normalized_event_token(value):
+    value = normalize_key(value)
+    value = value.replace("fight", "armed-clash")
+    value = value.replace("assault", "armed-attack")
+    value = value.replace("shooting", "armed-attack")
+    value = value.replace("explosion", "blast")
+    value = value.replace("bombing", "blast")
+    return value
+
+
+def source_domain(url):
+    return str(url).replace("https://", "").replace("http://", "").split("/")[0].lower()
+
+
+def build_event_cluster_key(feature):
+    props = feature.get("properties", {})
+    event_date = get_event_date(props)
+    date_key = event_date.isoformat() if event_date else "unknown-date"
+    country = normalize_key(get_country(props))
+    location = normalize_key(normalize_cluster_location(get_location(props)))
+    event_type = normalized_event_token(get_event_type(props))
+    return (date_key, country, location, event_type)
+
+
+def cluster_title_from_features(features):
+    if not features:
+        return "Unidentified event cluster"
+
+    props = features[0].get("properties", {})
+    event_type = get_event_type(props)
+    location = normalize_cluster_location(get_location(props))
+    country = get_country(props)
+
+    if location and location != "Nincs pontos helyadat":
+        return f"{event_type} – {location}"
+
+    return f"{event_type} – {country}"
+
+
+def build_event_clusters(events):
+    grouped = {}
+
+    for feature in events:
+        key = build_event_cluster_key(feature)
+        grouped.setdefault(key, []).append(feature)
+
+    clusters = []
+
+    for key, features in grouped.items():
+        countries = Counter()
+        locations = Counter()
+        event_types = Counter()
+        natures = Counter()
+        titles = []
+        source_urls = []
+        source_domains = set()
+
+        for feature in features:
+            props = feature.get("properties", {})
+            sources = props.get("merged_sources") or get_sources(props)
+
+            for src in sources:
+                if src and src not in source_urls:
+                    source_urls.append(src)
+                if src:
+                    source_domains.add(source_domain(src))
+
+            title = get_title(props)
+            if title and title not in titles:
+                titles.append(title)
+
+            countries[get_country(props)] += 1
+            locations[normalize_cluster_location(get_location(props))] += 1
+            event_types[get_event_type(props)] += 1
+            natures[props.get("event_nature") or classify_event_nature(props)] += 1
+
+        sample_props = features[0].get("properties", {})
+        event_date = get_event_date(sample_props)
+
+        country = countries.most_common(1)[0][0] if countries else get_country(sample_props)
+        location = locations.most_common(1)[0][0] if locations else normalize_cluster_location(get_location(sample_props))
+        event_type = event_types.most_common(1)[0][0] if event_types else get_event_type(sample_props)
+        event_nature = natures.most_common(1)[0][0] if natures else classify_event_nature(sample_props)
+
+        clusters.append({
+            "key": "|".join(key),
+            "date": event_date.isoformat() if event_date else None,
+            "country": country,
+            "location": location,
+            "event_type": event_type,
+            "event_nature": event_nature,
+            "title": cluster_title_from_features(features),
+            "raw_titles": titles[:10],
+            "features": features,
+            "feature_count": len(features),
+            "source_count": len(source_urls),
+            "source_domain_count": len(source_domains),
+            "source_domains": sorted(source_domains)[:20],
+            "sources": source_urls[:20],
+        })
+
+    return clusters
+
+
+def build_cluster_scoring_context(clusters):
+    context = {
+        "location_counts": Counter(),
+        "country_counts": Counter(),
+        "type_counts": Counter(),
+    }
+
+    for cluster in clusters:
+        context["location_counts"][cluster["location"]] += cluster["feature_count"]
+        context["country_counts"][cluster["country"]] += cluster["feature_count"]
+        context["type_counts"][cluster["event_type"]] += cluster["feature_count"]
+
+    return context
+
+
+def calculate_cluster_location_score(cluster):
+    text = f"{cluster.get('title')} {cluster.get('location')} {cluster.get('country')} {cluster.get('event_type')}".lower()
+    score = 0
+
+    for category, terms in STRATEGIC_LOCATION_TERMS.items():
+        if contains_any(text, terms):
+            score += STRATEGIC_LOCATION_WEIGHTS.get(category, 0)
+
+    return min(score, 20)
+
+
+def calculate_cluster_international_score(cluster):
+    text = f"{cluster.get('title')} {cluster.get('location')} {cluster.get('country')} {cluster.get('event_type')}".lower()
+    country = cluster.get("country")
+    score = 0
+
+    for category, terms in INTERNATIONAL_CONTEXT_TERMS.items():
+        if contains_any(text, terms):
+            score += INTERNATIONAL_CONTEXT_WEIGHTS.get(category, 0)
+
+    if country in EU_COUNTRIES:
+        score += 5
+
+    if country in MIDDLE_EAST_COUNTRIES:
+        score += 5
+
+    if country == "Ukraine":
+        score += 15
+
+    return min(score, 25)
+
+
+def calculate_cluster_repeat_score(cluster, context):
+    if not context:
+        return 0
+
+    same_location_count = context["location_counts"].get(cluster.get("location"), 0)
+    same_country_count = context["country_counts"].get(cluster.get("country"), 0)
+    same_type_count = context["type_counts"].get(cluster.get("event_type"), 0)
+
+    repeat_score = 0
+
+    if same_location_count >= 4:
+        repeat_score += 15
+    elif same_location_count == 3:
+        repeat_score += 10
+    elif same_location_count == 2:
+        repeat_score += 5
+
+    if same_country_count >= 10:
+        repeat_score += 8
+    elif same_country_count >= 5:
+        repeat_score += 5
+    elif same_country_count >= 2:
+        repeat_score += 2
+
+    if same_type_count >= 10:
+        repeat_score += 5
+    elif same_type_count >= 5:
+        repeat_score += 3
+
+    return min(repeat_score, 20)
+
+
+def calculate_cluster_source_score(cluster):
+    score = min(cluster.get("source_domain_count", 0), 5) * 3
+    score += min(cluster.get("source_count", 0), 10)
+
+    domains = " ".join(cluster.get("source_domains", [])).lower()
+    if any(term in domains for term in RELIABLE_SOURCE_TERMS):
+        score += 5
+
+    if cluster.get("source_domain_count", 0) >= 3:
+        score += 5
+
+    return min(score, 25)
+
+
+def score_event_cluster(cluster, context=None):
+    event_type = cluster.get("event_type")
+    event_nature = cluster.get("event_nature")
+    title = cluster.get("title", "")
+    location = cluster.get("location", "")
+    country = cluster.get("country", "")
+    text = f"{title} {event_type} {event_nature} {location} {country}".lower()
+
+    event_score = EVENT_TYPE_WEIGHTS.get(event_type, 2)
+
+    if event_nature in {
+        "Dróntámadás / háborús cselekmény",
+        "Terrorjellegű támadás",
+        "Háborús cselekmény",
+    }:
+        event_score += 5
+
+    if contains_any(text, DRONE_TERMS):
+        event_score += 4
+    if contains_any(text, TERROR_TERMS):
+        event_score += 4
+    if contains_any(text, WAR_TERMS):
+        event_score += 4
+
+    event_score = min(event_score, 20)
+
+    return min(
+        event_score
+        + calculate_cluster_location_score(cluster)
+        + calculate_cluster_international_score(cluster)
+        + calculate_cluster_repeat_score(cluster, context)
+        + calculate_cluster_source_score(cluster),
+        100,
+    )
+
+
+def select_top_event_clusters(events, limit=5):
+    clusters = build_event_clusters(events)
+    context = build_cluster_scoring_context(clusters)
+
+    scored = sorted(
+        clusters,
+        key=lambda cluster: score_event_cluster(cluster, context),
+        reverse=True,
+    )
+
+    selected = []
+    used_locations = Counter()
+    used_country_types = Counter()
+
+    for cluster in scored:
+        location_key = normalize_key(cluster.get("location"))
+        country_type_key = (
+            normalize_key(cluster.get("country")),
+            normalize_key(cluster.get("event_type")),
+        )
+
+        if used_locations[location_key] >= 1:
+            continue
+
+        if used_country_types[country_type_key] >= 2:
+            continue
+
+        selected.append(cluster)
+        used_locations[location_key] += 1
+        used_country_types[country_type_key] += 1
+
+        if len(selected) >= limit:
+            return selected
+
+    for cluster in scored:
+        if cluster in selected:
+            continue
+
+        selected.append(cluster)
+
+        if len(selected) >= limit:
+            break
+
+    return selected
+
+
+def build_cluster_search_terms(cluster):
+    terms = []
+    location = cluster.get("location")
+    country = cluster.get("country")
+    event_type = cluster.get("event_type")
+    title = cluster.get("title")
+
+    if location and country and event_type:
+        terms.append(f"{location} {country} {event_type}")
+    if location and country:
+        terms.append(f"{location} {country}")
+    if title:
+        terms.append(title)
+    if country and event_type:
+        terms.append(f"{country} {event_type}")
+
+    deduped = []
+    for term in terms:
+        term = clean_text(term)
+        if term and term not in deduped:
+            deduped.append(term)
+
+    return deduped[:5]
+
+
+
 def serialize_selected_event(feature, region_name, rank, regional_context):
     props = feature.get("properties", {})
     sources = props.get("merged_sources") or get_sources(props)
@@ -1876,25 +2195,48 @@ def export_selected_events(start_day, end_day, events_by_region):
             "start": start_day.isoformat(),
             "end": end_day.isoformat(),
         },
-        "method": "Regional Top 5 selected by strategic score with near-duplicate reduction. Score includes event type, strategic location, international relevance, repeated hotspot pattern and source density.",
+        "method": (
+            "Regional Top 5 selected as validated event clusters. "
+            "Clusters are grouped by date, country, normalized location and event type. "
+            "Score includes event type, strategic location, international relevance, repeated hotspot pattern and source diversity."
+        ),
         "regions": {},
         "events": [],
     }
 
     for region_name in FOCUS_REGIONS:
         region_events = events_by_region.get(region_name, [])
-        regional_context = build_region_scoring_context(region_events)
-        selected = select_diverse_top_events(region_events, regional_context, limit=5)
+        clusters = build_event_clusters(region_events)
+        selected_clusters = select_top_event_clusters(region_events, limit=5)
+        cluster_context = build_cluster_scoring_context(clusters)
 
         output["regions"][region_name] = {
-            "event_count": len(region_events),
-            "selected_count": len(selected),
+            "raw_event_count": len(region_events),
+            "cluster_count": len(clusters),
+            "selected_count": len(selected_clusters),
         }
 
-        for rank, feature in enumerate(selected, start=1):
-            output["events"].append(
-                serialize_selected_event(feature, region_name, rank, regional_context)
-            )
+        for rank, cluster in enumerate(selected_clusters, start=1):
+            output["events"].append({
+                "record_type": "event_cluster",
+                "region": region_name,
+                "rank": rank,
+                "score": score_event_cluster(cluster, cluster_context),
+                "cluster_key": cluster.get("key"),
+                "title": cluster.get("title"),
+                "date": cluster.get("date"),
+                "country": cluster.get("country"),
+                "location": cluster.get("location"),
+                "event_type": cluster.get("event_type"),
+                "event_nature": cluster.get("event_nature"),
+                "feature_count": cluster.get("feature_count"),
+                "source_count": cluster.get("source_count"),
+                "source_domain_count": cluster.get("source_domain_count"),
+                "source_domains": cluster.get("source_domains", []),
+                "sources": cluster.get("sources", []),
+                "raw_titles": cluster.get("raw_titles", []),
+                "search_terms": build_cluster_search_terms(cluster),
+            })
 
     filename = f"{start_day.isoformat()}_{end_day.isoformat()}-selected-events.json"
     path = SELECTED_EVENTS_DIR / filename
