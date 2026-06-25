@@ -1,0 +1,50 @@
+name: Enrich Selected Events
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: "55 5 * * 1"
+
+permissions:
+  contents: write
+
+jobs:
+  enrich-selected-events:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check selected events file
+        run: |
+          test -f docs/reports/biweekly/selected-events/latest-selected-events.json
+
+      - name: Run local media enrichment
+        run: |
+          python scripts/enrich_selected_events_local_media.py
+
+      - name: Run social media enrichment
+        run: |
+          python scripts/enrich_selected_events_social_media.py
+
+      - name: Commit and push enrichment outputs
+        run: |
+          git config user.name "github-actions"
+          git config user.email "github-actions@github.com"
+
+          git add docs/reports/biweekly/enrichment/
+
+          if git diff --cached --quiet; then
+            echo "No enrichment changes to commit."
+          else
+            git commit -m "Update selected event enrichment outputs"
+            git push
+          fi
