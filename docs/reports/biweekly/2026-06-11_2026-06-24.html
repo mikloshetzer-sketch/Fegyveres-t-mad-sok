@@ -1,0 +1,2471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Two-Week Armed Incident Intelligence Brief – 2026-06-11 to 2026-06-24</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: #0b1120;
+            color: #0f172a;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            max-width: 1280px;
+            margin: 0 auto;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background:
+                linear-gradient(120deg, rgba(2, 6, 23, 0.98), rgba(15, 23, 42, 0.92)),
+                radial-gradient(circle at right, rgba(37, 99, 235, 0.45), transparent 42%);
+            color: #ffffff;
+            padding: 44px 48px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 310px;
+            gap: 30px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            color: #93c5fd;
+            text-transform: uppercase;
+            letter-spacing: 0.14em;
+            font-size: 13px;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 46px;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+        }
+
+        .hero p {
+            margin: 16px 0 0;
+            color: #cbd5e1;
+            font-size: 18px;
+            line-height: 1.55;
+        }
+
+        .period-card {
+            background: rgba(15, 23, 42, 0.88);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            border-radius: 22px;
+            padding: 24px;
+        }
+
+        .period-card span {
+            display: block;
+            color: #94a3b8;
+            font-size: 13px;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .period-card strong {
+            display: block;
+            font-size: 23px;
+            margin-bottom: 16px;
+        }
+
+        .content {
+            padding: 34px 42px 42px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            border: 0;
+            background: #2563eb;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 11px;
+            cursor: pointer;
+            font-weight: 800;
+            text-decoration: none;
+        }
+
+        .btn.secondary { background: #0f172a; }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .kpi {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+        }
+
+        .kpi .label {
+            font-size: 12px;
+            color: #475569;
+            text-transform: uppercase;
+            font-weight: 900;
+            margin-bottom: 10px;
+        }
+
+        .kpi .value {
+            font-size: 28px;
+            color: #1d4ed8;
+            font-weight: 900;
+            line-height: 1.1;
+        }
+
+        .kpi .small {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #64748b;
+        }
+
+        .section {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            padding: 24px;
+            margin-top: 22px;
+            box-shadow: 0 10px 22px rgba(15, 23, 42, 0.05);
+        }
+
+        .section h2 {
+            margin: 0 0 16px;
+            font-size: 24px;
+        }
+
+        .brief-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #334155;
+        }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .rank-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 9px 0;
+            border-bottom: 1px solid #e2e8f0;
+            font-size: 14px;
+        }
+
+        .rank-list span {
+            color: #334155;
+            overflow-wrap: anywhere;
+        }
+
+        .rank-list strong {
+            color: #0f172a;
+        }
+
+        .trend-bars {
+            height: 170px;
+            display: grid;
+            grid-template-columns: repeat(14, 1fr);
+            gap: 8px;
+            align-items: end;
+            padding-top: 12px;
+        }
+
+        .trend-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            color: #475569;
+            font-size: 11px;
+        }
+
+        .bar-wrap {
+            height: 116px;
+            width: 100%;
+            display: flex;
+            align-items: end;
+            justify-content: center;
+        }
+
+        .bar {
+            width: 70%;
+            min-height: 3px;
+            border-radius: 8px 8px 0 0;
+            background: linear-gradient(180deg, #2563eb, #1e40af);
+        }
+
+        .region-block {
+            background: #ffffff;
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 26px;
+            margin-top: 28px;
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+        }
+
+        .region-header {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-start;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 18px;
+            margin-bottom: 20px;
+        }
+
+        .region-header h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #0f172a;
+        }
+
+        .region-header p {
+            margin: 8px 0 0;
+            color: #64748b;
+            line-height: 1.55;
+        }
+
+        .region-count {
+            background: #0f172a;
+            color: #ffffff;
+            border-radius: 999px;
+            padding: 9px 14px;
+            font-size: 13px;
+            font-weight: 900;
+            white-space: nowrap;
+        }
+
+        .region-overview {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .region-overview > div {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 16px;
+        }
+
+        .region-overview h4 {
+            margin: 0 0 10px;
+            color: #1e3a8a;
+        }
+
+        .event-list {
+            display: grid;
+            gap: 18px;
+        }
+
+        .event-card {
+            border: 1px solid #e2e8f0;
+            border-radius: 18px;
+            background: #f8fafc;
+            padding: 20px;
+        }
+
+        .event-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .event-rank {
+            display: inline-block;
+            background: #2563eb;
+            color: white;
+            border-radius: 999px;
+            padding: 5px 10px;
+            font-size: 12px;
+            font-weight: 900;
+            margin-bottom: 8px;
+        }
+
+        .event-card h3 {
+            margin: 0;
+            font-size: 19px;
+            line-height: 1.35;
+        }
+
+        .score-box {
+            min-width: 86px;
+            background: #0f172a;
+            color: white;
+            border-radius: 16px;
+            padding: 12px;
+            text-align: center;
+        }
+
+        .score-box span {
+            display: block;
+            font-size: 11px;
+            color: #cbd5e1;
+            text-transform: uppercase;
+            font-weight: 900;
+        }
+
+        .score-box strong {
+            display: block;
+            font-size: 30px;
+            line-height: 1;
+            margin-top: 4px;
+        }
+
+        .event-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 14px;
+            margin-bottom: 16px;
+        }
+
+        .event-meta span {
+            background: #e0f2fe;
+            border: 1px solid #bae6fd;
+            color: #075985;
+            border-radius: 999px;
+            padding: 6px 10px;
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        .qa-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .qa-grid div {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            padding: 14px;
+        }
+
+        .qa-grid b {
+            color: #0f172a;
+            font-size: 13px;
+            text-transform: uppercase;
+        }
+
+        .qa-grid p {
+            margin: 8px 0 0;
+            color: #334155;
+            line-height: 1.55;
+            font-size: 14px;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 800;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        .muted {
+            color: #64748b;
+            line-height: 1.6;
+        }
+
+        .method {
+            background: #fffbeb;
+            border-color: #fde68a;
+            color: #713f12;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            text-align: center;
+            padding: 24px;
+            font-size: 14px;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { max-width: none; }
+            .actions { display: none; }
+            .section, .region-block, .kpi, .event-card { box-shadow: none; }
+        }
+
+        @media (max-width: 1000px) {
+            .hero { grid-template-columns: 1fr; }
+            .kpi-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .three-col, .region-overview, .qa-grid { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 640px) {
+            .content { padding: 22px; }
+            .hero { padding: 30px 22px; }
+            .hero h1 { font-size: 34px; }
+            .kpi-grid { grid-template-columns: 1fr; }
+            .trend-bars { gap: 4px; }
+            .event-top, .region-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <div class="eyebrow">Two-week OSINT intelligence brief</div>
+                <h1>Armed Incident Strategic Monitor</h1>
+                <p>
+                    Automated two-week review of armed incidents with regional Top 5 event analysis.
+                    The report focuses on the European Union, Ukraine, the Balkans and the Middle East.
+                </p>
+            </div>
+
+            <div class="period-card">
+                <span>Reporting period</span>
+                <strong>2026-06-11 – 2026-06-24</strong>
+                <span>Method</span>
+                <strong>OSINT metadata + keyword-based classification</strong>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="actions">
+                <button class="btn" onclick="window.print()">Download as PDF</button>
+                <a class="btn secondary" href="../index.html">Daily report archive</a>
+                <a class="btn secondary" href="index.html">Biweekly archive</a>
+            </div>
+
+            <section class="kpi-grid">
+                <div class="kpi">
+                    <div class="label">Total incidents</div>
+                    <div class="value">9710</div>
+                    <div class="small">deduplicated events</div>
+                </div>
+                <div class="kpi">
+                    <div class="label">Main region</div>
+                    <div class="value" style="font-size:21px;">Egyéb térségek</div>
+                    <div class="small">highest two-week count</div>
+                </div>
+                <div class="kpi">
+                    <div class="label">Main country</div>
+                    <div class="value" style="font-size:21px;">United States</div>
+                    <div class="small">highest two-week count</div>
+                </div>
+                <div class="kpi">
+                    <div class="label">Main location</div>
+                    <div class="value" style="font-size:21px;">Toronto, Ontario, Canada</div>
+                    <div class="small">most repeated location</div>
+                </div>
+                <div class="kpi">
+                    <div class="label">Main attack type</div>
+                    <div class="value" style="font-size:19px;">Fegyveres összecsapás</div>
+                    <div class="small">keyword-based class</div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Executive overview</h2>
+                <div class="brief-text">
+                    <p>
+                        During the two-week period, the system identified <strong>9710</strong>
+                        deduplicated armed or security-related incidents. The strongest regional concentration
+                        appeared in <strong>Egyéb térségek</strong>, while the most frequently identified country was
+                        <strong>United States</strong>. The most repeated location was
+                        <strong>Toronto, Ontario, Canada</strong>.
+                    </p>
+                    <p>
+                        The event selection below is not a legal or official attribution. It is an analytical ranking
+                        based on event type, strategic location, international relevance, repeated hotspot patterns
+                        and source density. Actor and motivation assessments are only stated when supported by the
+                        available fields; otherwise they are marked as not confirmed.
+                    </p>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Fourteen-day incident trend</h2>
+                <div class="trend-bars">
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:64px"></div></div>
+            <strong>686</strong>
+            <span>06-11</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:60px"></div></div>
+            <strong>629</strong>
+            <span>06-12</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:46px"></div></div>
+            <strong>420</strong>
+            <span>06-13</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:42px"></div></div>
+            <strong>355</strong>
+            <span>06-14</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:63px"></div></div>
+            <strong>675</strong>
+            <span>06-15</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:64px"></div></div>
+            <strong>688</strong>
+            <span>06-16</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:68px"></div></div>
+            <strong>745</strong>
+            <span>06-17</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:65px"></div></div>
+            <strong>706</strong>
+            <span>06-18</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:65px"></div></div>
+            <strong>695</strong>
+            <span>06-19</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:54px"></div></div>
+            <strong>545</strong>
+            <span>06-20</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:51px"></div></div>
+            <strong>496</strong>
+            <span>06-21</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:87px"></div></div>
+            <strong>1030</strong>
+            <span>06-22</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:110px"></div></div>
+            <strong>1358</strong>
+            <span>06-23</span>
+        </div>
+        
+        <div class="trend-item">
+            <div class="bar-wrap"><div class="bar" style="height:64px"></div></div>
+            <strong>682</strong>
+            <span>06-24</span>
+        </div>
+        </div>
+            </section>
+            <section class="section">
+                <h2>Strategic Intelligence Card</h2>
+                <div class="brief-text">
+                    <p>
+                        This visual executive card summarizes the two-week period for blog use and social sharing.
+                        It highlights the four focus regions, strategic hotspots, top countries, main attack types
+                        and early-warning signals.
+                    </p>
+                    <p>
+                        <a href="sharecards/2026-06-11_2026-06-24-executive.svg" target="_blank" rel="noopener">Open the Strategic Intelligence Card separately</a>
+                    </p>
+                </div>
+                <div class="sharecard-preview">
+                    <img src="sharecards/2026-06-11_2026-06-24-executive.svg" alt="Strategic Intelligence Card">
+                </div>
+            </section>
+
+
+            <section class="section">
+                <h2>Two-week breakdown</h2>
+                <div class="three-col">
+                    <div>
+                        <h3>Regions</h3>
+                        <ol class="rank-list"><li><span>Egyéb térségek</span><strong>7112</strong></li><li><span>Közel-Kelet</span><strong>851</strong></li><li><span>Európa – egyéb</span><strong>602</strong></li><li><span>Európai Unió</span><strong>577</strong></li><li><span>Kelet-Európa / orosz–ukrán térség</span><strong>282</strong></li><li><span>Ukrajna</span><strong>221</strong></li><li><span>Balkán</span><strong>65</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Countries</h3>
+                        <ol class="rank-list"><li><span>United States</span><strong>3384</strong></li><li><span>India</span><strong>656</strong></li><li><span>United Kingdom</span><strong>543</strong></li><li><span>Nigeria</span><strong>422</strong></li><li><span>Australia</span><strong>341</strong></li><li><span>Russia</span><strong>271</strong></li><li><span>Canada</span><strong>249</strong></li><li><span>Ukraine</span><strong>221</strong></li><li><span>Pakistan</span><strong>208</strong></li><li><span>Iran</span><strong>142</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Attack types</h3>
+                        <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>6472</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>2677</strong></li><li><span>Robbantás / IED</span><strong>351</strong></li><li><span>Tömeges erőszak</span><strong>124</strong></li><li><span>Rendészeti / belbiztonsági incidens</span><strong>38</strong></li><li><span>Határincidens</span><strong>37</strong></li><li><span>Dróntámadás</span><strong>5</strong></li><li><span>Tüntetés / zavargás</span><strong>5</strong></li><li><span>Rakéta- vagy ballisztikus támadás</span><strong>1</strong></li></ol>
+                    </div>
+                </div>
+            </section>
+
+            
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Európai Unió</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">577 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>Ireland</span><strong>127</strong></li><li><span>France</span><strong>76</strong></li><li><span>Germany</span><strong>65</strong></li><li><span>Greece</span><strong>50</strong></li><li><span>Italy</span><strong>48</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Paris, France (general), France</span><strong>3</strong></li><li><span>Germany</span><strong>3</strong></li><li><span>France</span><strong>3</strong></li><li><span>Berlin, Berlin, Germany</span><strong>3</strong></li><li><span>Munich, Bayern, Germany</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>394</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>164</strong></li><li><span>Tömeges erőszak</span><strong>15</strong></li><li><span>Robbantás / IED</span><strong>4</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Warsaw, (PL67), Poland</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>74</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Warsaw, (PL67), Poland / Poland</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 13 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.eng.kavkaz-uzel.eu/articles/76355" target="_blank" rel="noopener">Source 1</a> <a href="https://www.euronews.com/my-europe/2026/06/23/poland-ukraine-row-is-not-helpful-and-plays-into-putins-hands-brussels-warns" target="_blank" rel="noopener">Source 2</a> <a href="https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859" target="_blank" rel="noopener">Source 3</a> <a href="https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Poland</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>64</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Poland / Poland</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 13 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.theguardian.com/world/2026/jun/23/monika-silva-koniuszek-ecuador-president-family-business" target="_blank" rel="noopener">Source 1</a> <a href="https://www.ibtimes.co.uk/new-forensic-evidence-murder-activist-monika-silva-koniuszek-1804634" target="_blank" rel="noopener">Source 2</a> <a href="https://www.taipeitimes.com/News/world/archives/2026/06/24/2003859661" target="_blank" rel="noopener">Source 3</a> <a href="https://freerepublic.com/focus/f-news/4384857/posts" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>assault – Paris, France (general), France</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>62</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Paris, France (general), France / France</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 76 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.amren.com/news/2026/06/brits-are-caught-up-in-terrifying-night-of-violence-as-french-music-festival-descends-into-stabbings-and-rapes/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.indiatvnews.com/news/world/women-report-syringe-pricks-sexual-assaults-during-chaotic-france-annual-music-fest-2026-06-24-1045929" target="_blank" rel="noopener">Source 2</a> <a href="https://www.thelocal.fr/20260623/historian-and-resistance-hero-joins-frances-pantheon-greats" target="_blank" rel="noopener">Source 3</a> <a href="https://www.modernghana.com/news/1504809/resistance-fighter-and-historian-marc-bloch-enters.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Berlin, Berlin, Germany</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>62</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Berlin, Berlin, Germany / Germany</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 65 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.yahoo.com/news/world/articles/germany-battles-aggressive-outbreak-poisonous-125705371.html" target="_blank" rel="noopener">Source 1</a> <a href="https://www.brandonsun.com/entertainment/2026/06/22/human-rights-museum-board-trustee-resigns-over-exhibit-on-displaced-palestinians" target="_blank" rel="noopener">Source 2</a> <a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">Source 3</a> <a href="https://www.flightglobal.com/archive/2026/06/airbus-helicopters-chief-plays-down-prospects-of-high-speed-programme-without-military-money/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>assault – Rome, Lazio, Italy</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>62</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Rome, Lazio, Italy / Italy</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 48 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.al-monitor.com/originals/2026/06/italian-prosecutors-demand-long-jail-terms-egyptians-over-murder-italian-student" target="_blank" rel="noopener">Source 1</a> <a href="https://www.cubaheadlines.com/articles/332987" target="_blank" rel="noopener">Source 2</a> <a href="https://www.christiantoday.com/news/difficult-choices-in-a-dangerous-world" target="_blank" rel="noopener">Source 3</a> <a href="https://www.dailymail.com/sciencetech/article-15914429/ancient-roman-records-jesus-evidence.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Ukrajna</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">221 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>Ukraine</span><strong>221</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Kyiv, Kyyiv, Misto, Ukraine</span><strong>3</strong></li><li><span>Kiev, Ukraine (general), Ukraine</span><strong>3</strong></li><li><span>Volhynia, Ukraine (general), Ukraine</span><strong>3</strong></li><li><span>Lviv, L&#x27;vivs&#x27;ka Oblast&#x27;, Ukraine</span><strong>3</strong></li><li><span>Crimea, Krym, Avtonomna Respublika, Ukraine</span><strong>2</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Robbantás / IED</span><strong>177</strong></li><li><span>Fegyveres összecsapás</span><strong>27</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>14</strong></li><li><span>Tömeges erőszak</span><strong>3</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>assault – Odesa, Odes&#x27;ka Oblast, Ukraine</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>87</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>International relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Robbantás / IED</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Odesa, Odes&#x27;ka Oblast, Ukraine / Ukraine</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Robbantás / IED. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Ukrainian actor or Ukraine-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 221 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine" target="_blank" rel="noopener">Source 1</a> <a href="https://www.dailymaverick.co.za/article/2026-06-22-moscow-shoots-down-more-than-80-drones-russian-attacks-kill-six-in-ukraine/" target="_blank" rel="noopener">Source 2</a> <a href="https://euobserver.com/223479/crimea-faces-energy-desert-authorities-completely-stop-fuel-sales-and-cancel-tourist-season-ukraine-battlefield-update-day-1579/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.aljazeera.com/news/2026/6/22/ukraine-says-it-hit-missile-electronics-plant-in-western-russia" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>84</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>International relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Robbantás / IED</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine / Ukraine</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Robbantás / IED. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Ukrainian actor or Ukraine-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 221 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.kyivpost.com/opinion/78818" target="_blank" rel="noopener">Source 1</a> <a href="https://www.bssnews.net/international/399170" target="_blank" rel="noopener">Source 2</a> <a href="https://news.az/news/russia-claims-it-downed-323-ukrainian-drones-in-one-night" target="_blank" rel="noopener">Source 3</a> <a href="https://www.edenmagnet.com.au/story/9297188/russian-strikes-overnight-kill-at-least-five-in-ukraine/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>fight – Kyiv, Kyyiv, Misto, Ukraine</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>82</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>International relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Kyiv, Kyyiv, Misto, Ukraine / Ukraine</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Ukrainian actor or Ukraine-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 221 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning" target="_blank" rel="noopener">Source 1</a> <a href="https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/" target="_blank" rel="noopener">Source 2</a> <a href="https://yalibnan.com/2026/06/23/ukraine-struck-russian-missile-electronics-plant-five-dead-and-dozens-injured-governor-says/" target="_blank" rel="noopener">Source 3</a> <a href="https://westchester.news12.com/they-are-winning-himes-and-blumenthal-hopeful-after-visit-to-ukraine" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Kiev, Ukraine (general), Ukraine</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>77</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Kiev, Ukraine (general), Ukraine / Ukraine</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Ukrainian actor or Ukraine-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 221 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://wrp.org.uk/features/neo-nazi-kiev-knowingly-pursuing-the-deliberate-intentional-destruction-of-civilians-dmitry-medvedev/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html" target="_blank" rel="noopener">Source 2</a> <a href="https://www.bankingnews.gr/diethni/articles/883627/trump-drowned-starmer-in-the-north-sea-oil-production-collapses-by-90-london-loses-its-last-strategic-weapon" target="_blank" rel="noopener">Source 3</a> <a href="https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260622-presstv01.htm" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>assault – Ukraine</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>70</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Ukraine / Ukraine</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Ukrainian actor or Ukraine-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 221 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.eng.kavkaz-uzel.eu/articles/76377" target="_blank" rel="noopener">Source 1</a> <a href="https://www.sb.by/en/russian-investigative-committee-individuals-involved-in-attack-on-passenger-bus-in-bryansk-region-id.html" target="_blank" rel="noopener">Source 2</a> <a href="https://dailytimes.com.pk/1512127/five-killed-in-ukrainian-missile-strike-on-russian-city/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.shephardmedia.com/news/air-warfare/eurosatory-2026-wartime-iteration-gives-ukraine-an-edge-as-future-uav-exporter/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Balkán</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">65 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>Turkey</span><strong>29</strong></li><li><span>Albania</span><strong>12</strong></li><li><span>Macedonia</span><strong>6</strong></li><li><span>Kosovo</span><strong>6</strong></li><li><span>Bosnia-Herzegovina</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Albania</span><strong>3</strong></li><li><span>Serbia</span><strong>3</strong></li><li><span>Kosovo</span><strong>3</strong></li><li><span>Istanbul, Istanbul, Turkey</span><strong>2</strong></li><li><span>Ankara, Ankara, Turkey</span><strong>2</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>44</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>17</strong></li><li><span>Tömeges erőszak</span><strong>4</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Ankara, Ankara, Turkey</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>55</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Ankara, Ankara, Turkey / Turkey</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 29 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit" target="_blank" rel="noopener">Source 1</a> <a href="https://www.dailysabah.com/politics/war-on-terror/turkish-authorities-detain-209-in-major-anti-terror-sweep" target="_blank" rel="noopener">Source 2</a> <a href="https://news.az/news/turkiye-detains-209-suspects-in-major-anti-terror-raids" target="_blank" rel="noopener">Source 3</a> <a href="https://www.pilotonline.com/2026/06/23/turkey-detains-nato-summit/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Tirana, Tirane, Albania</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>55</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Tirana, Tirane, Albania / Albania</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 12 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://tiranaexaminer.com/albanias-rama-rejects-criticism-of-kushner-linked-luxury-resort-plans/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.kvnf.org/2026-06-16/protests-continue-against-albanias-government-over-a-kushner-linked-resort-project" target="_blank" rel="noopener">Source 2</a> <a href="https://www.independent.co.uk/news/world/europe/ivanka-trump-albania-island-protests-government-jared-kushner-b2996455.html" target="_blank" rel="noopener">Source 3</a> <a href="https://newrepublic.com/article/211857/jared-kushner-inadvertently-touch-off-albanian-revolution" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>fight – Belgrade, Serbia (general),</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>49</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Belgrade, Serbia (general), / Serbia (general)</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 2 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.bbc.co.uk/news/articles/c14ykj2nr8lo" target="_blank" rel="noopener">Source 2</a> <a href="https://www.thenation.com/article/archive/we-are-all-albanians/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Kosovo</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>47</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Kosovo / Kosovo</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 6 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/" target="_blank" rel="noopener">Source 1</a> <a href="https://foreignpolicy.com/2026/06/15/international-law-decline-united-nations-security-council-morality-legal-institutions-west/?tpcc=recirc_trending062921" target="_blank" rel="noopener">Source 2</a> <a href="https://foreignpolicy.com/2026/06/15/international-law-decline-united-nations-security-council-morality-legal-institutions-west/" target="_blank" rel="noopener">Source 3</a> <a href="https://jewishcurrents.org/the-war-to-bring-democracy-to-iran" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>fight – Istanbul, Istanbul, Turkey</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>45</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Istanbul, Istanbul, Turkey / Turkey</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 29 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://news.az/news/how-does-turkiye-approach-counterterrorism" target="_blank" rel="noopener">Source 1</a> <a href="https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids" target="_blank" rel="noopener">Source 2</a> <a href="https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit" target="_blank" rel="noopener">Source 3</a> <a href="https://english.aawsat.com/world/5287429-t%C3%BCrkiye-detains-209-raids-capital-ankara-ahead-julys-nato-summit" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Közel-Kelet</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">851 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>Iran</span><strong>142</strong></li><li><span>Israel</span><strong>138</strong></li><li><span>Lebanon</span><strong>95</strong></li><li><span>West Bank</span><strong>71</strong></li><li><span>Pakistan</span><strong>65</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Iran</span><strong>3</strong></li><li><span>Tehran, Tehran, Iran</span><strong>3</strong></li><li><span>Israel</span><strong>3</strong></li><li><span>Gaza, Israel (general), Israel</span><strong>3</strong></li><li><span>Syria</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>569</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>242</strong></li><li><span>Tömeges erőszak</span><strong>37</strong></li><li><span>Dróntámadás</span><strong>2</strong></li><li><span>Tüntetés / zavargás</span><strong>1</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Jerusalem, Israel (general), Israel</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>82</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>International relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Jerusalem, Israel (general), Israel / Israel</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 138 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.ynetnews.com/article/skmaaiumgl" target="_blank" rel="noopener">Source 1</a> <a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">Source 2</a> <a href="https://www.eurasiareview.com/22062026-armageddon-qiyamah-and-the-hamas-massacre-oped/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.hindustantimes.com/world-news/who-is-michael-moshe-mizrahi-jewish-community-leader-injured-in-montreal-incel-linked-shooting-101782124976393.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Tehran, Tehran, Iran</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>77</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Tehran, Tehran, Iran / Iran</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 142 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.wbaltv.com/article/us-and-iran-dispute-nuclear-inspections-unfrozen-funds/71685196" target="_blank" rel="noopener">Source 1</a> <a href="https://www.newindianexpress.com/world/2026/Jun/23/irans-missile-programme-never-part-of-us-iran-talks-pakistan-pm-sharif" target="_blank" rel="noopener">Source 2</a> <a href="https://www.eldoradonews.com/news/2026/jun/23/us-and-iran-in-dispute-over-whether-tehran-has/" target="_blank" rel="noopener">Source 3</a> <a href="http://www.russiaherald.com/news/279143651/us-senate-passes-resolution-seeking-to-limit-trump-iran-war-powers" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>fight – Tel Aviv, Tel Aviv, Israel</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>75</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Tel Aviv, Tel Aviv, Israel / Israel</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 138 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://countercurrents.org/2026/06/ceasefire-but-not-a-grand-bargain-between-the-united-states-and-iran/" target="_blank" rel="noopener">Source 1</a> <a href="https://rock102.com/news/030030-vance-says-talks-with-iranian-officials-set-good-foundation-for-a-deal-to-end-the-war/" target="_blank" rel="noopener">Source 2</a> <a href="https://www.kait8.com/2026/06/22/us-iran-wrap-second-day-talks-after-rough-start/" target="_blank" rel="noopener">Source 3</a> <a href="https://yalibnan.com/2026/06/23/israeli-pm-dm-and-army-chiefs-reiterate-pledge-to-continue-to-act-decisively-to-thwart-threats-in-lebanon/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Beirut, Beyrouth, Lebanon</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>68</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Beirut, Beyrouth, Lebanon / Lebanon</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 95 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.worthynews.com/115325-israel-lebanon-talks-open-in-washington-as-hezbollah-disarmament-plan-faces-early-test" target="_blank" rel="noopener">Source 1</a> <a href="https://pjmedia.com/p-david-hornik/2026/06/23/irans-deconfliction-means-a-more-vulnerable-israel-n4954281" target="_blank" rel="noopener">Source 2</a> <a href="https://theshillongtimes.com/2026/06/24/irans-prez-in-pak-as-us-iran-teams-work-to-finalise-deal/" target="_blank" rel="noopener">Source 3</a> <a href="https://rock102.com/news/030030-vance-says-talks-with-iranian-officials-set-good-foundation-for-a-deal-to-end-the-war/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>fight – Iran</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>67</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Iran / Iran</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 142 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.forbes.com/sites/zitaballingerfletcher/2026/06/23/why-space-is-becoming-a-critical-domain-of-modern-warfare/" target="_blank" rel="noopener">Source 1</a> <a href="https://2paragraphs.com/2026/06/mike-pompeo-warns-trumps-iran-deal-would-rehabilitate-irredeemable-regime/" target="_blank" rel="noopener">Source 2</a> <a href="https://krdo.com/news/2026/06/23/upskirting-crimes-help-for-low-t-killer-caterpillars-catch-up-on-the-days-stories/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.newsghana.com.gh/bennett-says-israel-smuggled-starlink-into-iran-blames-netanyahu/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Egyéb térségek</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">7112 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>United States</span><strong>3384</strong></li><li><span>India</span><strong>651</strong></li><li><span>Nigeria</span><strong>422</strong></li><li><span>Australia</span><strong>341</strong></li><li><span>Canada</span><strong>249</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Toronto, Ontario, Canada</span><strong>3</strong></li><li><span>Washington, District of Columbia, United States</span><strong>3</strong></li><li><span>United States</span><strong>3</strong></li><li><span>California, United States</span><strong>3</strong></li><li><span>China</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>4968</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>2003</strong></li><li><span>Tömeges erőszak</span><strong>58</strong></li><li><span>Rendészeti / belbiztonsági incidens</span><strong>38</strong></li><li><span>Határincidens</span><strong>34</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Las Vegas, Nevada, United States</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>72</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Las Vegas, Nevada, United States / United States</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 3384 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.dailymail.com/news/article-15924327/woman-death-cliff-husband-murder-nevada.html" target="_blank" rel="noopener">Source 1</a> <a href="https://www.fox5vegas.com/2026/06/23/las-vegas-weather-heat-peaks-tuesday-before-storm-chances-arrive/" target="_blank" rel="noopener">Source 2</a> <a href="https://www.reviewjournal.com/crime/homicides/utah-authorities-las-vegas-man-arrested-in-2006-death-of-wife-at-zion-national-park-3841969/" target="_blank" rel="noopener">Source 3</a> <a href="https://news3lv.com/news/local/two-more-suspects-arrested-for-2023-las-vegas-murder-case" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Senatobia, Mississippi, United States</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>69</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Senatobia, Mississippi, United States / United States</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 3384 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.actionnews5.com/2026/06/23/hes-all-i-had-kohen-wileys-family-says-he-brought-so-much-joy-into-world/" target="_blank" rel="noopener">Source 1</a> <a href="https://talk1200boston.iheart.com/content/2026-06-23-attorneys-demand-independent-autopsy-for-child-killed-by-police/" target="_blank" rel="noopener">Source 2</a> <a href="https://www.arkansasonline.com/news/2026/jun/23/mississippi-family-asks-for-footage-of-shooting/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.usmagazine.com/crime-news/news/family-demanding-answers-after-boy-1-was-killed-by-police/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>assault – Odessa, Texas, United States</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>65</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Odessa, Texas, United States / United States</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 3384 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.insurancejournal.com/news/southcentral/2026/06/19/874372.htm" target="_blank" rel="noopener">Source 1</a> <a href="https://www.firstalert7.com/2026/06/17/woman-found-dead-north-odessa-storage-facility/" target="_blank" rel="noopener">Source 2</a> <a href="https://www.firstalert7.com/2026/06/15/ector-county-man-charged-with-murder-after-woman-found-shot-death/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.newsday.com/news/nation/midland-texas-shooting-l24145" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>assault – North Las Vegas Police Department, Nevada, United States</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>60</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>North Las Vegas Police Department, Nevada, United States / United States</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Rendészeti / belbiztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>State security or law-enforcement actor mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>Likely linked to internal security or law-enforcement activity. The precise trigger is not confirmed.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 3384 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://news3lv.com/news/local/north-las-vegas-police-investigate-apparent-murder-suicide-in-parking-lot" target="_blank" rel="noopener">Source 1</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>fight – Bolivar, Monagas, Venezuela</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>60</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Bolivar, Monagas, Venezuela / Venezuela</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 15 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.adn.com/nation-world/2026/06/13/us-strike-against-tren-de-aragua-leader-in-venezuela-exemplifies-trumps-approach-to-war-on-drugs/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.aljazeera.com/news/2026/6/13/trump-says-us-strike-killed-tren-de-aragua-gang-boss-with-venezuela-help" target="_blank" rel="noopener">Source 2</a> <a href="https://www.newser.com/story/390963/trump-us-strike-killed-tren-de-aragua-leader-in-venezuela.html" target="_blank" rel="noopener">Source 3</a> <a href="https://www.spacewar.com/afp/260613154231.skfe8cv0.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Európa – egyéb</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">602 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>United Kingdom</span><strong>543</strong></li><li><span>Switzerland</span><strong>19</strong></li><li><span>Norway</span><strong>9</strong></li><li><span>Algeria</span><strong>7</strong></li><li><span>Oceans</span><strong>6</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>United Kingdom</span><strong>3</strong></li><li><span>Edinburgh, Edinburgh, City of, United Kingdom</span><strong>3</strong></li><li><span>Geneva, Genè, Switzerland</span><strong>3</strong></li><li><span>Belfast, Belfast, United Kingdom</span><strong>3</strong></li><li><span>London, London, City of, United Kingdom</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>384</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>210</strong></li><li><span>Tömeges erőszak</span><strong>5</strong></li><li><span>Határincidens</span><strong>3</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Black Sea, Oceans (general), Oceans</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>63</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Black Sea, Oceans (general), Oceans / Oceans</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 6 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.theguardian.com/world/2026/jun/23/ukraine-war-briefing-our-patience-is-not-endless-kyiv-signals-peace-offer-may-expire" target="_blank" rel="noopener">Source 1</a> <a href="https://www.mirror.co.uk/news/world-news/russia-nato-uk-norway-putin-37333607" target="_blank" rel="noopener">Source 2</a> <a href="https://www.express.co.uk/news/world/2220630/nuclear-weapons-russia-drills" target="_blank" rel="noopener">Source 3</a> <a href="https://www.dailymail.com/news/article-15921987/Russia-stages-nuclear-bomber-drills-north-UK.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – United Kingdom</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>47</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>United Kingdom / United Kingdom</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 543 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://cloverdalereporter.com/2026/06/23/progress-slow-but-visible-five-years-after-lytton-fire/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.mynbc5.com/article/suspect-montreal-officers-death-manifesto/71685280" target="_blank" rel="noopener">Source 2</a> <a href="https://kesq.com/news/national-world/cnn-world/2026/06/23/operation-iraqi-freedom-and-operation-new-dawn-fast-facts-4/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.broadsheet.ie/2014/09/26/nothing-could-be-finer-than-to-be-in-carolina/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>fight – Geneva, Genè, Switzerland</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>47</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Geneva, Genè, Switzerland / Switzerland</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 19 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://lasvegassun.com/news/2026/jun/23/us-and-iran-dispute-whether-tehran-has-agreed-to-n/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.adgully.com/post/17322/ipsos-announces-key-leadership-shifts-across-european-markets" target="_blank" rel="noopener">Source 2</a> <a href="https://www.straitstimes.com/asia/se-asia/myanmar-army-killed-over-700-civilians-in-six-months-un" target="_blank" rel="noopener">Source 3</a> <a href="https://www.dailypress.com/2026/06/23/iranian-president-pakistan/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Belfast, Belfast, United Kingdom</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>47</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Belfast, Belfast, United Kingdom / United Kingdom</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 543 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://989wclz.com/news/074470-funeral-services-wednesday-for-firefighter-who-died-after-searsmont-explosion/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.thenational.scot/politics/26218212.racism-rooted-systemic-crisis-across-west/" target="_blank" rel="noopener">Source 2</a> <a href="https://www.aljazeera.com/features/2026/6/23/after-a-decade-brexits-cost-to-britain-is-not-only-economic" target="_blank" rel="noopener">Source 3</a> <a href="https://www.spiked-online.com/2026/06/23/fury-over-migration-has-not-been-whipped-up-by-the-right/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>assault – London, London, City of, United Kingdom</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>47</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Regional relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>London, London, City of, United Kingdom / United Kingdom</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Not confirmed in the available OSINT fields</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 543 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.watoday.com.au/business/companies/stefanovic-s-controversial-podcast-with-far-right-extremist-pulled-offline-20260624-p609ij.html" target="_blank" rel="noopener">Source 1</a> <a href="https://www.asiaone.com/world/northern-irelands-former-unionist-leader-convicted-decades-old-child-sexual-abuse" target="_blank" rel="noopener">Source 2</a> <a href="https://www.ibtimes.co.uk/exiled-russian-journalist-grigory-nekhoroshev-dies-latvia-1804528" target="_blank" rel="noopener">Source 3</a> <a href="https://www.dailymail.com/news/article-15922595/Afghan-migrant-stabbed-man-traumatised-refugee.html" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+    <section class="region-block">
+        <div class="region-header">
+            <div>
+                <h2>Kelet-Európa / orosz–ukrán térség</h2>
+                <p>Top 5 events selected by optimized strategic score with near-duplicate reduction: event type, strategic location, international relevance, repeated hotspot pattern and source density.</p>
+            </div>
+            <span class="region-count">282 events</span>
+        </div>
+
+        <div class="region-overview">
+            <div>
+                <h4>Top countries</h4>
+                <ol class="rank-list"><li><span>Russia</span><strong>271</strong></li><li><span>Belarus</span><strong>8</strong></li><li><span>Moldova</span><strong>3</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top locations</h4>
+                <ol class="rank-list"><li><span>Moscow, Moskva, Russia</span><strong>3</strong></li><li><span>Russia</span><strong>3</strong></li><li><span>Kremlin, Moskva, Russia</span><strong>2</strong></li><li><span>Orekhovo, Tverskaya Oblast&#x27;, Russia</span><strong>2</strong></li><li><span>Dagestan, Dagestan, Russia</span><strong>2</strong></li></ol>
+            </div>
+            <div>
+                <h4>Top attack types</h4>
+                <ol class="rank-list"><li><span>Robbantás / IED</span><strong>167</strong></li><li><span>Fegyveres összecsapás</span><strong>86</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>27</strong></li><li><span>Tömeges erőszak</span><strong>2</strong></li></ol>
+            </div>
+        </div>
+
+        <div class="event-list">
+            
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#1</div>
+                    <h3>fight – Rostov, Rostovskaya Oblast&#x27;, Russia</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>66</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Robbantás / IED</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Rostov, Rostovskaya Oblast&#x27;, Russia / Russia</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Robbantás / IED. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Russian actor or Russia-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 271 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.themoscowtimes.com/2025/06/26/a-turning-point-that-never-happened-eyewitnesses-recall-the-wagner-mercenary-mutiny-2-years-later-a89554" target="_blank" rel="noopener">Source 1</a> <a href="https://www.odnako.org/moscow-under-a-rain-of-drones-zelensky-it-will-burn-with-us-refinery-set-on-fire-lavrov-promises-harsh-response/" target="_blank" rel="noopener">Source 2</a> <a href="https://indianexpress.com/article/world/ukraine-drone-attack-crimea-krasnodar-oil-terminal-fire-kerch-strait-ferry-10750315/" target="_blank" rel="noopener">Source 3</a> <a href="https://economictimes.indiatimes.com/news/new-updates/black-rain-in-moscow-after-ukrainian-drone-strike-damages-oil-refinery-zelenskyy-says-if-ukraine-burns-so-will-moscow/articleshow/131847048.cms" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#2</div>
+                    <h3>fight – Volgograd, Volgogradskaya Oblast&#x27;, Russia</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>66</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Robbantás / IED</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Volgograd, Volgogradskaya Oblast&#x27;, Russia / Russia</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Robbantás / IED. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Russian actor or Russia-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 271 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.eng.kavkaz-uzel.eu/articles/76346" target="_blank" rel="noopener">Source 1</a> <a href="https://aa.com.tr/en/russia-ukraine-war/timeline-ukraine-escalates-strikes-on-russian-energy-sites/3971014" target="_blank" rel="noopener">Source 2</a> <a href="https://www.eng.kavkaz-uzel.eu/articles/76174" target="_blank" rel="noopener">Source 3</a> <a href="https://www.theguardian.com/world/2026/jun/15/ukraine-war-briefing-kyiv-decries-russias-orthodox-values-as-historic-pechersk-lavra-monastery-burns" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#3</div>
+                    <h3>fight – Kerch Strait, Russia (general), Russia</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>65</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Kerch Strait, Russia (general), Russia / Russia</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Russian actor or Russia-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 271 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://wrp.org.uk/features/neo-nazi-kiev-knowingly-pursuing-the-deliberate-intentional-destruction-of-civilians-dmitry-medvedev/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.zerohedge.com/geopolitical/half-crimea-plunged-blackout-after-ukraine-attacks-thermal-plant-port" target="_blank" rel="noopener">Source 2</a> <a href="https://www.surinametimes.com/artikel/fuel-sales-halted-in-occupied-crimea-as-ukraine-targets-oil-facilities" target="_blank" rel="noopener">Source 3</a> <a href="https://www.businessinsider.com/ukraine-squeeze-crimea-fuel-cut-mid-range-drones-sevastopol-2026-6" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#4</div>
+                    <h3>fight – Pokrovsk, Mordoviya, Russia</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>63</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Fegyveres összecsapás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Pokrovsk, Mordoviya, Russia / Russia</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Fegyveres összecsapás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Russian actor or Russia-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 271 times and the same location appears 2 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/" target="_blank" rel="noopener">Source 1</a> <a href="https://www.kyivpost.com/post/78735" target="_blank" rel="noopener">Source 2</a> <a href="https://www.dailykos.com/stories/2026/6/22/800059362/community/1580/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.mirror.co.uk/news/world-news/russia-ukraine-war-zelensky-kerch-37329770" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        <article class="event-card">
+            <div class="event-top">
+                <div>
+                    <div class="event-rank">#5</div>
+                    <h3>assault – Moscow, Moskva, Russia</h3>
+                </div>
+                <div class="score-box">
+                    <span>Score</span>
+                    <strong>62</strong>
+                </div>
+            </div>
+
+            <div class="event-meta">
+                <span>Strategic relevance</span>
+                <span>Medium–High confidence</span>
+                <span>Rajtaütés / fegyveres támadás</span>
+            </div>
+
+            <div class="qa-grid">
+                <div>
+                    <b>Where?</b>
+                    <p>Moscow, Moskva, Russia / Russia</p>
+                </div>
+                <div>
+                    <b>What happened?</b>
+                    <p>Rajtaütés / fegyveres támadás. Event nature: Egyéb biztonsági esemény.</p>
+                </div>
+                <div>
+                    <b>Who carried it out?</b>
+                    <p>Russian actor or Russia-related context mentioned in the source text</p>
+                </div>
+                <div>
+                    <b>Why might it have happened?</b>
+                    <p>The motivation cannot be established safely from the available automated fields.</p>
+                </div>
+                <div>
+                    <b>Why does it matter?</b>
+                    <p>The same country appears 271 times and the same location appears 3 times in the two-week regional sample.</p>
+                </div>
+                <div>
+                    <b>Sources</b>
+                    <p><a href="https://www.kyivpost.com/opinion/78818" target="_blank" rel="noopener">Source 1</a> <a href="https://www.eng.kavkaz-uzel.eu/articles/76377" target="_blank" rel="noopener">Source 2</a> <a href="https://yalibnan.com/2026/06/24/russia-says-us-hasnt-followed-through-on-trump-putin-understandings/" target="_blank" rel="noopener">Source 3</a> <a href="https://www.eurasiareview.com/23062026-ukrainian-strikes-highlight-russian-vulnerabilities-as-pressure-for-compromise-grows-analysis/" target="_blank" rel="noopener">Source 4</a> </p>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+    </section>
+    
+
+            <section class="section method">
+                <h2>Methodological note</h2>
+                <p>
+                    This report is generated from open-source incident metadata. Classification of drones,
+                    terrorism-related events, war-related events and attack types is based on keyword matching
+                    and structured fields. The output is an analytical filter and should not be treated as an
+                    official incident classification.
+                </p>
+                <p>
+                    Questions such as perpetrator, motivation and operational intent are handled conservatively.
+                    When the available metadata does not confirm the actor or motive, the report states this
+                    explicitly instead of guessing.
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            Armed Incident Strategic Monitor – automated two-week OSINT report
+        </footer>
+    </div>
+</body>
+</html>
