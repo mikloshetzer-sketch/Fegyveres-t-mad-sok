@@ -12,6 +12,7 @@ INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 BIWEEKLY_DIR = REPORTS_DIR / "biweekly"
 BIWEEKLY_SHARECARDS_DIR = BIWEEKLY_DIR / "sharecards"
+SELECTED_EVENTS_DIR = BIWEEKLY_DIR / "selected-events"
 
 
 FOCUS_REGIONS = [
@@ -1800,6 +1801,111 @@ def build_biweekly_html(start_day, end_day, events, events_by_region, sharecard_
 """
 
 
+def serialize_selected_event(feature, region_name, rank, regional_context):
+    props = feature.get("properties", {})
+    sources = props.get("merged_sources") or get_sources(props)
+
+    event_date = get_event_date(props)
+    title = get_title(props)
+    country = get_country(props)
+    location = get_location(props)
+    event_type = get_event_type(props)
+    event_nature = props.get("event_nature") or classify_event_nature(props)
+
+    return {
+        "region": region_name,
+        "rank": rank,
+        "score": score_event(feature, regional_context),
+        "title": title,
+        "date": event_date.isoformat() if event_date else None,
+        "country": country,
+        "location": location,
+        "event_type": event_type,
+        "event_nature": event_nature,
+        "source_count": len(sources),
+        "sources": sources[:10],
+        "primary_url": get_event_url(props),
+        "search_terms": build_event_search_terms(title, location, country, event_type, event_nature),
+    }
+
+
+def build_event_search_terms(title, location, country, event_type, event_nature):
+    terms = []
+
+    base_parts = [
+        clean_text(location),
+        clean_text(country),
+        clean_text(event_type),
+    ]
+
+    base_query = " ".join(
+        part for part in base_parts
+        if part and part not in {"Nincs pontos helyadat", "Ismeretlen ország"}
+    )
+
+    if base_query:
+        terms.append(base_query)
+
+    title_query = clean_text(title)
+    if title_query:
+        terms.append(title_query)
+
+    nature_query = " ".join(
+        part for part in [clean_text(country), clean_text(event_nature)]
+        if part and part != "Ismeretlen ország"
+    )
+
+    if nature_query:
+        terms.append(nature_query)
+
+    deduped = []
+
+    for term in terms:
+        if term not in deduped:
+            deduped.append(term)
+
+    return deduped[:5]
+
+
+def export_selected_events(start_day, end_day, events_by_region):
+    SELECTED_EVENTS_DIR.mkdir(parents=True, exist_ok=True)
+
+    output = {
+        "generated_at": datetime.utcnow().isoformat() + "Z",
+        "period": {
+            "start": start_day.isoformat(),
+            "end": end_day.isoformat(),
+        },
+        "method": "Regional Top 5 selected by strategic score with near-duplicate reduction. Score includes event type, strategic location, international relevance, repeated hotspot pattern and source density.",
+        "regions": {},
+        "events": [],
+    }
+
+    for region_name in FOCUS_REGIONS:
+        region_events = events_by_region.get(region_name, [])
+        regional_context = build_region_scoring_context(region_events)
+        selected = select_diverse_top_events(region_events, regional_context, limit=5)
+
+        output["regions"][region_name] = {
+            "event_count": len(region_events),
+            "selected_count": len(selected),
+        }
+
+        for rank, feature in enumerate(selected, start=1):
+            output["events"].append(
+                serialize_selected_event(feature, region_name, rank, regional_context)
+            )
+
+    filename = f"{start_day.isoformat()}_{end_day.isoformat()}-selected-events.json"
+    path = SELECTED_EVENTS_DIR / filename
+    path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    latest_path = SELECTED_EVENTS_DIR / "latest-selected-events.json"
+    latest_path.write_text(json.dumps(output, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    return f"selected-events/{filename}"
+
+
 def update_biweekly_index():
     BIWEEKLY_DIR.mkdir(parents=True, exist_ok=True)
     reports = sorted(BIWEEKLY_DIR.glob("*.html"), reverse=True)
@@ -1965,6 +2071,12 @@ def generate_biweekly_report():
 
     BIWEEKLY_DIR.mkdir(parents=True, exist_ok=True)
 
+    selected_events_path = export_selected_events(
+        start_day=start_day,
+        end_day=end_day,
+        events_by_region=events_by_region,
+    )
+
     sharecard_path = generate_biweekly_sharecard(
         start_day=start_day,
         end_day=end_day,
@@ -1987,6 +2099,7 @@ def generate_biweekly_report():
     update_biweekly_index()
 
     print(f"Kéthetes jelentés elkészült: {report_path}")
+    print(f"Kiválasztott események exportja elkészült: {BIWEEKLY_DIR / selected_events_path}")
     print(f"Strategic Intelligence Card elkészült: {BIWEEKLY_DIR / sharecard_path}")
     print(f"Kéthetes archívum frissítve: {BIWEEKLY_DIR / 'index.html'}")
 
