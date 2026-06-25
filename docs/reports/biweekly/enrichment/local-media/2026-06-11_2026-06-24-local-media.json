@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-25T09:38:22.609871Z",
+  "generated_at": "2026-06-25T11:24:11.623860Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-11",
@@ -7,397 +7,6 @@
   },
   "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
   "enriched_events": [
-    {
-      "record_type": "event_cluster",
-      "region": "Európai Unió",
-      "rank": 1,
-      "score": 77,
-      "title": "Tömeges erőszak – Warsaw, (PL67), Poland",
-      "date": "2026-06-23",
-      "country": "Poland",
-      "location": "Warsaw, (PL67), Poland",
-      "event_type": "Tömeges erőszak",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 11,
-      "source_domain_count": 10,
-      "source_domains": [
-        "aa.com.tr",
-        "economictimes.indiatimes.com",
-        "en.philenews.com",
-        "weeklyblitz.net",
-        "www.bgnes.com",
-        "www.euronews.com",
-        "www.independent.co.uk",
-        "www.kyivpost.com",
-        "www.politico.eu",
-        "www.zerohedge.com"
-      ],
-      "original_sources": [
-        "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
-        "https://economictimes.indiatimes.com/news/international/world-news/why-are-poland-and-ukraine-at-odds-about-their-history/articleshow/131904925.cms",
-        "https://en.philenews.com/international/poland-ukraine-upa-army-dispute/",
-        "https://www.independent.co.uk/news/world/europe/poland-ukraine-history-russia-wwii-b3000355.html",
-        "http://www.bgnes.com/politics/tusk-criticises-president-nawrocki-over-revoking-zelenskyy-s-order",
-        "https://www.euronews.com/my-europe/2026/06/21/poland-and-ukraines-honours-war-intensifies",
-        "https://www.politico.eu/article/volodymyr-zelenskyy-poland-world-war-ii-ukrainian-military-unit-polish-politics/",
-        "https://weeklyblitz.net/2026/06/21/poland-strips-zelensky-of-highest-state-honor-amid-dispute-over-wartime-nationalist-legacy/",
-        "https://www.kyivpost.com/post/78133",
-        "https://www.kyivpost.com/opinion/78128",
-        "https://www.zerohedge.com/geopolitical/poland-vows-it-wont-block-negotiations-ukraines-eu-accession-despite-low-point"
-      ],
-      "raw_titles": [
-        "mass_violence – Warsaw, (PL67), Poland"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
-          "description": "Poland revokes Zelenskyy s state honor over dispute involving controversial World War II-era Ukrainian nationalist group | Anadolu",
-          "published": "2026-06-23T19:20:21.94"
-        },
-        {
-          "url": "https://economictimes.indiatimes.com/news/international/world-news/why-are-poland-and-ukraine-at-odds-about-their-history/articleshow/131904925.cms",
-          "domain": "economictimes.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Why are Poland and Ukraine at odds about their history? - The Economic Times",
-          "description": "text/html; charset=UTF-8\"> Why are Poland and Ukraine at odds about their history? - The Economic Times <meta content=",
-          "published": ""
-        },
-        {
-          "url": "https://en.philenews.com/international/poland-ukraine-upa-army-dispute/",
-          "domain": "en.philenews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Despite Poland being a firm ally of Ukraine in its war with Russia, the two nations are in dispute over Kyiv's renaming of an army unit after a nationalist force that massacred Poles during World War Two. Here's how their rival interpretations of history have soured relations: UKRAINIAN INSURGENT ARMY Polish President Karol Nawrocki stripped Ukrainian President Volodymyr Zelenskiy of the country's top honour on Friday, after Zelenskiy signed a decree recognising a Ukrainian combat unit's contribution to the fight against Russia by naming it after the Ukrainian Insurgent Army (UPA), angering many in Poland. During and after World War Two, when Ukraine belonged to the Soviet Union, the UPA fought against the Red Army, for a time allying itself with the Nazi German invaders, to seek Ukrainian independence. Ukraine says the naming of the unit carries no \"anti-Polish intent\" and was chosen by soldiers who wanted to commemorate others who had fought against Moscow. But the UPA was also involved in the Volhynia massacres carried out by Ukrainian nationalists from 1943 to 1945, in which Warsaw says around 100,000 ethnic Poles were killed. Thousands of Ukrainians also died in reprisal killings. Polish historians view the massacres as a genocide intended to prevent a post-war Polish state claiming sovereignty over Ukrainian-majority areas that had been part of Poland between the two world wars. Kyiv rejects the term, saying that thousands of Ukrainians were also killed in what was a complex conflict. The events have been a bone of contention for decades, even as Poland has strongly backed Ukraine in its fight against Russia's invasion, taking in almost a million refugees and supplying weapons. In 1947, within the new borders established after World War Two, Poland forcibly relocated some 140,000 ethnic Ukrainians and people identifying as members of the small Lemko ethnic group from southeastern Poland to territories it had regained from Germany. The aim was to cut support for underground UPA groups in Poland, but the Ukrainian side considers it a crime of ethnic cleansing. DEMANDS FOR EXHUMATIONS IN UKRAINE Successive Polish governments have, with limited success, demanded access to the sites in western Ukraine that were once part of Poland where UPA massacres took place. But last year Poland began exhuming the remains of Poles killed in the former Polish village of Puzhnyky. Last week, Kyiv also gave permission for more exhumations in Volhynia's Liuboml district. NATIONALIST PRESIDENT NAWROCKI Nawrocki, a conservative nationalist historian inspired by U.S. President Donald Trump, has repeatedly accused Kyiv of stalling on requests for exhumations and urged it to denounce the Volhynia massacre as genocide. Nawrocki has tapped into weariness with the large number of Ukrainians in Poland and, during his campaign, vowed not to ratify any Ukrainian accession to NATO to avoid provoking Russia, departing from previous Polish policy and angering Kyiv. Critics have accused Nawrocki of promoting an approach to history teaching that whitewashes difficult parts of Poland's past. | en.philenews.com",
-          "description": "Poland has stripped Ukrainian President Zelenskiy of its top honour after Kyiv named a military unit after the controversial Ukrainian Insurgent Army, deepening tensions over historical interpretation.",
-          "published": "2026-06-24T16:35:49+03:00"
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/europe/poland-ukraine-history-russia-wwii-b3000355.html",
-          "domain": "www.independent.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "The bitter historical feud between Ukraine and Poland amid war against Russia | The Independent",
-          "description": "Polish President Karol Nawrocki stripped Ukrainian President Volodymyr Zelensky of the country",
-          "published": "2026-06-22T10:43:52.000Z"
-        },
-        {
-          "url": "http://www.bgnes.com/politics/tusk-criticises-president-nawrocki-over-revoking-zelenskyy-s-order",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Tusk criticises president Nawrocki over revoking Zelenskyy’s order | BGNES",
-          "description": "Nawrocki’s decision quickly led to diplomatic tensions",
-          "published": "2026-06-22T19:08:58Z"
-        },
-        {
-          "url": "https://www.euronews.com/my-europe/2026/06/21/poland-and-ukraines-honours-war-intensifies",
-          "domain": "www.euronews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Row between Poland and Ukraine over medals intensifies | Euronews",
-          "description": "After Poland’s president stripped his Ukrainian counterpart of the country’s highest state honour, current and former Ukrainian officials are renouncing their own awards.",
-          "published": "2026-06-21 11:16:04 +02:00"
-        },
-        {
-          "url": "https://www.politico.eu/article/volodymyr-zelenskyy-poland-world-war-ii-ukrainian-military-unit-polish-politics/",
-          "domain": "www.politico.eu",
-          "status": "ok",
-          "error": null,
-          "title": "Polish president strips Zelenskyy of top honor in dispute over World War II unit POLITICO",
-          "description": "Karol Nawrocki s move puts an intense strain on one of the most important European alliances in the war against Russia.",
-          "published": "2026-06-20T06:33:56+00:00"
-        },
-        {
-          "url": "https://weeklyblitz.net/2026/06/21/poland-strips-zelensky-of-highest-state-honor-amid-dispute-over-wartime-nationalist-legacy/",
-          "domain": "weeklyblitz.net",
-          "status": "error",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://www.kyivpost.com/post/78133",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Zelensky Expected to Attend Gdańsk Recovery Summit Despite Historical Row with Poland",
-          "description": "President Volodymyr Zelensky is expected to attend the Ukraine Recovery Conference in Gdańsk this month, despite a diplomatic row over wartime history.",
-          "published": "2026-06-14 09:48:00"
-        },
-        {
-          "url": "https://www.kyivpost.com/opinion/78128",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Opinion: Poland, Ukraine, Cannot Afford to Weaponize the Past",
-          "description": "Why historical disputes, with narratives presented in black and white terms, must not be allowed to fracture the Polish-Ukrainian alliance.",
-          "published": "2026-06-14 11:05:00"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
-        "top_keywords": [
-          "poland",
-          "president",
-          "nawrocki",
-          "polish",
-          "kyiv",
-          "against",
-          "historical",
-          "history",
-          "two",
-          "unit"
-        ],
-        "actor_hints": [
-          "russia",
-          "ukraine",
-          "ukrainian",
-          "nato",
-          "army",
-          "military",
-          "government",
-          "trump"
-        ],
-        "conflict_hints": [
-          "killed",
-          "war"
-        ],
-        "usable_source_count": 9,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Warsaw, (PL67), Poland\" \"Poland\" \"russia\" \"killed\"",
-        "\"Poland\" \"russia\" \"killed\"",
-        "\"Warsaw, (PL67), Poland\" \"killed\"",
-        "\"russia\" \"killed\" 2026-06-23"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Warsaw, (PL67), Poland\" \"Poland\" \"russia\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Poland\" \"russia\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Warsaw, (PL67), Poland\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"russia\" \"killed\" 2026-06-23",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 11 source URLs across 10 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Európai Unió",
-      "rank": 2,
-      "score": 67,
-      "title": "Fegyveres összecsapás – Rome, Lazio, Italy",
-      "date": "2026-06-24",
-      "country": "Italy",
-      "location": "Rome, Lazio, Italy",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 47,
-      "source_domain_count": 41,
-      "source_domains": [
-        "abcnews.com",
-        "aleteia.org",
-        "allafrica.com",
-        "chattooga1180.com",
-        "countercurrents.org",
-        "crisismagazine.com",
-        "dailypost.ng",
-        "deadline.com",
-        "en.dailypakistan.com.pk",
-        "english.elpais.com",
-        "freethinker.co.uk",
-        "ianslive.in",
-        "italoamericano.org",
-        "organiser.org",
-        "religionnews.com",
-        "timesofindia.indiatimes.com",
-        "www.al-monitor.com",
-        "www.americamagazine.org",
-        "www.atlantanewsfirst.com",
-        "www.bgnes.com"
-      ],
-      "original_sources": [
-        "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-        "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-        "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-        "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/",
-        "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/",
-        "https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html",
-        "https://allafrica.com/stories/202606230099.html",
-        "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-        "https://www.al-monitor.com/originals/2026/06/italian-prosecutors-demand-long-jail-terms-egyptians-over-murder-italian-student",
-        "https://www.myspiritfm.com/News?view=post&blogid=Catholic%2DNews&articleid=300738",
-        "https://ianslive.in/murder-of-migrant-workers-in-italy-exposes-growing-role-of-pakistani-criminal-networks-report--20260622201843",
-        "https://www.siasat.com/iran-wont-rest-until-trump-is-drowned-in-sea-of-anger-khamenei-aide-3494427/",
-        "https://www.ibtimes.co.uk/trump-meloni-iran-nato-clash-1804401",
-        "http://www.europesun.com/news/279136252/my-popularity-is-none-of-your-concernfocus-on-yours-meloni-fires-back-at-trump",
-        "https://www.irishdentist.ie/meloni-trump-clash-the-us-wants-to-mend-things-because-italy-is-essential/19449/",
-        "https://www.newsweek.com/pope-leo-praises-migrant-saint-amid-trump-policy-clash-12100426",
-        "https://dailypost.ng/2026/06/20/meloni-fires-back-at-trump-denies-asking-for-g7-photo/",
-        "https://countercurrents.org/2026/06/the-old-names-are-no-longer-enough-gaza-lebanon-and-the-architecture-of-the-erasable/",
-        "https://aleteia.org/2026/06/20/pope-leo-spends-time-in-prayer-with-st-augustines-relics/",
-        "https://abcnews.com/Politics/trump-italian-pm-giorgia-meloni-feud-online-g7/story?id=134056785"
-      ],
-      "raw_titles": [
-        "fight – Rome, Lazio, Italy"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-          "domain": "www.usmagazine.com",
-          "status": "ok",
-          "error": null,
-          "title": "Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever",
-          "description": "Sarah Shahi says her kiss with James Gandolfini was one of the best, as she recalls the pair s intimate scene from The Sopranos",
-          "published": "2026-06-24T01:00:01+00:00"
-        },
-        {
-          "url": "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Heatwave hits Europe: record temperatures, closed schools and tourist attractions | BGNES",
-          "description": "The International Federation of Red Cross and Red Crescent Societies warned that the heatwave could quickly become a matter of life and death for the most vulnerable people.",
-          "published": "2026-06-24T07:54:37Z"
-        },
-        {
-          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-          "domain": "www.internazionale.it",
-          "status": "ok",
-          "error": null,
-          "title": "Italian prosecutors demand long jail terms for Egyptians over murder of Italian student - Internazionale",
-          "description": "By Crispian Balmer and Marco RobertiROME, June 23 (Reuters) - Italian prosecutors on Tuesday sought a life sentence for one Egyptian security officer and long jail terms … Leggi",
-          "published": "2026-06-23T19:18:10+02:00"
-        },
-        {
-          "url": "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/",
-          "domain": "www.eurasiareview.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/",
-          "domain": "www.eurasiareview.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html",
-          "domain": "www.dailymail.com",
-          "status": "ok",
-          "error": null,
-          "title": "ANDREW NEIL: The radical reforms of Blair and Thatcher are impossible now. That's why, with seven PMs in a decade, even the Italians are laughing at us | Daily Mail Online",
-          "description": "How we used to chuckle with such a superior smirk at Italy",
-          "published": ""
-        },
-        {
-          "url": "https://allafrica.com/stories/202606230099.html",
-          "domain": "allafrica.com",
-          "status": "ok",
-          "error": null,
-          "title": "Africa: All of Africa Today - June 23, 2026 - allAfrica.com",
-          "description": "",
-          "published": "2026-06-23T06:44:31+0000"
-        },
-        {
-          "url": "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-          "domain": "countercurrents.org",
-          "status": "ok",
-          "error": null,
-          "title": "Students’ lives on hold in Gaza | Countercurrents",
-          "description": "Hundreds, if not thousands, of Palestinian students who have been awarded scholarships abroad are trapped in Gaza, unable to claim their places at universities…",
-          "published": "2026-06-23T09:39:30+00:00"
-        },
-        {
-          "url": "https://www.al-monitor.com/originals/2026/06/italian-prosecutors-demand-long-jail-terms-egyptians-over-murder-italian-student",
-          "domain": "www.al-monitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "Italian prosecutors demand long jail terms for Egyptians over murder of Italian student - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
-          "description": "By Crispian Balmer and Marco RobertiROME, June 23 (Reuters) - Italian prosecutors on Tuesday sought a life sentence for one Egyptian security officer and long jail terms for three others accused over the kidnapping, torture and murder of Italian student Giulio Regeni in Cairo in 2016.Regeni, a postgraduate student at Britain s Cambridge University, disappeared in the Egyptian capital on January25, 2016. His body was found almost a week later, with a post-mortem showing he had been extensively tortured before death.",
-          "published": ""
-        },
-        {
-          "url": "https://www.myspiritfm.com/News?view=post&blogid=Catholic%2DNews&articleid=300738",
-          "domain": "www.myspiritfm.com",
-          "status": "ok",
-          "error": null,
-          "title": "Pope Leo XIV to UN: To combat hunger, focus on humanity",
-          "description": "The pontiff visited the headquarters of the U.N. World Food Programme in Rome on June 22.",
-          "published": ""
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever",
-        "top_keywords": [
-          "italian",
-          "prosecutors",
-          "long",
-          "jail",
-          "terms",
-          "student",
-          "june",
-          "one",
-          "life",
-          "murder"
-        ],
-        "actor_hints": [],
-        "conflict_hints": [
-          "war"
-        ],
-        "usable_source_count": 8,
-        "confidence": "Low"
-      },
-      "queries": [
-        "\"Rome, Lazio, Italy\" \"war\"",
-        "\"Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever\""
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Rome, Lazio, Italy\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 47 source URLs across 41 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
     {
       "record_type": "event_cluster",
       "region": "Ukrajna",
@@ -605,12 +214,12 @@
         },
         {
           "query": "\"Odesa, Odesa Oblast, Ukraine\" \"missile\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"russia\" \"missile\" 2026-06-24",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
@@ -814,7 +423,7 @@
       "local_media_findings": [
         {
           "query": "\"Kharkiv, Kharkivs'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -824,12 +433,12 @@
         },
         {
           "query": "\"Kharkiv, Kharkivs'ka Oblast', Ukraine\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"russia\" \"drone\" 2026-06-24",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
@@ -841,199 +450,6 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 3,
-      "score": 73,
-      "title": "Tömeges erőszak – Volhynia, Ukraine, Ukraine",
-      "date": "2026-06-23",
-      "country": "Ukraine",
-      "location": "Volhynia, Ukraine",
-      "event_type": "Tömeges erőszak",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 10,
-      "source_domain_count": 10,
-      "source_domains": [
-        "aa.com.tr",
-        "foreignpolicy.com",
-        "freerepublic.com",
-        "www.bgnes.com",
-        "www.dailysabah.com",
-        "www.euronews.com",
-        "www.northerndailyleader.com.au",
-        "www.politico.eu",
-        "www.yahoo.com",
-        "www.zerohedge.com"
-      ],
-      "original_sources": [
-        "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
-        "https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/",
-        "https://freerepublic.com/focus/f-news/4384857/posts",
-        "http://www.bgnes.com/politics/tusk-criticises-president-nawrocki-over-revoking-zelenskyy-s-order",
-        "https://www.euronews.com/my-europe/2026/06/21/poland-and-ukraines-honours-war-intensifies",
-        "https://www.zerohedge.com/geopolitical/poland-revokes-top-award-zelensky-row-over-nazi-symbolism-deepens",
-        "https://www.politico.eu/article/volodymyr-zelenskyy-poland-world-war-ii-ukrainian-military-unit-polish-politics/",
-        "https://www.northerndailyleader.com.au/story/9295893/poland-strips-zelenskiy-of-top-honour-amid-ww2-dispute/",
-        "https://www.yahoo.com/news/articles/ukraines-zelenskiy-says-returned-state-164631764.html",
-        "https://www.dailysabah.com/world/europe/poland-withdraws-top-award-from-zelenskyy-over-wartime-legacy-dispute"
-      ],
-      "raw_titles": [
-        "mass_violence – Volhynia, Ukraine (general), Ukraine"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
-          "description": "Poland revokes Zelenskyy s state honor over dispute involving controversial World War II-era Ukrainian nationalist group | Anadolu",
-          "published": "2026-06-23T19:20:21.94"
-        },
-        {
-          "url": "https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/",
-          "domain": "foreignpolicy.com",
-          "status": "ok",
-          "error": null,
-          "title": "Warsaw, Kyiv, and the Ongoing Battle Over the Ukrainian Insurgent Army",
-          "description": "An ugly chapter of World War II history is straining relations between Warsaw and Kyiv.",
-          "published": "2026-06-25"
-        },
-        {
-          "url": "https://freerepublic.com/focus/f-news/4384857/posts",
-          "domain": "freerepublic.com",
-          "status": "ok",
-          "error": null,
-          "title": "Polish president strips Zelenskyy of Poland's highest state honour",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "http://www.bgnes.com/politics/tusk-criticises-president-nawrocki-over-revoking-zelenskyy-s-order",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Tusk criticises president Nawrocki over revoking Zelenskyy’s order | BGNES",
-          "description": "Nawrocki’s decision quickly led to diplomatic tensions",
-          "published": "2026-06-22T19:08:58Z"
-        },
-        {
-          "url": "https://www.euronews.com/my-europe/2026/06/21/poland-and-ukraines-honours-war-intensifies",
-          "domain": "www.euronews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Row between Poland and Ukraine over medals intensifies | Euronews",
-          "description": "After Poland’s president stripped his Ukrainian counterpart of the country’s highest state honour, current and former Ukrainian officials are renouncing their own awards.",
-          "published": "2026-06-21 11:16:04 +02:00"
-        },
-        {
-          "url": "https://www.zerohedge.com/geopolitical/poland-revokes-top-award-zelensky-row-over-nazi-symbolism-deepens",
-          "domain": "www.zerohedge.com",
-          "status": "ok",
-          "error": null,
-          "title": "Poland Revokes Top Award From Zelensky As Row Over Nazi Symbolism Deepens | ZeroHedge",
-          "description": "ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero",
-          "published": ""
-        },
-        {
-          "url": "https://www.politico.eu/article/volodymyr-zelenskyy-poland-world-war-ii-ukrainian-military-unit-polish-politics/",
-          "domain": "www.politico.eu",
-          "status": "ok",
-          "error": null,
-          "title": "Polish president strips Zelenskyy of top honor in dispute over World War II unit POLITICO",
-          "description": "Karol Nawrocki s move puts an intense strain on one of the most important European alliances in the war against Russia.",
-          "published": "2026-06-20T06:33:56+00:00"
-        },
-        {
-          "url": "https://www.northerndailyleader.com.au/story/9295893/poland-strips-zelenskiy-of-top-honour-amid-ww2-dispute/",
-          "domain": "www.northerndailyleader.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Poland strips Zelenskiy of top honour amid WW2 dispute | The Northern Daily Leader | Tamworth, NSW",
-          "description": "Poland and Ukraine risk a major diplomatic crisis after the Polish president stripped an honour from Volodymyr Zelenskiy...",
-          "published": "2026-06-20T08:33:45+00:00"
-        },
-        {
-          "url": "https://www.yahoo.com/news/articles/ukraines-zelenskiy-says-returned-state-164631764.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine s Zelenskiy says he returned state decoration to Polish president",
-          "description": "KYIV/WARSAW, June 20 (Reuters) - Ukrainian President Volodymyr Zelenskiy said on Saturday he had returned a state decoration a day after Poland s president said he had stripped him of the award in con...",
-          "published": "2026-06-20T20:50:14.000Z"
-        },
-        {
-          "url": "https://www.dailysabah.com/world/europe/poland-withdraws-top-award-from-zelenskyy-over-wartime-legacy-dispute",
-          "domain": "www.dailysabah.com",
-          "status": "ok",
-          "error": null,
-          "title": "Poland withdraws top award from Zelenskyy over wartime legacy dispute | Daily Sabah",
-          "description": "Poland s president has revoked the country s highest state honor awarded to Ukrainian President Volodymyr Zelenskyy, following a dispute over...",
-          "published": "2026-06-19T22:25:00+03:00"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
-        "top_keywords": [
-          "poland",
-          "president",
-          "dispute",
-          "state",
-          "polish",
-          "honour",
-          "top",
-          "zelenskiy",
-          "between",
-          "honor"
-        ],
-        "actor_hints": [
-          "russia",
-          "ukraine",
-          "ukrainian",
-          "army",
-          "zelensky",
-          "zelenskyy"
-        ],
-        "conflict_hints": [
-          "war"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium"
-      },
-      "queries": [
-        "\"Volhynia, Ukraine\" \"Ukraine\" \"russia\" \"war\"",
-        "\"Ukraine\" \"russia\" \"war\"",
-        "\"Volhynia, Ukraine\" \"war\"",
-        "\"russia\" \"war\" 2026-06-23"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Volhynia, Ukraine\" \"Ukraine\" \"russia\" \"war\"",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        },
-        {
-          "query": "\"Ukraine\" \"russia\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Volhynia, Ukraine\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"russia\" \"war\" 2026-06-23",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 10 source URLs across 10 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Ukrajna",
-      "rank": 4,
       "score": 89,
       "title": "Robbantás / IED – Kherson, Khersons'ka Oblast', Ukraine",
       "date": "2026-06-24",
@@ -1233,8 +649,57 @@
         },
         {
           "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "KBS 뉴스",
+              "url": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8591091",
+              "domain": "news.kbs.co.kr",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260621T070000Z"
+            },
+            {
+              "title": "우크라이나 미사일 내리 꽂혀 쾅 … 난리 난 러시아 미사일 공장 [ 현장영상 ]",
+              "url": "https://ichannela.com/news/detail/000000536221.do",
+              "domain": "ichannela.com",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260624T080000Z"
+            },
+            {
+              "title": "乌克兰重大发现 ， 俄罗斯导弹库存已空 ， 边打边造使武器质量下降",
+              "url": "https://www.163.com/dy/article/KT21P6SJ05315IF2.html",
+              "domain": "163.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260516T041500Z"
+            },
+            {
+              "title": "Обстріл України 21 червня - Росія атакувала ракетами та 105 дронами",
+              "url": "https://www.rbc.ua/rus/news/letili-droni-balistika-ta-kindzhali-e-priloti-1782023224.html",
+              "domain": "rbc.ua",
+              "source_country": "Ukraine",
+              "language": "Ukrainian",
+              "seendate": "20260621T080000Z"
+            },
+            {
+              "title": "Rusyadan Ukraynaya İHA ve füze saldırılarında yeni rekor",
+              "url": "https://www.haberler.com/3-sayfa/rusya-dan-ukrayna-ya-iha-ve-fuze-saldirilarinda-19792992-haberi/",
+              "domain": "haberler.com",
+              "source_country": "Turkey",
+              "language": "Turkish",
+              "seendate": "20260430T104500Z"
+            },
+            {
+              "title": "બ્રિટન ચાલુ વર્ષે યુક્રેનને 1 . 20 લાખ ડ્રોન પૂરા પાડશેઃ સ્ટાર્મરની ખાતરી",
+              "url": "https://www.gujaratsamachar.com/news/international/britain-will-supply-120-000-drones-to-ukraine-this-year-starmer-assures-24239131402.html",
+              "domain": "gujaratsamachar.com",
+              "source_country": "India",
+              "language": "Gujarati",
+              "seendate": "20260416T004500Z"
+            }
+          ]
         },
         {
           "query": "\"Kherson, Khersons'ka Oblast', Ukraine\" \"missile\"",
@@ -1249,6 +714,150 @@
       ],
       "matched_articles": [],
       "analytical_summary": "The original cluster contains 50 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 4,
+      "score": 97,
+      "title": "Robbantás / IED – Odesa, Odesa Oblast, Ukraine",
+      "date": "2026-06-22",
+      "country": "Ukraine",
+      "location": "Odesa, Odesa Oblast, Ukraine",
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 5,
+      "source_domain_count": 5,
+      "source_domains": [
+        "euobserver.com",
+        "peoplesworld.org",
+        "www.al-monitor.com",
+        "www.aljazeera.com",
+        "www.dailymaverick.co.za"
+      ],
+      "original_sources": [
+        "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine",
+        "https://www.dailymaverick.co.za/article/2026-06-22-moscow-shoots-down-more-than-80-drones-russian-attacks-kill-six-in-ukraine/",
+        "https://euobserver.com/223479/crimea-faces-energy-desert-authorities-completely-stop-fuel-sales-and-cancel-tourist-season-ukraine-battlefield-update-day-1579/",
+        "https://www.aljazeera.com/news/2026/6/22/ukraine-says-it-hit-missile-electronics-plant-in-western-russia",
+        "https://peoplesworld.org/article/major-resolutions-passed-by-afl-cio-reflect-strong-growing-labor-movement/"
+      ],
+      "raw_titles": [
+        "assault – Odesa, Odes'ka Oblast, Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Moscow shoots down nearly 60 drones; Russian attacks kill five in Ukraine - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "June 22 (Reuters) - Moscow shot down dozens of drones in the early hours of Monday and briefly suspended flights at airports, authorities in the Russian capital said, just days after Ukraine hit the city s oil refinery again.Ukrainian authorities said Russian drones had hit civilian merchant vessels, killing an Egyptian crew member, while drone attacks elsewhere killed at least five people, including three members of the same family in Ukraine s northern Sumy region.",
+          "published": ""
+        },
+        {
+          "url": "https://www.dailymaverick.co.za/article/2026-06-22-moscow-shoots-down-more-than-80-drones-russian-attacks-kill-six-in-ukraine/",
+          "domain": "www.dailymaverick.co.za",
+          "status": "ok",
+          "error": null,
+          "title": "Moscow shoots down more than 80 drones; Russian attacks kill six in Ukraine",
+          "description": "Moscow shot down dozens of drones in the early hours of Monday, just days after a repeated Ukrainian strike on the city’s oil refinery, while Russian attacks in Ukraine killed at least six people, including a boy and his father, authorities said.",
+          "published": "2026-06-22T12:20:39.000Z"
+        },
+        {
+          "url": "https://euobserver.com/223479/crimea-faces-energy-desert-authorities-completely-stop-fuel-sales-and-cancel-tourist-season-ukraine-battlefield-update-day-1579/",
+          "domain": "euobserver.com",
+          "status": "ok",
+          "error": null,
+          "title": "Crimea faces ’energy desert’: Authorities completely stop fuel sales and cancel tourist season (Ukraine Battlefield update, Day 1,579) EUobserver",
+          "description": "By smashing ferries, fuel depots and key roads feeding Crimea, Kyiv is testing whether it can strangle Russia’s Black Sea stronghold faster than Moscow can rewire its supply network.",
+          "published": "2026-06-22T14:51:19+02:00"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/6/22/ukraine-says-it-hit-missile-electronics-plant-in-western-russia",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine says it hit missile electronics plant in western Russia | News | Al Jazeera",
+          "description": "Ukraine says facility a ‘critical component’ in defence production as local Russian authorities confirm attack.",
+          "published": ""
+        },
+        {
+          "url": "https://peoplesworld.org/article/major-resolutions-passed-by-afl-cio-reflect-strong-growing-labor-movement/",
+          "domain": "peoplesworld.org",
+          "status": "ok",
+          "error": null,
+          "title": "Major resolutions passed by AFL-CIO reflect strong, growing labor movement People s World",
+          "description": "MINNEAPOLIS—The 30th AFL‑CIO Constitutional Convention, which wrapped up here Wednesday, was a step towards strengthening labor’s fight back against the anti-worker Trump regime and building working-class unity.",
+          "published": "2026-06-12T11:40:25-05:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Moscow shoots down nearly 60 drones; Russian attacks kill five in Ukraine - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+        "top_keywords": [
+          "moscow",
+          "drones",
+          "authorities",
+          "down",
+          "attacks",
+          "hit",
+          "people",
+          "shoots",
+          "kill",
+          "five"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine",
+          "ukrainian",
+          "trump"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "blast",
+          "assault",
+          "killed",
+          "war"
+        ],
+        "usable_source_count": 5,
+        "confidence": "Medium"
+      },
+      "queries": [
+        "\"Odesa, Odesa Oblast, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
+        "\"Ukraine\" \"russia\" \"missile\"",
+        "\"Odesa, Odesa Oblast, Ukraine\" \"missile\"",
+        "\"russia\" \"missile\" 2026-06-22"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Odesa, Odesa Oblast, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Odesa, Odesa Oblast, Ukraine\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"missile\" 2026-06-22",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 5 source URLs across 5 domains. 5 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -1382,8 +991,57 @@
         },
         {
           "query": "\"Ukraine\" \"russia\" \"blast\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "রাশিয়া - ইউক্রেন যুদ্ধের ময়দানে প্রাণ গেল কিশোরগঞ্জের জাহাঙ্গীরের",
+              "url": "https://dailyinqilab.com/national/news/898205",
+              "domain": "dailyinqilab.com",
+              "source_country": "Bangladesh",
+              "language": "Bengali",
+              "seendate": "20260523T060000Z"
+            },
+            {
+              "title": "Kremlinul acuză liderii europeni că „ i - au insuflat lui Trump „ idei dăunătoare în timpul Summitului G7",
+              "url": "https://www.antena3.ro/externe/kremlinul-acuza-liderii-europeni-ca-i-au-insuflat-lui-trump-idei-daunatoare-in-timpul-summitului-g7-792580.html",
+              "domain": "antena3.ro",
+              "source_country": "Romania",
+              "language": "Romanian",
+              "seendate": "20260618T144500Z"
+            },
+            {
+              "title": "ইউক্রেনীয় হামলায় এক সপ্তাহে ২৫ রুশ বেসামরিক নাগরিক নিহত : রাশিয়া",
+              "url": "https://dailyinqilab.com/international/news/893835",
+              "domain": "dailyinqilab.com",
+              "source_country": "Bangladesh",
+              "language": "Bengali",
+              "seendate": "20260512T094500Z"
+            },
+            {
+              "title": "Russia claims Ukraine - linked bomb plot foiled , German woman arrested",
+              "url": "https://www.aljazeera.com/news/2026/4/20/russia-claims-foiled-bomb-plot-involving-german-woman",
+              "domain": "aljazeera.com",
+              "source_country": "United States",
+              "language": "English",
+              "seendate": "20260420T124500Z"
+            },
+            {
+              "title": "Ukraine Zelenskyy Pursues More Arms Deals with Allies to Help Check Russia Invasion",
+              "url": "https://www.military.com/daily-news/2026/04/15/ukraines-zelenskyy-pursues-more-arms-deals-allies-help-check-russias-invasion.html",
+              "domain": "military.com",
+              "source_country": "United States",
+              "language": "English",
+              "seendate": "20260415T134500Z"
+            },
+            {
+              "title": "Maritime drone being used in Ukraine war explodes at Romanian port",
+              "url": "https://www.yorkpress.co.uk/news/national/26170652.maritime-drone-used-ukraine-war-explodes-romanian-port/",
+              "domain": "yorkpress.co.uk",
+              "source_country": "United Kingdom",
+              "language": "English",
+              "seendate": "20260605T160000Z"
+            }
+          ]
         },
         {
           "query": "\"Chornobyl, Kyivs'ka Oblast', Ukraine\" \"blast\"",
@@ -1392,1348 +1050,40 @@
         },
         {
           "query": "\"russia\" \"blast\" 2026-06-22",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 6 source URLs across 5 domains. 6 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Balkán",
-      "rank": 1,
-      "score": 65,
-      "title": "Fegyveres összecsapás – Ankara, Turkey",
-      "date": "2026-06-24",
-      "country": "Turkey",
-      "location": "Ankara, Turkey",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 22,
-      "source_domain_count": 17,
-      "source_domains": [
-        "bianet.org",
-        "cyprus-mail.com",
-        "english.aawsat.com",
-        "english.news.cn",
-        "news.az",
-        "newstodaynet.com",
-        "www.al-monitor.com",
-        "www.arabnews.com",
-        "www.csmonitor.com",
-        "www.dailysabah.com",
-        "www.inewsgr.com",
-        "www.islamicinvitationturkey.com",
-        "www.israelnationalnews.com",
-        "www.jpost.com",
-        "www.pilotonline.com",
-        "www.winnipegfreepress.com",
-        "www.ynetnews.com"
-      ],
-      "original_sources": [
-        "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
-        "https://www.arabnews.com/node/2648399/middle-east",
-        "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
-        "https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit",
-        "https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara",
-        "https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827",
-        "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
-        "https://www.dailysabah.com/politics/war-on-terror/turkish-authorities-detain-209-in-major-anti-terror-sweep",
-        "https://news.az/news/turkiye-detains-209-suspects-in-major-anti-terror-raids",
-        "https://www.pilotonline.com/2026/06/23/turkey-detains-nato-summit/",
-        "https://www.islamicinvitationturkey.com/almayadeen-how-likely-could-turkey-be-israels-next-target-after-iran/",
-        "https://www.al-monitor.com/originals/2026/06/turkey-detains-233-ahead-nato-summit-including-lgbtq-activist-yildiz-tar",
-        "https://www.arabnews.com/node/2647817/middle-east",
-        "https://news.az/news/nato-enhances-turkiyes-air-defence-with-italys-missile-shield-deployment",
-        "https://www.csmonitor.com/World/Middle-East/2026/0616/iran-hormuz-blockade-syrian-rails-ports",
-        "http://www.jpost.com/opinion/article-899435",
-        "https://www.inewsgr.com/330/Erdogan-vs-Netanyahu-A-Dangerous-War-of-Words-That-Could-Ignite-a-New-Middle-East-Power-Struggle.htm",
-        "https://www.dailysabah.com/opinion/op-ed/turkiye-saudi-arabia-axis-hejaz-railway-rewiring-eurasian-connectivity",
-        "https://news.az/news/canturk-caner-ankara-is-t-elling-moscow-the-black-sea-is-not-russias-internal-lake-interview",
-        "https://cyprus-mail.com/2026/06/13/the-cypriot-defence-pivot-a-strategic-illusion"
-      ],
-      "raw_titles": [
-        "fight – Ankara, Ankara, Turkey"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
-          "domain": "newstodaynet.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey detains 209 in raids ahead of July s NATO summit - News Today | First with the news",
-          "description": "Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month s NATO summit, and detained more than 200 people with suspected links to extremist groups, including the Islamic State group.",
-          "published": "2026-06-24T06:28:38+00:00"
-        },
-        {
-          "url": "https://www.arabnews.com/node/2648399/middle-east",
-          "domain": "www.arabnews.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
-          "domain": "english.news.cn",
-          "status": "ok",
-          "error": null,
-          "title": "IS suspect killed in clash with Turkish police in Ankara-Xinhua",
-          "description": "IS suspect killed in clash with Turkish police in Ankara-",
-          "published": ""
-        },
-        {
-          "url": "https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit",
-          "domain": "english.aawsat.com",
-          "status": "ok",
-          "error": null,
-          "title": "ISIS Suspect Killed in Raid Ahead of Ankara NATO Summit",
-          "description": "Police shot dead a man suspected of ties to ISIS group militants during a raid on a district near Ankara, security sources told Turkish media Wednesday. The incident occurred during police raids early Tuesday, two weeks before the July 7-8 NATO summit in the capital Ankara that world leaders from 32 nations, among them US President Donald Trump, will attend. The shooting happened in Sazagasi, about 100 kilometers (60 miles) south of the capital, during a simultaneous operations that saw police arresting more than 200 people, the DHA and IHA news agencies reported.",
-          "published": ""
-        },
-        {
-          "url": "https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara",
-          "domain": "www.dailysabah.com",
-          "status": "ok",
-          "error": null,
-          "title": "Daesh member killed in clash with Turkish police in Ankara | Daily Sabah",
-          "description": "A suspected member of the Daesh terrorist group was killed on Tuesday, and his wife was wounded during a clash with Turkish special operations police...",
-          "published": "2026-06-24T12:22:00+03:00"
-        },
-        {
-          "url": "https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827",
-          "domain": "bianet.org",
-          "status": "ok",
-          "error": null,
-          "title": "Back-to-back drone crashes in Turkey's Black Sea region",
-          "description": "Two fixed-wing drones crashed in the country",
-          "published": ""
-        },
-        {
-          "url": "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
-          "domain": "www.winnipegfreepress.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey detains 209 in raids in the capital ahead of July s NATO summit Winnipeg Free Press",
-          "description": "ANKARA, Turkey (AP) — Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month’s NATO summit, and detained more than 200 people with suspected links to extremist groups, including the Islamic State group, officials said.",
-          "published": "2026-06-23 02:34:48"
-        },
-        {
-          "url": "https://www.dailysabah.com/politics/war-on-terror/turkish-authorities-detain-209-in-major-anti-terror-sweep",
-          "domain": "www.dailysabah.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkish authorities detain 209 in major anti-terror sweep | Daily Sabah",
-          "description": "A total of 209 suspects from several terrorist groups were detained on Tuesday in a string of operations by police and gendarmerie forces in the capital...",
-          "published": "2026-06-23T09:49:00+03:00"
-        },
-        {
-          "url": "https://news.az/news/turkiye-detains-209-suspects-in-major-anti-terror-raids",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://www.pilotonline.com/2026/06/23/turkey-detains-nato-summit/",
-          "domain": "www.pilotonline.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey detains 209 in raids in the capital ahead of July’s NATO summit The Virginian-Pilot",
-          "description": "Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month’s NATO summit, and detained more than 200 people with suspected links to extremist groups, including the Islamic State group, officials said.",
-          "published": "2026-06-23T07:34:24+00:00"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Turkey detains 209 in raids ahead of July s NATO summit - News Today | First with the news",
-        "top_keywords": [
-          "turkish",
-          "summit",
-          "capital",
-          "raids",
-          "ahead",
-          "ankara",
-          "turkey",
-          "tuesday",
-          "suspected",
-          "group"
-        ],
-        "actor_hints": [
-          "nato",
-          "police",
-          "security forces",
-          "trump"
-        ],
-        "conflict_hints": [
-          "drone",
-          "shooting",
-          "clash",
-          "raid",
-          "killed",
-          "wounded",
-          "terror"
-        ],
-        "usable_source_count": 8,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Ankara, Turkey\" \"Turkey\" \"nato\" \"drone\"",
-        "\"Turkey\" \"nato\" \"drone\"",
-        "\"Ankara, Turkey\" \"drone\"",
-        "\"nato\" \"drone\" 2026-06-24"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Ankara, Turkey\" \"Turkey\" \"nato\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Turkey\" \"nato\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Ankara, Turkey\" \"drone\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Ф - 16 и системи против дронови ќе го обезбедуваат јулскиот самит на НАТО во Анкара",
-              "url": "https://libertas.mk/f-16-i-sistemi-protiv-dronovi-e-go-obezbeduvaat-ulskiot-samit-na-nato-vo-ankara/",
-              "domain": "libertas.mk",
-              "source_country": "Macedonia",
-              "language": "Macedonian",
-              "seendate": "20260604T171500Z"
-            },
-            {
-              "title": "Turkey warns France over Cyprus troop deployment : What to know",
-              "url": "https://www.al-monitor.com/originals/2026/04/turkey-warns-france-over-cyprus-troop-deployment-what-know",
-              "domain": "al-monitor.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260430T174500Z"
-            },
-            {
-              "title": "Turkey , Japan launch defense industry partnership with eye on drones",
-              "url": "https://www.al-monitor.com/originals/2026/05/turkey-japan-launch-defense-industry-partnership-eye-drones",
-              "domain": "al-monitor.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260507T174500Z"
-            },
-            {
-              "title": "Italia îndeamnă NATO să - și reconsidere politica privind cheltuielile de apărare . Georgia Meloni : Trebuie să acceptăm faptul că lumea se schimbă",
-              "url": "https://www.capital.ro/italia-indeamna-nato-sa-si-reconsidere-politica-privind-cheltuielile-de-aparare.html",
-              "domain": "capital.ro",
-              "source_country": "Romania",
-              "language": "Romanian",
-              "seendate": "20260612T084500Z"
-            },
-            {
-              "title": "Turkey On India Cyprus Brahmos Missile , भारत से चाहते हैं अच्छे संबंध , साइप्रस को ब्रह्मोस मिसाइलें मिलने के डर ने बदले तुर्की के सुर , बढ़ाया दोस्ती का हाथ - recep tayyip erdogan fm hakan fidan on india turkiye relations as cyprus desire to buy br...",
-              "url": "https://navbharattimes.indiatimes.com/world/uae/recep-tayyip-erdogan-fm-hakan-fidan-on-india-turkiye-relations-as-cyprus-desire-to-buy-brahmos-missiles/articleshow/131482212.cms",
-              "domain": "navbharattimes.indiatimes.com",
-              "source_country": "India",
-              "language": "Hindi",
-              "seendate": "20260603T111500Z"
-            },
-            {
-              "title": "Canadian block on drone parts shows Turkey defense industry still not independent",
-              "url": "https://www.defensenews.com/global/europe/2020/10/13/canadian-block-on-drone-parts-shows-turkeys-defense-industry-still-not-independent/",
-              "domain": "defensenews.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260612T024500Z"
-            }
-          ]
-        },
-        {
-          "query": "\"nato\" \"drone\" 2026-06-24",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
       "matched_articles": [
         {
-          "title": "Turkey , Japan launch defense industry partnership with eye on drones",
-          "url": "https://www.al-monitor.com/originals/2026/05/turkey-japan-launch-defense-industry-partnership-eye-drones",
-          "domain": "al-monitor.com",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260507T174500Z",
-          "match_score": 45
-        },
-        {
-          "title": "Canadian block on drone parts shows Turkey defense industry still not independent",
-          "url": "https://www.defensenews.com/global/europe/2020/10/13/canadian-block-on-drone-parts-shows-turkeys-defense-industry-still-not-independent/",
-          "domain": "defensenews.com",
+          "title": "Russia claims Ukraine - linked bomb plot foiled , German woman arrested",
+          "url": "https://www.aljazeera.com/news/2026/4/20/russia-claims-foiled-bomb-plot-involving-german-woman",
+          "domain": "aljazeera.com",
           "source_country": "United States",
           "language": "English",
-          "seendate": "20260612T024500Z",
-          "match_score": 45
+          "seendate": "20260420T124500Z",
+          "match_score": 35
         },
         {
-          "title": "Turkey warns France over Cyprus troop deployment : What to know",
-          "url": "https://www.al-monitor.com/originals/2026/04/turkey-warns-france-over-cyprus-troop-deployment-what-know",
-          "domain": "al-monitor.com",
-          "source_country": "Israel",
+          "title": "Ukraine Zelenskyy Pursues More Arms Deals with Allies to Help Check Russia Invasion",
+          "url": "https://www.military.com/daily-news/2026/04/15/ukraines-zelenskyy-pursues-more-arms-deals-allies-help-check-russias-invasion.html",
+          "domain": "military.com",
+          "source_country": "United States",
           "language": "English",
-          "seendate": "20260430T174500Z",
+          "seendate": "20260415T134500Z",
           "match_score": 35
         },
         {
-          "title": "Turkey On India Cyprus Brahmos Missile , भारत से चाहते हैं अच्छे संबंध , साइप्रस को ब्रह्मोस मिसाइलें मिलने के डर ने बदले तुर्की के सुर , बढ़ाया दोस्ती का हाथ - recep tayyip erdogan fm hakan fidan on india turkiye relations as cyprus desire to buy br...",
-          "url": "https://navbharattimes.indiatimes.com/world/uae/recep-tayyip-erdogan-fm-hakan-fidan-on-india-turkiye-relations-as-cyprus-desire-to-buy-brahmos-missiles/articleshow/131482212.cms",
-          "domain": "navbharattimes.indiatimes.com",
-          "source_country": "India",
-          "language": "Hindi",
-          "seendate": "20260603T111500Z",
+          "title": "Maritime drone being used in Ukraine war explodes at Romanian port",
+          "url": "https://www.yorkpress.co.uk/news/national/26170652.maritime-drone-used-ukraine-war-explodes-romanian-port/",
+          "domain": "yorkpress.co.uk",
+          "source_country": "United Kingdom",
+          "language": "English",
+          "seendate": "20260605T160000Z",
           "match_score": 35
-        },
-        {
-          "title": "Italia îndeamnă NATO să - și reconsidere politica privind cheltuielile de apărare . Georgia Meloni : Trebuie să acceptăm faptul că lumea se schimbă",
-          "url": "https://www.capital.ro/italia-indeamna-nato-sa-si-reconsidere-politica-privind-cheltuielile-de-aparare.html",
-          "domain": "capital.ro",
-          "source_country": "Romania",
-          "language": "Romanian",
-          "seendate": "20260612T084500Z",
-          "match_score": 10
         }
       ],
-      "analytical_summary": "The original cluster contains 22 source URLs across 17 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 5 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "score": 85,
-      "title": "Tömeges erőszak – Jerusalem, Israel, Israel",
-      "date": "2026-06-24",
-      "country": "Israel",
-      "location": "Jerusalem, Israel",
-      "event_type": "Tömeges erőszak",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 12,
-      "source_domain_count": 9,
-      "source_domains": [
-        "countercurrents.org",
-        "morningstaronline.co.uk",
-        "themedialine.org",
-        "www.foxnews.com",
-        "www.independent.co.uk",
-        "www.jns.org",
-        "www.jpost.com",
-        "www.middleeasteye.net",
-        "www.yahoo.com"
-      ],
-      "original_sources": [
-        "http://www.jpost.com/opinion/article-900419",
-        "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
-        "https://themedialine.org/news/opinion/israel-must-avoid-becoming-sparta-without-america/",
-        "https://www.yahoo.com/news/politics/articles/exclusive-meet-man-israel-chose-163016905.html",
-        "https://countercurrents.org/2026/06/israeli-forces-kill-two-palestinian-teens-in-occupied-west-bank/",
-        "https://www.foxnews.com/world/exclusive-meet-man-israel-chose-its-first-ever-ambassador-christian-world",
-        "https://www.independent.co.uk/news/world/middle-east/netanyahu-israel-iran-us-deal-corruption-trial-b2998160.html",
-        "https://www.jns.org/feature/zeljka-cvijanovic-israels-battle-is-rooted-in-oct-7-massacre",
-        "https://www.middleeasteye.net/news/israel-expels-palestinians-their-homes-use-them-military-posts",
-        "https://countercurrents.org/2026/06/israel-killed-more-palestinians-in-the-occupied-west-bank-during-the-gaza-genocide-than-in-the-previous-17-years-oxfam/",
-        "https://www.independent.co.uk/news/world/middle-east/israel-palestinians-ethnic-cleansing-gaza-amnesty-b2993707.html",
-        "https://morningstaronline.co.uk/article/amnesty-accuses-israeli-government-ethnic-cleansing-palestinians-occupied-west-bank"
-      ],
-      "raw_titles": [
-        "mass_violence – Jerusalem, Israel (general), Israel"
-      ],
-      "inspected_sources": [
-        {
-          "url": "http://www.jpost.com/opinion/article-900419",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel must mantain its American support even if US backing falls | The Jerusalem Post",
-          "description": "President Trump’s Iran deal and Vice President Vance’s warning on US support should push Jerusalem to rethink its dependence on Washington before bipartisan backing collapses further.",
-          "published": "2026-06-24T18:31:11"
-        },
-        {
-          "url": "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Gilad Erdan: Israel refuses to surrender to enemies - Israel Jewish News - JNS",
-          "description": "The former ambassador has served as the global president of Magen David Adom, Israel s national emergency medical service, since 2024.",
-          "published": "2026-06-23T10:31:10.293"
-        },
-        {
-          "url": "https://themedialine.org/news/opinion/israel-must-avoid-becoming-sparta-without-america/",
-          "domain": "themedialine.org",
-          "status": "ok",
-          "error": null,
-          "title": "OPINION - Israel Must Avoid Becoming Sparta Without America - The Media Line",
-          "description": "In September 2025, Israeli Prime Minister Benjamin Netanyahu [ ]",
-          "published": "2026-06-23T16:53:42+00:00"
-        },
-        {
-          "url": "https://www.yahoo.com/news/politics/articles/exclusive-meet-man-israel-chose-163016905.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "EXCLUSIVE: Meet the man Israel chose to be its first-ever ambassador to the Christian world",
-          "description": "Ambassador George Deek explains the mission behind his new role as special envoy to the Christian world and Israel s efforts to strengthen the Judeo-Christian bond.",
-          "published": "2026-06-21T16:30:16.000Z"
-        },
-        {
-          "url": "https://countercurrents.org/2026/06/israeli-forces-kill-two-palestinian-teens-in-occupied-west-bank/",
-          "domain": "countercurrents.org",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli Forces Kill Two Palestinian Teens in Occupied West Bank | Countercurrents",
-          "description": "Occupied West Bank (QNN)- Israeli forces killed two Palestinian teenagers near an illegal settlement in the occupied West Bank on Monday morning before…",
-          "published": "2026-06-22T15:32:42+00:00"
-        },
-        {
-          "url": "https://www.foxnews.com/world/exclusive-meet-man-israel-chose-its-first-ever-ambassador-christian-world",
-          "domain": "www.foxnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel creates special envoy role to strengthen ties with Christian world | Fox News",
-          "description": "Israel s government appointed Ambassador George Deek as its new envoy to the Christian world, aiming to strengthen relations and build bridges with Christian leaders globally.",
-          "published": "2026-06-21T12:30:16-04:00"
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/middle-east/netanyahu-israel-iran-us-deal-corruption-trial-b2998160.html",
-          "domain": "www.independent.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Trump’s Iran deal, corruption trial and elections: Will Netanyahu survive his perfect storm? | The Independent",
-          "description": "The Israeli prime minister promised a historic victory over Iran, now many say he has been defeated",
-          "published": "2026-06-19T16:00:23.000Z"
-        },
-        {
-          "url": "https://www.jns.org/feature/zeljka-cvijanovic-israels-battle-is-rooted-in-oct-7-massacre",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Zeljka Cvijanovic: Israel’s battle is rooted in Oct. 7 massacre - Israel Jewish News - JNS",
-          "description": "Ahead of the JNS Summit, the Bosnian Serb leader explains her strong support for the Jewish state and warns of Iranian influence in the Balkans.",
-          "published": "2026-06-18T16:14:41.806"
-        },
-        {
-          "url": "https://www.middleeasteye.net/news/israel-expels-palestinians-their-homes-use-them-military-posts",
-          "domain": "www.middleeasteye.net",
-          "status": "ok",
-          "error": null,
-          "title": "Israel expels Palestinians from their homes to use them as military posts | Middle East Eye",
-          "description": "After the ethnic cleansing of camps in the West Bank, families say Israeli forces are now taking over buildings in surrounding neighbourhoods",
-          "published": ""
-        },
-        {
-          "url": "https://countercurrents.org/2026/06/israel-killed-more-palestinians-in-the-occupied-west-bank-during-the-gaza-genocide-than-in-the-previous-17-years-oxfam/",
-          "domain": "countercurrents.org",
-          "status": "ok",
-          "error": null,
-          "title": "Israel Killed More Palestinians in the occupied West Bank during the Gaza genocide than in the previous 17 years: Oxfam | Countercurrents",
-          "description": "Occupied West Bank (QNN)- A new Oxfam report has found that more Palestinians were killed by Israeli forces and settlers in the occupied West Bank during Israel’…",
-          "published": "2026-06-12T13:11:33+00:00"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Israel must mantain its American support even if US backing falls | The Jerusalem Post",
-        "top_keywords": [
-          "west",
-          "bank",
-          "occupied",
-          "christian",
-          "ambassador",
-          "forces",
-          "support",
-          "jerusalem",
-          "president",
-          "jewish"
-        ],
-        "actor_hints": [
-          "israel",
-          "israeli",
-          "iran",
-          "iranian",
-          "military",
-          "government",
-          "trump",
-          "netanyahu"
-        ],
-        "conflict_hints": [
-          "killed",
-          "war"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Jerusalem, Israel\" \"Israel\" \"israel\" \"killed\"",
-        "\"Israel\" \"israel\" \"killed\"",
-        "\"Jerusalem, Israel\" \"killed\"",
-        "\"israel\" \"killed\" 2026-06-24"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Jerusalem, Israel\" \"Israel\" \"israel\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Israel\" \"israel\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Jerusalem, Israel\" \"killed\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"israel\" \"killed\" 2026-06-24",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 12 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "score": 70,
-      "title": "Tömeges erőszak – Gaza, Israel, Israel",
-      "date": "2026-06-24",
-      "country": "Israel",
-      "location": "Gaza, Israel",
-      "event_type": "Tömeges erőszak",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 56,
-      "source_domain_count": 42,
-      "source_domains": [
-        "aa.com.tr",
-        "arynews.tv",
-        "blog.wenxuecity.com",
-        "consortiumnews.com",
-        "countercurrents.org",
-        "crisismagazine.com",
-        "ejpress.org",
-        "jewlicious.com",
-        "kashmirreader.com",
-        "mondoweiss.net",
-        "morningstaronline.co.uk",
-        "original.antiwar.com",
-        "prospect.org",
-        "www.aljazeera.com",
-        "www.aol.co.uk",
-        "www.asianews.it",
-        "www.cbsnews.com",
-        "www.communitypress.ca:443",
-        "www.counterpunch.org",
-        "www.dailymail.com"
-      ],
-      "original_sources": [
-        "https://www.greenleft.org.au/2026/1456/world/britain-palestine-action-protesters-imprisoned-opposing-genocide",
-        "https://www.wsws.org/en/articles/2026/06/24/ttrg-j24.html",
-        "https://mondoweiss.net/2026/06/israel-is-tearing-down-the-american-order-that-once-protected-it/",
-        "https://www.cbsnews.com/news/colombia-presidential-election-abelardo-de-la-espriella-winner/",
-        "https://www.greenleft.org.au/2026/1456/world/britain-palestine-action-protesters-jailed-opposing-genocide",
-        "https://prospect.org/2026/06/23/has-netanyahu-destroyed-us-israel-alliance/",
-        "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-        "https://www.asianews.it/news-en/Jews-and-Arabs-running-together,-the-response-to-7-October-65707.html",
-        "https://original.antiwar.com/ramzy-baroud/2026/06/21/when-the-iran-war-is-over-the-west-bank-may-be-netanyahus-next-front/",
-        "https://www.jns.org/news/antisemitism/confronting-the-surge-in-antisemitism-in-the-wake-of-oct-7",
-        "https://kashmirreader.com/2026/06/21/when-the-iran-war-is-over-why-the-west-bank-may-be-netanyahus-next-front/",
-        "https://www.theguardian.com/commentisfree/2026/jun/21/the-guardian-view-on-israel-and-the-west-bank-allies-must-protect-palestinian-lives-and-livelihoods",
-        "https://morningstaronline.co.uk/article/labour-movement-must-have-courage-stand-womens-rights",
-        "https://countercurrents.org/2026/06/palestinians-may-pay-the-price-for-netanyahus-defeat-in-iran/",
-        "https://www.nbcnews.com/world/gaza/israeli-airstrike-kills-al-jazeera-cameraman-rcna350990",
-        "https://www.counterpunch.org/2026/06/19/when-the-iran-war-is-over-why-the-west-bank-may-be-netanyahus-next-front/",
-        "https://www.presstv.ir/Detail/2026/06/19/770722/Israeli-FM-angered-by-EU-foreign-policy-chief-apartheid",
-        "https://www.middleeasteye.net/news/andy-burnham-stood-starmer-israel-now-reshape-uk-foreign-policy",
-        "https://consortiumnews.com/2026/06/19/hedges-report-kidnapped-at-sea/",
-        "https://consortiumnews.com/2026/06/19/palestinians-may-pay-for-netanyahus-defeat-in-iran/"
-      ],
-      "raw_titles": [
-        "mass_violence – Gaza, Israel (general), Israel"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://www.greenleft.org.au/2026/1456/world/britain-palestine-action-protesters-imprisoned-opposing-genocide",
-          "domain": "www.greenleft.org.au",
-          "status": "ok",
-          "error": null,
-          "title": "Britain: Palestine Action protesters imprisoned for opposing genocide",
-          "description": "Reversing a previous outcome, four Palestine Action members received long sentences in Britain, for their role in a 2024 factory occupation at notorious Israeli weapons company Elbit Systems, reports Alex Bainbridge.",
-          "published": "2026-06-23T11:57:18+1000"
-        },
-        {
-          "url": "https://www.wsws.org/en/articles/2026/06/24/ttrg-j24.html",
-          "domain": "www.wsws.org",
-          "status": "ok",
-          "error": null,
-          "title": "UN Commission report finds Israel is committing genocide in Gaza, deliberately targeting children - World Socialist Web Site",
-          "description": "The report is titled: “The essence of childhood has been destroyed”: Israel’s deliberate targeting of Palestinian children in the Occupied Palestinian Territory since 7 October 2023.",
-          "published": "2026-06-24T04:47:48.000Z"
-        },
-        {
-          "url": "https://mondoweiss.net/2026/06/israel-is-tearing-down-the-american-order-that-once-protected-it/",
-          "domain": "mondoweiss.net",
-          "status": "ok",
-          "error": null,
-          "title": "Israel is tearing down the American order that once protected it – Mondoweiss",
-          "description": "The American order that gave Israel stability now constrains Israel’s expansion. In response, Israel is dismantling U.S. hegemony in the region, turning allies Turkey and Egypt into enemies, and working to end the U.S.’s ability to restrain it.",
-          "published": "2026-06-24T14:15:07+00:00"
-        },
-        {
-          "url": "https://www.cbsnews.com/news/colombia-presidential-election-abelardo-de-la-espriella-winner/",
-          "domain": "www.cbsnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Abelardo de la Espriella, right-wing millionaire backed by Trump, declared winner of Colombia's presidential runoff election - CBS News",
-          "description": "Abelardo de la Espriella, a millionaire political newcomer, has been declared Colombia #039;s next president.",
-          "published": "2026-06-24T19:10:00-0400"
-        },
-        {
-          "url": "https://www.greenleft.org.au/2026/1456/world/britain-palestine-action-protesters-jailed-opposing-genocide",
-          "domain": "www.greenleft.org.au",
-          "status": "ok",
-          "error": null,
-          "title": "Britain: Palestine Action protesters imprisoned for opposing genocide",
-          "description": "Reversing a previous outcome, four Palestine Action members received long sentences in Britain, for their role in a 2024 factory occupation at notorious Israeli weapons company Elbit Systems, reports Alex Bainbridge.",
-          "published": "2026-06-23T11:57:18+1000"
-        },
-        {
-          "url": "https://prospect.org/2026/06/23/has-netanyahu-destroyed-us-israel-alliance/",
-          "domain": "prospect.org",
-          "status": "ok",
-          "error": null,
-          "title": "Has Netanyahu Destroyed the U.S.-Israel Alliance? - The American Prospect",
-          "description": "Donald Trump’s Iran deal—or perhaps we should say “capitulation”—is a fiasco for the United States and Trump’s presidency, but it is widely viewed as a catastrophe for Israel.",
-          "published": "2026-06-23T09:20:00+00:00"
-        },
-        {
-          "url": "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-          "domain": "countercurrents.org",
-          "status": "ok",
-          "error": null,
-          "title": "Students’ lives on hold in Gaza | Countercurrents",
-          "description": "Hundreds, if not thousands, of Palestinian students who have been awarded scholarships abroad are trapped in Gaza, unable to claim their places at universities…",
-          "published": "2026-06-23T09:39:30+00:00"
-        },
-        {
-          "url": "https://www.asianews.it/news-en/Jews-and-Arabs-running-together,-the-response-to-7-October-65707.html",
-          "domain": "www.asianews.it",
-          "status": "error",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://original.antiwar.com/ramzy-baroud/2026/06/21/when-the-iran-war-is-over-the-west-bank-may-be-netanyahus-next-front/",
-          "domain": "original.antiwar.com",
-          "status": "ok",
-          "error": null,
-          "title": "When the Iran War Is Over: The West Bank May Be Netanyahu s Next Front - Antiwar.com",
-          "description": "Israeli Prime Minister Benjamin Netanyahu is facing perhaps the most precarious moment of his political career. He knows it. His allies know it. And his rivals – both within his coalition and across Israel s political spectrum – are preparing to capitalize on his growing weakness. Former Israeli Justice Minister Haim",
-          "published": ""
-        },
-        {
-          "url": "https://www.jns.org/news/antisemitism/confronting-the-surge-in-antisemitism-in-the-wake-of-oct-7",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Confronting the surge in Jew-hatred in the wake of Oct. 7 - Israel Jewish News - JNS",
-          "description": "“We spend too much money on fighting antisemitism and not enough on strengthening our young people to stand up to antisemitism and to have a strong Jewish identity,” says Rabbi Raphael Shore.",
-          "published": "2026-06-22T13:26:51.301"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Britain: Palestine Action protesters imprisoned for opposing genocide",
-        "top_keywords": [
-          "britain",
-          "palestine",
-          "action",
-          "gaza",
-          "genocide",
-          "been",
-          "palestinian",
-          "american",
-          "political",
-          "protesters"
-        ],
-        "actor_hints": [
-          "israel",
-          "israeli",
-          "iran",
-          "trump",
-          "netanyahu"
-        ],
-        "conflict_hints": [
-          "war"
-        ],
-        "usable_source_count": 9,
-        "confidence": "Medium"
-      },
-      "queries": [
-        "\"Gaza, Israel\" \"Israel\" \"israel\" \"war\"",
-        "\"Israel\" \"israel\" \"war\"",
-        "\"Gaza, Israel\" \"war\"",
-        "\"israel\" \"war\" 2026-06-24"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"war\"",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        },
-        {
-          "query": "\"Israel\" \"israel\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Gaza, Israel\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"israel\" \"war\" 2026-06-24",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 56 source URLs across 42 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 3,
-      "score": 82,
-      "title": "Rajtaütés / fegyveres támadás – Tehran, Iran",
-      "date": "2026-06-24",
-      "country": "Iran",
-      "location": "Tehran, Iran",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 103,
-      "source_domain_count": 75,
-      "source_domains": [
-        "aninews.in",
-        "attackofthefanboy.com",
-        "calgarysun.com",
-        "city.udn.com",
-        "dunyanews.tv",
-        "eaworldview.com",
-        "edition.cnn.com",
-        "english.aawsat.com",
-        "english.elpais.com",
-        "finance.yahoo.com",
-        "freerepublic.com",
-        "globalnews.ca",
-        "grenadachronicle.com",
-        "irannewsupdate.com",
-        "jewlicious.com",
-        "jordantimes.com",
-        "kashmirlife.net",
-        "metro.co.uk",
-        "nationalpost.com",
-        "patriotpost.us"
-      ],
-      "original_sources": [
-        "https://english.elpais.com/international/2026-06-23/united-states-versus-iran-the-war-of-unequal-forces-that-neither-side-could-win.html",
-        "https://www.ibtimes.co.uk/iran-largest-offshore-drilling-platform-persian-gulf-1804871",
-        "https://www.middleeastmonitor.com/20260624-the-illusions-of-western-virtue-ursula-von-der-leyen-and-europes-moral-bankruptcy/",
-        "https://kashmirlife.net/how-khameneis-assassination-is-redrawing-the-shia-sunni-fault-line-440783/",
-        "https://english.aawsat.com/opinion/5287404-global-energy-crisis-and-war-middle-east",
-        "https://www.ncr-iran.org/en/free-iran-2026/canadian-mp-judy-sgro-champions-democratic-transition-in-iran-condemns-regime-brutality/",
-        "https://www.ncr-iran.org/en/free-iran-2026/german-mp-carsten-muller-urges-end-to-european-appeasement-at-free-iran-2026-summit/",
-        "https://patriotpost.us/articles/128526-are-the-iran-negotiations-fruitless-or-is-there-still-hope-2026-06-23",
-        "https://www.news-gazette.com/opinion/guest-commentary/my-turn-a-soberly-fitting-sequel-to-the-disastrous-war-on-terror/article_bd5b9d23-6614-4ee2-9423-0d325dc16341.html",
-        "https://www.hindustantimes.com/world-news/trump-says-iran-funds-to-be-held-in-us-controlled-escrow-account-what-sanctions-tehran-faces-101782219214749.html",
-        "https://www.moneycontrol.com/world/real-alien-sh-t-us-pilot-shot-down-over-iran-says-he-saw-jellyfish-drone-formation-before-ejecting-article-13957036.html",
-        "https://jewlicious.com/2026/06/the-biggest-fraud-ever-committed-against-the-arab-and-muslim-peoples/",
-        "https://www.eurasiareview.com/22062026-free-iran-summit-2026-global-leaders-condemn-executions-and-back-irans-organized-resistance-oped/",
-        "https://www.wsws.org/en/articles/2026/06/22/elrw-j22.html",
-        "https://calgarysun.com/news/world/iran-war-latest-june-21-2026/wcm/af63d5d0-9c27-4f0e-8c03-2ca0bc645d3d",
-        "https://www.al-monitor.com/originals/2026/06/french-police-detain-20-banned-iran-opposition-rally",
-        "https://www.thenews.com.pk/latest/1406679-high-stakes-us-iran-talks-to-begin-in-switzerland-as-tehran-claims-strait-of-hormuz-is-closed",
-        "https://www.theguardian.com/global-development/ng-interactive/2026/jun/21/a-hunting-ground-for-foreign-regimes-why-violent-attacks-on-dissidents-are-on-the-rise-in-britain",
-        "https://www.ruthfullyyours.com/2026/06/21/the-solstice-of-our-discontent-the-consequences-of-history-often-arrive-like-starlight-events-unfold-in-real-time-but-their-true-significance-can-take-years-to-reach-us-by-roger-kimball/",
-        "https://www.ncr-iran.org/en/news/iran-resistance/former-eu-president-charles-michel-calls-for-end-to-appeasement-at-free-iran-world-summit-2026/"
-      ],
-      "raw_titles": [
-        "assault – Tehran, Tehran, Iran"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://english.elpais.com/international/2026-06-23/united-states-versus-iran-the-war-of-unequal-forces-that-neither-side-could-win.html",
-          "domain": "english.elpais.com",
-          "status": "ok",
-          "error": null,
-          "title": "United States versus Iran, the war of unequal forces that neither side could win | International | EL PAÍS English",
-          "description": "The combination of asymmetric military tactics and civilian targets outside the battlefield gave the Iranian regime a competitive and psychological edge, despite its clear inferiority to the world’s leading power",
-          "published": "2026-06-23T09:53:27+02:00"
-        },
-        {
-          "url": "https://www.ibtimes.co.uk/iran-largest-offshore-drilling-platform-persian-gulf-1804871",
-          "domain": "www.ibtimes.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Iran Installs Persian Gulf's Biggest Offshore Rig Without Foreign Technology — Under Sanctions and After Being Bombed | IBTimes UK",
-          "description": "Iran has installed its largest offshore drilling platform in the Persian Gulf, overcoming US sanctions and military strikes, showcasing domestic engineering capabilities.",
-          "published": "2026-06-24T19:41:04+01:00"
-        },
-        {
-          "url": "https://www.middleeastmonitor.com/20260624-the-illusions-of-western-virtue-ursula-von-der-leyen-and-europes-moral-bankruptcy/",
-          "domain": "www.middleeastmonitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "The Illusions of Western Virtue: Ursula von der Leyen and Europe’s Moral Bankruptcy Middle East Monitor",
-          "description": "European Commission President Ursula von der Leyen has every right to condition European relations with any other country or bloc on respect for human rights. That, of course, would hold true if sh…",
-          "published": "2026-06-24T19:08:13+00:00"
-        },
-        {
-          "url": "https://kashmirlife.net/how-khameneis-assassination-is-redrawing-the-shia-sunni-fault-line-440783/",
-          "domain": "kashmirlife.net",
-          "status": "ok",
-          "error": null,
-          "title": "How Khamenei s Assassination Is Redrawing the Shia-Sunni Fault Line? | Kashmir Life - Latest News Breaking News from Kashmir",
-          "description": "by Asad Mirza Follow Us On G-Ne w s | Whatsapp Khamenei s assassination sparked rare Shia-Sunni solidarity around Palestine, yet escalating Iran-Saudi tensions threaten lasting sectarian reconciliation Iran s assassinated Supreme Leader Ayatollah Ali Khamenei In the long, troubled geography of Muslim sectarianism, few divides have proven as geopolitically consequential as the fault line between",
-          "published": "2026-06-23T06:48:28+05:30"
-        },
-        {
-          "url": "https://english.aawsat.com/opinion/5287404-global-energy-crisis-and-war-middle-east",
-          "domain": "english.aawsat.com",
-          "status": "ok",
-          "error": null,
-          "title": "The Global Energy Crisis and the War in the Middle East",
-          "description": "The war on Iran, in the second week of fighting and in mid March, shifted into a conflict over freedom of navigation in the Strait of Hormuz. This strategic shift by Iran was not accidental; rather, using the strait had long been anticipated as a political lever. Between 15 and 20 million barrels of crude oil are exported through it to global markets, meaning that any disruption to freedom of navigation there would have negative repercussions for the global energy industry.",
-          "published": ""
-        },
-        {
-          "url": "https://www.ncr-iran.org/en/free-iran-2026/canadian-mp-judy-sgro-champions-democratic-transition-in-iran-condemns-regime-brutality/",
-          "domain": "www.ncr-iran.org",
-          "status": "ok",
-          "error": null,
-          "title": "Canadian MP Judy Sgro Champions Democratic Transition in Iran, Condemns Regime Brutality - NCRI",
-          "description": "Speaking at the Free Iran 2026 World Summit, Canadian Member of Parliament Judy Sgro strongly condemned the Iranian regime’s brutal crackdown following",
-          "published": "2026-06-23T13:36:48+00:00"
-        },
-        {
-          "url": "https://www.ncr-iran.org/en/free-iran-2026/german-mp-carsten-muller-urges-end-to-european-appeasement-at-free-iran-2026-summit/",
-          "domain": "www.ncr-iran.org",
-          "status": "ok",
-          "error": null,
-          "title": "German MP Carsten Müller Urges End to European Appeasement at Free Iran 2026 Summit - NCRI",
-          "description": "Speaking at the Free Iran 2026 World Summit in Paris on June 20, 2026, German MP Carsten Müller delivered a forceful rebuke of the Iranian regime and",
-          "published": "2026-06-23T12:05:50+00:00"
-        },
-        {
-          "url": "https://patriotpost.us/articles/128526-are-the-iran-negotiations-fruitless-or-is-there-still-hope-2026-06-23",
-          "domain": "patriotpost.us",
-          "status": "ok",
-          "error": null,
-          "title": "Emmy Griffin: Are the Iran Negotiations Fruitless, or Is There Still Hope? | The Patriot Post",
-          "description": "The mullahs are laughing in the faces of U.S. negotiators. Yet they could also be flying a little too close to the sun.",
-          "published": ""
-        },
-        {
-          "url": "https://www.news-gazette.com/opinion/guest-commentary/my-turn-a-soberly-fitting-sequel-to-the-disastrous-war-on-terror/article_bd5b9d23-6614-4ee2-9423-0d325dc16341.html",
-          "domain": "www.news-gazette.com",
-          "status": "ok",
-          "error": null,
-          "title": "My Turn | A soberly fitting sequel to the disastrous War on Terror | Guest Commentary | news-gazette.com",
-          "description": "Greenlighting the genocide in Gaza, shooting up boats in international waters, menacing NATO allies over Greenland, kidnapping the head of state in Venezuela, and now trashing the world economy in",
-          "published": "2026-06-23T05:45:00-05:00"
-        },
-        {
-          "url": "https://www.hindustantimes.com/world-news/trump-says-iran-funds-to-be-held-in-us-controlled-escrow-account-what-sanctions-tehran-faces-101782219214749.html",
-          "domain": "www.hindustantimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump says Iran funds to be held in US-controlled escrow account: What sanctions Tehran faces | World News",
-          "description": "As part of the agreement, Iran is expected to receive some sanctions relief and gain access to frozen assets. | World News",
-          "published": "2026-06-23T19:25:16+05:30"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "United States versus Iran, the war of unequal forces that neither side could win | International | EL PAÍS English",
-        "top_keywords": [
-          "regime",
-          "sanctions",
-          "european",
-          "khamenei",
-          "global",
-          "free",
-          "summit",
-          "tehran",
-          "could",
-          "international"
-        ],
-        "actor_hints": [
-          "iran",
-          "iranian",
-          "nato",
-          "military",
-          "trump"
-        ],
-        "conflict_hints": [
-          "strike",
-          "shooting",
-          "assault",
-          "war",
-          "terror"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Tehran, Iran\" \"Iran\" \"iran\" \"strike\"",
-        "\"Iran\" \"iran\" \"strike\"",
-        "\"Tehran, Iran\" \"strike\"",
-        "\"iran\" \"strike\" 2026-06-24"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Tehran, Iran\" \"Iran\" \"iran\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Iran\" \"iran\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Tehran, Iran\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"iran\" \"strike\" 2026-06-24",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 103 source URLs across 75 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "score": 72,
-      "title": "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
-      "date": "2026-06-20",
-      "country": "Iran",
-      "location": "Hezbollah, Kerman, Iran",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 13,
-      "source_domain_count": 11,
-      "source_domains": [
-        "cyprus-mail.com",
-        "legalinsurrection.com",
-        "openthemagazine.com",
-        "slguardian.org",
-        "timesofindia.indiatimes.com",
-        "tradearabia.com:443",
-        "www.moneycontrol.com",
-        "www.siasat.com",
-        "www.spotlightnepal.com",
-        "www.thenationalnews.com",
-        "www.washingtonexaminer.com"
-      ],
-      "original_sources": [
-        "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
-        "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
-        "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
-        "https://www.moneycontrol.com/world/netanyahu-refuses-to-pull-troops-from-lebanon-as-hezbollah-vows-resistance-can-the-us-iran-deal-survive-article-13954143.html",
-        "https://www.siasat.com/you-cant-kill-your-way-out-vance-gives-rare-rebuke-to-israel-3492393/",
-        "https://www.moneycontrol.com/world/can-us-iran-deal-survive-israel-and-hezbollah-renew-ceasefire-after-deadly-escalation-article-13954286.html",
-        "https://www.washingtonexaminer.com/news/white-house/4616661/trump-can-keep-israel-attack-hezbollah/",
-        "https://www.thenationalnews.com/news/mena/2026/06/19/israels-continued-presence-in-southern-lebanon-tests-fragile-us-iran-peace-deal/",
-        "https://legalinsurrection.com/2026/06/netanyahu-israel-to-hold-south-lebanon-buffer-zone-until-hezbollah-terror-threat-cleared/",
-        "https://slguardian.org/iran-deal-leaves-trump-facing-tough-questions-as-tehran-emerges-with-strategic-gains/",
-        "https://www.moneycontrol.com/world/trump-s-rebukes-iran-s-leverage-and-an-election-ahead-why-netanyahu-is-under-pressure-on-all-fronts-after-us-iran-deal-article-13949953.html",
-        "https://cyprus-mail.com/2026/06/14/trump-insists-us-iran-deal-to-be-signed-on-sunday",
-        "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump"
-      ],
-      "raw_titles": [
-        "fight – Hezbollah, Kerman, Iran"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
-          "domain": "www.spotlightnepal.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed | New Spotlight Magazine",
-          "description": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed",
-          "published": ""
-        },
-        {
-          "url": "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
-          "domain": "openthemagazine.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran Shuts Strait of Hormuz as Israel–Hezbollah Ceasefire Frays in Lebanon, Raising Global Energy and Security Fears",
-          "description": "Iran’s closure of the Strait of Hormuz amid escalating Israel-Hezbollah clashes in southern Lebanon raises fears over global energy supplies and maritime security, as Tehran accuses the US and Israel of violating a ceasefire and a key memorandum of understanding.",
-          "published": ""
-        },
-        {
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
-          "domain": "timesofindia.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "All of Lebanon must burn! Israel s deadliest strikes since Iran-US pact kill 18 after death of four soldiers - The Times of India",
-          "description": "Middle East News: NEW DELHI: At least 18 people were killed and several others injured in Israeli airstrikes across southern Lebanon overnight, as fighting between Isra.",
-          "published": ""
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/netanyahu-refuses-to-pull-troops-from-lebanon-as-hezbollah-vows-resistance-can-the-us-iran-deal-survive-article-13954143.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "Netanyahu refuses to pull troops from Lebanon as Hezbollah vows resistance. Can the US-Iran deal survive?",
-          "description": "Israeli Prime Minister Benjamin Netanyahu said Israeli troops would remain in southern Lebanon",
-          "published": ""
-        },
-        {
-          "url": "https://www.siasat.com/you-cant-kill-your-way-out-vance-gives-rare-rebuke-to-israel-3492393/",
-          "domain": "www.siasat.com",
-          "status": "ok",
-          "error": null,
-          "title": "You can’t kill your way out: Vance gives rare rebuke to Israel",
-          "description": "JD Vance delivered a rare rebuke to Israel, defending the US-Iran deal and urging leaders to back diplomacy over force.",
-          "published": "2026-06-19T11:38:10+00:00"
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/can-us-iran-deal-survive-israel-and-hezbollah-renew-ceasefire-after-deadly-escalation-article-13954286.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "Can US-Iran deal survive? Israel and Hezbollah renew ceasefire after deadly escalation",
-          "description": "Israel and Hezbollah have renewed a ceasefire after deadly clashes, but Netanyahu",
-          "published": ""
-        },
-        {
-          "url": "https://www.washingtonexaminer.com/news/white-house/4616661/trump-can-keep-israel-attack-hezbollah/",
-          "domain": "www.washingtonexaminer.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump says he can keep Israel from attacking Hezbollah",
-          "description": "The United States and Iran signed a deal to begin the diplomatic process toward ending the war, though Israel was left out of the negotiations.",
-          "published": "2026-06-19T18:18:50+00:00"
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/mena/2026/06/19/israels-continued-presence-in-southern-lebanon-tests-fragile-us-iran-peace-deal/",
-          "domain": "www.thenationalnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Hezbollah won t accept ceasefire unless Israeli troops withdraw from Lebanon | The National",
-          "description": "Agreement appeared to have been reached for fighting to cease on Friday afternoon but strikes have continued overnight",
-          "published": ""
-        },
-        {
-          "url": "https://legalinsurrection.com/2026/06/netanyahu-israel-to-hold-south-lebanon-buffer-zone-until-hezbollah-terror-threat-cleared/",
-          "domain": "legalinsurrection.com",
-          "status": "ok",
-          "error": null,
-          "title": "Netanyahu: Israel to Hold South Lebanon Buffer Zone Until Hezbollah Terror Threat Cleared",
-          "description": "The IDF will remain in southern Lebanon as long as Israel s security needs demand it.",
-          "published": "2026-06-18T19:09:27+00:00"
-        },
-        {
-          "url": "https://slguardian.org/iran-deal-leaves-trump-facing-tough-questions-as-tehran-emerges-with-strategic-gains/",
-          "domain": "slguardian.org",
-          "status": "ok",
-          "error": null,
-          "title": "Iran Deal Leaves Trump Facing Tough Questions as Tehran Emerges With Strategic Gains Sri Lanka Guardian",
-          "description": "Sri Lanka Guardian provides in-depth news, expert analysis, and reports on Sri Lanka and global affairs.",
-          "published": "2026-06-16T14:21:30+05:30"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed | New Spotlight Magazine",
-        "top_keywords": [
-          "lebanon",
-          "ceasefire",
-          "us-iran",
-          "deal",
-          "southern",
-          "can",
-          "global",
-          "security",
-          "troops",
-          "sri"
-        ],
-        "actor_hints": [
-          "israel",
-          "israeli",
-          "idf",
-          "iran",
-          "hezbollah",
-          "trump",
-          "netanyahu"
-        ],
-        "conflict_hints": [
-          "strike",
-          "airstrike",
-          "attack",
-          "clash",
-          "killed",
-          "injured",
-          "fire",
-          "war"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Hezbollah, Kerman, Iran\" \"Iran\" \"israel\" \"strike\"",
-        "\"Iran\" \"israel\" \"strike\"",
-        "\"Hezbollah, Kerman, Iran\" \"strike\"",
-        "\"israel\" \"strike\" 2026-06-20"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Hezbollah, Kerman, Iran\" \"Iran\" \"israel\" \"strike\"",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        },
-        {
-          "query": "\"Iran\" \"israel\" \"strike\"",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        },
-        {
-          "query": "\"Hezbollah, Kerman, Iran\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"israel\" \"strike\" 2026-06-20",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 13 source URLs across 11 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "score": 70,
-      "title": "Fegyveres összecsapás – Givati, HaDarom, Israel",
-      "date": "2026-06-23",
-      "country": "Israel",
-      "location": "Givati, HaDarom, Israel",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 13,
-      "source_domain_count": 5,
-      "source_domains": [
-        "themedialine.org",
-        "www.bignewsnetwork.com",
-        "www.islamicinvitationturkey.com",
-        "www.jpost.com",
-        "www.ynetnews.com"
-      ],
-      "original_sources": [
-        "https://www.ynetnews.com/article/byuugj00zmx",
-        "https://www.ynetnews.com/article/rkiiba8ggg",
-        "https://www.jpost.com/israel-news/article-899992",
-        "https://www.ynetnews.com/article/bjswt1rgme",
-        "https://www.ynetnews.com/article/hk00dxuhffe",
-        "https://www.jpost.com/israel-news/article-899975",
-        "http://www.jpost.com/israel-news/article-899975",
-        "https://www.ynetnews.com/article/rkrbxwgfge",
-        "https://themedialine.org/headlines/idf-reservist-who-foiled-2016-knife-attack-killed-in-southern-lebanon/",
-        "http://www.jpost.com/middle-east/article-899721",
-        "https://www.ynetnews.com/article/hylfzeemzx",
-        "http://www.bignewsnetwork.com/news/279129748/5-israeli-soldiers-wounded-in-s-lebanon-by-hezbollah-attack-army",
-        "https://www.islamicinvitationturkey.com/israeli-army-an-officer-four-soldiers-were-seriously-or-moderately-injured-in-hezbollah-drone-attack-in-south-lebanon/"
-      ],
-      "raw_titles": [
-        "fight – Givati, HaDarom, Israel"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://www.ynetnews.com/article/byuugj00zmx",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Nirel was beheaded on Oct. 7 and his head was never found; his mother pleads: Netany",
-          "description": "Nirel Zini was murdered in Kfar Aza; after his funeral, his parents learned he had been beheaded and his head was never found; left to search alone, they urge Netanyahu to intervene: #x27;Nirel’s head will not be abandoned #x27;",
-          "published": "2026-06-23T10:56:50.239482Z"
-        },
-        {
-          "url": "https://www.ynetnews.com/article/rkiiba8ggg",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "IDF taps new armored battalion commander after revered officer killed in Lebanon",
-          "description": "Lt. Col. G. will take over the 52nd Battalion after Lt. Col. Dor Gedalia Ben Simhon killed with three soldiers in a strike on their tank in southern Lebanon",
-          "published": "2026-06-22T14:49:41.549918Z"
-        },
-        {
-          "url": "https://www.jpost.com/israel-news/article-899992",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "IDF confirms death of fourth soldier killed in southern Lebanon tank incident | The Jerusalem Post",
-          "description": "Lt.-Col. Dor Gedalia Ben-Simhon, 32, St.- Sgt. Yoav Klein, 21, and St.-Sgt. Liav Kababia, 20, also of the 52nd Battalion, 401st Brigade, were killed in the same incident.",
-          "published": "2026-06-21T07:43:39"
-        },
-        {
-          "url": "https://www.ynetnews.com/article/bjswt1rgme",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "IDF names Staff Sgt. Nave Habshoosh as fourth soldier killed in Lebanon tank disaster",
-          "description": "Habshoosh, 20, from Geva Binyamin, was killed alongside Lt. Col. Dor Ben Simhon, Staff Sgt. Yoav Klein and Staff Sgt. Liav Kababia during an operation near Tebnit; IDF says tank was hit by an external strike, possibly an explosive drone or anti-tank missile",
-          "published": "2026-06-21T04:51:02.173596Z"
-        },
-        {
-          "url": "https://www.ynetnews.com/article/hk00dxuhffe",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "IDF chief in south Lebanon: Hezbollah is in ‘very severe distress,’ ceasefire remains",
-          "description": "Lt. Gen. Eyal Zamir visits commanders in southern Lebanon as US-Iran talks continue in Switzerland, says IDF remains on high alert to resume combat, thwart threats and prevent Hezbollah from rebuilding along Israel’s border",
-          "published": "2026-06-21T14:18:40.058052Z"
-        },
-        {
-          "url": "https://www.jpost.com/israel-news/article-899975",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Five IDF soldiers die in Hezbollah attacks in Lebanon after ceasefire announced | The Jerusalem Post",
-          "description": "Four soldiers, including Klein and Ben-Shimon, were killed after an object struck their tank. Sgt. First Class Nir Ben-Ari is believed to be the only soldier killed in Hezbollah s overnight attacks.",
-          "published": "2026-06-20T21:20:34"
-        },
-        {
-          "url": "http://www.jpost.com/israel-news/article-899975",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Five IDF soldiers die in Hezbollah attacks in Lebanon after ceasefire announced | The Jerusalem Post",
-          "description": "Four soldiers, including Klein and Ben-Shimon, were killed after an object struck their tank. Sgt. First Class Nir Ben-Ari is believed to be the only soldier killed in Hezbollah s overnight attacks.",
-          "published": "2026-06-20T21:20:34"
-        },
-        {
-          "url": "https://www.ynetnews.com/article/rkrbxwgfge",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Four soldiers, including battalion commander, killed in Hezbollah drone strike",
-          "description": "IDF responds with heavy overnight strikes after drone hit troops near Kfartebnit, killing Lt. Col. Dor Gedalia Ben Simhon, commander of the 52nd Battalion, and three other soldiers",
-          "published": "2026-06-19T06:41:44.323527Z"
-        },
-        {
-          "url": "https://themedialine.org/headlines/idf-reservist-who-foiled-2016-knife-attack-killed-in-southern-lebanon/",
-          "domain": "themedialine.org",
-          "status": "ok",
-          "error": null,
-          "title": "IDF Reservist Who Foiled 2016 Knife Attack Killed in Southern Lebanon - The Media Line",
-          "description": "Israel Defense Forces (IDF) Reservist Master Sgt. Alexander [ ]",
-          "published": "2026-06-18T08:33:35+00:00"
-        },
-        {
-          "url": "http://www.jpost.com/middle-east/article-899721",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Five IDF soldiers wounded in Hezbollah drone strike | The Jerusalem Post",
-          "description": "Five IDF soldiers were wounded, including one seriously, after an explosive Hezbollah drone struck southern Lebanon, the IDF said.",
-          "published": "2026-06-17T17:23:45"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Five IDF soldiers die in Hezbollah attacks in Lebanon after ceasefire announced | The Jerusalem Post",
-        "top_keywords": [
-          "lebanon",
-          "soldiers",
-          "sgt",
-          "tank",
-          "battalion",
-          "col",
-          "southern",
-          "dor",
-          "soldier",
-          "jerusalem"
-        ],
-        "actor_hints": [
-          "israel",
-          "idf",
-          "iran",
-          "hezbollah",
-          "netanyahu"
-        ],
-        "conflict_hints": [
-          "missile",
-          "drone",
-          "strike",
-          "attack",
-          "killed",
-          "wounded",
-          "fire",
-          "war"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Givati, HaDarom, Israel\" \"Israel\" \"israel\" \"missile\"",
-        "\"Israel\" \"israel\" \"missile\"",
-        "\"Givati, HaDarom, Israel\" \"missile\"",
-        "\"israel\" \"missile\" 2026-06-23"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Givati, HaDarom, Israel\" \"Israel\" \"israel\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Israel\" \"israel\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Givati, HaDarom, Israel\" \"missile\"",
-          "error": null,
-          "articles": []
-        },
-        {
-          "query": "\"israel\" \"missile\" 2026-06-23",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 13 source URLs across 5 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 6 source URLs across 5 domains. 6 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 3 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     }
   ]
