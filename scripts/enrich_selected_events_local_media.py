@@ -13,8 +13,20 @@ BASE_DIR = Path(__file__).resolve().parents[1]
 SELECTED_EVENTS_FILE = BASE_DIR / "docs" / "reports" / "biweekly" / "selected-events" / "latest-selected-events.json"
 OUTPUT_DIR = BASE_DIR / "docs" / "reports" / "biweekly" / "enrichment" / "local-media"
 
-
 GDELT_ENDPOINT = "https://api.gdeltproject.org/api/v2/doc/doc"
+
+
+EVENT_TYPE_QUERY_MAP = {
+    "Fegyveres összecsapás": ["armed clash", "shooting", "security incident"],
+    "Rajtaütés / fegyveres támadás": ["armed attack", "assault", "shooting"],
+    "Robbantás / IED": ["explosion", "bombing", "IED"],
+    "Dróntámadás": ["drone attack", "UAV strike", "drone incident"],
+    "Rakéta- vagy ballisztikus támadás": ["missile attack", "rocket strike", "ballistic missile"],
+    "Légicsapás": ["airstrike", "air strike", "aerial attack"],
+    "Tüzérségi / aknavetős támadás": ["shelling", "artillery strike", "mortar attack"],
+    "Terrorcselekmény / milíciaaktivitás": ["terror attack", "militant attack", "extremist attack"],
+    "Tüntetés / zavargás": ["riot", "unrest", "protest"],
+}
 
 
 def clean_text(value):
@@ -23,57 +35,21 @@ def clean_text(value):
     return re.sub(r"\s+", " ", str(value)).strip()
 
 
-def safe_filename(value):
-    value = clean_text(value).lower()
-    value = re.sub(r"[^a-z0-9áéíóöőúüű-]+", "-", value)
-    value = re.sub(r"-+", "-", value).strip("-")
-    return value[:80] or "event"
+def source_domain(url):
+    return str(url).replace("https://", "").replace("http://", "").split("/")[0].lower()
 
 
-def fetch_json(url, timeout=20):
+def fetch_json(url, timeout=25):
     request = urllib.request.Request(
         url,
-        headers={
-            "User-Agent": "ToresvonalakMonitor/1.0 OSINT research bot; public data only"
-        },
+        headers={"User-Agent": "ToresvonalakMonitor/1.0 OSINT enrichment; public data only"},
     )
 
     with urllib.request.urlopen(request, timeout=timeout) as response:
         return json.loads(response.read().decode("utf-8", errors="replace"))
 
 
-def build_queries(event):
-    queries = []
-
-    search_terms = event.get("search_terms") or []
-    for term in search_terms:
-        if term and term not in queries:
-            queries.append(term)
-
-    location = event.get("location")
-    country = event.get("country")
-    event_type = event.get("event_type")
-    date = event.get("date")
-
-    if location and country and event_type:
-        queries.append(f'"{location}" "{country}" "{event_type}"')
-
-    if country and event_type:
-        queries.append(f'"{country}" "{event_type}"')
-
-    if location and date:
-        queries.append(f'"{location}" {date}')
-
-    deduped = []
-    for query in queries:
-        query = clean_text(query)
-        if query and query not in deduped:
-            deduped.append(query)
-
-    return deduped[:4]
-
-
-def search_gdelt(query, max_records=8):
+def search_gdelt(query, max_records=10):
     params = {
         "query": query,
         "mode": "ArtList",
@@ -87,75 +63,120 @@ def search_gdelt(query, max_records=8):
     try:
         data = fetch_json(url)
     except Exception as exc:
-        return {
-            "query": query,
-            "error": str(exc),
-            "articles": [],
-        }
+        return {"query": query, "error": str(exc), "articles": []}
 
     articles = data.get("articles", []) if isinstance(data, dict) else []
-
     cleaned = []
-    seen_urls = set()
+    seen = set()
 
     for item in articles:
-        url_value = item.get("url") or ""
-        if not url_value or url_value in seen_urls:
+        article_url = item.get("url") or ""
+        if not article_url or article_url in seen:
             continue
 
-        seen_urls.add(url_value)
-
+        seen.add(article_url)
         cleaned.append({
             "title": clean_text(item.get("title")),
-            "url": url_value,
+            "url": article_url,
             "domain": clean_text(item.get("domain")),
             "source_country": clean_text(item.get("sourcecountry")),
             "language": clean_text(item.get("language")),
             "seendate": clean_text(item.get("seendate")),
         })
 
-    return {
-        "query": query,
-        "error": None,
-        "articles": cleaned,
-    }
+    return {"query": query, "error": None, "articles": cleaned}
 
 
-def infer_media_summary(event, findings):
-    total_articles = sum(len(item.get("articles", [])) for item in findings)
+def build_cluster_queries(event):
+    location = clean_text(event.get("location"))
+    country = clean_text(event.get("country"))
+    event_type = clean_text(event.get("event_type"))
+    date = clean_text(event.get("date"))
+    raw_titles = event.get("raw_titles") or []
+
+    translated_types = EVENT_TYPE_QUERY_MAP.get(event_type, [event_type])
+    queries = []
+
+    for mapped_type in translated_types[:3]:
+        if location and country and mapped_type:
+            queries.append(f'"{location}" "{country}" "{mapped_type}"')
+        if country and mapped_type:
+            queries.append(f'"{country}" "{mapped_type}"')
+
+    if location and country:
+        queries.append(f'"{location}" "{country}"')
+
+    for title in raw_titles[:3]:
+        title = clean_text(title)
+        if title:
+            queries.append(f'"{title}"')
+
+    if location and date:
+        queries.append(f'"{location}" {date}')
+
+    deduped = []
+    for query in queries:
+        query = clean_text(query)
+        if query and query not in deduped:
+            deduped.append(query)
+
+    return deduped[:6]
+
+
+def summarize_source_base(event):
+    source_domains = event.get("source_domains") or []
+    source_count = event.get("source_count") or 0
+    source_domain_count = event.get("source_domain_count") or 0
+    raw_titles = event.get("raw_titles") or []
+
+    if source_count == 0:
+        return "The selected cluster has no usable source URLs in the exported event record."
+
+    domains = ", ".join(source_domains[:5]) if source_domains else "unknown domains"
+    title_note = ""
+
+    if raw_titles:
+        title_note = f" Main raw title pattern: {raw_titles[0]}."
+
+    return (
+        f"The original event cluster contains {source_count} source URLs across {source_domain_count} source domains. "
+        f"Visible domains include: {domains}.{title_note}"
+    )
+
+
+def infer_enrichment_summary(event, findings):
+    article_count = sum(len(item.get("articles", [])) for item in findings)
+    source_base = summarize_source_base(event)
+
+    if article_count == 0:
+        return (
+            f"{source_base} The supplementary public media search did not identify additional matching articles. "
+            "The cluster should therefore be treated as source-backed by the original feed, but not independently enriched by this layer."
+        )
+
     domains = []
-
     for finding in findings:
         for article in finding.get("articles", []):
             domain = article.get("domain")
             if domain and domain not in domains:
                 domains.append(domain)
 
-    if total_articles == 0:
-        return (
-            "No additional local or regional media items were identified through the current public search layer. "
-            "This does not mean the event did not occur; it means the enrichment layer did not find enough matching open-source media items."
-        )
-
-    top_domains = ", ".join(domains[:4]) if domains else "mixed sources"
-
     return (
-        f"The enrichment layer found {total_articles} related open-source media items across {len(domains)} domains. "
-        f"Main visible domains: {top_domains}. The findings should be treated as context-building material and not as independent confirmation of actor, motive or operational intent."
+        f"{source_base} The supplementary public media search found {article_count} additional related items across "
+        f"{len(domains)} domains. Main additional domains: {', '.join(domains[:5])}. "
+        "These findings provide context only and do not independently confirm actor or motive."
     )
 
 
-def enrich_event(event):
+def enrich_event_cluster(event):
     findings = []
 
-    for query in build_queries(event):
-        result = search_gdelt(query)
-        findings.append(result)
+    for query in build_cluster_queries(event):
+        findings.append(search_gdelt(query))
         time.sleep(1.0)
 
-    summary = infer_media_summary(event, findings)
-
     return {
+        "record_type": event.get("record_type"),
         "region": event.get("region"),
         "rank": event.get("rank"),
         "score": event.get("score"),
@@ -165,13 +186,18 @@ def enrich_event(event):
         "location": event.get("location"),
         "event_type": event.get("event_type"),
         "event_nature": event.get("event_nature"),
+        "feature_count": event.get("feature_count"),
+        "source_count": event.get("source_count"),
+        "source_domain_count": event.get("source_domain_count"),
+        "source_domains": event.get("source_domains", []),
         "original_sources": event.get("sources", []),
+        "raw_titles": event.get("raw_titles", []),
         "queries": [item.get("query") for item in findings],
         "local_media_findings": findings,
-        "analytical_summary": summary,
+        "analytical_summary": infer_enrichment_summary(event, findings),
         "method_note": (
-            "Automated local-media enrichment based on public GDELT document search. "
-            "The output summarizes visible media context. It is not official attribution and does not verify motive."
+            "This enrichment starts from the selected event cluster's original source set, then adds public GDELT media search. "
+            "It does not assign legal responsibility, actor identity or motive without source-level verification."
         ),
     }
 
@@ -190,41 +216,93 @@ def build_html_report(payload):
         cards = ""
 
         for event in events:
+            source_rows = ""
+            for url in (event.get("original_sources") or [])[:6]:
+                domain = escape(source_domain(url))
+                source_rows += f'<li><a href="{escape(url)}" target="_blank" rel="noopener">{domain}</a></li>'
+
+            if not source_rows:
+                source_rows = "<li>No original source URL available.</li>"
+
             article_rows = ""
-            article_count = 0
+            seen = set()
 
             for finding in event.get("local_media_findings", []):
-                for article in finding.get("articles", [])[:4]:
-                    article_count += 1
+                for article in finding.get("articles", []):
+                    url = article.get("url")
+                    if not url or url in seen:
+                        continue
+
+                    seen.add(url)
                     title = escape(article.get("title") or "Untitled")
-                    url = escape(article.get("url") or "#")
                     domain = escape(article.get("domain") or "unknown")
                     date = escape(article.get("seendate") or "")
 
                     article_rows += f"""
                     <li>
-                        <a href="{url}" target="_blank" rel="noopener">{title}</a>
+                        <a href="{escape(url)}" target="_blank" rel="noopener">{title}</a>
                         <small>{domain} {date}</small>
                     </li>
                     """
 
+                    if len(seen) >= 8:
+                        break
+                if len(seen) >= 8:
+                    break
+
             if not article_rows:
-                article_rows = "<li>No additional media item found.</li>"
+                article_rows = "<li>No supplementary media item found.</li>"
+
+            raw_title_rows = ""
+            for raw_title in (event.get("raw_titles") or [])[:5]:
+                raw_title_rows += f"<li>{escape(raw_title)}</li>"
+            if not raw_title_rows:
+                raw_title_rows = "<li>No raw title pattern available.</li>"
+
+            query_rows = ""
+            for query in (event.get("queries") or [])[:6]:
+                query_rows += f"<li>{escape(query)}</li>"
+            if not query_rows:
+                query_rows = "<li>No query generated.</li>"
 
             cards += f"""
             <article class="event-card">
                 <div class="event-head">
                     <span>#{event.get("rank")}</span>
-                    <strong>{escape(event.get("title") or "Untitled event")}</strong>
+                    <strong>{escape(event.get("title") or "Untitled event cluster")}</strong>
                 </div>
+
                 <div class="meta">
                     {escape(event.get("location") or "")} / {escape(event.get("country") or "")}
                     · {escape(event.get("event_type") or "")}
                     · Score {escape(str(event.get("score") or ""))}
+                    · Cluster records {escape(str(event.get("feature_count") or ""))}
+                    · Source domains {escape(str(event.get("source_domain_count") or ""))}
                 </div>
+
                 <p>{escape(event.get("analytical_summary") or "")}</p>
-                <h4>Related media items</h4>
-                <ol>{article_rows}</ol>
+
+                <div class="grid">
+                    <div>
+                        <h4>Original source set</h4>
+                        <ol>{source_rows}</ol>
+                    </div>
+                    <div>
+                        <h4>Raw title pattern</h4>
+                        <ol>{raw_title_rows}</ol>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Supplementary media search</h4>
+                        <ol>{article_rows}</ol>
+                    </div>
+                    <div>
+                        <h4>Queries used</h4>
+                        <ol>{query_rows}</ol>
+                    </div>
+                </div>
             </article>
             """
 
@@ -320,6 +398,12 @@ p {{
     color:#334155;
     line-height:1.65;
 }}
+.grid {{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:14px;
+}}
 h4 {{
     margin-bottom:8px;
 }}
@@ -336,6 +420,9 @@ small {{
     color:#64748b;
     margin-top:3px;
 }}
+@media(max-width:800px){{
+    .grid{{grid-template-columns:1fr;}}
+}}
 </style>
 </head>
 <body>
@@ -343,7 +430,7 @@ small {{
 <header class="hero">
     <span>OSINT enrichment layer</span>
     <h1>Local Media Enrichment</h1>
-    <p>Selected regional Top 5 events enriched with public media search results. Period: {escape(period.get("start", ""))} – {escape(period.get("end", ""))}.</p>
+    <p>Selected regional Top 5 event clusters enriched with the original source set and supplementary public media search. Period: {escape(period.get("start", ""))} – {escape(period.get("end", ""))}.</p>
 </header>
 <div class="content">
 {sections}
@@ -364,15 +451,17 @@ def enrich_selected_events():
     events = selected.get("events", [])
 
     enriched_events = []
-
     for event in events:
-        enriched_events.append(enrich_event(event))
+        enriched_events.append(enrich_event_cluster(event))
 
     payload = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
         "source_file": str(SELECTED_EVENTS_FILE.relative_to(BASE_DIR)),
         "period": period,
-        "method": "Public GDELT document search enrichment for previously selected Top 5 regional events.",
+        "method": (
+            "Cluster-based local media enrichment. The script first displays the original source set exported with each selected event cluster, "
+            "then performs supplementary public GDELT media search with translated event-type queries."
+        ),
         "enriched_events": enriched_events,
     }
 
@@ -397,3 +486,4 @@ def enrich_selected_events():
 
 if __name__ == "__main__":
     enrich_selected_events()
+
