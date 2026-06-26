@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T13:52:10.578515Z",
+  "generated_at": "2026-06-26T14:15:08.819562Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 12,
-  "unique_sources_checked": 47,
+  "event_count": 4,
+  "unique_sources_checked": 16,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,349 +12,6 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Robbantás / IED – Odesa, Odesa Oblast, Ukraine",
-      "date": "2026-06-24",
-      "country": "Ukraine",
-      "location": "Odesa, Odesa Oblast, Ukraine",
-      "event_type": "Robbantás / IED",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
-          "domain": "www.floridastatesman.com",
-          "status": "ok",
-          "error": null,
-          "title": "Moscow shoots down dozens of drones, flights briefly halted",
-          "description": "Moscow authorities said that dozens of drones were shot down early on June 22, and flights at airports were briefly stopped, just days after Ukraine again struck the city’s oil refinery.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "drone",
-            "drones",
-            "shot down"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/",
-          "domain": "neweasterneurope.eu",
-          "status": "ok",
-          "error": null,
-          "title": "Building trust across borders: Rethinking Ukrainian–Romanian relations in a changing Europe - New Eastern Europe",
-          "description": "The support for Ukraine’s accession to the EU and NATO is the best Romanian foreign policy invention of the last few decades.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "nato"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Zelensky strategic blunder if he attacks Belarus or Crimean Bridge, Russia warns: Western Ukraine and Odesa will burn",
-          "description": "Zelensky strategic blunder if he attacks Belarus or Crimean Bridge, Russia warns: Western Ukraine and Odesa will burn",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.kyivpost.com/post/78794",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russian Drone Shrapnel Kills 26-Year-Old Woman on Odesa Beach",
-          "description": "Regional authorities said a 39-year-old man was also wounded in the attack, while emergency crews continued assessing potential additional casualties along the Black Sea coast.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone",
-            "kill",
-            "wounded",
-            "casualties"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Robbantás / IED – Kherson, Khersons'ka Oblast', Ukraine",
-      "date": "2026-06-25",
-      "country": "Ukraine",
-      "location": "Kherson, Khersons'ka Oblast', Ukraine",
-      "event_type": "Robbantás / IED",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
-          "domain": "news.antiwar.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
-          "description": "Ukrainian forces launched another major drone attack on Russia on Wednesday that killed at least four people and knocked out power in Sevastopol, the largest city in Crimea. According to the Russian news agency TASS, two civilians were killed in Gorlovka, a town in the Russian-controlled Donetsk Oblast in eastern…",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone",
-            "blast",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
-          "domain": "www.nbcnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
-          "description": "The operation was part of Ukraine’s aerial campaign targeting energy facilities and military industries that has intensified as Kyiv builds bigger and better long-range weapons.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "ied"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
-          "domain": "www.latimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers - Los Angeles Times",
-          "description": "Ukrainian forces have struck a major natural gas processing plant and two key satellite communications centers in Russia",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345",
-          "domain": "www.mirror.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Volodymyr Zelensky orders brutal move in bid to cripple Vladimir Putin’s attacks - The Mirror",
-          "description": "Volodymyr Zelensky said Russia is moving a significant part of its air defences to protect a handful of prime targets, including Moscow, as Ukraine’s long-range drones hammered sites",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "drones"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-06-25",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
-          "domain": "www.nbcnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
-          "description": "The operation was part of Ukraine’s aerial campaign targeting energy facilities and military industries that has intensified as Kyiv builds bigger and better long-range weapons.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "ied"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://carnegieendowment.org/russia-eurasia/politika/2026/06/russia-new-refinery-strike",
-          "domain": "carnegieendowment.org",
-          "status": "ok",
-          "error": null,
-          "title": "Russian Oil Sector Battered but Not Broken by Ukrainian Air Attacks | Carnegie Endowment for International Peace",
-          "description": "If it proves impossible for the Russian authorities to avoid a gasoline deficit, the question then becomes how they will organize the distribution of a scarce resource.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://usa.chinadaily.com.cn/a/202606/25/WS6a3c7e02a310986e2b461c41.html",
-          "domain": "usa.chinadaily.com.cn",
-          "status": "ok",
-          "error": null,
-          "title": "Putin calls for measures to safeguard civilian facilities - World - Chinadaily.com.cn",
-          "description": "MOSCOW/KYIV — The Russian government and the defense ministry must roll out measures to mitigate the fallout from Ukrainian strikes against Russia's civilian infrastructure, Russian President Vladimir Putin said on Tuesday.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "government",
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/last-us-soldier-to-leave-afghanistan-top-us-commander-in-europe-christopher-donahue-to-step-down-amid-hegseth-s-military-revamp-article-13958164.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "Last US soldier to leave Afghanistan: Top US commander in Europe Christopher Donahue to step down amid Hegseth's military revamp",
-          "description": "An Army official said Donahue’s departure comes as the US military considers downgrading US Army in Europe and Africa from a four-star to a three-star command.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "military",
-            "army"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 4,
-      "title": "Rajtaütés / fegyveres támadás – Dnipro, Ukraine, Ukraine",
-      "date": "2026-06-20",
-      "country": "Ukraine",
-      "location": "Dnipro, Ukraine, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 11,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.dailykos.com/stories/2026/6/19/800058109/community/ukraine-invasion-day-1577/",
-          "domain": "www.dailykos.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine Invasion Day 1,577: Moscow refineries hit again - Daily Kos",
-          "description": "Momentum shifting, however slowly.",
-          "accepted": false,
-          "reason": "low-value domain and weak incident evidence",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.asianews.it/news-en/By-bombing-the-Lavra,-Russia-is-destroying-the-Russian-World-65687.html",
-          "domain": "www.asianews.it",
-          "status": "ok",
-          "error": null,
-          "title": "RUSSIAN WORLD By bombing the Lavra, Russia is destroying the Russian World",
-          "description": "By targeting the Kyiv Pechersk Lavra, Moscow has struck the sacred site it has used for centuries as evidence of its",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "bombing"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.local10.com/news/2026/06/18/ukrainian-drones-set-a-moscow-refinery-ablaze-in-a-major-attack-on-the-russian-capital/",
-          "domain": "www.local10.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukrainian drones set a Moscow refinery ablaze in a major attack on the Russian capital",
-          "description": "Ukraine struck a major Moscow oil refinery Thursday for a second time in a week, sending huge plumes of black smoke over the capital and disrupting hundreds of flights at its airports in one of its biggest drone attacks since Russia’s full-scale invasion over four years ago, officials said.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "drones"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.christiandaily.com/news/russian-drone-attack-sets-historic-cathedral-ablaze-in-ukraine",
-          "domain": "www.christiandaily.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russian drone attack sets historic cathedral ablaze in Ukraine - Christian Daily International",
-          "description": "Religious and political leaders condemned a Russian attack that set ablaze the main cathedral building at the historic Kyiv-Pechersk Lavra monastery in Ukraine on Monday (June 15).",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 5,
       "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
       "date": "2026-06-25",
       "country": "Ukraine",
@@ -529,166 +186,8 @@
       ]
     },
     {
-      "region": "Balkán",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Istanbul, Turkey",
-      "date": "2026-06-25",
-      "country": "Turkey",
-      "location": "Istanbul, Turkey",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
-      "inspected_sources": [
-        {
-          "url": "https://www.durangoherald.com/articles/shiite-muslims-mark-holy-day-of-ashoura-after-months-of-war-in-iran-and-lebanon/",
-          "domain": "www.durangoherald.com",
-          "status": "ok",
-          "error": null,
-          "title": "Shiite Muslims mark holy day of Ashoura after months of war in Iran and Lebanon - The Durango Herald",
-          "description": "BEIRUT (AP) — Shiite Muslims around the world on Thursday marked Ashoura, a holy day symbolizing sacrifice and martyrdom that holds special significance for many this year after months of war in Iran ...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.nashvillescene.com/news/pithinthewind/racist-streamer-chud-builder-nashville-court-hearing/article_969f1b9f-997b-4cd2-9073-e2e5bda53b2f.html",
-          "domain": "www.nashvillescene.com",
-          "status": "ok",
-          "error": null,
-          "title": "Racist Streamer Faces Lower Broadway Charges in Court Hearing | Pith in the Wind | Nashville News | nashvillescene.com",
-          "description": "In custody for attempted Clarksville murder, Dalton",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://news.az/news/how-does-turkiye-approach-counterterrorism",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids",
-          "domain": "dailypioneer.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey Detains Over 200 Suspects in Anti-Terror Raids Ahead of NATO Summit | Daily Pioneer",
-          "description": "Turkey detained over 200 suspects in anti-terror raids in Ankara ahead of the NATO summit, tightening security across the capital and key venues.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "raid",
-            "raids",
-            "terror",
-            "detained"
-          ],
-          "weak_hits": [
-            "nato",
-            "summit"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Tömeges erőszak – Jerusalem, Israel, Israel",
-      "date": "2026-06-25",
-      "country": "Israel",
-      "location": "Jerusalem, Israel, Israel",
-      "event_type": "Tömeges erőszak",
-      "original_sources_count": 11,
-      "checked_sources_count": 4,
-      "valid_sources_count": 0,
-      "confidence": "Rejected",
-      "inspected_sources": [
-        {
-          "url": "https://www.algemeiner.com/2026/06/25/chris-van-hollen-endorses-anti-israel-senate-candidate-abdul-el-sayed/",
-          "domain": "www.algemeiner.com",
-          "status": "ok",
-          "error": null,
-          "title": "Chris Van Hollen Endorses Anti-Israel Senate Candidate Abdul El-Sayed | Algemeiner.com",
-          "description": "US Sen. Chris Van Hollen (D-MD) speaks to media during a Senate vote, at the US Capitol, in Washington, DC, …",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.jpost.com/opinion/article-900419",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel must mantain its American support even if US backing falls | The Jerusalem Post",
-          "description": "President Trump’s Iran deal and Vice President Vance’s warning on US support should push Jerusalem to rethink its dependence on Washington before bipartisan backing collapses further.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "president"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Gilad Erdan: Israel 'refuses to surrender' to enemies - Israel & Jewish News - JNS",
-          "description": "The former ambassador has served as the global president of Magen David Adom, Israel's national emergency medical service, since 2024.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://themedialine.org/news/opinion/israel-must-avoid-becoming-sparta-without-america/",
-          "domain": "themedialine.org",
-          "status": "ok",
-          "error": null,
-          "title": "OPINION - Israel Must Avoid Becoming Sparta Without America - The Media Line",
-          "description": "In September 2025, Israeli Prime Minister Benjamin Netanyahu […]",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "minister"
-          ],
-          "noise_hits": [
-            "opinion",
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
       "title": "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
       "date": "2026-06-25",
       "country": "Iran",
@@ -772,232 +271,88 @@
     },
     {
       "region": "Közel-Kelet",
-      "rank": 3,
-      "title": "Rajtaütés / fegyveres támadás – Tel Aviv, Israel",
-      "date": "2026-06-25",
-      "country": "Israel",
-      "location": "Tel Aviv, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 17,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.jpost.com/israel-news/article-900543",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "October Council calls for commission of inquiry into October 7 Hamas attack | The Jerusalem Post",
-          "description": "The press conference was attended by bereaved families, hostage families, survivors, and representatives, who called on Israel's public to demand the establishment of a state commission of inquiry.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "hamas",
-            "hostage"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.bankingnews.gr/diethni/articles/883148/bloodbath-in-lebanon-as-israel-shatters-ceasefire-triggering-lethal-ambush-and-fierce-political-ultimatum-from-hezbollah",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
-          "description": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ambush",
-            "hezbollah"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://nationalpost.com/news/light-in-the-darkness-the-journey-of-noa-argamani",
-          "domain": "nationalpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "'Light in the darkness': The journey of Noa Argamani | National Post",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.presstv.ir/Detail/2026/06/19/770719/EU-parliamentarians-demand-sanctions-on-Israel",
-          "domain": "www.presstv.ir",
-          "status": "ok",
-          "error": null,
-          "title": "EU parliamentarians demand sanctions on Israel",
-          "description": "Millions of ordinary Europeans continue to feel the economic fallout from the illegal war against Iran waged by the US and Israel.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "sanctions"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "title": "Rajtaütés / fegyveres támadás – Hebron, Israel, Israel",
-      "date": "2026-06-25",
-      "country": "Israel",
-      "location": "Hebron, Israel, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+      "date": "2026-06-23",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
+      "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://thedailyblog.co.nz/in-occupied-palestine-22-june-2026/",
-          "domain": "thedailyblog.co.nz",
+          "url": "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
+          "domain": "www.dailyexcelsior.com",
           "status": "ok",
           "error": null,
-          "title": "In Occupied Palestine – 22 June 2026 – The Daily Blog",
-          "description": "",
+          "title": "12 Indians among 13 killed in explosion at factory in Ras Laffan Industrial City in Qatar: Officials - Daily Excelsior",
+          "description": "DUBAI, Jun 22: Twelve Indians were among 13 people killed in an explosion at a factory in the Ras Laffan Industrial City in Qatar, officials said on Monday.",
           "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied"
+            "explosion",
+            "killed",
+            "kill"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.aljazeera.com/news/2026/6/25/israeli-forces-shoot-and-kill-palestinians-in-occupied-west-bank-gaza",
-          "domain": "www.aljazeera.com",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
+          "domain": "timesofindia.indiatimes.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces shoot and kill Palestinians in occupied West Bank, Gaza | Israel-Palestine conflict News | Al Jazeera",
-          "description": "The deaths come amid escalating Israeli military raids and settler attacks across the occupied territories.",
+          "title": "12 Indians among 13 killed in Qatar gas plant blast; accident says minister - The Times of India",
+          "description": "Middle East News: DOHA: Twelve Indians were among the 13 people killed in an explosion at a gas processing plant in the Ras Laffan Industrial City in Qatar, officials s.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack",
-            "attacks",
-            "ied",
-            "raid",
-            "raids",
+            "explosion",
+            "blast",
+            "killed",
             "kill"
           ],
           "weak_hits": [
-            "military",
-            "conflict"
+            "minister"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://imemc.org/article/army-injures-two-palestinians-including-journalist-in-jordan-valley/",
-          "domain": "imemc.org",
+          "url": "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel",
+          "domain": "edition.cnn.com",
           "status": "ok",
           "error": null,
-          "title": "Army Injures Two Palestinians, Including Journalist, in Jordan Valley | - IMEMC News",
-          "description": "Two Palestinians, including a journalist, were injured on Thursday in the occupied West Bank when Israeli occupation forces assaulted them in the northern J ...",
+          "title": "June 23, 2026 - Strait of Hormuz evacuation plans, Trump insists Iran agreed to more nuclear inspections | CNN",
+          "description": "President Donald Trump dismissed claims that no Iran visit has been scheduled for International Atomic Energy Agency inspectors, saying Tehran had already agreed to the arrangement. Folow for live news updates.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.bignewsnetwork.com/news/279141972/12-indians-died-in-ras-laffan-lng-blast-qatar",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "12 Indians died in Ras Laffan LNG blast - Qatar",
+          "description": "Twelve Indians are among the 13 killed in a blast at the industrial hub which houses the world's largest LNG export complex Read Full Article at RT.com",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
+            "blast",
             "ied",
-            "injured"
+            "killed",
+            "kill"
           ],
-          "weak_hits": [
-            "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middleeasteye.net/profile/israel-itamar-ben-gvir",
-          "domain": "www.middleeasteye.net",
-          "status": "ok",
-          "error": null,
-          "title": "Itamar Ben Gvir: How the man keeping Netanyahu in office rose to power | Middle East Eye",
-          "description": "Notorious for provocative rhetoric and overseeing brutal treatment of Palenstinian prisoners, he has been able to galvanise supporters on the far right",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
           "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
-      "date": "2026-06-24",
-      "country": "Israel",
-      "location": "Gaza City, Israel, Israel",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 0,
-      "confidence": "Rejected",
-      "inspected_sources": [
-        {
-          "url": "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
-          "description": "Insulin and equipment shortages in Gaza pose fatal risks, leading to critical health complications.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
-          "domain": "www.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds | CNN",
-          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://english.wafa.ps/Pages/Details/171970",
-          "domain": "english.wafa.ps",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces continue ceasefire violations across Gaza, conduct limited ground incursion",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
-          "domain": "www.egyptindependent.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds - Egypt Independent",
-          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
+          "noise_hits": [
+            "art"
+          ]
         }
       ]
     }
