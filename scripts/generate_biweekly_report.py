@@ -2188,7 +2188,13 @@ def cluster_source_validation(cluster, max_sources=12):
     """
 
     sources = cluster.get("sources", []) or []
-    validation = validate_sources(sources, max_sources=max_sources)
+    validation = validate_sources(
+        sources,
+        max_sources=max_sources,
+        event_location=cluster.get("location", ""),
+        event_country=cluster.get("country", ""),
+        event_date=cluster.get("date", ""),
+    )
     cluster["source_validation"] = validation
     return validation
 
