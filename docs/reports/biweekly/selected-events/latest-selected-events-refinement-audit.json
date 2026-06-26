@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T12:40:26.754153Z",
+  "generated_at": "2026-06-26T13:28:46.336873Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
@@ -350,84 +350,6 @@
     {
       "region": "Ukrajna",
       "rank": 4,
-      "title": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
-      "date": "2026-06-25",
-      "country": "Ukraine",
-      "location": "Kyiv, Ukraine, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
-      "inspected_sources": [
-        {
-          "url": "http://www.bignewsnetwork.com/news/279146979/zelensky-threatened-belarus-then-declared-victory-out-of-thin-air",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "Zelensky threatened Belarus then declared victory out of thin air",
-          "description": "Zelensky says Belarus removed Russian drone relay stations, but no evidence has surfaced. Here is why Kiev’s ultimatum ended in silence Read",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "drone"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://wrp.org.uk/features/neo-nazi-kiev-knowingly-pursuing-the-deliberate-intentional-destruction-of-civilians-dmitry-medvedev/",
-          "domain": "wrp.org.uk",
-          "status": "ok",
-          "error": null,
-          "title": "‘Neo-Nazi Kiev knowingly pursuing the deliberate, intentional destruction of civilians’ – Dmitry Medvedev - Workers Revolutionary Party",
-          "description": "RUSSIA is not waiting for the agreements reached in Anchorage to be implemented, but rather for victory, Kremlin aide Yury Ushakov stated on Sunday. ‘We are not waiting for these understandings or agreements to be implemented; we are waiting for victory. We are waiting for our own goals to be achieved,’ he told Vesti reporter […]",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.wsws.org/en/articles/2026/06/23/fskj-j23.html",
-          "domain": "www.wsws.org",
-          "status": "ok",
-          "error": null,
-          "title": "Anniversary of the Nazi invasion of the Soviet Union: Pistorius prepares war against Russia in Lithuania - World Socialist Web Site",
-          "description": "On Monday, German Defence Minister Boris Pistorius visited Lithuania to take part in the first major exercise of the Bundeswehr’s Armoured Brigade 45 stationed there.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "minister"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.bankingnews.gr/diethni/articles/883627/trump-drowned-starmer-in-the-north-sea-oil-production-collapses-by-90-london-loses-its-last-strategic-weapon",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Trump \"drowned\" Starmer in the North Sea – Oil production collapses by 90%, London loses its last strategic weapon",
-          "description": "Trump",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "row"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 5,
       "title": "Rajtaütés / fegyveres támadás – Dnipro, Ukraine, Ukraine",
       "date": "2026-06-20",
       "country": "Ukraine",
@@ -435,7 +357,7 @@
       "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 11,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
@@ -454,13 +376,15 @@
         {
           "url": "https://www.asianews.it/news-en/By-bombing-the-Lavra,-Russia-is-destroying-the-Russian-World-65687.html",
           "domain": "www.asianews.it",
-          "status": "error",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
+          "status": "ok",
+          "error": null,
+          "title": "RUSSIAN WORLD By bombing the Lavra, Russia is destroying the Russian World",
+          "description": "By targeting the Kyiv Pechersk Lavra, Moscow has struck the sacred site it has used for centuries as evidence of its",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "bombing"
+          ],
           "weak_hits": [],
           "noise_hits": []
         },
@@ -494,6 +418,97 @@
           "security_hits": [
             "attack",
             "drone"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 5,
+      "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-06-25",
+      "country": "Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.themoscowtimes.com/2026/06/25/ukrainian-attacks-on-bryansk-region-and-annexed-crimea-kill-at-least-4-a93092",
+          "domain": "www.themoscowtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian Attacks on Bryansk Region and Annexed Crimea Kill At Least 4 - The Moscow Times",
+          "description": "At least four people were killed in Ukrainian drone attacks in western Russia and annexed Crimea, authorities said Thursday, while multiple industrial sites were also targeted during the overnight air barrage.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
+          "domain": "www.egyptindependent.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia is still inching forward in eastern Ukraine, but experts say claims of progress are exaggerated - Egypt Independent",
+          "description": "Kyiv, Ukraine — Russia is still inching forward in eastern Ukraine’s Donetsk region, where it has concentrated the bulk of its troops, as it continues efforts to encircle the key “fortress belt” city of Kostyantynivka and the city of Lyman.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://bnn-news.com/ukrainian-drone-strikes-ignite-another-oil-depot-in-russia-281516",
+          "domain": "bnn-news.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian drone strikes ignite another oil depot in Russia - Baltic News Network",
+          "description": "Another oil depot has caught fire in Russia’s Krasnodar region following overnight Ukrainian drone strikes, according to Russian and Ukrainian media reports. The Ukrainian Telegram channel Exilenova+ reported that three fuel storage tanks caught fire at the oil depot in the village of Poltavskaya after the attack. According to the Telegram channel Astra, the Poltavskaya […]",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "strikes",
+            "drone"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://english.aawsat.com/world/5288362-ukraine-drone-attacks-kill-5-russia-crimea",
+          "domain": "english.aawsat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Drone Attacks Kill 5 in Russia, Crimea",
+          "description": "Ukrainian drone strikes killed five people, including two children, in Russia and on the Moscow-annexed Crimean peninsula, in attacks that also triggered a fire at a major oil depot in the country's south, local officials said Thursday. Ukraine has stepped up strikes on Russia in recent months in retaliation for Moscow's near-daily barrages of drones and missiles throughout its five-year offensive, AFP reported. Russia's defense ministry said it downed 269 Ukrainian drones overnight over Russia and Crimea, which Moscow annexed in 2014.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "missile",
+            "killed",
+            "kill",
+            "downed"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -787,16 +802,14 @@
         {
           "url": "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
           "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Gilad Erdan: Israel 'refuses to surrender' to enemies - Israel & Jewish News - JNS",
-          "description": "The former ambassador has served as the global president of Magen David Adom, Israel's national emergency medical service, since 2024.",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
+          "description": "",
           "accepted": false,
-          "reason": "no concrete security incident detected",
+          "reason": "source not readable",
           "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
@@ -822,83 +835,6 @@
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Tel Aviv, Israel",
-      "date": "2026-06-25",
-      "country": "Israel",
-      "location": "Tel Aviv, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 17,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.jpost.com/israel-news/article-900543",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "October Council calls for commission of inquiry into October 7 Hamas attack | The Jerusalem Post",
-          "description": "The press conference was attended by bereaved families, hostage families, survivors, and representatives, who called on Israel's public to demand the establishment of a state commission of inquiry.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "hamas",
-            "hostage"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.bankingnews.gr/diethni/articles/883148/bloodbath-in-lebanon-as-israel-shatters-ceasefire-triggering-lethal-ambush-and-fierce-political-ultimatum-from-hezbollah",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
-          "description": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ambush",
-            "hezbollah"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://nationalpost.com/news/light-in-the-darkness-the-journey-of-noa-argamani",
-          "domain": "nationalpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "'Light in the darkness': The journey of Noa Argamani | National Post",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.presstv.ir/Detail/2026/06/19/770719/EU-parliamentarians-demand-sanctions-on-Israel",
-          "domain": "www.presstv.ir",
-          "status": "ok",
-          "error": null,
-          "title": "EU parliamentarians demand sanctions on Israel",
-          "description": "Millions of ordinary Europeans continue to feel the economic fallout from the illegal war against Iran waged by the US and Israel.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "sanctions"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 3,
       "title": "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
       "date": "2026-06-25",
       "country": "Iran",
@@ -982,7 +918,170 @@
     },
     {
       "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Rajtaütés / fegyveres támadás – Tel Aviv, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Tel Aviv, Israel",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 17,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.jpost.com/israel-news/article-900543",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "October Council calls for commission of inquiry into October 7 Hamas attack | The Jerusalem Post",
+          "description": "The press conference was attended by bereaved families, hostage families, survivors, and representatives, who called on Israel's public to demand the establishment of a state commission of inquiry.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "hamas",
+            "hostage"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.bankingnews.gr/diethni/articles/883148/bloodbath-in-lebanon-as-israel-shatters-ceasefire-triggering-lethal-ambush-and-fierce-political-ultimatum-from-hezbollah",
+          "domain": "www.bankingnews.gr",
+          "status": "ok",
+          "error": null,
+          "title": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
+          "description": "Bloodbath in Lebanon as Israel shatters ceasefire triggering lethal ambush and fierce political ultimatum from Hezbollah",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "ambush",
+            "hezbollah"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://nationalpost.com/news/light-in-the-darkness-the-journey-of-noa-argamani",
+          "domain": "nationalpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "'Light in the darkness': The journey of Noa Argamani | National Post",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.presstv.ir/Detail/2026/06/19/770719/EU-parliamentarians-demand-sanctions-on-Israel",
+          "domain": "www.presstv.ir",
+          "status": "ok",
+          "error": null,
+          "title": "EU parliamentarians demand sanctions on Israel",
+          "description": "Millions of ordinary Europeans continue to feel the economic fallout from the illegal war against Iran waged by the US and Israel.",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "sanctions"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
       "rank": 4,
+      "title": "Fegyveres összecsapás – Isfahan, Esfahan, Iran",
+      "date": "2026-06-25",
+      "country": "Iran",
+      "location": "Isfahan, Esfahan, Iran",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 16,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ashura ceremonies intertwine faith and support for state in Iran | US-Israel war on Iran News | Al Jazeera",
+          "description": "State-backed Ashura events showcase leaders killed by US, Israel, seen as martyrs in the mould of Imam Hussein.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
+          "domain": "www.skynews.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "No Cookies | Sky News Australia",
+          "description": "SkyNews.com.au — Australian News Headlines & World News Online from the best award winning journalists",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "award"
+          ]
+        },
+        {
+          "url": "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
+          "domain": "www.zerohedge.com",
+          "status": "ok",
+          "error": null,
+          "title": "\"Real Alien Shit!\": Downed US Pilot Reported Seeing Iranian Drones Swarm in 'Jellyfish' Formation | ZeroHedge",
+          "description": "ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "drone",
+            "drones",
+            "downed"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
+          "domain": "dailytimes.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "IAEA expects Iran inspections to resume - Daily Times",
+          "description": "The International Atomic Energy Agency (IAEA) expects to resume inspections in Iran soon following the interim agreement between Tehran and Washington, according to agency chief Rafael Grossi. While inspection arrangements have not yet been finalised, Grossi said both sides are working on the necessary procedures. The move is a key step toward implementing the broader framework aimed at easing tensions over Iran’s nuclear programme.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 5,
       "title": "Rajtaütés / fegyveres támadás – Hebron, Israel, Israel",
       "date": "2026-06-25",
       "country": "Israel",
@@ -1056,76 +1155,6 @@
           "error": null,
           "title": "Itamar Ben Gvir: How the man keeping Netanyahu in office rose to power | Middle East Eye",
           "description": "Notorious for provocative rhetoric and overseeing brutal treatment of Palenstinian prisoners, he has been able to galvanise supporters on the far right",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
-      "date": "2026-06-24",
-      "country": "Israel",
-      "location": "Gaza City, Israel, Israel",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 0,
-      "confidence": "Rejected",
-      "inspected_sources": [
-        {
-          "url": "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
-          "description": "Insulin and equipment shortages in Gaza pose fatal risks, leading to critical health complications.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
-          "domain": "www.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds | CNN",
-          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://english.wafa.ps/Pages/Details/171970",
-          "domain": "english.wafa.ps",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces continue ceasefire violations across Gaza, conduct limited ground incursion",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
-          "domain": "www.egyptindependent.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds - Egypt Independent",
-          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
