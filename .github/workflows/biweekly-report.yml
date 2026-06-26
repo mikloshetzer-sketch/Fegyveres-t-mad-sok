@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    # Minden hétfő 05:20 UTC
+    # Every Monday 05:20 UTC
     - cron: "20 5 * * 1"
 
 permissions:
@@ -12,34 +12,34 @@ permissions:
 
 jobs:
   biweekly-intelligence:
+
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 30
 
     steps:
 
-      #####################################################################
+      ####################################################################
       # Checkout
-      #####################################################################
+      ####################################################################
 
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      #####################################################################
+      ####################################################################
       # Python
-      #####################################################################
+      ####################################################################
 
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
-      #####################################################################
-      # Verify LIVE data
-      #####################################################################
+      ####################################################################
+      # Verify LIVE database
+      ####################################################################
 
       - name: Verify LIVE attack database
         run: |
-          echo "Checking attacks_2026_live.geojson..."
 
           test -f docs/data/attacks_2026_live.geojson
 
@@ -49,57 +49,25 @@ jobs:
           with open("docs/data/attacks_2026_live.geojson","r",encoding="utf-8") as f:
               data=json.load(f)
 
-          features=len(data.get("features",[]))
+          count=len(data.get("features",[]))
 
-          print(f"LIVE events: {features}")
+          print(f"LIVE events: {count}")
 
-          if features==0:
-              raise SystemExit("No LIVE events found.")
+          if count==0:
+              raise SystemExit("Live database is empty.")
           PY
 
-      #####################################################################
-      # Refine events
-      #####################################################################
-
-      - name: Refine attack events
-        run: |
-          python scripts/refine_attack_events.py
-
-      #####################################################################
-      # Verify refined dataset
-      #####################################################################
-
-      - name: Verify refined dataset
-        run: |
-
-          test -f docs/data/attacks_2026_refined.geojson
-          test -f docs/data/attacks_2026_refined_audit.json
-
-          python - <<'PY'
-          import json
-
-          with open("docs/data/attacks_2026_refined.geojson","r",encoding="utf-8") as f:
-              data=json.load(f)
-
-          features=len(data.get("features",[]))
-
-          print(f"Refined events: {features}")
-
-          if features==0:
-              raise SystemExit("Refined dataset is empty.")
-          PY
-
-      #####################################################################
-      # Generate biweekly report
-      #####################################################################
+      ####################################################################
+      # Generate report
+      ####################################################################
 
       - name: Generate biweekly report
         run: |
           python scripts/generate_biweekly_report.py
 
-      #####################################################################
+      ####################################################################
       # Verify selected events
-      #####################################################################
+      ####################################################################
 
       - name: Verify selected events
         run: |
@@ -109,81 +77,99 @@ jobs:
           python - <<'PY'
           import json
 
-          with open("docs/reports/biweekly/selected-events/latest-selected-events.json","r",encoding="utf-8") as f:
+          with open(
+              "docs/reports/biweekly/selected-events/latest-selected-events.json",
+              "r",
+              encoding="utf-8"
+          ) as f:
               data=json.load(f)
 
-          total=0
+          events=data.get("events",[])
 
-          if isinstance(data,dict):
+          print(f"Selected events: {len(events)}")
 
-              if "regions" in data:
-                  for r in data["regions"]:
-                      total+=len(r.get("events",[]))
-
-              elif "events" in data:
-                  total=len(data["events"])
-
-          print(f"Selected events: {total}")
-
-          if total==0:
+          if len(events)==0:
               raise SystemExit("No selected events generated.")
           PY
 
-      #####################################################################
-      # Local Media enrichment
-      #####################################################################
+      ####################################################################
+      # Refine selected events
+      ####################################################################
+
+      - name: Refine selected events
+        run: |
+          python scripts/refine_attack_events.py
+
+      ####################################################################
+      # Verify refinement
+      ####################################################################
+
+      - name: Verify refinement
+        run: |
+
+          test -f docs/reports/biweekly/selected-events/latest-selected-events-refined.json
+
+          test -f docs/reports/biweekly/selected-events/latest-selected-events-refinement-audit.json
+
+      ####################################################################
+      # Local Media
+      ####################################################################
 
       - name: Run Local Media enrichment
         run: |
           python scripts/enrich_selected_events_local_media.py
 
-      #####################################################################
+      ####################################################################
       # Verify enrichment
-      #####################################################################
+      ####################################################################
 
       - name: Verify enrichment output
         run: |
+
           ls -R docs/reports/biweekly/enrichment/
 
-      #####################################################################
+      ####################################################################
       # Pipeline status
-      #####################################################################
+      ####################################################################
 
       - name: Create pipeline status
         run: |
 
           python - <<'PY'
+
           import json
           from datetime import datetime
 
           status={
               "generated_at":datetime.utcnow().isoformat()+"Z",
               "status":"ok",
-              "pipeline":[
-                  "live verified",
-                  "refined",
-                  "biweekly report",
-                  "selected events",
-                  "local media"
+              "steps":[
+                  "live database verified",
+                  "biweekly report generated",
+                  "selected events verified",
+                  "selected events refined",
+                  "local media enrichment"
               ]
           }
 
-          with open("docs/reports/biweekly/pipeline-status.json","w",encoding="utf-8") as f:
+          with open(
+              "docs/reports/biweekly/pipeline-status.json",
+              "w",
+              encoding="utf-8"
+          ) as f:
               json.dump(status,f,indent=2)
+
           PY
 
-      #####################################################################
+      ####################################################################
       # Commit
-      #####################################################################
+      ####################################################################
 
       - name: Commit changes
         run: |
 
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
-
-          git add docs/data/attacks_2026_refined.geojson
-          git add docs/data/attacks_2026_refined_audit.json
 
           git add docs/reports/biweekly/
 
