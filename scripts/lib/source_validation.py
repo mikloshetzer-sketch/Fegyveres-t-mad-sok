@@ -42,6 +42,17 @@ NOISE_TERMS = [
     "music", "museum", "art"
 ]
 
+HARD_REJECT_TERMS = [
+    "history", "historical", "archive", "anniversary", "on-this-day",
+    "ancient", "world-war-two", "wwii", "ww2", "civil-war",
+    "1999", "2000", "2001", "2002", "2003", "2004", "2005",
+    "2006", "2007", "2008", "2009", "2010", "2011", "2012",
+    "2013", "2014", "2015", "2016", "2017", "2018", "2019",
+    "2020", "2021", "2022", "2023", "2024", "2025"
+]
+
+CURRENT_YEAR_TERMS = ["2026"]
+
 LOW_VALUE_DOMAINS = {
     "freerepublic.com",
     "www.freerepublic.com",
@@ -76,6 +87,7 @@ HIGH_VALUE_DOMAINS_HINTS = [
     "latimes",
     "thehindu",
     "internazionale",
+    "themoscowtimes",
 ]
 
 
@@ -99,13 +111,29 @@ def contains_domain_hint(domain, hints):
     return any(hint in domain for hint in hints)
 
 
+def extract_years_from_url(url):
+    years = re.findall(r"(19\d{2}|20\d{2})", str(url or ""))
+    return sorted(set(years))
+
+
+def has_stale_year_signal(url):
+    years = extract_years_from_url(url)
+
+    if not years:
+        return False
+
+    if any(year in CURRENT_YEAR_TERMS for year in years):
+        return False
+
+    return True
+
+
 def classify_source_url(url):
     """
     Fast URL-based source classifier.
 
-    This deliberately does not download pages. It only checks URL text, domain,
-    and visible slug terms. This makes it safe for the biweekly selection phase.
-    A later enrichment step can still do deeper source reading if needed.
+    This deliberately does not download pages. It checks URL text, domain,
+    visible slug terms, and obvious stale-date signals.
     """
 
     url = str(url or "").strip()
@@ -115,6 +143,7 @@ def classify_source_url(url):
     incident_hits = [term for term in INCIDENT_TERMS if term in text]
     noise_hits = [term for term in NOISE_TERMS if term in text]
     weak_hits = [term for term in WEAK_CONTEXT_TERMS if term in text]
+    hard_reject_hits = [term for term in HARD_REJECT_TERMS if term in text]
 
     is_high_value = contains_domain_hint(domain, HIGH_VALUE_DOMAINS_HINTS)
     is_low_value = domain in LOW_VALUE_DOMAINS
@@ -126,23 +155,35 @@ def classify_source_url(url):
         accepted = False
         reason = "invalid or missing URL"
 
-    elif len(noise_hits) >= 2 and len(incident_hits) == 0:
+    elif has_stale_year_signal(url):
+        accepted = False
+        reason = "stale date signal in URL"
+
+    elif hard_reject_hits and "2026" not in text:
+        accepted = False
+        reason = "historical or archive signal in URL"
+
+    elif len(noise_hits) >= 2 and len(incident_hits) <= 1:
         accepted = False
         reason = "topic noise dominates URL"
 
-    elif is_low_value and len(incident_hits) < 2:
+    elif is_low_value:
         accepted = False
-        reason = "low-value domain and weak incident evidence"
+        reason = "low-value domain rejected at selection stage"
 
-    elif len(incident_hits) >= 2:
+    elif len(incident_hits) >= 2 and not hard_reject_hits:
         accepted = True
         reason = "URL contains multiple concrete incident indicators"
 
-    elif len(incident_hits) == 1 and is_high_value:
+    elif len(incident_hits) >= 2 and hard_reject_hits:
+        accepted = False
+        reason = "incident terms appear in historical/archive context"
+
+    elif len(incident_hits) == 1 and is_high_value and not noise_hits and not hard_reject_hits:
         accepted = True
         reason = "high-value source with concrete incident indicator"
 
-    elif len(incident_hits) == 1 and len(noise_hits) == 0:
+    elif len(incident_hits) == 1 and not noise_hits and not hard_reject_hits:
         accepted = True
         reason = "URL contains concrete incident indicator"
 
@@ -158,6 +199,8 @@ def classify_source_url(url):
         "incident_hits": incident_hits[:10],
         "noise_hits": noise_hits[:10],
         "weak_hits": weak_hits[:10],
+        "hard_reject_hits": hard_reject_hits[:10],
+        "years": extract_years_from_url(url),
     }
 
 
@@ -171,7 +214,7 @@ def validation_label(valid_count, checked_count, valid_ratio):
     if valid_count >= 3 and valid_ratio >= 0.30:
         return "Medium"
 
-    if valid_count >= 2 and valid_ratio >= 0.20:
+    if valid_count >= 2 and valid_ratio >= 0.25:
         return "Low"
 
     if valid_count >= 1:
@@ -254,3 +297,4 @@ def confidence_from_validation(source_validation):
         return "Low"
 
     return "Rejected"
+
