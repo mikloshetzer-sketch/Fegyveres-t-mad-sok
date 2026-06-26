@@ -4,6 +4,11 @@ from pathlib import Path
 from datetime import datetime, timedelta
 from collections import Counter, defaultdict
 from html import escape
+from lib.source_validation import (
+    validate_sources,
+    is_event_source_valid,
+    confidence_from_validation,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
