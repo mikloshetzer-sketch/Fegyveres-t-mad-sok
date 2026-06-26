@@ -8,7 +8,7 @@ from html import escape
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_refined.geojson"
+INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
 REPORTS_DIR = BASE_DIR / "docs" / "reports"
 BIWEEKLY_DIR = REPORTS_DIR / "biweekly"
 BIWEEKLY_SHARECARDS_DIR = BIWEEKLY_DIR / "sharecards"
@@ -2621,4 +2621,3 @@ def generate_biweekly_report():
 
 if __name__ == "__main__":
     generate_biweekly_report()
-
