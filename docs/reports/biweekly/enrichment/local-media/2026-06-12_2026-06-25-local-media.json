@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T13:40:56.857117Z",
+  "generated_at": "2026-06-26T14:00:46.898575Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-12",
@@ -7,215 +7,6 @@
   },
   "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
   "enriched_events": [
-    {
-      "record_type": "event_cluster",
-      "region": "Európai Unió",
-      "rank": 1,
-      "score": 67,
-      "title": "Fegyveres összecsapás – Rome, Lazio, Italy",
-      "date": "2026-06-25",
-      "country": "Italy",
-      "location": "Rome, Lazio, Italy",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 52,
-      "source_domain_count": 46,
-      "source_domains": [
-        "abcnews.com",
-        "aleteia.org",
-        "allafrica.com",
-        "chattooga1180.com",
-        "countercurrents.org",
-        "crisismagazine.com",
-        "dailypost.ng",
-        "deadline.com",
-        "economictimes.indiatimes.com",
-        "en.dailypakistan.com.pk",
-        "english.elpais.com",
-        "freethinker.co.uk",
-        "ianslive.in",
-        "italoamericano.org",
-        "religionnews.com",
-        "theconversation.com",
-        "timesofindia.indiatimes.com",
-        "us.cnn.com",
-        "www.al-monitor.com",
-        "www.americamagazine.org"
-      ],
-      "original_sources": [
-        "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
-        "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
-        "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
-        "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
-        "https://www.proactiveinvestors.co.uk/companies/news/1094493/tower-resources-tertiary-minerals-rome-resources-immupharma-cleantech-lithium-small-cap-snapshot-1094493.html",
-        "https://www.wantedinrome.com/news/italy-replaces-1992-hunting-regulations-with-expanded-framework.html",
-        "https://us.cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions",
-        "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-        "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-        "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-        "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/",
-        "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/",
-        "https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html",
-        "https://allafrica.com/stories/202606230099.html",
-        "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-        "https://www.al-monitor.com/originals/2026/06/italian-prosecutors-demand-long-jail-terms-egyptians-over-murder-italian-student",
-        "https://www.myspiritfm.com/News?view=post&blogid=Catholic%2DNews&articleid=300738",
-        "https://ianslive.in/murder-of-migrant-workers-in-italy-exposes-growing-role-of-pakistani-criminal-networks-report--20260622201843",
-        "https://www.siasat.com/iran-wont-rest-until-trump-is-drowned-in-sea-of-anger-khamenei-aide-3494427/",
-        "https://www.ibtimes.co.uk/trump-meloni-iran-nato-clash-1804401"
-      ],
-      "raw_titles": [
-        "fight – Rome, Lazio, Italy"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
-          "domain": "theconversation.com",
-          "status": "ok",
-          "error": null,
-          "title": "Will a peace deal between Iran and the US hold? Lessons from ancient Rome and Persia",
-          "description": "After dozens of wars between the two ancient empires of Rome and Persia, peace deals often failed to solve problems – and sometimes made the situation worse.",
-          "published": "20260624"
-        },
-        {
-          "url": "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
-          "domain": "economictimes.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "'If you ran in New Delhi, you'd win a million votes': Italian PM Giorgia Meloni recalls 2023 India visit - The Economic Times",
-          "description": "text/html; charset=UTF-8\"> 'If you ran in New Delhi, you'd win a million votes': Italian PM Giorgia Meloni recalls 2023 India visit - The Economic Times <meta content=",
-          "published": ""
-        },
-        {
-          "url": "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
-          "domain": "aleteia.org",
-          "status": "ok",
-          "error": null,
-          "title": "Mel Gibson’s ‘Resurrection of Christ’ gets new release date",
-          "description": "Mel Gibson follows up highly successful Passion film with next part of the biblical story, to be released in 2027 and 2028.",
-          "published": ""
-        },
-        {
-          "url": "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
-          "domain": "www.tribuneindia.com",
-          "status": "ok",
-          "error": null,
-          "title": "'If you ran in New Delhi, you'd win million votes': Giorgia Meloni recalls 2023 India visit - The Tribune",
-          "description": "Meloni visited India twice in 2023, first for the 8th edition of",
-          "published": "2026-06-25T15:34:25+05:30"
-        },
-        {
-          "url": "https://www.proactiveinvestors.co.uk/companies/news/1094493/tower-resources-tertiary-minerals-rome-resources-immupharma-cleantech-lithium-small-cap-snapshot-1094493.html",
-          "domain": "www.proactiveinvestors.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Tower Resources, Tertiary Minerals, Rome Resources, ImmuPharma, CleanTech Lithium - Small Cap Snapshot | AIM:TRP",
-          "description": "Tower Resources PLC (AIM:TRP, FRA:ULF1) has won formal approval from Namibia",
-          "published": "2026-06-25T09:45:00+01:00"
-        },
-        {
-          "url": "https://www.wantedinrome.com/news/italy-replaces-1992-hunting-regulations-with-expanded-framework.html",
-          "domain": "www.wantedinrome.com",
-          "status": "ok",
-          "error": null,
-          "title": "Italy Replaces 1992 Hunting Regulations With Expanded Framework",
-          "description": "Italian Senate approves controversial hunting law reform replacing 1992 regulations; environmental groups protest as European Commission warns of infringement p...",
-          "published": "2026-06-25T10:03:39+02:00"
-        },
-        {
-          "url": "https://us.cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions",
-          "domain": "us.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "Supreme Court gives Trump major wins on two immigration cases | CNN Politics",
-          "description": "The Supreme Court allowed President Donald Trump to end temporary deportation protections for hundreds of thousands of foreign nationals from Haiti and Syria.",
-          "published": "2026-06-25T13:32:11.905Z"
-        },
-        {
-          "url": "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-          "domain": "www.usmagazine.com",
-          "status": "ok",
-          "error": null,
-          "title": "Sarah Shahi Calls James Gandolfini 1 of the Best Kisses Ever",
-          "description": "Sarah Shahi says her kiss with James Gandolfini was one of the best, as she recalls the pair s intimate scene from The Sopranos",
-          "published": "2026-06-24T01:00:01+00:00"
-        },
-        {
-          "url": "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Heatwave hits Europe: record temperatures, closed schools and tourist attractions | BGNES",
-          "description": "The International Federation of Red Cross and Red Crescent Societies warned that the heatwave could quickly become a matter of life and death for the most vulnerable people.",
-          "published": "2026-06-24T07:54:37Z"
-        },
-        {
-          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-          "domain": "www.internazionale.it",
-          "status": "error",
-          "error": "The read operation timed out",
-          "title": "",
-          "description": "",
-          "published": ""
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Will a peace deal between Iran and the US hold? Lessons from ancient Rome and Persia",
-        "top_keywords": [
-          "you",
-          "rome",
-          "new",
-          "meloni",
-          "recalls",
-          "india",
-          "ran",
-          "delhi",
-          "win",
-          "million"
-        ],
-        "actor_hints": [
-          "iran",
-          "trump"
-        ],
-        "conflict_hints": [
-          "war"
-        ],
-        "usable_source_count": 9,
-        "confidence": "Medium"
-      },
-      "queries": [
-        "\"Rome, Lazio, Italy\" \"Italy\" \"iran\" \"war\"",
-        "\"Italy\" \"iran\" \"war\"",
-        "\"Rome, Lazio, Italy\" \"war\"",
-        "\"iran\" \"war\" 2026-06-25"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Rome, Lazio, Italy\" \"Italy\" \"iran\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Italy\" \"iran\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Rome, Lazio, Italy\" \"war\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"iran\" \"war\" 2026-06-25",
-          "error": "Expecting value: line 1 column 1 (char 0)",
-          "articles": []
-        }
-      ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 52 source URLs across 46 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
     {
       "record_type": "event_cluster",
       "region": "Ukrajna",
@@ -344,11 +135,11 @@
         {
           "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/22/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say",
           "domain": "www.internazionale.it",
-          "status": "error",
-          "error": "The read operation timed out",
-          "title": "",
-          "description": "",
-          "published": ""
+          "status": "ok",
+          "error": null,
+          "title": "Moscow shoots down more than 80 drones; Russian attacks kill six in Ukraine - Internazionale",
+          "description": "June 22 (Reuters) - Moscow shot down dozens of drones in the early hours of Monday, just days after a repeated Ukrainian strike on the city’s oil refinery, while Russian … Leggi",
+          "published": "2026-06-22T12:12:08+02:00"
         },
         {
           "url": "https://www.dailysabah.com/politics/russian-strike-on-turkish-cargo-ship-kills-one-ukraine/news",
@@ -376,12 +167,12 @@
           "drones",
           "down",
           "airports",
-          "authorities",
           "dozens",
-          "briefly",
+          "authorities",
           "attacks",
-          "odesa",
-          "shoots"
+          "shoots",
+          "briefly",
+          "shot"
         ],
         "actor_hints": [
           "russia",
@@ -401,7 +192,7 @@
           "assault",
           "intercept"
         ],
-        "usable_source_count": 9,
+        "usable_source_count": 10,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -418,7 +209,7 @@
         },
         {
           "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -433,7 +224,7 @@
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 24 source URLs across 20 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 24 source URLs across 20 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -634,22 +425,22 @@
       "local_media_findings": [
         {
           "query": "\"Kherson, Khersons'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Ukraine\" \"russia\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Kherson, Khersons'ka Oblast', Ukraine\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": null,
           "articles": []
         },
         {
           "query": "\"russia\" \"drone\" 2026-06-25",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
@@ -778,9 +569,9 @@
           "domain": "www.euronews.com",
           "status": "ok",
           "error": null,
-          "title": "",
-          "description": "",
-          "published": ""
+          "title": "No Zelenskyy in Gdansk: can Ukraine’s recovery forum ease Warsaw–Kyiv tensions? | Euronews",
+          "description": "The Ukraine Recovery Conference opens in Gdansk on Thursday amid an unprecedented spat between Kyiv and Warsaw. With both presidents absent, attention will focus not only on reconstruction initiatives but also on efforts to ease increasingly strained bilateral relations.",
+          "published": "2026-06-25 07:00:09 +02:00"
         },
         {
           "url": "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
@@ -794,11 +585,11 @@
         {
           "url": "https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning",
           "domain": "www.express.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Britain must be ready to strike Russia within 30 minutes, Army chief | UK | News | Express.co.uk",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
           "description": "",
-          "published": "2026-06-24T02:16:00+01:00"
+          "published": ""
         },
         {
           "url": "https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/",
@@ -813,8 +604,8 @@
       "event_fingerprint": {
         "representative_title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
         "top_keywords": [
-          "strikes",
           "kyiv",
+          "strikes",
           "facilities",
           "peace",
           "calls",
@@ -862,7 +653,7 @@
         },
         {
           "query": "\"Kyiv, Misto, Ukraine\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": null,
           "articles": []
         },
         {
@@ -1053,111 +844,13 @@
       "local_media_findings": [
         {
           "query": "\"Dnipro, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Cindy McCain Criticized for Sharing Photos of Deliberate Missile Attack in Ukraine , But Not Naming Names",
-              "url": "https://2paragraphs.com/2026/05/cindy-mccain-criticized-for-sharing-photos-of-deliberate-missile-attack-in-ukraine-but-not-naming-names/",
-              "domain": "2paragraphs.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260527T003000Z"
-            },
-            {
-              "title": "Four dead after Moscow launches major attack across Ukraine",
-              "url": "http://www.jpost.com/international/internationalrussia-ukraine-war/article-898053",
-              "domain": "jpost.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260602T033000Z"
-            },
-            {
-              "title": "Nine dead after Moscow launches major attack across Ukraine",
-              "url": "https://www.jpost.com/international/internationalrussia-ukraine-war/article-898053",
-              "domain": "jpost.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260602T043000Z"
-            },
-            {
-              "title": "Russian attacks kill 5 and wound more than 30 in Ukraine Dnipro ; 1 killed in Russia",
-              "url": "https://www.newsday.com/news/nation/russia-ukraine-war-dnipro-odesa-drones-v63215",
-              "domain": "newsday.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260425T113000Z"
-            },
-            {
-              "title": "Child wounded in Russian strike near Dnipro Jewish community leader home",
-              "url": "http://www.jpost.com/diaspora/article-894013",
-              "domain": "jpost.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260423T210000Z"
-            },
-            {
-              "title": "Russian missiles and drones bombard Ukraine , killing at least 16",
-              "url": "https://www.capitalgazette.com/2026/04/16/russian-missiles-drones-ukraine-attack/",
-              "domain": "capitalgazette.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260416T154500Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "乌将打击目标转向俄导弹工厂 引发国际舆论关注 _ 军事频道 _ 中华网",
-              "url": "https://military.china.com/news/13004177/20260626/49571676.html",
-              "domain": "military.china.com",
-              "source_country": "China",
-              "language": "Chinese",
-              "seendate": "20260626T030000Z"
-            },
-            {
-              "title": "KBS 뉴스",
-              "url": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8591091",
-              "domain": "news.kbs.co.kr",
-              "source_country": "South Korea",
-              "language": "Korean",
-              "seendate": "20260621T070000Z"
-            },
-            {
-              "title": "우크라이나 미사일 내리 꽂혀 쾅 … 난리 난 러시아 미사일 공장 [ 현장영상 ]",
-              "url": "https://ichannela.com/news/detail/000000536221.do",
-              "domain": "ichannela.com",
-              "source_country": "South Korea",
-              "language": "Korean",
-              "seendate": "20260624T080000Z"
-            },
-            {
-              "title": "乌克兰重大发现 ， 俄罗斯导弹库存已空 ， 边打边造使武器质量下降",
-              "url": "https://www.163.com/dy/article/KT21P6SJ05315IF2.html",
-              "domain": "163.com",
-              "source_country": "China",
-              "language": "Chinese",
-              "seendate": "20260516T041500Z"
-            },
-            {
-              "title": "Обстріл України 21 червня - Росія атакувала ракетами та 105 дронами",
-              "url": "https://www.rbc.ua/rus/news/letili-droni-balistika-ta-kindzhali-e-priloti-1782023224.html",
-              "domain": "rbc.ua",
-              "source_country": "Ukraine",
-              "language": "Ukrainian",
-              "seendate": "20260621T080000Z"
-            },
-            {
-              "title": "Rusyadan Ukraynaya İHA ve füze saldırılarında yeni rekor",
-              "url": "https://www.haberler.com/3-sayfa/rusya-dan-ukrayna-ya-iha-ve-fuze-saldirilarinda-19792992-haberi/",
-              "domain": "haberler.com",
-              "source_country": "Turkey",
-              "language": "Turkish",
-              "seendate": "20260430T104500Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Dnipro, Ukraine\" \"missile\"",
@@ -1170,63 +863,8 @@
           "articles": []
         }
       ],
-      "matched_articles": [
-        {
-          "title": "Russian attacks kill 5 and wound more than 30 in Ukraine Dnipro ; 1 killed in Russia",
-          "url": "https://www.newsday.com/news/nation/russia-ukraine-war-dnipro-odesa-drones-v63215",
-          "domain": "newsday.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260425T113000Z",
-          "match_score": 85
-        },
-        {
-          "title": "Russian missiles and drones bombard Ukraine , killing at least 16",
-          "url": "https://www.capitalgazette.com/2026/04/16/russian-missiles-drones-ukraine-attack/",
-          "domain": "capitalgazette.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260416T154500Z",
-          "match_score": 85
-        },
-        {
-          "title": "Cindy McCain Criticized for Sharing Photos of Deliberate Missile Attack in Ukraine , But Not Naming Names",
-          "url": "https://2paragraphs.com/2026/05/cindy-mccain-criticized-for-sharing-photos-of-deliberate-missile-attack-in-ukraine-but-not-naming-names/",
-          "domain": "2paragraphs.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260527T003000Z",
-          "match_score": 65
-        },
-        {
-          "title": "Child wounded in Russian strike near Dnipro Jewish community leader home",
-          "url": "http://www.jpost.com/diaspora/article-894013",
-          "domain": "jpost.com",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260423T210000Z",
-          "match_score": 60
-        },
-        {
-          "title": "Four dead after Moscow launches major attack across Ukraine",
-          "url": "http://www.jpost.com/international/internationalrussia-ukraine-war/article-898053",
-          "domain": "jpost.com",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260602T033000Z",
-          "match_score": 55
-        },
-        {
-          "title": "Nine dead after Moscow launches major attack across Ukraine",
-          "url": "https://www.jpost.com/international/internationalrussia-ukraine-war/article-898053",
-          "domain": "jpost.com",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260602T043000Z",
-          "match_score": 55
-        }
-      ],
-      "analytical_summary": "The original cluster contains 11 source URLs across 11 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 6 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 11 source URLs across 11 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -1375,11 +1013,11 @@
         {
           "url": "https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning",
           "domain": "www.express.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Britain must be ready to strike Russia within 30 minutes, Army chief | UK | News | Express.co.uk",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
           "description": "",
-          "published": "2026-06-24T02:16:00+01:00"
+          "published": ""
         }
       ],
       "event_fingerprint": {
@@ -1401,7 +1039,6 @@
           "russian",
           "ukraine",
           "ukrainian",
-          "army",
           "military",
           "putin"
         ],
@@ -1414,7 +1051,7 @@
           "fire",
           "war"
         ],
-        "usable_source_count": 9,
+        "usable_source_count": 8,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -1431,8 +1068,57 @@
         },
         {
           "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "乌将打击目标转向俄导弹工厂 引发国际舆论关注 _ 军事频道 _ 中华网",
+              "url": "https://military.china.com/news/13004177/20260626/49571676.html",
+              "domain": "military.china.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260626T030000Z"
+            },
+            {
+              "title": "KBS 뉴스",
+              "url": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8591091",
+              "domain": "news.kbs.co.kr",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260621T070000Z"
+            },
+            {
+              "title": "우크라이나 미사일 내리 꽂혀 쾅 … 난리 난 러시아 미사일 공장 [ 현장영상 ]",
+              "url": "https://ichannela.com/news/detail/000000536221.do",
+              "domain": "ichannela.com",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260624T080000Z"
+            },
+            {
+              "title": "乌克兰重大发现 ， 俄罗斯导弹库存已空 ， 边打边造使武器质量下降",
+              "url": "https://www.163.com/dy/article/KT21P6SJ05315IF2.html",
+              "domain": "163.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260516T041500Z"
+            },
+            {
+              "title": "Обстріл України 21 червня - Росія атакувала ракетами та 105 дронами",
+              "url": "https://www.rbc.ua/rus/news/letili-droni-balistika-ta-kindzhali-e-priloti-1782023224.html",
+              "domain": "rbc.ua",
+              "source_country": "Ukraine",
+              "language": "Ukrainian",
+              "seendate": "20260621T080000Z"
+            },
+            {
+              "title": "Rusyadan Ukraynaya İHA ve füze saldırılarında yeni rekor",
+              "url": "https://www.haberler.com/3-sayfa/rusya-dan-ukrayna-ya-iha-ve-fuze-saldirilarinda-19792992-haberi/",
+              "domain": "haberler.com",
+              "source_country": "Turkey",
+              "language": "Turkish",
+              "seendate": "20260430T104500Z"
+            }
+          ]
         },
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"missile\"",
@@ -1441,12 +1127,12 @@
         },
         {
           "query": "\"russia\" \"missile\" 2026-06-25",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 55 source URLs across 40 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 55 source URLs across 40 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -1642,7 +1328,7 @@
       "local_media_findings": [
         {
           "query": "\"Ankara, Turkey\" \"Turkey\" \"nato\" \"drone\"",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -1857,7 +1543,7 @@
       "local_media_findings": [
         {
           "query": "\"Istanbul, Turkey\" \"Turkey\" \"israel\" \"clash\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "The read operation timed out",
           "articles": []
         },
         {
@@ -1867,57 +1553,8 @@
         },
         {
           "query": "\"Istanbul, Turkey\" \"clash\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Turkish police shoot three gunmen in clash outside Israel Istanbul consulate",
-              "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-police-shoot-three-gunmen-clash-outside-israels-istanbul",
-              "domain": "middleeasteye.net",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260407T130000Z"
-            },
-            {
-              "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
-              "url": "https://www.thetimes-tribune.com/2026/04/07/israeli-consulate-attack-istanbul/",
-              "domain": "thetimes-tribune.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260407T151500Z"
-            },
-            {
-              "title": "Shooting near Israeli consulate in Istanbul leaves three dead as people run for cover",
-              "url": "https://www.manchestereveningnews.co.uk/news/world-news/shooting-near-israeli-consulate-istanbul-33726264",
-              "domain": "manchestereveningnews.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260407T120000Z"
-            },
-            {
-              "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
-              "url": "https://www.columbian.com/news/2026/apr/07/gunmen-attack-building-housing-israeli-consulate-in-istanbul/",
-              "domain": "columbian.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260407T171500Z"
-            },
-            {
-              "title": "No Europa League Final for Aina , Awoniyi as Aston Villa Maul Nottingham – THISDAYLIVE",
-              "url": "https://www.thisdaylive.com/2026/05/08/no-europa-league-final-for-aina-awoniyi-as-aston-villa-maul-nottingham/",
-              "domain": "thisdaylive.com",
-              "source_country": "Nigeria",
-              "language": "English",
-              "seendate": "20260508T024500Z"
-            },
-            {
-              "title": "Prince William joyfully celebrates Aston Villa goal in crunch European clash",
-              "url": "https://www.mirror.co.uk/news/uk-news/prince-william-joyfully-celebrates-aston-37126827",
-              "domain": "mirror.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260507T224500Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"israel\" \"clash\" 2026-06-25",
@@ -1925,248 +1562,8 @@
           "articles": []
         }
       ],
-      "matched_articles": [
-        {
-          "title": "Turkish police shoot three gunmen in clash outside Israel Istanbul consulate",
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-police-shoot-three-gunmen-clash-outside-israels-istanbul",
-          "domain": "middleeasteye.net",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260407T130000Z",
-          "match_score": 50
-        },
-        {
-          "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
-          "url": "https://www.thetimes-tribune.com/2026/04/07/israeli-consulate-attack-istanbul/",
-          "domain": "thetimes-tribune.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260407T151500Z",
-          "match_score": 40
-        },
-        {
-          "title": "Shooting near Israeli consulate in Istanbul leaves three dead as people run for cover",
-          "url": "https://www.manchestereveningnews.co.uk/news/world-news/shooting-near-israeli-consulate-istanbul-33726264",
-          "domain": "manchestereveningnews.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260407T120000Z",
-          "match_score": 40
-        },
-        {
-          "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
-          "url": "https://www.columbian.com/news/2026/apr/07/gunmen-attack-building-housing-israeli-consulate-in-istanbul/",
-          "domain": "columbian.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260407T171500Z",
-          "match_score": 40
-        },
-        {
-          "title": "Prince William joyfully celebrates Aston Villa goal in crunch European clash",
-          "url": "https://www.mirror.co.uk/news/uk-news/prince-william-joyfully-celebrates-aston-37126827",
-          "domain": "mirror.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260507T224500Z",
-          "match_score": 10
-        }
-      ],
-      "analytical_summary": "The original cluster contains 22 source URLs across 16 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 5 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Balkán",
-      "rank": 3,
-      "score": 54,
-      "title": "Fegyveres összecsapás – Belgrade, Serbia",
-      "date": "2026-06-24",
-      "country": "Serbia (general)",
-      "location": "Belgrade, Serbia",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 10,
-      "source_domain_count": 9,
-      "source_domains": [
-        "balkaninsight.com",
-        "engineeringevil.com",
-        "www.bbc.co.uk",
-        "www.bgnes.com",
-        "www.ctvnews.ca",
-        "www.eurasiareview.com",
-        "www.fairfieldsuntimes.com",
-        "www.justiceinfo.net",
-        "www.thenation.com"
-      ],
-      "original_sources": [
-        "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-        "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
-        "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
-        "https://www.thenation.com/article/archive/we-are-all-albanians/",
-        "https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html",
-        "https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/",
-        "https://www.ctvnews.ca/world/article/parents-of-serbian-school-shooter-sentenced-in-retrial-report-says/",
-        "http://www.bgnes.com/no-filter/the-russian-world-and-the-serbian-world-geopolitical-ideas-national-identity-and-religious-legitimation-in-the-balkans",
-        "https://www.justiceinfo.net/en/160355-kosovo-arrests-five-serbs-over-wartime-massacre.html",
-        "http://www.bgnes.com/politics/nato-to-reduce-peacekeeping-forces-in-kosovo-after-security-improvements"
-      ],
-      "raw_titles": [
-        "fight – Belgrade, Serbia (general),"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-          "domain": "engineeringevil.com",
-          "status": "ok",
-          "error": null,
-          "title": "How a Serbian Colonel With Ancient Missiles Shot Down an F117 Engineering Evil",
-          "description": "Editors Note: ( Ralph Turchiano ) Offers a Disturbing yet interesting historical perspective that should not be ignored. Friday, 27 March 2015 Precisely on this day, in 1999 a Serbian air force commander manning a battery system successfully shot down the elusive (invisible) F117. The Serbian battery commander, whose missiles downed an American F-16, and,",
-          "published": "2015-03-27T20:19:16+00:00"
-        },
-        {
-          "url": "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
-          "domain": "www.eurasiareview.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
-          "domain": "www.bbc.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Parents of Serbia s teenage school shooter given jail terms in retrial - BBC News",
-          "description": "The boy was 13 when he killed eight girls, a boy and a school guard at Vladislav Ribnikar school in Belgrade in 2023.",
-          "published": "2026-06-18T18:36:19.401Z"
-        },
-        {
-          "url": "https://www.thenation.com/article/archive/we-are-all-albanians/",
-          "domain": "www.thenation.com",
-          "status": "ok",
-          "error": null,
-          "title": "We Are All Albanians | The Nation",
-          "description": "The Nation Magazine",
-          "published": "1999-05-20T04:00:00+00:00"
-        },
-        {
-          "url": "https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html",
-          "domain": "www.fairfieldsuntimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Gallatin County deputies investigate River Rock shooting after Suspect Flees area | State | fairfieldsuntimes.com",
-          "description": "BELGRADE, Mont. Gallatin County sheriff deputies investigated a shooting on Woodman Drive in River Rock on Sunday afternoon after a man was found with multiple gunshot wounds and the",
-          "published": "2026-06-21T22:09:00-06:00"
-        },
-        {
-          "url": "https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/",
-          "domain": "balkaninsight.com",
-          "status": "ok",
-          "error": null,
-          "title": "Serbian Officials Using War-Crimes Denial to Foment Hatred , Report Asserts | Balkan Insight",
-          "description": "Human rights NGO s report says routine denial of war crimes and glorification of convicted war criminals form part of deliberate strategy to sow division and undermine democratic values.",
-          "published": "2026-06-22T10:23:11+00:00"
-        },
-        {
-          "url": "https://www.ctvnews.ca/world/article/parents-of-serbian-school-shooter-sentenced-in-retrial-report-says/",
-          "domain": "www.ctvnews.ca",
-          "status": "ok",
-          "error": null,
-          "title": "Belgrade school shooter s parents sentenced to jail",
-          "description": "The parents of a Serbian boy who killed 10 people in a 2023 Belgrade school shooting were convicted at a retrial on Thursday, the prosecutor’s office said, with the court jailing the father for 14-1/2 years for failing to secure the handguns used in the attack.",
-          "published": "2026-06-19T11:37:31.306Z"
-        },
-        {
-          "url": "http://www.bgnes.com/no-filter/the-russian-world-and-the-serbian-world-geopolitical-ideas-national-identity-and-religious-legitimation-in-the-balkans",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "The “Russian World” and the “Serbian World”: Geopolitical Ideas, National Identity and Religious Legitimation in the Balkans | BGNES",
-          "description": "Reneta Trifonova is a theologian and publicist, and editor-in-chief of Hristianstvo.bg.",
-          "published": "2026-06-14T17:30:09Z"
-        },
-        {
-          "url": "https://www.justiceinfo.net/en/160355-kosovo-arrests-five-serbs-over-wartime-massacre.html",
-          "domain": "www.justiceinfo.net",
-          "status": "ok",
-          "error": null,
-          "title": "Kosovo arrests five Serbs over wartime massacre - JusticeInfo.net",
-          "description": "Kosovo police arrested five ethnic Serbs Sunday, including four former policemen, suspected of involvement in one of the worst crimes against ethnic Albanian civilians during the 1990s war, prosecutors said. The arrests were the first linked to the massacre of more than 40 ethnic Albanian civilians by Serb forces in the Kosovo village of Recak [ ]",
-          "published": "2026-06-14T11:53:02+00:00"
-        },
-        {
-          "url": "http://www.bgnes.com/politics/nato-to-reduce-peacekeeping-forces-in-kosovo-after-security-improvements",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "NATO to reduce peacekeeping forces in Kosovo after security improvements | BGNES",
-          "description": "KFOR, NATO’s peacekeeping mission in Kosovo, has been stationed there since 1999 under a UN mandate.",
-          "published": "2026-06-12T09:13:41Z"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "How a Serbian Colonel With Ancient Missiles Shot Down an F117 Engineering Evil",
-        "top_keywords": [
-          "serbian",
-          "school",
-          "belgrade",
-          "kosovo",
-          "parents",
-          "boy",
-          "ethnic",
-          "missiles",
-          "shot",
-          "down"
-        ],
-        "actor_hints": [
-          "russia",
-          "russian",
-          "nato",
-          "police"
-        ],
-        "conflict_hints": [
-          "missile",
-          "attack",
-          "shooting",
-          "killed",
-          "war"
-        ],
-        "usable_source_count": 9,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Belgrade, Serbia\" \"Serbia (general)\" \"russia\" \"missile\"",
-        "\"Serbia (general)\" \"russia\" \"missile\"",
-        "\"Belgrade, Serbia\" \"missile\"",
-        "\"russia\" \"missile\" 2026-06-24"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Belgrade, Serbia\" \"Serbia (general)\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Serbia (general)\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Belgrade, Serbia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"russia\" \"missile\" 2026-06-24",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 10 source URLs across 9 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 22 source URLs across 16 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -2342,111 +1739,13 @@
       "local_media_findings": [
         {
           "query": "\"Jerusalem, Israel\" \"Israel\" \"israel\" \"killed\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks – WSOC TV",
-              "url": "https://www.wsoctv.com/news/local/israel-says-it-killed-leader-hamas-military-wing-one-architects-oct-7-attacks/NJGJG5TDPVA43NKR6OLJRBCAQQ/",
-              "domain": "wsoctv.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T153000Z"
-            },
-            {
-              "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks",
-              "url": "https://www.wsls.com/news/world/2026/05/16/israel-says-it-killed-the-leader-of-hamas-military-wing-one-of-the-architects-of-oct-7-attacks/",
-              "domain": "wsls.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T111500Z"
-            },
-            {
-              "title": "Israel says it killed the leader of Hama military wing",
-              "url": "https://knpr.org/npr/2026-05-15/israel-says-it-killed-the-leader-of-hamas-military-wing",
-              "domain": "knpr.org",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T151500Z"
-            },
-            {
-              "title": "Israel says it killed the leader of Hama military wing",
-              "url": "https://www.wgbh.org/news/international-news/2026-05-16/israel-says-it-killed-the-leader-of-hamas-military-wing",
-              "domain": "wgbh.org",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T203000Z"
-            },
-            {
-              "title": "Israel says it killed the leader of Hama military wing",
-              "url": "https://www.kpbs.org/news/international/2026/05/15/israel-says-it-killed-the-leader-of-hamas-military-wing",
-              "domain": "kpbs.org",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T134500Z"
-            },
-            {
-              "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks",
-              "url": "https://www.adn.com/nation-world/2026/05/16/israel-says-it-killed-the-leader-of-hamas-military-wing-one-of-the-architects-of-oct-7-attacks/",
-              "domain": "adn.com",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260516T120000Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Israel\" \"israel\" \"killed\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Al Jazeera Cameraman Killed in Gaza Strike : Israel Claims Hamas Ties|ഗാസയിൽ ഇസ്രയേൽ ആക്രമണത്തിൽ അൽ ജസീറ ക്യാമറാമാൻ കൊല്ലപ്പെട്ടു | Mathrubhumi",
-              "url": "https://www.mathrubhumi.com/news/world/al-jazeera-cameraman-ahmed-wishah-killed-gaza-strike-lpmib6kv",
-              "domain": "mathrubhumi.com",
-              "source_country": "India",
-              "language": "Malayalam",
-              "seendate": "20260621T073000Z"
-            },
-            {
-              "title": "Израел : Новиот лидер на Хамас убиен во Појасот Газа",
-              "url": "https://time.mk/c/e384c1ef90/izrael-noviot-lider-na-hamas-ubien-vo-pojasot-gaza.html",
-              "domain": "time.mk",
-              "source_country": "Macedonia",
-              "language": "Macedonian",
-              "seendate": "20260527T073000Z"
-            },
-            {
-              "title": "Израел : Новиот лидер на Хамас убиен во Појасот Газа",
-              "url": "https://time.mk/c/e384c1ef90/izrael-go-ubi-noviot-sef-na-voenoto-krilo-na-hamas-nekolku-dena-po-negoviot-prethodnik.html",
-              "domain": "time.mk",
-              "source_country": "Macedonia",
-              "language": "Macedonian",
-              "seendate": "20260527T083000Z"
-            },
-            {
-              "title": "গাজায় ইসরায়েলি হামলায় সাংবাদিকসহ নিহত ১১ | | বাংলাদেশ প্রতিদিন",
-              "url": "https://www.bd-pratidin.com/international-news/2026/06/21/1264906",
-              "domain": "bd-pratidin.com",
-              "source_country": "Bangladesh",
-              "language": "Bengali",
-              "seendate": "20260621T073000Z"
-            },
-            {
-              "title": "ইসরায়েলি হামলায় লেবাননে নিহত আরও ৩২ , সংকটে শান্তি আলোচনা",
-              "url": "https://www.ntvbd.com/world/news-1757945",
-              "domain": "ntvbd.com",
-              "source_country": "Bangladesh",
-              "language": "Bengali",
-              "seendate": "20260621T034500Z"
-            },
-            {
-              "title": "У Гази погинуо цивилни сарадник израелског министарства одбране",
-              "url": "https://www.politika.rs/scc/clanak/765832/u-gazi-poginuo-civilni-saradnik-izraelskog-ministarstva-odbrane",
-              "domain": "politika.rs",
-              "source_country": "Serbia",
-              "language": "Serbian",
-              "seendate": "20260624T214500Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Jerusalem, Israel\" \"killed\"",
@@ -2455,76 +1754,12 @@
         },
         {
           "query": "\"israel\" \"killed\" 2026-06-25",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
-      "matched_articles": [
-        {
-          "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks – WSOC TV",
-          "url": "https://www.wsoctv.com/news/local/israel-says-it-killed-leader-hamas-military-wing-one-architects-oct-7-attacks/NJGJG5TDPVA43NKR6OLJRBCAQQ/",
-          "domain": "wsoctv.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T153000Z",
-          "match_score": 65
-        },
-        {
-          "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks",
-          "url": "https://www.wsls.com/news/world/2026/05/16/israel-says-it-killed-the-leader-of-hamas-military-wing-one-of-the-architects-of-oct-7-attacks/",
-          "domain": "wsls.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T111500Z",
-          "match_score": 65
-        },
-        {
-          "title": "Israel says it killed the leader of Hama military wing",
-          "url": "https://knpr.org/npr/2026-05-15/israel-says-it-killed-the-leader-of-hamas-military-wing",
-          "domain": "knpr.org",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T151500Z",
-          "match_score": 65
-        },
-        {
-          "title": "Israel says it killed the leader of Hama military wing",
-          "url": "https://www.wgbh.org/news/international-news/2026-05-16/israel-says-it-killed-the-leader-of-hamas-military-wing",
-          "domain": "wgbh.org",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T203000Z",
-          "match_score": 65
-        },
-        {
-          "title": "Israel says it killed the leader of Hama military wing",
-          "url": "https://www.kpbs.org/news/international/2026/05/15/israel-says-it-killed-the-leader-of-hamas-military-wing",
-          "domain": "kpbs.org",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T134500Z",
-          "match_score": 65
-        },
-        {
-          "title": "Israel says it killed the leader of Hama military wing , one of the architects of Oct . 7 attacks",
-          "url": "https://www.adn.com/nation-world/2026/05/16/israel-says-it-killed-the-leader-of-hamas-military-wing-one-of-the-architects-of-oct-7-attacks/",
-          "domain": "adn.com",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260516T120000Z",
-          "match_score": 65
-        },
-        {
-          "title": "Al Jazeera Cameraman Killed in Gaza Strike : Israel Claims Hamas Ties|ഗാസയിൽ ഇസ്രയേൽ ആക്രമണത്തിൽ അൽ ജസീറ ക്യാമറാമാൻ കൊല്ലപ്പെട്ടു | Mathrubhumi",
-          "url": "https://www.mathrubhumi.com/news/world/al-jazeera-cameraman-ahmed-wishah-killed-gaza-strike-lpmib6kv",
-          "domain": "mathrubhumi.com",
-          "source_country": "India",
-          "language": "Malayalam",
-          "seendate": "20260621T073000Z",
-          "match_score": 55
-        }
-      ],
-      "analytical_summary": "The original cluster contains 11 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 7 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 11 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -2712,7 +1947,7 @@
       "local_media_findings": [
         {
           "query": "\"Hezbollah, Kerman, Iran\" \"Iran\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         },
         {
@@ -2727,7 +1962,7 @@
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-25",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
@@ -2850,7 +2085,7 @@
           "error": null,
           "title": "Watch: Haredi rioter assaults female detective and attempts to flee | Israel National News",
           "description": "Haredi protester filmed grabbing a plainclothes policewoman and throwing her to the ground, injuring her.",
-          "published": "2026-06-25"
+          "published": "2026-06-22"
         },
         {
           "url": "https://www.bankingnews.gr/diethni/articles/882552/chaos-iranians-warn-israel-of-annihilation-stating-they-are-not-bound-by-the-memorandum-with-the-us-amid-drone-barrage-in-hormuz",
@@ -2934,281 +2169,6 @@
         },
         {
           "query": "\"Tel Aviv, Israel\" \"drone\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "লেবাননে ১৫ ইসরায়েলি সেনা নিহত , আহত ৬৫০",
-              "url": "https://dailyinqilab.com/international/news/886019",
-              "domain": "dailyinqilab.com",
-              "source_country": "Bangladesh",
-              "language": "Bengali",
-              "seendate": "20260421T041500Z"
-            },
-            {
-              "title": "Израелската армија тргна во акција",
-              "url": "https://vecer.mk/svet/izraelskata-armija-trgna-vo-aktsija-7da935d8-e9bb-415a-adc0-7037d1cfea78",
-              "domain": "vecer.mk",
-              "source_country": "Macedonia",
-              "language": "Macedonian",
-              "seendate": "20260526T234500Z"
-            },
-            {
-              "title": "Middle East conflict escalates : Israel deepens Lebanon incursion as US and Iran exchange strikes",
-              "url": "https://keralakaumudi.com/en/en/world/gulf/middle-east-conflict-escalates-israel-deepens-lebanon-incursion-as-us-and-iran-exchange-strikes-1756991",
-              "domain": "keralakaumudi.com",
-              "source_country": "",
-              "language": "English",
-              "seendate": "20260601T200000Z"
-            },
-            {
-              "title": "Iron Beam : ईरान के खिलाफ नाकाम हो गया था इजरायल का लेजर वेपन आयरन बीम ? इजरायली वायु सेना ने बताई कम इस्तेमाल की वजह",
-              "url": "https://navbharattimes.indiatimes.com/world/uae/iron-beam-israel-laser-defence-system-not-used-during-iran-war-what-israeli-air-force-says/articleshow/130710170.cms",
-              "domain": "navbharattimes.indiatimes.com",
-              "source_country": "India",
-              "language": "Hindi",
-              "seendate": "20260502T060000Z"
-            },
-            {
-              "title": "IDF destroys 70 Hezbollah terror infra sites ; eliminates dozens of terrorists",
-              "url": "https://aninews.in/news/world/middle-east/idf-destroys-70-hezbollah-terror-infra-sites-eliminates-dozens-of-terrorists20260416170811/",
-              "domain": "aninews.in",
-              "source_country": "India",
-              "language": "English",
-              "seendate": "20260416T120000Z"
-            },
-            {
-              "title": "Iron Dome : ईरान की मिसाइल - ड्रोन की बारिश के बीच इजरायल ने निभाई UAE से दोस्ती , सैनिकों के साथ भेजा था आयरन डोम",
-              "url": "https://navbharattimes.indiatimes.com/world/uae/israel-sent-iron-dome-air-defense-and-troops-to-uae-amid-iran-attacks-report/articleshow/130532850.cms",
-              "domain": "navbharattimes.indiatimes.com",
-              "source_country": "India",
-              "language": "Hindi",
-              "seendate": "20260426T160000Z"
-            }
-          ]
-        },
-        {
-          "query": "\"israel\" \"drone\" 2026-06-25",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [
-        {
-          "title": "Middle East conflict escalates : Israel deepens Lebanon incursion as US and Iran exchange strikes",
-          "url": "https://keralakaumudi.com/en/en/world/gulf/middle-east-conflict-escalates-israel-deepens-lebanon-incursion-as-us-and-iran-exchange-strikes-1756991",
-          "domain": "keralakaumudi.com",
-          "source_country": "",
-          "language": "English",
-          "seendate": "20260601T200000Z",
-          "match_score": 60
-        },
-        {
-          "title": "IDF destroys 70 Hezbollah terror infra sites ; eliminates dozens of terrorists",
-          "url": "https://aninews.in/news/world/middle-east/idf-destroys-70-hezbollah-terror-infra-sites-eliminates-dozens-of-terrorists20260416170811/",
-          "domain": "aninews.in",
-          "source_country": "India",
-          "language": "English",
-          "seendate": "20260416T120000Z",
-          "match_score": 10
-        }
-      ],
-      "analytical_summary": "The original cluster contains 17 source URLs across 15 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 2 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "score": 70,
-      "title": "Fegyveres összecsapás – Isfahan, Esfahan, Iran",
-      "date": "2026-06-25",
-      "country": "Iran",
-      "location": "Isfahan, Esfahan, Iran",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 16,
-      "source_domain_count": 16,
-      "source_domains": [
-        "aa.com.tr",
-        "americanbazaaronline.com",
-        "dailytimes.com.pk",
-        "irannewsupdate.com",
-        "news.antiwar.com",
-        "news.az",
-        "tradearabia.com:443",
-        "www.al-monitor.com",
-        "www.aljazeera.com",
-        "www.bostonglobe.com",
-        "www.cubaheadlines.com",
-        "www.israelnationalnews.com",
-        "www.parisguardian.com",
-        "www.rferl.org",
-        "www.skynews.com.au",
-        "www.zerohedge.com"
-      ],
-      "original_sources": [
-        "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-        "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
-        "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
-        "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
-        "https://news.antiwar.com/2026/06/23/cnn-downed-us-pilot-reported-seeing-iranian-drones-swarm-in-jellyfish-formation/",
-        "https://www.cubaheadlines.com/articles/332619",
-        "https://americanbazaaronline.com/2026/06/18/trumps-iran-nuclear-deal-may-be-weaker-than-obama-era-accord-483055/",
-        "https://news.az/news/multiple-executions-and-arrests-reported-across-iran-amid-ongoing-judicial-cases",
-        "https://aa.com.tr/en/opinion/opinion-how-to-read-the-us-iran-agreement/3968714",
-        "https://www.bostonglobe.com/2026/06/14/world/trump-strait-agreement-iran/",
-        "https://www.al-monitor.com/originals/2026/06/explainer-key-issues-us-and-iran-must-address-nuclear-talks",
-        "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump",
-        "https://irannewsupdate.com/news/human-rights/iran-human-rights-report-executions-political-repression-and-arbitrary-killings-escalated-in-may-2026/",
-        "http://www.parisguardian.com/news/279120773/pakistani-prime-minister-says-peace-deal-expected-within-24-hours",
-        "https://www.rferl.org/a/iran-peace-deal-conflicting-reports-fragile-cease-fire/33779736.html",
-        "https://www.israelnationalnews.com/news/428560"
-      ],
-      "raw_titles": [
-        "fight – Isfahan, Esfahan, Iran"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ashura ceremonies intertwine faith and support for state in Iran | US-Israel war on Iran News | Al Jazeera",
-          "description": "State-backed Ashura events showcase leaders killed by US, Israel, seen as martyrs in the mould of Imam Hussein.",
-          "published": ""
-        },
-        {
-          "url": "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
-          "domain": "www.skynews.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "No Cookies | Sky News Australia",
-          "description": "SkyNews.com.au — Australian News Headlines World News Online from the best award winning journalists",
-          "published": ""
-        },
-        {
-          "url": "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
-          "domain": "www.zerohedge.com",
-          "status": "ok",
-          "error": null,
-          "title": "Real Alien Shit! : Downed US Pilot Reported Seeing Iranian Drones Swarm in Jellyfish Formation | ZeroHedge",
-          "description": "ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero",
-          "published": ""
-        },
-        {
-          "url": "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
-          "domain": "dailytimes.com.pk",
-          "status": "ok",
-          "error": null,
-          "title": "IAEA expects Iran inspections to resume - Daily Times",
-          "description": "The International Atomic Energy Agency (IAEA) expects to resume inspections in Iran soon following the interim agreement between Tehran and Washington, according to agency chief Rafael Grossi. While inspection arrangements have not yet been finalised, Grossi said both sides are working on the necessary procedures. The move is a key step toward implementing the broader framework aimed at easing tensions over Iran’s nuclear programme.",
-          "published": "2026-06-24T18:53:46+00:00"
-        },
-        {
-          "url": "https://news.antiwar.com/2026/06/23/cnn-downed-us-pilot-reported-seeing-iranian-drones-swarm-in-jellyfish-formation/",
-          "domain": "news.antiwar.com",
-          "status": "ok",
-          "error": null,
-          "title": "CNN: Downed US Pilot Reported Seeing Iranian Drones Swarm in Jellyfish Formation - News From Antiwar.com",
-          "description": "CNN reported on Tuesday that the pilot of a US F-15 fighter jet that was shot down over Iran during the US-Israeli bombing campaign in April reported seeing a swarm of Iranian drones in a formation that resembled a jellyfish before he ejected from the aircraft. Sources told the outlet",
-          "published": ""
-        },
-        {
-          "url": "https://www.cubaheadlines.com/articles/332619",
-          "domain": "www.cubaheadlines.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump Finalizes Controversial Agreement with Iran in France Amidst Nuclear Commitment Concerns",
-          "description": "On Wednesday, Donald Trump signed a Memorandum of Understanding with Iran during a lavish gala at the Palace of Versailles in France. This event marke...",
-          "published": "2026-06-18T00:35:30.994Z"
-        },
-        {
-          "url": "https://americanbazaaronline.com/2026/06/18/trumps-iran-nuclear-deal-may-be-weaker-than-obama-era-accord-483055/",
-          "domain": "americanbazaaronline.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump’s Iran nuclear deal may be weaker than Obama-era accord",
-          "description": "Trump’s proposed nuclear deal with Iran may impose fewer restrictions than Obama-era accord, raising concerns over uranium oversight, sanctions relief, and Tehran’s nuclear ambitions.",
-          "published": "2026-06-18T16:30:29+00:00"
-        },
-        {
-          "url": "https://news.az/news/multiple-executions-and-arrests-reported-across-iran-amid-ongoing-judicial-cases",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "published": ""
-        },
-        {
-          "url": "https://aa.com.tr/en/opinion/opinion-how-to-read-the-us-iran-agreement/3968714",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "How to read the US-Iran agreement",
-          "description": "One must approach prospects of US-Iran agreement with caution. It is essential to recognize that this is not a comprehensive peace agreement but rather a transitional framework | Anadolu",
-          "published": "2026-06-16T15:25:32.37"
-        },
-        {
-          "url": "https://www.bostonglobe.com/2026/06/14/world/trump-strait-agreement-iran/",
-          "domain": "www.bostonglobe.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump Claims Strait Will be ‘Permanently Toll Free’ Under Agreement With Iran - The Boston Globe",
-          "description": "President Trump said in an interview Sunday afternoon that the agreement he had reached with Iran would ultimately assure that the Strait of Hormuz was permanently toll free.",
-          "published": ""
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Ashura ceremonies intertwine faith and support for state in Iran | US-Israel war on Iran News | Al Jazeera",
-        "top_keywords": [
-          "agreement",
-          "nuclear",
-          "reported",
-          "pilot",
-          "seeing",
-          "drones",
-          "swarm",
-          "jellyfish",
-          "formation",
-          "ashura"
-        ],
-        "actor_hints": [
-          "israel",
-          "israeli",
-          "iran",
-          "iranian",
-          "trump"
-        ],
-        "conflict_hints": [
-          "drone",
-          "bombing",
-          "killed",
-          "war"
-        ],
-        "usable_source_count": 9,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Isfahan, Esfahan, Iran\" \"Iran\" \"israel\" \"drone\"",
-        "\"Iran\" \"israel\" \"drone\"",
-        "\"Isfahan, Esfahan, Iran\" \"drone\"",
-        "\"israel\" \"drone\" 2026-06-25"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Isfahan, Esfahan, Iran\" \"Iran\" \"israel\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Iran\" \"israel\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Isfahan, Esfahan, Iran\" \"drone\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
@@ -3219,13 +2179,13 @@
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 16 source URLs across 16 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 17 source URLs across 15 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
-      "rank": 5,
+      "rank": 4,
       "score": 72,
       "title": "Rajtaütés / fegyveres támadás – Hebron, Israel, Israel",
       "date": "2026-06-25",
@@ -3406,57 +2366,8 @@
       "local_media_findings": [
         {
           "query": "\"Hebron, Israel\" \"Israel\" \"israel\" \"attack\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.thetelegraphandargus.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "thetelegraphandargus.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T171500Z"
-            },
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.theargus.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "theargus.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T170000Z"
-            },
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.echo-news.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "echo-news.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T171500Z"
-            },
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.lancashiretelegraph.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "lancashiretelegraph.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T171500Z"
-            },
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.thenorthernecho.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "thenorthernecho.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T170000Z"
-            },
-            {
-              "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-              "url": "https://www.eadt.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-              "domain": "eadt.co.uk",
-              "source_country": "United Kingdom",
-              "language": "English",
-              "seendate": "20260606T191500Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Israel\" \"israel\" \"attack\"",
@@ -3470,67 +2381,226 @@
         },
         {
           "query": "\"israel\" \"attack\" 2026-06-25",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
-      "matched_articles": [
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 21 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "score": 72,
+      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
+      "date": "2026-06-24",
+      "country": "Israel",
+      "location": "Gaza City, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 48,
+      "source_domain_count": 35,
+      "source_domains": [
+        "aa.com.tr",
+        "dailypioneer.com",
+        "dailytimes.com.pk",
+        "dominicanrepublicpost.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "english.wafa.ps",
+        "grenadachronicle.com",
+        "imemc.org",
+        "news.antiwar.com",
+        "news.az",
+        "pajhwok.com",
+        "redstate.com",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.bbc.co.uk",
+        "www.bignewsnetwork.com",
+        "www.chicagotribune.com",
+        "www.cnn.com"
+      ],
+      "original_sources": [
+        "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+        "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+        "https://english.wafa.ps/Pages/Details/171970",
+        "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+        "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+        "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+        "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+        "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+        "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.arabnews.com/node/2648125/middle-east",
+        "https://english.wafa.ps/Pages/Details/171922",
+        "https://www.yahoo.com/news/world/articles/palestinian-sources-israeli-airstrike-kills-134124345.html",
+        "https://redstate.com/john-doe/2026/06/22/trumps-20-point-gaza-peace-deal-should-be-a-warning-label-for-iran-mou-n2203534",
+        "https://news.az/news/idf-eliminates-hamas-nukhba-member-linked-to-hostage-incident",
+        "https://www.local10.com/news/2026/06/20/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.bbc.co.uk/news/articles/c4gy26p6pwzo",
+        "https://www.wjcl.com/article/israeli-strikes-in-gaza-kill-6-including-2-children/71647222",
+        "https://www.surinametimes.com/artikel/parents-and-two-daughters-killed-in-israeli-strike-in-gaza",
+        "https://dailypioneer.com/news/fighting-persists-in-lebanon-as-us-iran-deal-is-under-threat",
+        "https://pajhwok.com/2026/06/21/israeli-strikes-kill-9-in-gaza-including-child-al-jazeera-journalist/"
+      ],
+      "raw_titles": [
+        "fight – Gaza City, Israel (general), Israel"
+      ],
+      "inspected_sources": [
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.thetelegraphandargus.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "thetelegraphandargus.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T171500Z",
-          "match_score": 55
+          "url": "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
+          "description": "Insulin and equipment shortages in Gaza pose fatal risks, leading to critical health complications.",
+          "published": ""
         },
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.theargus.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "theargus.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T170000Z",
-          "match_score": 55
+          "url": "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+          "domain": "www.cnn.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds | CNN",
+          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
+          "published": "2026-06-24T10:51:45.150Z"
         },
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.echo-news.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "echo-news.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T171500Z",
-          "match_score": 55
+          "url": "https://english.wafa.ps/Pages/Details/171970",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces continue ceasefire violations across Gaza, conduct limited ground incursion",
+          "description": "",
+          "published": ""
         },
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.lancashiretelegraph.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "lancashiretelegraph.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T171500Z",
-          "match_score": 55
+          "url": "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+          "domain": "www.egyptindependent.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds - Egypt Independent",
+          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
+          "published": "2026-06-24T12:02:23+00:00"
         },
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.thenorthernecho.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "thenorthernecho.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T170000Z",
-          "match_score": 55
+          "url": "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Two Killed, Fourteen Injured in Gaza as Israeli Violations Intensify | - IMEMC News",
+          "description": "Two Palestinians were killed and fourteen others were injured in the Gaza Strip over the past 24 hours as Israeli forces continued to violate the “ceasefire ...",
+          "published": "2026-06-24T21:07:44"
         },
         {
-          "title": "Israeli troops kill Palestinian baby after firing at vehicle – health officials",
-          "url": "https://www.eadt.co.uk/news/national/26172206.israeli-troops-kill-palestinian-baby-firing-vehicle---health-officials/",
-          "domain": "eadt.co.uk",
-          "source_country": "United Kingdom",
-          "language": "English",
-          "seendate": "20260606T191500Z",
-          "match_score": 55
+          "url": "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+          "domain": "www.newsday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Teenage girl on the way to a high school in Gaza killed in Israeli strike, relatives say - Newsday",
+          "description": "Relatives say that a teenage girl in Gaza say was killed in an Israeli strike as she was making her way to her high school exam.",
+          "published": "2026-06-22T20:49:43.755Z"
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Palestine weekly wrap: Israel’s ‘quiet annexation’ grows louder - Dominican Republic Post – Caribbean News, Business, Travel Culture",
+          "description": "This week, the campaign of land seizure that Israeli officials have largely pursued unofficially was, in places, declared aloud. In Hebron, Finance Minister",
+          "published": "2026-06-23T02:23:57-04:00"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli battalion cmdr. linked to Hind Rajab case killed in Lebanon - Islamic Invitation Turkey",
+          "description": "The Israeli military said on Friday that the commander of the 52nd Battalion of the 401st Armored Brigade was killed in southern Lebanon, an announcement that",
+          "published": "2026-06-23T17:30:52+03:00"
+        },
+        {
+          "url": "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+          "domain": "www.columbian.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli strikes in Gaza kill 6, including 2 children and an Al Jazeera cameraman - The Columbian",
+          "description": "DEIR AL-BALAH, Gaza — Israeli strikes in Gaza on Saturday killed at least six people, including two children and a cameraman with broadcaster Al Jazeera, according to Palestinian health officials.",
+          "published": "2026-06-25T08:10:23-0700"
+        },
+        {
+          "url": "https://www.arabnews.com/node/2648125/middle-east",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
         }
       ],
-      "analytical_summary": "The original cluster contains 21 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 6 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "event_fingerprint": {
+        "representative_title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
+        "top_keywords": [
+          "gaza",
+          "children",
+          "palestinians",
+          "deliberately",
+          "targeting",
+          "genocide",
+          "against",
+          "commission",
+          "forces",
+          "jazeera"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "military"
+        ],
+        "conflict_hints": [
+          "strike",
+          "killed",
+          "injured",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Gaza City, Israel\" \"Israel\" \"israel\" \"strike\"",
+        "\"Israel\" \"israel\" \"strike\"",
+        "\"Gaza City, Israel\" \"strike\"",
+        "\"israel\" \"strike\" 2026-06-24"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Gaza City, Israel\" \"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza City, Israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-06-24",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 48 source URLs across 35 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     }
   ]

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T13:28:28.708126Z",
+  "generated_at": "2026-06-26T13:51:54.128088Z",
   "period": {
     "start": "2026-06-12",
     "end": "2026-06-25"
@@ -9,7 +9,7 @@
     "Európai Unió": {
       "raw_event_count": 601,
       "cluster_count": 601,
-      "selected_count": 1
+      "selected_count": 0
     },
     "Ukrajna": {
       "raw_event_count": 226,
@@ -19,7 +19,7 @@
     "Balkán": {
       "raw_event_count": 72,
       "cluster_count": 72,
-      "selected_count": 3
+      "selected_count": 2
     },
     "Közel-Kelet": {
       "raw_event_count": 862,
@@ -28,245 +28,6 @@
     }
   },
   "events": [
-    {
-      "record_type": "event_cluster",
-      "region": "Európai Unió",
-      "rank": 1,
-      "score": 67,
-      "quality_score": 46,
-      "quality_label": "Low",
-      "cluster_key": "2026-06-25|italy|rome lazio italy|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Rome, Lazio, Italy",
-      "date": "2026-06-25",
-      "country": "Italy",
-      "location": "Rome, Lazio, Italy",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 52,
-      "source_domain_count": 46,
-      "source_domains": [
-        "abcnews.com",
-        "aleteia.org",
-        "allafrica.com",
-        "chattooga1180.com",
-        "countercurrents.org",
-        "crisismagazine.com",
-        "dailypost.ng",
-        "deadline.com",
-        "economictimes.indiatimes.com",
-        "en.dailypakistan.com.pk",
-        "english.elpais.com",
-        "freethinker.co.uk",
-        "ianslive.in",
-        "italoamericano.org",
-        "religionnews.com",
-        "theconversation.com",
-        "timesofindia.indiatimes.com",
-        "us.cnn.com",
-        "www.al-monitor.com",
-        "www.americamagazine.org"
-      ],
-      "sources": [
-        "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
-        "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
-        "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
-        "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
-        "https://www.proactiveinvestors.co.uk/companies/news/1094493/tower-resources-tertiary-minerals-rome-resources-immupharma-cleantech-lithium-small-cap-snapshot-1094493.html",
-        "https://www.wantedinrome.com/news/italy-replaces-1992-hunting-regulations-with-expanded-framework.html",
-        "https://us.cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions",
-        "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-        "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-        "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-        "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/",
-        "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/",
-        "https://www.dailymail.com/columnists/article-15920339/seven-PMs-one-decade-Italians-laughingANDREW-NEIL.html",
-        "https://allafrica.com/stories/202606230099.html",
-        "https://countercurrents.org/2026/06/students-lives-on-hold-in-gaza/",
-        "https://www.al-monitor.com/originals/2026/06/italian-prosecutors-demand-long-jail-terms-egyptians-over-murder-italian-student",
-        "https://www.myspiritfm.com/News?view=post&blogid=Catholic%2DNews&articleid=300738",
-        "https://ianslive.in/murder-of-migrant-workers-in-italy-exposes-growing-role-of-pakistani-criminal-networks-report--20260622201843",
-        "https://www.siasat.com/iran-wont-rest-until-trump-is-drowned-in-sea-of-anger-khamenei-aide-3494427/",
-        "https://www.ibtimes.co.uk/trump-meloni-iran-nato-clash-1804401"
-      ],
-      "source_validation": {
-        "checked_count": 12,
-        "valid_count": 3,
-        "rejected_count": 9,
-        "valid_ratio": 0.25,
-        "label": "Low",
-        "valid_sources": [
-          "https://www.proactiveinvestors.co.uk/companies/news/1094493/tower-resources-tertiary-minerals-rome-resources-immupharma-cleantech-lithium-small-cap-snapshot-1094493.html",
-          "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-          "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/"
-        ],
-        "rejected_sources": [
-          "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
-          "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
-          "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
-          "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
-          "https://www.wantedinrome.com/news/italy-replaces-1992-hunting-regulations-with-expanded-framework.html",
-          "https://us.cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions",
-          "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-          "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-          "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/"
-        ],
-        "checked_sources": [
-          {
-            "url": "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
-            "domain": "theconversation.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
-            "domain": "economictimes.indiatimes.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
-            "domain": "aleteia.org",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
-            "domain": "www.tribuneindia.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.proactiveinvestors.co.uk/companies/news/1094493/tower-resources-tertiary-minerals-rome-resources-immupharma-cleantech-lithium-small-cap-snapshot-1094493.html",
-            "domain": "www.proactiveinvestors.co.uk",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator",
-            "incident_hits": [
-              "shot"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.wantedinrome.com/news/italy-replaces-1992-hunting-regulations-with-expanded-framework.html",
-            "domain": "www.wantedinrome.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://us.cnn.com/2026/06/25/politics/live-news/supreme-court-issues-opinions",
-            "domain": "us.cnn.com",
-            "accepted": false,
-            "reason": "topic noise dominates URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "opinion",
-              "politics"
-            ],
-            "weak_hits": [
-              "politics"
-            ]
-          },
-          {
-            "url": "https://www.usmagazine.com/entertainment/news/sarah-shahi-calls-james-gandolfini-1-of-the-best-kisses-ever/",
-            "domain": "www.usmagazine.com",
-            "accepted": false,
-            "reason": "topic noise dominates URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "entertainment",
-              "kiss"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "http://www.bgnes.com/weather/heatwave-hits-europe-record-temperatures-closed-schools-and-tourist-attractions",
-            "domain": "www.bgnes.com",
-            "accepted": false,
-            "reason": "topic noise dominates URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "weather",
-              "heatwave",
-              "tourist"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/23/italian-prosecutors-demand-long-jail-terms-for-egyptians-over-murder-of-italian-student",
-            "domain": "www.internazionale.it",
-            "accepted": true,
-            "reason": "high-value source with concrete incident indicator",
-            "incident_hits": [
-              "murder"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.eurasiareview.com/22062026-vatican-recognizes-martyrdom-of-20-priests-killed-in-spanish-civil-war/",
-            "domain": "www.eurasiareview.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "killed",
-              "kill"
-            ],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": [
-              "war"
-            ]
-          },
-          {
-            "url": "https://www.eurasiareview.com/23062026-italy-faces-growing-threat-from-non-italian-mafia-style-groups/",
-            "domain": "www.eurasiareview.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "row"
-            ],
-            "weak_hits": []
-          }
-        ]
-      },
-      "source_confidence": "Low",
-      "raw_titles": [
-        "fight – Rome, Lazio, Italy"
-      ],
-      "search_terms": [
-        "Rome, Lazio, Italy Italy Fegyveres összecsapás",
-        "Rome, Lazio, Italy Italy",
-        "Fegyveres összecsapás – Rome, Lazio, Italy",
-        "Italy Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
-    },
     {
       "record_type": "event_cluster",
       "region": "Ukrajna",
@@ -330,24 +91,24 @@
       ],
       "source_validation": {
         "checked_count": 12,
-        "valid_count": 9,
-        "rejected_count": 3,
-        "valid_ratio": 0.75,
+        "valid_count": 7,
+        "rejected_count": 5,
+        "valid_ratio": 0.583,
         "label": "High",
         "valid_sources": [
           "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
           "https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn",
-          "https://timesofindia.indiatimes.com/world/europe/drone-scare-over-moscow-four-airports-shut-nearly-60-uavs-shot-down/articleshow/131900345.cms",
           "https://athens-times.com/four-moscow-airports-closed-after-massive-ukrainian-drone-attack/",
           "https://www.merimbulanewsweekly.com.au/story/9296344/moscow-shoots-down-nearly-60-drones-airports-reopen/",
           "https://www.internazionale.it/ultime-notizie-reuters/2026/06/22/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say",
           "https://www.dailysabah.com/politics/russian-strike-on-turkish-cargo-ship-kills-one-ukraine/news",
-          "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine",
-          "https://www.thehindu.com/news/international/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say/article71131912.ece"
+          "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine"
         ],
         "rejected_sources": [
           "https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/",
           "https://www.kyivpost.com/post/78794",
+          "https://timesofindia.indiatimes.com/world/europe/drone-scare-over-moscow-four-airports-shut-nearly-60-uavs-shot-down/articleshow/131900345.cms",
+          "https://www.thehindu.com/news/international/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say/article71131912.ece",
           "https://www.rte.ie/news/2026/0622/1579623-russia-ukraine/"
         ],
         "checked_sources": [
@@ -361,7 +122,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/",
@@ -370,7 +133,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn",
@@ -386,7 +153,9 @@
             ],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.kyivpost.com/post/78794",
@@ -395,13 +164,15 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://timesofindia.indiatimes.com/world/europe/drone-scare-over-moscow-four-airports-shut-nearly-60-uavs-shot-down/articleshow/131900345.cms",
             "domain": "timesofindia.indiatimes.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
+            "accepted": false,
+            "reason": "stale date signal in URL",
             "incident_hits": [
               "drone",
               "uav",
@@ -411,7 +182,11 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "1900"
+            ]
           },
           {
             "url": "https://athens-times.com/four-moscow-airports-closed-after-massive-ukrainian-drone-attack/",
@@ -423,7 +198,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.merimbulanewsweekly.com.au/story/9296344/moscow-shoots-down-nearly-60-drones-airports-reopen/",
@@ -436,7 +213,9 @@
               "shoots-down"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/22/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say",
@@ -449,7 +228,11 @@
               "shoots-down"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.dailysabah.com/politics/russian-strike-on-turkish-cargo-ship-kills-one-ukraine/news",
@@ -466,7 +249,9 @@
             ],
             "weak_hits": [
               "politics"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine",
@@ -482,13 +267,17 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.thehindu.com/news/international/moscow-shoots-down-nearly-60-drones-airports-reopen-authorities-say/article71131912.ece",
             "domain": "www.thehindu.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
+            "accepted": false,
+            "reason": "stale date signal in URL",
             "incident_hits": [
               "drone",
               "drones",
@@ -497,7 +286,11 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "1912"
+            ]
           },
           {
             "url": "https://www.rte.ie/news/2026/0622/1579623-russia-ukraine/",
@@ -506,7 +299,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           }
         ]
       },
@@ -629,6 +426,10 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -641,7 +442,9 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
@@ -653,7 +456,11 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345",
@@ -665,7 +472,9 @@
               "attacks"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://dominicanrepublicpost.com/ukraine-attacks-on-russian-occupied-crimea-trigger-power-cuts-in-sevastopol/",
@@ -678,7 +487,9 @@
               "ied"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.ksat.com/news/world/2026/06/24/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers/",
@@ -690,7 +501,11 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.euronews.com/my-europe/2026/06/24/two-workers-for-a-norwegian-demining-charity-killed-in-russian-strike-on-ukraine",
@@ -703,7 +518,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.sandiegouniontribune.com/2026/06/24/ukraine-russia-strike-natural-gas-plant/",
@@ -714,7 +533,11 @@
               "strike"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.theyeshivaworld.com/news/general/2567018/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers.html",
@@ -726,7 +549,9 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.globalsecurity.org/military/library/news/2026/06/mil-260622-unocha01.htm",
@@ -737,6 +562,10 @@
             "noise_hits": [],
             "weak_hits": [
               "military"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -746,7 +575,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.manilatimes.net/2026/06/24/world/russian-strikes-kill-nine-in-ukraine/2371433",
@@ -759,7 +590,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           }
         ]
       },
@@ -881,7 +716,9 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://carnegieendowment.org/russia-eurasia/politika/2026/06/russia-new-refinery-strike",
@@ -892,7 +729,11 @@
               "strike"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "http://usa.chinadaily.com.cn/a/202606/25/WS6a3c7e02a310986e2b461c41.html",
@@ -901,7 +742,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.moneycontrol.com/world/last-us-soldier-to-leave-afghanistan-top-us-commander-in-europe-christopher-donahue-to-step-down-amid-hegseth-s-military-revamp-article-13958164.html",
@@ -914,7 +759,9 @@
             ],
             "weak_hits": [
               "military"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.kyivpost.com/post/78918",
@@ -923,7 +770,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.ibtimes.co.uk/putin-calls-peace-talks-ukraines-expanding-refinery-strikes-raise-pressure-russia-1804951",
@@ -937,7 +786,9 @@
             "noise_hits": [],
             "weak_hits": [
               "peace-talks"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.euronews.com/my-europe/2026/06/25/no-zelenskyy-in-gdansk-can-ukraines-recovery-forum-ease-warsawkyiv-tensions",
@@ -950,6 +801,10 @@
             ],
             "weak_hits": [
               "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -961,7 +816,9 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning",
@@ -975,16 +832,22 @@
             "weak_hits": [
               "war",
               "army"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.dailykos.com/stories/2026/6/23/800059559/community/1581/",
             "domain": "www.dailykos.com",
             "accepted": false,
-            "reason": "low-value domain and weak incident evidence",
+            "reason": "low-value domain rejected at selection stage",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.freemalaysiatoday.com/category/world/2026/06/24/ukrainian-strike-cuts-power-to-crimean-city",
@@ -995,7 +858,11 @@
               "strike"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://dominicanrepublicpost.com/ukraines-recovery-to-be-deliberated-in-poland-amid-kyiv-warsaw-spat/",
@@ -1006,7 +873,9 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -1101,10 +970,14 @@
             "url": "https://www.dailykos.com/stories/2026/6/19/800058109/community/ukraine-invasion-day-1577/",
             "domain": "www.dailykos.com",
             "accepted": false,
-            "reason": "low-value domain and weak incident evidence",
+            "reason": "low-value domain rejected at selection stage",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.asianews.it/news-en/By-bombing-the-Lavra,-Russia-is-destroying-the-Russian-World-65687.html",
@@ -1116,7 +989,9 @@
               "bomb"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.local10.com/news/2026/06/18/ukrainian-drones-set-a-moscow-refinery-ablaze-in-a-major-attack-on-the-russian-capital/",
@@ -1129,7 +1004,11 @@
               "drones"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.christiandaily.com/news/russian-drone-attack-sets-historic-cathedral-ablaze-in-ukraine",
@@ -1141,7 +1020,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.yahoo.com/news/world/articles/russian-strikes-ukraine-kill-several-044117051.html",
@@ -1156,7 +1037,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.kyivpost.com/post/78175",
@@ -1165,7 +1048,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.thehindu.com/news/international/russia-ukraine-war-missile-drone-attack-on-kyiv-lavra-monastery-june-15-2026/article71103897.ece",
@@ -1182,6 +1067,10 @@
             ],
             "weak_hits": [
               "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1193,6 +1082,10 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1205,7 +1098,9 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.independent.co.uk/news/world/europe/kyiv-pechersk-lavra-monastery-fire-russian-attack-b2995896.html",
@@ -1216,7 +1111,9 @@
               "attack"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://en.interfax.com.ua/news/general/1176709.html",
@@ -1225,7 +1122,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -1346,7 +1245,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
@@ -1357,7 +1260,9 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://bnn-news.com/ukrainian-drone-strikes-ignite-another-oil-depot-in-russia-281516",
@@ -1370,7 +1275,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://english.aawsat.com/world/5288362-ukraine-drone-attacks-kill-5-russia-crimea",
@@ -1384,7 +1291,9 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.kyivpost.com/opinion/78982",
@@ -1395,7 +1304,9 @@
             "noise_hits": [
               "opinion"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://theconversation.com/other-nations-thirst-for-ukraines-drone-success-but-they-need-a-culture-shift-first-286187",
@@ -1406,7 +1317,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.theyeshivaworld.com/news/general/2566536/ukraine-strikes-railway-bridge-to-crimea-targeted-in-bid-to-isolate-russian-held-peninsula.html",
@@ -1418,7 +1331,9 @@
               "strikes"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://news.az/news/how-effective-was-ukraine-s-air-defense-response",
@@ -1427,7 +1342,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.theguardian.com/world/2026/jun/24/ukraine-war-briefing-crimea-locks-down-as-putin-acknowledges-huge-stream-of-ukrainian-drones",
@@ -1441,6 +1358,10 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1455,7 +1376,9 @@
             "weak_hits": [
               "war",
               "army"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.bridgwatermercury.co.uk/news/national/26222707.ukraine-says-hit-railway-bridge-crimea-seeks-isolate-peninsula/",
@@ -1464,7 +1387,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
@@ -1476,7 +1401,9 @@
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -1563,15 +1490,14 @@
       ],
       "source_validation": {
         "checked_count": 12,
-        "valid_count": 7,
-        "rejected_count": 5,
-        "valid_ratio": 0.583,
+        "valid_count": 6,
+        "rejected_count": 6,
+        "valid_ratio": 0.5,
         "label": "High",
         "valid_sources": [
           "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
           "https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit",
           "https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara",
-          "https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827",
           "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
           "https://www.dailysabah.com/politics/war-on-terror/turkish-authorities-detain-209-in-major-anti-terror-sweep",
           "https://news.az/news/turkiye-detains-209-suspects-in-major-anti-terror-raids"
@@ -1581,7 +1507,8 @@
           "https://www.hindustantimes.com/world-news/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-101782381713912.html",
           "http://www.jpost.com/middle-east/article-900521",
           "https://www.arabnews.com/node/2648399/middle-east",
-          "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html"
+          "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
+          "https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827"
         ],
         "checked_sources": [
           {
@@ -1591,7 +1518,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.hindustantimes.com/world-news/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-101782381713912.html",
@@ -1600,7 +1529,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "http://www.jpost.com/middle-east/article-900521",
@@ -1611,7 +1542,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
@@ -1627,6 +1560,10 @@
             "weak_hits": [
               "nato",
               "summit"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1636,7 +1573,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
@@ -1645,7 +1584,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://english.aawsat.com/world/5287947-isis-suspect-killed-raid-ahead-ankara-nato-summit",
@@ -1662,7 +1605,9 @@
             "weak_hits": [
               "nato",
               "summit"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.dailysabah.com/politics/war-on-terror/daesh-member-killed-in-clash-with-turkish-police-in-ankara",
@@ -1682,18 +1627,24 @@
             "weak_hits": [
               "war",
               "politics"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://bianet.org/haber/back-to-back-drone-crashes-in-turkey-s-black-sea-region-320827",
             "domain": "bianet.org",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator",
+            "accepted": false,
+            "reason": "stale date signal in URL",
             "incident_hits": [
               "drone"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2082"
+            ]
           },
           {
             "url": "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
@@ -1709,6 +1660,10 @@
             "weak_hits": [
               "nato",
               "summit"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1726,7 +1681,9 @@
             "weak_hits": [
               "war",
               "politics"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://news.az/news/turkiye-detains-209-suspects-in-major-anti-terror-raids",
@@ -1741,7 +1698,9 @@
               "detains"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -1856,7 +1815,9 @@
             ],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.nashvillescene.com/news/pithinthewind/racist-streamer-chud-builder-nashville-court-hearing/article_969f1b9f-997b-4cd2-9073-e2e5bda53b2f.html",
@@ -1867,7 +1828,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://news.az/news/how-does-turkiye-approach-counterterrorism",
@@ -1879,7 +1842,9 @@
               "counterterrorism"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids",
@@ -1895,7 +1860,9 @@
             "weak_hits": [
               "nato",
               "summit"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
@@ -1904,7 +1871,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://aa.com.tr/en/middle-east/thousands-of-ultra-orthodox-jews-block-roads-in-israel-to-protest-arrest-of-draft-dodgers/3977158",
@@ -1913,7 +1884,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
@@ -1929,6 +1902,10 @@
             "weak_hits": [
               "nato",
               "summit"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1945,7 +1922,9 @@
             "weak_hits": [
               "nato",
               "summit"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "http://www.reflector.com/news/national/turkey-detains-209-in-raids-in-the-capital-ahead-of-julys-nato-summit/article_2fa93005-7304-5a5e-a897-6f804a91018d.html",
@@ -1963,7 +1942,9 @@
             "weak_hits": [
               "nato",
               "summit"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.al-monitor.com/originals/2026/06/turkey-detains-233-ahead-nato-summit-including-lgbtq-activist-yildiz-tar",
@@ -1977,6 +1958,10 @@
             "weak_hits": [
               "nato",
               "summit"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -1986,16 +1971,26 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.legalbusiness.co.uk/2011/03/",
             "domain": "www.legalbusiness.co.uk",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
+            "reason": "stale date signal in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [
+              "2011"
+            ],
+            "years": [
+              "2011"
+            ]
           }
         ]
       },
@@ -2017,210 +2012,6 @@
         "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids"
       ],
       "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Balkán",
-      "rank": 3,
-      "score": 54,
-      "quality_score": 41,
-      "quality_label": "Low",
-      "cluster_key": "2026-06-24|serbia general|belgrade serbia|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Belgrade, Serbia",
-      "date": "2026-06-24",
-      "country": "Serbia (general)",
-      "location": "Belgrade, Serbia",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 10,
-      "source_domain_count": 9,
-      "source_domains": [
-        "balkaninsight.com",
-        "engineeringevil.com",
-        "www.bbc.co.uk",
-        "www.bgnes.com",
-        "www.ctvnews.ca",
-        "www.eurasiareview.com",
-        "www.fairfieldsuntimes.com",
-        "www.justiceinfo.net",
-        "www.thenation.com"
-      ],
-      "sources": [
-        "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-        "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
-        "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
-        "https://www.thenation.com/article/archive/we-are-all-albanians/",
-        "https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html",
-        "https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/",
-        "https://www.ctvnews.ca/world/article/parents-of-serbian-school-shooter-sentenced-in-retrial-report-says/",
-        "http://www.bgnes.com/no-filter/the-russian-world-and-the-serbian-world-geopolitical-ideas-national-identity-and-religious-legitimation-in-the-balkans",
-        "https://www.justiceinfo.net/en/160355-kosovo-arrests-five-serbs-over-wartime-massacre.html",
-        "http://www.bgnes.com/politics/nato-to-reduce-peacekeeping-forces-in-kosovo-after-security-improvements"
-      ],
-      "source_validation": {
-        "checked_count": 10,
-        "valid_count": 2,
-        "rejected_count": 8,
-        "valid_ratio": 0.2,
-        "label": "Low",
-        "valid_sources": [
-          "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-          "https://www.justiceinfo.net/en/160355-kosovo-arrests-five-serbs-over-wartime-massacre.html"
-        ],
-        "rejected_sources": [
-          "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
-          "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
-          "https://www.thenation.com/article/archive/we-are-all-albanians/",
-          "https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html",
-          "https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/",
-          "https://www.ctvnews.ca/world/article/parents-of-serbian-school-shooter-sentenced-in-retrial-report-says/",
-          "http://www.bgnes.com/no-filter/the-russian-world-and-the-serbian-world-geopolitical-ideas-national-identity-and-religious-legitimation-in-the-balkans",
-          "http://www.bgnes.com/politics/nato-to-reduce-peacekeeping-forces-in-kosovo-after-security-improvements"
-        ],
-        "checked_sources": [
-          {
-            "url": "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-            "domain": "engineeringevil.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "missile",
-              "shot",
-              "shot-down"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
-            "domain": "www.eurasiareview.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ]
-          },
-          {
-            "url": "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
-            "domain": "www.bbc.co.uk",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.thenation.com/article/archive/we-are-all-albanians/",
-            "domain": "www.thenation.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.fairfieldsuntimes.com/news/state/gallatin-county-deputies-investigate-river-rock-shooting-after-suspect-flees-area/article_ef0691ea-d13c-5cee-b7c3-2e1f74d6ce23.html",
-            "domain": "www.fairfieldsuntimes.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [
-              "shooting"
-            ],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://balkaninsight.com/2026/06/22/serbian-officials-using-war-crimes-denial-to-foment-hatred-report-asserts/btj/",
-            "domain": "balkaninsight.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ]
-          },
-          {
-            "url": "https://www.ctvnews.ca/world/article/parents-of-serbian-school-shooter-sentenced-in-retrial-report-says/",
-            "domain": "www.ctvnews.ca",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "http://www.bgnes.com/no-filter/the-russian-world-and-the-serbian-world-geopolitical-ideas-national-identity-and-religious-legitimation-in-the-balkans",
-            "domain": "www.bgnes.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.justiceinfo.net/en/160355-kosovo-arrests-five-serbs-over-wartime-massacre.html",
-            "domain": "www.justiceinfo.net",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "arrests",
-              "massacre"
-            ],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": [
-              "war"
-            ]
-          },
-          {
-            "url": "http://www.bgnes.com/politics/nato-to-reduce-peacekeeping-forces-in-kosovo-after-security-improvements",
-            "domain": "www.bgnes.com",
-            "accepted": false,
-            "reason": "only broad security context, no concrete incident indicator",
-            "incident_hits": [],
-            "noise_hits": [
-              "politics"
-            ],
-            "weak_hits": [
-              "nato",
-              "politics"
-            ]
-          }
-        ]
-      },
-      "source_confidence": "Low",
-      "raw_titles": [
-        "fight – Belgrade, Serbia (general),"
-      ],
-      "search_terms": [
-        "Belgrade, Serbia Serbia (general) Fegyveres összecsapás",
-        "Belgrade, Serbia Serbia (general)",
-        "Fegyveres összecsapás – Belgrade, Serbia",
-        "Serbia (general) Fegyveres összecsapás"
-      ],
-      "sources_original_count": 10,
-      "sources_checked_count": 4,
-      "sources_valid_count": 2,
-      "sources_rejected_count": 2,
-      "sources_refined": [
-        "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-        "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo"
-      ],
-      "refinement_confidence": "Medium",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
     },
     {
@@ -2293,7 +2084,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "http://www.jpost.com/opinion/article-900419",
@@ -2305,7 +2100,9 @@
               "opinion",
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
@@ -2314,7 +2111,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://themedialine.org/news/opinion/israel-must-avoid-becoming-sparta-without-america/",
@@ -2326,7 +2125,9 @@
               "opinion",
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.yahoo.com/news/politics/articles/exclusive-meet-man-israel-chose-163016905.html",
@@ -2340,7 +2141,9 @@
             ],
             "weak_hits": [
               "politics"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://countercurrents.org/2026/06/israeli-forces-kill-two-palestinian-teens-in-occupied-west-bank/",
@@ -2352,7 +2155,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.foxnews.com/world/exclusive-meet-man-israel-chose-its-first-ever-ambassador-christian-world",
@@ -2361,7 +2168,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.independent.co.uk/news/world/middle-east/netanyahu-israel-iran-us-deal-corruption-trial-b2998160.html",
@@ -2370,7 +2179,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.jns.org/feature/zeljka-cvijanovic-israels-battle-is-rooted-in-oct-7-massacre",
@@ -2381,7 +2192,9 @@
               "massacre"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.middleeasteye.net/news/israel-expels-palestinians-their-homes-use-them-military-posts",
@@ -2392,7 +2205,9 @@
             "noise_hits": [],
             "weak_hits": [
               "military"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://countercurrents.org/2026/06/israel-killed-more-palestinians-in-the-occupied-west-bank-during-the-gaza-genocide-than-in-the-previous-17-years-oxfam/",
@@ -2405,7 +2220,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           }
         ]
       },
@@ -2506,7 +2325,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
@@ -2519,6 +2340,10 @@
             "noise_hits": [],
             "weak_hits": [
               "ceasefire"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -2532,7 +2357,9 @@
             "noise_hits": [],
             "weak_hits": [
               "conflict"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
@@ -2547,7 +2374,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.moneycontrol.com/world/netanyahu-refuses-to-pull-troops-from-lebanon-as-hezbollah-vows-resistance-can-the-us-iran-deal-survive-article-13954143.html",
@@ -2560,7 +2389,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.siasat.com/you-cant-kill-your-way-out-vance-gives-rare-rebuke-to-israel-3492393/",
@@ -2571,7 +2402,9 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.moneycontrol.com/world/can-us-iran-deal-survive-israel-and-hezbollah-renew-ceasefire-after-deadly-escalation-article-13954286.html",
@@ -2586,7 +2419,9 @@
             ],
             "weak_hits": [
               "ceasefire"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.washingtonexaminer.com/news/white-house/4616661/trump-can-keep-israel-attack-hezbollah/",
@@ -2598,7 +2433,9 @@
               "hezbollah"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.thenationalnews.com/news/mena/2026/06/19/israels-continued-presence-in-southern-lebanon-tests-fragile-us-iran-peace-deal/",
@@ -2607,7 +2444,11 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://legalinsurrection.com/2026/06/netanyahu-israel-to-hold-south-lebanon-buffer-zone-until-hezbollah-terror-threat-cleared/",
@@ -2619,7 +2460,11 @@
               "hezbollah"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://slguardian.org/iran-deal-leaves-trump-facing-tough-questions-as-tehran-emerges-with-strategic-gains/",
@@ -2628,7 +2473,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.moneycontrol.com/world/trump-s-rebukes-iran-s-leverage-and-an-election-ahead-why-netanyahu-is-under-pressure-on-all-fronts-after-us-iran-deal-article-13949953.html",
@@ -2640,7 +2487,9 @@
               "election",
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -2752,7 +2601,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.bankingnews.gr/diethni/articles/883148/bloodbath-in-lebanon-as-israel-shatters-ceasefire-triggering-lethal-ambush-and-fierce-political-ultimatum-from-hezbollah",
@@ -2768,7 +2619,9 @@
             ],
             "weak_hits": [
               "ceasefire"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://nationalpost.com/news/light-in-the-darkness-the-journey-of-noa-argamani",
@@ -2777,7 +2630,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.presstv.ir/Detail/2026/06/19/770719/EU-parliamentarians-demand-sanctions-on-Israel",
@@ -2788,6 +2643,10 @@
             "noise_hits": [],
             "weak_hits": [
               "sanctions"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
             ]
           },
           {
@@ -2799,7 +2658,9 @@
               "hezbollah"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://scroll.in/article/1093627/how-an-israeli-soldier-accused-of-war-crimes-in-gaza-was-tracked-down-in-india",
@@ -2812,7 +2673,9 @@
             ],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.israelnationalnews.com/news/428831",
@@ -2821,7 +2684,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.bankingnews.gr/diethni/articles/882552/chaos-iranians-warn-israel-of-annihilation-stating-they-are-not-bound-by-the-memorandum-with-the-us-amid-drone-barrage-in-hormuz",
@@ -2836,7 +2701,9 @@
             ],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.voltairenet.org/article224707.html",
@@ -2847,7 +2714,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://aninews.in/news/world/europe/not-satisfied-with-netanyahus-lebanon-handling-trump-says-israel-should-have-been-able-to-do-the-job-faster20260616175334/",
@@ -2858,7 +2727,11 @@
               "ied"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.newkerala.com/news/a/not-satisfied-netanyahus-lebanon-handling-trump-says-israel-774.htm",
@@ -2869,7 +2742,9 @@
               "ied"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://aa.com.tr/en/us-israel-iran-war/israeli-analysts-call-netanyahu-liar-humiliated-by-trump-after-us-iran-deal/3969014",
@@ -2880,7 +2755,9 @@
             "noise_hits": [],
             "weak_hits": [
               "war"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -2909,242 +2786,6 @@
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 4,
-      "score": 70,
-      "quality_score": 48,
-      "quality_label": "Low",
-      "cluster_key": "2026-06-25|iran|isfahan esfahan iran|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Isfahan, Esfahan, Iran",
-      "date": "2026-06-25",
-      "country": "Iran",
-      "location": "Isfahan, Esfahan, Iran",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 16,
-      "source_domain_count": 16,
-      "source_domains": [
-        "aa.com.tr",
-        "americanbazaaronline.com",
-        "dailytimes.com.pk",
-        "irannewsupdate.com",
-        "news.antiwar.com",
-        "news.az",
-        "tradearabia.com:443",
-        "www.al-monitor.com",
-        "www.aljazeera.com",
-        "www.bostonglobe.com",
-        "www.cubaheadlines.com",
-        "www.israelnationalnews.com",
-        "www.parisguardian.com",
-        "www.rferl.org",
-        "www.skynews.com.au",
-        "www.zerohedge.com"
-      ],
-      "sources": [
-        "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-        "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
-        "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
-        "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
-        "https://news.antiwar.com/2026/06/23/cnn-downed-us-pilot-reported-seeing-iranian-drones-swarm-in-jellyfish-formation/",
-        "https://www.cubaheadlines.com/articles/332619",
-        "https://americanbazaaronline.com/2026/06/18/trumps-iran-nuclear-deal-may-be-weaker-than-obama-era-accord-483055/",
-        "https://news.az/news/multiple-executions-and-arrests-reported-across-iran-amid-ongoing-judicial-cases",
-        "https://aa.com.tr/en/opinion/opinion-how-to-read-the-us-iran-agreement/3968714",
-        "https://www.bostonglobe.com/2026/06/14/world/trump-strait-agreement-iran/",
-        "https://www.al-monitor.com/originals/2026/06/explainer-key-issues-us-and-iran-must-address-nuclear-talks",
-        "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump",
-        "https://irannewsupdate.com/news/human-rights/iran-human-rights-report-executions-political-repression-and-arbitrary-killings-escalated-in-may-2026/",
-        "http://www.parisguardian.com/news/279120773/pakistani-prime-minister-says-peace-deal-expected-within-24-hours",
-        "https://www.rferl.org/a/iran-peace-deal-conflicting-reports-fragile-cease-fire/33779736.html",
-        "https://www.israelnationalnews.com/news/428560"
-      ],
-      "source_validation": {
-        "checked_count": 12,
-        "valid_count": 5,
-        "rejected_count": 7,
-        "valid_ratio": 0.417,
-        "label": "High",
-        "valid_sources": [
-          "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
-          "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
-          "https://news.antiwar.com/2026/06/23/cnn-downed-us-pilot-reported-seeing-iranian-drones-swarm-in-jellyfish-formation/",
-          "https://news.az/news/multiple-executions-and-arrests-reported-across-iran-amid-ongoing-judicial-cases",
-          "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump"
-        ],
-        "rejected_sources": [
-          "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-          "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
-          "https://www.cubaheadlines.com/articles/332619",
-          "https://americanbazaaronline.com/2026/06/18/trumps-iran-nuclear-deal-may-be-weaker-than-obama-era-accord-483055/",
-          "https://aa.com.tr/en/opinion/opinion-how-to-read-the-us-iran-agreement/3968714",
-          "https://www.bostonglobe.com/2026/06/14/world/trump-strait-agreement-iran/",
-          "https://www.al-monitor.com/originals/2026/06/explainer-key-issues-us-and-iran-must-address-nuclear-talks"
-        ],
-        "checked_sources": [
-          {
-            "url": "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-            "domain": "www.aljazeera.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.skynews.com.au/world-news/global-affairs/us-fighter-pilot-shot-down-by-iran-describes-alarming-jellyfish-drones-before-crash/news-story/3a824af40dd07e3841e07f4f54eb19db?nk=53c40321e6a2a414bf2ffd92b903dd28-1782263812",
-            "domain": "www.skynews.com.au",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "drone",
-              "drones",
-              "shot",
-              "shot-down"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn",
-            "domain": "www.zerohedge.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "drone",
-              "drones",
-              "downed"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "war",
-              "military"
-            ]
-          },
-          {
-            "url": "https://dailytimes.com.pk/1513065/iaea-expects-iran-inspections-to-resume/",
-            "domain": "dailytimes.com.pk",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://news.antiwar.com/2026/06/23/cnn-downed-us-pilot-reported-seeing-iranian-drones-swarm-in-jellyfish-formation/",
-            "domain": "news.antiwar.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "drone",
-              "drones",
-              "downed"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ]
-          },
-          {
-            "url": "https://www.cubaheadlines.com/articles/332619",
-            "domain": "www.cubaheadlines.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "art"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://americanbazaaronline.com/2026/06/18/trumps-iran-nuclear-deal-may-be-weaker-than-obama-era-accord-483055/",
-            "domain": "americanbazaaronline.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://news.az/news/multiple-executions-and-arrests-reported-across-iran-amid-ongoing-judicial-cases",
-            "domain": "news.az",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator",
-            "incident_hits": [
-              "arrests"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://aa.com.tr/en/opinion/opinion-how-to-read-the-us-iran-agreement/3968714",
-            "domain": "aa.com.tr",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "opinion"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.bostonglobe.com/2026/06/14/world/trump-strait-agreement-iran/",
-            "domain": "www.bostonglobe.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": []
-          },
-          {
-            "url": "https://www.al-monitor.com/originals/2026/06/explainer-key-issues-us-and-iran-must-address-nuclear-talks",
-            "domain": "www.al-monitor.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "explainer"
-            ],
-            "weak_hits": []
-          },
-          {
-            "url": "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump",
-            "domain": "tradearabia.com:443",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators",
-            "incident_hits": [
-              "strike",
-              "strikes"
-            ],
-            "noise_hits": [],
-            "weak_hits": []
-          }
-        ]
-      },
-      "source_confidence": "High",
-      "raw_titles": [
-        "fight – Isfahan, Esfahan, Iran"
-      ],
-      "search_terms": [
-        "Isfahan, Esfahan, Iran Iran Fegyveres összecsapás",
-        "Isfahan, Esfahan, Iran Iran",
-        "Fegyveres összecsapás – Isfahan, Esfahan, Iran",
-        "Iran Fegyveres összecsapás"
-      ],
-      "sources_original_count": 16,
-      "sources_checked_count": 4,
-      "sources_valid_count": 2,
-      "sources_rejected_count": 2,
-      "sources_refined": [
-        "https://www.aljazeera.com/news/2026/6/25/ashura-ceremonies-intertwine-faith-and-support-for-state-in-iran",
-        "https://www.zerohedge.com/military/downed-us-pilot-reported-seeing-iranian-drones-swarm-jellyfish-formation-cnn"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 5,
       "score": 72,
       "quality_score": 43,
       "quality_label": "Low",
@@ -3226,7 +2867,11 @@
               "ied"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://www.aljazeera.com/news/2026/6/25/israeli-forces-shoot-and-kill-palestinians-in-occupied-west-bank-gaza",
@@ -3238,7 +2883,11 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
           },
           {
             "url": "https://imemc.org/article/army-injures-two-palestinians-including-journalist-in-jordan-valley/",
@@ -3251,7 +2900,9 @@
             ],
             "weak_hits": [
               "army"
-            ]
+            ],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.middleeasteye.net/profile/israel-itamar-ben-gvir",
@@ -3260,7 +2911,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://imemc.org/article/israeli-forces-abduct-palestinians-across-occupied-west-bank/",
@@ -3273,7 +2926,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.middleeasteye.net/news/israeli-raid-hebron-kills-two-palestinians-killed-including-child",
@@ -3287,7 +2942,9 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://english.wafa.ps/Pages/Details/171864",
@@ -3296,7 +2953,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://imemc.org/article/six-palestinians-injured-in-settler-attacks-near-hebron-and-salfit/",
@@ -3311,7 +2970,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://imemc.org/article/israeli-forces-injure-abduct-palestinians-in-the-west-bank/",
@@ -3322,7 +2983,9 @@
             "noise_hits": [
               "art"
             ],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://www.arabnews.com/node/2647978/middle-east",
@@ -3331,7 +2994,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://english.pnn.ps/news/48185",
@@ -3340,7 +3005,9 @@
             "reason": "no concrete incident indicator in URL",
             "incident_hits": [],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           },
           {
             "url": "https://grenadachronicle.com/israel-kills-at-least-three-palestinians-in-gaza-city-drone-strike/",
@@ -3354,7 +3021,9 @@
               "kill"
             ],
             "noise_hits": [],
-            "weak_hits": []
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
           }
         ]
       },
@@ -3379,8 +3048,281 @@
       ],
       "refinement_confidence": "Medium",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "score": 72,
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-06-24|israel|gaza city israel israel|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
+      "date": "2026-06-24",
+      "country": "Israel",
+      "location": "Gaza City, Israel, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 48,
+      "source_domain_count": 35,
+      "source_domains": [
+        "aa.com.tr",
+        "dailypioneer.com",
+        "dailytimes.com.pk",
+        "dominicanrepublicpost.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "english.wafa.ps",
+        "grenadachronicle.com",
+        "imemc.org",
+        "news.antiwar.com",
+        "news.az",
+        "pajhwok.com",
+        "redstate.com",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.bbc.co.uk",
+        "www.bignewsnetwork.com",
+        "www.chicagotribune.com",
+        "www.cnn.com"
+      ],
+      "sources": [
+        "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+        "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+        "https://english.wafa.ps/Pages/Details/171970",
+        "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+        "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+        "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+        "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+        "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+        "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.arabnews.com/node/2648125/middle-east",
+        "https://english.wafa.ps/Pages/Details/171922",
+        "https://www.yahoo.com/news/world/articles/palestinian-sources-israeli-airstrike-kills-134124345.html",
+        "https://redstate.com/john-doe/2026/06/22/trumps-20-point-gaza-peace-deal-should-be-a-warning-label-for-iran-mou-n2203534",
+        "https://news.az/news/idf-eliminates-hamas-nukhba-member-linked-to-hostage-incident",
+        "https://www.local10.com/news/2026/06/20/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.bbc.co.uk/news/articles/c4gy26p6pwzo",
+        "https://www.wjcl.com/article/israeli-strikes-in-gaza-kill-6-including-2-children/71647222",
+        "https://www.surinametimes.com/artikel/parents-and-two-daughters-killed-in-israeli-strike-in-gaza",
+        "https://dailypioneer.com/news/fighting-persists-in-lebanon-as-us-iran-deal-is-under-threat",
+        "https://pajhwok.com/2026/06/21/israeli-strikes-kill-9-in-gaza-including-child-al-jazeera-journalist/"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 5,
+        "rejected_count": 7,
+        "valid_ratio": 0.417,
+        "label": "High",
+        "valid_sources": [
+          "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+          "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+          "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+          "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+          "https://www.yahoo.com/news/world/articles/palestinian-sources-israeli-airstrike-kills-134124345.html"
+        ],
+        "rejected_sources": [
+          "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+          "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+          "https://english.wafa.ps/Pages/Details/171970",
+          "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+          "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+          "https://www.arabnews.com/node/2648125/middle-east",
+          "https://english.wafa.ps/Pages/Details/171922"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+            "domain": "www.aljazeera.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
+          },
+          {
+            "url": "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+            "domain": "www.cnn.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
+          },
+          {
+            "url": "https://english.wafa.ps/Pages/Details/171970",
+            "domain": "english.wafa.ps",
+            "accepted": false,
+            "reason": "stale date signal in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "1970"
+            ]
+          },
+          {
+            "url": "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+            "domain": "www.egyptindependent.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+            "domain": "imemc.org",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators",
+            "incident_hits": [
+              "killed",
+              "kill",
+              "injured"
+            ],
+            "noise_hits": [
+              "art"
+            ],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+            "domain": "www.newsday.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators",
+            "incident_hits": [
+              "strike",
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+            "domain": "dominicanrepublicpost.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [
+              "row"
+            ],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+            "domain": "www.islamicinvitationturkey.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators",
+            "incident_hits": [
+              "killed",
+              "kill"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+            "domain": "www.columbian.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators",
+            "incident_hits": [
+              "strike",
+              "strikes",
+              "kill"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ]
+          },
+          {
+            "url": "https://www.arabnews.com/node/2648125/middle-east",
+            "domain": "www.arabnews.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          },
+          {
+            "url": "https://english.wafa.ps/Pages/Details/171922",
+            "domain": "english.wafa.ps",
+            "accepted": false,
+            "reason": "stale date signal in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "1922"
+            ]
+          },
+          {
+            "url": "https://www.yahoo.com/news/world/articles/palestinian-sources-israeli-airstrike-kills-134124345.html",
+            "domain": "www.yahoo.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators",
+            "incident_hits": [
+              "strike",
+              "airstrike",
+              "kills",
+              "kill"
+            ],
+            "noise_hits": [
+              "art"
+            ],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": []
+          }
+        ]
+      },
+      "source_confidence": "High",
+      "raw_titles": [
+        "fight – Gaza City, Israel (general), Israel"
+      ],
+      "search_terms": [
+        "Gaza City, Israel, Israel Israel Fegyveres összecsapás",
+        "Gaza City, Israel, Israel Israel",
+        "Fegyveres összecsapás – Gaza City, Israel, Israel",
+        "Israel Fegyveres összecsapás"
+      ],
+      "sources_original_count": 20,
+      "sources_checked_count": 4,
+      "sources_valid_count": 0,
+      "sources_rejected_count": 4,
+      "sources_refined": [],
+      "refinement_confidence": "Rejected",
+      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
     }
   ],
-  "refined_at": "2026-06-26T13:28:46.336862Z",
+  "refined_at": "2026-06-26T13:52:10.578504Z",
   "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
 }
