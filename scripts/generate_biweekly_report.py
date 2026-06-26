@@ -2180,59 +2180,43 @@ def classify_source_url_fast(url, expected_year="2026"):
 
 
 def cluster_source_validation(cluster, max_sources=12):
+    """
+    Shared source validation wrapper.
+
+    The actual validation logic lives in scripts/lib/source_validation.py.
+    This keeps the biweekly report script focused on selection and output.
+    """
+
     sources = cluster.get("sources", []) or []
-    expected_year = str(cluster.get("date", "2026"))[:4] or "2026"
-    checked = []
-
-    for src in sources[:max_sources]:
-        checked.append(classify_source_url_fast(src, expected_year=expected_year))
-
-    valid_sources = [item["url"] for item in checked if item.get("accepted")]
-    rejected_sources = [item["url"] for item in checked if not item.get("accepted")]
-    checked_count = len(checked)
-    valid_count = len(valid_sources)
-    valid_ratio = valid_count / checked_count if checked_count else 0
-
-    if valid_count >= 4 and valid_ratio >= 0.35:
-        label = "High"
-    elif valid_count >= 2 and valid_ratio >= 0.25:
-        label = "Medium"
-    elif valid_count >= 1:
-        label = "Low"
-    else:
-        label = "Rejected"
-
-    return {
-        "checked_count": checked_count,
-        "valid_count": valid_count,
-        "rejected_count": len(rejected_sources),
-        "valid_ratio": round(valid_ratio, 3),
-        "label": label,
-        "valid_sources": valid_sources,
-        "rejected_sources": rejected_sources,
-        "checked_sources": checked,
-    }
+    validation = validate_sources(sources, max_sources=max_sources)
+    cluster["source_validation"] = validation
+    return validation
 
 
 def is_source_validated_cluster(cluster):
-    validation = cluster_source_validation(cluster)
+    validation = cluster.get("source_validation") or cluster_source_validation(cluster)
     cluster["source_validation"] = validation
-
-    if validation["valid_count"] >= 2:
-        return True
-
-    # Keep one-source items only when the existing quality score is not weak.
-    if validation["valid_count"] == 1 and calculate_cluster_quality(cluster) >= 60:
-        return True
-
-    return False
+    return is_event_source_valid(validation)
 
 
 def source_validation_sort_bonus(cluster):
     validation = cluster.get("source_validation") or cluster_source_validation(cluster)
     cluster["source_validation"] = validation
-    return min(validation["valid_count"], 5) * 6 + int(validation["valid_ratio"] * 10)
 
+    valid_count = int(validation.get("valid_count", 0))
+    valid_ratio = float(validation.get("valid_ratio", 0.0))
+    label = validation.get("label", "Rejected")
+
+    label_bonus = {
+        "High": 18,
+        "Medium": 12,
+        "Low": 6,
+        "Very low": 2,
+        "Rejected": -20,
+        "No sources": -20,
+    }.get(label, 0)
+
+    return (min(valid_count, 5) * 6) + int(valid_ratio * 10) + label_bonus
 
 def cluster_text_blob(cluster):
     parts = [
@@ -2385,7 +2369,7 @@ def select_top_event_clusters(events, limit=5):
         if is_source_validated_cluster(cluster)
     ]
 
-    candidate_clusters = source_validated if source_validated else quality_filtered
+    candidate_clusters = source_validated
 
     scored = sorted(
         candidate_clusters,
@@ -2417,18 +2401,8 @@ def select_top_event_clusters(events, limit=5):
         if len(selected) >= limit:
             return selected
 
-    # Controlled fallback: still fill the region if possible, but do not bring back fully rejected source clusters first.
-    fallback_pool = [
-        cluster for cluster in scored
-        if cluster not in selected and (cluster.get("source_validation", {}).get("label") != "Rejected")
-    ]
-
-    if len(selected) < limit:
-        for cluster in fallback_pool:
-            selected.append(cluster)
-            if len(selected) >= limit:
-                break
-
+    # No forced fallback: if a region has fewer than five validated clusters,
+    # the report should show fewer events rather than filling the list with noise.
     return selected
 
 
@@ -2534,9 +2508,9 @@ def export_selected_events(start_day, end_day, events_by_region):
             "end": end_day.isoformat(),
         },
         "method": (
-            "Regional Top 5 selected from refined event clusters. "
+            "Regional Top 5 selected from source-validated event clusters. "
             "Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. "
-            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity and cluster quality filtering."
+            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation."
         ),
         "regions": {},
         "events": [],
@@ -2575,6 +2549,7 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "source_domains": cluster.get("source_domains", []),
                 "sources": cluster.get("sources", []),
                 "source_validation": cluster.get("source_validation") or cluster_source_validation(cluster),
+                "source_confidence": confidence_from_validation(cluster.get("source_validation") or cluster_source_validation(cluster)),
                 "raw_titles": cluster.get("raw_titles", []),
                 "search_terms": build_cluster_search_terms(cluster),
             })
