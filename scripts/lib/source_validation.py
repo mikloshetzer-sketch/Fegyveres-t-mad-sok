@@ -82,18 +82,30 @@ HIGH_VALUE_DOMAINS_HINTS = [
     "thehindu",
     "internazionale",
     "themoscowtimes",
+    "guardian",
+    "cnn",
 ]
 
 GENERIC_LOCATION_WORDS = {
     "general", "unknown", "oblast", "province", "region", "district",
     "misto", "autonomna", "respublika", "republic", "governorate",
-    "state", "city", "area", "county", "territory", "strip"
+    "state", "city", "area", "county", "territory", "strip",
+    "capital", "north", "south", "east", "west", "central",
 }
 
 COUNTRY_WORDS = {
     "ukraine", "russia", "israel", "iran", "iraq", "syria", "lebanon",
-    "turkey", "türkiye", "serbia", "albania", "macedonia", "italy",
-    "poland", "romania", "hungary", "greece", "bulgaria"
+    "turkey", "türkiye", "turkiye", "serbia", "albania", "macedonia",
+    "italy", "poland", "romania", "hungary", "greece", "bulgaria",
+    "yemen", "gaza", "palestine", "jordan", "egypt"
+}
+
+ORG_ENTITY_WORDS = {
+    "hezbollah", "hamas", "isis", "daesh", "houthi", "houthis",
+    "idf", "irgc", "pkk", "ypg", "wagner", "taliban", "al-qaeda",
+    "qaeda", "islamic-state", "islamic state", "fatah", "pii",
+    "palestinian-islamic-jihad", "jihad", "militia", "militants",
+    "army", "police", "security-forces", "security forces"
 }
 
 LOCATION_ALIASES = {
@@ -118,6 +130,11 @@ LOCATION_ALIASES = {
     "tel aviv": ["tel-aviv", "telaviv", "tel aviv"],
     "west bank": ["west-bank", "west bank"],
     "gaza": ["gaza"],
+    "kerman": ["kerman"],
+    "jerusalem": ["jerusalem"],
+    "hebron": ["hebron"],
+    "ankara": ["ankara"],
+    "istanbul": ["istanbul"],
 }
 
 
@@ -155,7 +172,7 @@ def contains_domain_hint(domain, hints):
 
 
 def extract_years_from_url(url):
-    # Avoid false positives from long article ids like 131900345.
+    # Avoid false positives from long article IDs like 131900345.
     years = re.findall(r"(?<!\d)(19\d{2}|20\d{2})(?!\d)", str(url or ""))
     return sorted(set(years))
 
@@ -180,40 +197,72 @@ def extract_event_year(event_date):
     return match.group(1) if match else None
 
 
+def is_org_entity(term):
+    norm = normalize_plain_text(term)
+    dashed = norm.replace(" ", "-")
+    return norm in ORG_ENTITY_WORDS or dashed in ORG_ENTITY_WORDS
+
+
+def clean_location_candidate(value):
+    value = normalize_plain_text(value)
+    if not value:
+        return ""
+
+    if value in GENERIC_LOCATION_WORDS:
+        return ""
+
+    if value in COUNTRY_WORDS:
+        return ""
+
+    if is_org_entity(value):
+        return ""
+
+    return value
+
+
 def make_location_terms(event_location=None, event_country=None):
     """
     Build dynamic location terms from the event itself.
 
-    This avoids manually maintaining a world city list. The first part of the
-    location is treated as the primary place, while country-only matches are
-    treated as weak support.
+    Important:
+    - The first GDELT location part is not always a city. Sometimes it is an actor
+      or organization, for example "Hezbollah, Kerman, Iran".
+    - Organization names are therefore removed from location terms.
+    - If the first part is removed, the next usable part becomes the primary location.
     """
 
     location = str(event_location or "")
     country = str(event_country or "")
 
-    parts = [normalize_plain_text(p) for p in location.split(",") if normalize_plain_text(p)]
+    raw_parts = [normalize_plain_text(p) for p in location.split(",") if normalize_plain_text(p)]
     country_norm = normalize_plain_text(country)
+
+    usable_parts = []
+    org_parts = []
+
+    for part in raw_parts:
+        cleaned = clean_location_candidate(part)
+        if cleaned:
+            usable_parts.append(cleaned)
+        elif is_org_entity(part):
+            org_parts.append(part)
 
     primary_terms = []
     secondary_terms = []
     country_terms = []
 
-    if parts:
-        primary = parts[0]
-        if primary and primary not in GENERIC_LOCATION_WORDS and primary not in COUNTRY_WORDS:
-            primary_terms.append(primary)
+    if usable_parts:
+        primary_terms.append(usable_parts[0])
 
-    for part in parts[1:]:
-        tokens = [t for t in part.split() if len(t) >= 4 and t not in GENERIC_LOCATION_WORDS]
+    for part in usable_parts[1:]:
+        tokens = [t for t in part.split() if len(t) >= 4 and clean_location_candidate(t)]
+
         cleaned = " ".join(tokens).strip()
-
-        if cleaned and cleaned not in COUNTRY_WORDS:
+        if cleaned:
             secondary_terms.append(cleaned)
 
         for token in tokens:
-            if token not in COUNTRY_WORDS and token not in GENERIC_LOCATION_WORDS:
-                secondary_terms.append(token)
+            secondary_terms.append(token)
 
     if country_norm:
         for token in country_norm.split():
@@ -232,6 +281,7 @@ def make_location_terms(event_location=None, event_country=None):
         "primary": sorted(set(expanded_primary)),
         "secondary": sorted(set(expanded_secondary)),
         "country": sorted(set(country_terms)),
+        "removed_org_entities": sorted(set(org_parts)),
     }
 
 
@@ -243,8 +293,10 @@ def term_in_text(term, text):
     dashed = term.replace(" ", "-")
     compact = term.replace(" ", "")
 
+    text_plain = text.replace("-", " ")
+
     return (
-        term in text.replace("-", " ")
+        term in text_plain
         or dashed in text
         or compact in text.replace("-", "")
     )
@@ -252,14 +304,12 @@ def term_in_text(term, text):
 
 def location_match(url, event_location=None, event_country=None):
     text = normalize_url_text(url)
-    text_plain = text.replace("-", " ")
     terms = make_location_terms(event_location, event_country)
 
     primary_hits = [t for t in terms["primary"] if term_in_text(t, text)]
     secondary_hits = [t for t in terms["secondary"] if term_in_text(t, text)]
     country_hits = [t for t in terms["country"] if term_in_text(t, text)]
 
-    # If no useful location was extracted, do not block the source.
     if not terms["primary"] and not terms["secondary"]:
         return {
             "match": True,
@@ -282,11 +332,21 @@ def location_match(url, event_location=None, event_country=None):
             "terms": terms,
         }
 
-    # Secondary administrative matches can support an event if country is also present.
     if secondary_hits and country_hits:
         return {
             "match": True,
             "level": "secondary_country",
+            "primary_hits": primary_hits,
+            "secondary_hits": secondary_hits,
+            "country_hits": country_hits,
+            "required": True,
+            "terms": terms,
+        }
+
+    if country_hits:
+        return {
+            "match": True,
+            "level": "country_only",
             "primary_hits": primary_hits,
             "secondary_hits": secondary_hits,
             "country_hits": country_hits,
@@ -303,6 +363,29 @@ def location_match(url, event_location=None, event_country=None):
         "required": True,
         "terms": terms,
     }
+
+
+def is_location_strong_enough(location_result, incident_hits, is_high_value):
+    """
+    Three-level location logic:
+    1. primary / secondary_country = strong enough
+    2. country_only = accepted only with stronger incident evidence or high-value source
+    3. missing = rejected
+    """
+
+    level = location_result.get("level")
+
+    if level in {"not_required", "primary", "secondary_country"}:
+        return True
+
+    if level == "country_only":
+        if len(incident_hits) >= 3:
+            return True
+        if len(incident_hits) >= 2 and is_high_value:
+            return True
+        return False
+
+    return False
 
 
 def classify_source_url(url, event_location=None, event_country=None, event_date=None):
@@ -331,6 +414,7 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
 
     is_high_value = contains_domain_hint(domain, HIGH_VALUE_DOMAINS_HINTS)
     is_low_value = domain in LOW_VALUE_DOMAINS
+    location_ok = is_location_strong_enough(loc, incident_hits, is_high_value)
 
     accepted = False
     reason = "no concrete incident indicator in URL"
@@ -344,7 +428,7 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
     elif hard_reject_hits and (not event_year or event_year not in text):
         reason = "historical or archive signal in URL"
 
-    elif loc["required"] and not loc["match"]:
+    elif not location_ok:
         reason = "location mismatch"
 
     elif len(noise_hits) >= 2 and len(incident_hits) <= 1:
@@ -355,16 +439,19 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
 
     elif len(incident_hits) >= 2 and not hard_reject_hits:
         accepted = True
-        reason = "URL contains multiple concrete incident indicators and matches event location"
+        if loc.get("level") == "country_only":
+            reason = "URL contains strong incident indicators and country-level location match"
+        else:
+            reason = "URL contains multiple concrete incident indicators and matches event location"
 
     elif len(incident_hits) >= 2 and hard_reject_hits:
         reason = "incident terms appear in historical/archive context"
 
-    elif len(incident_hits) == 1 and is_high_value and not noise_hits and not hard_reject_hits:
+    elif len(incident_hits) == 1 and is_high_value and not noise_hits and not hard_reject_hits and loc.get("level") != "country_only":
         accepted = True
         reason = "high-value source with concrete incident indicator and location match"
 
-    elif len(incident_hits) == 1 and not noise_hits and not hard_reject_hits:
+    elif len(incident_hits) == 1 and not noise_hits and not hard_reject_hits and loc.get("level") not in {"country_only", "missing"}:
         accepted = True
         reason = "URL contains concrete incident indicator and location match"
 
@@ -493,4 +580,5 @@ def confidence_from_validation(source_validation):
         return "Low"
 
     return "Rejected"
+
 
