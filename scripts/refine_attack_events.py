@@ -1,23 +1,22 @@
 import json
 import re
-import time
 from pathlib import Path
 from html import unescape
 from urllib.request import Request, urlopen
 from urllib.parse import urlparse
 from datetime import datetime
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
 
-INPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_live.geojson"
-OUTPUT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_refined.geojson"
-AUDIT_FILE = BASE_DIR / "docs" / "data" / "attacks_2026_refined_audit.json"
+SELECTED_EVENTS_FILE = BASE_DIR / "docs" / "reports" / "biweekly" / "selected-events" / "latest-selected-events.json"
+OUTPUT_SELECTED_EVENTS_FILE = BASE_DIR / "docs" / "reports" / "biweekly" / "selected-events" / "latest-selected-events-refined.json"
+AUDIT_FILE = BASE_DIR / "docs" / "reports" / "biweekly" / "selected-events" / "latest-selected-events-refinement-audit.json"
 
-MAX_SOURCES_TO_CHECK = 8
-MIN_VALID_SOURCES = 2
-HTTP_TIMEOUT = 10
-SLEEP_BETWEEN_REQUESTS = 0.35
+MAX_SOURCES_TO_CHECK_PER_EVENT = 4
+HTTP_TIMEOUT = 4
+MAX_WORKERS = 8
 
 
 SECURITY_TERMS = [
@@ -28,12 +27,12 @@ SECURITY_TERMS = [
     "terror", "terrorist", "isis", "daesh", "hamas", "hezbollah", "idf",
     "police", "security forces", "sabotage", "hostage", "militant",
     "evacuated", "intercepted", "downed", "shot down", "firefight",
-    "armed", "arson", "detained", "arrested"
+    "armed", "arson", "detained", "arrested", "explosive", "casualties"
 ]
 
 WEAK_SECURITY_TERMS = [
     "war", "military", "army", "nato", "government", "president",
-    "minister", "summit", "sanctions"
+    "minister", "summit", "sanctions", "frontline", "conflict"
 ]
 
 NOISE_TERMS = [
@@ -61,7 +60,8 @@ HIGH_VALUE_DOMAINS_HINTS = [
     "reuters", "apnews", "associatedpress", "afp", "bbc", "dw.com",
     "euronews", "france24", "aljazeera", "kyivpost", "kyivindependent",
     "jpost", "timesofisrael", "ynet", "dailysabah", "interfax",
-    "xinhua", "aa.com.tr", "arabnews"
+    "xinhua", "aa.com.tr", "arabnews", "themoscowtimes", "rte.ie",
+    "globalsecurity", "al-monitor"
 ]
 
 
@@ -84,13 +84,13 @@ def fetch_html(url):
     request = Request(
         url,
         headers={
-            "User-Agent": "ToresvonalakMonitor/1.0 source refinement; public data only",
+            "User-Agent": "ToresvonalakMonitor/2.0 selected-event-refinement; public data only",
             "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
         },
     )
 
     with urlopen(request, timeout=HTTP_TIMEOUT) as response:
-        raw = response.read(500_000)
+        raw = response.read(350_000)
         return raw.decode("utf-8", errors="replace")
 
 
@@ -105,8 +105,10 @@ def extract_meta(html):
     desc_patterns = [
         r'<meta[^>]+name=["\']description["\'][^>]+content=["\'](.*?)["\']',
         r'<meta[^>]+property=["\']og:description["\'][^>]+content=["\'](.*?)["\']',
+        r'<meta[^>]+name=["\']twitter:description["\'][^>]+content=["\'](.*?)["\']',
         r'<meta[^>]+content=["\'](.*?)["\'][^>]+name=["\']description["\']',
         r'<meta[^>]+content=["\'](.*?)["\'][^>]+property=["\']og:description["\']',
+        r'<meta[^>]+content=["\'](.*?)["\'][^>]+name=["\']twitter:description["\']',
     ]
 
     for pattern in desc_patterns:
@@ -118,20 +120,8 @@ def extract_meta(html):
     return title, description
 
 
-def inspect_source(url):
+def classify_source(url, title, description, status, error):
     domain = source_domain(url)
-
-    try:
-        html = fetch_html(url)
-        title, description = extract_meta(html)
-        status = "ok"
-        error = None
-    except Exception as exc:
-        title = ""
-        description = ""
-        status = "error"
-        error = str(exc)
-
     text = f"{title} {description}".lower()
 
     security_hits = [term for term in SECURITY_TERMS if term in text]
@@ -180,98 +170,181 @@ def inspect_source(url):
     }
 
 
-def refine_feature(feature):
-    props = feature.get("properties", {})
-    sources = props.get("sources") or []
+def inspect_source(url):
+    try:
+        html = fetch_html(url)
+        title, description = extract_meta(html)
+        status = "ok"
+        error = None
+    except Exception as exc:
+        title = ""
+        description = ""
+        status = "error"
+        error = str(exc)
 
-    inspected = []
-    valid_sources = []
+    return classify_source(url, title, description, status, error)
 
-    for url in sources[:MAX_SOURCES_TO_CHECK]:
-        result = inspect_source(url)
-        inspected.append(result)
 
-        if result["accepted"]:
-            valid_sources.append(url)
+def confidence_from_valid_sources(valid_count, checked_count):
+    if valid_count >= 4:
+        return "High"
+    if valid_count >= 2:
+        return "Medium"
+    if valid_count == 1:
+        return "Low"
+    if checked_count == 0:
+        return "No sources checked"
+    return "Rejected"
 
-        time.sleep(SLEEP_BETWEEN_REQUESTS)
 
-    valid_count = len(valid_sources)
-    inspected_count = len(inspected)
+def collect_sources_to_check(events):
+    tasks = []
+    seen = set()
 
-    refined_props = dict(props)
-    refined_props["sources_original_count"] = len(sources)
-    refined_props["sources_checked_count"] = inspected_count
-    refined_props["sources_valid_count"] = valid_count
-    refined_props["sources_rejected_count"] = inspected_count - valid_count
-    refined_props["sources"] = valid_sources
-    refined_props["sources_count"] = valid_count
+    for event in events:
+        sources = event.get("sources") or event.get("original_sources") or []
 
-    if valid_count >= 5:
-        confidence = "High"
-    elif valid_count >= MIN_VALID_SOURCES:
-        confidence = "Medium"
-    elif valid_count == 1:
-        confidence = "Low"
-    else:
-        confidence = "Rejected"
+        for url in sources[:MAX_SOURCES_TO_CHECK_PER_EVENT]:
+            if not url or not str(url).startswith("http"):
+                continue
 
-    refined_props["refined_confidence"] = confidence
-    refined_props["refinement_method"] = "source-title-meta-security-filter-v1"
+            if url not in seen:
+                seen.add(url)
+                tasks.append(url)
 
-    refined_feature = {
-        "type": feature.get("type", "Feature"),
-        "geometry": feature.get("geometry"),
-        "properties": refined_props,
-    }
+    return tasks
+
+
+def inspect_sources_parallel(urls):
+    results = {}
+
+    if not urls:
+        return results
+
+    with ThreadPoolExecutor(max_workers=MAX_WORKERS) as executor:
+        future_to_url = {executor.submit(inspect_source, url): url for url in urls}
+
+        for future in as_completed(future_to_url):
+            url = future_to_url[future]
+
+            try:
+                results[url] = future.result()
+            except Exception as exc:
+                results[url] = classify_source(
+                    url=url,
+                    title="",
+                    description="",
+                    status="error",
+                    error=str(exc),
+                )
+
+    return results
+
+
+def refine_event(event, inspected_by_url):
+    sources = event.get("sources") or event.get("original_sources") or []
+    checked_urls = [
+        url for url in sources[:MAX_SOURCES_TO_CHECK_PER_EVENT]
+        if url and str(url).startswith("http")
+    ]
+
+    inspected_sources = []
+    accepted_sources = []
+
+    for url in checked_urls:
+        result = inspected_by_url.get(url)
+
+        if not result:
+            result = classify_source(
+                url=url,
+                title="",
+                description="",
+                status="error",
+                error="source was not inspected",
+            )
+
+        inspected_sources.append(result)
+
+        if result.get("accepted"):
+            accepted_sources.append(url)
+
+    valid_count = len(accepted_sources)
+    checked_count = len(inspected_sources)
+    confidence = confidence_from_valid_sources(valid_count, checked_count)
+
+    refined_event = dict(event)
+    refined_event["sources_original_count"] = len(sources)
+    refined_event["sources_checked_count"] = checked_count
+    refined_event["sources_valid_count"] = valid_count
+    refined_event["sources_rejected_count"] = checked_count - valid_count
+    refined_event["sources_refined"] = accepted_sources
+    refined_event["refinement_confidence"] = confidence
+    refined_event["refinement_method"] = "selected-event-source-title-meta-security-filter-v2-parallel"
 
     audit_item = {
-        "date": props.get("date"),
-        "location": props.get("location"),
-        "attack_type": props.get("attack_type"),
+        "region": event.get("region"),
+        "rank": event.get("rank"),
+        "title": event.get("title"),
+        "date": event.get("date"),
+        "country": event.get("country"),
+        "location": event.get("location"),
+        "event_type": event.get("event_type"),
         "original_sources_count": len(sources),
+        "checked_sources_count": checked_count,
         "valid_sources_count": valid_count,
         "confidence": confidence,
-        "kept": valid_count >= MIN_VALID_SOURCES,
-        "inspected_sources": inspected,
+        "inspected_sources": inspected_sources,
     }
 
-    return refined_feature, audit_item
+    return refined_event, audit_item
 
 
 def main():
-    if not INPUT_FILE.exists():
-        raise FileNotFoundError(f"Missing input file: {INPUT_FILE}")
+    if not SELECTED_EVENTS_FILE.exists():
+        raise FileNotFoundError(f"Missing selected events file: {SELECTED_EVENTS_FILE}")
 
-    data = json.loads(INPUT_FILE.read_text(encoding="utf-8"))
-    features = data.get("features", [])
+    selected = json.loads(SELECTED_EVENTS_FILE.read_text(encoding="utf-8"))
+    events = selected.get("events", [])
 
-    refined_features = []
+    urls_to_check = collect_sources_to_check(events)
+
+    print(f"Selected events: {len(events)}")
+    print(f"Unique source URLs to inspect: {len(urls_to_check)}")
+    print(f"Workers: {MAX_WORKERS}, timeout: {HTTP_TIMEOUT}s, max sources/event: {MAX_SOURCES_TO_CHECK_PER_EVENT}")
+
+    inspected_by_url = inspect_sources_parallel(urls_to_check)
+
+    refined_events = []
+    audit_items = []
+
+    for event in events:
+        refined_event, audit_item = refine_event(event, inspected_by_url)
+        refined_events.append(refined_event)
+        audit_items.append(audit_item)
+
+    output = dict(selected)
+    output["generated_at"] = selected.get("generated_at")
+    output["refined_at"] = datetime.utcnow().isoformat() + "Z"
+    output["refinement_method"] = "selected-event-source-title-meta-security-filter-v2-parallel"
+    output["events"] = refined_events
+
     audit = {
         "generated_at": datetime.utcnow().isoformat() + "Z",
-        "input_file": str(INPUT_FILE.relative_to(BASE_DIR)),
-        "output_file": str(OUTPUT_FILE.relative_to(BASE_DIR)),
-        "method": "Keep only events with at least two source URLs whose title/meta description indicates a concrete security incident.",
-        "input_feature_count": len(features),
-        "kept_feature_count": 0,
-        "rejected_feature_count": 0,
-        "items": [],
+        "input_file": str(SELECTED_EVENTS_FILE.relative_to(BASE_DIR)),
+        "output_file": str(OUTPUT_SELECTED_EVENTS_FILE.relative_to(BASE_DIR)),
+        "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
+        "event_count": len(events),
+        "unique_sources_checked": len(urls_to_check),
+        "max_sources_per_event": MAX_SOURCES_TO_CHECK_PER_EVENT,
+        "http_timeout_seconds": HTTP_TIMEOUT,
+        "max_workers": MAX_WORKERS,
+        "items": audit_items,
     }
 
-    for feature in features:
-        refined_feature, audit_item = refine_feature(feature)
-        audit["items"].append(audit_item)
+    OUTPUT_SELECTED_EVENTS_FILE.parent.mkdir(parents=True, exist_ok=True)
 
-        if audit_item["kept"]:
-            refined_features.append(refined_feature)
-
-    audit["kept_feature_count"] = len(refined_features)
-    audit["rejected_feature_count"] = len(features) - len(refined_features)
-
-    OUTPUT_FILE.parent.mkdir(parents=True, exist_ok=True)
-
-    OUTPUT_FILE.write_text(
-        json.dumps({"type": "FeatureCollection", "features": refined_features}, ensure_ascii=False, separators=(",", ":")),
+    OUTPUT_SELECTED_EVENTS_FILE.write_text(
+        json.dumps(output, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
@@ -280,11 +353,14 @@ def main():
         encoding="utf-8",
     )
 
-    print(f"Refined events created: {OUTPUT_FILE}")
+    SELECTED_EVENTS_FILE.write_text(
+        json.dumps(output, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+
+    print(f"Selected events refined: {OUTPUT_SELECTED_EVENTS_FILE}")
     print(f"Audit created: {AUDIT_FILE}")
-    print(f"Input features: {len(features)}")
-    print(f"Kept features: {len(refined_features)}")
-    print(f"Rejected features: {len(features) - len(refined_features)}")
+    print("Refinement completed.")
 
 
 if __name__ == "__main__":
