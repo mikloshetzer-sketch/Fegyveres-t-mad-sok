@@ -1171,7 +1171,7 @@ def build_top_events_for_region(region_name, events):
         <div class="region-header">
             <div>
                 <h2>{escape(region_name)}</h2>
-                <p>Top 5 selected as quality-filtered event clusters: grouped by date, country, normalized location and event type, filtered by conflict relevance, geographic consistency and source quality, then ranked by strategic score.</p>
+                <p>Top 5 selected as source-validated event clusters: grouped by date, country, normalized location and event type, filtered by URL-level incident evidence, geographic consistency and source quality, then ranked by strategic score.</p>
             </div>
             <span class="region-count">{len(events)} events</span>
         </div>
@@ -2078,6 +2078,157 @@ QUALITY_ACTOR_TERMS = [
 ]
 
 
+SOURCE_INCIDENT_TERMS = [
+    "attack", "attacks", "strike", "strikes", "drone", "drones", "uav",
+    "missile", "rocket", "airstrike", "shelling", "explosion", "blast",
+    "bombing", "ied", "shooting", "raid", "raids", "clash", "clashes",
+    "ambush", "killed", "kill", "injured", "wounded", "terror", "terrorist",
+    "isis", "daesh", "hamas", "hezbollah", "idf", "police", "security-forces",
+    "sabotage", "hostage", "militant", "detained", "arrested", "arson",
+    "torched", "set-ablaze", "fire", "suicide", "intercepted", "downed",
+    "shot-down", "casualties", "murder", "massacre", "violence",
+]
+
+SOURCE_NOISE_TERMS = [
+    "opinion", "oped", "op-ed", "explainer", "analysis", "commentary",
+    "history", "historical", "dispute", "row", "election", "speech",
+    "award", "honour", "honor", "medal", "ceremony", "interview",
+    "movie", "film", "netflix", "book", "fashion", "celebrity", "lifestyle",
+    "weather", "heatwave", "sports", "football", "basketball", "tourist",
+    "travel", "music", "entertainment", "resort", "luxury", "kushner",
+]
+
+SOURCE_WEAK_TERMS = [
+    "war", "military", "army", "nato", "government", "president", "minister",
+    "summit", "sanctions", "conflict", "geopolitical", "politics",
+]
+
+SOURCE_REJECT_YEAR_PATTERNS = [
+    "/2010/", "/2011/", "/2012/", "/2013/", "/2014/", "/2015/",
+    "/2016/", "/2017/", "/2018/", "/2019/", "/2020/", "/2021/",
+    "/2022/", "/2023/", "/2024/", "/2025/",
+]
+
+
+def source_evidence_text(url):
+    value = clean_text(url).lower()
+    value = re.sub(r"https?://", " ", value)
+    value = re.sub(r"www\.", " ", value)
+    value = re.sub(r"[^a-z0-9]+", " ", value)
+    return re.sub(r"\s+", " ", value).strip()
+
+
+def source_has_rejected_year(url, expected_year="2026"):
+    value = clean_text(url).lower()
+    if expected_year not in value and any(pattern in value for pattern in SOURCE_REJECT_YEAR_PATTERNS):
+        return True
+    return False
+
+
+def classify_source_url_fast(url, expected_year="2026"):
+    """
+    Fast pre-filter used inside the Top 5 selection.
+    It does not open the web page. It only reads the URL/domain/slug.
+    The slower refine_attack_events.py later performs title/meta validation.
+    """
+
+    text = source_evidence_text(url)
+
+    incident_hits = [term for term in SOURCE_INCIDENT_TERMS if term.replace("-", " ") in text or term in text]
+    noise_hits = [term for term in SOURCE_NOISE_TERMS if term.replace("-", " ") in text or term in text]
+    weak_hits = [term for term in SOURCE_WEAK_TERMS if term.replace("-", " ") in text or term in text]
+
+    if source_has_rejected_year(url, expected_year=expected_year):
+        return {
+            "url": url,
+            "accepted": False,
+            "reason": "old article year in URL",
+            "incident_hits": incident_hits[:8],
+            "noise_hits": noise_hits[:8],
+            "weak_hits": weak_hits[:8],
+        }
+
+    if len(noise_hits) >= 2 and len(incident_hits) < 2:
+        accepted = False
+        reason = "topic noise dominates URL"
+    elif len(incident_hits) >= 2:
+        accepted = True
+        reason = "URL contains multiple concrete incident indicators"
+    elif len(incident_hits) == 1 and not noise_hits:
+        accepted = True
+        reason = "URL contains concrete incident indicator"
+    elif len(weak_hits) >= 2 and not incident_hits:
+        accepted = False
+        reason = "only broad security context in URL"
+    else:
+        accepted = False
+        reason = "no concrete incident indicator in URL"
+
+    return {
+        "url": url,
+        "accepted": accepted,
+        "reason": reason,
+        "incident_hits": incident_hits[:8],
+        "noise_hits": noise_hits[:8],
+        "weak_hits": weak_hits[:8],
+    }
+
+
+def cluster_source_validation(cluster, max_sources=12):
+    sources = cluster.get("sources", []) or []
+    expected_year = str(cluster.get("date", "2026"))[:4] or "2026"
+    checked = []
+
+    for src in sources[:max_sources]:
+        checked.append(classify_source_url_fast(src, expected_year=expected_year))
+
+    valid_sources = [item["url"] for item in checked if item.get("accepted")]
+    rejected_sources = [item["url"] for item in checked if not item.get("accepted")]
+    checked_count = len(checked)
+    valid_count = len(valid_sources)
+    valid_ratio = valid_count / checked_count if checked_count else 0
+
+    if valid_count >= 4 and valid_ratio >= 0.35:
+        label = "High"
+    elif valid_count >= 2 and valid_ratio >= 0.25:
+        label = "Medium"
+    elif valid_count >= 1:
+        label = "Low"
+    else:
+        label = "Rejected"
+
+    return {
+        "checked_count": checked_count,
+        "valid_count": valid_count,
+        "rejected_count": len(rejected_sources),
+        "valid_ratio": round(valid_ratio, 3),
+        "label": label,
+        "valid_sources": valid_sources,
+        "rejected_sources": rejected_sources,
+        "checked_sources": checked,
+    }
+
+
+def is_source_validated_cluster(cluster):
+    validation = cluster_source_validation(cluster)
+    cluster["source_validation"] = validation
+
+    if validation["valid_count"] >= 2:
+        return True
+
+    # Keep one-source items only when the existing quality score is not weak.
+    if validation["valid_count"] == 1 and calculate_cluster_quality(cluster) >= 60:
+        return True
+
+    return False
+
+
+def source_validation_sort_bonus(cluster):
+    validation = cluster.get("source_validation") or cluster_source_validation(cluster)
+    cluster["source_validation"] = validation
+    return min(validation["valid_count"], 5) * 6 + int(validation["valid_ratio"] * 10)
+
+
 def cluster_text_blob(cluster):
     parts = [
         cluster.get("title", ""),
@@ -2208,8 +2359,9 @@ def is_valid_event_cluster(cluster, min_quality=45):
 def cluster_sort_score(cluster, context):
     strategic_score = score_event_cluster(cluster, context)
     quality_score = calculate_cluster_quality(cluster)
+    source_bonus = source_validation_sort_bonus(cluster)
 
-    return (strategic_score * 0.60) + (quality_score * 0.40)
+    return (strategic_score * 0.52) + (quality_score * 0.30) + (source_bonus * 0.18)
 
 
 def select_top_event_clusters(events, limit=5):
@@ -2218,10 +2370,17 @@ def select_top_event_clusters(events, limit=5):
 
     quality_filtered = [
         cluster for cluster in clusters
-        if is_valid_event_cluster(cluster, min_quality=45)
+        if is_valid_event_cluster(cluster, min_quality=40)
     ]
 
-    candidate_clusters = quality_filtered if quality_filtered else clusters if quality_filtered else clusters
+    # Fast source validation happens before the Top 5 is finalized.
+    # This prevents broad political/topic clusters from entering the final regional list.
+    source_validated = [
+        cluster for cluster in quality_filtered
+        if is_source_validated_cluster(cluster)
+    ]
+
+    candidate_clusters = source_validated if source_validated else quality_filtered
 
     scored = sorted(
         candidate_clusters,
@@ -2253,14 +2412,17 @@ def select_top_event_clusters(events, limit=5):
         if len(selected) >= limit:
             return selected
 
-    for cluster in scored:
-        if cluster in selected:
-            continue
+    # Controlled fallback: still fill the region if possible, but do not bring back fully rejected source clusters first.
+    fallback_pool = [
+        cluster for cluster in scored
+        if cluster not in selected and (cluster.get("source_validation", {}).get("label") != "Rejected")
+    ]
 
-        selected.append(cluster)
-
-        if len(selected) >= limit:
-            break
+    if len(selected) < limit:
+        for cluster in fallback_pool:
+            selected.append(cluster)
+            if len(selected) >= limit:
+                break
 
     return selected
 
@@ -2368,7 +2530,7 @@ def export_selected_events(start_day, end_day, events_by_region):
         },
         "method": (
             "Regional Top 5 selected from refined event clusters. "
-            "Input comes from attacks_2026_refined.geojson. Clusters are grouped by date, country, normalized location and event type. "
+            "Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. "
             "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity and cluster quality filtering."
         ),
         "regions": {},
@@ -2407,6 +2569,7 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "source_domain_count": cluster.get("source_domain_count"),
                 "source_domains": cluster.get("source_domains", []),
                 "sources": cluster.get("sources", []),
+                "source_validation": cluster.get("source_validation") or cluster_source_validation(cluster),
                 "raw_titles": cluster.get("raw_titles", []),
                 "search_terms": build_cluster_search_terms(cluster),
             })
