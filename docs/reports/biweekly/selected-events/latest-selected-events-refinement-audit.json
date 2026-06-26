@@ -1,0 +1,1378 @@
+{
+  "generated_at": "2026-06-26T11:51:09.138635Z",
+  "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
+  "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
+  "event_count": 17,
+  "unique_sources_checked": 66,
+  "max_sources_per_event": 4,
+  "http_timeout_seconds": 4,
+  "max_workers": 8,
+  "items": [
+    {
+      "region": "Európai Unió",
+      "rank": 1,
+      "title": "Tömeges erőszak – Warsaw, (PL67), Poland",
+      "date": "2026-06-23",
+      "country": "Poland",
+      "location": "Warsaw, (PL67), Poland",
+      "event_type": "Tömeges erőszak",
+      "original_sources_count": 10,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
+          "description": "Poland revokes Zelenskyy's state honor over dispute involving controversial World War II-era Ukrainian nationalist group | Anadolu",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "explainer",
+            "historical",
+            "dispute",
+            "honor"
+          ]
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/why-are-poland-and-ukraine-at-odds-about-their-history/articleshow/131904925.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Why are Poland and Ukraine at odds about their history? - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Why are Poland and Ukraine at odds about their history? - The Economic Times <meta content=",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "history"
+          ]
+        },
+        {
+          "url": "https://en.philenews.com/international/poland-ukraine-upa-army-dispute/",
+          "domain": "en.philenews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Despite Poland being a firm ally of Ukraine in its war with Russia, the two nations are in dispute over Kyiv's renaming of an army unit after a nationalist force that massacred Poles during World War Two. Here's how their rival interpretations of history have soured relations: UKRAINIAN INSURGENT ARMY Polish President Karol Nawrocki stripped Ukrainian President Volodymyr Zelenskiy of the country's top honour on Friday, after Zelenskiy signed a decree recognising a Ukrainian combat unit's contribution to the fight against Russia by naming it after the Ukrainian Insurgent Army (UPA), angering many in Poland. During and after World War Two, when Ukraine belonged to the Soviet Union, the UPA fought against the Red Army, for a time allying itself with the Nazi German invaders, to seek Ukrainian independence. Ukraine says the naming of the unit carries no \"anti-Polish intent\" and was chosen by soldiers who wanted to commemorate others who had fought against Moscow. But the UPA was also involved in the Volhynia massacres carried out by Ukrainian nationalists from 1943 to 1945, in which Warsaw says around 100,000 ethnic Poles were killed. Thousands of Ukrainians also died in reprisal killings. Polish historians view the massacres as a genocide intended to prevent a post-war Polish state claiming sovereignty over Ukrainian-majority areas that had been part of Poland between the two world wars. Kyiv rejects the term, saying that thousands of Ukrainians were also killed in what was a complex conflict. The events have been a bone of contention for decades, even as Poland has strongly backed Ukraine in its fight against Russia's invasion, taking in almost a million refugees and supplying weapons. In 1947, within the new borders established after World War Two, Poland forcibly relocated some 140,000 ethnic Ukrainians and people identifying as members of the small Lemko ethnic group from southeastern Poland to territories it had regained from Germany. The aim was to cut support for underground UPA groups in Poland, but the Ukrainian side considers it a crime of ethnic cleansing. DEMANDS FOR EXHUMATIONS IN UKRAINE Successive Polish governments have, with limited success, demanded access to the sites in western Ukraine that were once part of Poland where UPA massacres took place. But last year Poland began exhuming the remains of Poles killed in the former Polish village of Puzhnyky. Last week, Kyiv also gave permission for more exhumations in Volhynia's Liuboml district. NATIONALIST PRESIDENT NAWROCKI Nawrocki, a conservative nationalist historian inspired by U.S. President Donald Trump, has repeatedly accused Kyiv of stalling on requests for exhumations and urged it to denounce the Volhynia massacre as genocide. Nawrocki has tapped into weariness with the large number of Ukrainians in Poland and, during his campaign, vowed not to ratify any Ukrainian accession to NATO to avoid provoking Russia, departing from previous Polish policy and angering Kyiv. Critics have accused Nawrocki of promoting an approach to history teaching that whitewashes difficult parts of Poland's past. | en.philenews.com",
+          "description": "Poland has stripped Ukrainian President Zelenskiy of its top honour after Kyiv named a military unit after the controversial Ukrainian Insurgent Army, deepening tensions over historical interpretation.",
+          "accepted": false,
+          "reason": "rejected because topic-noise terms dominate",
+          "security_hits": [
+            "ied",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war",
+            "military",
+            "army",
+            "nato",
+            "government",
+            "president",
+            "conflict"
+          ],
+          "noise_hits": [
+            "history",
+            "historical",
+            "dispute",
+            "honour",
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/poland-ukraine-history-russia-wwii-b3000355.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "The bitter historical feud between Ukraine and Poland amid war against Russia | The Independent",
+          "description": "Polish President Karol Nawrocki stripped Ukrainian President Volodymyr Zelensky of the country",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "president"
+          ],
+          "noise_hits": [
+            "historical"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Európai Unió",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Rome, Lazio, Italy",
+      "date": "2026-06-25",
+      "country": "Italy",
+      "location": "Rome, Lazio, Italy",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://theconversation.com/will-a-peace-deal-between-iran-and-the-us-hold-lessons-from-ancient-rome-and-persia-285966",
+          "domain": "theconversation.com",
+          "status": "ok",
+          "error": null,
+          "title": "Will a peace deal between Iran and the US hold? Lessons from ancient Rome and Persia",
+          "description": "After dozens of wars between the two ancient empires of Rome and Persia, peace deals often failed to solve problems – and sometimes made the situation worse.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/india/if-you-ran-in-new-delhi-youd-win-a-million-votes-italian-pm-giorgia-meloni-recalls-2023-india-visit/articleshow/131989837.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "'If you ran in New Delhi, you'd win a million votes': Italian PM Giorgia Meloni recalls 2023 India visit - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> 'If you ran in New Delhi, you'd win a million votes': Italian PM Giorgia Meloni recalls 2023 India visit - The Economic Times <meta content=",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aleteia.org/2026/06/25/mel-gibsons-resurrection-of-christ-gets-new-release-date/",
+          "domain": "aleteia.org",
+          "status": "ok",
+          "error": null,
+          "title": "Mel Gibson’s ‘Resurrection of Christ’ gets new release date",
+          "description": "Mel Gibson follows up highly successful 'Passion\"' film with next part of the biblical story, to be released in 2027 and 2028.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "film",
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.tribuneindia.com/news/world/if-you-ran-in-new-delhi-youd-win-million-votes-giorgia-meloni-recalls-2023-india-visit/",
+          "domain": "www.tribuneindia.com",
+          "status": "ok",
+          "error": null,
+          "title": "'If you ran in New Delhi, you'd win million votes': Giorgia Meloni recalls 2023 India visit - The Tribune",
+          "description": "Meloni visited India twice in 2023, first for the 8th edition of",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 1,
+      "title": "Robbantás / IED – Odesa, Odesa Oblast, Ukraine",
+      "date": "2026-06-24",
+      "country": "Ukraine",
+      "location": "Odesa, Odesa Oblast, Ukraine",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
+          "domain": "www.floridastatesman.com",
+          "status": "ok",
+          "error": null,
+          "title": "Moscow shoots down dozens of drones, flights briefly halted",
+          "description": "Moscow authorities said that dozens of drones were shot down early on June 22, and flights at airports were briefly stopped, just days after Ukraine again struck the city’s oil refinery.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "drone",
+            "drones",
+            "shot down"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://neweasterneurope.eu/2026/05/07/building-trust-across-borders-rethinking-ukrainian-romanian-relations-in-a-changing-europe/",
+          "domain": "neweasterneurope.eu",
+          "status": "ok",
+          "error": null,
+          "title": "Building trust across borders: Rethinking Ukrainian–Romanian relations in a changing Europe - New Eastern Europe",
+          "description": "The support for Ukraine’s accession to the EU and NATO is the best Romanian foreign policy invention of the last few decades.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "nato"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn",
+          "domain": "www.bankingnews.gr",
+          "status": "ok",
+          "error": null,
+          "title": "Zelensky strategic blunder if he attacks Belarus or Crimean Bridge, Russia warns: Western Ukraine and Odesa will burn",
+          "description": "Zelensky strategic blunder if he attacks Belarus or Crimean Bridge, Russia warns: Western Ukraine and Odesa will burn",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.kyivpost.com/post/78794",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian Drone Shrapnel Kills 26-Year-Old Woman on Odesa Beach",
+          "description": "Regional authorities said a 39-year-old man was also wounded in the attack, while emergency crews continued assessing potential additional casualties along the Black Sea coast.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "kill",
+            "wounded",
+            "casualties"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 2,
+      "title": "Robbantás / IED – Kherson, Khersons'ka Oblast', Ukraine",
+      "date": "2026-06-25",
+      "country": "Ukraine",
+      "location": "Kherson, Khersons'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+          "domain": "news.antiwar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
+          "description": "Ukrainian forces launched another major drone attack on Russia on Wednesday that killed at least four people and knocked out power in Sevastopol, the largest city in Crimea. According to the Russian news agency TASS, two civilians were killed in Gorlovka, a town in the Russian-controlled Donetsk Oblast in eastern…",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "blast",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
+          "domain": "www.nbcnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
+          "description": "The operation was part of Ukraine’s aerial campaign targeting energy facilities and military industries that has intensified as Kyiv builds bigger and better long-range weapons.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "ied"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
+          "domain": "www.latimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers - Los Angeles Times",
+          "description": "Ukrainian forces have struck a major natural gas processing plant and two key satellite communications centers in Russia",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345",
+          "domain": "www.mirror.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Volodymyr Zelensky orders brutal move in bid to cripple Vladimir Putin’s attacks - The Mirror",
+          "description": "Volodymyr Zelensky said Russia is moving a significant part of its air defences to protect a handful of prime targets, including Moscow, as Ukraine’s long-range drones hammered sites",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "drones"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 3,
+      "title": "Tömeges erőszak – Volhynia, Ukraine, Ukraine",
+      "date": "2026-06-23",
+      "country": "Ukraine",
+      "location": "Volhynia, Ukraine, Ukraine",
+      "event_type": "Tömeges erőszak",
+      "original_sources_count": 10,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://aa.com.tr/en/eurasia/explainer-why-a-historical-dispute-is-driving-a-wedge-between-poland-ukraine/3975859",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "EXPLAINER – Why a historical dispute is driving a wedge between Poland, Ukraine",
+          "description": "Poland revokes Zelenskyy's state honor over dispute involving controversial World War II-era Ukrainian nationalist group | Anadolu",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "explainer",
+            "historical",
+            "dispute",
+            "honor"
+          ]
+        },
+        {
+          "url": "https://foreignpolicy.com/2026/06/23/ukraine-russia-poland-zelenksy-history-nazis-world-war-two/",
+          "domain": "foreignpolicy.com",
+          "status": "ok",
+          "error": null,
+          "title": "Warsaw, Kyiv, and the Ongoing Battle Over the Ukrainian Insurgent Army",
+          "description": "An ugly chapter of World War II history is straining relations between Warsaw and Kyiv.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "army"
+          ],
+          "noise_hits": [
+            "history"
+          ]
+        },
+        {
+          "url": "https://freerepublic.com/focus/f-news/4384857/posts",
+          "domain": "freerepublic.com",
+          "status": "ok",
+          "error": null,
+          "title": "Polish president strips Zelenskyy of Poland's highest state honour",
+          "description": "",
+          "accepted": false,
+          "reason": "low-value domain and weak incident evidence",
+          "security_hits": [],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": [
+            "honour"
+          ]
+        },
+        {
+          "url": "http://www.bgnes.com/politics/tusk-criticises-president-nawrocki-over-revoking-zelenskyy-s-order",
+          "domain": "www.bgnes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Tusk criticises president Nawrocki over revoking Zelenskyy’s order | BGNES",
+          "description": "Nawrocki’s decision quickly led to diplomatic tensions",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 4,
+      "title": "Robbantás / IED – Sumy, Sums'ka Oblast', Ukraine",
+      "date": "2026-06-25",
+      "country": "Ukraine",
+      "location": "Sumy, Sums'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+          "domain": "news.antiwar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
+          "description": "Ukrainian forces launched another major drone attack on Russia on Wednesday that killed at least four people and knocked out power in Sevastopol, the largest city in Crimea. According to the Russian news agency TASS, two civilians were killed in Gorlovka, a town in the Russian-controlled Donetsk Oblast in eastern…",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "blast",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.kyivpost.com/post/78908",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Child Injured as Russian Drones Strike Sumy, Debris Damages Homes and Cars",
+          "description": "A 13-year-old boy was injured during a Russian drone attack on Sumy, while falling debris damaged homes, cars and an industrial site, officials said.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "drone",
+            "drones",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.odnako.org/ukraine-huge-drone-attack-on-russia-555-shot-down-moscow-refinery-on-fire/",
+          "domain": "www.odnako.org",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine, huge drone attack on Russia: 555 shot down, Moscow refinery on fire",
+          "description": "Add the Gazzetta del Sud as a source Ukrainian forces launched one of the most massive air attacks on Russia since the beginning of the ... Read more",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "shot down"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.dailykos.com/stories/2026/6/24/800060142/community/1582/",
+          "domain": "www.dailykos.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Invasion Day 1,582: growing RU domestic gasoline and aviation fuel shortages - Daily Kos",
+          "description": "",
+          "accepted": false,
+          "reason": "low-value domain and weak incident evidence",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "row"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 5,
+      "title": "Robbantás / IED – Chornobyl, Kyivs'ka Oblast', Ukraine",
+      "date": "2026-06-22",
+      "country": "Ukraine",
+      "location": "Chornobyl, Kyivs'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 5,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://www.livemint.com/global/inside-the-daring-operation-to-avert-a-new-disaster-at-chornobyl-11782098294581.html",
+          "domain": "www.livemint.com",
+          "status": "ok",
+          "error": null,
+          "title": "Inside the daring operation to avert a new disaster at Chornobyl | Mint",
+          "description": "The battle to contain a fire at the site of the world’s worst nuclear disaster reveals a new danger on the front line of the war in Ukraine.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://en.interfax.com.ua/news/general/1178682.html",
+          "domain": "en.interfax.com.ua",
+          "status": "ok",
+          "error": null,
+          "title": "National Guard commander: Combat-tested guardsmen protect Chornobyl NPP 24/7",
+          "description": "Units of the National Guard with combat experience are on duty around the clock to protect Chornobyl Nuclear Power Plant (NPP), and the use of unmanned aerial vehicles is constantly being expanded, National Guard Commander Major General Oleksandr Pivnenko said.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://city.udn.com/2976/7210328?raid=7296532",
+          "domain": "city.udn.com",
+          "status": "ok",
+          "error": null,
+          "title": "俄烏戰爭現況：開欄文 - 時事論壇 - udn城市",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.miragenews.com/uk-osce-key-for-truth-accountability-1694119/",
+          "domain": "www.miragenews.com",
+          "status": "ok",
+          "error": null,
+          "title": "UK: OSCE Key for Truth &amp; Accountability | Mirage News",
+          "description": "Speaking at the Annual Security Review Conference (ASRC), Director of Defence and International Security, Ben Fender, reconfirms support for Ukraine",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Ankara, Turkey",
+      "date": "2026-06-25",
+      "country": "Turkey",
+      "location": "Ankara, Turkey",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://www.livemint.com/global/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-11782349188696.html",
+          "domain": "www.livemint.com",
+          "status": "ok",
+          "error": null,
+          "title": "A Turkish arms sale leads to a face-off between Trump and Congress | Mint",
+          "description": "The administration is expected to push for a rare override to get the deal through as the NATO summit in Ankara approaches.",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "nato",
+            "summit"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.hindustantimes.com/world-news/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-101782381713912.html",
+          "domain": "www.hindustantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "A Turkish Arms Sale Leads to a Face-Off Between Trump and Congress | World News",
+          "description": "The administration is expected to push for a rare override to get the deal through as the NATO summit in Ankara approaches. | World News",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "nato",
+            "summit"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.jpost.com/middle-east/article-900521",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey shifts from fueling conflict to brokering peace in Libya | The Jerusalem Post",
+          "description": "Turkish Intelligence Chief Ibrahim Kalin's meeting with Deputy Commander Saddam Haftar of the Libyan National Army marks a major about-face from previous antagonisms.",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "army",
+            "conflict"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
+          "domain": "newstodaynet.com",
+          "status": "ok",
+          "error": null,
+          "title": "One moment, please...",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Tirana, Tirane, Albania",
+      "date": "2026-06-25",
+      "country": "Albania",
+      "location": "Tirana, Tirane, Albania",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://theconversation.com/why-a-development-project-linked-to-donald-trumps-son-in-law-has-rocked-albania-285851",
+          "domain": "theconversation.com",
+          "status": "ok",
+          "error": null,
+          "title": "Why a development project linked to Donald Trump’s son-in-law has rocked Albania",
+          "description": "The protests have snowballed into an anti‑government movement that has become known as the ‘flamingo revolution’.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "government"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://tiranaexaminer.com/albanias-rama-rejects-criticism-of-kushner-linked-luxury-resort-plans/",
+          "domain": "tiranaexaminer.com",
+          "status": "ok",
+          "error": null,
+          "title": "Albania's Rama rejects criticism of Kushner-linked luxury resort plans – Tirana Examiner",
+          "description": "DPA Updated Wed, June 17, 2026 Albanian Prime Minister Edi Rama said protests against a planned luxury resort on the country’s Adriatic coast were based on misinformation, rejecting claims that protected land was being sold to investors linked to the family of US President Donald Trump. “The facts say that there is no deal ...",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "president",
+            "minister"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.kvnf.org/2026-06-16/protests-continue-against-albanias-government-over-a-kushner-linked-resort-project",
+          "domain": "www.kvnf.org",
+          "status": "ok",
+          "error": null,
+          "title": "Protests continue against Albania's government over a Kushner-linked resort project",
+          "description": "Plans to develop a luxury resort that has links to Jared Kushner and Ivanka Trump have prompted a growing protest movement against Albania's government.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "government"
+          ],
+          "noise_hits": [
+            "row"
+          ]
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/ivanka-trump-albania-island-protests-government-jared-kushner-b2996455.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Albanian protests sparked by Ivanka Trump’s private island plan grow into huge anti-government demonstration | The Independent",
+          "description": "As protests run into a sixteenth day in the Tirana, demonstrators grievances have swelled from environmental concerns to a demand for a change of government",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "government"
+          ],
+          "noise_hits": [
+            "row"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Istanbul, Turkey",
+      "date": "2026-06-25",
+      "country": "Turkey",
+      "location": "Istanbul, Turkey",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 1,
+      "confidence": "Low",
+      "inspected_sources": [
+        {
+          "url": "https://www.durangoherald.com/articles/shiite-muslims-mark-holy-day-of-ashoura-after-months-of-war-in-iran-and-lebanon/",
+          "domain": "www.durangoherald.com",
+          "status": "ok",
+          "error": null,
+          "title": "Shiite Muslims mark holy day of Ashoura after months of war in Iran and Lebanon - The Durango Herald",
+          "description": "BEIRUT (AP) — Shiite Muslims around the world on Thursday marked Ashoura, a holy day symbolizing sacrifice and martyrdom that holds special significance for many this year after months of war in Iran ...",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.nashvillescene.com/news/pithinthewind/racist-streamer-chud-builder-nashville-court-hearing/article_969f1b9f-997b-4cd2-9073-e2e5bda53b2f.html",
+          "domain": "www.nashvillescene.com",
+          "status": "ok",
+          "error": null,
+          "title": "Racist Streamer Faces Lower Broadway Charges in Court Hearing | Pith in the Wind | Nashville News | nashvillescene.com",
+          "description": "In custody for attempted Clarksville murder, Dalton",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://news.az/news/how-does-turkiye-approach-counterterrorism",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids",
+          "domain": "dailypioneer.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey Detains Over 200 Suspects in Anti-Terror Raids Ahead of NATO Summit | Daily Pioneer",
+          "description": "Turkey detained over 200 suspects in anti-terror raids in Ankara ahead of the NATO summit, tightening security across the capital and key venues.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "raid",
+            "raids",
+            "terror",
+            "detained"
+          ],
+          "weak_hits": [
+            "nato",
+            "summit"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 4,
+      "title": "Fegyveres összecsapás – Belgrade, Serbia",
+      "date": "2026-06-24",
+      "country": "Serbia (general)",
+      "location": "Belgrade, Serbia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 10,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
+          "domain": "engineeringevil.com",
+          "status": "ok",
+          "error": null,
+          "title": "How a Serbian Colonel With Ancient Missiles Shot Down an F117 – Engineering Evil",
+          "description": "Editors Note: ( Ralph Turchiano ) Offers a Disturbing yet interesting historical perspective that should not be ignored. Friday, 27 March 2015 Precisely on this day, in 1999 a Serbian air force commander manning a battery system successfully shot down the elusive (invisible) F117. The Serbian battery commander, whose missiles downed an American F-16, and,…",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "missile",
+            "downed",
+            "shot down"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "historical"
+          ]
+        },
+        {
+          "url": "https://www.eurasiareview.com/23062026-serbian-officials-using-war-crimes-denial-to-foment-hatred-ngo-report-claims/",
+          "domain": "www.eurasiareview.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo",
+          "domain": "www.bbc.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Parents of Serbia's teenage school shooter given jail terms in retrial - BBC News",
+          "description": "The boy was 13 when he killed eight girls, a boy and a school guard at Vladislav Ribnikar school in Belgrade in 2023.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.thenation.com/article/archive/we-are-all-albanians/",
+          "domain": "www.thenation.com",
+          "status": "ok",
+          "error": null,
+          "title": "'We Are All Albanians' | The Nation",
+          "description": "The Nation Magazine",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 5,
+      "title": "Rajtaütés / fegyveres támadás – Skopje, Macedonia, Macedonia",
+      "date": "2026-06-24",
+      "country": "Macedonia",
+      "location": "Skopje, Macedonia, Macedonia",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 1,
+      "confidence": "Low",
+      "inspected_sources": [
+        {
+          "url": "https://www.novinite.com/articles/239226/North+Macedonia+Demands+Apology+from+Bulgaria+over+Leaked+Note+Involving+PM+Mickoski%E2%80%99s+Family",
+          "domain": "www.novinite.com",
+          "status": "ok",
+          "error": null,
+          "title": "North Macedonia Demands Apology from Bulgaria over Leaked Note Involving PM Mickoski’s Family - Novinite.com - Sofia News Agency",
+          "description": "North Macedonia has demanded an explanation and apology from Bulgaria after a document presented as a diplomatic note from Skopje",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.novinite.com/articles/239172/PACE+Alerted+to+Rising+Hostility+Against+Bulgarians+in+North+Macedonia",
+          "domain": "www.novinite.com",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://pressonline.al/2026/06/17/44-year-old-arrested-after-setting-two-bulgarian-embassy-vehicles-on-fire/",
+          "domain": "pressonline.al",
+          "status": "ok",
+          "error": null,
+          "title": "One moment, please...",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://balkaninsight.com/2026/06/16/arson-of-diplomatic-cars-adds-to-bulgaria-north-macedonia-strains/bi/",
+          "domain": "balkaninsight.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arson of Diplomatic Cars Adds to Bulgaria-North Macedonia Strains | Balkan Insight",
+          "description": "Bulgaria’s president condemned the burning of two Bulgarian diplomatic vehicles in Skopje, calling the incident an “attack” on her country and demanding that the authorities in North Macedonia fully clarify the case.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "arson"
+          ],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Tömeges erőszak – Jerusalem, Israel, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Jerusalem, Israel, Israel",
+      "event_type": "Tömeges erőszak",
+      "original_sources_count": 11,
+      "checked_sources_count": 4,
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
+      "inspected_sources": [
+        {
+          "url": "https://www.algemeiner.com/2026/06/25/chris-van-hollen-endorses-anti-israel-senate-candidate-abdul-el-sayed/",
+          "domain": "www.algemeiner.com",
+          "status": "ok",
+          "error": null,
+          "title": "Chris Van Hollen Endorses Anti-Israel Senate Candidate Abdul El-Sayed | Algemeiner.com",
+          "description": "US Sen. Chris Van Hollen (D-MD) speaks to media during a Senate vote, at the US Capitol, in Washington, DC, …",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.jpost.com/opinion/article-900419",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel must mantain its American support even if US backing falls | The Jerusalem Post",
+          "description": "President Trump’s Iran deal and Vice President Vance’s warning on US support should push Jerusalem to rethink its dependence on Washington before bipartisan backing collapses further.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "president"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.jns.org/news/israel-news/gilad-erdan-israel-refuses-to-surrender-to-enemies",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "Gilad Erdan: Israel 'refuses to surrender' to enemies - Israel & Jewish News - JNS",
+          "description": "The former ambassador has served as the global president of Magen David Adom, Israel's national emergency medical service, since 2024.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://themedialine.org/news/opinion/israel-must-avoid-becoming-sparta-without-america/",
+          "domain": "themedialine.org",
+          "status": "ok",
+          "error": null,
+          "title": "OPINION - Israel Must Avoid Becoming Sparta Without America - The Media Line",
+          "description": "In September 2025, Israeli Prime Minister Benjamin Netanyahu […]",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "minister"
+          ],
+          "noise_hits": [
+            "opinion",
+            "art"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Tömeges erőszak – Gaza, Israel, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "event_type": "Tömeges erőszak",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 1,
+      "confidence": "Low",
+      "inspected_sources": [
+        {
+          "url": "https://www.pressenza.com/2026/06/three-socialist-candidates-backed-by-mamdani-win-new-york-primaries/",
+          "domain": "www.pressenza.com",
+          "status": "ok",
+          "error": null,
+          "title": "Three Socialist Candidates Backed by Mamdani Win New York Primaries",
+          "description": "In the New York Democratic primaries for a seat in the House of Representatives in the midterm elections scheduled for November, three left-wing",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "election"
+          ]
+        },
+        {
+          "url": "https://www.greenleft.org.au/2026/1456/world/britain-palestine-action-protesters-imprisoned-opposing-genocide",
+          "domain": "www.greenleft.org.au",
+          "status": "ok",
+          "error": null,
+          "title": "Britain: Palestine Action protesters imprisoned for opposing genocide",
+          "description": "Reversing a previous outcome, four Palestine Action members received long sentences in Britain, for their role in a 2024 factory occupation at notorious Israeli weapons company Elbit Systems, reports Alex Bainbridge.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.wsws.org/en/articles/2026/06/24/ttrg-j24.html",
+          "domain": "www.wsws.org",
+          "status": "ok",
+          "error": null,
+          "title": "UN Commission report finds Israel is committing genocide in Gaza, deliberately targeting children - World Socialist Web Site",
+          "description": "The report is titled: “The essence of childhood has been destroyed”: Israel’s deliberate targeting of Palestinian children in the Occupied Palestinian Territory since 7 October 2023.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://mondoweiss.net/2026/06/israel-is-tearing-down-the-american-order-that-once-protected-it/",
+          "domain": "mondoweiss.net",
+          "status": "ok",
+          "error": null,
+          "title": "Israel is tearing down the American order that once protected it – Mondoweiss",
+          "description": "The American order that gave Israel stability now constrains Israel’s expansion. In response, Israel is dismantling U.S. hegemony in the region, turning allies Turkey and Egypt into enemies, and working to end the U.S.’s ability to restrain it.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Rajtaütés / fegyveres támadás – Tehran, Iran",
+      "date": "2026-06-25",
+      "country": "Iran",
+      "location": "Tehran, Iran",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/06/25/australia-s-security-environment-degrading-spy-chief-warns",
+          "domain": "www.internazionale.it",
+          "status": "ok",
+          "error": null,
+          "title": "Australia’s security environment degrading, spy chief warns - Internazionale",
+          "description": "By Renju JoseSYDNEY, June 25 (Reuters) - Australia faces multi-faceted threats from autocratic regimes, hackers and antisemitic extremists that present a systemic challen… Leggi",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://jp.ibtimes.com/iran-installs-persian-gulfs-biggest-offshore-rig-without-foreign-technology-under-sanctions-101931",
+          "domain": "jp.ibtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran Installs Persian Gulf's Biggest Offshore Rig Without Foreign Technology — Under Sanctions and After Being Bombed | IBTimes JP",
+          "description": "Iran has installed its largest offshore drilling platform in the Persian Gulf, overcoming US sanctions and military strikes, showcasing domestic engineering capabilities.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [
+            "military",
+            "sanctions"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.jamaicantimes.com/news/279140382/us-eases-iran-oil-sanctions-under-temporary-60-day-license",
+          "domain": "www.jamaicantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "US eases Iran oil sanctions under temporary 60-day license",
+          "description": "The United States has temporarily authorized the sale of Iranian oil and petroleum products, easing decades-old sanctions as Washington seeks a final peace agreement with Tehran",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "sanctions"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ncr-iran.org/en/news/iran-news-in-brief-news/iran-news-in-brief-june-25-2026/",
+          "domain": "www.ncr-iran.org",
+          "status": "ok",
+          "error": null,
+          "title": "Iran News in Brief – June 25, 2026 - NCRI",
+          "description": "THIS PAGE WILL BE UPDATED WITH THE LATEST NEWS UPDATE: 6:30 PM CEST Australian Citizen Working as Spy for Iran ‘Orchestrated’ Bondi Firebombing, Asio Boss",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "bombing"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "title": "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
+      "date": "2026-06-25",
+      "country": "Iran",
+      "location": "Hezbollah, Kerman, Iran",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 14,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.ynetnews.com/article/rkuatecgmx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel, Lebanon at odds over Hezbollah-free zones",
+          "description": "US-mediated talks stall over where Israeli withdrawals should begin and how fast Lebanon’s army would take control, as Jerusalem resists a full pullout from the south",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "hezbollah"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
+          "domain": "www.spotlightnepal.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed | New Spotlight Magazine",
+          "description": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "hezbollah"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
+          "domain": "openthemagazine.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran Shuts Strait of Hormuz as Israel–Hezbollah Ceasefire Frays in Lebanon, Raising Global Energy and Security Fears",
+          "description": "Iran’s closure of the Strait of Hormuz amid escalating Israel-Hezbollah clashes in southern Lebanon raises fears over global energy supplies and maritime security, as Tehran accuses the US and Israel of violating a ceasefire and a key memorandum of understanding.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "clash",
+            "clashes",
+            "hezbollah"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
+          "domain": "timesofindia.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "'All of Lebanon must burn!' Israel's deadliest strikes since Iran-US pact kill 18 after death of four soldiers - The Times of India",
+          "description": "Middle East News: NEW DELHI: At least 18 people were killed and several others injured in Israeli airstrikes across southern Lebanon overnight, as fighting between Isra.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "airstrike",
+            "killed",
+            "kill",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "title": "Fegyveres összecsapás – Givati, HaDarom, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Givati, HaDarom, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 15,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://indianexpress.com/article/world/israeli-military-lebanon-katz-political-achievement-10756839/",
+          "domain": "indianexpress.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli military vows to stay in Lebanon in blow to US-Iran peace talks | World News - The Indian Express",
+          "description": "Israel refuses to withdraw troops from Lebanon, following the memorandum of understanding filed between the US and Iran.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/ryrpzi9zzx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "‘Dabash is dead. Get here. Now’: IDF officer takes command in battalion’s darkest hou",
+          "description": "Hours after the call, the acting commander of the 52nd Battalion was in Lebanon, leading a recovery mission under heavy Hezbollah fire after Lt. Col. Dor Ben Simhon was killed; &#x27;We did not stop until it was done,&#x27; he says",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "killed",
+            "kill",
+            "hezbollah",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/byuugj00zmx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Nirel was beheaded on Oct. 7 and his head was never found; his mother pleads: 'Netany",
+          "description": "Nirel Zini was murdered in Kfar Aza; after his funeral, his parents learned he had been beheaded and his head was never found; left to search alone, they urge Netanyahu to intervene: &#x27;Nirel’s head will not be abandoned&#x27;",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/rkiiba8ggg",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF taps new armored battalion commander after revered officer killed in Lebanon",
+          "description": "Lt. Col. G. will take over the 52nd Battalion after Lt. Col. Dor Gedalia Ben Simhon killed with three soldiers in a strike on their tank in southern Lebanon",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "killed",
+            "kill",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    }
+  ]
+}

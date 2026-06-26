@@ -76,14 +76,7 @@
         "Warsaw, (PL67), Poland Poland",
         "Tömeges erőszak – Warsaw, (PL67), Poland",
         "Poland Tömeges erőszak"
-      ],
-      "sources_original_count": 10,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -154,14 +147,7 @@
         "Rome, Lazio, Italy Italy",
         "Fegyveres összecsapás – Rome, Lazio, Italy",
         "Italy Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -232,18 +218,7 @@
         "Odesa, Odesa Oblast, Ukraine Ukraine",
         "Robbantás / IED – Odesa, Odesa Oblast, Ukraine",
         "Ukraine Robbantás / IED"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
-        "https://www.bankingnews.gr/diethni/articles/883673/zelensky-strategic-blunder-if-he-attacks-belarus-or-crimean-bridge-russia-warns-western-ukraine-and-odesa-will-burn",
-        "https://www.kyivpost.com/post/78794"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -315,19 +290,7 @@
         "Kherson, Khersons'ka Oblast', Ukraine Ukraine",
         "Robbantás / IED – Kherson, Khersons'ka Oblast', Ukraine",
         "Ukraine Robbantás / IED"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
-      "sources_refined": [
-        "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
-        "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
-        "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
-        "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345"
-      ],
-      "refinement_confidence": "High",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -378,14 +341,7 @@
         "Volhynia, Ukraine, Ukraine Ukraine",
         "Tömeges erőszak – Volhynia, Ukraine, Ukraine",
         "Ukraine Tömeges erőszak"
-      ],
-      "sources_original_count": 10,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -457,18 +413,7 @@
         "Sumy, Sums'ka Oblast', Ukraine Ukraine",
         "Robbantás / IED – Sumy, Sums'ka Oblast', Ukraine",
         "Ukraine Robbantás / IED"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
-        "https://www.kyivpost.com/post/78908",
-        "https://www.odnako.org/ukraine-huge-drone-attack-on-russia-555-shot-down-moscow-refinery-on-fire/"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -510,14 +455,7 @@
         "Chornobyl, Kyivs'ka Oblast', Ukraine Ukraine",
         "Robbantás / IED – Chornobyl, Kyivs'ka Oblast', Ukraine",
         "Ukraine Robbantás / IED"
-      ],
-      "sources_original_count": 5,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -586,14 +524,7 @@
         "Ankara, Turkey Turkey",
         "Fegyveres összecsapás – Ankara, Turkey",
         "Turkey Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -640,14 +571,7 @@
         "Tirana, Tirane, Albania Albania",
         "Fegyveres összecsapás – Tirana, Tirane, Albania",
         "Albania Fegyveres összecsapás"
-      ],
-      "sources_original_count": 8,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -714,16 +638,7 @@
         "Istanbul, Turkey Turkey",
         "Fegyveres összecsapás – Istanbul, Turkey",
         "Turkey Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
-      "sources_refined": [
-        "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids"
-      ],
-      "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -773,17 +688,7 @@
         "Belgrade, Serbia Serbia (general)",
         "Fegyveres összecsapás – Belgrade, Serbia",
         "Serbia (general) Fegyveres összecsapás"
-      ],
-      "sources_original_count": 10,
-      "sources_checked_count": 4,
-      "sources_valid_count": 2,
-      "sources_rejected_count": 2,
-      "sources_refined": [
-        "https://engineeringevil.com/2015/03/27/how-a-serbian-colonel-with-ancient-missiles-shot-down-an-f117/",
-        "https://www.bbc.co.uk/news/articles/c14ykj2nr8lo"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -827,16 +732,7 @@
         "Skopje, Macedonia, Macedonia Macedonia",
         "Rajtaütés / fegyveres támadás – Skopje, Macedonia, Macedonia",
         "Macedonia Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 8,
-      "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
-      "sources_refined": [
-        "https://balkaninsight.com/2026/06/16/arson-of-diplomatic-cars-adds-to-bulgaria-north-macedonia-strains/bi/"
-      ],
-      "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -887,14 +783,7 @@
         "Jerusalem, Israel, Israel Israel",
         "Tömeges erőszak – Jerusalem, Israel, Israel",
         "Israel Tömeges erőszak"
-      ],
-      "sources_original_count": 11,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -965,16 +854,7 @@
         "Gaza, Israel, Israel Israel",
         "Tömeges erőszak – Gaza, Israel, Israel",
         "Israel Tömeges erőszak"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
-      "sources_refined": [
-        "https://www.wsws.org/en/articles/2026/06/24/ttrg-j24.html"
-      ],
-      "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1045,17 +925,7 @@
         "Tehran, Iran Iran",
         "Rajtaütés / fegyveres támadás – Tehran, Iran",
         "Iran Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 2,
-      "sources_rejected_count": 2,
-      "sources_refined": [
-        "https://jp.ibtimes.com/iran-installs-persian-gulfs-biggest-offshore-rig-without-foreign-technology-under-sanctions-101931",
-        "https://www.ncr-iran.org/en/news/iran-news-in-brief-news/iran-news-in-brief-june-25-2026/"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1112,19 +982,7 @@
         "Hezbollah, Kerman, Iran Iran",
         "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
         "Iran Fegyveres összecsapás"
-      ],
-      "sources_original_count": 14,
-      "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
-      "sources_refined": [
-        "https://www.ynetnews.com/article/rkuatecgmx",
-        "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
-        "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
-        "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms"
-      ],
-      "refinement_confidence": "High",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1176,19 +1034,7 @@
         "Givati, HaDarom, Israel Israel",
         "Fegyveres összecsapás – Givati, HaDarom, Israel",
         "Israel Fegyveres összecsapás"
-      ],
-      "sources_original_count": 15,
-      "sources_checked_count": 4,
-      "sources_valid_count": 2,
-      "sources_rejected_count": 2,
-      "sources_refined": [
-        "https://www.ynetnews.com/article/ryrpzi9zzx",
-        "https://www.ynetnews.com/article/rkiiba8ggg"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     }
-  ],
-  "refined_at": "2026-06-26T11:51:09.138626Z",
-  "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+  ]
 }
