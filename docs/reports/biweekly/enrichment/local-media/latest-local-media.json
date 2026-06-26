@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T14:18:47.442026Z",
+  "generated_at": "2026-06-26T14:38:39.656733Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-12",
@@ -11,73 +11,487 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 75,
-      "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "score": 89,
+      "title": "Robbantás / IED – Kherson, Khersons'ka Oblast', Ukraine",
       "date": "2026-06-25",
       "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "event_type": "Fegyveres összecsapás",
+      "location": "Kherson, Khersons'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
       "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 55,
-      "source_domain_count": 40,
+      "feature_count": 2,
+      "source_count": 52,
+      "source_domain_count": 37,
       "source_domains": [
-        "bnn-news.com",
-        "dailycaller.com",
         "dominicanrepublicpost.com",
-        "dunyanews.tv",
-        "eaworldview.com",
-        "edition.cnn.com",
-        "english.aawsat.com",
-        "finchannel.com",
-        "jp.ibtimes.com",
+        "en.interfax.com.ua",
+        "euobserver.com",
+        "freerepublic.com",
+        "grenadachronicle.com",
         "londonlovesbusiness.com",
-        "maritime-executive.com",
-        "news.az",
-        "theconversation.com",
+        "news.antiwar.com",
+        "nypost.com",
         "timesofindia.indiatimes.com",
-        "voiceofvienna.org",
-        "www.aljazeera.com",
-        "www.arkansasonline.com",
+        "tvtonight.com.au",
+        "whbl.com",
         "www.bankingnews.gr",
-        "www.bridgwatermercury.co.uk",
-        "www.clickorlando.com"
+        "www.bignewsnetwork.com",
+        "www.businessinsider.com",
+        "www.dailykos.com",
+        "www.eurasiareview.com",
+        "www.euronews.com",
+        "www.europesun.com",
+        "www.freemalaysiatoday.com",
+        "www.globalissues.org"
       ],
       "original_sources": [
-        "https://www.themoscowtimes.com/2026/06/25/ukrainian-attacks-on-bryansk-region-and-annexed-crimea-kill-at-least-4-a93092",
-        "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
-        "https://bnn-news.com/ukrainian-drone-strikes-ignite-another-oil-depot-in-russia-281516",
-        "https://english.aawsat.com/world/5288362-ukraine-drone-attacks-kill-5-russia-crimea",
-        "https://www.kyivpost.com/opinion/78982",
-        "https://theconversation.com/other-nations-thirst-for-ukraines-drone-success-but-they-need-a-culture-shift-first-286187",
-        "https://www.theyeshivaworld.com/news/general/2566536/ukraine-strikes-railway-bridge-to-crimea-targeted-in-bid-to-isolate-russian-held-peninsula.html",
-        "https://news.az/news/how-effective-was-ukraine-s-air-defense-response",
-        "https://www.theguardian.com/world/2026/jun/24/ukraine-war-briefing-crimea-locks-down-as-putin-acknowledges-huge-stream-of-ukrainian-drones",
-        "https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning",
-        "https://www.bridgwatermercury.co.uk/news/national/26222707.ukraine-says-hit-railway-bridge-crimea-seeks-isolate-peninsula/",
-        "http://www.floridastatesman.com/news/279140360/drone-attack-near-moscow-disrupts-airport-operations",
-        "https://www.arkansasonline.com/news/2026/jun/24/ukraine-forces-strike-key-targets-in-crimea/",
-        "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
-        "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
-        "https://www.dailykos.com/stories/2026/6/22/800059362/community/1580/",
-        "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-trump-zelensky-ceasefire-news-b3000937.html",
-        "https://www.el-balad.com/17025145",
-        "https://www.kyivpost.com/post/78770",
-        "https://londonlovesbusiness.com/explosions-rock-crimea-leaving-russians-in-the-dark/"
+        "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+        "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
+        "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
+        "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345",
+        "https://dominicanrepublicpost.com/ukraine-attacks-on-russian-occupied-crimea-trigger-power-cuts-in-sevastopol/",
+        "https://www.ksat.com/news/world/2026/06/24/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers/",
+        "https://www.euronews.com/my-europe/2026/06/24/two-workers-for-a-norwegian-demining-charity-killed-in-russian-strike-on-ukraine",
+        "https://www.sandiegouniontribune.com/2026/06/24/ukraine-russia-strike-natural-gas-plant/",
+        "https://www.theyeshivaworld.com/news/general/2567018/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers.html",
+        "https://www.globalsecurity.org/military/library/news/2026/06/mil-260622-unocha01.htm",
+        "https://www.kyivpost.com/post/78815",
+        "https://www.manilatimes.net/2026/06/24/world/russian-strikes-kill-nine-in-ukraine/2371433",
+        "https://tvtonight.com.au/2026/06/dateline-june-23.html",
+        "https://londonlovesbusiness.com/russias-invincible-missile-factory-turns-into-a-giant-smoke-stack/",
+        "https://en.interfax.com.ua/news/general/1178660.html",
+        "https://www.yasstribune.com.au/story/9295943/zelenskiy-warns-of-impending-massive-russian-attack/",
+        "https://whbl.com/2026/06/20/zelenskiy-warns-of-impending-massive-russian-attack-on-ukraine/",
+        "https://grenadachronicle.com/ukraine-says-russian-attack-kills-five-people-in-zaporizhzhia/",
+        "https://www.freemalaysiatoday.com/category/world/2026/06/21/zelensky-warns-of-impending-massive-russian-attack-on-ukraine",
+        "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-moscow-drone-attack-trump-b2999837.html"
       ],
       "raw_titles": [
-        "fight – Crimea, Krym, Avtonomna Respublika, Ukraine"
+        "fight – Kherson, Khersons'ka Oblast', Ukraine",
+        "assault – Kherson, Khersons'ka Oblast', Ukraine"
       ],
       "inspected_sources": [
         {
-          "url": "https://www.themoscowtimes.com/2026/06/25/ukrainian-attacks-on-bryansk-region-and-annexed-crimea-kill-at-least-4-a93092",
-          "domain": "www.themoscowtimes.com",
+          "url": "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+          "domain": "news.antiwar.com",
           "status": "ok",
           "error": null,
-          "title": "Ukrainian Attacks on Bryansk Region and Annexed Crimea Kill At Least 4 - The Moscow Times",
-          "description": "At least four people were killed in Ukrainian drone attacks in western Russia and annexed Crimea, authorities said Thursday, while multiple industrial sites were also targeted during the overnight air barrage.",
-          "published": "2026-06-25T11:34:00+03:00"
+          "title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
+          "description": "Ukrainian forces launched another major drone attack on Russia on Wednesday that killed at least four people and knocked out power in Sevastopol, the largest city in Crimea. According to the Russian news agency TASS, two civilians were killed in Gorlovka, a town in the Russian-controlled Donetsk Oblast in eastern",
+          "published": ""
         },
+        {
+          "url": "https://www.nbcnews.com/world/ukraine/ukraines-latest-long-range-strikes-russia-hit-major-natural-gas-plant-rcna351670",
+          "domain": "www.nbcnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
+          "description": "The operation was part of Ukraine’s aerial campaign targeting energy facilities and military industries that has intensified as Kyiv builds bigger and better long-range weapons.",
+          "published": "2026-06-24T22:50:49.640Z"
+        },
+        {
+          "url": "https://www.latimes.com/world-nation/story/2026-06-24/ukraines-latest-long-range-strikes-on-russia-hit-major-natural-gas-plant-satellite-centers",
+          "domain": "www.latimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers - Los Angeles Times",
+          "description": "Ukrainian forces have struck a major natural gas processing plant and two key satellite communications centers in Russia",
+          "published": "2026-06-24T15:48:29.778"
+        },
+        {
+          "url": "https://www.mirror.co.uk/news/world-news/zelensky-putin-ukraine-russia-attacks-37348345",
+          "domain": "www.mirror.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Volodymyr Zelensky orders brutal move in bid to cripple Vladimir Putin’s attacks - The Mirror",
+          "description": "Volodymyr Zelensky said Russia is moving a significant part of its air defences to protect a handful of prime targets, including Moscow, as Ukraine’s long-range drones hammered sites",
+          "published": "2026-06-25T14:34:21Z"
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/ukraine-attacks-on-russian-occupied-crimea-trigger-power-cuts-in-sevastopol/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine attacks on Russian-occupied Crimea trigger power cuts in Sevastopol - Dominican Republic Post – Caribbean News, Business, Travel Culture",
+          "description": "News|Russia-Ukraine war",
+          "published": "2026-06-24T06:52:12-04:00"
+        },
+        {
+          "url": "https://www.ksat.com/news/world/2026/06/24/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers/",
+          "domain": "www.ksat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
+          "description": "Ukrainian forces have struck a major natural gas processing plant and two key satellite communications centers in Russia.",
+          "published": "2026-06-24T10:35:28Z"
+        },
+        {
+          "url": "https://www.euronews.com/my-europe/2026/06/24/two-workers-for-a-norwegian-demining-charity-killed-in-russian-strike-on-ukraine",
+          "domain": "www.euronews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Two workers for a Norwegian demining charity killed in Russian strike on Ukraine | Euronews",
+          "description": "The NPA has more than 450 staff based in Ukraine, where it has been carrying out mine clearance activities since 2023.",
+          "published": "2026-06-24 16:45:39 +02:00"
+        },
+        {
+          "url": "https://www.sandiegouniontribune.com/2026/06/24/ukraine-russia-strike-natural-gas-plant/",
+          "domain": "www.sandiegouniontribune.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s strikes on Russia hit natural gas plant, satellite centers",
+          "description": "Ukrainian forces have struck a major natural gas processing plant and two key satellite communications centers in Russia.",
+          "published": "2026-06-24T15:01:43+00:00"
+        },
+        {
+          "url": "https://www.theyeshivaworld.com/news/general/2567018/ukraines-latest-long-range-strikes-on-russia-hit-a-major-natural-gas-plant-and-satellite-centers.html",
+          "domain": "www.theyeshivaworld.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s Latest Long-Range Strikes On Russia Hit A Major Natural Gas Plant And Satellite Centers The Yeshiva World",
+          "description": "Ukrainian forces struck a major natural gas processing plant and two key satellite communications centers in their latest nighttime attacks on Russia, Ukraine’s General Staff said Wednesday. The operation was part of Ukraine’s aerial campaign targeting energy facilities and military industries that has intensified as Kyiv builds bigger and better long-range weapons to ward off [ ]",
+          "published": ""
+        },
+        {
+          "url": "https://www.globalsecurity.org/military/library/news/2026/06/mil-260622-unocha01.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "ok",
+          "error": null,
+          "title": "Today's top news: Syria, Lebanon, Occupied Palestinian Territory, Sudan, Ukraine",
+          "description": "",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Ukraine’s latest long-range strikes on Russia hit a major natural gas plant and satellite centers",
+        "top_keywords": [
+          "major",
+          "natural",
+          "gas",
+          "plant",
+          "satellite",
+          "centers",
+          "long-range",
+          "two",
+          "forces",
+          "strikes"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine",
+          "ukrainian",
+          "military",
+          "putin",
+          "zelensky"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "attack",
+          "blast",
+          "assault",
+          "killed",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Kherson, Khersons'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+        "\"Ukraine\" \"russia\" \"drone\"",
+        "\"Kherson, Khersons'ka Oblast', Ukraine\" \"drone\"",
+        "\"russia\" \"drone\" 2026-06-25"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Kherson, Khersons'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Kherson, Khersons'ka Oblast', Ukraine\" \"drone\"",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"drone\" 2026-06-25",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 52 source URLs across 37 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 2,
+      "score": 89,
+      "title": "Robbantás / IED – Sumy, Sums'ka Oblast', Ukraine",
+      "date": "2026-06-25",
+      "country": "Ukraine",
+      "location": "Sumy, Sums'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 2,
+      "source_count": 71,
+      "source_domain_count": 54,
+      "source_domains": [
+        "cyprus-mail.com",
+        "economictimes.indiatimes.com",
+        "indianexpress.com",
+        "isp.netscape.com:443",
+        "jowhar.com",
+        "londonlovesbusiness.com",
+        "neweasterneurope.eu",
+        "news.antiwar.com",
+        "news.az",
+        "newstodaynet.com",
+        "timesofindia.indiatimes.com",
+        "www.al-monitor.com",
+        "www.bankingnews.gr",
+        "www.cbc.ca",
+        "www.chronicle.lu",
+        "www.cnn.com",
+        "www.dailykos.com",
+        "www.dailymail.com",
+        "www.dailymaverick.co.za",
+        "www.edenmagnet.com.au"
+      ],
+      "original_sources": [
+        "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+        "https://www.kyivpost.com/post/78908",
+        "https://www.odnako.org/ukraine-huge-drone-attack-on-russia-555-shot-down-moscow-refinery-on-fire/",
+        "https://www.dailykos.com/stories/2026/6/24/800060142/community/1582/",
+        "https://www.winnipegfreepress.com/world/2026/06/25/zelenskyy-says-russia-is-shifting-air-defenses-to-moscow-and-other-key-sites-after-drone-strikes",
+        "https://jowhar.com/ukrainian-drone-attack-knocks-out-power-in-crimean-city/",
+        "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260624-sputnik01.htm",
+        "https://londonlovesbusiness.com/ukraine-to-launch-pre-emptive-strikes-warning-ordinary-russians-will-feel-this-war/",
+        "https://www.cbc.ca/news/world/russia-ukraine-war-1582-crimea-drones-9.7246857",
+        "https://www.kyivpost.com/post/78897",
+        "https://www.edenmagnet.com.au/story/9297188/russian-strikes-overnight-kill-at-least-five-in-ukraine/",
+        "https://cyprus-mail.com/2026/06/23/russian-strikes-injure-six-in-ukraine-as-fuel-crisis-deepens-into-siberia",
+        "https://www.el-balad.com/17025145",
+        "https://newstodaynet.com/2026/06/23/russian-drone-strike-in-ukraine-kills-3-from-one-family/",
+        "https://www.dailymail.com/news/article-15922017/NATO-preparing-wars-fought-swarms-THOUSANDS-AI-controlled-drones-rival-nukes.html",
+        "https://www.globalsecurity.org/military/library/news/2026/06/mil-260622-unbrief01.htm",
+        "https://www.globalsecurity.org/military/library/news/2026/06/mil-260622-unocha01.htm",
+        "https://www.odnako.org/moscow-under-a-rain-of-drones-zelensky-it-will-burn-with-us-refinery-set-on-fire-lavrov-promises-harsh-response/",
+        "https://www.al-monitor.com/originals/2026/06/moscow-shoots-down-nearly-60-drones-russian-attacks-kill-five-ukraine",
+        "https://www.wboc.com/news/international/a-russian-drone-strike-in-ukraine-kills-3-from-one-family-including-a-13-year/article_ddb111ad-8a85-583c-9141-a858ed6950ac.html"
+      ],
+      "raw_titles": [
+        "fight – Sumy, Sums'ka Oblast', Ukraine",
+        "assault – Sumy, Sums'ka Oblast', Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://news.antiwar.com/2026/06/24/ukraine-launches-major-drone-attack-on-russia-killing-four-civilians-and-knocking-out-power-in-sevastopol/",
+          "domain": "news.antiwar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
+          "description": "Ukrainian forces launched another major drone attack on Russia on Wednesday that killed at least four people and knocked out power in Sevastopol, the largest city in Crimea. According to the Russian news agency TASS, two civilians were killed in Gorlovka, a town in the Russian-controlled Donetsk Oblast in eastern",
+          "published": ""
+        },
+        {
+          "url": "https://www.kyivpost.com/post/78908",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Child Injured as Russian Drones Strike Sumy, Debris Damages Homes and Cars",
+          "description": "A 13-year-old boy was injured during a Russian drone attack on Sumy, while falling debris damaged homes, cars and an industrial site, officials said.",
+          "published": "2026-06-25 02:47:53"
+        },
+        {
+          "url": "https://www.odnako.org/ukraine-huge-drone-attack-on-russia-555-shot-down-moscow-refinery-on-fire/",
+          "domain": "www.odnako.org",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine, huge drone attack on Russia: 555 shot down, Moscow refinery on fire",
+          "description": "Add the Gazzetta del Sud as a source Ukrainian forces launched one of the most massive air attacks on Russia since the beginning of the ... Read more",
+          "published": "2026-06-25T03:02:34+00:00"
+        },
+        {
+          "url": "https://www.dailykos.com/stories/2026/6/24/800060142/community/1582/",
+          "domain": "www.dailykos.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Invasion Day 1,582: growing RU domestic gasoline and aviation fuel shortages - Daily Kos",
+          "description": "",
+          "published": "2026-06-25T05:20:29+00:00"
+        },
+        {
+          "url": "https://www.winnipegfreepress.com/world/2026/06/25/zelenskyy-says-russia-is-shifting-air-defenses-to-moscow-and-other-key-sites-after-drone-strikes",
+          "domain": "www.winnipegfreepress.com",
+          "status": "ok",
+          "error": null,
+          "title": "Zelenskyy says Russia is shifting air defenses to Moscow and other key sites after drone strikes Winnipeg Free Press",
+          "description": "KYIV, Ukraine (AP) — Russia is moving a significant part of its air defenses to protect a handful of prime targets, including Moscow, as Ukraine’s long-range drones hammered sites deep inside the country, Ukrainian President Volodymyr Zelenskyy said.",
+          "published": "2026-06-25 05:11:28"
+        },
+        {
+          "url": "https://jowhar.com/ukrainian-drone-attack-knocks-out-power-in-crimean-city/",
+          "domain": "jowhar.com",
+          "status": "error",
+          "error": "<urlopen error [Errno -3] Temporary failure in name resolution>",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260624-sputnik01.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "ok",
+          "error": null,
+          "title": "Russian Firepower Vaporizes Ukrainian Drone Warfare Center",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://londonlovesbusiness.com/ukraine-to-launch-pre-emptive-strikes-warning-ordinary-russians-will-feel-this-war/",
+          "domain": "londonlovesbusiness.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine to launch pre-emptive strikes warning ordinary Russians will feel this war - London Business News | Londonlovesbusiness.com",
+          "description": "I instructed our intelligence services and military to act pre-emptively against facilities Russia uses to expand its war effort, Zelensky",
+          "published": "2026-06-25T15:03:41+00:00"
+        },
+        {
+          "url": "https://www.cbc.ca/news/world/russia-ukraine-war-1582-crimea-drones-9.7246857",
+          "domain": "www.cbc.ca",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine launches drone offensive in Crimea and inside Russia, where fuel shortages are taking a toll | CBC News",
+          "description": "Ukrainian drones knocked out power in the biggest city in Russian-held Crimea on Wednesday and targeted facilities ‌in central and southern Russia, underscoring the reach of Kyiv s attacks on energy infrastructure.",
+          "published": "2026-06-24T17:15:08.088Z"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/78897",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "3 Children Injured as Russia Strikes Beach in Zaporizhzhia",
+          "description": "6 people, including 3 children, were injured in a Russian strike on Zaporizhzhia beach on Wednesday, amid continuous drone threats across the region.",
+          "published": "2026-06-24 19:49:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Ukraine Launches Major Drone Attack on Russia, Killing Four Civilians and Knocking Out Power in Sevastopol - News From Antiwar.com",
+        "top_keywords": [
+          "sumy",
+          "out",
+          "power",
+          "wednesday",
+          "crimea",
+          "oblast",
+          "drones",
+          "moscow",
+          "air",
+          "strikes"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine",
+          "ukrainian",
+          "sbu",
+          "military",
+          "zelensky",
+          "zelenskyy"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "attack",
+          "blast",
+          "assault",
+          "killed",
+          "injured",
+          "fire"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Sumy, Sums'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+        "\"Ukraine\" \"russia\" \"drone\"",
+        "\"Sumy, Sums'ka Oblast', Ukraine\" \"drone\"",
+        "\"russia\" \"drone\" 2026-06-25"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Sumy, Sums'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Sumy, Sums'ka Oblast', Ukraine\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"drone\" 2026-06-25",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 71 source URLs across 54 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 3,
+      "score": 75,
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-06-25",
+      "country": "Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 10,
+      "source_domain_count": 9,
+      "source_domains": [
+        "eaworldview.com",
+        "economictimes.indiatimes.com",
+        "edition.cnn.com",
+        "www.dailyadvance.com",
+        "www.dw.com",
+        "www.egyptindependent.com",
+        "www.globalsecurity.org",
+        "www.rte.ie",
+        "www.theyeshivaworld.com"
+      ],
+      "original_sources": [
+        "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
+        "https://eaworldview.com/2026/06/ukraine-war-crimea-more-ukrainian-strikes/",
+        "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
+        "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
+        "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698",
+        "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms",
+        "http://www.dailyadvance.com/news/world/ukraine-and-russia-exchange-deadly-strikes-with-at-least-one-child-killed/article_e47c2869-f6e0-5512-978d-02af0765aedd.html",
+        "https://www.rte.ie/news/2026/0621/1579524-ukraine-russia/",
+        "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260613-rferl01.htm",
+        "https://eaworldview.com/2026/06/ukraine-war-crimea-kyiv-we-will-isolate-in-the-near-future/"
+      ],
+      "raw_titles": [
+        "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
+      ],
+      "inspected_sources": [
         {
           "url": "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
           "domain": "www.egyptindependent.com",
@@ -88,111 +502,118 @@
           "published": "2026-06-25T07:42:13+00:00"
         },
         {
-          "url": "https://bnn-news.com/ukrainian-drone-strikes-ignite-another-oil-depot-in-russia-281516",
-          "domain": "bnn-news.com",
+          "url": "https://eaworldview.com/2026/06/ukraine-war-crimea-more-ukrainian-strikes/",
+          "domain": "eaworldview.com",
           "status": "ok",
           "error": null,
-          "title": "Ukrainian drone strikes ignite another oil depot in Russia - Baltic News Network",
-          "description": "Another oil depot has caught fire in Russia s Krasnodar region following overnight Ukrainian drone strikes, according to Russian and Ukrainian media reports. The Ukrainian Telegram channel Exilenova+ reported that three fuel storage tanks caught fire at the oil depot in the village of Poltavskaya after the attack. According to the Telegram channel Astra, the Poltavskaya [ ]",
-          "published": "2026-06-25T06:04:47+00:00"
+          "title": "Ukraine War, Day 1,583: More Ukrainian Strikes on Besieged Crimea - EA WorldView",
+          "description": "Ukraine carries more strikes on besieged, Russian-occupied Crimea, hitting energy infrastructure with pressure on grid and gasoline supplies.",
+          "published": "2026-06-25T06:18:03+00:00"
         },
         {
-          "url": "https://english.aawsat.com/world/5288362-ukraine-drone-attacks-kill-5-russia-crimea",
-          "domain": "english.aawsat.com",
+          "url": "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
+          "domain": "edition.cnn.com",
           "status": "ok",
           "error": null,
-          "title": "Ukraine Drone Attacks Kill 5 in Russia, Crimea",
-          "description": "Ukrainian drone strikes killed five people, including two children, in Russia and on the Moscow-annexed Crimean peninsula, in attacks that also triggered a fire at a major oil depot in the country s south, local officials said Thursday. Ukraine has stepped up strikes on Russia in recent months in retaliation for Moscow s near-daily barrages of drones and missiles throughout its five-year offensive, AFP reported. Russia s defense ministry said it downed 269 Ukrainian drones overnight over Russia and Crimea, which Moscow annexed in 2014.",
-          "published": ""
+          "title": "Russia is still inching forward in eastern Ukraine, but experts say claims of progress are exaggerated | CNN",
+          "description": "Russia is still inching forward in eastern Ukraine’s Donetsk region, but outside experts and Ukrainian soldiers say Russia’s claims of advancement are exaggerated.",
+          "published": "2026-06-24T13:31:13.019Z"
         },
         {
-          "url": "https://www.kyivpost.com/opinion/78982",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Opinion: Hell in Crimea",
-          "description": "Crimea was Putin’s crown jewel – proof of Russian greatness. Now, isolated by drones and abandoned by its fleet, it’s becoming the symbol of his undoing.",
-          "published": "2026-06-25 17:29:00"
-        },
-        {
-          "url": "https://theconversation.com/other-nations-thirst-for-ukraines-drone-success-but-they-need-a-culture-shift-first-286187",
-          "domain": "theconversation.com",
-          "status": "ok",
-          "error": null,
-          "title": "Other nations thirst for Ukraine’s drone success — but they need a culture shift first",
-          "description": "While many countries will try to copy Ukraine’s successful drone tactics, technology isn’t enough. A military must first build a culture capable of maximizing the potential of drones.",
-          "published": "20260625"
-        },
-        {
-          "url": "https://www.theyeshivaworld.com/news/general/2566536/ukraine-strikes-railway-bridge-to-crimea-targeted-in-bid-to-isolate-russian-held-peninsula.html",
+          "url": "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
           "domain": "www.theyeshivaworld.com",
           "status": "ok",
           "error": null,
-          "title": "UKRAINE STRIKES: Railway Bridge to Crimea Targeted in Bid to Isolate Russian-Held Peninsula The Yeshiva World",
-          "description": "Ukraine said Tuesday its forces struck a railway bridge, a power plant and other key infrastructure targets in Crimea as Kyiv’s military seeks to isolate the vital Russian-held peninsula in the latest stage of the 4-year-old war. The drone attacks added to the woes on the Black Sea peninsula, where Russian authorities have had to [ ]",
+          "title": "DEADLY STRIKES: Russia and Ukraine Trade Attacks, Child Killed Amid Escalation The Yeshiva World",
+          "description": "A Russian drone strike on the city of Sumy in northeastern Ukraine killed three members of the same family, including a 13-year-old boy, while a Ukrainian strike on a Russian industrial plant killed five people, officials said Monday. Russia has pounded civilian areas of Ukraine with drones and missiles since its all-out invasion more than [ ]",
           "published": ""
         },
         {
-          "url": "https://news.az/news/how-effective-was-ukraine-s-air-defense-response",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
+          "url": "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698",
+          "domain": "www.dw.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine says major Crimea bridge destroyed in latest attack",
+          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\"> Ukraine says major Crimea bridge destroyed in latest attack <meta data-rh=",
+          "published": ""
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Moscow reopens airports, shoots down nearly 60 drones - The Economic Times",
+          "description": "Moscow thwarted a massive drone assault overnight, with nearly 60 unmanned aerial vehicles intercepted en route to the capital, leading to temporary airport closures. This follows a recent Ukrainian strike on Russia s sole oil refinery. Meanwhile, Russian attacks in Ukraine claimed two lives and injured six, with a Turkish cargo ship also reportedly hit. Authorities in Crimea have implemented energy-saving measures amid ongoing Ukrainian drone activity.",
+          "published": ""
+        },
+        {
+          "url": "http://www.dailyadvance.com/news/world/ukraine-and-russia-exchange-deadly-strikes-with-at-least-one-child-killed/article_e47c2869-f6e0-5512-978d-02af0765aedd.html",
+          "domain": "www.dailyadvance.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine and Russia exchange deadly strikes, with at least one child killed | News | dailyadvance.com",
+          "description": "A Russian drone strike on Sumy in northeastern Ukraine has killed three family members, including a 13-year-old boy. Officials also said Monday that a Ukrainian strike on a Russian industrial",
+          "published": "2026-06-22T14:06:14-04:00"
+        },
+        {
+          "url": "https://www.rte.ie/news/2026/0621/1579524-ukraine-russia/",
+          "domain": "www.rte.ie",
+          "status": "ok",
+          "error": null,
+          "title": "Four dead and fuel sales suspended in Crimea",
+          "description": "Four people were killed and fuel sales were suspended in Russian-occupied Crimea, the Moscow-backed authorities there said today, after a massive Ukrainian barrage hit the Black Sea peninsula.",
+          "published": "2026-06-21T09:49:05+01:00"
+        },
+        {
+          "url": "https://www.globalsecurity.org/wmd/library/news/ukraine/2026/06/ukraine-260613-rferl01.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "ok",
+          "error": null,
+          "title": "Drone Hits On Hydrocrackers Spark Fuel Crunch, As Ukraine Pounds Russia's Refineries",
           "description": "",
           "published": ""
         },
         {
-          "url": "https://www.theguardian.com/world/2026/jun/24/ukraine-war-briefing-crimea-locks-down-as-putin-acknowledges-huge-stream-of-ukrainian-drones",
-          "domain": "www.theguardian.com",
+          "url": "https://eaworldview.com/2026/06/ukraine-war-crimea-kyiv-we-will-isolate-in-the-near-future/",
+          "domain": "eaworldview.com",
           "status": "ok",
           "error": null,
-          "title": "Ukraine war briefing: Crimea locks down as Putin acknowledges ‘huge stream’ of Ukrainian drones | Ukraine | The Guardian",
-          "description": "Rail bridge and power plant among latest infrastructure targeted by Kyiv in Crimea, where restrictions on public life have come to prevail. What we know on day 1,582",
-          "published": "2026-06-24T01:27:33.000Z"
-        },
-        {
-          "url": "https://www.express.co.uk/news/uk/2221063/britain-ready-strike-russia-30-minutes-army-chief-roly-walker-warning",
-          "domain": "www.express.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Britain must be ready to strike Russia within 30 minutes, Army chief | UK | News | Express.co.uk",
-          "description": "",
-          "published": "2026-06-24T02:16:00+01:00"
+          "title": "Ukraine War, Day 1,570: Kyiv - We Will Isolate Crimea In The Near Future - EA WorldView",
+          "description": "As Ukraine expands strikes inside Russia and Russian-held territory, a top commander declares, We will isolate Crimea in the near future.",
+          "published": "2026-06-12T06:18:03+00:00"
         }
       ],
       "event_fingerprint": {
-        "representative_title": "Ukrainian Attacks on Bryansk Region and Annexed Crimea Kill At Least 4 - The Moscow Times",
+        "representative_title": "Russia is still inching forward in eastern Ukraine, but experts say claims of progress are exaggerated - Egypt Independent",
         "top_keywords": [
           "crimea",
-          "attacks",
           "strikes",
-          "drones",
-          "oil",
-          "depot",
-          "peninsula",
-          "region",
-          "annexed",
-          "moscow"
+          "still",
+          "inching",
+          "forward",
+          "eastern",
+          "experts",
+          "claims",
+          "exaggerated",
+          "city"
         ],
         "actor_hints": [
           "russia",
           "russian",
           "ukraine",
-          "ukrainian",
-          "army",
-          "military",
-          "putin"
+          "ukrainian"
         ],
         "conflict_hints": [
           "missile",
           "drone",
           "strike",
           "attack",
+          "assault",
+          "intercept",
           "killed",
-          "fire",
-          "war"
+          "injured"
         ],
-        "usable_source_count": 9,
+        "usable_source_count": 10,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -209,8 +630,57 @@
         },
         {
           "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "乌将打击目标转向俄导弹工厂 引发国际舆论关注 _ 军事频道 _ 中华网",
+              "url": "https://military.china.com/news/13004177/20260626/49571676.html",
+              "domain": "military.china.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260626T030000Z"
+            },
+            {
+              "title": "KBS 뉴스",
+              "url": "https://news.kbs.co.kr/news/pc/view/view.do?ncd=8591091",
+              "domain": "news.kbs.co.kr",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260621T070000Z"
+            },
+            {
+              "title": "우크라이나 미사일 내리 꽂혀 쾅 … 난리 난 러시아 미사일 공장 [ 현장영상 ]",
+              "url": "https://ichannela.com/news/detail/000000536221.do",
+              "domain": "ichannela.com",
+              "source_country": "South Korea",
+              "language": "Korean",
+              "seendate": "20260624T080000Z"
+            },
+            {
+              "title": "乌克兰重大发现 ， 俄罗斯导弹库存已空 ， 边打边造使武器质量下降",
+              "url": "https://www.163.com/dy/article/KT21P6SJ05315IF2.html",
+              "domain": "163.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260516T041500Z"
+            },
+            {
+              "title": "Обстріл України 21 червня - Росія атакувала ракетами та 105 дронами",
+              "url": "https://www.rbc.ua/rus/news/letili-droni-balistika-ta-kindzhali-e-priloti-1782023224.html",
+              "domain": "rbc.ua",
+              "source_country": "Ukraine",
+              "language": "Ukrainian",
+              "seendate": "20260621T080000Z"
+            },
+            {
+              "title": "Rusyadan Ukraynaya İHA ve füze saldırılarında yeni rekor",
+              "url": "https://www.haberler.com/3-sayfa/rusya-dan-ukrayna-ya-iha-ve-fuze-saldirilarinda-19792992-haberi/",
+              "domain": "haberler.com",
+              "source_country": "Turkey",
+              "language": "Turkish",
+              "seendate": "20260430T104500Z"
+            }
+          ]
         },
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"missile\"",
@@ -224,7 +694,7 @@
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 55 source URLs across 40 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 10 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -420,12 +890,12 @@
       "local_media_findings": [
         {
           "query": "\"Ankara, Turkey\" \"Turkey\" \"nato\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         },
         {
           "query": "\"Turkey\" \"nato\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         },
         {
@@ -445,200 +915,519 @@
     },
     {
       "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "score": 72,
-      "title": "Fegyveres összecsapás – Hezbollah, Kerman, Iran",
+      "region": "Balkán",
+      "rank": 2,
+      "score": 55,
+      "title": "Fegyveres összecsapás – Istanbul, Turkey",
       "date": "2026-06-25",
-      "country": "Iran",
-      "location": "Hezbollah, Kerman, Iran",
+      "country": "Turkey",
+      "location": "Istanbul, Turkey",
       "event_type": "Fegyveres összecsapás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 14,
-      "source_domain_count": 12,
+      "source_count": 22,
+      "source_domain_count": 16,
       "source_domains": [
-        "cyprus-mail.com",
-        "legalinsurrection.com",
-        "openthemagazine.com",
-        "slguardian.org",
-        "timesofindia.indiatimes.com",
-        "tradearabia.com:443",
-        "www.moneycontrol.com",
-        "www.siasat.com",
-        "www.spotlightnepal.com",
-        "www.thenationalnews.com",
-        "www.washingtonexaminer.com",
-        "www.ynetnews.com"
+        "aa.com.tr",
+        "dailypioneer.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "erkansaka.net",
+        "news.az",
+        "nypost.com",
+        "www.al-monitor.com",
+        "www.dailysabah.com",
+        "www.durangoherald.com",
+        "www.legalbusiness.co.uk",
+        "www.mediafax.ro",
+        "www.miragenews.com",
+        "www.nashvillescene.com",
+        "www.reflector.com",
+        "www.winnipegfreepress.com"
       ],
       "original_sources": [
-        "https://www.ynetnews.com/article/rkuatecgmx",
-        "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
-        "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
-        "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
-        "https://www.moneycontrol.com/world/netanyahu-refuses-to-pull-troops-from-lebanon-as-hezbollah-vows-resistance-can-the-us-iran-deal-survive-article-13954143.html",
-        "https://www.siasat.com/you-cant-kill-your-way-out-vance-gives-rare-rebuke-to-israel-3492393/",
-        "https://www.moneycontrol.com/world/can-us-iran-deal-survive-israel-and-hezbollah-renew-ceasefire-after-deadly-escalation-article-13954286.html",
-        "https://www.washingtonexaminer.com/news/white-house/4616661/trump-can-keep-israel-attack-hezbollah/",
-        "https://www.thenationalnews.com/news/mena/2026/06/19/israels-continued-presence-in-southern-lebanon-tests-fragile-us-iran-peace-deal/",
-        "https://legalinsurrection.com/2026/06/netanyahu-israel-to-hold-south-lebanon-buffer-zone-until-hezbollah-terror-threat-cleared/",
-        "https://slguardian.org/iran-deal-leaves-trump-facing-tough-questions-as-tehran-emerges-with-strategic-gains/",
-        "https://www.moneycontrol.com/world/trump-s-rebukes-iran-s-leverage-and-an-election-ahead-why-netanyahu-is-under-pressure-on-all-fronts-after-us-iran-deal-article-13949953.html",
-        "https://cyprus-mail.com/2026/06/14/trump-insists-us-iran-deal-to-be-signed-on-sunday",
-        "https://tradearabia.com:443/News/463420/Israel-strikes-Iran-despite-Trump"
+        "https://www.durangoherald.com/articles/shiite-muslims-mark-holy-day-of-ashoura-after-months-of-war-in-iran-and-lebanon/",
+        "https://www.nashvillescene.com/news/pithinthewind/racist-streamer-chud-builder-nashville-court-hearing/article_969f1b9f-997b-4cd2-9073-e2e5bda53b2f.html",
+        "https://news.az/news/how-does-turkiye-approach-counterterrorism",
+        "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids",
+        "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
+        "https://aa.com.tr/en/middle-east/thousands-of-ultra-orthodox-jews-block-roads-in-israel-to-protest-arrest-of-draft-dodgers/3977158",
+        "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
+        "https://english.aawsat.com/world/5287429-t%C3%BCrkiye-detains-209-raids-capital-ankara-ahead-julys-nato-summit",
+        "http://www.reflector.com/news/national/turkey-detains-209-in-raids-in-the-capital-ahead-of-julys-nato-summit/article_2fa93005-7304-5a5e-a897-6f804a91018d.html",
+        "https://www.al-monitor.com/originals/2026/06/turkey-detains-233-ahead-nato-summit-including-lgbtq-activist-yildiz-tar",
+        "https://english.news.cn/europe/20260624/b4caa8a25a304315a2775bc49cfb1f94/c.html",
+        "https://www.legalbusiness.co.uk/2011/03/",
+        "https://www.dailysabah.com/politics/2-opposition-mayors-detained-in-separate-corruption-probes-in-turkiye/news",
+        "https://www.dailysabah.com/business/economy/turkish-home-appliance-maker-arcelik-takes-full-control-of-beko-europe",
+        "https://www.mediafax.ro/english/nicusor-dan-on-official-visit-to-turkey-meeting-with-erdogan-and-attending-naval-ceremony-23758381",
+        "https://www.winnipegfreepress.com/world/2026/06/17/turkey-lashes-out-at-european-parliament-report-urging-eu-sanctions-on-justice-minister",
+        "https://www.al-monitor.com/originals/2026/06/turkey-captures-alleged-isis-k-media-chief-near-afghanistan-pakistan-border",
+        "https://erkansaka.net/2026/06/15/sheikh-bedreddin-grave-cemberlitas-theodosius-cistern/",
+        "https://aa.com.tr/en/middle-east/suicide-attack-on-security-camp-in-syria-s-raqqa-kills-2-officers/3967821",
+        "https://www.miragenews.com/first-ever-phase-3-in-vivo-crispr-trial-1691845/"
       ],
       "raw_titles": [
-        "fight – Hezbollah, Kerman, Iran"
+        "fight – Istanbul, Istanbul, Turkey"
       ],
       "inspected_sources": [
         {
-          "url": "https://www.ynetnews.com/article/rkuatecgmx",
-          "domain": "www.ynetnews.com",
+          "url": "https://www.durangoherald.com/articles/shiite-muslims-mark-holy-day-of-ashoura-after-months-of-war-in-iran-and-lebanon/",
+          "domain": "www.durangoherald.com",
           "status": "ok",
           "error": null,
-          "title": "Israel, Lebanon at odds over Hezbollah-free zones",
-          "description": "US-mediated talks stall over where Israeli withdrawals should begin and how fast Lebanon’s army would take control, as Jerusalem resists a full pullout from the south",
-          "published": "2026-06-25T05:28:29.793714Z"
+          "title": "Shiite Muslims mark holy day of Ashoura after months of war in Iran and Lebanon - The Durango Herald",
+          "description": "BEIRUT (AP) — Shiite Muslims around the world on Thursday marked Ashoura, a holy day symbolizing sacrifice and martyrdom that holds special significance for many this year after months of war in Iran ...",
+          "published": "2026-06-25"
         },
         {
-          "url": "https://www.spotlightnepal.com/2026/06/20/israel-hezbollah-agree-ceasefire-after-us-iran-talks-postponed/",
-          "domain": "www.spotlightnepal.com",
+          "url": "https://www.nashvillescene.com/news/pithinthewind/racist-streamer-chud-builder-nashville-court-hearing/article_969f1b9f-997b-4cd2-9073-e2e5bda53b2f.html",
+          "domain": "www.nashvillescene.com",
           "status": "ok",
           "error": null,
-          "title": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed | New Spotlight Magazine",
-          "description": "Israel, Hezbollah agree to ceasefire after US-Iran talks postponed",
+          "title": "Racist Streamer Faces Lower Broadway Charges in Court Hearing | Pith in the Wind | Nashville News | nashvillescene.com",
+          "description": "In custody for attempted Clarksville murder, Dalton",
+          "published": "2026-06-25T15:45:00-05:00"
+        },
+        {
+          "url": "https://news.az/news/how-does-turkiye-approach-counterterrorism",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
           "published": ""
         },
         {
-          "url": "https://openthemagazine.com/world/iran-closes-strait-of-hormuz-amid-escalating-israel-hezbollah-conflict-in-lebanon",
-          "domain": "openthemagazine.com",
+          "url": "https://dailypioneer.com/news/nato-summit-turkey-detains-200-in-ankara-raids",
+          "domain": "dailypioneer.com",
           "status": "ok",
           "error": null,
-          "title": "Iran Shuts Strait of Hormuz as Israel–Hezbollah Ceasefire Frays in Lebanon, Raising Global Energy and Security Fears",
-          "description": "Iran’s closure of the Strait of Hormuz amid escalating Israel-Hezbollah clashes in southern Lebanon raises fears over global energy supplies and maritime security, as Tehran accuses the US and Israel of violating a ceasefire and a key memorandum of understanding.",
+          "title": "Turkey Detains Over 200 Suspects in Anti-Terror Raids Ahead of NATO Summit | Daily Pioneer",
+          "description": "Turkey detained over 200 suspects in anti-terror raids in Ankara ahead of the NATO summit, tightening security across the capital and key venues.",
           "published": ""
         },
         {
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/all-of-lebanon-must-burn-israels-deadliest-strikes-since-iran-us-pact-kill-18-after-death-of-four-soldiers/articleshow/131853253.cms",
-          "domain": "timesofindia.indiatimes.com",
+          "url": "https://english.news.cn/20260624/911efe1b6d794e6cb9f8a6a6a49eb577/c.html",
+          "domain": "english.news.cn",
           "status": "ok",
           "error": null,
-          "title": "All of Lebanon must burn! Israel s deadliest strikes since Iran-US pact kill 18 after death of four soldiers - The Times of India",
-          "description": "Middle East News: NEW DELHI: At least 18 people were killed and several others injured in Israeli airstrikes across southern Lebanon overnight, as fighting between Isra.",
+          "title": "IS suspect killed in clash with Turkish police in Ankara-Xinhua",
+          "description": "IS suspect killed in clash with Turkish police in Ankara-",
           "published": ""
         },
         {
-          "url": "https://www.moneycontrol.com/world/netanyahu-refuses-to-pull-troops-from-lebanon-as-hezbollah-vows-resistance-can-the-us-iran-deal-survive-article-13954143.html",
-          "domain": "www.moneycontrol.com",
+          "url": "https://aa.com.tr/en/middle-east/thousands-of-ultra-orthodox-jews-block-roads-in-israel-to-protest-arrest-of-draft-dodgers/3977158",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Netanyahu refuses to pull troops from Lebanon as Hezbollah vows resistance. Can the US-Iran deal survive?",
-          "description": "Israeli Prime Minister Benjamin Netanyahu said Israeli troops would remain in southern Lebanon",
+          "title": "Thousands of ultra-Orthodox Jews block roads in Israel to protest arrest of draft dodgers",
+          "description": "Over 100 cars, thousands of protesters set off in convoys to protest mandatory military service, arrest of draft dodgers, according to Israeli media | Anadolu",
+          "published": "2026-06-24T23:38:11.63"
+        },
+        {
+          "url": "https://www.winnipegfreepress.com/world/2026/06/23/turkey-detains-209-in-raids-in-the-capital-of-ankara-ahead-of-julys-nato-summit",
+          "domain": "www.winnipegfreepress.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey detains 209 in raids in the capital ahead of July s NATO summit Winnipeg Free Press",
+          "description": "ANKARA, Turkey (AP) — Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month’s NATO summit, and detained more than 200 people with suspected links to extremist groups, including the Islamic State group, officials said.",
+          "published": "2026-06-23 02:34:48"
+        },
+        {
+          "url": "https://english.aawsat.com/world/5287429-t%C3%BCrkiye-detains-209-raids-capital-ankara-ahead-julys-nato-summit",
+          "domain": "english.aawsat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Türkiye Detains 209 in Raids in the Capital of Ankara ahead of July s NATO Summit",
+          "description": "Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month’s NATO summit, and detained more than 200 people with suspected links to extremist groups, including the ISIS group. US President Donald Trump is expected to join other leaders of the 32‑member alliance in Ankara for the July 7–8 summit, The Associate Press reported.",
           "published": ""
         },
         {
-          "url": "https://www.siasat.com/you-cant-kill-your-way-out-vance-gives-rare-rebuke-to-israel-3492393/",
-          "domain": "www.siasat.com",
+          "url": "http://www.reflector.com/news/national/turkey-detains-209-in-raids-in-the-capital-ahead-of-julys-nato-summit/article_2fa93005-7304-5a5e-a897-6f804a91018d.html",
+          "domain": "www.reflector.com",
           "status": "ok",
           "error": null,
-          "title": "You can’t kill your way out: Vance gives rare rebuke to Israel",
-          "description": "JD Vance delivered a rare rebuke to Israel, defending the US-Iran deal and urging leaders to back diplomacy over force.",
-          "published": "2026-06-19T11:38:10+00:00"
+          "title": "Turkey detains 209 in raids in the capital ahead of July's NATO summit | National | reflector.com",
+          "description": "Security forces in Turkey have detained over 200 people with suspected links to extremist groups, including the Islamic State. The raids took place Tuesday in Ankara ahead of next month s",
+          "published": "2026-06-23T07:19:25-04:00"
         },
         {
-          "url": "https://www.moneycontrol.com/world/can-us-iran-deal-survive-israel-and-hezbollah-renew-ceasefire-after-deadly-escalation-article-13954286.html",
-          "domain": "www.moneycontrol.com",
+          "url": "https://www.al-monitor.com/originals/2026/06/turkey-detains-233-ahead-nato-summit-including-lgbtq-activist-yildiz-tar",
+          "domain": "www.al-monitor.com",
           "status": "ok",
           "error": null,
-          "title": "Can US-Iran deal survive? Israel and Hezbollah renew ceasefire after deadly escalation",
-          "description": "Israel and Hezbollah have renewed a ceasefire after deadly clashes, but Netanyahu",
+          "title": "Turkey detains 233 ahead of NATO summit, including LGBTQ+ activist Yildiz Tar - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "The operation included alleged militant suspects as well as LGBTQ+ and leftist activists, raising concerns over the scope of the crackdown.",
           "published": ""
-        },
-        {
-          "url": "https://www.washingtonexaminer.com/news/white-house/4616661/trump-can-keep-israel-attack-hezbollah/",
-          "domain": "www.washingtonexaminer.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump says he can keep Israel from attacking Hezbollah",
-          "description": "The United States and Iran signed a deal to begin the diplomatic process toward ending the war, though Israel was left out of the negotiations.",
-          "published": "2026-06-19T18:18:50+00:00"
-        },
-        {
-          "url": "https://www.thenationalnews.com/news/mena/2026/06/19/israels-continued-presence-in-southern-lebanon-tests-fragile-us-iran-peace-deal/",
-          "domain": "www.thenationalnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Hezbollah won t accept ceasefire unless Israeli troops withdraw from Lebanon | The National",
-          "description": "Agreement appeared to have been reached for fighting to cease on Friday afternoon but strikes have continued overnight",
-          "published": ""
-        },
-        {
-          "url": "https://legalinsurrection.com/2026/06/netanyahu-israel-to-hold-south-lebanon-buffer-zone-until-hezbollah-terror-threat-cleared/",
-          "domain": "legalinsurrection.com",
-          "status": "ok",
-          "error": null,
-          "title": "Netanyahu: Israel to Hold South Lebanon Buffer Zone Until Hezbollah Terror Threat Cleared",
-          "description": "The IDF will remain in southern Lebanon as long as Israel s security needs demand it.",
-          "published": "2026-06-18T19:09:27+00:00"
         }
       ],
       "event_fingerprint": {
-        "representative_title": "Israel, Lebanon at odds over Hezbollah-free zones",
+        "representative_title": "Shiite Muslims mark holy day of Ashoura after months of war in Iran and Lebanon - The Durango Herald",
         "top_keywords": [
-          "lebanon",
-          "ceasefire",
-          "us-iran",
-          "southern",
-          "can",
-          "deal",
-          "talks",
+          "ahead",
+          "summit",
+          "turkey",
+          "raids",
+          "capital",
+          "detains",
+          "ankara",
+          "detained",
           "security",
-          "troops",
-          "begin"
+          "turkish"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "iran",
+          "nato",
+          "police",
+          "military",
+          "security forces",
+          "trump"
+        ],
+        "conflict_hints": [
+          "clash",
+          "raid",
+          "killed",
+          "war",
+          "terror"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Istanbul, Turkey\" \"Turkey\" \"israel\" \"clash\"",
+        "\"Turkey\" \"israel\" \"clash\"",
+        "\"Istanbul, Turkey\" \"clash\"",
+        "\"israel\" \"clash\" 2026-06-25"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Istanbul, Turkey\" \"Turkey\" \"israel\" \"clash\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Turkey\" \"israel\" \"clash\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Istanbul, Turkey\" \"clash\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Turkish police shoot three gunmen in clash outside Israel Istanbul consulate",
+              "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-police-shoot-three-gunmen-clash-outside-israels-istanbul",
+              "domain": "middleeasteye.net",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260407T130000Z"
+            },
+            {
+              "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
+              "url": "https://www.thetimes-tribune.com/2026/04/07/israeli-consulate-attack-istanbul/",
+              "domain": "thetimes-tribune.com",
+              "source_country": "United States",
+              "language": "English",
+              "seendate": "20260407T151500Z"
+            },
+            {
+              "title": "Shooting near Israeli consulate in Istanbul leaves three dead as people run for cover",
+              "url": "https://www.manchestereveningnews.co.uk/news/world-news/shooting-near-israeli-consulate-istanbul-33726264",
+              "domain": "manchestereveningnews.co.uk",
+              "source_country": "United Kingdom",
+              "language": "English",
+              "seendate": "20260407T120000Z"
+            },
+            {
+              "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
+              "url": "https://www.columbian.com/news/2026/apr/07/gunmen-attack-building-housing-israeli-consulate-in-istanbul/",
+              "domain": "columbian.com",
+              "source_country": "United States",
+              "language": "English",
+              "seendate": "20260407T171500Z"
+            },
+            {
+              "title": "No Europa League Final for Aina , Awoniyi as Aston Villa Maul Nottingham – THISDAYLIVE",
+              "url": "https://www.thisdaylive.com/2026/05/08/no-europa-league-final-for-aina-awoniyi-as-aston-villa-maul-nottingham/",
+              "domain": "thisdaylive.com",
+              "source_country": "Nigeria",
+              "language": "English",
+              "seendate": "20260508T024500Z"
+            },
+            {
+              "title": "Prince William joyfully celebrates Aston Villa goal in crunch European clash",
+              "url": "https://www.mirror.co.uk/news/uk-news/prince-william-joyfully-celebrates-aston-37126827",
+              "domain": "mirror.co.uk",
+              "source_country": "United Kingdom",
+              "language": "English",
+              "seendate": "20260507T224500Z"
+            }
+          ]
+        },
+        {
+          "query": "\"israel\" \"clash\" 2026-06-25",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [
+        {
+          "title": "Turkish police shoot three gunmen in clash outside Israel Istanbul consulate",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/turkish-police-shoot-three-gunmen-clash-outside-israels-istanbul",
+          "domain": "middleeasteye.net",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20260407T130000Z",
+          "match_score": 50
+        },
+        {
+          "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
+          "url": "https://www.thetimes-tribune.com/2026/04/07/israeli-consulate-attack-istanbul/",
+          "domain": "thetimes-tribune.com",
+          "source_country": "United States",
+          "language": "English",
+          "seendate": "20260407T151500Z",
+          "match_score": 40
+        },
+        {
+          "title": "Shooting near Israeli consulate in Istanbul leaves three dead as people run for cover",
+          "url": "https://www.manchestereveningnews.co.uk/news/world-news/shooting-near-israeli-consulate-istanbul-33726264",
+          "domain": "manchestereveningnews.co.uk",
+          "source_country": "United Kingdom",
+          "language": "English",
+          "seendate": "20260407T120000Z",
+          "match_score": 40
+        },
+        {
+          "title": "Gunmen attack building housing Israeli Consulate in Istanbul",
+          "url": "https://www.columbian.com/news/2026/apr/07/gunmen-attack-building-housing-israeli-consulate-in-istanbul/",
+          "domain": "columbian.com",
+          "source_country": "United States",
+          "language": "English",
+          "seendate": "20260407T171500Z",
+          "match_score": 40
+        },
+        {
+          "title": "Prince William joyfully celebrates Aston Villa goal in crunch European clash",
+          "url": "https://www.mirror.co.uk/news/uk-news/prince-william-joyfully-celebrates-aston-37126827",
+          "domain": "mirror.co.uk",
+          "source_country": "United Kingdom",
+          "language": "English",
+          "seendate": "20260507T224500Z",
+          "match_score": 10
+        }
+      ],
+      "analytical_summary": "The original cluster contains 22 source URLs across 16 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 5 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 72,
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Gaza, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 112,
+      "source_domain_count": 86,
+      "source_domains": [
+        "aa.com.tr",
+        "arynews.tv",
+        "boulderjewishnews.org",
+        "countercurrents.org",
+        "edition.cnn.com",
+        "foreignpolicy.com",
+        "forward.com",
+        "home.nzcity.co.nz",
+        "hotair.com",
+        "island.lk",
+        "jp.ibtimes.com",
+        "kesq.com",
+        "macaudailytimes.com.mo",
+        "news.webindia123.com",
+        "oilprice.com",
+        "politicaldog101.com",
+        "scroll.in",
+        "themedialine.org",
+        "thenewamerican.com",
+        "townhall.com"
+      ],
+      "original_sources": [
+        "https://www.ft.lk/columns/Lucerne-lessons-for-Lanka-Lebanon-war-Easter-massacre-mastermind-scenarios/4-793751",
+        "https://www.aljazeera.com/news/2026/6/24/de-la-espriella-pledges-to-restore-colombias-relations-with-israel",
+        "https://www.clevelandjewishnews.com/jns/please-look-at-me-former-israeli-hostage-demands-of-un-adviser-on-violence-against-women/article_b53335b3-eead-51ab-8709-83ed6474cfbb.html",
+        "https://www.haaretz.com/israel-news/israel-security/2026-06-25/ty-article/.premium/idf-bedouin-israeli-civilian-contractor-killed-in-gaza-operational-accident/0000019e-fb5e-d0cc-af9e-ffdf69e90000",
+        "https://forward.com/opinion/833537/how-israels-strongest-partisans-destroyed-support-antisemitism-aipac/",
+        "https://www.dailyexcelsior.com/un-commission-accuses-israel-of-deliberately-shooting-children-in-gaza-repeats-genocide-claim/",
+        "https://www.naturalnews.com/2026-06-24-trump-netanyahu-divorce-phone-call.html",
+        "https://jp.ibtimes.com/shocking-un-international-commission-report-alleges-deliberate-target-enforcement-kill-innocent-101897",
+        "https://www.arabnews.com/node/2648344/middle-east",
+        "https://www.jpost.com/american-politics/article-900322",
+        "https://townhall.com/tipsheet/julia-cassidy/2026/06/23/mamdani-mourns-death-of-journalist-who-idf-says-was-a-hamas-terrorist-n2678173",
+        "https://www.nbcnews.com/politics/2026-election/goldman-ny-house-loss-district-10-lander-primary-election-rcna351126",
+        "https://www.gdnonline.com:443/Details/1398577",
+        "https://www.scoop.co.nz/stories/HL2606/S00058/starmer-begone-another-dud-leaves-number-10.htm",
+        "http://www.sydneysun.com/news/279143438/iran-just-outlasted-the-world-most-powerful-military-what-can-australia-learn-from-its-strategies",
+        "https://www.wsws.org/en/articles/2026/06/23/zvdo-j23.html",
+        "https://www.the-messenger.com/news/world/article_10a87121-8a7e-54aa-8418-86f7d835e7f3.html",
+        "https://www.sunjournal.com/2026/06/22/susan-collins-remains-very-strong-supporter-of-israel/",
+        "http://www.arabherald.com/news/279140686/palestinian-flag-row-at-us-graduation-sparks-outcry",
+        "https://www.yahoo.com/news/world/articles/idf-kills-nukhba-terrorist-took-205151322.html"
+      ],
+      "raw_titles": [
+        "fight – Gaza, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.ft.lk/columns/Lucerne-lessons-for-Lanka-Lebanon-war-Easter-massacre-mastermind-scenarios/4-793751",
+          "domain": "www.ft.lk",
+          "status": "ok",
+          "error": null,
+          "title": "Lucerne lessons for Lanka, Lebanon war; Easter massacre mastermind scenarios | Daily FT",
+          "description": "Watching the Lake Lucerne Summit, Switzerland, on TV, I must confess to a twinge of nostalgia. ..",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/6/24/de-la-espriella-pledges-to-restore-colombias-relations-with-israel",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "De la Espriella pledges to restore Colombia’s relations with Israel | Politics News | Al Jazeera",
+          "description": "The far-right president-elect has pledged to rebuild ties with Israel and the US following tensions under Gustavo Petro.",
+          "published": ""
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/please-look-at-me-former-israeli-hostage-demands-of-un-adviser-on-violence-against-women/article_b53335b3-eead-51ab-8709-83ed6474cfbb.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "‘Please look at me,’ former Israeli hostage demands of UN adviser on violence against women | JNS | clevelandjewishnews.com",
+          "description": "It s absurd and tragic that there are U.N. experts who are supposed to care about the rights of women, especially to combat sexual violence, and she s one of the world s",
+          "published": "2026-06-24T19:06:26-04:00"
+        },
+        {
+          "url": "https://www.haaretz.com/israel-news/israel-security/2026-06-25/ty-article/.premium/idf-bedouin-israeli-civilian-contractor-killed-in-gaza-operational-accident/0000019e-fb5e-d0cc-af9e-ffdf69e90000",
+          "domain": "www.haaretz.com",
+          "status": "ok",
+          "error": null,
+          "title": "Bedouin Israeli Civilian Contractor Killed in Gaza Operational Accident, IDF Says - Israel Security",
+          "description": "Raad Abu al-Kiyan, a bulldozer operator from the town of Hura in southern Israel, was killed while in a building collapse in the Strip. He is the first Israeli citizen to be killed in Gaza since February",
+          "published": "2026-06-25T00:15:00+03:00"
+        },
+        {
+          "url": "https://forward.com/opinion/833537/how-israels-strongest-partisans-destroyed-support-antisemitism-aipac/",
+          "domain": "forward.com",
+          "status": "ok",
+          "error": null,
+          "title": "How Israel s strongest partisans destroyed global support for Israel The Forward",
+          "description": "Neither antisemitism nor propaganda can explain the broad-based opposition to Israeli policies. It s time to face reality.",
+          "published": "2026-06-24T23:28:44+00:00"
+        },
+        {
+          "url": "https://www.dailyexcelsior.com/un-commission-accuses-israel-of-deliberately-shooting-children-in-gaza-repeats-genocide-claim/",
+          "domain": "www.dailyexcelsior.com",
+          "status": "ok",
+          "error": null,
+          "title": "UN commission accuses Israel of deliberately shooting children in Gaza, repeats genocide claim - Daily Excelsior",
+          "description": "JERUSALEM, Jun 24: A team of independent experts commissioned by the United Nations accused Israel of deliberately shooting children in Gaza and repeated its accusation that Israel has committed genocide in the territory. Israel vociferously denies claims that it committed...",
+          "published": "2026-06-25T04:00:17+05:30"
+        },
+        {
+          "url": "https://www.naturalnews.com/2026-06-24-trump-netanyahu-divorce-phone-call.html",
+          "domain": "www.naturalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "“All the Jews are sick of you”: Trump threatened Netanyahu with “divorce” in explosive phone call – NaturalNews.com",
+          "description": "Trump and Netanyahu had a heated, profanity-laden phone call in September 2025 over a Gaza peace deal. Trump threatened a divorce between the U.S. and Israel if Netanyahu refused to accept the agreement. Netanyahu accepted the deal after a failed Israeli airstrike in Qatar that killed a Qatari guard. U.S. intelligence warned Trump that Netanyahu [ ]",
+          "published": "06/24/2026 17:52:04"
+        },
+        {
+          "url": "https://jp.ibtimes.com/shocking-un-international-commission-report-alleges-deliberate-target-enforcement-kill-innocent-101897",
+          "domain": "jp.ibtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Shocking UN International Commission Report Alleges Deliberate Target Enforcement to Kill Innocent Palestinian Children | IBTimes JP",
+          "description": "A UN inquiry accuses Israeli forces of deliberately targeting Palestinian children in Gaza, alleging genocide. Israel rejects the report, calling it a libelous sham and denies targeting children.",
+          "published": "2026-06-25T13:04:26+09:00"
+        },
+        {
+          "url": "https://www.arabnews.com/node/2648344/middle-east",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.jpost.com/american-politics/article-900322",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Voters choose congressional candidate Cait Conley to face pro-Israel Mike Lawler | The Jerusalem Post",
+          "description": "Both candidates support the US-Israel alliance while opposing Netanyahu s policies, though Cait Conley is leading in the polls in the primarily Jewish congressional district.",
+          "published": "2026-06-24T02:00:47"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Lucerne lessons for Lanka, Lebanon war; Easter massacre mastermind scenarios | Daily FT",
+        "top_keywords": [
+          "gaza",
+          "children",
+          "deliberately",
+          "genocide",
+          "lucerne",
+          "daily",
+          "violence",
+          "women",
+          "com",
+          "experts"
         ],
         "actor_hints": [
           "israel",
           "israeli",
           "idf",
-          "iran",
-          "hezbollah",
-          "army",
           "trump",
           "netanyahu"
         ],
         "conflict_hints": [
           "strike",
           "airstrike",
-          "attack",
-          "clash",
+          "shooting",
           "killed",
-          "injured",
-          "fire",
-          "war"
+          "war",
+          "hostage"
         ],
-        "usable_source_count": 10,
+        "usable_source_count": 9,
         "confidence": "Medium-High"
       },
       "queries": [
-        "\"Hezbollah, Kerman, Iran\" \"Iran\" \"israel\" \"strike\"",
-        "\"Iran\" \"israel\" \"strike\"",
-        "\"Hezbollah, Kerman, Iran\" \"strike\"",
+        "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
+        "\"Israel\" \"israel\" \"strike\"",
+        "\"Gaza, Israel\" \"strike\"",
         "\"israel\" \"strike\" 2026-06-25"
       ],
       "local_media_findings": [
         {
-          "query": "\"Hezbollah, Kerman, Iran\" \"Iran\" \"israel\" \"strike\"",
+          "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
-          "query": "\"Iran\" \"israel\" \"strike\"",
+          "query": "\"Israel\" \"israel\" \"strike\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
-          "query": "\"Hezbollah, Kerman, Iran\" \"strike\"",
-          "error": null,
+          "query": "\"Gaza, Israel\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -648,13 +1437,434 @@
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 14 source URLs across 12 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 112 source URLs across 86 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 2,
+      "score": 72,
+      "title": "Rajtaütés / fegyveres támadás – Hebron, Israel, Israel",
+      "date": "2026-06-25",
+      "country": "Israel",
+      "location": "Hebron, Israel",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 21,
+      "source_domain_count": 12,
+      "source_domains": [
+        "dominicanrepublicpost.com",
+        "english.news.cn",
+        "english.pnn.ps",
+        "english.wafa.ps",
+        "grenadachronicle.com",
+        "imemc.org",
+        "thedailyblog.co.nz",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.middleeasteye.net",
+        "www.middleeastmonitor.com",
+        "www.yahoo.com"
+      ],
+      "original_sources": [
+        "https://thedailyblog.co.nz/in-occupied-palestine-22-june-2026/",
+        "https://www.aljazeera.com/news/2026/6/25/israeli-forces-shoot-and-kill-palestinians-in-occupied-west-bank-gaza",
+        "https://imemc.org/article/army-injures-two-palestinians-including-journalist-in-jordan-valley/",
+        "https://www.middleeasteye.net/profile/israel-itamar-ben-gvir",
+        "https://imemc.org/article/israeli-forces-abduct-palestinians-across-occupied-west-bank/",
+        "https://www.middleeasteye.net/news/israeli-raid-hebron-kills-two-palestinians-killed-including-child",
+        "https://english.wafa.ps/Pages/Details/171864",
+        "https://imemc.org/article/six-palestinians-injured-in-settler-attacks-near-hebron-and-salfit/",
+        "https://imemc.org/article/israeli-forces-injure-abduct-palestinians-in-the-west-bank/",
+        "https://www.arabnews.com/node/2647978/middle-east",
+        "https://english.pnn.ps/news/48185",
+        "https://grenadachronicle.com/israel-kills-at-least-three-palestinians-in-gaza-city-drone-strike/",
+        "https://www.middleeastmonitor.com/20260618-israel-orders-demolition-of-9-palestinian-homes-in-hebron-amid-west-bank-escalation/",
+        "https://dominicanrepublicpost.com/iran-war-day-110-tehran-says-israeli-attacks-on-lebanon-threaten-us-deal/",
+        "https://www.middleeastmonitor.com/20260617-israeli-occupiers-set-fire-to-2-mosques-army-demolishes-palestinian-home-in-occupied-west-bank/",
+        "https://www.aljazeera.com/features/2026/6/17/he-wanted-to-burn-me-alive-92-year-old-recounts-west-bank-settler-attack",
+        "https://imemc.org/article/army-invades-west-bank-areas-abduct-palestinians/",
+        "https://english.wafa.ps/Pages/Details/171674",
+        "https://english.news.cn/20260615/28374193cd494811b0d07873ee4db8cd/c.html",
+        "https://www.yahoo.com/news/world/articles/gaza-post-ceasefire-deaths-hit-160115125.html"
+      ],
+      "raw_titles": [
+        "assault – Hebron, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://thedailyblog.co.nz/in-occupied-palestine-22-june-2026/",
+          "domain": "thedailyblog.co.nz",
+          "status": "ok",
+          "error": null,
+          "title": "In Occupied Palestine – 22 June 2026 The Daily Blog",
+          "description": "",
+          "published": "2026-06-25T06:53:36+12:00"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/6/25/israeli-forces-shoot-and-kill-palestinians-in-occupied-west-bank-gaza",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces shoot and kill Palestinians in occupied West Bank, Gaza | Israel-Palestine conflict News | Al Jazeera",
+          "description": "The deaths come amid escalating Israeli military raids and settler attacks across the occupied territories.",
+          "published": ""
+        },
+        {
+          "url": "https://imemc.org/article/army-injures-two-palestinians-including-journalist-in-jordan-valley/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Army Injures Two Palestinians, Including Journalist, in Jordan Valley | - IMEMC News",
+          "description": "Two Palestinians, including a journalist, were injured on Thursday in the occupied West Bank when Israeli occupation forces assaulted them in the northern J ...",
+          "published": "2026-06-25T17:10:21"
+        },
+        {
+          "url": "https://www.middleeasteye.net/profile/israel-itamar-ben-gvir",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Itamar Ben Gvir: How the man keeping Netanyahu in office rose to power | Middle East Eye",
+          "description": "Notorious for provocative rhetoric and overseeing brutal treatment of Palenstinian prisoners, he has been able to galvanise supporters on the far right",
+          "published": ""
+        },
+        {
+          "url": "https://imemc.org/article/israeli-forces-abduct-palestinians-across-occupied-west-bank/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Forces Abduct Palestinians Across Occupied West Bank | - IMEMC News",
+          "description": "Israeli occupation forces abducted several Palestinians on Tuesday during invasions across the occupied West Bank, including Bethlehem, Tubas and Tulkarem, ...",
+          "published": "2026-06-23T18:22:15"
+        },
+        {
+          "url": "https://www.middleeasteye.net/news/israeli-raid-hebron-kills-two-palestinians-killed-including-child",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli raid in Hebron kills two Palestinians, including child | Middle East Eye",
+          "description": "The bodies of the victims remain held in Israeli custody after attack on town of Beit Ummar",
+          "published": ""
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/171864",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli colonists attack shepherds in Masafer Yatta, three Palestinians detained",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://imemc.org/article/six-palestinians-injured-in-settler-attacks-near-hebron-and-salfit/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Six Palestinians Injured in Settler Attacks Near Hebron and Salfit | - IMEMC News",
+          "description": "June 20, 2026 On Saturday, illegal colonizers, with the support of Israeli soldiers, injured at least six Palestinians in the Hebron and Salfit governorates ...",
+          "published": "2026-06-20T23:00:27"
+        },
+        {
+          "url": "https://imemc.org/article/israeli-forces-injure-abduct-palestinians-in-the-west-bank/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Forces Injure, Abduct Palestinians in the West Bank | - IMEMC News",
+          "description": "June 19, 2026 Israeli forces injured several Palestinians in the Ramallah and Hebron governorates in the central and southern parts of the occupied West Ban ...",
+          "published": "2026-06-19T18:00:33"
+        },
+        {
+          "url": "https://www.arabnews.com/node/2647978/middle-east",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "In Occupied Palestine – 22 June 2026 The Daily Blog",
+        "top_keywords": [
+          "palestinians",
+          "occupied",
+          "forces",
+          "west",
+          "bank",
+          "hebron",
+          "including",
+          "imemc",
+          "june",
+          "across"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "army",
+          "military",
+          "netanyahu"
+        ],
+        "conflict_hints": [
+          "attack",
+          "assault",
+          "raid",
+          "injured"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Hebron, Israel\" \"Israel\" \"israel\" \"attack\"",
+        "\"Israel\" \"israel\" \"attack\"",
+        "\"Hebron, Israel\" \"attack\"",
+        "\"israel\" \"attack\" 2026-06-25"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Hebron, Israel\" \"Israel\" \"israel\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Hebron, Israel\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"attack\" 2026-06-25",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 21 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 72,
+      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
+      "date": "2026-06-24",
+      "country": "Israel",
+      "location": "Gaza City, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 48,
+      "source_domain_count": 35,
+      "source_domains": [
+        "aa.com.tr",
+        "dailypioneer.com",
+        "dailytimes.com.pk",
+        "dominicanrepublicpost.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "english.wafa.ps",
+        "grenadachronicle.com",
+        "imemc.org",
+        "news.antiwar.com",
+        "news.az",
+        "pajhwok.com",
+        "redstate.com",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.bbc.co.uk",
+        "www.bignewsnetwork.com",
+        "www.chicagotribune.com",
+        "www.cnn.com"
+      ],
+      "original_sources": [
+        "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+        "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+        "https://english.wafa.ps/Pages/Details/171970",
+        "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+        "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+        "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+        "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+        "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+        "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.arabnews.com/node/2648125/middle-east",
+        "https://english.wafa.ps/Pages/Details/171922",
+        "https://www.yahoo.com/news/world/articles/palestinian-sources-israeli-airstrike-kills-134124345.html",
+        "https://redstate.com/john-doe/2026/06/22/trumps-20-point-gaza-peace-deal-should-be-a-warning-label-for-iran-mou-n2203534",
+        "https://news.az/news/idf-eliminates-hamas-nukhba-member-linked-to-hostage-incident",
+        "https://www.local10.com/news/2026/06/20/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+        "https://www.bbc.co.uk/news/articles/c4gy26p6pwzo",
+        "https://www.wjcl.com/article/israeli-strikes-in-gaza-kill-6-including-2-children/71647222",
+        "https://www.surinametimes.com/artikel/parents-and-two-daughters-killed-in-israeli-strike-in-gaza",
+        "https://dailypioneer.com/news/fighting-persists-in-lebanon-as-us-iran-deal-is-under-threat",
+        "https://pajhwok.com/2026/06/21/israeli-strikes-kill-9-in-gaza-including-child-al-jazeera-journalist/"
+      ],
+      "raw_titles": [
+        "fight – Gaza City, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.aljazeera.com/features/2026/6/24/diabetes-patients-in-gaza-face-survival-battle-amid-war-shortages",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
+          "description": "Insulin and equipment shortages in Gaza pose fatal risks, leading to critical health complications.",
+          "published": ""
+        },
+        {
+          "url": "https://www.cnn.com/2026/06/24/middleeast/israel-targeting-children-report-un-intl",
+          "domain": "www.cnn.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds | CNN",
+          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
+          "published": "2026-06-24T10:51:45.150Z"
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/171970",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces continue ceasefire violations across Gaza, conduct limited ground incursion",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.egyptindependent.com/israel-deliberately-targeting-children-in-ongoing-genocide-against-palestinians-un-commission-finds/",
+          "domain": "www.egyptindependent.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel deliberately targeting children in ongoing genocide against Palestinians, UN commission finds - Egypt Independent",
+          "description": "Israeli forces continue to commit genocide against Palestinians by deliberately targeting children in the Gaza Strip, an independent United Nations Commission of Inquiry has found.",
+          "published": "2026-06-24T12:02:23+00:00"
+        },
+        {
+          "url": "https://imemc.org/article/two-killed-fourteen-injured-in-gaza-as-israeli-violations-intensify/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Two Killed, Fourteen Injured in Gaza as Israeli Violations Intensify | - IMEMC News",
+          "description": "Two Palestinians were killed and fourteen others were injured in the Gaza Strip over the past 24 hours as Israeli forces continued to violate the “ceasefire ...",
+          "published": "2026-06-24T21:07:44"
+        },
+        {
+          "url": "https://www.newsday.com/news/nation/gaza-israel-hamas-strike-teenage-girl-r18152",
+          "domain": "www.newsday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Teenage girl on the way to a high school in Gaza killed in Israeli strike, relatives say - Newsday",
+          "description": "Relatives say that a teenage girl in Gaza say was killed in an Israeli strike as she was making her way to her high school exam.",
+          "published": "2026-06-22T20:49:43.755Z"
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/palestine-weekly-wrap-israels-quiet-annexation-grows-louder/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Palestine weekly wrap: Israel’s ‘quiet annexation’ grows louder - Dominican Republic Post – Caribbean News, Business, Travel Culture",
+          "description": "This week, the campaign of land seizure that Israeli officials have largely pursued unofficially was, in places, declared aloud. In Hebron, Finance Minister",
+          "published": "2026-06-23T02:23:57-04:00"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/israeli-battalion-cmdr-linked-to-hind-rajab-case-killed-in-lebanon/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli battalion cmdr. linked to Hind Rajab case killed in Lebanon - Islamic Invitation Turkey",
+          "description": "The Israeli military said on Friday that the commander of the 52nd Battalion of the 401st Armored Brigade was killed in southern Lebanon, an announcement that",
+          "published": "2026-06-23T17:30:52+03:00"
+        },
+        {
+          "url": "https://www.columbian.com/news/2026/jun/21/israeli-strikes-in-gaza-kill-6-including-2-children-and-an-al-jazeera-cameraman/",
+          "domain": "www.columbian.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli strikes in Gaza kill 6, including 2 children and an Al Jazeera cameraman - The Columbian",
+          "description": "DEIR AL-BALAH, Gaza — Israeli strikes in Gaza on Saturday killed at least six people, including two children and a cameraman with broadcaster Al Jazeera, according to Palestinian health officials.",
+          "published": "2026-06-25T08:10:23-0700"
+        },
+        {
+          "url": "https://www.arabnews.com/node/2648125/middle-east",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Diabetes patients in Gaza face survival battle amid war shortages | Israel-Palestine conflict News | Al Jazeera",
+        "top_keywords": [
+          "gaza",
+          "children",
+          "palestinians",
+          "deliberately",
+          "targeting",
+          "genocide",
+          "against",
+          "commission",
+          "forces",
+          "jazeera"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "military"
+        ],
+        "conflict_hints": [
+          "strike",
+          "killed",
+          "injured",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Gaza City, Israel\" \"Israel\" \"israel\" \"strike\"",
+        "\"Israel\" \"israel\" \"strike\"",
+        "\"Gaza City, Israel\" \"strike\"",
+        "\"israel\" \"strike\" 2026-06-24"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Gaza City, Israel\" \"Israel\" \"israel\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza City, Israel\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-06-24",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 48 source URLs across 35 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 4,
       "score": 52,
       "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
       "date": "2026-06-23",
@@ -847,61 +2057,12 @@
         },
         {
           "query": "\"Qatar\" \"israel\" \"explosion\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Výbuch v katarskom komplexe si vyžiadal trinásť obetí a desiatky zranených",
-              "url": "https://www.aktuality.sk/clanok/YVCysU5/vybuch-v-katarskom-komplexe-si-vyziadal-trinast-obeti-a-desiatky-zranenych/",
-              "domain": "aktuality.sk",
-              "source_country": "Slovak Republic",
-              "language": "Slovak",
-              "seendate": "20260622T183000Z"
-            },
-            {
-              "title": "Výbuch v plynárenskom zariadení : Hlásia mŕtvych i ranených",
-              "url": "https://www.cas.sk/spravy/vybuch-v-plynarenskom-zariadeni-vyvolal-paniku-mrtvi-a-desiatky-zranenych",
-              "domain": "cas.sk",
-              "source_country": "Slovak Republic",
-              "language": "Slovak",
-              "seendate": "20260622T183000Z"
-            },
-            {
-              "title": "На найбільшому у світі комплексі з виробництва LNG в Катарі стався вибух | Новини України",
-              "url": "https://biz.liga.net/ua/energy/news/u-katari-na-naybilshomu-u-sviti-lng-kompleksi-prolunav-vybukh-54-postrazhdalykh-18-znyklykh-bezvisty",
-              "domain": "biz.liga.net",
-              "source_country": "Ukraine",
-              "language": "Ukrainian",
-              "seendate": "20260622T081500Z"
-            },
-            {
-              "title": "卡達拉斯拉凡工業區發生技術事故 爆炸致多人受傷 | 國際",
-              "url": "https://www.cna.com.tw/news/aopl/202606220015.aspx",
-              "domain": "cna.com.tw",
-              "source_country": "Taiwan",
-              "language": "Chinese",
-              "seendate": "20260622T033000Z"
-            },
-            {
-              "title": "Stravična eksplozija u Kataru : Povrijeđene 54 osobe , nestalo 18",
-              "url": "https://avaz.ba/vijesti/globus/1051223/stravicna-eksplozija-u-kataru-povrijedjene-54-osobe-nestalo-18",
-              "domain": "avaz.ba",
-              "source_country": "Bosnia-Herzegovina",
-              "language": "Bosnian",
-              "seendate": "20260622T054500Z"
-            },
-            {
-              "title": "Взрыв произошел на газоперерабатывающем заводе в Катаре : пострадали 54 человека",
-              "url": "https://www.vesti.ru/ns/vzryv-proizoshel-na-gazopererabatyvayushchem-zavode-v-katare-postradali-54-cheloveka",
-              "domain": "vesti.ru",
-              "source_country": "Russia",
-              "language": "Russian",
-              "seendate": "20260622T043000Z"
-            }
-          ]
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
         },
         {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"explosion\"",
-          "error": null,
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -912,6 +2073,207 @@
       ],
       "matched_articles": [],
       "analytical_summary": "The original cluster contains 22 source URLs across 22 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "score": 55,
+      "title": "Fegyveres összecsapás – Jbeil, Mont-Liban, Lebanon",
+      "date": "2026-06-25",
+      "country": "Lebanon",
+      "location": "Jbeil, Mont-Liban, Lebanon",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 10,
+      "source_domain_count": 9,
+      "source_domains": [
+        "athens-times.com",
+        "english.news.cn",
+        "www.aljazeera.com",
+        "www.clevelandjewishnews.com",
+        "www.el-balad.com",
+        "www.islamicinvitationturkey.com",
+        "www.jns.org",
+        "www.naharnet.com",
+        "www.ynetnews.com"
+      ],
+      "original_sources": [
+        "https://www.ynetnews.com/article/ryrpzi9zzx",
+        "https://www.naharnet.com/stories/en/320904-israeli-forces-fire-at-two-cars-in-nabatieh-al-fawqa-drop-stun-grenades-on-baraashit",
+        "https://english.news.cn/20260625/9024a13a2bb5444aa83d8f6b07dc0354/c.html",
+        "https://www.aljazeera.com/news/2026/6/24/israeli-attacks-kill-2-in-southern-lebanon-despite-ongoing-washington-talks",
+        "https://athens-times.com/netanyahu-israeli-forces-to-remain-in-southern-lebanon-hezbollah-to-pay-heavy-price/",
+        "https://www.ynetnews.com/article/h1tc1kqfgx",
+        "https://www.el-balad.com/17021075",
+        "https://www.jns.org/news/israel-news/idf-continues-push-in-southern-lebanon-pounds-hezbollah-terrorists-sites",
+        "https://www.clevelandjewishnews.com/jns/idf-continues-push-in-southern-lebanon-pounds-hezbollah-terrorists-sites/article_e7aac06c-503e-5bf7-98d8-57abd6c35f8c.html",
+        "https://www.islamicinvitationturkey.com/islamic-resistance-launches-missile-attacks-on-zionist-forces-near-tayr-harfa-south-lebanon/"
+      ],
+      "raw_titles": [
+        "fight – Jbeil, Mont-Liban, Lebanon"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.ynetnews.com/article/ryrpzi9zzx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "‘Dabash is dead. Get here. Now’: IDF officer takes command in battalion’s darkest hou",
+          "description": "Hours after the call, the acting commander of the 52nd Battalion was in Lebanon, leading a recovery mission under heavy Hezbollah fire after Lt. Col. Dor Ben Simhon was killed; #x27;We did not stop until it was done, #x27; he says",
+          "published": "2026-06-25T11:42:03.286463Z"
+        },
+        {
+          "url": "https://www.naharnet.com/stories/en/320904-israeli-forces-fire-at-two-cars-in-nabatieh-al-fawqa-drop-stun-grenades-on-baraashit",
+          "domain": "www.naharnet.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel claims attacking two Hezbollah gunmen in Ali al-Taher — Naharnet",
+          "description": "Naharnet is the leading Lebanese news destination, breaking the news as it happens!",
+          "published": ""
+        },
+        {
+          "url": "https://english.news.cn/20260625/9024a13a2bb5444aa83d8f6b07dc0354/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "2 killed in Israeli drone strike in S. Lebanon despite ceasefire-Xinhua",
+          "description": "2 killed in Israeli drone strike in S. Lebanon despite ceasefire-",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/6/24/israeli-attacks-kill-2-in-southern-lebanon-despite-ongoing-washington-talks",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli attacks kill 2 in southern Lebanon despite ongoing Washington talks | Israel attacks Lebanon News | Al Jazeera",
+          "description": "Israeli defence minister says troops won’t withdraw from southern Lebanon as attacks slow but do not stop.",
+          "published": ""
+        },
+        {
+          "url": "https://athens-times.com/netanyahu-israeli-forces-to-remain-in-southern-lebanon-hezbollah-to-pay-heavy-price/",
+          "domain": "athens-times.com",
+          "status": "ok",
+          "error": null,
+          "title": "Netanyahu: IDF to Stay in S. Lebanon, Hezbollah to Pay Price",
+          "description": "Israeli PM Netanyahu vows continued military presence in southern Lebanon and strong retaliation after Hezbollah kills four soldiers — defying ceasefire.",
+          "published": "2026-06-19T12:00:44+00:00"
+        },
+        {
+          "url": "https://www.ynetnews.com/article/h1tc1kqfgx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Brigade of ‘follow me’: Battalion commander killed after replacing 3 wounded predeces",
+          "description": "Lt. Col. Dor Ben Simhon, killed overnight in southern Lebanon, was the fourth commander of the 52nd Battalion hit in combat since the war began; the 401st Armored Brigade also lost its commander in Gaza, while his replacement was seriously wounded last month",
+          "published": "2026-06-19T15:41:24.100062Z"
+        },
+        {
+          "url": "https://www.el-balad.com/17021075",
+          "domain": "www.el-balad.com",
+          "status": "ok",
+          "error": null,
+          "title": "Trump says Iran will never have a nuclear weapon at G7 summit — Israel Iran War - El-Balad.com",
+          "description": "Donald Trump said at the G7 summit in France that Iran “will never have a nuclear weapon” and said the deal is “going to second stage” in the israel iran war. The US president made the comments as G7 leaders prepared to discuss Iran, Lebanon and the wider security situation in the Middle East.Macron…",
+          "published": "2026-06-16T08:42:16-04:00"
+        },
+        {
+          "url": "https://www.jns.org/news/israel-news/idf-continues-push-in-southern-lebanon-pounds-hezbollah-terrorists-sites",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "IDF continues push in Southern Lebanon, pounds Hezbollah terrorists, sites - Israel Jewish News - JNS",
+          "description": "The Israeli military reveals blow inflicted on Hezbollah field commanders in sectors across Southern Lebanon.",
+          "published": "2026-06-13T17:12:10.851"
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/idf-continues-push-in-southern-lebanon-pounds-hezbollah-terrorists-sites/article_e7aac06c-503e-5bf7-98d8-57abd6c35f8c.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF continues push in Southern Lebanon, pounds Hezbollah terrorists, sites | JNS | clevelandjewishnews.com",
+          "description": "The Israeli military reveals blow inflicted on Hezbollah field commanders in sectors across Southern Lebanon.",
+          "published": "2026-06-13T13:12:10-04:00"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/islamic-resistance-launches-missile-attacks-on-zionist-forces-near-tayr-harfa-south-lebanon/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Islamic Resistance Launches Missile Attacks on Zionist Forces Near Tayr Harfa, South Lebanon - Islamic Invitation Turkey",
+          "description": "The Islamic Resistance sustained its efforts Thursday in countering the Israeli military actions in Lebanon, delivering strikes against occupation forces in",
+          "published": "2026-06-12T12:55:58+03:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "‘Dabash is dead. Get here. Now’: IDF officer takes command in battalion’s darkest hou",
+        "top_keywords": [
+          "lebanon",
+          "southern",
+          "battalion",
+          "commander",
+          "attacks",
+          "despite",
+          "islamic",
+          "leading",
+          "col",
+          "dor"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "idf",
+          "iran",
+          "hezbollah",
+          "military",
+          "trump",
+          "netanyahu"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "killed",
+          "wounded",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Jbeil, Mont-Liban, Lebanon\" \"Lebanon\" \"israel\" \"missile\"",
+        "\"Lebanon\" \"israel\" \"missile\"",
+        "\"Jbeil, Mont-Liban, Lebanon\" \"missile\"",
+        "\"israel\" \"missile\" 2026-06-25"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Jbeil, Mont-Liban, Lebanon\" \"Lebanon\" \"israel\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Lebanon\" \"israel\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Jbeil, Mont-Liban, Lebanon\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"missile\" 2026-06-25",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 10 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     }
   ]
