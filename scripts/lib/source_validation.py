@@ -17,7 +17,7 @@ INCIDENT_TERMS = [
     "killed", "kills", "kill",
     "injured", "wounded",
     "terror", "terrorist", "anti-terror", "counterterrorism",
-    "isis", "daesh", "hamas", "hezbollah", "houthi",
+    "isis", "daesh", "hamas", "hezbollah", "houthi", "houthis",
     "police-raid", "detains", "detained", "arrested", "arrests",
     "sabotage", "arson", "torched", "set-ablaze",
     "hostage", "evacuated", "intercepted",
@@ -137,6 +137,22 @@ LOCATION_ALIASES = {
     "istanbul": ["istanbul"],
 }
 
+REGIONAL_CONTEXT_TERMS = {
+    "ukraine": [
+        "southern-ukraine", "eastern-ukraine", "northern-ukraine",
+        "western-ukraine", "frontline", "front-line"
+    ],
+    "israel": [
+        "west-bank", "gaza", "southern-israel", "northern-israel"
+    ],
+    "iran": [
+        "southern-iran", "central-iran", "western-iran"
+    ],
+    "turkey": [
+        "central-turkey", "turkish-capital", "turkiye"
+    ],
+}
+
 
 def normalize_url_text(value):
     value = str(value or "").lower()
@@ -172,7 +188,6 @@ def contains_domain_hint(domain, hints):
 
 
 def extract_years_from_url(url):
-    # Avoid false positives from long article IDs like 131900345.
     years = re.findall(r"(?<!\d)(19\d{2}|20\d{2})(?!\d)", str(url or ""))
     return sorted(set(years))
 
@@ -221,16 +236,6 @@ def clean_location_candidate(value):
 
 
 def make_location_terms(event_location=None, event_country=None):
-    """
-    Build dynamic location terms from the event itself.
-
-    Important:
-    - The first GDELT location part is not always a city. Sometimes it is an actor
-      or organization, for example "Hezbollah, Kerman, Iran".
-    - Organization names are therefore removed from location terms.
-    - If the first part is removed, the next usable part becomes the primary location.
-    """
-
     location = str(event_location or "")
     country = str(event_country or "")
 
@@ -292,14 +297,24 @@ def term_in_text(term, text):
 
     dashed = term.replace(" ", "-")
     compact = term.replace(" ", "")
-
     text_plain = text.replace("-", " ")
 
     return (
-        term in text_plain
-        or dashed in text
-        or compact in text.replace("-", "")
+        re.search(rf"(?<![a-z0-9]){re.escape(term)}(?![a-z0-9])", text_plain) is not None
+        or re.search(rf"(?<![a-z0-9]){re.escape(dashed)}(?![a-z0-9])", text) is not None
+        or (
+            len(compact) >= 6
+            and re.search(rf"(?<![a-z0-9]){re.escape(compact)}(?![a-z0-9])", text.replace("-", "")) is not None
+        )
     )
+
+
+def collect_hits(terms, text):
+    hits = []
+    for term in terms:
+        if term_in_text(term, text):
+            hits.append(term)
+    return hits
 
 
 def location_match(url, event_location=None, event_country=None):
@@ -310,12 +325,18 @@ def location_match(url, event_location=None, event_country=None):
     secondary_hits = [t for t in terms["secondary"] if term_in_text(t, text)]
     country_hits = [t for t in terms["country"] if term_in_text(t, text)]
 
+    country_key = terms["country"][0] if terms["country"] else ""
+    regional_terms = REGIONAL_CONTEXT_TERMS.get(country_key, [])
+    regional_hits = [t for t in regional_terms if term_in_text(t, text)]
+
     if not terms["primary"] and not terms["secondary"]:
         return {
             "match": True,
             "level": "not_required",
+            "weight": 1.0,
             "primary_hits": [],
             "secondary_hits": [],
+            "regional_hits": regional_hits,
             "country_hits": country_hits,
             "required": False,
             "terms": terms,
@@ -325,8 +346,10 @@ def location_match(url, event_location=None, event_country=None):
         return {
             "match": True,
             "level": "primary",
+            "weight": 1.0,
             "primary_hits": primary_hits,
             "secondary_hits": secondary_hits,
+            "regional_hits": regional_hits,
             "country_hits": country_hits,
             "required": True,
             "terms": terms,
@@ -336,8 +359,23 @@ def location_match(url, event_location=None, event_country=None):
         return {
             "match": True,
             "level": "secondary_country",
+            "weight": 0.8,
             "primary_hits": primary_hits,
             "secondary_hits": secondary_hits,
+            "regional_hits": regional_hits,
+            "country_hits": country_hits,
+            "required": True,
+            "terms": terms,
+        }
+
+    if regional_hits and country_hits:
+        return {
+            "match": True,
+            "level": "regional_country",
+            "weight": 0.6,
+            "primary_hits": primary_hits,
+            "secondary_hits": secondary_hits,
+            "regional_hits": regional_hits,
             "country_hits": country_hits,
             "required": True,
             "terms": terms,
@@ -347,8 +385,10 @@ def location_match(url, event_location=None, event_country=None):
         return {
             "match": True,
             "level": "country_only",
+            "weight": 0.3,
             "primary_hits": primary_hits,
             "secondary_hits": secondary_hits,
+            "regional_hits": regional_hits,
             "country_hits": country_hits,
             "required": True,
             "terms": terms,
@@ -357,58 +397,55 @@ def location_match(url, event_location=None, event_country=None):
     return {
         "match": False,
         "level": "missing",
+        "weight": 0.0,
         "primary_hits": primary_hits,
         "secondary_hits": secondary_hits,
+        "regional_hits": regional_hits,
         "country_hits": country_hits,
         "required": True,
         "terms": terms,
     }
 
 
-def is_location_strong_enough(location_result, incident_hits, is_high_value):
-    """
-    Three-level location logic:
-    1. primary / secondary_country = strong enough
-    2. country_only = accepted only with stronger incident evidence or high-value source
-    3. missing = rejected
-    """
+def term_matches(term, text):
+    term = normalize_plain_text(term)
+    dashed = term.replace(" ", "-")
+    text_plain = text.replace("-", " ")
 
+    return (
+        re.search(rf"(?<![a-z0-9]){re.escape(term)}(?![a-z0-9])", text_plain) is not None
+        or re.search(rf"(?<![a-z0-9]){re.escape(dashed)}(?![a-z0-9])", text) is not None
+    )
+
+
+def collect_term_hits(terms, text):
+    return [term for term in terms if term_matches(term, text)]
+
+
+def is_location_strong_enough(location_result, incident_hits, is_high_value):
     level = location_result.get("level")
 
     if level in {"not_required", "primary", "secondary_country"}:
         return True
 
-    if level == "country_only":
-        if len(incident_hits) >= 3:
-            return True
-        if len(incident_hits) >= 2 and is_high_value:
-            return True
-        return False
+    if level == "regional_country":
+        return len(incident_hits) >= 2 or is_high_value
 
+    # country_only is deliberately weak. It is not accepted as full validation,
+    # because it often groups broad Ukraine/Russia/Israel stories under the wrong city.
     return False
 
 
 def classify_source_url(url, event_location=None, event_country=None, event_date=None):
-    """
-    Fast URL-based source classifier.
-
-    It checks:
-    - incident terms,
-    - topic noise,
-    - historical/archive signals,
-    - stale date signals,
-    - dynamic location match based on the event location.
-    """
-
     url = str(url or "").strip()
     domain = source_domain(url)
     text = normalize_url_text(url)
     event_year = extract_event_year(event_date)
 
-    incident_hits = [term for term in INCIDENT_TERMS if term in text]
-    noise_hits = [term for term in NOISE_TERMS if term in text]
-    weak_hits = [term for term in WEAK_CONTEXT_TERMS if term in text]
-    hard_reject_hits = [term for term in HARD_REJECT_TERMS if term in text]
+    incident_hits = collect_term_hits(INCIDENT_TERMS, text)
+    noise_hits = collect_term_hits(NOISE_TERMS, text)
+    weak_hits = collect_term_hits(WEAK_CONTEXT_TERMS, text)
+    hard_reject_hits = collect_term_hits(HARD_REJECT_TERMS, text)
 
     loc = location_match(url, event_location, event_country)
 
@@ -429,7 +466,10 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
         reason = "historical or archive signal in URL"
 
     elif not location_ok:
-        reason = "location mismatch"
+        if loc.get("level") == "country_only":
+            reason = "country-only location match treated as background, not event validation"
+        else:
+            reason = "location mismatch"
 
     elif len(noise_hits) >= 2 and len(incident_hits) <= 1:
         reason = "topic noise dominates URL"
@@ -439,10 +479,7 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
 
     elif len(incident_hits) >= 2 and not hard_reject_hits:
         accepted = True
-        if loc.get("level") == "country_only":
-            reason = "URL contains strong incident indicators and country-level location match"
-        else:
-            reason = "URL contains multiple concrete incident indicators and matches event location"
+        reason = "URL contains multiple concrete incident indicators and matches event location"
 
     elif len(incident_hits) >= 2 and hard_reject_hits:
         reason = "incident terms appear in historical/archive context"
@@ -458,6 +495,8 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
     elif len(weak_hits) >= 2 and len(incident_hits) == 0:
         reason = "only broad security context, no concrete incident indicator"
 
+    source_weight = loc.get("weight", 0.0) if accepted else 0.0
+
     return {
         "url": url,
         "domain": domain,
@@ -469,20 +508,21 @@ def classify_source_url(url, event_location=None, event_country=None, event_date
         "hard_reject_hits": hard_reject_hits[:10],
         "years": extract_years_from_url(url),
         "location_match": loc,
+        "source_weight": source_weight,
     }
 
 
-def validation_label(valid_count, checked_count, valid_ratio):
+def validation_label(valid_count, checked_count, valid_ratio, weighted_score):
     if checked_count == 0:
         return "No sources"
 
-    if valid_count >= 5 and valid_ratio >= 0.40:
+    if valid_count >= 5 and valid_ratio >= 0.40 and weighted_score >= 3.5:
         return "High"
 
-    if valid_count >= 3 and valid_ratio >= 0.30:
+    if valid_count >= 3 and valid_ratio >= 0.30 and weighted_score >= 2.0:
         return "Medium"
 
-    if valid_count >= 2 and valid_ratio >= 0.25:
+    if valid_count >= 2 and valid_ratio >= 0.25 and weighted_score >= 1.4:
         return "Low"
 
     if valid_count >= 1:
@@ -498,12 +538,6 @@ def validate_sources(
     event_country=None,
     event_date=None,
 ):
-    """
-    Validate a list of source URLs and return a structured source_validation object.
-
-    The returned structure is designed to be stored directly in latest-selected-events.json.
-    """
-
     checked_sources = []
     valid_sources = []
     rejected_sources = []
@@ -526,14 +560,16 @@ def validate_sources(
     valid_count = len(valid_sources)
     rejected_count = len(rejected_sources)
     valid_ratio = round(valid_count / checked_count, 3) if checked_count else 0.0
+    weighted_score = round(sum(float(item.get("source_weight", 0.0)) for item in checked_sources), 3)
 
-    label = validation_label(valid_count, checked_count, valid_ratio)
+    label = validation_label(valid_count, checked_count, valid_ratio, weighted_score)
 
     return {
         "checked_count": checked_count,
         "valid_count": valid_count,
         "rejected_count": rejected_count,
         "valid_ratio": valid_ratio,
+        "weighted_score": weighted_score,
         "label": label,
         "valid_sources": valid_sources,
         "rejected_sources": rejected_sources,
@@ -546,21 +582,17 @@ def validate_sources(
 
 
 def is_event_source_valid(source_validation, min_valid_sources=2):
-    """
-    Gatekeeper for regional Top event selection.
-    Rejected and Very low events should generally not enter the Top list.
-    """
-
     if not source_validation:
         return False
 
     valid_count = int(source_validation.get("valid_count", 0))
+    weighted_score = float(source_validation.get("weighted_score", 0.0))
     label = source_validation.get("label", "Rejected")
 
     if label in {"High", "Medium"}:
         return True
 
-    if label == "Low" and valid_count >= min_valid_sources:
+    if label == "Low" and valid_count >= min_valid_sources and weighted_score >= 1.4:
         return True
 
     return False
