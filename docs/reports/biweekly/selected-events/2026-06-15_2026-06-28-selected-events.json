@@ -582,18 +582,7 @@
         "Kyiv, Misto, Ukraine Ukraine",
         "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
         "Ukraine Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
-        "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-        "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1208,19 +1197,7 @@
         "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine",
         "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 12,
-      "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
-      "sources_refined": [
-        "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
-        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
-        "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
-        "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/"
-      ],
-      "refinement_confidence": "High",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1728,16 +1705,7 @@
         "Gaza, Israel, Israel Israel",
         "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
         "Israel Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     }
-  ],
-  "refined_at": "2026-06-29T09:59:43.401727Z",
-  "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+  ]
 }

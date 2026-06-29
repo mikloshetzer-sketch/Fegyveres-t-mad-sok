@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-06-26T14:51:35.213571Z",
+  "generated_at": "2026-06-29T09:59:43.401739Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 5,
-  "unique_sources_checked": 20,
+  "event_count": 3,
+  "unique_sources_checked": 12,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,10 +12,10 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-06-25",
+      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
+      "date": "2026-06-28",
       "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "location": "Kyiv, Misto, Ukraine",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
@@ -23,64 +23,53 @@
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.themoscowtimes.com/2026/06/25/ukrainian-attacks-on-bryansk-region-and-annexed-crimea-kill-at-least-4-a93092",
-          "domain": "www.themoscowtimes.com",
+          "url": "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
+          "domain": "www.rightspeak.net",
           "status": "ok",
           "error": null,
-          "title": "Ukrainian Attacks on Bryansk Region and Annexed Crimea Kill At Least 4 - The Moscow Times",
-          "description": "At least four people were killed in Ukrainian drone attacks in western Russia and annexed Crimea, authorities said Thursday, while multiple industrial sites were also targeted during the overnight air barrage.",
+          "title": "RIGHT SPEAK: 200 C-Clashes in F-Line: 17 in Pokrovsk Dir, 24 in Huliaipole Dir, 19 in Slavyansk Dir, 18 in Kostyantynivka Dir; UKR Pummels Key RU Oil Hub for 2nd Time in June as Kyiv Ramps Up Pressure On Putin; Trump 'skeptical' of Putin; Sikorski: RU Has Lost War Initiative as UKR Shifts Battlefield; RUs Keep Raising “Potemkin flags” in Lyman. They’re No Closer to Capturing It; UKR Hits: Slavyansk oil Ref, Flamingo Missiles Strike Titan-Barrikady Plant, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "killed",
-            "kill"
+            "strike",
+            "missile",
+            "clash",
+            "clashes"
           ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
-          "domain": "www.egyptindependent.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russia is still inching forward in eastern Ukraine, but experts say claims of progress are exaggerated - Egypt Independent",
-          "description": "Kyiv, Ukraine — Russia is still inching forward in eastern Ukraine’s Donetsk region, where it has concentrated the bulk of its troops, as it continues efforts to encircle the key “fortress belt” city of Kostyantynivka and the city of Lyman.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
           "weak_hits": [
             "war"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://bnn-news.com/ukrainian-drone-strikes-ignite-another-oil-depot-in-russia-281516",
-          "domain": "bnn-news.com",
+          "url": "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
+          "domain": "www.hindustantimes.com",
           "status": "ok",
           "error": null,
-          "title": "Ukrainian drone strikes ignite another oil depot in Russia - Baltic News Network",
-          "description": "Another oil depot has caught fire in Russia’s Krasnodar region following overnight Ukrainian drone strikes, according to Russian and Ukrainian media reports. The Ukrainian Telegram channel Exilenova+ reported that three fuel storage tanks caught fire at the oil depot in the village of Poltavskaya after the attack. According to the Telegram channel Astra, the Poltavskaya […]",
+          "title": "Ballistic missile attack rocks Kyiv, Ukraine issues warning | World News",
+          "description": "Ukrainian military has requested civilians to stay indoors as air defense forces operate in the region following repeated strikes by Moscow | World News",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "strike",
             "strikes",
-            "drone"
+            "missile"
           ],
-          "weak_hits": [],
+          "weak_hits": [
+            "war",
+            "military"
+          ],
           "noise_hits": []
         },
         {
-          "url": "https://english.aawsat.com/world/5288362-ukraine-drone-attacks-kill-5-russia-crimea",
-          "domain": "english.aawsat.com",
+          "url": "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html",
+          "domain": "www.moneycontrol.com",
           "status": "ok",
           "error": null,
-          "title": "Ukraine Drone Attacks Kill 5 in Russia, Crimea",
-          "description": "Ukrainian drone strikes killed five people, including two children, in Russia and on the Moscow-annexed Crimean peninsula, in attacks that also triggered a fire at a major oil depot in the country's south, local officials said Thursday. Ukraine has stepped up strikes on Russia in recent months in retaliation for Moscow's near-daily barrages of drones and missiles throughout its five-year offensive, AFP reported. Russia's defense ministry said it downed 269 Ukrainian drones overnight over Russia and Crimea, which Moscow annexed in 2014.",
+          "title": "Russia-Ukraine war: Kyiv under ballistic missile attack as both sides intensify cross-border strikes",
+          "description": "Ukraine came under a fresh Russian missile attack on Kyiv as Ukrainian drones struck a Russian oil refinery, intensifying cross-border attacks amid the ongoing war.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -90,10 +79,119 @@
             "strikes",
             "drone",
             "drones",
-            "missile",
+            "missile"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.kyivpost.com/post/79102",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s Energy System ‘More Prepared’ for Winter, DTEK CEO Says",
+          "description": "Maxim Timchenko, CEO of Ukraine’s largest private energy company DTEK, says the country’s energy system will be better prepared for the upcoming winter.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 2,
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-06-27",
+      "country": "Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 12,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
+          "domain": "www.rightspeak.net",
+          "status": "ok",
+          "error": null,
+          "title": "RIGHT SPEAK: 205 C-Clashes in F-Line: 28 in Pokrovsk Dir, 20 in Huliaipole Dir, 24 in Slavyansk Dir; RU Reports One of the Biggest UKR Drone Attacks On Its Soil and Annexed Crimea; UKR’s Growing Drone Strikes Overwhelm RU Air-Def; UKR Lifts Veil On Drone Reg Behind Strikes Deep Inside RU; UKR HITS: RU Milt Supply Vessels; 2 RU Spy Ships, an S-400; Lukoil Oil Ref in Kstovo, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "drone",
+            "clash",
+            "clashes"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "row"
+          ]
+        },
+        {
+          "url": "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
+          "domain": "www.westhawaiitoday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian attacks spur state of emergency declaration in Crimea - West Hawaii Today",
+          "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency Friday after weeks of intense air attacks by Ukraine, including a wave of drone strikes overnight that appears to have been one of the largest since the war began.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "drone"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Three killed as Ukraine and Russia trade attacks overnight - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
+          "description": "Russian overnight attacks have killed two people and wounded more than 20 across Ukraine, while Kyiv’s attacks on Russian territory and occupied areas have",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied",
             "killed",
             "kill",
-            "downed"
+            "wounded"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "travel"
+          ]
+        },
+        {
+          "url": "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/",
+          "domain": "www.bostonglobe.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian attacks spur state of emergency declaration in Crimea - The Boston Globe",
+          "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency after weeks of intense air attacks by Ukraine.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -101,106 +199,36 @@
       ]
     },
     {
-      "region": "Balkán",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Ankara, Turkey",
-      "date": "2026-06-25",
-      "country": "Turkey",
-      "location": "Ankara, Turkey",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
-      "inspected_sources": [
-        {
-          "url": "https://www.livemint.com/global/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-11782349188696.html",
-          "domain": "www.livemint.com",
-          "status": "ok",
-          "error": null,
-          "title": "A Turkish arms sale leads to a face-off between Trump and Congress | Mint",
-          "description": "The administration is expected to push for a rare override to get the deal through as the NATO summit in Ankara approaches.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "nato",
-            "summit"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.hindustantimes.com/world-news/a-turkish-arms-sale-leads-to-a-face-off-between-trump-and-congress-101782381713912.html",
-          "domain": "www.hindustantimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "A Turkish Arms Sale Leads to a Face-Off Between Trump and Congress | World News",
-          "description": "The administration is expected to push for a rare override to get the deal through as the NATO summit in Ankara approaches. | World News",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "nato",
-            "summit"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.jpost.com/middle-east/article-900521",
-          "domain": "www.jpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey shifts from fueling conflict to brokering peace in Libya | The Jerusalem Post",
-          "description": "Turkish Intelligence Chief Ibrahim Kalin's meeting with Deputy Commander Saddam Haftar of the Libyan National Army marks a major about-face from previous antagonisms.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "army",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://newstodaynet.com/2026/06/24/turkey-detains-209-in-raids-ahead-of-julys-nato-summit/",
-          "domain": "newstodaynet.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey detains 209 in raids ahead of July's NATO summit - News Today | First with the news",
-          "description": "Security forces in the Turkish capital carried out sweeping raids on Tuesday ahead of next month's NATO summit, and detained more than 200 people with suspected links to extremist groups, including the Islamic State group.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "raid",
-            "raids",
-            "security forces",
-            "detained"
-          ],
-          "weak_hits": [
-            "nato",
-            "summit"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
-      "date": "2026-06-25",
+      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
+      "date": "2026-06-28",
       "country": "Israel",
       "location": "Gaza, Israel, Israel",
-      "event_type": "Fegyveres összecsapás",
+      "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
       "inspected_sources": [
         {
-          "url": "https://www.ft.lk/columns/Lucerne-lessons-for-Lanka-Lebanon-war-Easter-massacre-mastermind-scenarios/4-793751",
-          "domain": "www.ft.lk",
+          "url": "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
+          "domain": "calgarysun.com",
+          "status": "ok",
+          "error": null,
+          "title": "KINSELLA: Is Prime Minister Mark Carney antisemitic? | Calgary Sun",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "minister"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://kaieteurnewsonline.com/2026/06/28/un-commission-finds-israel-committed-war-crimes-against-palestinian-children-recommends-arms-restriction/",
+          "domain": "kaieteurnewsonline.com",
           "status": "error",
           "error": "The read operation timed out",
           "title": "",
@@ -212,222 +240,30 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.aljazeera.com/news/2026/6/24/de-la-espriella-pledges-to-restore-colombias-relations-with-israel",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "De la Espriella pledges to restore Colombia’s relations with Israel | Politics News | Al Jazeera",
-          "description": "The far-right president-elect has pledged to rebuild ties with Israel and the US following tensions under Gustavo Petro.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.clevelandjewishnews.com/jns/please-look-at-me-former-israeli-hostage-demands-of-un-adviser-on-violence-against-women/article_b53335b3-eead-51ab-8709-83ed6474cfbb.html",
-          "domain": "www.clevelandjewishnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "‘Please look at me,’ former Israeli hostage demands of UN adviser on violence against women | JNS | clevelandjewishnews.com",
-          "description": "It’s “absurd and tragic that there are U.N. experts who are supposed to care about the rights of women, especially to combat sexual violence, and she’s one of the world’s",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "hostage"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.haaretz.com/israel-news/israel-security/2026-06-25/ty-article/.premium/idf-bedouin-israeli-civilian-contractor-killed-in-gaza-operational-accident/0000019e-fb5e-d0cc-af9e-ffdf69e90000",
-          "domain": "www.haaretz.com",
-          "status": "ok",
-          "error": null,
-          "title": "Bedouin Israeli Civilian Contractor Killed in Gaza Operational Accident, IDF Says - Israel Security",
-          "description": "Raad Abu al-Kiyan, a bulldozer operator from the town of Hura in southern Israel, was killed while in a building collapse in the Strip. He is the first Israeli citizen to be killed in Gaza since February",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "killed",
-            "kill",
-            "idf"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Hebron, Israel, Israel",
-      "date": "2026-06-25",
-      "country": "Israel",
-      "location": "Hebron, Israel, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://thedailyblog.co.nz/in-occupied-palestine-22-june-2026/",
-          "domain": "thedailyblog.co.nz",
-          "status": "ok",
-          "error": null,
-          "title": "In Occupied Palestine – 22 June 2026 – The Daily Blog",
+          "url": "https://kaieteurnewsonline.com/2026/06/28/un-report-accuses-israel-of-systematically-destroying-gazas-children/",
+          "domain": "kaieteurnewsonline.com",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
           "description": "",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "ied"
-          ],
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.aljazeera.com/news/2026/6/25/israeli-forces-shoot-and-kill-palestinians-in-occupied-west-bank-gaza",
-          "domain": "www.aljazeera.com",
+          "url": "https://www.theamericanconservative.com/ben-shapiro-blames-useless-white-people-for-socialism/",
+          "domain": "www.theamericanconservative.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces shoot and kill Palestinians in occupied West Bank, Gaza | Israel-Palestine conflict News | Al Jazeera",
-          "description": "The deaths come amid escalating Israeli military raids and settler attacks across the occupied territories.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "ied",
-            "raid",
-            "raids",
-            "kill"
-          ],
-          "weak_hits": [
-            "military",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://imemc.org/article/army-injures-two-palestinians-including-journalist-in-jordan-valley/",
-          "domain": "imemc.org",
-          "status": "ok",
-          "error": null,
-          "title": "Army Injures Two Palestinians, Including Journalist, in Jordan Valley | - IMEMC News",
-          "description": "Two Palestinians, including a journalist, were injured on Thursday in the occupied West Bank when Israeli occupation forces assaulted them in the northern J ...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "injured"
-          ],
-          "weak_hits": [
-            "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middleeasteye.net/profile/israel-itamar-ben-gvir",
-          "domain": "www.middleeasteye.net",
-          "status": "ok",
-          "error": null,
-          "title": "Itamar Ben Gvir: How the man keeping Netanyahu in office rose to power | Middle East Eye",
-          "description": "Notorious for provocative rhetoric and overseeing brutal treatment of Palenstinian prisoners, he has been able to galvanise supporters on the far right",
+          "title": "Ben Shapiro Blames ‘Useless White People’ for Socialism - The American Conservative",
+          "description": "The Daily Wire podcaster supported policies that boosted the hard left in New York.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
-      "date": "2026-06-23",
-      "country": "Qatar",
-      "location": "Doha, Ad Daw?ah, Qatar",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
-          "domain": "www.dailyexcelsior.com",
-          "status": "ok",
-          "error": null,
-          "title": "12 Indians among 13 killed in explosion at factory in Ras Laffan Industrial City in Qatar: Officials - Daily Excelsior",
-          "description": "DUBAI, Jun 22: Twelve Indians were among 13 people killed in an explosion at a factory in the Ras Laffan Industrial City in Qatar, officials said on Monday.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "explosion",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
-          "domain": "timesofindia.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "12 Indians among 13 killed in Qatar gas plant blast; accident says minister - The Times of India",
-          "description": "Middle East News: DOHA: Twelve Indians were among the 13 people killed in an explosion at a gas processing plant in the Ras Laffan Industrial City in Qatar, officials s.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "explosion",
-            "blast",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "minister"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel",
-          "domain": "edition.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "June 23, 2026 - Strait of Hormuz evacuation plans, Trump insists Iran agreed to more nuclear inspections | CNN",
-          "description": "President Donald Trump dismissed claims that no Iran visit has been scheduled for International Atomic Energy Agency inspectors, saying Tehran had already agreed to the arrangement. Folow for live news updates.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.bignewsnetwork.com/news/279141972/12-indians-died-in-ras-laffan-lng-blast-qatar",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "12 Indians died in Ras Laffan LNG blast - Qatar",
-          "description": "Twelve Indians are among the 13 killed in a blast at the industrial hub which houses the world's largest LNG export complex Read Full Article at RT.com",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "blast",
-            "ied",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
         }
       ]
     }
