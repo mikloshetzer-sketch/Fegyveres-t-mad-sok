@@ -1,12 +1,16 @@
 """
 Final event validator for selected biweekly armed incident events.
 
-This module combines source validation and optional article validation.
+This diagnostic version combines source validation and optional article
+validation, and it also reports exactly how article_validator.py import was
+attempted.
 
-It loads article_validator.py robustly using:
-1. lib.article_validator
-2. scripts.lib.article_validator
-3. direct file loading from the same directory
+The goal is to identify why article_validator.py is still reported as
+unavailable in the generated biweekly JSON.
+
+Public functions:
+- validate_final_event
+- validate_final_events
 """
 
 from __future__ import annotations
@@ -14,45 +18,135 @@ from __future__ import annotations
 from typing import Any, Dict, List, Optional
 from pathlib import Path
 import importlib.util
+import sys
+import os
+import traceback
+
+
+ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS: Dict[str, Any] = {
+    "status": "not_attempted",
+    "selected_method": None,
+    "selected_path": None,
+    "python_executable": sys.executable,
+    "cwd": os.getcwd(),
+    "sys_path_sample": sys.path[:8],
+    "attempts": [],
+}
+
+
+def _record_import_attempt(method: str, status: str, error: Optional[BaseException] = None, path: Optional[str] = None) -> None:
+    entry: Dict[str, Any] = {
+        "method": method,
+        "status": status,
+    }
+
+    if path:
+        entry["path"] = path
+
+    if error is not None:
+        entry["error_type"] = type(error).__name__
+        entry["error"] = str(error)
+        entry["traceback_tail"] = traceback.format_exc().splitlines()[-8:]
+
+    ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["attempts"].append(entry)
 
 
 def _load_article_validator_function():
+    """
+    Load validate_article_sources from article_validator.py using multiple
+    import strategies. Return None if every attempt fails.
+
+    The diagnostics are intentionally stored in ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS
+    so they can be written into the report output.
+    """
+
+    ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["status"] = "attempting"
+
     try:
         from lib.article_validator import validate_article_sources
+
+        ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["status"] = "ok"
+        ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_method"] = "lib.article_validator"
+        _record_import_attempt("lib.article_validator", "ok")
         return validate_article_sources
-    except Exception:
-        pass
+
+    except Exception as exc:
+        _record_import_attempt("lib.article_validator", "failed", exc)
 
     try:
         from scripts.lib.article_validator import validate_article_sources
+
+        ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["status"] = "ok"
+        ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_method"] = "scripts.lib.article_validator"
+        _record_import_attempt("scripts.lib.article_validator", "ok")
         return validate_article_sources
+
+    except Exception as exc:
+        _record_import_attempt("scripts.lib.article_validator", "failed", exc)
+
+    candidate_paths = []
+
+    try:
+        candidate_paths.append(Path(__file__).resolve().parent / "article_validator.py")
     except Exception:
         pass
 
-    try:
-        article_path = Path(__file__).resolve().parent / "article_validator.py"
+    candidate_paths.extend([
+        Path("scripts/lib/article_validator.py").resolve(),
+        Path("lib/article_validator.py").resolve(),
+        Path.cwd() / "scripts" / "lib" / "article_validator.py",
+        Path.cwd() / "lib" / "article_validator.py",
+    ])
 
-        if not article_path.exists():
-            return None
+    seen = set()
+    unique_candidate_paths = []
 
-        spec = importlib.util.spec_from_file_location(
-            "article_validator_runtime",
-            str(article_path),
-        )
+    for path in candidate_paths:
+        path_text = str(path)
 
-        if spec is None or spec.loader is None:
-            return None
+        if path_text in seen:
+            continue
 
-        module = importlib.util.module_from_spec(spec)
-        spec.loader.exec_module(module)
+        seen.add(path_text)
+        unique_candidate_paths.append(path)
 
-        fn = getattr(module, "validate_article_sources", None)
+    for article_path in unique_candidate_paths:
+        method = "direct_file_load"
 
-        if callable(fn):
-            return fn
+        try:
+            if not article_path.exists():
+                _record_import_attempt(method, "missing_file", path=str(article_path))
+                continue
 
-    except Exception:
-        return None
+            spec = importlib.util.spec_from_file_location(
+                "article_validator_runtime",
+                str(article_path),
+            )
+
+            if spec is None or spec.loader is None:
+                _record_import_attempt(method, "failed_no_loader", path=str(article_path))
+                continue
+
+            module = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(module)
+
+            fn = getattr(module, "validate_article_sources", None)
+
+            if callable(fn):
+                ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["status"] = "ok"
+                ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_method"] = method
+                ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_path"] = str(article_path)
+                _record_import_attempt(method, "ok", path=str(article_path))
+                return fn
+
+            _record_import_attempt(method, "failed_missing_function", path=str(article_path))
+
+        except Exception as exc:
+            _record_import_attempt(method, "failed", exc, path=str(article_path))
+
+    ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["status"] = "failed"
+    ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_method"] = None
+    ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS["selected_path"] = None
 
     return None
 
@@ -116,6 +210,16 @@ def choose_article_candidate_sources(
     event: Dict[str, Any],
     max_articles: int = DEFAULT_MAX_ARTICLES,
 ) -> List[str]:
+    """
+    Pick source URLs for article-level validation.
+
+    Priority:
+    1. source_validation.valid_sources
+    2. source_validation.sources
+    3. event.valid_sources
+    4. event.sources
+    """
+
     event = event or {}
     source_validation = event.get("source_validation") or {}
     candidates: List[str] = []
@@ -142,6 +246,7 @@ def source_validation_score(source_validation: Dict[str, Any]) -> int:
     label = str(source_validation.get("label") or "Rejected")
 
     score = 0
+
     score += min(valid_count * 8, 32)
     score += min(int(weighted_score * 8), 32)
 
@@ -150,10 +255,13 @@ def source_validation_score(source_validation: Dict[str, Any]) -> int:
 
     if label == "High":
         score += 20
+
     elif label == "Medium":
         score += 12
+
     elif label == "Low":
         score += 6
+
     elif label in {"Very low", "Rejected"}:
         score -= 12
 
@@ -170,6 +278,7 @@ def article_validation_score(article_validation: Dict[str, Any]) -> int:
     confidence = str(article_validation.get("confidence") or "Rejected")
 
     score = 0
+
     score += min(accepted_count * 18, 54)
     score += min(int(average_score * 0.35), 30)
 
@@ -178,10 +287,13 @@ def article_validation_score(article_validation: Dict[str, Any]) -> int:
 
     if confidence == "High":
         score += 18
+
     elif confidence == "Medium":
         score += 10
+
     elif confidence == "Low":
         score += 4
+
     elif confidence == "Rejected":
         score -= 15
 
@@ -192,6 +304,11 @@ def calculate_final_confidence_score(
     event: Dict[str, Any],
     article_validation: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
+    """
+    Combine source-level and article-level evidence into one final confidence
+    block.
+    """
+
     source_validation = (event or {}).get("source_validation") or {}
 
     source_score = source_validation_score(source_validation)
@@ -260,6 +377,14 @@ def validate_final_event(
     timeout: int = DEFAULT_TIMEOUT,
     fetch_articles: bool = True,
 ) -> Dict[str, Any]:
+    """
+    Validate one already selected event.
+
+    If article_validator.py is available and fetch_articles=True, the module
+    validates the content of a few candidate articles. Otherwise it falls back
+    to source-validation-only confidence.
+    """
+
     event = dict(event or {})
     candidate_sources = choose_article_candidate_sources(
         event,
@@ -294,6 +419,7 @@ def validate_final_event(
                 "rejected_urls": [],
                 "checked": [],
                 "error": f"{type(exc).__name__}: {exc}",
+                "traceback_tail": traceback.format_exc().splitlines()[-8:],
             }
             article_validation_status = "error"
 
@@ -322,6 +448,7 @@ def validate_final_event(
         "score_adjustment": adjustment,
         "recommended_score": clamp(base_score + adjustment),
         "article_validator_available": validate_article_sources is not None,
+        "article_validator_import": ARTICLE_VALIDATOR_IMPORT_DIAGNOSTICS,
     }
 
 
@@ -332,6 +459,10 @@ def validate_final_events(
     timeout: int = DEFAULT_TIMEOUT,
     fetch_articles: bool = True,
 ) -> List[Dict[str, Any]]:
+    """
+    Validate multiple selected events and return a new list.
+    """
+
     output: List[Dict[str, Any]] = []
 
     for event in events or []:
