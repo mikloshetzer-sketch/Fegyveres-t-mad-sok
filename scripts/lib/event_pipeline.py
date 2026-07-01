@@ -7,7 +7,7 @@ This module wraps:
 - event_scoring.py
 - final_event_validator.py
 
-It is intentionally compatible with generate_biweekly_report.py and exposes:
+It is compatible with generate_biweekly_report.py and exposes:
 - prepare_event_cluster
 - prepare_event_clusters
 - filter_valid_clusters
@@ -67,6 +67,7 @@ except Exception:
 
 DEFAULT_MAX_SOURCES = 12
 DEFAULT_FINAL_VALIDATION_ARTICLES = 4
+DEFAULT_TIMEOUT = 10
 
 
 def clean_text(value: Any) -> str:
@@ -89,6 +90,7 @@ def clamp(value: Any, minimum: int = 0, maximum: int = 100) -> int:
 def parse_date(value: Any):
     if not value:
         return None
+
     try:
         return datetime.fromisoformat(str(value)[:10]).date()
     except Exception:
@@ -100,14 +102,17 @@ def get_cluster_sources(cluster: Dict[str, Any]) -> List[str]:
 
     for key in ["sources", "valid_sources", "merged_sources"]:
         values = cluster.get(key)
+
         if isinstance(values, list):
             for item in values:
                 if isinstance(item, str) and item.startswith("http") and item not in sources:
                     sources.append(item)
 
     source_validation = cluster.get("source_validation") or {}
+
     for key in ["valid_sources", "sources"]:
         values = source_validation.get(key)
+
         if isinstance(values, list):
             for item in values:
                 if isinstance(item, str) and item.startswith("http") and item not in sources:
@@ -118,6 +123,7 @@ def get_cluster_sources(cluster: Dict[str, Any]) -> List[str]:
 
 def normalize_cluster_location(cluster: Dict[str, Any]) -> Dict[str, Any]:
     cluster = dict(cluster or {})
+
     location = cluster.get("location") or cluster.get("raw_location") or ""
     country = cluster.get("country") or ""
 
@@ -228,14 +234,20 @@ def score_cluster(
     cluster = dict(cluster or {})
 
     if calculate_cluster_score is None or calculate_cluster_breakdown is None:
-        cluster["score"] = safe_int(cluster.get("score"), 0)
+        existing_score = safe_int(cluster.get("score"), 0)
+        cluster["score"] = existing_score
         cluster["ranking_breakdown"] = {
-            "total": cluster["score"],
+            "total": existing_score,
             "source": "existing_score_fallback",
         }
         return cluster
 
-    breakdown = calculate_cluster_breakdown(cluster, context=context or {}, end_date=end_date)
+    breakdown = calculate_cluster_breakdown(
+        cluster,
+        context=context or {},
+        end_date=end_date,
+    )
+
     cluster["ranking_breakdown"] = breakdown
     cluster["score"] = clamp(breakdown.get("total", 0))
 
@@ -247,11 +259,12 @@ def final_validate_cluster(
     *,
     fetch_articles: bool = False,
     max_articles: int = DEFAULT_FINAL_VALIDATION_ARTICLES,
-    timeout: int = 10,
+    timeout: int = DEFAULT_TIMEOUT,
 ) -> Dict[str, Any]:
     cluster = dict(cluster or {})
 
     if validate_final_event is None:
+        current_score = safe_int(cluster.get("score"), 0)
         cluster["final_validation"] = {
             "status": "unavailable",
             "article_validation_status": "final_event_validator_unavailable",
@@ -261,9 +274,9 @@ def final_validate_cluster(
                 "basis": "source_validation_only",
             },
             "score_adjustment": 0,
-            "recommended_score": safe_int(cluster.get("score"), 0),
+            "recommended_score": current_score,
         }
-        cluster["recommended_score"] = safe_int(cluster.get("score"), 0)
+        cluster["recommended_score"] = current_score
         return cluster
 
     final_validation = validate_final_event(
@@ -287,8 +300,21 @@ def prepare_event_cluster(
     max_sources: int = DEFAULT_MAX_SOURCES,
     run_final_validation: bool = False,
     fetch_articles: bool = False,
+    max_articles: int = DEFAULT_FINAL_VALIDATION_ARTICLES,
+    max_articles_per_event: Optional[int] = None,
+    timeout: int = DEFAULT_TIMEOUT,
 ) -> Dict[str, Any]:
+    """
+    Prepare one event cluster.
+
+    The function accepts both max_articles and max_articles_per_event to remain
+    compatible with different generate_biweekly_report.py versions.
+    """
+
     prepared = dict(cluster or {})
+
+    if max_articles_per_event is not None:
+        max_articles = max_articles_per_event
 
     prepared = normalize_cluster_location(prepared)
     prepared = validate_cluster_sources(prepared, max_sources=max_sources)
@@ -298,9 +324,9 @@ def prepare_event_cluster(
         prepared = final_validate_cluster(
             prepared,
             fetch_articles=fetch_articles,
+            max_articles=max_articles,
+            timeout=timeout,
         )
-        if prepared.get("recommended_score") is not None:
-            prepared["recommended_score"] = prepared["final_validation"].get("recommended_score")
 
     return prepared
 
@@ -312,7 +338,19 @@ def prepare_event_clusters(
     max_sources: int = DEFAULT_MAX_SOURCES,
     run_final_validation: bool = False,
     fetch_articles: bool = False,
+    max_articles: int = DEFAULT_FINAL_VALIDATION_ARTICLES,
+    max_articles_per_event: Optional[int] = None,
+    timeout: int = DEFAULT_TIMEOUT,
 ) -> List[Dict[str, Any]]:
+    """
+    Prepare multiple event clusters.
+
+    Accepts both max_articles and max_articles_per_event for compatibility.
+    """
+
+    if max_articles_per_event is not None:
+        max_articles = max_articles_per_event
+
     raw_clusters = [dict(item or {}) for item in clusters or []]
     context = build_cluster_context(raw_clusters)
 
@@ -326,6 +364,8 @@ def prepare_event_clusters(
             max_sources=max_sources,
             run_final_validation=run_final_validation,
             fetch_articles=fetch_articles,
+            max_articles=max_articles,
+            timeout=timeout,
         ))
 
     return prepared
@@ -383,8 +423,10 @@ def select_top_clusters(
 
         if exact_key in used_exact:
             continue
+
         if used_locations[location_key] >= 1:
             continue
+
         if used_country_type[country_type_key] >= 2:
             continue
 
@@ -399,7 +441,9 @@ def select_top_clusters(
     for item in sorted_items:
         if item in selected:
             continue
+
         selected.append(item)
+
         if len(selected) >= limit:
             break
 
@@ -439,4 +483,32 @@ def pipeline_summary(clusters: List[Dict[str, Any]]) -> Dict[str, Any]:
         "top_locations": location_counter.most_common(10),
         "top_event_types": type_counter.most_common(10),
     }
+
+
+if __name__ == "__main__":
+    import json
+
+    sample = [{
+        "date": "2026-06-30",
+        "country": "Ukraine",
+        "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "event_type": "Rajtaütés / fegyveres támadás",
+        "event_nature": "Egyéb biztonsági esemény",
+        "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "sources": [
+            "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
+        ],
+    }]
+
+    prepared = prepare_event_clusters(
+        sample,
+        run_final_validation=True,
+        fetch_articles=False,
+        max_articles=4,
+    )
+
+    print(json.dumps({
+        "prepared": prepared,
+        "summary": pipeline_summary(prepared),
+    }, indent=2, ensure_ascii=False))
 
