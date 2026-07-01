@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T11:27:49.089591Z",
+  "generated_at": "2026-07-01T11:55:53.601977Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-17",
@@ -70,10 +70,10 @@
         {
           "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
-          "status": "ok",
-          "error": null,
-          "title": "RIGHT SPEAK: 197 C-Clashes in F-Line: 24 in Pokrovsk Dir, 23 in Huliaipole Dir, 24 in Slavyansk Dir; UKR Drone Assault Sets Fire to Major Oil-Ref in RU; RUs Feel the War s Hardships as UKR Pummels Crimea; Trump Signals Frustration with Putin and Support for UKR; UKR Says 'Spirit of Anchorage' is 'dead,' RU Must Face Reality in Peace Talks; Report: Most RU Recruits Life Expectancy Just 20 Min On UKR F-Lines; Z: UKR Struck Oil Refs in RU's Krasnodar Krai and Yaroslavl Obl, LIVE UPDATES, DETAILS, and LOTS MORE",
-          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
           "published": ""
         },
         {
@@ -152,36 +152,34 @@
       "event_fingerprint": {
         "representative_title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
         "top_keywords": [
-          "crimea",
           "attacks",
-          "ukr",
+          "crimea",
           "strikes",
           "state",
           "emergency",
           "still",
           "inching",
           "forward",
-          "eastern"
+          "eastern",
+          "including"
         ],
         "actor_hints": [
           "russia",
           "russian",
           "ukraine",
-          "ukrainian",
-          "trump",
-          "putin"
+          "ukrainian"
         ],
         "conflict_hints": [
           "drone",
           "strike",
           "attack",
           "explosion",
-          "clash",
           "assault",
           "killed",
-          "injured"
+          "injured",
+          "wounded"
         ],
-        "usable_source_count": 9,
+        "usable_source_count": 8,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -193,12 +191,12 @@
       "local_media_findings": [
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
-          "error": null,
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Ukraine\" \"russia\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
@@ -208,12 +206,12 @@
         },
         {
           "query": "\"russia\" \"drone\" 2026-06-30",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -408,27 +406,95 @@
       "local_media_findings": [
         {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-          "articles": []
-        },
-        {
-          "query": "\"Qatar\" \"israel\" \"strike\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
+          "query": "\"Qatar\" \"israel\" \"strike\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "中东变局下的卡塔尔 ： 首席调停者 缘何异常低调→",
+              "url": "https://baijiahao.baidu.com/s?id=1862868242446286981",
+              "domain": "baijiahao.baidu.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260420T040000Z"
+            },
+            {
+              "title": "中东面面观丨中东变局下的卡塔尔 ： 首席调停者 缘何异常低调→",
+              "url": "https://baijiahao.baidu.com/s?id=1862867643862511754",
+              "domain": "baijiahao.baidu.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260419T063000Z"
+            },
+            {
+              "title": "美紧急批准向中东四国出售86亿美元军备 | 卡塔尔 | 以色列 | 科威特",
+              "url": "https://www.epochtimes.com/gb/26/5/2/n14754787.htm",
+              "domain": "epochtimes.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260502T074500Z"
+            },
+            {
+              "title": "Hama al - Hayya says Israel using force to impose terms after son killed in strike – Middle East Monitor",
+              "url": "https://www.middleeastmonitor.com/20260508-hamas-al-hayya-says-israel-using-force-to-impose-terms-after-son-killed-in-strike/",
+              "domain": "middleeastmonitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260508T204500Z"
+            },
+            {
+              "title": "Сын главы ХАМАС в секторе Газа погиб в результате израильского удара",
+              "url": "https://ria.ru/20260507/khamas-2091076059.html",
+              "domain": "ria.ru",
+              "source_country": "Russia",
+              "language": "Russian",
+              "seendate": "20260507T120000Z"
+            },
+            {
+              "title": "Qatarul a pledat la Washington pentru negocieri cu Iranul",
+              "url": "https://www.stiripesurse.ro/qatarul-a-pledat-la-washington-pentru-negocieri-cu-iranul_3884476",
+              "domain": "stiripesurse.ro",
+              "source_country": "Romania",
+              "language": "Romanian",
+              "seendate": "20260509T074500Z"
+            }
+          ]
+        },
+        {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "matched_articles": [
+        {
+          "title": "Qatarul a pledat la Washington pentru negocieri cu Iranul",
+          "url": "https://www.stiripesurse.ro/qatarul-a-pledat-la-washington-pentru-negocieri-cu-iranul_3884476",
+          "domain": "stiripesurse.ro",
+          "source_country": "Romania",
+          "language": "Romanian",
+          "seendate": "20260509T074500Z",
+          "match_score": 30
+        },
+        {
+          "title": "Hama al - Hayya says Israel using force to impose terms after son killed in strike – Middle East Monitor",
+          "url": "https://www.middleeastmonitor.com/20260508-hamas-al-hayya-says-israel-using-force-to-impose-terms-after-son-killed-in-strike/",
+          "domain": "middleeastmonitor.com",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20260508T204500Z",
+          "match_score": 20
+        }
+      ],
+      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 2 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -624,22 +690,22 @@
       "local_media_findings": [
         {
           "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Israel\" \"israel\" \"strike\"",
-          "error": "<urlopen error timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Gaza, Israel\" \"strike\"",
-          "error": "<urlopen error timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "<urlopen error timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
@@ -798,22 +864,22 @@
       "local_media_findings": [
         {
           "query": "\"Rafah, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
-          "error": "<urlopen error timed out>",
-          "articles": []
-        },
-        {
-          "query": "\"Gaza Strip\" \"israel\" \"drone\"",
-          "error": "<urlopen error timed out>",
-          "articles": []
-        },
-        {
-          "query": "\"Rafah, Gaza Strip\" \"drone\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
-          "query": "\"israel\" \"drone\" 2026-06-30",
+          "query": "\"Gaza Strip\" \"israel\" \"drone\"",
           "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Rafah, Gaza Strip\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-06-30",
+          "error": "<urlopen error timed out>",
           "articles": []
         }
       ],
