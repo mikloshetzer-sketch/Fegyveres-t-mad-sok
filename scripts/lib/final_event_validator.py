@@ -1,28 +1,31 @@
 """
-Final event validator for the biweekly armed incident pipeline.
+Final event validator for selected biweekly armed incident events.
 
-This module combines:
-- URL/source-level validation results already stored on the event cluster;
-- article-level validation using article_validator.py;
-- final confidence and final score adjustment.
+This module combines source validation and optional article validation.
 
-It is designed to run only on already selected Top events, not on the full GDELT
-dataset. This keeps GitHub Actions runtime under control.
+Important:
+- It supports both import styles:
+  from lib.article_validator ...
+  from scripts.lib.article_validator ...
+- If article_validator cannot be imported, the pipeline remains stable.
 """
 
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
 
+
 try:
     from lib.article_validator import validate_article_sources
 except Exception:
-    validate_article_sources = None
+    try:
+        from scripts.lib.article_validator import validate_article_sources
+    except Exception:
+        validate_article_sources = None
 
 
 DEFAULT_MAX_ARTICLES = 4
 DEFAULT_TIMEOUT = 10
-
 
 CONFIDENCE_ORDER = {
     "Rejected": 0,
@@ -47,8 +50,8 @@ def safe_float(value: Any, default: float = 0.0) -> float:
         return default
 
 
-def clamp(value: int, minimum: int = 0, maximum: int = 100) -> int:
-    return max(minimum, min(maximum, int(value)))
+def clamp(value: Any, minimum: int = 0, maximum: int = 100) -> int:
+    return max(minimum, min(maximum, safe_int(value)))
 
 
 def confidence_rank(label: str) -> int:
@@ -66,41 +69,21 @@ def confidence_label_from_score(score: int) -> str:
         return "Low"
     if score >= 20:
         return "Very low"
-
     return "Rejected"
 
 
 def choose_article_candidate_sources(event: Dict[str, Any], max_articles: int = DEFAULT_MAX_ARTICLES) -> List[str]:
-    """
-    Pick the best source URLs for article-level validation.
-
-    Priority:
-    1. source_validation.valid_sources
-    2. event.valid_sources
-    3. event.sources
-
-    The module validates only a few sources because article fetching is slow and
-    can produce HTTP 403/429 responses.
-    """
-
     event = event or {}
     source_validation = event.get("source_validation") or {}
-
     candidates: List[str] = []
 
-    for key in ["valid_sources", "sources"]:
-        values = source_validation.get(key)
-        if isinstance(values, list):
-            for url in values:
-                if isinstance(url, str) and url.startswith("http") and url not in candidates:
-                    candidates.append(url)
-
-    for key in ["valid_sources", "sources"]:
-        values = event.get(key)
-        if isinstance(values, list):
-            for url in values:
-                if isinstance(url, str) and url.startswith("http") and url not in candidates:
-                    candidates.append(url)
+    for source_container in [source_validation, event]:
+        for key in ["valid_sources", "sources"]:
+            values = source_container.get(key)
+            if isinstance(values, list):
+                for url in values:
+                    if isinstance(url, str) and url.startswith("http") and url not in candidates:
+                        candidates.append(url)
 
     return candidates[:max_articles]
 
@@ -115,13 +98,11 @@ def source_validation_score(source_validation: Dict[str, Any]) -> int:
     label = str(source_validation.get("label") or "Rejected")
 
     score = 0
-
     score += min(valid_count * 8, 32)
     score += min(int(weighted_score * 8), 32)
 
     if checked_count:
-        ratio = valid_count / max(checked_count, 1)
-        score += int(ratio * 16)
+        score += int((valid_count / max(checked_count, 1)) * 16)
 
     if label == "High":
         score += 20
@@ -145,13 +126,11 @@ def article_validation_score(article_validation: Dict[str, Any]) -> int:
     confidence = str(article_validation.get("confidence") or "Rejected")
 
     score = 0
-
     score += min(accepted_count * 18, 54)
     score += min(int(average_score * 0.35), 30)
 
     if checked_count:
-        ratio = accepted_count / max(checked_count, 1)
-        score += int(ratio * 16)
+        score += int((accepted_count / max(checked_count, 1)) * 16)
 
     if confidence == "High":
         score += 18
@@ -169,23 +148,16 @@ def calculate_final_confidence_score(
     event: Dict[str, Any],
     article_validation: Optional[Dict[str, Any]] = None,
 ) -> Dict[str, Any]:
-    """
-    Combine source-level and article-level evidence into a final confidence block.
-    """
-
-    event = event or {}
-    source_validation = event.get("source_validation") or {}
+    source_validation = (event or {}).get("source_validation") or {}
 
     source_score = source_validation_score(source_validation)
     article_score = article_validation_score(article_validation or {})
 
-    # If article validation was not run, source validation remains the main signal.
     if not article_validation:
         final_score = source_score
-        confidence = confidence_label_from_score(final_score)
         return {
             "score": final_score,
-            "confidence": confidence,
+            "confidence": confidence_label_from_score(final_score),
             "basis": "source_validation_only",
             "source_score": source_score,
             "article_score": 0,
@@ -194,13 +166,11 @@ def calculate_final_confidence_score(
     final_score = int((source_score * 0.45) + (article_score * 0.55))
     confidence = confidence_label_from_score(final_score)
 
-    # Hard downgrade if article validation checked sources but accepted none.
     if safe_int(article_validation.get("checked_count")) > 0 and safe_int(article_validation.get("accepted_count")) == 0:
+        final_score = min(final_score, 49)
         if confidence_rank(confidence) > confidence_rank("Low"):
             confidence = "Low"
-        final_score = min(final_score, 49)
 
-    # Upgrade protection: do not jump from weak source validation straight to High.
     source_label = str(source_validation.get("label") or "Rejected")
     if confidence == "High" and confidence_rank(source_label) < confidence_rank("Medium"):
         confidence = "Medium"
@@ -216,15 +186,7 @@ def calculate_final_confidence_score(
 
 
 def final_score_adjustment(final_confidence: Dict[str, Any]) -> int:
-    """
-    Return a score adjustment that can later be added to ranking.
-
-    This does not directly mutate the event. It only gives the calling script a
-    safe adjustment value.
-    """
-
     confidence = str(final_confidence.get("confidence") or "Rejected")
-    score = safe_int(final_confidence.get("score"))
 
     if confidence == "High":
         return 8
@@ -237,13 +199,6 @@ def final_score_adjustment(final_confidence: Dict[str, Any]) -> int:
     if confidence == "Rejected":
         return -15
 
-    if score >= 75:
-        return 6
-    if score >= 55:
-        return 3
-    if score < 25:
-        return -10
-
     return 0
 
 
@@ -254,15 +209,7 @@ def validate_final_event(
     timeout: int = DEFAULT_TIMEOUT,
     fetch_articles: bool = True,
 ) -> Dict[str, Any]:
-    """
-    Validate one already selected event.
-
-    The returned dictionary is intended to be stored inside the event as:
-    event["final_validation"] = result
-    """
-
     event = dict(event or {})
-
     candidate_sources = choose_article_candidate_sources(event, max_articles=max_articles)
 
     article_validation = None
@@ -308,8 +255,9 @@ def validate_final_event(
         event,
         article_validation=article_validation,
     )
-
     adjustment = final_score_adjustment(final_confidence)
+
+    base_score = safe_int(event.get("score"))
 
     return {
         "status": "ok",
@@ -318,7 +266,7 @@ def validate_final_event(
         "article_validation": article_validation,
         "final_confidence": final_confidence,
         "score_adjustment": adjustment,
-        "recommended_score": clamp(safe_int(event.get("score")) + adjustment),
+        "recommended_score": clamp(base_score + adjustment),
     }
 
 
@@ -329,12 +277,6 @@ def validate_final_events(
     timeout: int = DEFAULT_TIMEOUT,
     fetch_articles: bool = True,
 ) -> List[Dict[str, Any]]:
-    """
-    Validate multiple already selected events and return a new list.
-
-    This function does not mutate the original list in-place.
-    """
-
     output: List[Dict[str, Any]] = []
 
     for event in events or []:
@@ -345,36 +287,8 @@ def validate_final_events(
             timeout=timeout,
             fetch_articles=fetch_articles,
         )
+        copied["recommended_score"] = copied["final_validation"].get("recommended_score")
         output.append(copied)
 
     return output
 
-
-if __name__ == "__main__":
-    sample_event = {
-        "score": 72,
-        "date": "2026-06-30",
-        "country": "Ukraine",
-        "location": "Crimea, Ukraine",
-        "event_type": "Rajtaütés / fegyveres támadás",
-        "sources": [
-            "https://example.com/ukraine-drone-attack-in-crimea",
-        ],
-        "source_validation": {
-            "checked_count": 4,
-            "valid_count": 2,
-            "weighted_score": 2.0,
-            "label": "Low",
-            "valid_sources": [
-                "https://example.com/ukraine-drone-attack-in-crimea",
-            ],
-        },
-    }
-
-    import json
-
-    print(json.dumps(
-        validate_final_event(sample_event, fetch_articles=False),
-        indent=2,
-        ensure_ascii=False,
-    ))
