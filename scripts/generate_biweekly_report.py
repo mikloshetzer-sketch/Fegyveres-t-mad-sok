@@ -9,13 +9,9 @@ from lib.source_validation import (
     is_event_source_valid,
     confidence_from_validation,
 )
-from lib.location_normalizer import (
-    normalize_event_location,
-    normalized_location_string,
-)
-from lib.event_scoring import (
-    calculate_event_cluster_ranking_score,
-    get_ranking_breakdown,
+from lib.event_pipeline import (
+    prepare_event_clusters,
+    pipeline_summary,
 )
 
 
@@ -1847,10 +1843,7 @@ def build_event_cluster_key(feature):
     event_date = get_event_date(props)
     date_key = event_date.isoformat() if event_date else "unknown-date"
     country = normalize_key(get_country(props))
-    location = normalize_key(normalized_location_string(
-        normalize_cluster_location(get_location(props)),
-        get_country(props),
-    ))
+    location = normalize_key(normalize_cluster_location(get_location(props)))
     event_type = normalized_event_token(get_event_type(props))
     return (date_key, country, location, event_type)
 
@@ -1861,11 +1854,8 @@ def cluster_title_from_features(features):
 
     props = features[0].get("properties", {})
     event_type = get_event_type(props)
+    location = normalize_cluster_location(get_location(props))
     country = get_country(props)
-    location = normalized_location_string(
-        normalize_cluster_location(get_location(props)),
-        country,
-    )
 
     if location and location != "Nincs pontos helyadat":
         return f"{event_type} – {location}"
@@ -1906,10 +1896,7 @@ def build_event_clusters(events):
                 titles.append(title)
 
             countries[get_country(props)] += 1
-            locations[normalized_location_string(
-                normalize_cluster_location(get_location(props)),
-                get_country(props),
-            )] += 1
+            locations[normalize_cluster_location(get_location(props))] += 1
             event_types[get_event_type(props)] += 1
             natures[props.get("event_nature") or classify_event_nature(props)] += 1
 
@@ -1917,9 +1904,7 @@ def build_event_clusters(events):
         event_date = get_event_date(sample_props)
 
         country = countries.most_common(1)[0][0] if countries else get_country(sample_props)
-        raw_location = locations.most_common(1)[0][0] if locations else normalize_cluster_location(get_location(sample_props))
-        normalized_location = normalize_event_location(raw_location, country)
-        location = normalized_location_string(raw_location, country)
+        location = locations.most_common(1)[0][0] if locations else normalize_cluster_location(get_location(sample_props))
         event_type = event_types.most_common(1)[0][0] if event_types else get_event_type(sample_props)
         event_nature = natures.most_common(1)[0][0] if natures else classify_event_nature(sample_props)
 
@@ -1928,8 +1913,6 @@ def build_event_clusters(events):
             "date": event_date.isoformat() if event_date else None,
             "country": country,
             "location": location,
-            "raw_location": raw_location,
-            "normalized_location": normalized_location,
             "event_type": event_type,
             "event_nature": event_nature,
             "title": cluster_title_from_features(features),
@@ -2209,18 +2192,10 @@ def cluster_source_validation(cluster, max_sources=12):
     """
 
     sources = cluster.get("sources", []) or []
-    normalized_location = cluster.get("normalized_location") or normalize_event_location(
-        cluster.get("location", ""),
-        cluster.get("country", ""),
-    )
-    cluster["normalized_location"] = normalized_location
     validation = validate_sources(
         sources,
         max_sources=max_sources,
-        event_location=normalized_location_string(
-            cluster.get("location", ""),
-            cluster.get("country", ""),
-        ),
+        event_location=cluster.get("location", ""),
         event_country=cluster.get("country", ""),
         event_date=cluster.get("date", ""),
     )
@@ -2381,23 +2356,37 @@ def is_valid_event_cluster(cluster, min_quality=45):
 
 
 def cluster_sort_score(cluster, context):
-    """
-    Final ranking score for validated clusters.
+    strategic_score = score_event_cluster(cluster, context)
+    quality_score = calculate_cluster_quality(cluster)
+    source_bonus = source_validation_sort_bonus(cluster)
 
-    The scoring logic lives in scripts/lib/event_scoring.py. This wrapper keeps
-    the report generator stable while allowing the ranking model to evolve as a
-    separate module.
-    """
-
-    if not cluster.get("source_validation"):
-        cluster_source_validation(cluster)
-
-    cluster["ranking_breakdown"] = get_ranking_breakdown(cluster, context)
-    return calculate_event_cluster_ranking_score(cluster, context)
+    return (strategic_score * 0.52) + (quality_score * 0.30) + (source_bonus * 0.18)
 
 
 def select_top_event_clusters(events, limit=5):
     clusters = build_event_clusters(events)
+    end_date = None
+
+    event_dates = []
+    for cluster in clusters:
+        parsed = parse_date(cluster.get("date"))
+        if parsed:
+            event_dates.append(parsed)
+
+    if event_dates:
+        end_date = max(event_dates).isoformat()
+
+    # Central preparation layer.
+    # This connects the main report generator to scripts/lib/event_pipeline.py while
+    # keeping the legacy quality and diversity selection rules intact.
+    clusters = prepare_event_clusters(
+        clusters,
+        end_date=end_date,
+        max_sources=12,
+        run_final_validation=False,
+        fetch_articles=False,
+    )
+
     context = build_cluster_scoring_context(clusters)
 
     quality_filtered = [
@@ -2405,8 +2394,8 @@ def select_top_event_clusters(events, limit=5):
         if is_valid_event_cluster(cluster, min_quality=40)
     ]
 
-    # Fast source validation happens before the Top 5 is finalized.
-    # This prevents broad political/topic clusters from entering the final regional list.
+    # Source validation happens before the Top 5 is finalized.
+    # The validation itself is now routed through the shared pipeline layer.
     source_validated = [
         cluster for cluster in quality_filtered
         if is_source_validated_cluster(cluster)
@@ -2553,39 +2542,67 @@ def export_selected_events(start_day, end_day, events_by_region):
         "method": (
             "Regional Top 5 selected from source-validated event clusters. "
             "Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. "
-            "Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation."
+            "The shared event_pipeline.py layer prepares normalized locations, source validation and scoring before final selection."
         ),
+        "pipeline": {
+            "modules": [
+                "location_normalizer.py",
+                "source_validation.py",
+                "event_scoring.py",
+                "event_pipeline.py",
+            ],
+            "article_fetching": False,
+            "final_event_validation": False,
+        },
         "regions": {},
         "events": [],
     }
 
     for region_name in FOCUS_REGIONS:
         region_events = events_by_region.get(region_name, [])
-        clusters = build_event_clusters(region_events)
+        raw_clusters = build_event_clusters(region_events)
+        prepared_clusters = prepare_event_clusters(
+            raw_clusters,
+            end_date=end_day.isoformat(),
+            max_sources=12,
+            run_final_validation=False,
+            fetch_articles=False,
+        )
         selected_clusters = select_top_event_clusters(region_events, limit=5)
-        cluster_context = build_cluster_scoring_context(clusters)
+        cluster_context = build_cluster_scoring_context(prepared_clusters)
 
         output["regions"][region_name] = {
             "raw_event_count": len(region_events),
-            "cluster_count": len(clusters),
+            "cluster_count": len(prepared_clusters),
             "selected_count": len(selected_clusters),
+            "pipeline_summary": pipeline_summary(prepared_clusters),
         }
 
         for rank, cluster in enumerate(selected_clusters, start=1):
+            cluster_score = int(cluster.get("score") or score_event_cluster(cluster, cluster_context))
+            quality_score = calculate_cluster_quality(cluster)
+            ranking_breakdown = cluster.get("ranking_breakdown") or {
+                "legacy_cluster_score": score_event_cluster(cluster, cluster_context),
+                "quality_score": quality_score,
+                "source_validation_bonus": source_validation_sort_bonus(cluster),
+                "total": cluster_score,
+                "source": "event_pipeline_prepared_legacy_selection",
+            }
+
             output["events"].append({
                 "record_type": "event_cluster",
                 "region": region_name,
                 "rank": rank,
-                "score": calculate_event_cluster_ranking_score(cluster, cluster_context),
-                "ranking_breakdown": get_ranking_breakdown(cluster, cluster_context),
-                "quality_score": calculate_cluster_quality(cluster),
-                "quality_label": cluster_quality_label(calculate_cluster_quality(cluster)),
+                "score": cluster_score,
+                "ranking_breakdown": ranking_breakdown,
+                "quality_score": quality_score,
+                "quality_label": cluster_quality_label(quality_score),
                 "cluster_key": cluster.get("key"),
                 "title": cluster.get("title"),
                 "date": cluster.get("date"),
                 "country": cluster.get("country"),
                 "location": cluster.get("location"),
-                "raw_location": cluster.get("raw_location"),
+                "raw_location": cluster.get("raw_location") or cluster.get("location"),
                 "normalized_location": cluster.get("normalized_location"),
                 "event_type": cluster.get("event_type"),
                 "event_nature": cluster.get("event_nature"),
@@ -2596,6 +2613,8 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "sources": cluster.get("sources", []),
                 "source_validation": cluster.get("source_validation") or cluster_source_validation(cluster),
                 "source_confidence": confidence_from_validation(cluster.get("source_validation") or cluster_source_validation(cluster)),
+                "recommended_score": cluster.get("recommended_score"),
+                "final_validation": cluster.get("final_validation"),
                 "raw_titles": cluster.get("raw_titles", []),
                 "search_terms": build_cluster_search_terms(cluster),
             })
