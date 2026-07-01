@@ -12,6 +12,8 @@ from lib.source_validation import (
 from lib.event_pipeline import (
     prepare_event_clusters,
     pipeline_summary,
+    select_top_clusters,
+    build_cluster_context,
 )
 
 
@@ -22,6 +24,12 @@ REPORTS_DIR = BASE_DIR / "docs" / "reports"
 BIWEEKLY_DIR = REPORTS_DIR / "biweekly"
 BIWEEKLY_SHARECARDS_DIR = BIWEEKLY_DIR / "sharecards"
 SELECTED_EVENTS_DIR = BIWEEKLY_DIR / "selected-events"
+
+# Final validation is intentionally limited to already selected Top events.
+# Article fetching is enabled only here, not during full-region clustering.
+RUN_FINAL_EVENT_VALIDATION = True
+FETCH_ARTICLES_FOR_FINAL_VALIDATION = True
+FINAL_VALIDATION_MAX_ARTICLES = 4
 
 
 FOCUS_REGIONS = [
@@ -2388,9 +2396,25 @@ def cluster_sort_score(cluster, context):
     return (strategic_score * 0.52) + (quality_score * 0.30) + (source_bonus * 0.18)
 
 
-def select_top_event_clusters(events, limit=5):
-    clusters = build_event_clusters(events)
-    end_date = None
+def select_top_event_clusters(events_or_clusters, limit=5):
+    """
+    Select the best source-validated event clusters.
+
+    The function accepts either raw region features or already built/prepared clusters.
+    This keeps the existing export flow stable while allowing event_pipeline.py to
+    become the main preparation and scoring layer.
+    """
+
+    items = list(events_or_clusters or [])
+
+    if not items:
+        return []
+
+    # Raw GDELT features contain a properties object. Prepared clusters do not.
+    if isinstance(items[0], dict) and "properties" in items[0]:
+        clusters = build_event_clusters(items)
+    else:
+        clusters = [dict(item or {}) for item in items]
 
     event_dates = []
     for cluster in clusters:
@@ -2398,12 +2422,10 @@ def select_top_event_clusters(events, limit=5):
         if parsed:
             event_dates.append(parsed)
 
-    if event_dates:
-        end_date = max(event_dates).isoformat()
+    end_date = max(event_dates).isoformat() if event_dates else None
 
-    # Central preparation layer.
-    # This connects the main report generator to scripts/lib/event_pipeline.py while
-    # keeping the legacy quality and diversity selection rules intact.
+    # If the clusters were not prepared yet, prepare them here. If they were
+    # already prepared, this is still safe and keeps validation/scoring current.
     clusters = prepare_event_clusters(
         clusters,
         end_date=end_date,
@@ -2412,54 +2434,29 @@ def select_top_event_clusters(events, limit=5):
         fetch_articles=False,
     )
 
-    context = build_cluster_scoring_context(clusters)
-
     quality_filtered = [
         cluster for cluster in clusters
         if is_valid_event_cluster(cluster, min_quality=40)
     ]
 
-    # Source validation happens before the Top 5 is finalized.
-    # The validation itself is now routed through the shared pipeline layer.
     source_validated = [
         cluster for cluster in quality_filtered
         if is_source_validated_cluster(cluster)
     ]
 
-    candidate_clusters = source_validated
+    selected = select_top_clusters(source_validated, limit=limit, end_date=end_date)
 
-    scored = sorted(
-        candidate_clusters,
-        key=lambda cluster: cluster_sort_score(cluster, context),
-        reverse=True,
-    )
-
-    selected = []
-    used_locations = Counter()
-    used_country_types = Counter()
-
-    for cluster in scored:
-        location_key = normalize_key(cluster.get("location"))
-        country_type_key = (
-            normalize_key(cluster.get("country")),
-            normalize_key(cluster.get("event_type")),
+    # Final validation runs only for selected Top events.
+    if RUN_FINAL_EVENT_VALIDATION:
+        selected = prepare_event_clusters(
+            selected,
+            end_date=end_date,
+            max_sources=12,
+            run_final_validation=True,
+            fetch_articles=FETCH_ARTICLES_FOR_FINAL_VALIDATION,
+            max_articles=FINAL_VALIDATION_MAX_ARTICLES,
         )
 
-        if used_locations[location_key] >= 1:
-            continue
-
-        if used_country_types[country_type_key] >= 2:
-            continue
-
-        selected.append(cluster)
-        used_locations[location_key] += 1
-        used_country_types[country_type_key] += 1
-
-        if len(selected) >= limit:
-            return selected
-
-    # No forced fallback: if a region has fewer than five validated clusters,
-    # the report should show fewer events rather than filling the list with noise.
     return selected
 
 
@@ -2574,10 +2571,12 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "location_normalizer.py",
                 "source_validation.py",
                 "event_scoring.py",
+                "article_validator.py",
+                "final_event_validator.py",
                 "event_pipeline.py",
             ],
-            "article_fetching": False,
-            "final_event_validation": False,
+            "article_fetching": FETCH_ARTICLES_FOR_FINAL_VALIDATION,
+            "final_event_validation": RUN_FINAL_EVENT_VALIDATION,
         },
         "regions": {},
         "events": [],
@@ -2593,7 +2592,7 @@ def export_selected_events(start_day, end_day, events_by_region):
             run_final_validation=False,
             fetch_articles=False,
         )
-        selected_clusters = select_top_event_clusters(region_events, limit=5)
+        selected_clusters = select_top_event_clusters(prepared_clusters, limit=5)
         cluster_context = build_cluster_scoring_context(prepared_clusters)
 
         output["regions"][region_name] = {
@@ -2611,7 +2610,7 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "quality_score": quality_score,
                 "source_validation_bonus": source_validation_sort_bonus(cluster),
                 "total": cluster_score,
-                "source": "event_pipeline_prepared_legacy_selection",
+                "source": "legacy_fallback_after_event_pipeline",
             }
 
             output["events"].append({
