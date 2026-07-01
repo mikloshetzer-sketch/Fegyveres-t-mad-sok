@@ -97,7 +97,7 @@ COUNTRY_WORDS = {
     "ukraine", "russia", "israel", "iran", "iraq", "syria", "lebanon",
     "turkey", "türkiye", "turkiye", "serbia", "albania", "macedonia",
     "italy", "poland", "romania", "hungary", "greece", "bulgaria",
-    "yemen", "gaza", "palestine", "jordan", "egypt"
+    "yemen", "palestine", "jordan", "egypt"
 }
 
 ORG_ENTITY_WORDS = {
@@ -612,5 +612,4 @@ def confidence_from_validation(source_validation):
         return "Low"
 
     return "Rejected"
-
 
