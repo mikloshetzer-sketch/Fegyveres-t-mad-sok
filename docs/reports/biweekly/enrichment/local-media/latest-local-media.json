@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T09:46:19.949547Z",
+  "generated_at": "2026-07-01T11:27:49.089591Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-17",
@@ -11,7 +11,7 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 77,
+      "score": 76,
       "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
       "date": "2026-06-30",
       "country": "Ukraine",
@@ -88,10 +88,10 @@
         {
           "url": "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
-          "status": "ok",
-          "error": null,
-          "title": "RIGHT SPEAK: 205 C-Clashes in F-Line: 28 in Pokrovsk Dir, 20 in Huliaipole Dir, 24 in Slavyansk Dir; RU Reports One of the Biggest UKR Drone Attacks On Its Soil and Annexed Crimea; UKR s Growing Drone Strikes Overwhelm RU Air-Def; UKR Lifts Veil On Drone Reg Behind Strikes Deep Inside RU; UKR HITS: RU Milt Supply Vessels; 2 RU Spy Ships, an S-400; Lukoil Oil Ref in Kstovo, LIVE UPDATES, DETAILS, and LOTS MORE",
-          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
           "published": ""
         },
         {
@@ -135,9 +135,9 @@
           "domain": "eaworldview.com",
           "status": "ok",
           "error": null,
-          "title": "One moment, please...",
-          "description": "",
-          "published": ""
+          "title": "Ukraine War, Day 1,583: More Ukrainian Strikes on Besieged Crimea - EA WorldView",
+          "description": "Ukraine carries more strikes on besieged, Russian-occupied Crimea, hitting energy infrastructure with pressure on grid and gasoline supplies.",
+          "published": "2026-06-25T06:18:03+00:00"
         },
         {
           "url": "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
@@ -152,16 +152,16 @@
       "event_fingerprint": {
         "representative_title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
         "top_keywords": [
+          "crimea",
           "attacks",
           "ukr",
-          "crimea",
+          "strikes",
           "state",
           "emergency",
           "still",
           "inching",
           "forward",
-          "eastern",
-          "including"
+          "eastern"
         ],
         "actor_hints": [
           "russia",
@@ -181,7 +181,7 @@
           "killed",
           "injured"
         ],
-        "usable_source_count": 10,
+        "usable_source_count": 9,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -193,7 +193,7 @@
       "local_media_findings": [
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": null,
           "articles": []
         },
         {
@@ -203,7 +203,7 @@
         },
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"drone\"",
-          "error": null,
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -213,14 +213,229 @@
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 1,
-      "score": 72,
+      "score": 80,
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+      "date": "2026-06-30",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 37,
+      "source_domain_count": 33,
+      "source_domains": [
+        "aa.com.tr",
+        "dominicanrepublicpost.com",
+        "edition.cnn.com",
+        "freebeacon.com",
+        "grenadachronicle.com",
+        "indianexpress.com",
+        "kashmirreader.com",
+        "thepeninsulaqatar.com",
+        "timesofindia.indiatimes.com",
+        "www.bankingnews.gr",
+        "www.bignewsnetwork.com",
+        "www.cnn.com",
+        "www.crookwellgazette.com.au",
+        "www.dailyexcelsior.com",
+        "www.dw.com",
+        "www.euronews.com",
+        "www.hindustantimes.com",
+        "www.indiatvnews.com",
+        "www.israelnationalnews.com",
+        "www.moneycontrol.com"
+      ],
+      "original_sources": [
+        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+        "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+        "https://www.israelnationalnews.com/news/429399",
+        "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+        "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+        "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+        "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+        "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+        "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+        "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+        "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+        "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
+        "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
+        "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
+        "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
+        "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
+        "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
+        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985"
+      ],
+      "raw_titles": [
+        "fight – Doha, Ad Daw?ah, Qatar"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+          "domain": "indianexpress.com",
+          "status": "ok",
+          "error": null,
+          "title": "Trump says Iran talks set for Doha; Tehran denies any meeting planned",
+          "description": "Live: US President Trump insisted US-Iran talks would take place in Doha focused on nuclear issues, but Iranian officials denied any meeting was scheduled, deepening uncertainty over a fragile ceasefire.",
+          "published": "2026-06-30T05:50:42+05:30"
+        },
+        {
+          "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+          "domain": "www.hindustantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Talks or no talks? Confusion surrounds upcoming US-Iran discussions in Doha | Here s what we know | World News",
+          "description": "Washington and Tehran on Monday separately announced sending delegations to Qatar this week. | World News",
+          "published": "2026-06-30T08:35:54+05:30"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/429399",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Report: Witkoff en route to Doha for meeting with Iran | Israel National News",
+          "description": "US Special Envoy Steve Witkoff is traveling to Doha for scheduled Tuesday meetings with Iranian officials, despite Tehran",
+          "published": "2026-06-30"
+        },
+        {
+          "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+          "domain": "kashmirreader.com",
+          "status": "ok",
+          "error": null,
+          "title": "US, Iran talks in Doha today: Trump | Kashmir Reader",
+          "description": "Washington: US President Donald Trump’s top envoys Steve Witkoff and Jared Kushner will meet Iranian negotiators in Doha on Tuesday as the two warring sides exchanged fire over the weekend, testing the fragile ceasefire. Trump announced in a Truth Social post on Monday that Iran had requested a meeting, which would take place in Doha [...]",
+          "published": "2026-06-30T09:00:09+05:30"
+        },
+        {
+          "url": "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+          "domain": "www.rttnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Indian Shares End Modestly Lower; IT Stocks Among Worst Hit",
+          "description": "Indian shares ended Tuesday s session modestly lower, with doubts over possible U.S.-Iran talks in Doha, Fed rate hike jitters and FII selling keeping investors nervous.",
+          "published": ""
+        },
+        {
+          "url": "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+          "domain": "www.orlandosentinel.com",
+          "status": "ok",
+          "error": null,
+          "title": "US envoys arrive in Qatar for meetings on Iran amid tensions",
+          "description": "U.S. envoys arrived in Qatar for meetings with mediators working to negotiate an end to the war with Iran after weekend attacks.",
+          "published": "2026-06-30T12:24:36+00:00"
+        },
+        {
+          "url": "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+          "domain": "www.moneycontrol.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Treasury Secretary Scott Bessent says sanctions fears keeping buyers away from Iranian oil: 'Only China buying'",
+          "description": "Bessent",
+          "published": ""
+        },
+        {
+          "url": "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+          "domain": "www.thedailystar.net",
+          "status": "ok",
+          "error": null,
+          "title": "Talks in Qatar after US-Iran deal: What we know | The Daily Star",
+          "description": "Qatar says no high-level meetings between the longtime adversaries scheduled in Doha",
+          "published": ""
+        },
+        {
+          "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+          "domain": "www.naroomanewsonline.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Iran and US agree to halt attacks and renew talks | Narooma News | Narooma, NSW",
+          "description": "The ‌US and Iran have agreed ‌to stop ‌tit-for-tat strikes against each other, amid plans for a ⁠meeting...",
+          "published": "2026-06-29T00:18:02+00:00"
+        },
+        {
+          "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+          "domain": "www.theyeshivaworld.com",
+          "status": "ok",
+          "error": null,
+          "title": "REPORT: US, Iran Agree To Halt Strikes, Set Tuesday Talks In Doha The Yeshiva World",
+          "description": "Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to [ ]",
+          "published": "2026-06-28T22:29:25-04:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Trump says Iran talks set for Doha; Tehran denies any meeting planned",
+        "top_keywords": [
+          "doha",
+          "talks",
+          "qatar",
+          "meeting",
+          "tuesday",
+          "tehran",
+          "meetings",
+          "us-iran",
+          "scheduled",
+          "washington"
+        ],
+        "actor_hints": [
+          "israel",
+          "iran",
+          "iranian",
+          "military",
+          "trump"
+        ],
+        "conflict_hints": [
+          "strike",
+          "attack",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
+        "\"Qatar\" \"israel\" \"strike\"",
+        "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
+        "\"israel\" \"strike\" 2026-06-30"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Qatar\" \"israel\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-06-30",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 70,
       "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
       "date": "2026-06-30",
       "country": "Israel",
@@ -409,353 +624,34 @@
       "local_media_findings": [
         {
           "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Israel\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Gaza, Israel\" \"strike\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "Israël dit avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
-              "url": "https://www.nicematin.com/societe/conflits/israel-dit-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza-10682252",
-              "domain": "nicematin.com",
-              "source_country": "France",
-              "language": "French",
-              "seendate": "20260527T061500Z"
-            },
-            {
-              "title": "Israël affirme avoir ciblé le nouveau chef de la branche armée de Hamas à Gaza",
-              "url": "https://africanmanager.com/israel-affirme-avoir-cible-le-nouveau-chef-de-la-branche-armee-de-hamas-a-gaza/",
-              "domain": "africanmanager.com",
-              "source_country": "Tunisia",
-              "language": "French",
-              "seendate": "20260527T024500Z"
-            },
-            {
-              "title": "Architect of October 7 massacre : Hamas military chief Muhammad Odeh killed in Israel strike on Gaza",
-              "url": "https://timesofindia.indiatimes.com/world/middle-east/architects-of-october-7-massacre-hamas-military-chief-muhammad-odeh-killed-in-israel-strike-on-gaza/articleshow/131340184.cms",
-              "domain": "timesofindia.indiatimes.com",
-              "source_country": "India",
-              "language": "English",
-              "seendate": "20260527T034500Z"
-            },
-            {
-              "title": "Israël dit avoir tué le nouveau chef du Hamas dans une frappe à Gaza",
-              "url": "https://lequotidien.lu/monde/israel-dit-avoir-tue-le-nouveau-chef-du-hamas-dans-une-frappe-a-gaza/",
-              "domain": "lequotidien.lu",
-              "source_country": "Luxembourg",
-              "language": "French",
-              "seendate": "20260527T071500Z"
-            },
-            {
-              "title": "Israël affirme avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
-              "url": "https://www.bfmtv.com/international/moyen-orient/israel/israel-affirme-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza_AD-202605270184.html",
-              "domain": "bfmtv.com",
-              "source_country": "France",
-              "language": "French",
-              "seendate": "20260527T070000Z"
-            },
-            {
-              "title": "Gaza Death Toll Tops 73 , 000 as Israel Continues Daily Ceasefire Violations",
-              "url": "https://www.democracynow.org/2026/6/15/headlines/gaza_death_toll_tops_73_000_as_israel_continues_daily_ceasefire_violations",
-              "domain": "democracynow.org",
-              "source_country": "United States",
-              "language": "English",
-              "seendate": "20260615T174500Z"
-            }
-          ]
-        },
-        {
-          "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        }
-      ],
-      "matched_articles": [
-        {
-          "title": "Architect of October 7 massacre : Hamas military chief Muhammad Odeh killed in Israel strike on Gaza",
-          "url": "https://timesofindia.indiatimes.com/world/middle-east/architects-of-october-7-massacre-hamas-military-chief-muhammad-odeh-killed-in-israel-strike-on-gaza/articleshow/131340184.cms",
-          "domain": "timesofindia.indiatimes.com",
-          "source_country": "India",
-          "language": "English",
-          "seendate": "20260527T034500Z",
-          "match_score": 80
-        },
-        {
-          "title": "Gaza Death Toll Tops 73 , 000 as Israel Continues Daily Ceasefire Violations",
-          "url": "https://www.democracynow.org/2026/6/15/headlines/gaza_death_toll_tops_73_000_as_israel_continues_daily_ceasefire_violations",
-          "domain": "democracynow.org",
-          "source_country": "United States",
-          "language": "English",
-          "seendate": "20260615T174500Z",
-          "match_score": 60
-        },
-        {
-          "title": "Israël dit avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
-          "url": "https://www.nicematin.com/societe/conflits/israel-dit-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza-10682252",
-          "domain": "nicematin.com",
-          "source_country": "France",
-          "language": "French",
-          "seendate": "20260527T061500Z",
-          "match_score": 35
-        },
-        {
-          "title": "Israël affirme avoir ciblé le nouveau chef de la branche armée de Hamas à Gaza",
-          "url": "https://africanmanager.com/israel-affirme-avoir-cible-le-nouveau-chef-de-la-branche-armee-de-hamas-a-gaza/",
-          "domain": "africanmanager.com",
-          "source_country": "Tunisia",
-          "language": "French",
-          "seendate": "20260527T024500Z",
-          "match_score": 35
-        },
-        {
-          "title": "Israël dit avoir tué le nouveau chef du Hamas dans une frappe à Gaza",
-          "url": "https://lequotidien.lu/monde/israel-dit-avoir-tue-le-nouveau-chef-du-hamas-dans-une-frappe-a-gaza/",
-          "domain": "lequotidien.lu",
-          "source_country": "Luxembourg",
-          "language": "French",
-          "seendate": "20260527T071500Z",
-          "match_score": 35
-        },
-        {
-          "title": "Israël affirme avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
-          "url": "https://www.bfmtv.com/international/moyen-orient/israel/israel-affirme-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza_AD-202605270184.html",
-          "domain": "bfmtv.com",
-          "source_country": "France",
-          "language": "French",
-          "seendate": "20260527T070000Z",
-          "match_score": 35
-        }
-      ],
-      "analytical_summary": "The original cluster contains 112 source URLs across 79 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 6 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
-      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "score": 52,
-      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
-      "date": "2026-06-30",
-      "country": "Qatar",
-      "location": "Doha, Ad Daw?ah, Qatar",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 37,
-      "source_domain_count": 33,
-      "source_domains": [
-        "aa.com.tr",
-        "dominicanrepublicpost.com",
-        "edition.cnn.com",
-        "freebeacon.com",
-        "grenadachronicle.com",
-        "indianexpress.com",
-        "kashmirreader.com",
-        "thepeninsulaqatar.com",
-        "timesofindia.indiatimes.com",
-        "www.bankingnews.gr",
-        "www.bignewsnetwork.com",
-        "www.cnn.com",
-        "www.crookwellgazette.com.au",
-        "www.dailyexcelsior.com",
-        "www.dw.com",
-        "www.euronews.com",
-        "www.hindustantimes.com",
-        "www.indiatvnews.com",
-        "www.israelnationalnews.com",
-        "www.moneycontrol.com"
-      ],
-      "original_sources": [
-        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
-        "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
-        "https://www.israelnationalnews.com/news/429399",
-        "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-        "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
-        "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
-        "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
-        "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
-        "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-        "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
-        "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-        "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-        "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
-        "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-        "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-        "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
-        "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
-        "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-        "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
-        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985"
-      ],
-      "raw_titles": [
-        "fight – Doha, Ad Daw?ah, Qatar"
-      ],
-      "inspected_sources": [
-        {
-          "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
-          "domain": "indianexpress.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump says Iran talks set for Doha; Tehran denies any meeting planned",
-          "description": "Live: US President Trump insisted US-Iran talks would take place in Doha focused on nuclear issues, but Iranian officials denied any meeting was scheduled, deepening uncertainty over a fragile ceasefire.",
-          "published": "2026-06-30T05:50:42+05:30"
-        },
-        {
-          "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
-          "domain": "www.hindustantimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Talks or no talks? Confusion surrounds upcoming US-Iran discussions in Doha | Here s what we know | World News",
-          "description": "Washington and Tehran on Monday separately announced sending delegations to Qatar this week. | World News",
-          "published": "2026-06-30T08:35:54+05:30"
-        },
-        {
-          "url": "https://www.israelnationalnews.com/news/429399",
-          "domain": "www.israelnationalnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Report: Witkoff en route to Doha for meeting with Iran | Israel National News",
-          "description": "US Special Envoy Steve Witkoff is traveling to Doha for scheduled Tuesday meetings with Iranian officials, despite Tehran",
-          "published": "2026-06-30"
-        },
-        {
-          "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-          "domain": "kashmirreader.com",
-          "status": "ok",
-          "error": null,
-          "title": "US, Iran talks in Doha today: Trump | Kashmir Reader",
-          "description": "Washington: US President Donald Trump’s top envoys Steve Witkoff and Jared Kushner will meet Iranian negotiators in Doha on Tuesday as the two warring sides exchanged fire over the weekend, testing the fragile ceasefire. Trump announced in a Truth Social post on Monday that Iran had requested a meeting, which would take place in Doha [...]",
-          "published": "2026-06-30T09:00:09+05:30"
-        },
-        {
-          "url": "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
-          "domain": "www.rttnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Indian Shares End Modestly Lower; IT Stocks Among Worst Hit",
-          "description": "Indian shares ended Tuesday s session modestly lower, with doubts over possible U.S.-Iran talks in Doha, Fed rate hike jitters and FII selling keeping investors nervous.",
-          "published": ""
-        },
-        {
-          "url": "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
-          "domain": "www.orlandosentinel.com",
-          "status": "ok",
-          "error": null,
-          "title": "US envoys arrive in Qatar for meetings on Iran amid tensions",
-          "description": "U.S. envoys arrived in Qatar for meetings with mediators working to negotiate an end to the war with Iran after weekend attacks.",
-          "published": "2026-06-30T12:24:36+00:00"
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "US Treasury Secretary Scott Bessent says sanctions fears keeping buyers away from Iranian oil: 'Only China buying'",
-          "description": "Bessent",
-          "published": ""
-        },
-        {
-          "url": "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
-          "domain": "www.thedailystar.net",
-          "status": "ok",
-          "error": null,
-          "title": "Talks in Qatar after US-Iran deal: What we know | The Daily Star",
-          "description": "Qatar says no high-level meetings between the longtime adversaries scheduled in Doha",
-          "published": ""
-        },
-        {
-          "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-          "domain": "www.naroomanewsonline.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Iran and US agree to halt attacks and renew talks | Narooma News | Narooma, NSW",
-          "description": "The ‌US and Iran have agreed ‌to stop ‌tit-for-tat strikes against each other, amid plans for a ⁠meeting...",
-          "published": "2026-06-29T00:18:02+00:00"
-        },
-        {
-          "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
-          "domain": "www.theyeshivaworld.com",
-          "status": "ok",
-          "error": null,
-          "title": "REPORT: US, Iran Agree To Halt Strikes, Set Tuesday Talks In Doha The Yeshiva World",
-          "description": "Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to [ ]",
-          "published": "2026-06-28T22:29:25-04:00"
-        }
-      ],
-      "event_fingerprint": {
-        "representative_title": "Trump says Iran talks set for Doha; Tehran denies any meeting planned",
-        "top_keywords": [
-          "doha",
-          "talks",
-          "qatar",
-          "meeting",
-          "tuesday",
-          "tehran",
-          "meetings",
-          "us-iran",
-          "scheduled",
-          "washington"
-        ],
-        "actor_hints": [
-          "israel",
-          "iran",
-          "iranian",
-          "military",
-          "trump"
-        ],
-        "conflict_hints": [
-          "strike",
-          "attack",
-          "fire",
-          "war"
-        ],
-        "usable_source_count": 10,
-        "confidence": "Medium-High"
-      },
-      "queries": [
-        "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
-        "\"Qatar\" \"israel\" \"strike\"",
-        "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
-        "\"israel\" \"strike\" 2026-06-30"
-      ],
-      "local_media_findings": [
-        {
-          "query": "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
-          "error": null,
-          "articles": []
-        },
-        {
-          "query": "\"Qatar\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
           "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
+          "query": "\"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza, Israel\" \"strike\"",
+          "error": "<urlopen error timed out>",
+          "articles": []
+        },
+        {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error timed out>",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 112 source URLs across 79 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 3,
-      "score": 50,
+      "score": 58,
       "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
       "date": "2026-06-30",
       "country": "Gaza Strip",
@@ -912,12 +808,12 @@
         },
         {
           "query": "\"Rafah, Gaza Strip\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"israel\" \"drone\" 2026-06-30",
-          "error": "<urlopen error timed out>",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         }
       ],

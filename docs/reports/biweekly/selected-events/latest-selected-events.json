@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T09:42:23.377165Z",
+  "generated_at": "2026-07-01T11:23:46.040679Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
@@ -457,10 +457,16 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 77,
+      "score": 76,
       "ranking_breakdown": {
-        "total": 0,
-        "source": "existing_score_fallback"
+        "event_type": 13,
+        "strategic_location": 14,
+        "international_relevance": 14,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 76
       },
       "quality_score": 41,
       "quality_label": "Low",
@@ -1094,7 +1100,7 @@
         }
       },
       "source_confidence": "Medium",
-      "recommended_score": 8,
+      "recommended_score": 84,
       "final_validation": {
         "status": "ok",
         "candidate_sources": [
@@ -1113,7 +1119,7 @@
           "article_score": 0
         },
         "score_adjustment": 8,
-        "recommended_score": 8
+        "recommended_score": 84
       },
       "raw_titles": [
         "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
@@ -1129,608 +1135,16 @@
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 1,
-      "score": 72,
+      "score": 80,
       "ranking_breakdown": {
-        "total": 0,
-        "source": "existing_score_fallback"
-      },
-      "quality_score": 46,
-      "quality_label": "Low",
-      "cluster_key": "2026-06-30|israel|gaza israel israel|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
-      "date": "2026-06-30",
-      "country": "Israel",
-      "location": "Gaza, Israel, Israel",
-      "raw_location": "Gaza, Israel, Israel",
-      "normalized_location": {
-        "raw_location": "Gaza, Israel, Israel",
-        "country": "Israel",
-        "country_key": "israel",
-        "primary": "Gaza",
-        "primary_key": "gaza",
-        "secondary": "",
-        "secondary_key": "",
-        "aliases": [
-          "gaza",
-          "gaza city",
-          "gaza strip"
-        ],
-        "regional_aliases": [
-          "gaza",
-          "gaza strip",
-          "west bank",
-          "southern israel",
-          "northern israel"
-        ],
-        "removed_org_entities": [],
-        "usable_parts": [
-          "gaza"
-        ]
-      },
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 112,
-      "source_domain_count": 79,
-      "source_domains": [
-        "aa.com.tr",
-        "allafrica.com",
-        "baptistnews.com",
-        "calgarysun.com",
-        "countercurrents.org",
-        "dunyanews.tv",
-        "eturbonews.com",
-        "forward.com",
-        "grenadachronicle.com",
-        "imemc.org",
-        "island.lk",
-        "jp.ibtimes.com",
-        "kaieteurnewsonline.com",
-        "news.webindia123.com",
-        "scroll.in",
-        "thepeninsulaqatar.com",
-        "theshillongtimes.com",
-        "townhall.com",
-        "truthout.org",
-        "udaipurkiran.com"
-      ],
-      "sources": [
-        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-        "https://www.gdnonline.com:443/Details/1399150",
-        "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
-        "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
-        "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
-        "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
-        "https://www.israelnationalnews.com/news/429398",
-        "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
-        "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
-        "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
-        "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
-        "https://jp.ibtimes.com/gaza-war-humanitarian-fallout-wounds-historic-alliance-experts-warn-israel-united-states-102019",
-        "https://www.wsws.org/en/articles/2026/06/29/sajg-j29.html",
-        "https://www.sbs.com.au/news/podcast-episode/renewed-fighting-tests-fragile-peace-deal-for-us-iran/n189fwmi3",
-        "https://www.moneycontrol.com/world/us-iran-agree-to-halt-fighting-resume-doha-talks-to-save-fragile-peace-deal-article-13960668.html",
-        "https://www.ksat.com/news/world/2026/06/27/israeli-drone-strike-kills-palestinian-siblings-in-a-gaza-tent-camp/",
-        "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
-        "https://www.khaama.com/israel-orders-troops-to-prepare-for-long-term-presence-in-southern-lebanon/",
-        "https://www.naturalnews.com/2026-06-27-trumps-board-of-peace-seeks-crush-palestanian-statehood.html"
-      ],
-      "source_validation": {
-        "checked_count": 12,
-        "valid_count": 4,
-        "rejected_count": 8,
-        "valid_ratio": 0.333,
-        "weighted_score": 4.0,
-        "label": "Medium",
-        "valid_sources": [
-          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
-          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
-          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
-          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
-        ],
-        "rejected_sources": [
-          "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-          "https://www.gdnonline.com:443/Details/1399150",
-          "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
-          "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
-          "https://www.israelnationalnews.com/news/429398",
-          "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
-          "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/"
-        ],
-        "checked_sources": [
-          {
-            "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-            "domain": "truthout.org",
-            "accepted": false,
-            "reason": "stale date signal in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "1967"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "regional_country",
-              "weight": 0.6,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [
-                "west-bank"
-              ],
-              "country_hits": [
-                "israel"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-            "domain": "www.yahoo.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "hamas"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.gdnonline.com:443/Details/1399150",
-            "domain": "www.gdnonline.com:443",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
-            "domain": "www.newstatesman.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
-            "domain": "www.hngn.com",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "israel"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
-            "domain": "www.econotimes.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "airstrike",
-              "kills"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "ceasefire"
-            ],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "gaza"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [
-                "gaza"
-              ],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
-            "domain": "www.presstv.ir",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "hamas"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "gaza"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [
-                "gaza"
-              ],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.israelnationalnews.com/news/429398",
-            "domain": "www.israelnationalnews.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
-            "domain": "www.pakistantoday.com.pk",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
-            "domain": "www.dailyexcelsior.com",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "israel"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
-            "domain": "grenadachronicle.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "attacks",
-              "kills"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "gaza"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [
-                "gaza"
-              ],
-              "country_hits": [
-                "israel"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
-            "domain": "www.columbian.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "strikes",
-              "shelling",
-              "kill"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "gaza"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [
-                "gaza"
-              ],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "gaza"
-                ],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          }
-        ],
-        "event_location": "Gaza, Israel, Israel",
-        "event_country": "Israel",
-        "event_date": "2026-06-30",
-        "location_terms": {
-          "primary": [
-            "gaza"
-          ],
-          "secondary": [],
-          "country": [
-            "israel"
-          ],
-          "removed_org_entities": []
-        }
-      },
-      "source_confidence": "Medium",
-      "recommended_score": 8,
-      "final_validation": {
-        "status": "ok",
-        "candidate_sources": [
-          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
-          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
-          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
-          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
-        ],
-        "article_validation_status": "article_validator_unavailable",
-        "article_validation": null,
-        "final_confidence": {
-          "score": 81,
-          "confidence": "High",
-          "basis": "source_validation_only",
-          "source_score": 81,
-          "article_score": 0
-        },
-        "score_adjustment": 8,
-        "recommended_score": 8
-      },
-      "raw_titles": [
-        "fight – Gaza, Israel (general), Israel"
-      ],
-      "search_terms": [
-        "Gaza, Israel, Israel Israel Fegyveres összecsapás",
-        "Gaza, Israel, Israel Israel",
-        "Fegyveres összecsapás – Gaza, Israel, Israel",
-        "Israel Fegyveres összecsapás"
-      ]
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "score": 52,
-      "ranking_breakdown": {
-        "total": 0,
-        "source": "existing_score_fallback"
+        "event_type": 13,
+        "strategic_location": 12,
+        "international_relevance": 18,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 4,
+        "total": 80
       },
       "quality_score": 43,
       "quality_label": "Low",
@@ -2301,7 +1715,7 @@
         }
       },
       "source_confidence": "Low",
-      "recommended_score": 0,
+      "recommended_score": 80,
       "final_validation": {
         "status": "ok",
         "candidate_sources": [
@@ -2320,7 +1734,7 @@
           "article_score": 0
         },
         "score_adjustment": 0,
-        "recommended_score": 0
+        "recommended_score": 80
       },
       "raw_titles": [
         "fight – Doha, Ad Daw?ah, Qatar"
@@ -2335,11 +1749,621 @@
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
-      "rank": 3,
-      "score": 50,
+      "rank": 2,
+      "score": 70,
       "ranking_breakdown": {
-        "total": 0,
-        "source": "existing_score_fallback"
+        "event_type": 13,
+        "strategic_location": 13,
+        "international_relevance": 6,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 5,
+        "total": 70
+      },
+      "quality_score": 46,
+      "quality_label": "Low",
+      "cluster_key": "2026-06-30|israel|gaza israel israel|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+      "date": "2026-06-30",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "raw_location": "Gaza, Israel, Israel",
+      "normalized_location": {
+        "raw_location": "Gaza, Israel, Israel",
+        "country": "Israel",
+        "country_key": "israel",
+        "primary": "Gaza",
+        "primary_key": "gaza",
+        "secondary": "",
+        "secondary_key": "",
+        "aliases": [
+          "gaza",
+          "gaza city",
+          "gaza strip"
+        ],
+        "regional_aliases": [
+          "gaza",
+          "gaza strip",
+          "west bank",
+          "southern israel",
+          "northern israel"
+        ],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "gaza"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 112,
+      "source_domain_count": 79,
+      "source_domains": [
+        "aa.com.tr",
+        "allafrica.com",
+        "baptistnews.com",
+        "calgarysun.com",
+        "countercurrents.org",
+        "dunyanews.tv",
+        "eturbonews.com",
+        "forward.com",
+        "grenadachronicle.com",
+        "imemc.org",
+        "island.lk",
+        "jp.ibtimes.com",
+        "kaieteurnewsonline.com",
+        "news.webindia123.com",
+        "scroll.in",
+        "thepeninsulaqatar.com",
+        "theshillongtimes.com",
+        "townhall.com",
+        "truthout.org",
+        "udaipurkiran.com"
+      ],
+      "sources": [
+        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://www.gdnonline.com:443/Details/1399150",
+        "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+        "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+        "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+        "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+        "https://www.israelnationalnews.com/news/429398",
+        "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+        "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
+        "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+        "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
+        "https://jp.ibtimes.com/gaza-war-humanitarian-fallout-wounds-historic-alliance-experts-warn-israel-united-states-102019",
+        "https://www.wsws.org/en/articles/2026/06/29/sajg-j29.html",
+        "https://www.sbs.com.au/news/podcast-episode/renewed-fighting-tests-fragile-peace-deal-for-us-iran/n189fwmi3",
+        "https://www.moneycontrol.com/world/us-iran-agree-to-halt-fighting-resume-doha-talks-to-save-fragile-peace-deal-article-13960668.html",
+        "https://www.ksat.com/news/world/2026/06/27/israeli-drone-strike-kills-palestinian-siblings-in-a-gaza-tent-camp/",
+        "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
+        "https://www.khaama.com/israel-orders-troops-to-prepare-for-long-term-presence-in-southern-lebanon/",
+        "https://www.naturalnews.com/2026-06-27-trumps-board-of-peace-seeks-crush-palestanian-statehood.html"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 4,
+        "rejected_count": 8,
+        "valid_ratio": 0.333,
+        "weighted_score": 4.0,
+        "label": "Medium",
+        "valid_sources": [
+          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
+        ],
+        "rejected_sources": [
+          "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "https://www.gdnonline.com:443/Details/1399150",
+          "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+          "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+          "https://www.israelnationalnews.com/news/429398",
+          "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+          "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+            "domain": "truthout.org",
+            "accepted": false,
+            "reason": "stale date signal in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "1967"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "regional_country",
+              "weight": 0.6,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [
+                "west-bank"
+              ],
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+            "domain": "www.yahoo.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.gdnonline.com:443/Details/1399150",
+            "domain": "www.gdnonline.com:443",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+            "domain": "www.newstatesman.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+            "domain": "www.hngn.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+            "domain": "www.econotimes.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "airstrike",
+              "kills"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "ceasefire"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "gaza"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+            "domain": "www.presstv.ir",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "gaza"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.israelnationalnews.com/news/429398",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+            "domain": "www.pakistantoday.com.pk",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
+            "domain": "www.dailyexcelsior.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+            "domain": "grenadachronicle.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "attacks",
+              "kills"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "gaza"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
+            "domain": "www.columbian.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "strikes",
+              "shelling",
+              "kill"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "gaza"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          }
+        ],
+        "event_location": "Gaza, Israel, Israel",
+        "event_country": "Israel",
+        "event_date": "2026-06-30",
+        "location_terms": {
+          "primary": [
+            "gaza"
+          ],
+          "secondary": [],
+          "country": [
+            "israel"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Medium",
+      "recommended_score": 78,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
+        ],
+        "article_validation_status": "article_validator_unavailable",
+        "article_validation": null,
+        "final_confidence": {
+          "score": 81,
+          "confidence": "High",
+          "basis": "source_validation_only",
+          "source_score": 81,
+          "article_score": 0
+        },
+        "score_adjustment": 8,
+        "recommended_score": 78
+      },
+      "raw_titles": [
+        "fight – Gaza, Israel (general), Israel"
+      ],
+      "search_terms": [
+        "Gaza, Israel, Israel Israel Fegyveres összecsapás",
+        "Gaza, Israel, Israel Israel",
+        "Fegyveres összecsapás – Gaza, Israel, Israel",
+        "Israel Fegyveres összecsapás"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 58,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 12,
+        "repeat_hotspot": 0,
+        "source_reliability": 16,
+        "freshness": 8,
+        "cluster_quality": 1,
+        "total": 58
       },
       "quality_score": 40,
       "quality_label": "Low",
@@ -2740,7 +2764,7 @@
         }
       },
       "source_confidence": "Low",
-      "recommended_score": 0,
+      "recommended_score": 52,
       "final_validation": {
         "status": "ok",
         "candidate_sources": [
@@ -2759,7 +2783,7 @@
           "article_score": 0
         },
         "score_adjustment": -6,
-        "recommended_score": 0
+        "recommended_score": 52
       },
       "raw_titles": [
         "fight – Rafah, Gaza Strip (general), Gaza Strip"
