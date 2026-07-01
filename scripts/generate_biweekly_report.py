@@ -9,6 +9,10 @@ from lib.source_validation import (
     is_event_source_valid,
     confidence_from_validation,
 )
+from lib.location_normalizer import (
+    normalize_event_location,
+    normalized_location_string,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -1839,7 +1843,10 @@ def build_event_cluster_key(feature):
     event_date = get_event_date(props)
     date_key = event_date.isoformat() if event_date else "unknown-date"
     country = normalize_key(get_country(props))
-    location = normalize_key(normalize_cluster_location(get_location(props)))
+    location = normalize_key(normalized_location_string(
+        normalize_cluster_location(get_location(props)),
+        get_country(props),
+    ))
     event_type = normalized_event_token(get_event_type(props))
     return (date_key, country, location, event_type)
 
@@ -1850,8 +1857,11 @@ def cluster_title_from_features(features):
 
     props = features[0].get("properties", {})
     event_type = get_event_type(props)
-    location = normalize_cluster_location(get_location(props))
     country = get_country(props)
+    location = normalized_location_string(
+        normalize_cluster_location(get_location(props)),
+        country,
+    )
 
     if location and location != "Nincs pontos helyadat":
         return f"{event_type} – {location}"
@@ -1892,7 +1902,10 @@ def build_event_clusters(events):
                 titles.append(title)
 
             countries[get_country(props)] += 1
-            locations[normalize_cluster_location(get_location(props))] += 1
+            locations[normalized_location_string(
+                normalize_cluster_location(get_location(props)),
+                get_country(props),
+            )] += 1
             event_types[get_event_type(props)] += 1
             natures[props.get("event_nature") or classify_event_nature(props)] += 1
 
@@ -1900,7 +1913,9 @@ def build_event_clusters(events):
         event_date = get_event_date(sample_props)
 
         country = countries.most_common(1)[0][0] if countries else get_country(sample_props)
-        location = locations.most_common(1)[0][0] if locations else normalize_cluster_location(get_location(sample_props))
+        raw_location = locations.most_common(1)[0][0] if locations else normalize_cluster_location(get_location(sample_props))
+        normalized_location = normalize_event_location(raw_location, country)
+        location = normalized_location_string(raw_location, country)
         event_type = event_types.most_common(1)[0][0] if event_types else get_event_type(sample_props)
         event_nature = natures.most_common(1)[0][0] if natures else classify_event_nature(sample_props)
 
@@ -1909,6 +1924,8 @@ def build_event_clusters(events):
             "date": event_date.isoformat() if event_date else None,
             "country": country,
             "location": location,
+            "raw_location": raw_location,
+            "normalized_location": normalized_location,
             "event_type": event_type,
             "event_nature": event_nature,
             "title": cluster_title_from_features(features),
@@ -2188,10 +2205,18 @@ def cluster_source_validation(cluster, max_sources=12):
     """
 
     sources = cluster.get("sources", []) or []
+    normalized_location = cluster.get("normalized_location") or normalize_event_location(
+        cluster.get("location", ""),
+        cluster.get("country", ""),
+    )
+    cluster["normalized_location"] = normalized_location
     validation = validate_sources(
         sources,
         max_sources=max_sources,
-        event_location=cluster.get("location", ""),
+        event_location=normalized_location_string(
+            cluster.get("location", ""),
+            cluster.get("country", ""),
+        ),
         event_country=cluster.get("country", ""),
         event_date=cluster.get("date", ""),
     )
@@ -2547,6 +2572,8 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "date": cluster.get("date"),
                 "country": cluster.get("country"),
                 "location": cluster.get("location"),
+                "raw_location": cluster.get("raw_location"),
+                "normalized_location": cluster.get("normalized_location"),
                 "event_type": cluster.get("event_type"),
                 "event_nature": cluster.get("event_nature"),
                 "feature_count": cluster.get("feature_count"),
