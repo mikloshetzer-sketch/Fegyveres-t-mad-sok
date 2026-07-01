@@ -1,30 +1,453 @@
 {
-  "generated_at": "2026-07-01T08:10:28.554264Z",
+  "generated_at": "2026-07-01T09:27:26.657449Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
   },
-  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation.",
+  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. The shared event_pipeline.py layer prepares normalized locations, source validation and scoring before final selection.",
+  "pipeline": {
+    "modules": [
+      "location_normalizer.py",
+      "source_validation.py",
+      "event_scoring.py",
+      "event_pipeline.py"
+    ],
+    "article_fetching": false,
+    "final_event_validation": false
+  },
   "regions": {
     "Európai Unió": {
       "raw_event_count": 567,
-      "cluster_count": 565,
-      "selected_count": 0
+      "cluster_count": 567,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 567,
+        "source_valid_clusters": 15,
+        "source_invalid_clusters": 552,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 552,
+          "Medium": 3,
+          "Low": 10,
+          "High": 2
+        },
+        "top_countries": [
+          [
+            "Ireland",
+            107
+          ],
+          [
+            "France",
+            87
+          ],
+          [
+            "Germany",
+            61
+          ],
+          [
+            "Italy",
+            53
+          ],
+          [
+            "Greece",
+            45
+          ],
+          [
+            "Spain",
+            37
+          ],
+          [
+            "Poland",
+            22
+          ],
+          [
+            "Netherlands",
+            20
+          ],
+          [
+            "Cyprus",
+            19
+          ],
+          [
+            "Belgium",
+            16
+          ]
+        ],
+        "top_locations": [
+          [
+            "Hamburg, Germany",
+            3
+          ],
+          [
+            "Germany",
+            3
+          ],
+          [
+            "Paris, France, France",
+            3
+          ],
+          [
+            "Poland",
+            3
+          ],
+          [
+            "Berlin, Germany",
+            3
+          ],
+          [
+            "Warsaw, (PL67), Poland",
+            3
+          ],
+          [
+            "Netherlands",
+            3
+          ],
+          [
+            "Barcelona, Comunidad Autonoma de Cataluna, Spain",
+            3
+          ],
+          [
+            "Dublin, Ireland",
+            2
+          ],
+          [
+            "France",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            393
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            151
+          ],
+          [
+            "Tömeges erőszak",
+            14
+          ],
+          [
+            "Robbantás / IED",
+            9
+          ]
+        ]
+      }
     },
     "Ukrajna": {
       "raw_event_count": 221,
-      "cluster_count": 199,
-      "selected_count": 1
+      "cluster_count": 201,
+      "selected_count": 1,
+      "pipeline_summary": {
+        "total_clusters": 201,
+        "source_valid_clusters": 3,
+        "source_invalid_clusters": 198,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 198,
+          "High": 2,
+          "Medium": 1
+        },
+        "top_countries": [
+          [
+            "Ukraine",
+            201
+          ]
+        ],
+        "top_locations": [
+          [
+            "Kyiv, Misto, Ukraine",
+            3
+          ],
+          [
+            "Crimea, Krym, Avtonomna Respublika, Ukraine",
+            3
+          ],
+          [
+            "Kyiv, Ukraine, Ukraine",
+            3
+          ],
+          [
+            "Volhynia, Ukraine, Ukraine",
+            3
+          ],
+          [
+            "Lviv, L'vivs'ka Oblast', Ukraine",
+            3
+          ],
+          [
+            "Dnipro, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Ukraine",
+            2
+          ],
+          [
+            "Kharkiv, Kharkivs'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Crimean Peninsula, Krym, Avtonomna Respublika, Ukraine",
+            2
+          ],
+          [
+            "Donbas, Ukraine, Ukraine",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Robbantás / IED",
+            156
+          ],
+          [
+            "Fegyveres összecsapás",
+            26
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            15
+          ],
+          [
+            "Tömeges erőszak",
+            4
+          ]
+        ]
+      }
     },
     "Balkán": {
       "raw_event_count": 78,
       "cluster_count": 78,
-      "selected_count": 0
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 78,
+        "source_valid_clusters": 2,
+        "source_invalid_clusters": 76,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 76,
+          "Low": 2
+        },
+        "top_countries": [
+          [
+            "Turkey",
+            43
+          ],
+          [
+            "Albania",
+            12
+          ],
+          [
+            "Bosnia-Herzegovina",
+            6
+          ],
+          [
+            "Macedonia",
+            5
+          ],
+          [
+            "Serbia",
+            5
+          ],
+          [
+            "Kosovo",
+            4
+          ],
+          [
+            "Oceans",
+            1
+          ],
+          [
+            "Montenegro",
+            1
+          ],
+          [
+            "Serbia (general)",
+            1
+          ]
+        ],
+        "top_locations": [
+          [
+            "Turkey",
+            3
+          ],
+          [
+            "Serbia",
+            3
+          ],
+          [
+            "Albania",
+            3
+          ],
+          [
+            "Ankara, Turkey",
+            2
+          ],
+          [
+            "Istanbul, Turkey",
+            2
+          ],
+          [
+            "Tirana, Tirane, Albania",
+            2
+          ],
+          [
+            "Skopje, Macedonia, Macedonia",
+            2
+          ],
+          [
+            "Anadolu, Turkey, Turkey",
+            2
+          ],
+          [
+            "Macedonia",
+            2
+          ],
+          [
+            "Sarajevo, Federation of Bosnia and Herzegovina, Bosnia-Herzegovina",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            56
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            16
+          ],
+          [
+            "Tömeges erőszak",
+            6
+          ]
+        ]
+      }
     },
     "Közel-Kelet": {
       "raw_event_count": 875,
-      "cluster_count": 873,
-      "selected_count": 3
+      "cluster_count": 875,
+      "selected_count": 3,
+      "pipeline_summary": {
+        "total_clusters": 875,
+        "source_valid_clusters": 44,
+        "source_invalid_clusters": 831,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 831,
+          "Medium": 12,
+          "High": 11,
+          "Low": 21
+        },
+        "top_countries": [
+          [
+            "Iran",
+            130
+          ],
+          [
+            "Israel",
+            125
+          ],
+          [
+            "West Bank",
+            94
+          ],
+          [
+            "Lebanon",
+            94
+          ],
+          [
+            "Pakistan",
+            87
+          ],
+          [
+            "Afghanistan",
+            47
+          ],
+          [
+            "Syria",
+            46
+          ],
+          [
+            "Sudan",
+            30
+          ],
+          [
+            "Gaza Strip",
+            24
+          ],
+          [
+            "Saudi Arabia",
+            21
+          ]
+        ],
+        "top_locations": [
+          [
+            "Israel",
+            3
+          ],
+          [
+            "Gaza, Israel, Israel",
+            3
+          ],
+          [
+            "West Bank",
+            3
+          ],
+          [
+            "Jordan",
+            3
+          ],
+          [
+            "Iran",
+            3
+          ],
+          [
+            "Tehran, Iran",
+            3
+          ],
+          [
+            "Lebanon",
+            3
+          ],
+          [
+            "Syria",
+            3
+          ],
+          [
+            "Jerusalem, Israel, Israel",
+            3
+          ],
+          [
+            "Beirut, Beyrouth, Lebanon",
+            3
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            575
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            264
+          ],
+          [
+            "Tömeges erőszak",
+            31
+          ],
+          [
+            "Tüntetés / zavargás",
+            3
+          ],
+          [
+            "Dróntámadás",
+            2
+          ]
+        ]
+      }
     }
   },
   "events": [
@@ -32,33 +455,27 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 83,
+      "score": 77,
       "ranking_breakdown": {
-        "event_type": 13,
-        "strategic_location": 8,
-        "international_relevance": 15,
-        "repeat_hotspot": 12,
-        "source_reliability": 25,
-        "freshness": 8,
-        "cluster_quality": 2,
-        "total": 83
+        "total": 0,
+        "source": "existing_score_fallback"
       },
       "quality_score": 41,
       "quality_label": "Low",
-      "cluster_key": "2026-06-30|ukraine|crimea crimea ukraine|rajtaütés fegyveres támadás",
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
+      "cluster_key": "2026-06-30|ukraine|crimea krym avtonomna respublika ukraine|rajtaütés fegyveres támadás",
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
       "date": "2026-06-30",
       "country": "Ukraine",
-      "location": "Crimea, Crimea, Ukraine",
-      "raw_location": "Crimea, Crimea, Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "raw_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
       "normalized_location": {
-        "raw_location": "Crimea, Crimea, Ukraine",
+        "raw_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
         "country": "Ukraine",
         "country_key": "ukraine",
         "primary": "Crimea",
         "primary_key": "crimea",
         "secondary": "Crimea",
-        "secondary_key": "crimea",
+        "secondary_key": "krym",
         "aliases": [
           "crimea",
           "crimean",
@@ -75,7 +492,8 @@
         "removed_org_entities": [],
         "usable_parts": [
           "crimea",
-          "crimea"
+          "krym",
+          "avtonomna respublika"
         ]
       },
       "event_type": "Rajtaütés / fegyveres támadás",
@@ -167,6 +585,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -207,6 +626,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -247,6 +667,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -287,6 +708,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -331,6 +753,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -372,6 +795,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -416,6 +840,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -456,6 +881,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -504,6 +930,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -544,6 +971,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -586,6 +1014,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -630,6 +1059,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -642,7 +1072,7 @@
             "source_weight": 1.0
           }
         ],
-        "event_location": "Crimea, Crimea, Ukraine",
+        "event_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
         "event_country": "Ukraine",
         "event_date": "2026-06-30",
         "location_terms": {
@@ -651,6 +1081,7 @@
             "krym"
           ],
           "secondary": [
+            "avtonomna",
             "crimea",
             "krym"
           ],
@@ -661,13 +1092,15 @@
         }
       },
       "source_confidence": "Medium",
+      "recommended_score": null,
+      "final_validation": null,
       "raw_titles": [
         "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
       ],
       "search_terms": [
-        "Crimea, Crimea, Ukraine Ukraine Rajtaütés / fegyveres támadás",
-        "Crimea, Crimea, Ukraine Ukraine",
-        "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
+        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine Rajtaütés / fegyveres támadás",
+        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine",
+        "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
       ]
     },
@@ -675,27 +1108,21 @@
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 1,
-      "score": 81,
+      "score": 72,
       "ranking_breakdown": {
-        "event_type": 13,
-        "strategic_location": 8,
-        "international_relevance": 13,
-        "repeat_hotspot": 12,
-        "source_reliability": 25,
-        "freshness": 8,
-        "cluster_quality": 2,
-        "total": 81
+        "total": 0,
+        "source": "existing_score_fallback"
       },
       "quality_score": 46,
       "quality_label": "Low",
-      "cluster_key": "2026-06-30|israel|gaza israel|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Gaza, Israel",
+      "cluster_key": "2026-06-30|israel|gaza israel israel|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
       "date": "2026-06-30",
       "country": "Israel",
-      "location": "Gaza, Israel",
-      "raw_location": "Gaza, Israel",
+      "location": "Gaza, Israel, Israel",
+      "raw_location": "Gaza, Israel, Israel",
       "normalized_location": {
-        "raw_location": "Gaza, Israel",
+        "raw_location": "Gaza, Israel, Israel",
         "country": "Israel",
         "country_key": "israel",
         "primary": "Gaza",
@@ -1229,7 +1656,7 @@
             "source_weight": 1.0
           }
         ],
-        "event_location": "Gaza, Israel",
+        "event_location": "Gaza, Israel, Israel",
         "event_country": "Israel",
         "event_date": "2026-06-30",
         "location_terms": {
@@ -1244,13 +1671,15 @@
         }
       },
       "source_confidence": "Medium",
+      "recommended_score": null,
+      "final_validation": null,
       "raw_titles": [
         "fight – Gaza, Israel (general), Israel"
       ],
       "search_terms": [
-        "Gaza, Israel Israel Fegyveres összecsapás",
-        "Gaza, Israel Israel",
-        "Fegyveres összecsapás – Gaza, Israel",
+        "Gaza, Israel, Israel Israel Fegyveres összecsapás",
+        "Gaza, Israel, Israel Israel",
+        "Fegyveres összecsapás – Gaza, Israel, Israel",
         "Israel Fegyveres összecsapás"
       ]
     },
@@ -1258,27 +1687,21 @@
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 2,
-      "score": 75,
+      "score": 52,
       "ranking_breakdown": {
-        "event_type": 13,
-        "strategic_location": 8,
-        "international_relevance": 20,
-        "repeat_hotspot": 9,
-        "source_reliability": 15,
-        "freshness": 8,
-        "cluster_quality": 2,
-        "total": 75
+        "total": 0,
+        "source": "existing_score_fallback"
       },
       "quality_score": 43,
       "quality_label": "Low",
-      "cluster_key": "2026-06-30|qatar|doha ad daw ah qatar|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+      "cluster_key": "2026-06-30|qatar|doha ad dawah qatar|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
       "date": "2026-06-30",
       "country": "Qatar",
-      "location": "Doha, Ad Daw Ah, Qatar",
-      "raw_location": "Doha, Ad Daw Ah, Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
+      "raw_location": "Doha, Ad Daw?ah, Qatar",
       "normalized_location": {
-        "raw_location": "Doha, Ad Daw Ah, Qatar",
+        "raw_location": "Doha, Ad Daw?ah, Qatar",
         "country": "Qatar",
         "country_key": "qatar",
         "primary": "Doha",
@@ -1821,7 +2244,7 @@
             "source_weight": 1.0
           }
         ],
-        "event_location": "Doha, Ad Daw Ah, Qatar",
+        "event_location": "Doha, Ad Daw?ah, Qatar",
         "event_country": "Qatar",
         "event_date": "2026-06-30",
         "location_terms": {
@@ -1838,13 +2261,15 @@
         }
       },
       "source_confidence": "Low",
+      "recommended_score": null,
+      "final_validation": null,
       "raw_titles": [
         "fight – Doha, Ad Daw?ah, Qatar"
       ],
       "search_terms": [
-        "Doha, Ad Daw Ah, Qatar Qatar Fegyveres összecsapás",
-        "Doha, Ad Daw Ah, Qatar Qatar",
-        "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+        "Doha, Ad Daw?ah, Qatar Qatar Fegyveres összecsapás",
+        "Doha, Ad Daw?ah, Qatar Qatar",
+        "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
         "Qatar Fegyveres összecsapás"
       ]
     },
@@ -1852,16 +2277,10 @@
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 3,
-      "score": 66,
+      "score": 50,
       "ranking_breakdown": {
-        "event_type": 13,
-        "strategic_location": 8,
-        "international_relevance": 9,
-        "repeat_hotspot": 10,
-        "source_reliability": 16,
-        "freshness": 8,
-        "cluster_quality": 2,
-        "total": 66
+        "total": 0,
+        "source": "existing_score_fallback"
       },
       "quality_score": 40,
       "quality_label": "Low",
@@ -2262,6 +2681,8 @@
         }
       },
       "source_confidence": "Low",
+      "recommended_score": null,
+      "final_validation": null,
       "raw_titles": [
         "fight – Rafah, Gaza Strip (general), Gaza Strip"
       ],
