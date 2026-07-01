@@ -5,24 +5,14 @@ This module turns already selected and validated event clusters into structured,
 human-readable OSINT-style analytical blocks.
 
 It does not call external APIs and does not use an LLM. It only uses fields that
-already exist in latest-selected-events.json, for example:
-- region
-- title
-- date
-- country
-- location
-- event_type
-- source_validation
-- article_validation
-- ranking_breakdown
-- final_validation
-- sources
+already exist in latest-selected-events.json.
 
 Public functions:
 - build_event_analysis(event)
 - enrich_event_with_analysis(event)
 - enrich_events_with_analysis(events)
 - build_regional_analysis_summary(region_name, region_payload, region_events)
+- enrich_report_with_analysis(report)
 """
 
 from __future__ import annotations
@@ -47,20 +37,6 @@ def safe_float(value: Any, default: float = 0.0) -> float:
 
 def clean_text(value: Any) -> str:
     return " ".join(str(value or "").strip().split())
-
-
-def get_nested(data: Dict[str, Any], *keys: str, default: Any = None) -> Any:
-    current: Any = data
-
-    for key in keys:
-        if not isinstance(current, dict):
-            return default
-        current = current.get(key)
-
-    if current is None:
-        return default
-
-    return current
 
 
 def confidence_hu(label: str) -> str:
@@ -316,10 +292,6 @@ def build_key_facts(event: Dict[str, Any]) -> Dict[str, Any]:
 
 
 def build_event_analysis(event: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Build a structured Hungarian OSINT-style analysis block for one selected event.
-    """
-
     key_facts = build_key_facts(event)
 
     sections = {
@@ -372,14 +344,9 @@ def build_regional_analysis_summary(
     region_payload: Optional[Dict[str, Any]],
     region_events: List[Dict[str, Any]],
 ) -> Dict[str, Any]:
-    """
-    Build a compact regional analytical summary from selected events.
-    """
-
     region_payload = region_payload or {}
     events = region_events or []
 
-    selected_count = safe_int(region_payload.get("selected_count"))
     raw_event_count = safe_int(region_payload.get("raw_event_count"))
     cluster_count = safe_int(region_payload.get("cluster_count"))
 
@@ -390,7 +357,7 @@ def build_regional_analysis_summary(
     if events:
         average_score = round(sum(safe_int(event.get("score")) for event in events) / len(events), 2)
 
-    if selected_count == 0 and not events:
+    if not events:
         text = (
             f"A(z) {region_name} régióban a vizsgált időszakban {raw_event_count} nyers esemény "
             f"és {cluster_count} klaszter szerepelt, de a validációs és rangsorolási szűrők után "
@@ -423,17 +390,6 @@ def build_regional_analysis_summary(
 
 
 def enrich_report_with_analysis(report: Dict[str, Any]) -> Dict[str, Any]:
-    """
-    Add analysis blocks to a complete selected-events report object.
-
-    This function expects the JSON structure currently produced by
-    generate_biweekly_report.py:
-    {
-      "regions": {...},
-      "events": [...]
-    }
-    """
-
     copied = dict(report or {})
     events = copied.get("events") or []
     regions = copied.get("regions") or {}
@@ -444,7 +400,10 @@ def enrich_report_with_analysis(report: Dict[str, Any]) -> Dict[str, Any]:
     regional_analysis = {}
 
     for region_name, region_payload in regions.items():
-        region_events = [event for event in enriched_events if event.get("region") == region_name]
+        region_events = [
+            event for event in enriched_events
+            if event.get("region") == region_name
+        ]
         regional_analysis[region_name] = build_regional_analysis_summary(
             region_name,
             region_payload,
@@ -503,4 +462,5 @@ if __name__ == "__main__":
         },
     }
 
-    print(json.dumps(build_event_analysis(sample_event), ensure
+    print(json.dumps(build_event_analysis(sample_event), ensure_ascii=False, indent=2))
+
