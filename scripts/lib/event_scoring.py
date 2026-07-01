@@ -1,34 +1,63 @@
 """
 Event scoring module for the biweekly armed incident pipeline.
 
-This module calculates a transparent ranking score and a ranking_breakdown block
-for already source-validated event clusters.
+This module provides:
+- a detailed ranking breakdown;
+- a final 0-100 cluster score;
+- a stable API for event_pipeline.py.
+
+Main public functions:
+- calculate_cluster_breakdown(cluster, context=None, end_date=None)
+- calculate_cluster_score(cluster, context=None, end_date=None)
+- cluster_sort_score(cluster, context=None, end_date=None)
 """
 
 from __future__ import annotations
 
-import re
+from datetime import datetime
 from urllib.parse import urlparse
-from typing import Any, Dict, Iterable, List, Optional
+from typing import Any, Dict, List, Optional
 
 
 RELIABLE_SOURCE_HINTS = [
-    "reuters.com", "apnews.com", "ap.org", "afp.com", "bbc.", "dw.com",
-    "euronews.com", "france24.com", "aljazeera.com", "theguardian.com",
-    "cnn.com", "nbcnews.com", "abcnews.go.com", "cbsnews.com", "ft.com",
-    "politico.eu", "kyivindependent.com", "kyivpost.com", "timesofisrael.com",
-    "jpost.com", "ynetnews.com", "ynet.co", "haaretz.com", "dailysabah.com",
-    "aa.com.tr", "xinhua", "interfax",
+    "reuters.com",
+    "apnews.com",
+    "ap.org",
+    "afp.com",
+    "bbc.",
+    "dw.com",
+    "euronews.com",
+    "france24.com",
+    "aljazeera.com",
+    "theguardian.com",
+    "cnn.com",
+    "nbcnews.com",
+    "abcnews.go.com",
+    "cbsnews.com",
+    "ft.com",
+    "politico.eu",
+    "kyivindependent.com",
+    "kyivpost.com",
+    "timesofisrael.com",
+    "jpost.com",
+    "ynetnews.com",
+    "haaretz.com",
+    "dailysabah.com",
+    "aa.com.tr",
+    "xinhua",
+    "interfax",
 ]
 
 LOW_VALUE_SOURCE_HINTS = [
-    "freerepublic.com", "dailykos.com", "zerohedge.com", "naturalnews.com",
-    "townhall.com", "hotair.com", "rightspeak.net",
+    "freerepublic.com",
+    "dailykos.com",
+    "zerohedge.com",
+    "naturalnews.com",
 ]
 
 EVENT_TYPE_WEIGHTS = {
     "Rakéta- vagy ballisztikus támadás": 18,
-    "Dróntámadás": 18,
+    "Dróntámadás": 17,
     "Légicsapás": 17,
     "Robbantás / IED": 16,
     "Tüzérségi / aknavetős támadás": 15,
@@ -45,51 +74,30 @@ EVENT_TYPE_WEIGHTS = {
 STRATEGIC_TERMS = {
     "capital": [
         "kyiv", "kiev", "tehran", "jerusalem", "tel aviv", "beirut",
-        "damascus", "baghdad", "amman", "ankara", "doha", "belgrade",
-        "sarajevo", "pristina", "paris", "berlin", "brussels",
+        "damascus", "baghdad", "ankara", "doha", "belgrade", "sarajevo",
+        "pristina"
     ],
     "frontline": [
-        "frontline", "front line", "front-line", "kherson", "sumy", "kharkiv",
-        "odesa", "odessa", "donetsk", "zaporizhzhia", "pokrovsk", "kupiansk",
-        "crimea", "krym", "gaza", "rafah", "khan younis", "west bank",
+        "frontline", "front-line", "front line", "kherson", "sumy",
+        "kharkiv", "odesa", "odessa", "donetsk", "zaporizhzhia",
+        "pokrovsk", "kupiansk", "crimea", "krym", "gaza"
     ],
     "energy": [
         "oil", "gas", "pipeline", "refinery", "power plant", "substation",
-        "electricity", "grid", "lng", "nuclear", "hormuz", "red sea",
+        "electricity", "grid", "lng", "nuclear", "hormuz", "red sea"
     ],
     "transport": [
-        "bridge", "railway", "rail", "airport", "airfield", "port", "harbor",
-        "harbour", "strait", "shipping", "vessel", "tanker",
+        "bridge", "railway", "rail", "airport", "airfield", "port",
+        "harbor", "harbour", "strait", "shipping", "vessel"
     ],
 }
 
 STRATEGIC_WEIGHTS = {
     "capital": 7,
-    "frontline": 10,
-    "energy": 10,
-    "transport": 7,
+    "frontline": 8,
+    "energy": 8,
+    "transport": 5,
 }
-
-HIGH_RELEVANCE_COUNTRIES = {
-    "ukraine": 8,
-    "russia": 6,
-    "israel": 7,
-    "iran": 7,
-    "lebanon": 6,
-    "syria": 6,
-    "iraq": 5,
-    "qatar": 5,
-    "yemen": 5,
-    "gaza strip": 7,
-    "west bank": 7,
-}
-
-
-def clean_text(value: Any) -> str:
-    value = str(value or "").lower()
-    value = value.replace("_", " ").replace("-", " ")
-    value = re.sub(r"[^a-z0-9áéíóöőúüű ]+", " ", value)
-    return re.sub(r"\s+", " ", value).strip()
 
 
 def safe_int(value: Any, default: int = 0) -> int:
@@ -107,173 +115,205 @@ def safe_float(value: Any, default: float = 0.0) -> float:
 
 
 def clamp(value: Any, minimum: int = 0, maximum: int = 100) -> int:
-    return max(minimum, min(maximum, int(value)))
+    return max(minimum, min(maximum, safe_int(value)))
+
+
+def clean_text(value: Any) -> str:
+    return " ".join(str(value or "").lower().replace("_", " ").replace("-", " ").split())
+
+
+def parse_date(value: Any):
+    if not value:
+        return None
+    try:
+        return datetime.fromisoformat(str(value)[:10]).date()
+    except Exception:
+        return None
 
 
 def domain_from_url(url: str) -> str:
     parsed = urlparse(str(url or ""))
-    domain = parsed.netloc or str(url or "").replace("https://", "").replace("http://", "").split("/")[0]
-    return domain.lower().strip()
+    return (parsed.netloc or str(url or "").replace("https://", "").replace("http://", "").split("/")[0]).lower()
 
 
-def contains_any(text: str, terms: Iterable[str]) -> bool:
-    text = clean_text(text)
-    return any(clean_text(term) in text for term in terms)
+def unique_domains(sources: List[str]) -> List[str]:
+    out = []
+    for url in sources or []:
+        domain = domain_from_url(url)
+        if domain and domain not in out:
+            out.append(domain)
+    return out
 
 
-def get_sources(cluster: Dict[str, Any]) -> List[str]:
-    sources: List[str] = []
-    for key in ["sources", "valid_sources", "merged_sources"]:
-        values = cluster.get(key)
-        if isinstance(values, list):
-            for url in values:
-                if isinstance(url, str) and url.startswith("http") and url not in sources:
-                    sources.append(url)
-    validation = cluster.get("source_validation") or {}
-    for key in ["valid_sources", "sources"]:
-        values = validation.get(key)
-        if isinstance(values, list):
-            for url in values:
-                if isinstance(url, str) and url.startswith("http") and url not in sources:
-                    sources.append(url)
-    return sources
-
-
-def count_domain_hits(sources: List[str], hints: List[str]) -> int:
+def count_reliable_sources(sources: List[str]) -> int:
     count = 0
-    for domain in {domain_from_url(src) for src in sources if src}:
-        if any(hint in domain for hint in hints):
+    for domain in unique_domains(sources):
+        if any(hint in domain for hint in RELIABLE_SOURCE_HINTS):
             count += 1
     return count
 
 
-def score_event_type(event_type: str, event_nature: str = "", title: str = "") -> int:
-    score = EVENT_TYPE_WEIGHTS.get(event_type, 4)
-    text = clean_text(f"{event_type} {event_nature} {title}")
-    if contains_any(text, ["drone", "uav", "drón"]):
-        score += 3
-    if contains_any(text, ["terror", "terrorist", "hamas", "hezbollah", "isis", "daesh"]):
-        score += 3
-    if contains_any(text, ["missile", "rocket", "airstrike", "strike", "shelling"]):
+def count_low_value_sources(sources: List[str]) -> int:
+    count = 0
+    for domain in unique_domains(sources):
+        if any(hint in domain for hint in LOW_VALUE_SOURCE_HINTS):
+            count += 1
+    return count
+
+
+def source_validation_component(source_validation: Dict[str, Any]) -> int:
+    if not source_validation:
+        return 0
+
+    valid_count = safe_int(source_validation.get("valid_count"))
+    checked_count = safe_int(source_validation.get("checked_count"))
+    weighted_score = safe_float(source_validation.get("weighted_score"))
+    label = str(source_validation.get("label") or "Rejected")
+
+    score = 0
+    score += min(valid_count * 4, 16)
+    score += min(int(weighted_score * 3), 12)
+
+    if checked_count:
+        score += int((valid_count / max(checked_count, 1)) * 8)
+
+    if label == "High":
+        score += 8
+    elif label == "Medium":
+        score += 5
+    elif label == "Low":
         score += 2
-    return clamp(score, 0, 20)
+    elif label in {"Rejected", "Very low"}:
+        score -= 6
+
+    return clamp(score, 0, 25)
 
 
-def score_strategic_location(cluster: Dict[str, Any]) -> int:
+def event_type_component(cluster: Dict[str, Any]) -> int:
+    event_type = cluster.get("event_type", "")
+    event_nature = str(cluster.get("event_nature", ""))
+
+    score = EVENT_TYPE_WEIGHTS.get(event_type, 4)
+
+    if "Dróntámadás" in event_nature:
+        score += 2
+    if "Terror" in event_nature:
+        score += 2
+    if "Háborús" in event_nature:
+        score += 2
+
+    return clamp(score, 0, 18)
+
+
+def strategic_location_component(cluster: Dict[str, Any]) -> int:
     parts = [
         cluster.get("title", ""),
         cluster.get("location", ""),
         cluster.get("country", ""),
         cluster.get("event_type", ""),
-        cluster.get("event_nature", ""),
     ]
+
     normalized = cluster.get("normalized_location") or {}
     if isinstance(normalized, dict):
         parts.extend(normalized.get("aliases", []) or [])
         parts.extend(normalized.get("regional_aliases", []) or [])
-        parts.extend([
-            normalized.get("primary", ""),
-            normalized.get("secondary", ""),
-            normalized.get("country", ""),
-        ])
+        parts.append(normalized.get("primary", ""))
+        parts.append(normalized.get("secondary", ""))
+
     text = clean_text(" ".join(str(p or "") for p in parts))
+
     score = 0
     for category, terms in STRATEGIC_TERMS.items():
-        if contains_any(text, terms):
+        if any(clean_text(term) in text for term in terms):
             score += STRATEGIC_WEIGHTS.get(category, 0)
-    country_key = clean_text(cluster.get("country", ""))
-    score += HIGH_RELEVANCE_COUNTRIES.get(country_key, 0)
-    return clamp(score, 0, 25)
+
+    country = clean_text(cluster.get("country", ""))
+
+    if country == "ukraine":
+        score += 6
+    elif country in {"israel", "iran", "lebanon", "syria", "iraq", "yemen", "qatar"}:
+        score += 5
+
+    return clamp(score, 0, 18)
 
 
-def score_international_relevance(cluster: Dict[str, Any]) -> int:
-    domains = cluster.get("source_domains") or []
-    if not domains:
-        domains = [domain_from_url(url) for url in get_sources(cluster)]
-    domain_count = len(set(d for d in domains if d))
-    source_count = safe_int(cluster.get("source_count"), len(get_sources(cluster)))
-    score = min(domain_count, 10)
-    score += min(source_count // 5, 8)
-    reliable = count_domain_hits(get_sources(cluster), RELIABLE_SOURCE_HINTS)
-    score += min(reliable * 4, 12)
-    return clamp(score, 0, 20)
+def international_relevance_component(cluster: Dict[str, Any]) -> int:
+    sources = list(cluster.get("sources") or [])
+    domains = unique_domains(sources)
+    reliable = count_reliable_sources(sources)
+    low_value = count_low_value_sources(sources)
+
+    score = 0
+    score += min(len(domains), 8)
+    score += min(reliable * 3, 12)
+    score -= min(low_value * 2, 6)
+
+    return clamp(score, 0, 18)
 
 
-def score_repeat_hotspot(cluster: Dict[str, Any], context: Optional[Dict[str, Any]] = None) -> int:
+def repeat_hotspot_component(cluster: Dict[str, Any], context: Optional[Dict[str, Any]]) -> int:
     context = context or {}
+
     location_counts = context.get("location_counts") or {}
     country_counts = context.get("country_counts") or {}
     type_counts = context.get("type_counts") or {}
+
     location = cluster.get("location", "")
     country = cluster.get("country", "")
     event_type = cluster.get("event_type", "")
-    score = 0
-    score += min(max(safe_int(location_counts.get(location, 0)) - 1, 0) * 4, 8)
-    score += min(max(safe_int(country_counts.get(country, 0)) - 5, 0), 6)
-    score += min(max(safe_int(type_counts.get(event_type, 0)) - 5, 0), 4)
-    return clamp(score, 0, 15)
 
-
-def score_source_reliability(cluster: Dict[str, Any]) -> int:
-    validation = cluster.get("source_validation") or {}
-    sources = get_sources(cluster)
-    valid_count = safe_int(validation.get("valid_count"))
-    checked_count = safe_int(validation.get("checked_count"))
-    weighted_score = safe_float(validation.get("weighted_score"))
-    label = validation.get("label", "Rejected")
-    reliable = count_domain_hits(sources, RELIABLE_SOURCE_HINTS)
-    low_value = count_domain_hits(sources, LOW_VALUE_SOURCE_HINTS)
     score = 0
-    score += min(valid_count * 5, 20)
-    score += min(int(weighted_score * 4), 16)
-    if checked_count:
-        score += int((valid_count / max(checked_count, 1)) * 10)
-    score += min(reliable * 3, 12)
-    score -= min(low_value * 4, 12)
-    if label == "High":
-        score += 10
-    elif label == "Medium":
+
+    if safe_int(location_counts.get(location, 0)) >= 3:
         score += 6
-    elif label == "Low":
-        score += 2
-    elif label in {"Rejected", "Very low", "No sources"}:
-        score -= 12
-    return clamp(score, 0, 30)
+    elif safe_int(location_counts.get(location, 0)) == 2:
+        score += 3
+
+    if safe_int(country_counts.get(country, 0)) >= 20:
+        score += 3
+
+    if safe_int(type_counts.get(event_type, 0)) >= 20:
+        score += 3
+
+    return clamp(score, 0, 12)
 
 
-def score_freshness(event_date: Any = None, end_date: Any = None) -> int:
-    if not event_date or not end_date:
-        return 5
-    try:
-        from datetime import datetime
-        if isinstance(event_date, str):
-            event_date = datetime.fromisoformat(event_date[:10]).date()
-        if isinstance(end_date, str):
-            end_date = datetime.fromisoformat(end_date[:10]).date()
-        days_old = (end_date - event_date).days
-        if days_old <= 1:
-            return 10
-        if days_old <= 3:
-            return 8
-        if days_old <= 7:
-            return 5
-        if days_old <= 14:
-            return 2
-        return 0
-    except Exception:
+def source_reliability_component(cluster: Dict[str, Any]) -> int:
+    return source_validation_component(cluster.get("source_validation") or {})
+
+
+def freshness_component(cluster: Dict[str, Any], end_date: Optional[str] = None) -> int:
+    event_date = parse_date(cluster.get("date"))
+    period_end = parse_date(end_date)
+
+    if not event_date or not period_end:
         return 5
 
+    days_old = (period_end - event_date).days
 
-def score_cluster_quality(cluster: Dict[str, Any]) -> int:
-    quality = safe_int(cluster.get("quality_score"), 0)
-    if quality <= 0:
-        # Light fallback if the main script has not calculated quality yet.
-        quality = 40
-        if safe_int(cluster.get("feature_count"), 1) > 1:
-            quality += 5
-        if safe_int(cluster.get("source_domain_count"), 0) >= 3:
-            quality += 5
-    return clamp(int(quality / 5), 0, 15)
+    if days_old <= 1:
+        return 8
+    if days_old <= 3:
+        return 6
+    if days_old <= 7:
+        return 4
+    if days_old <= 14:
+        return 2
+
+    return 0
+
+
+def cluster_quality_component(cluster: Dict[str, Any]) -> int:
+    quality = safe_int(cluster.get("quality_score"))
+    feature_count = safe_int(cluster.get("feature_count"))
+    source_count = safe_int(cluster.get("source_count"))
+
+    score = 0
+    score += min(int(quality / 10), 5)
+    score += min(feature_count, 3)
+    score += min(int(source_count / 10), 4)
+
+    return clamp(score, 0, 8)
 
 
 def calculate_cluster_breakdown(
@@ -281,36 +321,18 @@ def calculate_cluster_breakdown(
     context: Optional[Dict[str, Any]] = None,
     end_date: Optional[str] = None,
 ) -> Dict[str, int]:
-    event_type_score = score_event_type(
-        cluster.get("event_type", ""),
-        cluster.get("event_nature", ""),
-        cluster.get("title", ""),
-    )
-    strategic_score = score_strategic_location(cluster)
-    international_score = score_international_relevance(cluster)
-    repeat_score = score_repeat_hotspot(cluster, context)
-    source_score = score_source_reliability(cluster)
-    freshness_score = score_freshness(cluster.get("date"), end_date)
-    cluster_quality_score = score_cluster_quality(cluster)
-    total = clamp(
-        event_type_score
-        + strategic_score
-        + international_score
-        + repeat_score
-        + source_score
-        + freshness_score
-        + cluster_quality_score
-    )
-    return {
-        "event_type": event_type_score,
-        "strategic_location": strategic_score,
-        "international_relevance": international_score,
-        "repeat_hotspot": repeat_score,
-        "source_reliability": source_score,
-        "freshness": freshness_score,
-        "cluster_quality": cluster_quality_score,
-        "total": total,
+    breakdown = {
+        "event_type": event_type_component(cluster),
+        "strategic_location": strategic_location_component(cluster),
+        "international_relevance": international_relevance_component(cluster),
+        "repeat_hotspot": repeat_hotspot_component(cluster, context),
+        "source_reliability": source_reliability_component(cluster),
+        "freshness": freshness_component(cluster, end_date=end_date),
+        "cluster_quality": cluster_quality_component(cluster),
     }
+
+    breakdown["total"] = clamp(sum(breakdown.values()), 0, 100)
+    return breakdown
 
 
 def calculate_cluster_score(
@@ -321,25 +343,10 @@ def calculate_cluster_score(
     return calculate_cluster_breakdown(cluster, context=context, end_date=end_date)["total"]
 
 
-def calculate_event_score(**kwargs: Any) -> int:
-    cluster = {
-        "title": kwargs.get("title", ""),
-        "location": kwargs.get("location", ""),
-        "country": kwargs.get("country", ""),
-        "event_type": kwargs.get("event_type", ""),
-        "event_nature": kwargs.get("event_nature", ""),
-        "sources": kwargs.get("sources", []),
-        "source_validation": kwargs.get("source_validation"),
-        "normalized_location": kwargs.get("normalized_location"),
-        "date": kwargs.get("event_date"),
-        "quality_score": kwargs.get("quality_score", 0),
-    }
-    return calculate_cluster_score(cluster, context={}, end_date=kwargs.get("end_date"))
-
-
 def cluster_sort_score(
     cluster: Dict[str, Any],
     context: Optional[Dict[str, Any]] = None,
     end_date: Optional[str] = None,
 ) -> int:
-    return calculate_cluster_score(cluster, context=context, end_date=end_
+    return calculate_cluster_score(cluster, context=context, end_date=end_date)
+
