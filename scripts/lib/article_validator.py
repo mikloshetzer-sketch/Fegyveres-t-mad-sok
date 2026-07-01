@@ -597,4 +597,4 @@ if __name__ == "__main__":
         event_date="2026-06-30",
         fetch=False,
     )
-    print(json.dumps(sample, ensure_ascii=False, indent=2)
+    print(json.dumps(sample, ensure_ascii=False, indent=2))
