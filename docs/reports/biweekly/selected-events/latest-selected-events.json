@@ -1,30 +1,30 @@
 {
-  "generated_at": "2026-06-29T09:59:24.793856Z",
+  "generated_at": "2026-07-01T07:28:57.191981Z",
   "period": {
-    "start": "2026-06-15",
-    "end": "2026-06-28"
+    "start": "2026-06-17",
+    "end": "2026-06-30"
   },
   "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation.",
   "regions": {
     "Európai Unió": {
-      "raw_event_count": 587,
-      "cluster_count": 587,
+      "raw_event_count": 557,
+      "cluster_count": 556,
       "selected_count": 0
     },
     "Ukrajna": {
-      "raw_event_count": 224,
-      "cluster_count": 206,
-      "selected_count": 2
+      "raw_event_count": 218,
+      "cluster_count": 199,
+      "selected_count": 1
     },
     "Balkán": {
-      "raw_event_count": 74,
-      "cluster_count": 74,
+      "raw_event_count": 71,
+      "cluster_count": 71,
       "selected_count": 0
     },
     "Közel-Kelet": {
-      "raw_event_count": 846,
-      "cluster_count": 846,
-      "selected_count": 1
+      "raw_event_count": 843,
+      "cluster_count": 842,
+      "selected_count": 2
     }
   },
   "events": [
@@ -32,592 +32,54 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 87,
-      "quality_score": 43,
-      "quality_label": "Low",
-      "cluster_key": "2026-06-28|ukraine|kyiv misto ukraine|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-06-28",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "event_nature": "Egyéb biztonsági esemény",
-      "feature_count": 1,
-      "source_count": 112,
-      "source_domain_count": 81,
-      "source_domains": [
-        "aa.com.tr",
-        "carnegieendowment.org",
-        "cyprus-mail.com",
-        "dominicanrepublicpost.com",
-        "eaworldview.com",
-        "inlandnewstoday.com",
-        "londonlovesbusiness.com",
-        "mndaily.com",
-        "newstodaynet.com",
-        "politicaldog101.com",
-        "theconversation.com",
-        "theshillongtimes.com",
-        "timesofindia.indiatimes.com",
-        "tribune.com.pk",
-        "usa.chinadaily.com.cn",
-        "westchester.news12.com",
-        "www.2news.com",
-        "www.abc57.com",
-        "www.aljazeera.com",
-        "www.arkansasonline.com"
-      ],
-      "sources": [
-        "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
-        "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-        "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html",
-        "https://www.kyivpost.com/post/79102",
-        "https://aa.com.tr/en/eurasia/russia-says-2-people-killed-in-overnight-ukrainian-drone-attack/3980253",
-        "http://www.jpost.com/defense-and-tech/article-900681",
-        "https://www.moneycontrol.com/world/ukraine-hits-two-russian-oil-refineries-in-overnight-drone-strikes-article-13960433.html",
-        "https://www.2news.com/news/world/ukrainian-strike-sets-fire-to-an-oil-refinery-in-southern-russia/article_d43dd8e8-acee-5b91-a679-74f06c8f11ff.html",
-        "https://www.rferl.org/a/trump-putin-rubio-lavrov-alaska-russia-ukraine/33789730.html",
-        "https://www.rferl.org/a/russia-moscow-putin-daughter-air-defense-ukraine-war/33789715.html",
-        "https://www.outlookindia.com/international/moscow-says-660-drones-intercepted-as-kyiv-intensifies-long-range-strikes",
-        "https://www.asiaone.com/world/ukraine-unleashes-one-its-heaviest-drone-bombardments-russia",
-        "https://timesofindia.indiatimes.com/defence/international/zelenskyys-new-war-plan-ukraine-launches-40-day-deep-strike-campaign-inside-russia/articleshow/132030610.cms",
-        "https://www.bankingnews.gr/diethni/articles/884642/dirty-three-stage-ukrainian-plan-within-forty-days-backed-by-the-west-revealed-russia-europe-will-burn",
-        "https://eaworldview.com/2026/06/ukraine-war-missile-strike-on-russia-military-plant/",
-        "https://www.arkansasonline.com/news/2026/jun/27/ukraine-launches-major-drone-offensive/",
-        "https://www.eurasiareview.com/26062026-ukraines-deep-strike-campaign-imposing-rising-costs-on-russia-far-beyond-the-battlefield-analysis/",
-        "https://www.kyivpost.com/post/78994",
-        "https://www.militarytimes.com/unmanned/2026/06/25/ukraines-top-strike-drone-maker-moves-into-ballistic-missile-defense/",
-        "https://www.cnn.com/2026/06/26/europe/ukraine-crimea-pressure-russia-intl-cmd"
-      ],
-      "source_validation": {
-        "checked_count": 12,
-        "valid_count": 3,
-        "rejected_count": 9,
-        "valid_ratio": 0.25,
-        "weighted_score": 3.0,
-        "label": "Low",
-        "valid_sources": [
-          "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-          "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html",
-          "https://www.outlookindia.com/international/moscow-says-660-drones-intercepted-as-kyiv-intensifies-long-range-strikes"
-        ],
-        "rejected_sources": [
-          "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
-          "https://www.kyivpost.com/post/79102",
-          "https://aa.com.tr/en/eurasia/russia-says-2-people-killed-in-overnight-ukrainian-drone-attack/3980253",
-          "http://www.jpost.com/defense-and-tech/article-900681",
-          "https://www.moneycontrol.com/world/ukraine-hits-two-russian-oil-refineries-in-overnight-drone-strikes-article-13960433.html",
-          "https://www.2news.com/news/world/ukrainian-strike-sets-fire-to-an-oil-refinery-in-southern-russia/article_d43dd8e8-acee-5b91-a679-74f06c8f11ff.html",
-          "https://www.rferl.org/a/trump-putin-rubio-lavrov-alaska-russia-ukraine/33789730.html",
-          "https://www.rferl.org/a/russia-moscow-putin-daughter-air-defense-ukraine-war/33789715.html",
-          "https://www.asiaone.com/world/ukraine-unleashes-one-its-heaviest-drone-bombardments-russia"
-        ],
-        "checked_sources": [
-          {
-            "url": "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
-            "domain": "www.rightspeak.net",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "clashes"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-            "domain": "www.hindustantimes.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "attack",
-              "missile"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "kyiv"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html",
-            "domain": "www.moneycontrol.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "attack",
-              "strikes",
-              "missile"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "kyiv"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.kyivpost.com/post/79102",
-            "domain": "www.kyivpost.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://aa.com.tr/en/eurasia/russia-says-2-people-killed-in-overnight-ukrainian-drone-attack/3980253",
-            "domain": "aa.com.tr",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "attack",
-              "drone",
-              "killed"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "http://www.jpost.com/defense-and-tech/article-900681",
-            "domain": "www.jpost.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.moneycontrol.com/world/ukraine-hits-two-russian-oil-refineries-in-overnight-drone-strikes-article-13960433.html",
-            "domain": "www.moneycontrol.com",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [
-              "strikes",
-              "drone"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.2news.com/news/world/ukrainian-strike-sets-fire-to-an-oil-refinery-in-southern-russia/article_d43dd8e8-acee-5b91-a679-74f06c8f11ff.html",
-            "domain": "www.2news.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "strike"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.rferl.org/a/trump-putin-rubio-lavrov-alaska-russia-ukraine/33789730.html",
-            "domain": "www.rferl.org",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.rferl.org/a/russia-moscow-putin-daughter-air-defense-ukraine-war/33789715.html",
-            "domain": "www.rferl.org",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.outlookindia.com/international/moscow-says-660-drones-intercepted-as-kyiv-intensifies-long-range-strikes",
-            "domain": "www.outlookindia.com",
-            "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
-            "incident_hits": [
-              "strikes",
-              "drones",
-              "intercepted"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "kyiv"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.asiaone.com/world/ukraine-unleashes-one-its-heaviest-drone-bombardments-russia",
-            "domain": "www.asiaone.com",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [
-              "drone"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "kiev",
-                  "kyiv"
-                ],
-                "secondary": [],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          }
-        ],
-        "event_location": "Kyiv, Misto, Ukraine",
-        "event_country": "Ukraine",
-        "event_date": "2026-06-28",
-        "location_terms": {
-          "primary": [
-            "kiev",
-            "kyiv"
-          ],
-          "secondary": [],
-          "country": [
-            "ukraine"
-          ],
-          "removed_org_entities": []
-        }
-      },
-      "source_confidence": "Low",
-      "raw_titles": [
-        "fight – Kyiv, Kyyiv, Misto, Ukraine"
-      ],
-      "search_terms": [
-        "Kyiv, Misto, Ukraine Ukraine Fegyveres összecsapás",
-        "Kyiv, Misto, Ukraine Ukraine",
-        "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-        "Ukraine Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
-        "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-        "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
-    },
-    {
-      "record_type": "event_cluster",
-      "region": "Ukrajna",
-      "rank": 2,
       "score": 77,
       "quality_score": 41,
       "quality_label": "Low",
-      "cluster_key": "2026-06-27|ukraine|crimea krym avtonomna respublika ukraine|rajtaütés fegyveres támadás",
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-06-27",
+      "cluster_key": "2026-06-29|ukraine|crimea crimea ukraine|rajtaütés fegyveres támadás",
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
+      "date": "2026-06-29",
       "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "location": "Crimea, Crimea, Ukraine",
+      "raw_location": "Crimea, Crimea, Ukraine",
+      "normalized_location": {
+        "raw_location": "Crimea, Crimea, Ukraine",
+        "country": "Ukraine",
+        "country_key": "ukraine",
+        "primary": "Crimea",
+        "primary_key": "crimea",
+        "secondary": "Crimea",
+        "secondary_key": "crimea",
+        "aliases": [
+          "crimea",
+          "crimean",
+          "krym"
+        ],
+        "regional_aliases": [
+          "southern ukraine",
+          "southern-ukraine",
+          "eastern ukraine",
+          "eastern-ukraine",
+          "frontline",
+          "front-line"
+        ],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "crimea",
+          "crimea"
+        ]
+      },
       "event_type": "Rajtaütés / fegyveres támadás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 12,
-      "source_domain_count": 12,
+      "source_count": 14,
+      "source_domain_count": 13,
       "source_domains": [
         "dominicanrepublicpost.com",
         "eaworldview.com",
         "economictimes.indiatimes.com",
         "edition.cnn.com",
         "www.bostonglobe.com",
+        "www.cbc.ca",
         "www.dailyadvance.com",
         "www.dw.com",
         "www.egyptindependent.com",
@@ -627,6 +89,8 @@
         "www.westhawaiitoday.com"
       ],
       "sources": [
+        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
+        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
         "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
         "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
         "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
@@ -654,16 +118,96 @@
           "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
         ],
         "rejected_sources": [
+          "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
+          "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
           "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
           "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
           "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
           "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
-          "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms",
-          "http://www.dailyadvance.com/news/world/ukraine-and-russia-exchange-deadly-strikes-with-at-least-one-child-killed/article_e47c2869-f6e0-5512-978d-02af0765aedd.html",
-          "https://www.rte.ie/news/2026/0621/1579524-ukraine-russia/"
+          "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms"
         ],
         "checked_sources": [
+          {
+            "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
+            "domain": "www.rightspeak.net",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "clashes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "crimea",
+                  "krym"
+                ],
+                "secondary": [
+                  "crimea",
+                  "krym"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
+            "domain": "www.cbc.ca",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "ukraine"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "crimea",
+                  "krym"
+                ],
+                "secondary": [
+                  "crimea",
+                  "krym"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
           {
             "url": "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
             "domain": "www.rightspeak.net",
@@ -693,7 +237,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -738,7 +281,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -780,7 +322,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -825,7 +366,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -866,7 +406,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -915,7 +454,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -956,7 +494,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -999,7 +536,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -1044,7 +580,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -1084,90 +619,6 @@
                   "krym"
                 ],
                 "secondary": [
-                  "avtonomna",
-                  "crimea",
-                  "krym"
-                ],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "http://www.dailyadvance.com/news/world/ukraine-and-russia-exchange-deadly-strikes-with-at-least-one-child-killed/article_e47c2869-f6e0-5512-978d-02af0765aedd.html",
-            "domain": "www.dailyadvance.com",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [
-              "strikes",
-              "killed"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "crimea",
-                  "krym"
-                ],
-                "secondary": [
-                  "avtonomna",
-                  "crimea",
-                  "krym"
-                ],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.rte.ie/news/2026/0621/1579524-ukraine-russia/",
-            "domain": "www.rte.ie",
-            "accepted": false,
-            "reason": "country-only location match treated as background, not event validation",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "country_only",
-              "weight": 0.3,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "ukraine"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "crimea",
-                  "krym"
-                ],
-                "secondary": [
-                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -1180,16 +631,15 @@
             "source_weight": 0.0
           }
         ],
-        "event_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "event_location": "Crimea, Crimea, Ukraine",
         "event_country": "Ukraine",
-        "event_date": "2026-06-27",
+        "event_date": "2026-06-29",
         "location_terms": {
           "primary": [
             "crimea",
             "krym"
           ],
           "secondary": [
-            "avtonomna",
             "crimea",
             "krym"
           ],
@@ -1204,20 +654,20 @@
         "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
       ],
       "search_terms": [
-        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine Rajtaütés / fegyveres támadás",
-        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine",
-        "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "Crimea, Crimea, Ukraine Ukraine Rajtaütés / fegyveres támadás",
+        "Crimea, Crimea, Ukraine Ukraine",
+        "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
       ],
-      "sources_original_count": 12,
+      "sources_original_count": 14,
       "sources_checked_count": 4,
       "sources_valid_count": 4,
       "sources_rejected_count": 0,
       "sources_refined": [
+        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
+        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
         "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
-        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
-        "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
-        "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/"
+        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/"
       ],
       "refinement_confidence": "High",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
@@ -1227,61 +677,87 @@
       "region": "Közel-Kelet",
       "rank": 1,
       "score": 72,
-      "quality_score": 41,
+      "quality_score": 43,
       "quality_label": "Low",
-      "cluster_key": "2026-06-28|israel|gaza israel israel|rajtaütés fegyveres támadás",
-      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
-      "date": "2026-06-28",
+      "cluster_key": "2026-06-30|israel|gaza israel|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Gaza, Israel",
+      "date": "2026-06-30",
       "country": "Israel",
-      "location": "Gaza, Israel, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
+      "location": "Gaza, Israel",
+      "raw_location": "Gaza, Israel",
+      "normalized_location": {
+        "raw_location": "Gaza, Israel",
+        "country": "Israel",
+        "country_key": "israel",
+        "primary": "Gaza",
+        "primary_key": "gaza",
+        "secondary": "",
+        "secondary_key": "",
+        "aliases": [
+          "gaza",
+          "gaza city",
+          "gaza strip"
+        ],
+        "regional_aliases": [
+          "gaza",
+          "gaza strip",
+          "west bank",
+          "southern israel",
+          "northern israel"
+        ],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "gaza"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
       "source_count": 112,
-      "source_domain_count": 89,
+      "source_domain_count": 80,
       "source_domains": [
-        "aa.com.tr",
-        "allafrica.com",
-        "antonyloewenstein.com",
         "baptistnews.com",
         "calgarysun.com",
-        "consortiumnews.com",
         "countercurrents.org",
-        "cpa.org.au",
         "dunyanews.tv",
-        "english.aawsat.com",
-        "english.wafa.ps",
+        "eturbonews.com",
         "forward.com",
-        "indianexpress.com",
-        "isp.netscape.com:443",
-        "jewishpress.com",
-        "jewlicious.com",
+        "grenadachronicle.com",
+        "island.lk",
         "jp.ibtimes.com",
         "kaieteurnewsonline.com",
-        "kashmirreader.com",
-        "nationalpost.com"
+        "news.webindia123.com",
+        "scroll.in",
+        "themedialine.org",
+        "thenewamerican.com",
+        "theshillongtimes.com",
+        "townhall.com",
+        "truthout.org",
+        "udaipurkiran.com",
+        "voiceofvienna.org",
+        "wrp.org.uk"
       ],
       "sources": [
+        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://www.gdnonline.com:443/Details/1399150",
+        "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+        "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+        "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+        "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+        "https://www.israelnationalnews.com/news/429398",
+        "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+        "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
+        "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+        "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
+        "https://jp.ibtimes.com/gaza-war-humanitarian-fallout-wounds-historic-alliance-experts-warn-israel-united-states-102019",
+        "https://www.wsws.org/en/articles/2026/06/29/sajg-j29.html",
+        "https://www.sbs.com.au/news/podcast-episode/renewed-fighting-tests-fragile-peace-deal-for-us-iran/n189fwmi3",
+        "https://www.moneycontrol.com/world/us-iran-agree-to-halt-fighting-resume-doha-talks-to-save-fragile-peace-deal-article-13960668.html",
+        "https://www.ksat.com/news/world/2026/06/27/israeli-drone-strike-kills-palestinian-siblings-in-a-gaza-tent-camp/",
         "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
-        "https://kaieteurnewsonline.com/2026/06/28/un-commission-finds-israel-committed-war-crimes-against-palestinian-children-recommends-arms-restriction/",
-        "https://kaieteurnewsonline.com/2026/06/28/un-report-accuses-israel-of-systematically-destroying-gazas-children/",
-        "https://www.theamericanconservative.com/ben-shapiro-blames-useless-white-people-for-socialism/",
-        "https://www.ynetnews.com/opinions-analysis/article/bywdykrmme",
-        "https://www.dailymail.com/news/article-15920311/Yazidi-girl-kidnapped-aged-nine-ISIS-sold-sex-slave-one-jihadist-details-hellish-existence-raped-tortured-years.html",
-        "https://nypost.com/2026/06/28/world-news/idf-kills-hamas-terrorist-who-directed-oct-7-civilian-kidnappings/",
-        "https://www.jpost.com/israel-news/article-900736",
-        "https://thedailyblog.co.nz/oh-thank-goodness-it-is-genocide-after-all/",
-        "https://dunyanews.tv/en/World/959394-israeli-attack-on-car-in-central-gaza-kills-three-palestinians",
-        "https://kaieteurnewsonline.com/2026/06/27/wismar-massacre-genocide-or-holocaust/",
-        "https://pragativadi.com/sonia-gandhi-targets-modi-government-over-gaza-policy-says-indias-silence-cannot-be-explained/",
-        "https://www.juancole.com/2026/06/obliterating-children-damning.html",
-        "https://countercurrents.org/2026/06/palestinian-doctors-abandoned-the-amas-silence-on-gaza-and-dr-hussam-abu-safiya/",
-        "https://www.presstv.ir/Detail/2026/06/27/771173/Israel-shifts-troops-from-Lebanon-to-conduct-extensive-invasions-in-the-occupied-West-Bank-",
-        "https://www.globalsecurity.org/military/library/news/2026/06/mil-260625-presstv05.htm",
-        "https://original.antiwar.com/ramzy-baroud/2026/06/25/the-illusions-of-western-virtue-ursula-von-der-leyen-and-europes-moral-bankruptcy/",
-        "https://baptistnews.com/article/un-says-israel-has-committed-war-crimes-and-genocide-in-gaza/",
-        "https://news.webindia123.com/news/Articles/World/20260626/4467604.html",
-        "https://www.hurriyetdailynews.com/israel-moves-to-officially-recognize-1915-events-as-genocide-223725"
+        "https://www.khaama.com/israel-orders-troops-to-prepare-for-long-term-presence-in-southern-lebanon/",
+        "https://www.naturalnews.com/2026-06-27-trumps-board-of-peace-seeks-crush-palestanian-statehood.html"
       ],
       "source_validation": {
         "checked_count": 12,
@@ -1291,117 +767,51 @@
         "weighted_score": 4.0,
         "label": "Medium",
         "valid_sources": [
-          "https://www.dailymail.com/news/article-15920311/Yazidi-girl-kidnapped-aged-nine-ISIS-sold-sex-slave-one-jihadist-details-hellish-existence-raped-tortured-years.html",
-          "https://nypost.com/2026/06/28/world-news/idf-kills-hamas-terrorist-who-directed-oct-7-civilian-kidnappings/",
-          "https://dunyanews.tv/en/World/959394-israeli-attack-on-car-in-central-gaza-kills-three-palestinians",
-          "https://kaieteurnewsonline.com/2026/06/27/wismar-massacre-genocide-or-holocaust/"
+          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
         ],
         "rejected_sources": [
-          "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
-          "https://kaieteurnewsonline.com/2026/06/28/un-commission-finds-israel-committed-war-crimes-against-palestinian-children-recommends-arms-restriction/",
-          "https://kaieteurnewsonline.com/2026/06/28/un-report-accuses-israel-of-systematically-destroying-gazas-children/",
-          "https://www.theamericanconservative.com/ben-shapiro-blames-useless-white-people-for-socialism/",
-          "https://www.ynetnews.com/opinions-analysis/article/bywdykrmme",
-          "https://www.jpost.com/israel-news/article-900736",
-          "https://thedailyblog.co.nz/oh-thank-goodness-it-is-genocide-after-all/",
-          "https://pragativadi.com/sonia-gandhi-targets-modi-government-over-gaza-policy-says-indias-silence-cannot-be-explained/"
+          "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "https://www.gdnonline.com:443/Details/1399150",
+          "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+          "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+          "https://www.israelnationalnews.com/news/429398",
+          "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+          "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/"
         ],
         "checked_sources": [
           {
-            "url": "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
-            "domain": "calgarysun.com",
+            "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+            "domain": "truthout.org",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "opinion"
-            ],
-            "weak_hits": [
-              "minister"
-            ],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://kaieteurnewsonline.com/2026/06/28/un-commission-finds-israel-committed-war-crimes-against-palestinian-children-recommends-arms-restriction/",
-            "domain": "kaieteurnewsonline.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [
-                "israel"
-              ],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://kaieteurnewsonline.com/2026/06/28/un-report-accuses-israel-of-systematically-destroying-gazas-children/",
-            "domain": "kaieteurnewsonline.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
+            "reason": "stale date signal in URL",
             "incident_hits": [],
             "noise_hits": [],
             "weak_hits": [],
             "hard_reject_hits": [],
             "years": [
-              "2026"
+              "1967"
             ],
             "location_match": {
               "match": true,
-              "level": "not_required",
-              "weight": 1.0,
+              "level": "regional_country",
+              "weight": 0.6,
               "primary_hits": [],
               "secondary_hits": [],
-              "regional_hits": [],
+              "regional_hits": [
+                "west-bank"
+              ],
               "country_hits": [
                 "israel"
               ],
-              "required": false,
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1412,90 +822,171 @@
             "source_weight": 0.0
           },
           {
-            "url": "https://www.theamericanconservative.com/ben-shapiro-blames-useless-white-people-for-socialism/",
-            "domain": "www.theamericanconservative.com",
+            "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+            "domain": "www.yahoo.com",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.ynetnews.com/opinions-analysis/article/bywdykrmme",
-            "domain": "www.ynetnews.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [
-              "analysis"
-            ],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.dailymail.com/news/article-15920311/Yazidi-girl-kidnapped-aged-nine-ISIS-sold-sex-slave-one-jihadist-details-hellish-existence-raped-tortured-years.html",
-            "domain": "www.dailymail.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
+            "reason": "location mismatch",
             "incident_hits": [
-              "isis"
+              "hamas"
             ],
             "noise_hits": [],
             "weak_hits": [],
             "hard_reject_hits": [],
             "years": [],
             "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
               "primary_hits": [],
               "secondary_hits": [],
               "regional_hits": [],
               "country_hits": [],
-              "required": false,
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.gdnonline.com:443/Details/1399150",
+            "domain": "www.gdnonline.com:443",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+            "domain": "www.newstatesman.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.hngn.com/articles/271804/20260629/israel-recognizes-armenian-genocide-after-decades-silence-drawing-immediate-rebuke-turkey.htm",
+            "domain": "www.hngn.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+            "domain": "www.econotimes.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "airstrike",
+              "kills"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "ceasefire"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "gaza"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1506,13 +997,11 @@
             "source_weight": 1.0
           },
           {
-            "url": "https://nypost.com/2026/06/28/world-news/idf-kills-hamas-terrorist-who-directed-oct-7-civilian-kidnappings/",
-            "domain": "nypost.com",
+            "url": "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+            "domain": "www.presstv.ir",
             "accepted": true,
-            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "reason": "URL contains concrete incident indicator and location match",
             "incident_hits": [
-              "kills",
-              "terrorist",
               "hamas"
             ],
             "noise_hits": [],
@@ -1523,15 +1012,21 @@
             ],
             "location_match": {
               "match": true,
-              "level": "not_required",
+              "level": "primary",
               "weight": 1.0,
-              "primary_hits": [],
+              "primary_hits": [
+                "gaza"
+              ],
               "secondary_hits": [],
-              "regional_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
               "country_hits": [],
-              "required": false,
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1542,10 +1037,76 @@
             "source_weight": 1.0
           },
           {
-            "url": "https://www.jpost.com/israel-news/article-900736",
-            "domain": "www.jpost.com",
+            "url": "https://www.israelnationalnews.com/news/429398",
+            "domain": "www.israelnationalnews.com",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.pakistantoday.com.pk/2026/06/29/israels-mission-impossible",
+            "domain": "www.pakistantoday.com.pk",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "gaza"
+                ],
+                "secondary": [],
+                "country": [
+                  "israel"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.dailyexcelsior.com/israel-moves-to-formally-recognise-armenian-wwi-deaths-as-genocide/",
+            "domain": "www.dailyexcelsior.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
             "incident_hits": [],
             "noise_hits": [],
             "weak_hits": [],
@@ -1553,17 +1114,19 @@
             "years": [],
             "location_match": {
               "match": true,
-              "level": "not_required",
-              "weight": 1.0,
+              "level": "country_only",
+              "weight": 0.3,
               "primary_hits": [],
               "secondary_hits": [],
               "regional_hits": [],
               "country_hits": [
                 "israel"
               ],
-              "required": false,
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1574,42 +1137,12 @@
             "source_weight": 0.0
           },
           {
-            "url": "https://thedailyblog.co.nz/oh-thank-goodness-it-is-genocide-after-all/",
-            "domain": "thedailyblog.co.nz",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://dunyanews.tv/en/World/959394-israeli-attack-on-car-in-central-gaza-kills-three-palestinians",
-            "domain": "dunyanews.tv",
+            "url": "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+            "domain": "grenadachronicle.com",
             "accepted": true,
             "reason": "URL contains multiple concrete incident indicators and matches event location",
             "incident_hits": [
-              "attack",
+              "attacks",
               "kills"
             ],
             "noise_hits": [],
@@ -1618,17 +1151,23 @@
             "years": [],
             "location_match": {
               "match": true,
-              "level": "not_required",
+              "level": "primary",
               "weight": 1.0,
-              "primary_hits": [],
+              "primary_hits": [
+                "gaza"
+              ],
               "secondary_hits": [],
               "regional_hits": [
                 "gaza"
               ],
-              "country_hits": [],
-              "required": false,
+              "country_hits": [
+                "israel"
+              ],
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1639,12 +1178,14 @@
             "source_weight": 1.0
           },
           {
-            "url": "https://kaieteurnewsonline.com/2026/06/27/wismar-massacre-genocide-or-holocaust/",
-            "domain": "kaieteurnewsonline.com",
+            "url": "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
+            "domain": "www.columbian.com",
             "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
             "incident_hits": [
-              "massacre"
+              "strikes",
+              "shelling",
+              "kill"
             ],
             "noise_hits": [],
             "weak_hits": [],
@@ -1654,15 +1195,21 @@
             ],
             "location_match": {
               "match": true,
-              "level": "not_required",
+              "level": "primary",
               "weight": 1.0,
-              "primary_hits": [],
+              "primary_hits": [
+                "gaza"
+              ],
               "secondary_hits": [],
-              "regional_hits": [],
+              "regional_hits": [
+                "gaza"
+              ],
               "country_hits": [],
-              "required": false,
+              "required": true,
               "terms": {
-                "primary": [],
+                "primary": [
+                  "gaza"
+                ],
                 "secondary": [],
                 "country": [
                   "israel"
@@ -1671,47 +1218,15 @@
               }
             },
             "source_weight": 1.0
-          },
-          {
-            "url": "https://pragativadi.com/sonia-gandhi-targets-modi-government-over-gaza-policy-says-indias-silence-cannot-be-explained/",
-            "domain": "pragativadi.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [
-              "government"
-            ],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "not_required",
-              "weight": 1.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [
-                "gaza"
-              ],
-              "country_hits": [],
-              "required": false,
-              "terms": {
-                "primary": [],
-                "secondary": [],
-                "country": [
-                  "israel"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
           }
         ],
-        "event_location": "Gaza, Israel, Israel",
+        "event_location": "Gaza, Israel",
         "event_country": "Israel",
-        "event_date": "2026-06-28",
+        "event_date": "2026-06-30",
         "location_terms": {
-          "primary": [],
+          "primary": [
+            "gaza"
+          ],
           "secondary": [],
           "country": [
             "israel"
@@ -1721,23 +1236,626 @@
       },
       "source_confidence": "Medium",
       "raw_titles": [
-        "assault – Gaza, Israel (general), Israel"
+        "fight – Gaza, Israel (general), Israel"
       ],
       "search_terms": [
-        "Gaza, Israel, Israel Israel Rajtaütés / fegyveres támadás",
-        "Gaza, Israel, Israel Israel",
-        "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
-        "Israel Rajtaütés / fegyveres támadás"
+        "Gaza, Israel Israel Fegyveres összecsapás",
+        "Gaza, Israel Israel",
+        "Fegyveres összecsapás – Gaza, Israel",
+        "Israel Fegyveres összecsapás"
       ],
       "sources_original_count": 20,
       "sources_checked_count": 4,
-      "sources_valid_count": 0,
-      "sources_rejected_count": 4,
-      "sources_refined": [],
-      "refinement_confidence": "Rejected",
+      "sources_valid_count": 3,
+      "sources_rejected_count": 1,
+      "sources_refined": [
+        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://www.gdnonline.com:443/Details/1399150"
+      ],
+      "refinement_confidence": "Medium",
+      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 52,
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-06-30|qatar|doha ad daw ah qatar|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+      "date": "2026-06-30",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw Ah, Qatar",
+      "raw_location": "Doha, Ad Daw Ah, Qatar",
+      "normalized_location": {
+        "raw_location": "Doha, Ad Daw Ah, Qatar",
+        "country": "Qatar",
+        "country_key": "qatar",
+        "primary": "Doha",
+        "primary_key": "doha",
+        "secondary": "Ad Daw Ah",
+        "secondary_key": "ad daw ah",
+        "aliases": [
+          "ad daw ah",
+          "doha"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "doha",
+          "ad daw ah",
+          "qatar"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 33,
+      "source_domain_count": 30,
+      "source_domains": [
+        "aa.com.tr",
+        "dominicanrepublicpost.com",
+        "edition.cnn.com",
+        "freebeacon.com",
+        "grenadachronicle.com",
+        "indianexpress.com",
+        "kashmirreader.com",
+        "thepeninsulaqatar.com",
+        "timesofindia.indiatimes.com",
+        "www.bankingnews.gr",
+        "www.bignewsnetwork.com",
+        "www.cnn.com",
+        "www.crookwellgazette.com.au",
+        "www.dailyexcelsior.com",
+        "www.dw.com",
+        "www.euronews.com",
+        "www.hindustantimes.com",
+        "www.indiatvnews.com",
+        "www.israelnationalnews.com",
+        "www.moneycontrol.com"
+      ],
+      "sources": [
+        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+        "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+        "https://www.israelnationalnews.com/news/429399",
+        "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+        "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+        "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+        "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+        "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
+        "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
+        "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
+        "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
+        "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
+        "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
+        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985",
+        "https://www.bankingnews.gr/diethni/articles/884455/europe-has-shot-itself-in-the-foot-ultimatum-on-lng-from-the-us-and-qatar-a-new-energy-shock-is-coming",
+        "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
+        "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
+        "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 4,
+        "rejected_count": 8,
+        "valid_ratio": 0.333,
+        "weighted_score": 3.8,
+        "label": "Medium",
+        "valid_sources": [
+          "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+          "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+          "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/"
+        ],
+        "rejected_sources": [
+          "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+          "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+          "https://www.israelnationalnews.com/news/429399",
+          "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+          "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+          "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
+          "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
+          "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+            "domain": "indianexpress.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+            "domain": "www.hindustantimes.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.israelnationalnews.com/news/429399",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+            "domain": "kashmirreader.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+            "domain": "www.naroomanewsonline.com.au",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "attacks"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+            "domain": "www.theyeshivaworld.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+            "domain": "indianexpress.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+            "domain": "indianexpress.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
+            "domain": "www.spotlightnepal.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "attacks"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
+            "domain": "www.cnn.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
+            "domain": "www.upi.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
+            "domain": "aa.com.tr",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "attacks"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Doha, Ad Daw Ah, Qatar",
+        "event_country": "Qatar",
+        "event_date": "2026-06-30",
+        "location_terms": {
+          "primary": [
+            "doha"
+          ],
+          "secondary": [
+            "qatar"
+          ],
+          "country": [
+            "qatar"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Medium",
+      "raw_titles": [
+        "fight – Doha, Ad Daw?ah, Qatar"
+      ],
+      "search_terms": [
+        "Doha, Ad Daw Ah, Qatar Qatar Fegyveres összecsapás",
+        "Doha, Ad Daw Ah, Qatar Qatar",
+        "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+        "Qatar Fegyveres összecsapás"
+      ],
+      "sources_original_count": 20,
+      "sources_checked_count": 4,
+      "sources_valid_count": 1,
+      "sources_rejected_count": 3,
+      "sources_refined": [
+        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
+      ],
+      "refinement_confidence": "Low",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
     }
   ],
-  "refined_at": "2026-06-29T09:59:43.401727Z",
+  "refined_at": "2026-07-01T07:29:16.560077Z",
   "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
 }

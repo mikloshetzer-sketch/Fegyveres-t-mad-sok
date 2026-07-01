@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-29T09:59:43.401739Z",
+  "generated_at": "2026-07-01T07:29:16.560090Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
@@ -12,28 +12,27 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-06-28",
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
+      "date": "2026-06-29",
       "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "location": "Crimea, Crimea, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 14,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "http://www.rightspeak.net/2026/06/200-c-clashes-in-f-line-17-in-pokrovsk.html",
+          "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
           "status": "ok",
           "error": null,
-          "title": "RIGHT SPEAK: 200 C-Clashes in F-Line: 17 in Pokrovsk Dir, 24 in Huliaipole Dir, 19 in Slavyansk Dir, 18 in Kostyantynivka Dir; UKR Pummels Key RU Oil Hub for 2nd Time in June as Kyiv Ramps Up Pressure On Putin; Trump 'skeptical' of Putin; Sikorski: RU Has Lost War Initiative as UKR Shifts Battlefield; RUs Keep Raising “Potemkin flags” in Lyman. They’re No Closer to Capturing It; UKR Hits: Slavyansk oil Ref, Flamingo Missiles Strike Titan-Barrikady Plant, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "title": "RIGHT SPEAK: 197 C-Clashes in F-Line: 24 in Pokrovsk Dir, 23 in Huliaipole Dir, 24 in Slavyansk Dir; UKR Drone Assault Sets Fire to Major Oil-Ref in RU; RUs Feel the War’s Hardships as UKR Pummels Crimea; Trump Signals Frustration with Putin and Support for UKR; UKR Says 'Spirit of Anchorage' is 'dead,' RU Must Face Reality in Peace Talks; Report: Most RU Recruits Life Expectancy Just 20 Min On UKR F-Lines; Z: UKR Struck Oil Refs in RU's Krasnodar Krai and Yaroslavl Obl, LIVE UPDATES, DETAILS, and LOTS MORE",
           "description": "summary_large_image' name='twitter:card'/> <meta content=",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "missile",
+            "drone",
             "clash",
             "clashes"
           ],
@@ -43,33 +42,12 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.hindustantimes.com/world-news/ballistic-missile-attack-rocks-kyiv-ukraine-issues-warning-101782612876023.html",
-          "domain": "www.hindustantimes.com",
+          "url": "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
+          "domain": "www.cbc.ca",
           "status": "ok",
           "error": null,
-          "title": "Ballistic missile attack rocks Kyiv, Ukraine issues warning | World News",
-          "description": "Ukrainian military has requested civilians to stay indoors as air defense forces operate in the region following repeated strikes by Moscow | World News",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "strikes",
-            "missile"
-          ],
-          "weak_hits": [
-            "war",
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/russia-ukraine-war-kyiv-under-ballistic-missile-attack-as-both-sides-intensify-cross-border-strikes-article-13960375.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russia-Ukraine war: Kyiv under ballistic missile attack as both sides intensify cross-border strikes",
-          "description": "Ukraine came under a fresh Russian missile attack on Kyiv as Ukrainian drones struck a Russian oil refinery, intensifying cross-border attacks amid the ongoing war.",
+          "title": "Russian strikes across Ukraine kill at least 9, injure dozens | CBC News",
+          "description": "Russian attacks across Ukraine killed nine people and wounded dozens on Monday, authorities said, with strikes continuing into the afternoon as the death toll climbed.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -77,43 +55,13 @@
             "attacks",
             "strike",
             "strikes",
-            "drone",
-            "drones",
-            "missile"
+            "killed",
+            "kill",
+            "wounded"
           ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.kyivpost.com/post/79102",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine’s Energy System ‘More Prepared’ for Winter, DTEK CEO Says",
-          "description": "Maxim Timchenko, CEO of Ukraine’s largest private energy company DTEK, says the country’s energy system will be better prepared for the upcoming winter.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-06-27",
-      "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 12,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
+        },
         {
           "url": "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
@@ -157,42 +105,79 @@
             "war"
           ],
           "noise_hits": []
-        },
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Gaza, Israel",
+      "date": "2026-06-30",
+      "country": "Israel",
+      "location": "Gaza, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
         {
-          "url": "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
-          "domain": "dominicanrepublicpost.com",
+          "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+          "domain": "truthout.org",
           "status": "ok",
           "error": null,
-          "title": "Three killed as Ukraine and Russia trade attacks overnight - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
-          "description": "Russian overnight attacks have killed two people and wounded more than 20 across Ukraine, while Kyiv’s attacks on Russian territory and occupied areas have",
+          "title": "Israel Is Killing Children in the West Bank at the Highest Rate Since 1967 | Truthout",
+          "description": "No indictments are known to have been filed in cases involving West Bank killings since October 2023, reports B’Tselem.",
           "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
+          "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
-            "attack",
-            "attacks",
-            "ied",
-            "killed",
-            "kill",
-            "wounded"
+            "kill"
           ],
           "weak_hits": [],
-          "noise_hits": [
-            "travel"
-          ]
+          "noise_hits": []
         },
         {
-          "url": "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/",
-          "domain": "www.bostonglobe.com",
+          "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "domain": "www.yahoo.com",
           "status": "ok",
           "error": null,
-          "title": "Ukrainian attacks spur state of emergency declaration in Crimea - The Boston Globe",
-          "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency after weeks of intense air attacks by Ukraine.",
+          "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
+          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "hamas",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.gdnonline.com:443/Details/1399150",
+          "domain": "www.gdnonline.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "Middle East News: Israeli attack kills three including a child in Gaza",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks"
+            "kill"
           ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+          "domain": "www.newstatesman.com",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         }
@@ -200,69 +185,76 @@
     },
     {
       "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
-      "date": "2026-06-28",
-      "country": "Israel",
-      "location": "Gaza, Israel, Israel",
-      "event_type": "Rajtaütés / fegyveres támadás",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+      "date": "2026-06-30",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw Ah, Qatar",
+      "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 0,
-      "confidence": "Rejected",
+      "valid_sources_count": 1,
+      "confidence": "Low",
       "inspected_sources": [
         {
-          "url": "https://calgarysun.com/opinion/columnists/is-prime-minister-mark-carney-antisemitic/wcm/02f0dea6-47fb-4e7b-abdd-422776e514cc",
-          "domain": "calgarysun.com",
+          "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+          "domain": "indianexpress.com",
           "status": "ok",
           "error": null,
-          "title": "KINSELLA: Is Prime Minister Mark Carney antisemitic? | Calgary Sun",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "title": "Trump says Iran talks set for Doha; Tehran denies any meeting planned",
+          "description": "Live: US President Trump insisted US-Iran talks would take place in Doha focused on nuclear issues, but Iranian officials denied any meeting was scheduled, deepening uncertainty over a fragile ceasefire.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
           "weak_hits": [
-            "minister"
+            "president"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://kaieteurnewsonline.com/2026/06/28/un-commission-finds-israel-committed-war-crimes-against-palestinian-children-recommends-arms-restriction/",
-          "domain": "kaieteurnewsonline.com",
-          "status": "error",
-          "error": "The read operation timed out",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://kaieteurnewsonline.com/2026/06/28/un-report-accuses-israel-of-systematically-destroying-gazas-children/",
-          "domain": "kaieteurnewsonline.com",
-          "status": "error",
-          "error": "The read operation timed out",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.theamericanconservative.com/ben-shapiro-blames-useless-white-people-for-socialism/",
-          "domain": "www.theamericanconservative.com",
+          "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+          "domain": "www.hindustantimes.com",
           "status": "ok",
           "error": null,
-          "title": "Ben Shapiro Blames ‘Useless White People’ for Socialism - The American Conservative",
-          "description": "The Daily Wire podcaster supported policies that boosted the hard left in New York.",
+          "title": "Talks or no talks? Confusion surrounds upcoming US-Iran discussions in Doha | Here's what we know | World News",
+          "description": "Washington and Tehran on Monday separately announced sending delegations to Qatar this week. | World News",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
           "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/429399",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Report: Witkoff en route to Doha for meeting with Iran | Israel National News",
+          "description": "US Special Envoy Steve Witkoff is traveling to Doha for scheduled Tuesday meetings with Iranian officials, despite Tehran",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "travel"
+          ]
+        },
+        {
+          "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+          "domain": "kashmirreader.com",
+          "status": "ok",
+          "error": null,
+          "title": "US, Iran talks in Doha today: Trump | Kashmir Reader",
+          "description": "Washington: US President Donald Trump’s top envoys Steve Witkoff and Jared Kushner will meet Iranian negotiators in Doha on Tuesday as the two warring sides exchanged fire over the weekend, testing the fragile ceasefire. Trump announced in a Truth Social post on Monday that Iran had requested a meeting, which would take place in Doha [...]",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "president"
+          ],
           "noise_hits": []
         }
       ]

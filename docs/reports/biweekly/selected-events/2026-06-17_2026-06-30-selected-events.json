@@ -658,19 +658,7 @@
         "Crimea, Crimea, Ukraine Ukraine",
         "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 14,
-      "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
-      "sources_refined": [
-        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
-        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
-        "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
-        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/"
-      ],
-      "refinement_confidence": "High",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1243,18 +1231,7 @@
         "Gaza, Israel Israel",
         "Fegyveres összecsapás – Gaza, Israel",
         "Israel Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-        "https://www.gdnonline.com:443/Details/1399150"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -1844,18 +1821,7 @@
         "Doha, Ad Daw Ah, Qatar Qatar",
         "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
         "Qatar Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
-      "sources_refined": [
-        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
-      ],
-      "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     }
-  ],
-  "refined_at": "2026-07-01T07:29:16.560077Z",
-  "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+  ]
 }
