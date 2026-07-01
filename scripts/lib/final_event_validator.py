@@ -3,25 +3,61 @@ Final event validator for selected biweekly armed incident events.
 
 This module combines source validation and optional article validation.
 
-Important:
-- It supports both import styles:
-  from lib.article_validator ...
-  from scripts.lib.article_validator ...
-- If article_validator cannot be imported, the pipeline remains stable.
+It loads article_validator.py robustly using:
+1. lib.article_validator
+2. scripts.lib.article_validator
+3. direct file loading from the same directory
 """
 
 from __future__ import annotations
 
 from typing import Any, Dict, List, Optional
+from pathlib import Path
+import importlib.util
 
 
-try:
-    from lib.article_validator import validate_article_sources
-except Exception:
+def _load_article_validator_function():
+    try:
+        from lib.article_validator import validate_article_sources
+        return validate_article_sources
+    except Exception:
+        pass
+
     try:
         from scripts.lib.article_validator import validate_article_sources
+        return validate_article_sources
     except Exception:
-        validate_article_sources = None
+        pass
+
+    try:
+        article_path = Path(__file__).resolve().parent / "article_validator.py"
+
+        if not article_path.exists():
+            return None
+
+        spec = importlib.util.spec_from_file_location(
+            "article_validator_runtime",
+            str(article_path),
+        )
+
+        if spec is None or spec.loader is None:
+            return None
+
+        module = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(module)
+
+        fn = getattr(module, "validate_article_sources", None)
+
+        if callable(fn):
+            return fn
+
+    except Exception:
+        return None
+
+    return None
+
+
+validate_article_sources = _load_article_validator_function()
 
 
 DEFAULT_MAX_ARTICLES = 4
@@ -63,16 +99,23 @@ def confidence_label_from_score(score: int) -> str:
 
     if score >= 80:
         return "High"
+
     if score >= 60:
         return "Medium"
+
     if score >= 40:
         return "Low"
+
     if score >= 20:
         return "Very low"
+
     return "Rejected"
 
 
-def choose_article_candidate_sources(event: Dict[str, Any], max_articles: int = DEFAULT_MAX_ARTICLES) -> List[str]:
+def choose_article_candidate_sources(
+    event: Dict[str, Any],
+    max_articles: int = DEFAULT_MAX_ARTICLES,
+) -> List[str]:
     event = event or {}
     source_validation = event.get("source_validation") or {}
     candidates: List[str] = []
@@ -80,6 +123,7 @@ def choose_article_candidate_sources(event: Dict[str, Any], max_articles: int = 
     for source_container in [source_validation, event]:
         for key in ["valid_sources", "sources"]:
             values = source_container.get(key)
+
             if isinstance(values, list):
                 for url in values:
                     if isinstance(url, str) and url.startswith("http") and url not in candidates:
@@ -155,6 +199,7 @@ def calculate_final_confidence_score(
 
     if not article_validation:
         final_score = source_score
+
         return {
             "score": final_score,
             "confidence": confidence_label_from_score(final_score),
@@ -168,10 +213,12 @@ def calculate_final_confidence_score(
 
     if safe_int(article_validation.get("checked_count")) > 0 and safe_int(article_validation.get("accepted_count")) == 0:
         final_score = min(final_score, 49)
+
         if confidence_rank(confidence) > confidence_rank("Low"):
             confidence = "Low"
 
     source_label = str(source_validation.get("label") or "Rejected")
+
     if confidence == "High" and confidence_rank(source_label) < confidence_rank("Medium"):
         confidence = "Medium"
         final_score = min(final_score, 79)
@@ -190,12 +237,16 @@ def final_score_adjustment(final_confidence: Dict[str, Any]) -> int:
 
     if confidence == "High":
         return 8
+
     if confidence == "Medium":
         return 4
+
     if confidence == "Low":
         return 0
+
     if confidence == "Very low":
         return -6
+
     if confidence == "Rejected":
         return -15
 
@@ -210,7 +261,10 @@ def validate_final_event(
     fetch_articles: bool = True,
 ) -> Dict[str, Any]:
     event = dict(event or {})
-    candidate_sources = choose_article_candidate_sources(event, max_articles=max_articles)
+    candidate_sources = choose_article_candidate_sources(
+        event,
+        max_articles=max_articles,
+    )
 
     article_validation = None
     article_validation_status = "not_run"
@@ -228,6 +282,7 @@ def validate_final_event(
                 timeout=timeout,
             )
             article_validation_status = "ok"
+
         except Exception as exc:
             article_validation = {
                 "checked_count": 0,
@@ -256,7 +311,6 @@ def validate_final_event(
         article_validation=article_validation,
     )
     adjustment = final_score_adjustment(final_confidence)
-
     base_score = safe_int(event.get("score"))
 
     return {
@@ -267,6 +321,7 @@ def validate_final_event(
         "final_confidence": final_confidence,
         "score_adjustment": adjustment,
         "recommended_score": clamp(base_score + adjustment),
+        "article_validator_available": validate_article_sources is not None,
     }
 
 
@@ -292,3 +347,32 @@ def validate_final_events(
 
     return output
 
+
+if __name__ == "__main__":
+    import json
+
+    sample_event = {
+        "score": 76,
+        "date": "2026-06-30",
+        "country": "Ukraine",
+        "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "event_type": "Rajtaütés / fegyveres támadás",
+        "sources": [
+            "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698",
+        ],
+        "source_validation": {
+            "checked_count": 4,
+            "valid_count": 2,
+            "weighted_score": 2.0,
+            "label": "Medium",
+            "valid_sources": [
+                "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698",
+            ],
+        },
+    }
+
+    print(json.dumps(
+        validate_final_event(sample_event, fetch_articles=False),
+        indent=2,
+        ensure_ascii=False,
+    ))
