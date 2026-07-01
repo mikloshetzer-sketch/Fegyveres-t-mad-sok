@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T07:28:57.191981Z",
+  "generated_at": "2026-07-01T08:10:28.554264Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
@@ -7,24 +7,24 @@
   "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation.",
   "regions": {
     "Európai Unió": {
-      "raw_event_count": 557,
-      "cluster_count": 556,
+      "raw_event_count": 567,
+      "cluster_count": 565,
       "selected_count": 0
     },
     "Ukrajna": {
-      "raw_event_count": 218,
+      "raw_event_count": 221,
       "cluster_count": 199,
       "selected_count": 1
     },
     "Balkán": {
-      "raw_event_count": 71,
-      "cluster_count": 71,
+      "raw_event_count": 78,
+      "cluster_count": 78,
       "selected_count": 0
     },
     "Közel-Kelet": {
-      "raw_event_count": 843,
-      "cluster_count": 842,
-      "selected_count": 2
+      "raw_event_count": 875,
+      "cluster_count": 873,
+      "selected_count": 3
     }
   },
   "events": [
@@ -32,12 +32,22 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 77,
+      "score": 83,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 15,
+        "repeat_hotspot": 12,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 83
+      },
       "quality_score": 41,
       "quality_label": "Low",
-      "cluster_key": "2026-06-29|ukraine|crimea crimea ukraine|rajtaütés fegyveres támadás",
+      "cluster_key": "2026-06-30|ukraine|crimea crimea ukraine|rajtaütés fegyveres támadás",
       "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "country": "Ukraine",
       "location": "Crimea, Crimea, Ukraine",
       "raw_location": "Crimea, Crimea, Ukraine",
@@ -71,13 +81,14 @@
       "event_type": "Rajtaütés / fegyveres támadás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 14,
-      "source_domain_count": 13,
+      "source_count": 15,
+      "source_domain_count": 14,
       "source_domains": [
         "dominicanrepublicpost.com",
         "eaworldview.com",
         "economictimes.indiatimes.com",
         "edition.cnn.com",
+        "www.albawaba.net",
         "www.bostonglobe.com",
         "www.cbc.ca",
         "www.dailyadvance.com",
@@ -89,6 +100,7 @@
         "www.westhawaiitoday.com"
       ],
       "sources": [
+        "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
         "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
         "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
         "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
@@ -118,16 +130,54 @@
           "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
         ],
         "rejected_sources": [
+          "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
           "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
           "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
           "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
           "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
-          "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
-          "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms"
+          "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html"
         ],
         "checked_sources": [
+          {
+            "url": "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
+            "domain": "www.albawaba.net",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "explosion"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "crimea",
+                  "krym"
+                ],
+                "secondary": [
+                  "crimea",
+                  "krym"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
           {
             "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
             "domain": "www.rightspeak.net",
@@ -590,50 +640,11 @@
               }
             },
             "source_weight": 1.0
-          },
-          {
-            "url": "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms",
-            "domain": "economictimes.indiatimes.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "drones",
-              "shoots-down"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "crimea",
-                  "krym"
-                ],
-                "secondary": [
-                  "crimea",
-                  "krym"
-                ],
-                "country": [
-                  "ukraine"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
           }
         ],
         "event_location": "Crimea, Crimea, Ukraine",
         "event_country": "Ukraine",
-        "event_date": "2026-06-29",
+        "event_date": "2026-06-30",
         "location_terms": {
           "primary": [
             "crimea",
@@ -658,26 +669,24 @@
         "Crimea, Crimea, Ukraine Ukraine",
         "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
-      ],
-      "sources_original_count": 14,
-      "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
-      "sources_refined": [
-        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
-        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
-        "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
-        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/"
-      ],
-      "refinement_confidence": "High",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 1,
-      "score": 72,
-      "quality_score": 43,
+      "score": 81,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 13,
+        "repeat_hotspot": 12,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 81
+      },
+      "quality_score": 46,
       "quality_label": "Low",
       "cluster_key": "2026-06-30|israel|gaza israel|fegyveres összecsapás",
       "title": "Fegyveres összecsapás – Gaza, Israel",
@@ -714,8 +723,10 @@
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
       "source_count": 112,
-      "source_domain_count": 80,
+      "source_domain_count": 79,
       "source_domains": [
+        "aa.com.tr",
+        "allafrica.com",
         "baptistnews.com",
         "calgarysun.com",
         "countercurrents.org",
@@ -723,19 +734,17 @@
         "eturbonews.com",
         "forward.com",
         "grenadachronicle.com",
+        "imemc.org",
         "island.lk",
         "jp.ibtimes.com",
         "kaieteurnewsonline.com",
         "news.webindia123.com",
         "scroll.in",
-        "themedialine.org",
-        "thenewamerican.com",
+        "thepeninsulaqatar.com",
         "theshillongtimes.com",
         "townhall.com",
         "truthout.org",
-        "udaipurkiran.com",
-        "voiceofvienna.org",
-        "wrp.org.uk"
+        "udaipurkiran.com"
       ],
       "sources": [
         "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
@@ -1243,24 +1252,23 @@
         "Gaza, Israel Israel",
         "Fegyveres összecsapás – Gaza, Israel",
         "Israel Fegyveres összecsapás"
-      ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 3,
-      "sources_rejected_count": 1,
-      "sources_refined": [
-        "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-        "https://www.gdnonline.com:443/Details/1399150"
-      ],
-      "refinement_confidence": "Medium",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      ]
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 2,
-      "score": 52,
+      "score": 75,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 20,
+        "repeat_hotspot": 9,
+        "source_reliability": 15,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 75
+      },
       "quality_score": 43,
       "quality_label": "Low",
       "cluster_key": "2026-06-30|qatar|doha ad daw ah qatar|fegyveres összecsapás",
@@ -1292,8 +1300,8 @@
       "event_type": "Fegyveres összecsapás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 33,
-      "source_domain_count": 30,
+      "source_count": 37,
+      "source_domain_count": 33,
       "source_domains": [
         "aa.com.tr",
         "dominicanrepublicpost.com",
@@ -1321,6 +1329,10 @@
         "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
         "https://www.israelnationalnews.com/news/429399",
         "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+        "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+        "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+        "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+        "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
         "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
         "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
         "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
@@ -1332,34 +1344,30 @@
         "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
         "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
         "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
-        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985",
-        "https://www.bankingnews.gr/diethni/articles/884455/europe-has-shot-itself-in-the-foot-ultimatum-on-lng-from-the-us-and-qatar-a-new-energy-shock-is-coming",
-        "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
-        "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
-        "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel"
+        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985"
       ],
       "source_validation": {
         "checked_count": 12,
-        "valid_count": 4,
-        "rejected_count": 8,
-        "valid_ratio": 0.333,
-        "weighted_score": 3.8,
-        "label": "Medium",
+        "valid_count": 3,
+        "rejected_count": 9,
+        "valid_ratio": 0.25,
+        "weighted_score": 3.0,
+        "label": "Low",
         "valid_sources": [
           "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
           "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-          "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/"
+          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/"
         ],
         "rejected_sources": [
           "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
           "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
           "https://www.israelnationalnews.com/news/429399",
           "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-          "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-          "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-          "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-          "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817"
+          "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+          "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+          "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+          "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+          "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/"
         ],
         "checked_sources": [
           {
@@ -1496,6 +1504,154 @@
               "secondary_hits": [],
               "regional_hits": [],
               "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+            "domain": "www.rttnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+            "domain": "www.orlandosentinel.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+            "domain": "www.moneycontrol.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "sanctions"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+            "domain": "www.thedailystar.net",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
               "required": true,
               "terms": {
                 "primary": [
@@ -1663,160 +1819,6 @@
               }
             },
             "source_weight": 1.0
-          },
-          {
-            "url": "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
-            "domain": "www.spotlightnepal.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "attacks"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": true,
-              "level": "secondary_country",
-              "weight": 0.8,
-              "primary_hits": [],
-              "secondary_hits": [
-                "qatar"
-              ],
-              "regional_hits": [],
-              "country_hits": [
-                "qatar"
-              ],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.8
-          },
-          {
-            "url": "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-            "domain": "www.cnn.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "strikes"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-            "domain": "www.upi.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
-            "domain": "aa.com.tr",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "attacks"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
           }
         ],
         "event_location": "Doha, Ad Daw Ah, Qatar",
@@ -1835,7 +1837,7 @@
           "removed_org_entities": []
         }
       },
-      "source_confidence": "Medium",
+      "source_confidence": "Low",
       "raw_titles": [
         "fight – Doha, Ad Daw?ah, Qatar"
       ],
@@ -1844,18 +1846,431 @@
         "Doha, Ad Daw Ah, Qatar Qatar",
         "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
         "Qatar Fegyveres összecsapás"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 66,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 9,
+        "repeat_hotspot": 10,
+        "source_reliability": 16,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 66
+      },
+      "quality_score": 40,
+      "quality_label": "Low",
+      "cluster_key": "2026-06-30|gaza strip|rafah gaza strip gaza strip|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+      "date": "2026-06-30",
+      "country": "Gaza Strip",
+      "location": "Rafah, Gaza Strip, Gaza Strip",
+      "raw_location": "Rafah, Gaza Strip, Gaza Strip",
+      "normalized_location": {
+        "raw_location": "Rafah, Gaza Strip, Gaza Strip",
+        "country": "Gaza Strip",
+        "country_key": "gaza strip",
+        "primary": "Rafah",
+        "primary_key": "rafah",
+        "secondary": "Gaza Strip",
+        "secondary_key": "gaza strip",
+        "aliases": [
+          "gaza",
+          "gaza city",
+          "gaza strip",
+          "rafah"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "rafah",
+          "gaza strip",
+          "gaza strip"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 8,
+      "source_domain_count": 6,
+      "source_domains": [
+        "aa.com.tr",
+        "imemc.org",
+        "www.israelnationalnews.com",
+        "www.jpost.com",
+        "www.theepochtimes.com",
+        "www.yahoo.com"
       ],
-      "sources_original_count": 20,
-      "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
-      "sources_refined": [
-        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
+      "sources": [
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+        "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+        "https://www.israelnationalnews.com/flashes/688705",
+        "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+        "https://www.israelnationalnews.com/news/429384",
+        "https://www.jpost.com/middle-east/article-900879",
+        "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/"
       ],
-      "refinement_confidence": "Low",
-      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+      "source_validation": {
+        "checked_count": 8,
+        "valid_count": 2,
+        "rejected_count": 6,
+        "valid_ratio": 0.25,
+        "weighted_score": 1.6,
+        "label": "Low",
+        "valid_sources": [
+          "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+          "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915"
+        ],
+        "rejected_sources": [
+          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "https://www.israelnationalnews.com/flashes/688705",
+          "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+          "https://www.israelnationalnews.com/news/429384",
+          "https://www.jpost.com/middle-east/article-900879",
+          "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+            "domain": "www.yahoo.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+            "domain": "imemc.org",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "killed"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "gaza"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "gaza"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+            "domain": "aa.com.tr",
+            "accepted": true,
+            "reason": "high-value source with concrete incident indicator and location match",
+            "incident_hits": [
+              "kills"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "army"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "gaza"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "gaza"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.israelnationalnews.com/flashes/688705",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+            "domain": "www.theepochtimes.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "killed",
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "military"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.israelnationalnews.com/news/429384",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.jpost.com/middle-east/article-900879",
+            "domain": "www.jpost.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/",
+            "domain": "imemc.org",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "ceasefire"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "gaza"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "gaza"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Rafah, Gaza Strip, Gaza Strip",
+        "event_country": "Gaza Strip",
+        "event_date": "2026-06-30",
+        "location_terms": {
+          "primary": [
+            "rafah"
+          ],
+          "secondary": [
+            "gaza"
+          ],
+          "country": [
+            "gaza",
+            "strip"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Low",
+      "raw_titles": [
+        "fight – Rafah, Gaza Strip (general), Gaza Strip"
+      ],
+      "search_terms": [
+        "Rafah, Gaza Strip, Gaza Strip Gaza Strip Fegyveres összecsapás",
+        "Rafah, Gaza Strip, Gaza Strip Gaza Strip",
+        "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+        "Gaza Strip Fegyveres összecsapás"
+      ]
     }
-  ],
-  "refined_at": "2026-07-01T07:29:16.560077Z",
-  "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+  ]
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T07:32:04.190222Z",
+  "generated_at": "2026-07-01T08:14:35.140077Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-17",
@@ -11,21 +11,22 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 77,
+      "score": 83,
       "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
-      "date": "2026-06-29",
+      "date": "2026-06-30",
       "country": "Ukraine",
       "location": "Crimea, Ukraine",
       "event_type": "Rajtaütés / fegyveres támadás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 14,
-      "source_domain_count": 13,
+      "source_count": 15,
+      "source_domain_count": 14,
       "source_domains": [
         "dominicanrepublicpost.com",
         "eaworldview.com",
         "economictimes.indiatimes.com",
         "edition.cnn.com",
+        "www.albawaba.net",
         "www.bostonglobe.com",
         "www.cbc.ca",
         "www.dailyadvance.com",
@@ -37,6 +38,7 @@
         "www.westhawaiitoday.com"
       ],
       "original_sources": [
+        "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
         "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
         "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
         "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
@@ -56,6 +58,15 @@
         "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
       ],
       "inspected_sources": [
+        {
+          "url": "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
+          "domain": "www.albawaba.net",
+          "status": "ok",
+          "error": null,
+          "title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
+          "description": "A backpack explosion rocked Monaco, leaving three Ukrainians injured, including businessman and investor Vadym Iermolaiev.",
+          "published": ""
+        },
         {
           "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
@@ -136,30 +147,21 @@
           "title": "Russia is still inching forward in eastern Ukraine, but experts say claims of progress are exaggerated | CNN",
           "description": "Russia is still inching forward in eastern Ukraine’s Donetsk region, but outside experts and Ukrainian soldiers say Russia’s claims of advancement are exaggerated.",
           "published": "2026-06-24T13:31:13.019Z"
-        },
-        {
-          "url": "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
-          "domain": "www.theyeshivaworld.com",
-          "status": "ok",
-          "error": null,
-          "title": "DEADLY STRIKES: Russia and Ukraine Trade Attacks, Child Killed Amid Escalation The Yeshiva World",
-          "description": "A Russian drone strike on the city of Sumy in northeastern Ukraine killed three members of the same family, including a 13-year-old boy, while a Ukrainian strike on a Russian industrial plant killed five people, officials said Monday. Russia has pounded civilian areas of Ukraine with drones and missiles since its all-out invasion more than [ ]",
-          "published": ""
         }
       ],
       "event_fingerprint": {
-        "representative_title": "RIGHT SPEAK: 197 C-Clashes in F-Line: 24 in Pokrovsk Dir, 23 in Huliaipole Dir, 24 in Slavyansk Dir; UKR Drone Assault Sets Fire to Major Oil-Ref in RU; RUs Feel the War s Hardships as UKR Pummels Crimea; Trump Signals Frustration with Putin and Support for UKR; UKR Says 'Spirit of Anchorage' is 'dead,' RU Must Face Reality in Peace Talks; Report: Most RU Recruits Life Expectancy Just 20 Min On UKR F-Lines; Z: UKR Struck Oil Refs in RU's Krasnodar Krai and Yaroslavl Obl, LIVE UPDATES, DETAILS, and LOTS MORE",
+        "representative_title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
         "top_keywords": [
           "crimea",
           "attacks",
           "ukr",
           "state",
           "emergency",
-          "strikes",
           "still",
           "inching",
           "forward",
-          "eastern"
+          "eastern",
+          "including"
         ],
         "actor_hints": [
           "russia",
@@ -170,55 +172,55 @@
           "putin"
         ],
         "conflict_hints": [
-          "missile",
           "drone",
           "strike",
           "attack",
+          "explosion",
           "clash",
           "assault",
           "killed",
-          "wounded"
+          "injured"
         ],
         "usable_source_count": 10,
         "confidence": "Medium-High"
       },
       "queries": [
-        "\"Crimea, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
-        "\"Ukraine\" \"russia\" \"missile\"",
-        "\"Crimea, Ukraine\" \"missile\"",
-        "\"russia\" \"missile\" 2026-06-29"
+        "\"Crimea, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+        "\"Ukraine\" \"russia\" \"drone\"",
+        "\"Crimea, Ukraine\" \"drone\"",
+        "\"russia\" \"drone\" 2026-06-30"
       ],
       "local_media_findings": [
         {
-          "query": "\"Crimea, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
+          "query": "\"Crimea, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Crimea, Ukraine\" \"drone\"",
           "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
-          "query": "\"Ukraine\" \"russia\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"Crimea, Ukraine\" \"missile\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
-        },
-        {
-          "query": "\"russia\" \"missile\" 2026-06-29",
+          "query": "\"russia\" \"drone\" 2026-06-30",
           "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 14 source URLs across 13 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 1,
-      "score": 72,
+      "score": 81,
       "title": "Fegyveres összecsapás – Gaza, Israel",
       "date": "2026-06-30",
       "country": "Israel",
@@ -227,8 +229,10 @@
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
       "source_count": 112,
-      "source_domain_count": 80,
+      "source_domain_count": 79,
       "source_domains": [
+        "aa.com.tr",
+        "allafrica.com",
         "baptistnews.com",
         "calgarysun.com",
         "countercurrents.org",
@@ -236,19 +240,17 @@
         "eturbonews.com",
         "forward.com",
         "grenadachronicle.com",
+        "imemc.org",
         "island.lk",
         "jp.ibtimes.com",
         "kaieteurnewsonline.com",
         "news.webindia123.com",
         "scroll.in",
-        "themedialine.org",
-        "thenewamerican.com",
+        "thepeninsulaqatar.com",
         "theshillongtimes.com",
         "townhall.com",
         "truthout.org",
-        "udaipurkiran.com",
-        "voiceofvienna.org",
-        "wrp.org.uk"
+        "udaipurkiran.com"
       ],
       "original_sources": [
         "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
@@ -407,34 +409,83 @@
       "local_media_findings": [
         {
           "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"Israel\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "以打击真主党能 牵制 美伊谈判吗 以色列加大军事行动力度 _ 军事频道 _ 中华网",
+              "url": "https://military.china.com/news/13004177/20260527/49515563.html",
+              "domain": "military.china.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260527T003000Z"
+            },
+            {
+              "title": "Larmée israélienne affirme avoir mené une frappe dans le sud du Liban",
+              "url": "https://www.ledevoir.com/monde/moyen-orient/990896/armee-israelienne-affirme-avoir-mene-frappe-sud-liban",
+              "domain": "ledevoir.com",
+              "source_country": "Canada",
+              "language": "French",
+              "seendate": "20260627T183000Z"
+            },
+            {
+              "title": "Liban : « Aucun terroriste na dimmunité », dit Netanyahu après une frappe à Beyrouth",
+              "url": "https://senego.com/liban-aucun-terroriste-na-dimmunite-dit-netanyahu-apres-une-frappe-a-beyrouth_1957817.html",
+              "domain": "senego.com",
+              "source_country": "Senegal",
+              "language": "French",
+              "seendate": "20260506T190000Z"
+            },
+            {
+              "title": "Liban : frappes israéliennes dans le sud et lest du pays - 24 / 05 / 2026 à 16 : 43",
+              "url": "https://www.boursorama.com/actualite-economique/actualites/liban-frappes-israeliennes-dans-le-sud-et-l-est-du-pays-9dc6904d5e572eb5387304bec66d9ceb",
+              "domain": "boursorama.com",
+              "source_country": "France",
+              "language": "French",
+              "seendate": "20260524T153000Z"
+            },
+            {
+              "title": "Liban : nouvelle frappe israélienne dans le sud du pays",
+              "url": "https://lequotidien.lu/monde/liban-nouvelle-frappe-israelienne-dans-le-sud-du-pays/",
+              "domain": "lequotidien.lu",
+              "source_country": "Luxembourg",
+              "language": "French",
+              "seendate": "20260628T090000Z"
+            },
+            {
+              "title": "黎议长警告否决三方协议 以色列持续袭击",
+              "url": "http://news.china.com.cn/2026-06/30/content_118574090.shtml",
+              "domain": "news.china.com.cn",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20260630T010000Z"
+            }
+          ]
         },
         {
           "query": "\"Gaza, Israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 112 source URLs across 80 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 112 source URLs across 79 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
       "rank": 2,
-      "score": 52,
+      "score": 75,
       "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
       "date": "2026-06-30",
       "country": "Qatar",
@@ -442,8 +493,8 @@
       "event_type": "Fegyveres összecsapás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 33,
-      "source_domain_count": 30,
+      "source_count": 37,
+      "source_domain_count": 33,
       "source_domains": [
         "aa.com.tr",
         "dominicanrepublicpost.com",
@@ -471,6 +522,10 @@
         "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
         "https://www.israelnationalnews.com/news/429399",
         "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+        "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+        "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+        "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+        "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
         "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
         "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
         "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
@@ -482,11 +537,7 @@
         "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
         "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
         "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
-        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985",
-        "https://www.bankingnews.gr/diethni/articles/884455/europe-has-shot-itself-in-the-foot-ultimatum-on-lng-from-the-us-and-qatar-a-new-energy-shock-is-coming",
-        "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
-        "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
-        "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel"
+        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985"
       ],
       "raw_titles": [
         "fight – Doha, Ad Daw?ah, Qatar"
@@ -529,6 +580,42 @@
           "published": "2026-06-30T09:00:09+05:30"
         },
         {
+          "url": "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+          "domain": "www.rttnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Indian Shares End Modestly Lower; IT Stocks Among Worst Hit",
+          "description": "Indian shares ended Tuesday s session modestly lower, with doubts over possible U.S.-Iran talks in Doha, Fed rate hike jitters and FII selling keeping investors nervous.",
+          "published": ""
+        },
+        {
+          "url": "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+          "domain": "www.orlandosentinel.com",
+          "status": "ok",
+          "error": null,
+          "title": "US envoys arrive in Qatar for meetings on Iran amid tensions",
+          "description": "U.S. envoys arrived in Qatar for meetings with mediators working to negotiate an end to the war with Iran after weekend attacks.",
+          "published": "2026-06-30T12:24:36+00:00"
+        },
+        {
+          "url": "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+          "domain": "www.moneycontrol.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Treasury Secretary Scott Bessent says sanctions fears keeping buyers away from Iranian oil: 'Only China buying'",
+          "description": "Bessent",
+          "published": ""
+        },
+        {
+          "url": "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+          "domain": "www.thedailystar.net",
+          "status": "ok",
+          "error": null,
+          "title": "Talks in Qatar after US-Iran deal: What we know | The Daily Star",
+          "description": "Qatar says no high-level meetings between the longtime adversaries scheduled in Doha",
+          "published": ""
+        },
+        {
           "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
           "domain": "www.naroomanewsonline.com.au",
           "status": "ok",
@@ -545,42 +632,6 @@
           "title": "REPORT: US, Iran Agree To Halt Strikes, Set Tuesday Talks In Doha The Yeshiva World",
           "description": "Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to [ ]",
           "published": "2026-06-28T22:29:25-04:00"
-        },
-        {
-          "url": "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-          "domain": "indianexpress.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran denies talks with US are scheduled in Qatar as White House to send envoys to Doha | World News - The Indian Express",
-          "description": "US and Iran trade strikes despite ceasefire as Hormuz tensions rise. Doha talks set for Tuesday amid Lebanon and Gaza complications.",
-          "published": "2026-06-29T07:47:15+05:30"
-        },
-        {
-          "url": "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-          "domain": "indianexpress.com",
-          "status": "ok",
-          "error": null,
-          "title": "US, Iran ‘stand down’ on strikes; talks resume in Doha tomorrow | World News - The Indian Express",
-          "description": "Talks are expected to resume on Tuesday in Doha, Qatar, according to Axios, which first reported the ceasefire.",
-          "published": "2026-06-29T09:25:31+05:30"
-        },
-        {
-          "url": "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
-          "domain": "www.spotlightnepal.com",
-          "status": "ok",
-          "error": null,
-          "title": "US, Iran agree to stop attacks against each other, hold talks in Qatar | New Spotlight Magazine",
-          "description": "US, Iran agree to stop attacks against each other, hold talks in Qatar",
-          "published": ""
-        },
-        {
-          "url": "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-          "domain": "www.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "June 29, 2026 - US envoy Witkoff en route to Doha, Strait of Hormuz traffic consistent | CNN",
-          "description": "US President Donald Trump says a meeting is set for Tuesday in Qatar, while Iran says no meetings are scheduled.",
-          "published": "2026-06-29T05:21:48.757Z"
         }
       ],
       "event_fingerprint": {
@@ -589,13 +640,13 @@
           "doha",
           "talks",
           "qatar",
-          "tuesday",
           "meeting",
-          "strikes",
-          "set",
+          "tuesday",
           "tehran",
+          "meetings",
+          "us-iran",
           "scheduled",
-          "ceasefire"
+          "washington"
         ],
         "actor_hints": [
           "israel",
@@ -627,7 +678,7 @@
         },
         {
           "query": "\"Qatar\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -637,12 +688,186 @@
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 33 source URLs across 30 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 66,
+      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+      "date": "2026-06-30",
+      "country": "Gaza Strip",
+      "location": "Rafah, Gaza Strip",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 8,
+      "source_domain_count": 6,
+      "source_domains": [
+        "aa.com.tr",
+        "imemc.org",
+        "www.israelnationalnews.com",
+        "www.jpost.com",
+        "www.theepochtimes.com",
+        "www.yahoo.com"
+      ],
+      "original_sources": [
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+        "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+        "https://www.israelnationalnews.com/flashes/688705",
+        "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+        "https://www.israelnationalnews.com/news/429384",
+        "https://www.jpost.com/middle-east/article-900879",
+        "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/"
+      ],
+      "raw_titles": [
+        "fight – Rafah, Gaza Strip (general), Gaza Strip"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin s remains were held",
+          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
+          "published": "2026-06-29T22:12:39.000Z"
+        },
+        {
+          "url": "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Several Palestinians Killed in Ongoing Israeli Violations in Gaza | - IMEMC News",
+          "description": "Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widesprea ...",
+          "published": "2026-06-30T21:18:43"
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza",
+          "description": "Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu",
+          "published": "2026-06-29T11:43:20.333"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/flashes/688705",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Head of Military Defense in Hamas’ Rafah Brigade eliminated | Israel National News",
+          "description": "Real time news brief - Head of Military Defense in Hamas’ Rafah Brigade eliminated - Israel National News flashes around the clock are waiting for you on the site",
+          "published": "2026-06-29"
+        },
+        {
+          "url": "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+          "domain": "www.theepochtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Military Says It Killed Hamas, Islamic Jihad Operatives | The Epoch Times",
+          "description": "The Israel Defense Forces said it will remain deployed in parts of Gaza under the U.S.-brokered ceasefire and continue operations against perceived threats.",
+          "published": "2026-06-29"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/429384",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Tunnel in which Hadar Goldin was held sealed | Israel National News",
+          "description": "IDF soldiers have completed the sealing of the 10-mile long underground tunnel in which LT Hadar Goldin, was held.",
+          "published": "2026-06-29"
+        },
+        {
+          "url": "https://www.jpost.com/middle-east/article-900879",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF seals tunnel where Hadar Goldin’s remains were held | The Jerusalem Post",
+          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete.",
+          "published": "2026-06-29T22:12:39"
+        },
+        {
+          "url": "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Updated: Deaths, Injuries in Gaza Amid Ongoing Ceasefire Violations | - IMEMC News",
+          "description": "Israel continued its violations of the “ceasefire agreement” in the Gaza Strip for the 262nd consecutive day on Sunday, carrying out drone strikes, artiller ...",
+          "published": "2026-06-28T21:47:08"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin s remains were held",
+        "top_keywords": [
+          "gaza",
+          "tunnel",
+          "hadar",
+          "goldin",
+          "held",
+          "completed",
+          "strip",
+          "meters",
+          "concrete",
+          "palestinians"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "idf",
+          "hamas",
+          "army",
+          "military"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "airstrike",
+          "killed",
+          "wounded",
+          "fire"
+        ],
+        "usable_source_count": 8,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Rafah, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
+        "\"Gaza Strip\" \"israel\" \"drone\"",
+        "\"Rafah, Gaza Strip\" \"drone\"",
+        "\"israel\" \"drone\" 2026-06-30"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Rafah, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
+          "error": "The read operation timed out",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza Strip\" \"israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Rafah, Gaza Strip\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-06-30",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 8 source URLs across 6 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     }
   ]
