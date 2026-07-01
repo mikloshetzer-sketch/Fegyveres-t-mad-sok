@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T11:52:22.435023Z",
+  "generated_at": "2026-07-01T12:36:25.259119Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
@@ -1120,7 +1120,72 @@
         },
         "score_adjustment": 8,
         "recommended_score": 84,
-        "article_validator_available": false
+        "article_validator_available": false,
+        "article_validator_import": {
+          "status": "failed",
+          "selected_method": null,
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "failed",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 66, in _load_article_validator_function",
+                "    from lib.article_validator import validate_article_sources",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "scripts.lib.article_validator",
+              "status": "failed",
+              "error_type": "ModuleNotFoundError",
+              "error": "No module named 'scripts'",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 77, in _load_article_validator_function",
+                "    from scripts.lib.article_validator import validate_article_sources",
+                "ModuleNotFoundError: No module named 'scripts'"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "failed",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "  File \"<frozen importlib._bootstrap_external>\", line 936, in exec_module",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1074, in get_code",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1004, in source_to_code",
+                "  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "missing_file",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/lib/article_validator.py"
+            }
+          ]
+        }
       },
       "raw_titles": [
         "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
@@ -1736,7 +1801,72 @@
         },
         "score_adjustment": 0,
         "recommended_score": 80,
-        "article_validator_available": false
+        "article_validator_available": false,
+        "article_validator_import": {
+          "status": "failed",
+          "selected_method": null,
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "failed",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 66, in _load_article_validator_function",
+                "    from lib.article_validator import validate_article_sources",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "scripts.lib.article_validator",
+              "status": "failed",
+              "error_type": "ModuleNotFoundError",
+              "error": "No module named 'scripts'",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 77, in _load_article_validator_function",
+                "    from scripts.lib.article_validator import validate_article_sources",
+                "ModuleNotFoundError: No module named 'scripts'"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "failed",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "  File \"<frozen importlib._bootstrap_external>\", line 936, in exec_module",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1074, in get_code",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1004, in source_to_code",
+                "  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "missing_file",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/lib/article_validator.py"
+            }
+          ]
+        }
       },
       "raw_titles": [
         "fight – Doha, Ad Daw?ah, Qatar"
@@ -2341,7 +2471,72 @@
         },
         "score_adjustment": 8,
         "recommended_score": 78,
-        "article_validator_available": false
+        "article_validator_available": false,
+        "article_validator_import": {
+          "status": "failed",
+          "selected_method": null,
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "failed",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 66, in _load_article_validator_function",
+                "    from lib.article_validator import validate_article_sources",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "scripts.lib.article_validator",
+              "status": "failed",
+              "error_type": "ModuleNotFoundError",
+              "error": "No module named 'scripts'",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 77, in _load_article_validator_function",
+                "    from scripts.lib.article_validator import validate_article_sources",
+                "ModuleNotFoundError: No module named 'scripts'"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "failed",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "  File \"<frozen importlib._bootstrap_external>\", line 936, in exec_module",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1074, in get_code",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1004, in source_to_code",
+                "  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "missing_file",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/lib/article_validator.py"
+            }
+          ]
+        }
       },
       "raw_titles": [
         "fight – Gaza, Israel (general), Israel"
@@ -2787,7 +2982,72 @@
         },
         "score_adjustment": -6,
         "recommended_score": 52,
-        "article_validator_available": false
+        "article_validator_available": false,
+        "article_validator_import": {
+          "status": "failed",
+          "selected_method": null,
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "failed",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 66, in _load_article_validator_function",
+                "    from lib.article_validator import validate_article_sources",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "scripts.lib.article_validator",
+              "status": "failed",
+              "error_type": "ModuleNotFoundError",
+              "error": "No module named 'scripts'",
+              "traceback_tail": [
+                "Traceback (most recent call last):",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/final_event_validator.py\", line 77, in _load_article_validator_function",
+                "    from scripts.lib.article_validator import validate_article_sources",
+                "ModuleNotFoundError: No module named 'scripts'"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "failed",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py",
+              "error_type": "SyntaxError",
+              "error": "'(' was never closed (article_validator.py, line 600)",
+              "traceback_tail": [
+                "  File \"<frozen importlib._bootstrap_external>\", line 936, in exec_module",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1074, in get_code",
+                "  File \"<frozen importlib._bootstrap_external>\", line 1004, in source_to_code",
+                "  File \"<frozen importlib._bootstrap>\", line 241, in _call_with_frames_removed",
+                "  File \"/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts/lib/article_validator.py\", line 600",
+                "    print(json.dumps(sample, ensure_ascii=False, indent=2)",
+                "         ^",
+                "SyntaxError: '(' was never closed"
+              ]
+            },
+            {
+              "method": "direct_file_load",
+              "status": "missing_file",
+              "path": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/lib/article_validator.py"
+            }
+          ]
+        }
       },
       "raw_titles": [
         "fight – Rafah, Gaza Strip (general), Gaza Strip"

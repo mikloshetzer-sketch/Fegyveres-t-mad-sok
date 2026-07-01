@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T11:55:53.601977Z",
+  "generated_at": "2026-07-01T12:40:28.561508Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-17",
@@ -88,10 +88,10 @@
         {
           "url": "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
-          "status": "error",
-          "error": "HTTP Error 429: Too Many Requests",
-          "title": "",
-          "description": "",
+          "status": "ok",
+          "error": null,
+          "title": "RIGHT SPEAK: 205 C-Clashes in F-Line: 28 in Pokrovsk Dir, 20 in Huliaipole Dir, 24 in Slavyansk Dir; RU Reports One of the Biggest UKR Drone Attacks On Its Soil and Annexed Crimea; UKR s Growing Drone Strikes Overwhelm RU Air-Def; UKR Lifts Veil On Drone Reg Behind Strikes Deep Inside RU; UKR HITS: RU Milt Supply Vessels; 2 RU Spy Ships, an S-400; Lukoil Oil Ref in Kstovo, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
           "published": ""
         },
         {
@@ -155,13 +155,13 @@
           "attacks",
           "crimea",
           "strikes",
+          "ukr",
           "state",
           "emergency",
           "still",
           "inching",
           "forward",
-          "eastern",
-          "including"
+          "eastern"
         ],
         "actor_hints": [
           "russia",
@@ -174,12 +174,12 @@
           "strike",
           "attack",
           "explosion",
+          "clash",
           "assault",
           "killed",
-          "injured",
-          "wounded"
+          "injured"
         ],
-        "usable_source_count": 8,
+        "usable_source_count": 9,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -191,7 +191,7 @@
       "local_media_findings": [
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
@@ -201,17 +201,17 @@
         },
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
           "query": "\"russia\" \"drone\" 2026-06-30",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -406,95 +406,27 @@
       "local_media_findings": [
         {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
           "query": "\"Qatar\" \"israel\" \"strike\"",
-          "error": null,
-          "articles": [
-            {
-              "title": "中东变局下的卡塔尔 ： 首席调停者 缘何异常低调→",
-              "url": "https://baijiahao.baidu.com/s?id=1862868242446286981",
-              "domain": "baijiahao.baidu.com",
-              "source_country": "China",
-              "language": "Chinese",
-              "seendate": "20260420T040000Z"
-            },
-            {
-              "title": "中东面面观丨中东变局下的卡塔尔 ： 首席调停者 缘何异常低调→",
-              "url": "https://baijiahao.baidu.com/s?id=1862867643862511754",
-              "domain": "baijiahao.baidu.com",
-              "source_country": "China",
-              "language": "Chinese",
-              "seendate": "20260419T063000Z"
-            },
-            {
-              "title": "美紧急批准向中东四国出售86亿美元军备 | 卡塔尔 | 以色列 | 科威特",
-              "url": "https://www.epochtimes.com/gb/26/5/2/n14754787.htm",
-              "domain": "epochtimes.com",
-              "source_country": "China",
-              "language": "Chinese",
-              "seendate": "20260502T074500Z"
-            },
-            {
-              "title": "Hama al - Hayya says Israel using force to impose terms after son killed in strike – Middle East Monitor",
-              "url": "https://www.middleeastmonitor.com/20260508-hamas-al-hayya-says-israel-using-force-to-impose-terms-after-son-killed-in-strike/",
-              "domain": "middleeastmonitor.com",
-              "source_country": "Israel",
-              "language": "English",
-              "seendate": "20260508T204500Z"
-            },
-            {
-              "title": "Сын главы ХАМАС в секторе Газа погиб в результате израильского удара",
-              "url": "https://ria.ru/20260507/khamas-2091076059.html",
-              "domain": "ria.ru",
-              "source_country": "Russia",
-              "language": "Russian",
-              "seendate": "20260507T120000Z"
-            },
-            {
-              "title": "Qatarul a pledat la Washington pentru negocieri cu Iranul",
-              "url": "https://www.stiripesurse.ro/qatarul-a-pledat-la-washington-pentru-negocieri-cu-iranul_3884476",
-              "domain": "stiripesurse.ro",
-              "source_country": "Romania",
-              "language": "Romanian",
-              "seendate": "20260509T074500Z"
-            }
-          ]
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
         },
         {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
-      "matched_articles": [
-        {
-          "title": "Qatarul a pledat la Washington pentru negocieri cu Iranul",
-          "url": "https://www.stiripesurse.ro/qatarul-a-pledat-la-washington-pentru-negocieri-cu-iranul_3884476",
-          "domain": "stiripesurse.ro",
-          "source_country": "Romania",
-          "language": "Romanian",
-          "seendate": "20260509T074500Z",
-          "match_score": 30
-        },
-        {
-          "title": "Hama al - Hayya says Israel using force to impose terms after son killed in strike – Middle East Monitor",
-          "url": "https://www.middleeastmonitor.com/20260508-hamas-al-hayya-says-israel-using-force-to-impose-terms-after-son-killed-in-strike/",
-          "domain": "middleeastmonitor.com",
-          "source_country": "Israel",
-          "language": "English",
-          "seendate": "20260508T204500Z",
-          "match_score": 20
-        }
-      ],
-      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 2 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 37 source URLs across 33 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -700,8 +632,57 @@
         },
         {
           "query": "\"Gaza, Israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
-          "articles": []
+          "error": null,
+          "articles": [
+            {
+              "title": "Israël dit avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
+              "url": "https://www.nicematin.com/societe/conflits/israel-dit-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza-10682252",
+              "domain": "nicematin.com",
+              "source_country": "France",
+              "language": "French",
+              "seendate": "20260527T061500Z"
+            },
+            {
+              "title": "Israël affirme avoir ciblé le nouveau chef de la branche armée de Hamas à Gaza",
+              "url": "https://africanmanager.com/israel-affirme-avoir-cible-le-nouveau-chef-de-la-branche-armee-de-hamas-a-gaza/",
+              "domain": "africanmanager.com",
+              "source_country": "Tunisia",
+              "language": "French",
+              "seendate": "20260527T024500Z"
+            },
+            {
+              "title": "Architect of October 7 massacre : Hamas military chief Muhammad Odeh killed in Israel strike on Gaza",
+              "url": "https://timesofindia.indiatimes.com/world/middle-east/architects-of-october-7-massacre-hamas-military-chief-muhammad-odeh-killed-in-israel-strike-on-gaza/articleshow/131340184.cms",
+              "domain": "timesofindia.indiatimes.com",
+              "source_country": "India",
+              "language": "English",
+              "seendate": "20260527T034500Z"
+            },
+            {
+              "title": "Israël dit avoir tué le nouveau chef du Hamas dans une frappe à Gaza",
+              "url": "https://lequotidien.lu/monde/israel-dit-avoir-tue-le-nouveau-chef-du-hamas-dans-une-frappe-a-gaza/",
+              "domain": "lequotidien.lu",
+              "source_country": "Luxembourg",
+              "language": "French",
+              "seendate": "20260527T071500Z"
+            },
+            {
+              "title": "Israël affirme avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
+              "url": "https://www.bfmtv.com/international/moyen-orient/israel/israel-affirme-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza_AD-202605270184.html",
+              "domain": "bfmtv.com",
+              "source_country": "France",
+              "language": "French",
+              "seendate": "20260527T070000Z"
+            },
+            {
+              "title": "Gaza Death Toll Tops 73 , 000 as Israel Continues Daily Ceasefire Violations",
+              "url": "https://www.democracynow.org/2026/6/15/headlines/gaza_death_toll_tops_73_000_as_israel_continues_daily_ceasefire_violations",
+              "domain": "democracynow.org",
+              "source_country": "United States",
+              "language": "English",
+              "seendate": "20260615T174500Z"
+            }
+          ]
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
@@ -709,8 +690,63 @@
           "articles": []
         }
       ],
-      "matched_articles": [],
-      "analytical_summary": "The original cluster contains 112 source URLs across 79 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "matched_articles": [
+        {
+          "title": "Architect of October 7 massacre : Hamas military chief Muhammad Odeh killed in Israel strike on Gaza",
+          "url": "https://timesofindia.indiatimes.com/world/middle-east/architects-of-october-7-massacre-hamas-military-chief-muhammad-odeh-killed-in-israel-strike-on-gaza/articleshow/131340184.cms",
+          "domain": "timesofindia.indiatimes.com",
+          "source_country": "India",
+          "language": "English",
+          "seendate": "20260527T034500Z",
+          "match_score": 80
+        },
+        {
+          "title": "Gaza Death Toll Tops 73 , 000 as Israel Continues Daily Ceasefire Violations",
+          "url": "https://www.democracynow.org/2026/6/15/headlines/gaza_death_toll_tops_73_000_as_israel_continues_daily_ceasefire_violations",
+          "domain": "democracynow.org",
+          "source_country": "United States",
+          "language": "English",
+          "seendate": "20260615T174500Z",
+          "match_score": 60
+        },
+        {
+          "title": "Israël dit avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
+          "url": "https://www.nicematin.com/societe/conflits/israel-dit-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza-10682252",
+          "domain": "nicematin.com",
+          "source_country": "France",
+          "language": "French",
+          "seendate": "20260527T061500Z",
+          "match_score": 35
+        },
+        {
+          "title": "Israël affirme avoir ciblé le nouveau chef de la branche armée de Hamas à Gaza",
+          "url": "https://africanmanager.com/israel-affirme-avoir-cible-le-nouveau-chef-de-la-branche-armee-de-hamas-a-gaza/",
+          "domain": "africanmanager.com",
+          "source_country": "Tunisia",
+          "language": "French",
+          "seendate": "20260527T024500Z",
+          "match_score": 35
+        },
+        {
+          "title": "Israël dit avoir tué le nouveau chef du Hamas dans une frappe à Gaza",
+          "url": "https://lequotidien.lu/monde/israel-dit-avoir-tue-le-nouveau-chef-du-hamas-dans-une-frappe-a-gaza/",
+          "domain": "lequotidien.lu",
+          "source_country": "Luxembourg",
+          "language": "French",
+          "seendate": "20260527T071500Z",
+          "match_score": 35
+        },
+        {
+          "title": "Israël affirme avoir tué le nouveau chef de la branche armée du Hamas dans une frappe à Gaza",
+          "url": "https://www.bfmtv.com/international/moyen-orient/israel/israel-affirme-avoir-tue-le-nouveau-chef-de-la-branche-armee-du-hamas-dans-une-frappe-a-gaza_AD-202605270184.html",
+          "domain": "bfmtv.com",
+          "source_country": "France",
+          "language": "French",
+          "seendate": "20260527T070000Z",
+          "match_score": 35
+        }
+      ],
+      "analytical_summary": "The original cluster contains 112 source URLs across 79 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 6 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -869,7 +905,7 @@
         },
         {
           "query": "\"Gaza Strip\" \"israel\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
@@ -879,7 +915,7 @@
         },
         {
           "query": "\"israel\" \"drone\" 2026-06-30",
-          "error": "<urlopen error timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         }
       ],
