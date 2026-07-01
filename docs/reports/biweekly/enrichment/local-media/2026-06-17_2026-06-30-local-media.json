@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T12:40:28.561508Z",
+  "generated_at": "2026-07-01T13:18:58.115382Z",
   "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "period": {
     "start": "2026-06-17",
@@ -70,10 +70,10 @@
         {
           "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
-          "status": "error",
-          "error": "HTTP Error 429: Too Many Requests",
-          "title": "",
-          "description": "",
+          "status": "ok",
+          "error": null,
+          "title": "RIGHT SPEAK: 197 C-Clashes in F-Line: 24 in Pokrovsk Dir, 23 in Huliaipole Dir, 24 in Slavyansk Dir; UKR Drone Assault Sets Fire to Major Oil-Ref in RU; RUs Feel the War s Hardships as UKR Pummels Crimea; Trump Signals Frustration with Putin and Support for UKR; UKR Says 'Spirit of Anchorage' is 'dead,' RU Must Face Reality in Peace Talks; Report: Most RU Recruits Life Expectancy Just 20 Min On UKR F-Lines; Z: UKR Struck Oil Refs in RU's Krasnodar Krai and Yaroslavl Obl, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
           "published": ""
         },
         {
@@ -152,22 +152,24 @@
       "event_fingerprint": {
         "representative_title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
         "top_keywords": [
-          "attacks",
           "crimea",
-          "strikes",
+          "attacks",
           "ukr",
           "state",
           "emergency",
           "still",
           "inching",
           "forward",
-          "eastern"
+          "eastern",
+          "including"
         ],
         "actor_hints": [
           "russia",
           "russian",
           "ukraine",
-          "ukrainian"
+          "ukrainian",
+          "trump",
+          "putin"
         ],
         "conflict_hints": [
           "drone",
@@ -179,7 +181,7 @@
           "killed",
           "injured"
         ],
-        "usable_source_count": 9,
+        "usable_source_count": 10,
         "confidence": "Medium-High"
       },
       "queries": [
@@ -201,17 +203,17 @@
         },
         {
           "query": "\"Crimea, Krym, Avtonomna Respublika, Ukraine\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "<urlopen error timed out>",
           "articles": []
         },
         {
           "query": "\"russia\" \"drone\" 2026-06-30",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "<urlopen error timed out>",
           "articles": []
         }
       ],
       "matched_articles": [],
-      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "analytical_summary": "The original cluster contains 15 source URLs across 14 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
       "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
     },
     {
@@ -406,7 +408,7 @@
       "local_media_findings": [
         {
           "query": "\"Doha, Ad Daw?ah, Qatar\" \"Qatar\" \"israel\" \"strike\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "<urlopen error timed out>",
           "articles": []
         },
         {
@@ -421,7 +423,7 @@
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "Expecting value: line 1 column 1 (char 0)",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         }
       ],
@@ -551,7 +553,7 @@
           "status": "ok",
           "error": null,
           "title": "Hamas: World silence over murdered Palestinian children in Gaza is complicity in Israeli genocide",
-          "description": "A young Palestinian girl was martyred on Monday evening after Israeli warplanes bombed dilapidated tents sheltering displaced families in Khan Younis, southern Gaza Strip.",
+          "description": "",
           "published": "Tuesday, 30 June 2026 12:53 AM"
         },
         {
@@ -607,8 +609,7 @@
           "strike",
           "airstrike",
           "attack",
-          "fire",
-          "war"
+          "fire"
         ],
         "usable_source_count": 10,
         "confidence": "Medium-High"
@@ -622,7 +623,7 @@
       "local_media_findings": [
         {
           "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error timed out>",
           "articles": []
         },
         {
@@ -686,7 +687,7 @@
         },
         {
           "query": "\"israel\" \"strike\" 2026-06-30",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "Expecting value: line 1 column 1 (char 0)",
           "articles": []
         }
       ],
@@ -900,7 +901,7 @@
       "local_media_findings": [
         {
           "query": "\"Rafah, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
-          "error": "HTTP Error 429: Too Many Requests",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
           "articles": []
         },
         {
@@ -910,7 +911,7 @@
         },
         {
           "query": "\"Rafah, Gaza Strip\" \"drone\"",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 429: Too Many Requests",
           "articles": []
         },
         {
