@@ -13,6 +13,10 @@ from lib.location_normalizer import (
     normalize_event_location,
     normalized_location_string,
 )
+from lib.event_scoring import (
+    calculate_event_cluster_ranking_score,
+    get_ranking_breakdown,
+)
 
 
 BASE_DIR = Path(__file__).resolve().parents[1]
@@ -2377,11 +2381,19 @@ def is_valid_event_cluster(cluster, min_quality=45):
 
 
 def cluster_sort_score(cluster, context):
-    strategic_score = score_event_cluster(cluster, context)
-    quality_score = calculate_cluster_quality(cluster)
-    source_bonus = source_validation_sort_bonus(cluster)
+    """
+    Final ranking score for validated clusters.
 
-    return (strategic_score * 0.52) + (quality_score * 0.30) + (source_bonus * 0.18)
+    The scoring logic lives in scripts/lib/event_scoring.py. This wrapper keeps
+    the report generator stable while allowing the ranking model to evolve as a
+    separate module.
+    """
+
+    if not cluster.get("source_validation"):
+        cluster_source_validation(cluster)
+
+    cluster["ranking_breakdown"] = get_ranking_breakdown(cluster, context)
+    return calculate_event_cluster_ranking_score(cluster, context)
 
 
 def select_top_event_clusters(events, limit=5):
@@ -2564,7 +2576,8 @@ def export_selected_events(start_day, end_day, events_by_region):
                 "record_type": "event_cluster",
                 "region": region_name,
                 "rank": rank,
-                "score": score_event_cluster(cluster, cluster_context),
+                "score": calculate_event_cluster_ranking_score(cluster, cluster_context),
+                "ranking_breakdown": get_ranking_breakdown(cluster, cluster_context),
                 "quality_score": calculate_cluster_quality(cluster),
                 "quality_label": cluster_quality_label(calculate_cluster_quality(cluster)),
                 "cluster_key": cluster.get("key"),
