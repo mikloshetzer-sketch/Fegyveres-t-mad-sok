@@ -1,10 +1,12 @@
 {
-  "generated_at": "2026-07-01T13:18:58.176712+00:00",
+  "generated_at": "2026-07-01T16:47:12.807622Z",
   "status": "ok",
   "pipeline": [
     "live verified",
+    "refined ensured",
     "biweekly report",
     "selected events",
+    "event analysis",
     "local media"
   ]
 }

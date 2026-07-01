@@ -1,30 +1,455 @@
 {
-  "generated_at": "2026-07-01T07:28:57.191981Z",
+  "generated_at": "2026-07-01T13:14:48.918614Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
   },
-  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. Score includes event type, strategic location, international relevance, repeated hotspot pattern, source diversity, cluster quality and shared source validation.",
+  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. The shared event_pipeline.py layer prepares normalized locations, source validation and scoring before final selection.",
+  "pipeline": {
+    "modules": [
+      "location_normalizer.py",
+      "source_validation.py",
+      "event_scoring.py",
+      "article_validator.py",
+      "final_event_validator.py",
+      "event_pipeline.py"
+    ],
+    "article_fetching": true,
+    "final_event_validation": true
+  },
   "regions": {
     "Európai Unió": {
-      "raw_event_count": 557,
-      "cluster_count": 556,
-      "selected_count": 0
+      "raw_event_count": 567,
+      "cluster_count": 567,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 567,
+        "source_valid_clusters": 15,
+        "source_invalid_clusters": 552,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 552,
+          "Medium": 3,
+          "Low": 10,
+          "High": 2
+        },
+        "top_countries": [
+          [
+            "Ireland",
+            107
+          ],
+          [
+            "France",
+            87
+          ],
+          [
+            "Germany",
+            61
+          ],
+          [
+            "Italy",
+            53
+          ],
+          [
+            "Greece",
+            45
+          ],
+          [
+            "Spain",
+            37
+          ],
+          [
+            "Poland",
+            22
+          ],
+          [
+            "Netherlands",
+            20
+          ],
+          [
+            "Cyprus",
+            19
+          ],
+          [
+            "Belgium",
+            16
+          ]
+        ],
+        "top_locations": [
+          [
+            "Hamburg, Germany",
+            3
+          ],
+          [
+            "Germany",
+            3
+          ],
+          [
+            "Paris, France, France",
+            3
+          ],
+          [
+            "Poland",
+            3
+          ],
+          [
+            "Berlin, Germany",
+            3
+          ],
+          [
+            "Warsaw, (PL67), Poland",
+            3
+          ],
+          [
+            "Netherlands",
+            3
+          ],
+          [
+            "Barcelona, Comunidad Autonoma de Cataluna, Spain",
+            3
+          ],
+          [
+            "Dublin, Ireland",
+            2
+          ],
+          [
+            "France",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            393
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            151
+          ],
+          [
+            "Tömeges erőszak",
+            14
+          ],
+          [
+            "Robbantás / IED",
+            9
+          ]
+        ]
+      }
     },
     "Ukrajna": {
-      "raw_event_count": 218,
-      "cluster_count": 199,
-      "selected_count": 1
+      "raw_event_count": 221,
+      "cluster_count": 201,
+      "selected_count": 1,
+      "pipeline_summary": {
+        "total_clusters": 201,
+        "source_valid_clusters": 3,
+        "source_invalid_clusters": 198,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 198,
+          "High": 2,
+          "Medium": 1
+        },
+        "top_countries": [
+          [
+            "Ukraine",
+            201
+          ]
+        ],
+        "top_locations": [
+          [
+            "Kyiv, Misto, Ukraine",
+            3
+          ],
+          [
+            "Crimea, Krym, Avtonomna Respublika, Ukraine",
+            3
+          ],
+          [
+            "Kyiv, Ukraine, Ukraine",
+            3
+          ],
+          [
+            "Volhynia, Ukraine, Ukraine",
+            3
+          ],
+          [
+            "Lviv, L'vivs'ka Oblast', Ukraine",
+            3
+          ],
+          [
+            "Dnipro, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Ukraine",
+            2
+          ],
+          [
+            "Kharkiv, Kharkivs'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Crimean Peninsula, Krym, Avtonomna Respublika, Ukraine",
+            2
+          ],
+          [
+            "Donbas, Ukraine, Ukraine",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Robbantás / IED",
+            156
+          ],
+          [
+            "Fegyveres összecsapás",
+            26
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            15
+          ],
+          [
+            "Tömeges erőszak",
+            4
+          ]
+        ]
+      }
     },
     "Balkán": {
-      "raw_event_count": 71,
-      "cluster_count": 71,
-      "selected_count": 0
+      "raw_event_count": 78,
+      "cluster_count": 78,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 78,
+        "source_valid_clusters": 2,
+        "source_invalid_clusters": 76,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 76,
+          "Low": 2
+        },
+        "top_countries": [
+          [
+            "Turkey",
+            43
+          ],
+          [
+            "Albania",
+            12
+          ],
+          [
+            "Bosnia-Herzegovina",
+            6
+          ],
+          [
+            "Macedonia",
+            5
+          ],
+          [
+            "Serbia",
+            5
+          ],
+          [
+            "Kosovo",
+            4
+          ],
+          [
+            "Oceans",
+            1
+          ],
+          [
+            "Montenegro",
+            1
+          ],
+          [
+            "Serbia (general)",
+            1
+          ]
+        ],
+        "top_locations": [
+          [
+            "Turkey",
+            3
+          ],
+          [
+            "Serbia",
+            3
+          ],
+          [
+            "Albania",
+            3
+          ],
+          [
+            "Ankara, Turkey",
+            2
+          ],
+          [
+            "Istanbul, Turkey",
+            2
+          ],
+          [
+            "Tirana, Tirane, Albania",
+            2
+          ],
+          [
+            "Skopje, Macedonia, Macedonia",
+            2
+          ],
+          [
+            "Anadolu, Turkey, Turkey",
+            2
+          ],
+          [
+            "Macedonia",
+            2
+          ],
+          [
+            "Sarajevo, Federation of Bosnia and Herzegovina, Bosnia-Herzegovina",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            56
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            16
+          ],
+          [
+            "Tömeges erőszak",
+            6
+          ]
+        ]
+      }
     },
     "Közel-Kelet": {
-      "raw_event_count": 843,
-      "cluster_count": 842,
-      "selected_count": 2
+      "raw_event_count": 875,
+      "cluster_count": 875,
+      "selected_count": 3,
+      "pipeline_summary": {
+        "total_clusters": 875,
+        "source_valid_clusters": 44,
+        "source_invalid_clusters": 831,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 831,
+          "Medium": 12,
+          "High": 11,
+          "Low": 21
+        },
+        "top_countries": [
+          [
+            "Iran",
+            130
+          ],
+          [
+            "Israel",
+            125
+          ],
+          [
+            "West Bank",
+            94
+          ],
+          [
+            "Lebanon",
+            94
+          ],
+          [
+            "Pakistan",
+            87
+          ],
+          [
+            "Afghanistan",
+            47
+          ],
+          [
+            "Syria",
+            46
+          ],
+          [
+            "Sudan",
+            30
+          ],
+          [
+            "Gaza Strip",
+            24
+          ],
+          [
+            "Saudi Arabia",
+            21
+          ]
+        ],
+        "top_locations": [
+          [
+            "Israel",
+            3
+          ],
+          [
+            "Gaza, Israel, Israel",
+            3
+          ],
+          [
+            "West Bank",
+            3
+          ],
+          [
+            "Jordan",
+            3
+          ],
+          [
+            "Iran",
+            3
+          ],
+          [
+            "Tehran, Iran",
+            3
+          ],
+          [
+            "Lebanon",
+            3
+          ],
+          [
+            "Syria",
+            3
+          ],
+          [
+            "Jerusalem, Israel, Israel",
+            3
+          ],
+          [
+            "Beirut, Beyrouth, Lebanon",
+            3
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            575
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            264
+          ],
+          [
+            "Tömeges erőszak",
+            31
+          ],
+          [
+            "Tüntetés / zavargás",
+            3
+          ],
+          [
+            "Dróntámadás",
+            2
+          ]
+        ]
+      }
     }
   },
   "events": [
@@ -32,23 +457,33 @@
       "record_type": "event_cluster",
       "region": "Ukrajna",
       "rank": 1,
-      "score": 77,
+      "score": 76,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 14,
+        "international_relevance": 14,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 76
+      },
       "quality_score": 41,
       "quality_label": "Low",
-      "cluster_key": "2026-06-29|ukraine|crimea crimea ukraine|rajtaütés fegyveres támadás",
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
-      "date": "2026-06-29",
+      "cluster_key": "2026-06-30|ukraine|crimea krym avtonomna respublika ukraine|rajtaütés fegyveres támadás",
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-06-30",
       "country": "Ukraine",
-      "location": "Crimea, Crimea, Ukraine",
-      "raw_location": "Crimea, Crimea, Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "raw_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
       "normalized_location": {
-        "raw_location": "Crimea, Crimea, Ukraine",
+        "raw_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
         "country": "Ukraine",
         "country_key": "ukraine",
         "primary": "Crimea",
         "primary_key": "crimea",
         "secondary": "Crimea",
-        "secondary_key": "crimea",
+        "secondary_key": "krym",
         "aliases": [
           "crimea",
           "crimean",
@@ -65,19 +500,21 @@
         "removed_org_entities": [],
         "usable_parts": [
           "crimea",
-          "crimea"
+          "krym",
+          "avtonomna respublika"
         ]
       },
       "event_type": "Rajtaütés / fegyveres támadás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 14,
-      "source_domain_count": 13,
+      "source_count": 15,
+      "source_domain_count": 14,
       "source_domains": [
         "dominicanrepublicpost.com",
         "eaworldview.com",
         "economictimes.indiatimes.com",
         "edition.cnn.com",
+        "www.albawaba.net",
         "www.bostonglobe.com",
         "www.cbc.ca",
         "www.dailyadvance.com",
@@ -89,6 +526,7 @@
         "www.westhawaiitoday.com"
       ],
       "sources": [
+        "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
         "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
         "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
         "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
@@ -118,16 +556,55 @@
           "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
         ],
         "rejected_sources": [
+          "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
           "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
           "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
           "https://dominicanrepublicpost.com/three-killed-as-ukraine-and-russia-trade-attacks-overnight/",
           "https://www.egyptindependent.com/russia-is-still-inching-forward-in-eastern-ukraine-but-experts-say-claims-of-progress-are-exaggerated/",
           "https://edition.cnn.com/2026/06/24/europe/ukraine-russia-kostyantynivka-infiltrations-intl",
-          "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html",
-          "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms"
+          "https://www.theyeshivaworld.com/news/general/2565817/deadly-strikes-russia-and-ukraine-trade-attacks-child-killed-amid-escalation.html"
         ],
         "checked_sources": [
+          {
+            "url": "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
+            "domain": "www.albawaba.net",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "explosion"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "crimea",
+                  "krym"
+                ],
+                "secondary": [
+                  "avtonomna",
+                  "crimea",
+                  "krym"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
           {
             "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
             "domain": "www.rightspeak.net",
@@ -157,6 +634,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -197,6 +675,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -237,6 +716,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -281,6 +761,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -322,6 +803,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -366,6 +848,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -406,6 +889,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -454,6 +938,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -494,6 +979,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -536,6 +1022,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -580,6 +1067,7 @@
                   "krym"
                 ],
                 "secondary": [
+                  "avtonomna",
                   "crimea",
                   "krym"
                 ],
@@ -590,15 +1078,803 @@
               }
             },
             "source_weight": 1.0
+          }
+        ],
+        "event_location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "event_country": "Ukraine",
+        "event_date": "2026-06-30",
+        "location_terms": {
+          "primary": [
+            "crimea",
+            "krym"
+          ],
+          "secondary": [
+            "avtonomna",
+            "crimea",
+            "krym"
+          ],
+          "country": [
+            "ukraine"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Medium",
+      "recommended_score": 84,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
+          "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/",
+          "https://eaworldview.com/2026/06/ukraine-war-crimea-more-ukrainian-strikes/",
+          "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "average_score": 66.5,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
+            "https://eaworldview.com/2026/06/ukraine-war-crimea-more-ukrainian-strikes/",
+            "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698"
+          ],
+          "rejected_urls": [
+            "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/"
+          ],
+          "checked": [
+            {
+              "url": "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
+              "domain": "www.westhawaiitoday.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 153,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Ukrainian attacks spur state of emergency declaration in Crimea - West Hawaii Today",
+                "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency Friday after weeks of intense air attacks by Ukraine, including a wave of drone strikes overnight that appears to have been one of the largest since the war began.",
+                "paragraphs": [
+                  "Wednesday, July 1, 2026 Today's Paper Subscribe Log In Account Log Out Wednesday, July 1, 2026 Today's Paper Subscribe Account Hawaii News Editors’ Picks Local Entertainment Features Calendar Obituaries Sports Classifieds Legal Ads Jobs WHT Jobs Hawaii Jobs Homes Autos Search Best of West Hawaii × Hawaii News Editors' Picks Local Submit News Best of West Hawaii Business Community Calendar Submit an Event Entertainment Features Special Sections Real Estate Comics Political Cartoons Horoscopes Puzzles Sudoku Crosswords Word Games Obituaries Opinion National Views Our View Your Voice Submit Letter Nation and World News Politics Sports Weather Partner Content Partner Videos Email Preferences Legal Ads WHT Jobs Hawaii Jobs Homes Autos Archives Special Sections Archives Our Company About Us Contact Us Privacy Policy Advertise Search Nation and World News » Ukrainian attacks spur state of emergency declaration in Crimea Saturday, June 27, 2026 12:05 am In a Satellite image on Jun. 21, damage to the Henichesk Bridge is shown, which links Crimea to the rest of Ukraine. Weeks of intense strikes by Ukraine have rattled everyday life in Crimea to an extent unseen since Russia illegally annexed the peninsula in 2014. (Satellite image / ©2026 Vantor Technologies via The New York Times)",
+                  "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency Friday after weeks of intense air attacks by Ukraine, including a wave of drone strikes overnight that appears to have been one of the largest since the war began.",
+                  "The Russian Defense Ministry said Friday that its air defenses had intercepted 660 Ukrainian drones overnight. Crimea and about a dozen other regions were targeted, according to the ministry, which said nothing about damage or casualties. Later Friday, the ministry said 46 additional Ukrainian drones had been destroyed that morning.",
+                  "Advances in Ukrainian drone and missile production have enabled Ukraine to launch bigger attacks, farther away from the front, that can more easily overwhelm Russia’s air defenses. Over the past several months, Ukraine has carried out increasingly heavy air attacks on Crimea and parts of Russia, puncturing the peace that Russian civilians had largely enjoyed during the 4-year-old war.",
+                  "The assaults have sharply eroded President Vladimir Putin’s ability to isolate Russian society from the impacts of the war. In Ukraine, they have reinforced a growing sense of confidence that it could force Putin to the negotiating table, even as Russia continues to hammer Ukraine with missiles and drones, exploiting its air defense shortage."
+                ],
+                "text_sample": "Ukrainian attacks spur state of emergency declaration in Crimea - West Hawaii Today The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency Friday after weeks of intense air attacks by Ukraine, including a wave of drone strikes overnight that appears to have been one of the largest since the war began. Wednesday, July 1, 2026 Today's Paper Subscribe Log In Account Log Out Wednesday, July 1, 2026 Today's Paper Subscribe Account Hawaii News Editors’ Picks Local Entertainment Features Calendar Obituaries Sports Classifieds Legal Ads Jobs WHT Jobs Hawaii Jobs Homes Autos Search Best of West Hawaii × Hawaii News Editors' Picks Local Submit News Best of West Hawaii Business Community Calendar Submit an Event Entertainment Features Special Sections Real Estate Comics Political Cartoons Horoscopes Puzzles Sudoku Crosswords Word Games Obituaries Opinion National Views Our View Your Voice Submit Letter Nation and World News Politics Sports Weather P"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "strikes",
+                  "drone",
+                  "drones",
+                  "missile",
+                  "casualties",
+                  "intercepted"
+                ],
+                "noise_hits": [
+                  "opinion",
+                  "sports"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "crimea",
+                    "crimean",
+                    "krym",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "crimea krym avtonomna respublika ukraine"
+                  ],
+                  "hits": [
+                    "crimea"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2014",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.bostonglobe.com/2026/06/26/world/ukrainian-attacks-spur-state-emergency-declaration-crimea/",
+              "domain": "www.bostonglobe.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 902,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Ukrainian attacks spur state of emergency declaration in Crimea - The Boston Globe",
+                "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency after weeks of intense air attacks by Ukraine.",
+                "paragraphs": [],
+                "text_sample": "Ukrainian attacks spur state of emergency declaration in Crimea - The Boston Globe The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency after weeks of intense air attacks by Ukraine."
+              },
+              "validation": {
+                "score": 40,
+                "confidence": "Low",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found"
+                ],
+                "incident_hits": [
+                  "attacks"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "crimea",
+                    "crimean",
+                    "krym",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "crimea krym avtonomna respublika ukraine"
+                  ],
+                  "hits": [
+                    "crimea"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://eaworldview.com/2026/06/ukraine-war-crimea-more-ukrainian-strikes/",
+              "domain": "eaworldview.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 1296,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Ukraine War, Day 1,583: More Ukrainian Strikes on Besieged Crimea - EA WorldView",
+                "description": "Ukraine carries more strikes on besieged, Russian-occupied Crimea, hitting energy infrastructure with pressure on grid and gasoline supplies.",
+                "paragraphs": [
+                  "Posted by Scott Lucas | Jun 25, 2026 | 0",
+                  "Drivers queue for gasoline in Sevastopol in Russian-occupied Crimea, June 2026",
+                  "EA-Ukraine VideoCast: Under Pressure, The Kremlin Considers A Return to Talks",
+                  "EA-Ukraine VideoCast: A “Desperate” Kremlin Amid Gasoline Shortages and Crimea’s Isolation",
+                  "Thursday’s Coverage: Putin Acknowledges Kyiv’s Counter-Attacks"
+                ],
+                "text_sample": "Ukraine War, Day 1,583: More Ukrainian Strikes on Besieged Crimea - EA WorldView Ukraine carries more strikes on besieged, Russian-occupied Crimea, hitting energy infrastructure with pressure on grid and gasoline supplies. Posted by Scott Lucas | Jun 25, 2026 | 0 Drivers queue for gasoline in Sevastopol in Russian-occupied Crimea, June 2026 EA-Ukraine VideoCast: Under Pressure, The Kremlin Considers A Return to Talks EA-Ukraine VideoCast: A “Desperate” Kremlin Amid Gasoline Shortages and Crimea’s Isolation Thursday’s Coverage: Putin Acknowledges Kyiv’s Counter-Attacks UPDATE 0934 GMT: European Commission President Ursula von der Leyen has announced the disbursement of the first tranche of the €90 billion European Union loan to Ukraine. Von der Leyen said €3.2 billion in macro-financial assistance is being transferred. The loan, covering Ukraine’s military and financial needs through 2027, was approved last month after the change of government in Hungary."
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "strikes"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "crimea",
+                    "crimean",
+                    "krym",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "crimea krym avtonomna respublika ukraine"
+                  ],
+                  "hits": [
+                    "crimea"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026",
+                    "2027"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.dw.com/en/ukraine-says-major-crimea-bridge-destroyed-in-latest-attack/a-77678698",
+              "domain": "www.dw.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 440,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Ukraine says major Crimea bridge destroyed in latest attack",
+                "description": "Ukraine continues to hit infrastructure on the Crimea to isolate the Russian-annexed peninsula. Meanwhile, Russia attacked Volodymyr Zelenskyy's hometown with a ballistic missile in a deadly strike.",
+                "paragraphs": [
+                  "Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Venezuela quakes Iran FIFA World Cup Latest audio Latest videos Live TV Advertisement Conflicts Ukraine Ukraine says major Crimea bridge destroyed in latest attack 06/23/2026 June 23, 2026 Ukraine continues to hit infrastructure on the Crimea to isolate the Russian-annexed peninsula. Meanwhile, Russia attacked Volodymyr Zelenskyy's hometown with a ballistic missile in a deadly strike.",
+                  "https://p.dw.com/p/5FvmE Drone footage provided by the Ukrainian military showed the railway bridge over the North Crimean canal on fire with smoke rising Image: Special Operations Forces Of Armed Forces Of Ukraine/Handout/REUTERS Advertisement The Ukrainian military on Tuesday said it struck a vital railway bridge over the North Crimean canal in Russian-occupied Crimea .",
+                  "In a post on Telegram, Ukraine's Special Operations Forces (SOF) said the North Crimean canal bridge \"no longer exists.\"",
+                  "The SOF said the rail bridge serves as \"strategic military and logistical artery for the occupiers.\" The bridge was used to move cargo, resources and military supplies via the Kerch strait between annexed Crimea and mainland Russian territory, the SOF added.",
+                  "Russia annexed Crimea, which is internationally recognized as part of Ukraine, in 2014. The annexation was met with sanctions from the US and EU."
+                ],
+                "text_sample": "Ukraine says major Crimea bridge destroyed in latest attack Ukraine continues to hit infrastructure on the Crimea to isolate the Russian-annexed peninsula. Meanwhile, Russia attacked Volodymyr Zelenskyy's hometown with a ballistic missile in a deadly strike. Skip to main menu Skip to more DW sites Latest videos Latest audio Regions Africa Asia Europe Latin America Middle East North America Germany Topics Climate Equality Health Human Rights Migration Technology Categories Business Science Environment Culture Sports In focus Venezuela quakes Iran FIFA World Cup Latest audio Latest videos Live TV Advertisement Conflicts Ukraine Ukraine says major Crimea bridge destroyed in latest attack 06/23/2026 June 23, 2026 Ukraine continues to hit infrastructure on the Crimea to isolate the Russian-annexed peninsula. Meanwhile, Russia attacked Volodymyr Zelenskyy's hometown with a ballistic missile in a deadly strike. https://p.dw.com/p/5FvmE Drone footage provided by the Ukrainian military showed t"
+              },
+              "validation": {
+                "score": 86,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "reliable domain hint",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacks",
+                  "attacked",
+                  "strike",
+                  "strikes",
+                  "struck",
+                  "drone",
+                  "drones",
+                  "missile"
+                ],
+                "noise_hits": [
+                  "sports"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "crimea",
+                    "crimean",
+                    "krym",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "crimea krym avtonomna respublika ukraine"
+                  ],
+                  "hits": [
+                    "crimea",
+                    "crimean"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2014",
+                    "2022",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 91,
+          "confidence": "High",
+          "basis": "source_and_article_validation",
+          "source_score": 81,
+          "article_score": 100
+        },
+        "score_adjustment": 8,
+        "recommended_score": 84,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
+      ],
+      "search_terms": [
+        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine Rajtaütés / fegyveres támadás",
+        "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine",
+        "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "Ukraine Rajtaütés / fegyveres támadás"
+      ],
+      "sources_original_count": 15,
+      "sources_checked_count": 4,
+      "sources_valid_count": 4,
+      "sources_rejected_count": 0,
+      "sources_refined": [
+        "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
+        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
+        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
+        "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html"
+      ],
+      "refinement_confidence": "High",
+      "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 80,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 12,
+        "international_relevance": 18,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 4,
+        "total": 80
+      },
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-06-30|qatar|doha ad dawah qatar|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+      "date": "2026-06-30",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
+      "raw_location": "Doha, Ad Daw?ah, Qatar",
+      "normalized_location": {
+        "raw_location": "Doha, Ad Daw?ah, Qatar",
+        "country": "Qatar",
+        "country_key": "qatar",
+        "primary": "Doha",
+        "primary_key": "doha",
+        "secondary": "Ad Daw Ah",
+        "secondary_key": "ad daw ah",
+        "aliases": [
+          "ad daw ah",
+          "doha"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "doha",
+          "ad daw ah",
+          "qatar"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 37,
+      "source_domain_count": 33,
+      "source_domains": [
+        "aa.com.tr",
+        "dominicanrepublicpost.com",
+        "edition.cnn.com",
+        "freebeacon.com",
+        "grenadachronicle.com",
+        "indianexpress.com",
+        "kashmirreader.com",
+        "thepeninsulaqatar.com",
+        "timesofindia.indiatimes.com",
+        "www.bankingnews.gr",
+        "www.bignewsnetwork.com",
+        "www.cnn.com",
+        "www.crookwellgazette.com.au",
+        "www.dailyexcelsior.com",
+        "www.dw.com",
+        "www.euronews.com",
+        "www.hindustantimes.com",
+        "www.indiatvnews.com",
+        "www.israelnationalnews.com",
+        "www.moneycontrol.com"
+      ],
+      "sources": [
+        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+        "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+        "https://www.israelnationalnews.com/news/429399",
+        "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+        "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+        "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+        "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+        "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+        "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+        "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+        "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+        "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
+        "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
+        "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
+        "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
+        "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
+        "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+        "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
+        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 3,
+        "rejected_count": 9,
+        "valid_ratio": 0.25,
+        "weighted_score": 3.0,
+        "label": "Low",
+        "valid_sources": [
+          "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+          "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/"
+        ],
+        "rejected_sources": [
+          "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+          "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+          "https://www.israelnationalnews.com/news/429399",
+          "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+          "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+          "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+          "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+          "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+          "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+            "domain": "indianexpress.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
           },
           {
-            "url": "https://economictimes.indiatimes.com/nri/latest-updates/moscow-reopens-airports-shoots-down-nearly-60-drones/articleshow/131901849.cms",
-            "domain": "economictimes.indiatimes.com",
+            "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
+            "domain": "www.hindustantimes.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.israelnationalnews.com/news/429399",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
+            "domain": "kashmirreader.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.rttnews.com/3663580/indian-shares-end-modestly-lower-it-stocks-among-worst-hit.aspx",
+            "domain": "www.rttnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.orlandosentinel.com/2026/06/30/us-iran-qatar-meetings/",
+            "domain": "www.orlandosentinel.com",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.moneycontrol.com/world/us-treasury-secretary-scott-bessent-says-sanctions-fears-keeping-buyers-away-from-iranian-oil-only-china-buying-article-13962555.html",
+            "domain": "www.moneycontrol.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "sanctions"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.thedailystar.net/news/world/news/talks-qatar-after-us-iran-deal-what-we-know-4212391",
+            "domain": "www.thedailystar.net",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "qatar"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "qatar"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
+            "domain": "www.naroomanewsonline.com.au",
             "accepted": false,
             "reason": "location mismatch",
             "incident_hits": [
-              "drones",
-              "shoots-down"
+              "attacks"
             ],
             "noise_hits": [],
             "weak_hits": [],
@@ -615,78 +1891,454 @@
               "required": true,
               "terms": {
                 "primary": [
-                  "crimea",
-                  "krym"
+                  "doha"
                 ],
                 "secondary": [
-                  "crimea",
-                  "krym"
+                  "qatar"
                 ],
                 "country": [
-                  "ukraine"
+                  "qatar"
                 ],
                 "removed_org_entities": []
               }
             },
             "source_weight": 0.0
+          },
+          {
+            "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+            "domain": "www.theyeshivaworld.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+            "domain": "indianexpress.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "war"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+            "domain": "indianexpress.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "strikes"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "doha"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "doha"
+                ],
+                "secondary": [
+                  "qatar"
+                ],
+                "country": [
+                  "qatar"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
           }
         ],
-        "event_location": "Crimea, Crimea, Ukraine",
-        "event_country": "Ukraine",
-        "event_date": "2026-06-29",
+        "event_location": "Doha, Ad Daw?ah, Qatar",
+        "event_country": "Qatar",
+        "event_date": "2026-06-30",
         "location_terms": {
           "primary": [
-            "crimea",
-            "krym"
+            "doha"
           ],
           "secondary": [
-            "crimea",
-            "krym"
+            "qatar"
           ],
           "country": [
-            "ukraine"
+            "qatar"
           ],
           "removed_org_entities": []
         }
       },
-      "source_confidence": "Medium",
+      "source_confidence": "Low",
+      "recommended_score": 74,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+          "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+          "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 0,
+          "rejected_count": 4,
+          "average_score": 38.0,
+          "confidence": "Rejected",
+          "accepted_urls": [],
+          "rejected_urls": [
+            "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+            "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+            "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+            "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
+          ],
+          "checked": [
+            {
+              "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
+              "domain": "www.theyeshivaworld.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 165,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "REPORT: US, Iran Agree To Halt Strikes, Set Tuesday Talks In Doha",
+                "description": "Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to […]",
+                "paragraphs": [
+                  "Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday.",
+                  "Citing a senior U.S. official, Axios reported that both sides have agreed to suspend further military action for the time being, with delegations scheduled to meet on June 30 in Doha. The discussions are expected to focus primarily on the future of the Strait of Hormuz, a vital global shipping route that has become a flashpoint in recent weeks.",
+                  "The reported breakthrough follows a sharp escalation over the weekend. U.S. Central Command (CENTCOM) launched additional strikes on multiple targets inside Iran after accusing Tehran of attacking the Panama-flagged tanker M/T Kiku near the Strait of Hormuz.",
+                  "Iran responded Sunday by launching strikes against Kuwait and Bahrain, drawing swift condemnation from both Gulf nations.",
+                  "“We decided to stop all the kinetic activity,” the U.S. official told Axios, describing the agreement as an effort to prevent further escalation while diplomatic efforts continue."
+                ],
+                "text_sample": "REPORT: US, Iran Agree To Halt Strikes, Set Tuesday Talks In Doha Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to […] Washington and Tehran have agreed to halt military strikes against one another and will meet Tuesday in Doha, Qatar, for high-level talks aimed at easing tensions and securing freedom of navigation through the Strait of Hormuz, according to a report published Sunday. Citing a senior U.S. official, Axios reported that both sides have agreed to suspend further military action for the time being, with delegations scheduled to meet on June 30 in Doha. The discussions are expected to focus primarily on the future of the Strait of Hormuz, a vital global shipping route that has become "
+              },
+              "validation": {
+                "score": 40,
+                "confidence": "Low",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found"
+                ],
+                "incident_hits": [
+                  "strikes"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ad daw ah",
+                    "doha",
+                    "doha ad daw ah qatar"
+                  ],
+                  "hits": [
+                    "doha"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
+              "domain": "indianexpress.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 122,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Iran denies talks with US are scheduled in Qatar as White House to send envoys to Doha",
+                "description": "US and Iran trade strikes despite ceasefire as Hormuz tensions rise. Doha talks set for Tuesday amid Lebanon and Gaza complications.",
+                "paragraphs": [],
+                "text_sample": "Iran denies talks with US are scheduled in Qatar as White House to send envoys to Doha US and Iran trade strikes despite ceasefire as Hormuz tensions rise. Doha talks set for Tuesday amid Lebanon and Gaza complications."
+              },
+              "validation": {
+                "score": 40,
+                "confidence": "Low",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found"
+                ],
+                "incident_hits": [
+                  "strikes"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ad daw ah",
+                    "doha",
+                    "doha ad daw ah qatar"
+                  ],
+                  "hits": [
+                    "doha"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
+              "domain": "indianexpress.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 169,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "US, Iran ‘stand down’ on strikes; talks resume in Doha tomorrow",
+                "description": "Talks are expected to resume on Tuesday in Doha, Qatar, according to Axios, which first reported the ceasefire.",
+                "paragraphs": [],
+                "text_sample": "US, Iran ‘stand down’ on strikes; talks resume in Doha tomorrow Talks are expected to resume on Tuesday in Doha, Qatar, according to Axios, which first reported the ceasefire."
+              },
+              "validation": {
+                "score": 40,
+                "confidence": "Low",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found"
+                ],
+                "incident_hits": [
+                  "strikes"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ad daw ah",
+                    "doha",
+                    "doha ad daw ah qatar"
+                  ],
+                  "hits": [
+                    "doha"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
+              "domain": "indianexpress.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 194,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "‘No negotiation at any level’: Iran rejects Trump’s claim of talks in Doha",
+                "description": "Live: US President Trump insisted US-Iran talks would take place in Doha focused on nuclear issues, but Iranian officials denied any meeting was scheduled, deepening uncertainty over a fragile ceasefire.",
+                "paragraphs": [],
+                "text_sample": "‘No negotiation at any level’: Iran rejects Trump’s claim of talks in Doha Live: US President Trump insisted US-Iran talks would take place in Doha focused on nuclear issues, but Iranian officials denied any meeting was scheduled, deepening uncertainty over a fragile ceasefire."
+              },
+              "validation": {
+                "score": 32,
+                "confidence": "Rejected",
+                "accepted": false,
+                "reasons": [
+                  "no incident terms found",
+                  "location match found"
+                ],
+                "incident_hits": [],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ad daw ah",
+                    "doha",
+                    "doha ad daw ah qatar"
+                  ],
+                  "hits": [
+                    "doha"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 26,
+          "confidence": "Very low",
+          "basis": "source_and_article_validation",
+          "source_score": 58,
+          "article_score": 0
+        },
+        "score_adjustment": -6,
+        "recommended_score": 74,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
       "raw_titles": [
-        "assault – Crimea, Krym, Avtonomna Respublika, Ukraine"
+        "fight – Doha, Ad Daw?ah, Qatar"
       ],
       "search_terms": [
-        "Crimea, Crimea, Ukraine Ukraine Rajtaütés / fegyveres támadás",
-        "Crimea, Crimea, Ukraine Ukraine",
-        "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
-        "Ukraine Rajtaütés / fegyveres támadás"
+        "Doha, Ad Daw?ah, Qatar Qatar Fegyveres összecsapás",
+        "Doha, Ad Daw?ah, Qatar Qatar",
+        "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+        "Qatar Fegyveres összecsapás"
       ],
-      "sources_original_count": 14,
+      "sources_original_count": 20,
       "sources_checked_count": 4,
-      "sources_valid_count": 4,
-      "sources_rejected_count": 0,
+      "sources_valid_count": 1,
+      "sources_rejected_count": 3,
       "sources_refined": [
-        "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
-        "https://www.cbc.ca/news/world/russia-ukraine-war-1587-9.7252337",
-        "http://www.rightspeak.net/2026/06/205-c-clashes-in-f-line-28-in-pokrovsk.html",
-        "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/"
+        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
       ],
-      "refinement_confidence": "High",
+      "refinement_confidence": "Low",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
     },
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
-      "rank": 1,
-      "score": 72,
-      "quality_score": 43,
+      "rank": 2,
+      "score": 70,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 13,
+        "international_relevance": 6,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 5,
+        "total": 70
+      },
+      "quality_score": 46,
       "quality_label": "Low",
-      "cluster_key": "2026-06-30|israel|gaza israel|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Gaza, Israel",
+      "cluster_key": "2026-06-30|israel|gaza israel israel|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
       "date": "2026-06-30",
       "country": "Israel",
-      "location": "Gaza, Israel",
-      "raw_location": "Gaza, Israel",
+      "location": "Gaza, Israel, Israel",
+      "raw_location": "Gaza, Israel, Israel",
       "normalized_location": {
-        "raw_location": "Gaza, Israel",
+        "raw_location": "Gaza, Israel, Israel",
         "country": "Israel",
         "country_key": "israel",
         "primary": "Gaza",
@@ -714,8 +2366,10 @@
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
       "source_count": 112,
-      "source_domain_count": 80,
+      "source_domain_count": 79,
       "source_domains": [
+        "aa.com.tr",
+        "allafrica.com",
         "baptistnews.com",
         "calgarysun.com",
         "countercurrents.org",
@@ -723,19 +2377,17 @@
         "eturbonews.com",
         "forward.com",
         "grenadachronicle.com",
+        "imemc.org",
         "island.lk",
         "jp.ibtimes.com",
         "kaieteurnewsonline.com",
         "news.webindia123.com",
         "scroll.in",
-        "themedialine.org",
-        "thenewamerican.com",
+        "thepeninsulaqatar.com",
         "theshillongtimes.com",
         "townhall.com",
         "truthout.org",
-        "udaipurkiran.com",
-        "voiceofvienna.org",
-        "wrp.org.uk"
+        "udaipurkiran.com"
       ],
       "sources": [
         "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
@@ -1220,7 +2872,7 @@
             "source_weight": 1.0
           }
         ],
-        "event_location": "Gaza, Israel",
+        "event_location": "Gaza, Israel, Israel",
         "event_country": "Israel",
         "event_date": "2026-06-30",
         "location_terms": {
@@ -1235,13 +2887,351 @@
         }
       },
       "source_confidence": "Medium",
+      "recommended_score": 78,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+          "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+          "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+          "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 4,
+          "rejected_count": 0,
+          "average_score": 72.0,
+          "confidence": "High",
+          "accepted_urls": [
+            "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+            "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+            "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+            "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/"
+          ],
+          "rejected_urls": [],
+          "checked": [
+            {
+              "url": "http://www.econotimes.com/Israeli-Airstrike-Kills-Three-in-Central-Gaza-Despite-Ceasefire-1745468",
+              "domain": "www.econotimes.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 284,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israeli Airstrike Kills Three in Central Gaza Despite Ceasefire - EconoTimes",
+                "description": "EconoTimes is a fast growing non-partisan source of news and intelligence on global economy and financial markets, providing timely, relevant, and critical insights for market professionals and those who want to make informed investment decisions.",
+                "paragraphs": [
+                  "DOE Declares Power Grid Emergency as Extreme Heat Strains PJM Electricity Supply",
+                  "Trump Questions Housing Bill as He Prioritizes SAVE America Act",
+                  "Netanyahu Says Israel Will Stay in Southern Lebanon Until Hezbollah Threat Ends",
+                  "Democratic Socialist Melat Kiros Unseats Rep. Diana DeGette in Colorado Democratic Primary",
+                  "Taiwan Coast Guard Officer Finds Strength in Faith as China Increases Pressure in Taiwan Strait"
+                ],
+                "text_sample": "Israeli Airstrike Kills Three in Central Gaza Despite Ceasefire - EconoTimes EconoTimes is a fast growing non-partisan source of news and intelligence on global economy and financial markets, providing timely, relevant, and critical insights for market professionals and those who want to make informed investment decisions. DOE Declares Power Grid Emergency as Extreme Heat Strains PJM Electricity Supply Trump Questions Housing Bill as He Prioritizes SAVE America Act Netanyahu Says Israel Will Stay in Southern Lebanon Until Hezbollah Threat Ends Democratic Socialist Melat Kiros Unseats Rep. Diana DeGette in Colorado Democratic Primary Taiwan Coast Guard Officer Finds Strength in Faith as China Increases Pressure in Taiwan Strait Ukraine Preparing for Possible Russian Offensive From Bryansk, Military Chief Says JD Vance Criticizes Vatican on Immigration, Defends Trump Border Policies Trump Prioritizes Iran Diplomacy Over Military Action as Nuclear Talks Continue"
+              },
+              "validation": {
+                "score": 62,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "airstrike",
+                  "kills",
+                  "hezbollah"
+                ],
+                "noise_hits": [
+                  "market"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "west bank",
+                    "southern israel",
+                    "northern israel",
+                    "gaza israel israel"
+                  ],
+                  "hits": [
+                    "gaza"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.presstv.ir/Detail/2026/06/30/771328/Hamas--World-silence-over-murdered-Palestinian-children-in-Gaza-is-complicity-in-Israeli-genocide",
+              "domain": "www.presstv.ir",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 1391,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Hamas: World silence over murdered Palestinian children in Gaza is complicity in Israeli genocide",
+                "description": "",
+                "paragraphs": [
+                  "WORLD WEST ASIA ASIA-PACIFIC AFRICA US EUROPE UK AMERICAS SOCIETY ARTS SPORTS CONVERSATIONS IRAN IRAN POLITICS ECONOMY ENERGY NUCLEAR ENERGY CULTURE DEFENSE SPORTS DEFINITIVE REVENGE PEOPLE'S PRESIDENT WEST ASIA PALESTINE FEATURES OP. TRUE PROMISE 4 SHOWS SHOWS 10 MINUTES AFRICA TODAY ECONOMIC DIVIDE FACE TO FACE IN A NUTSHELL IRAN IRAN TECH IRAN TODAY MIDEASTREAM PALESTINE DECLASSIFIED SPOTLIGHT BLACK AND WHITE ISRAEL WATCH BROADCAST THE WEB EXPOSÉ EXPLAINER BLACK BOX MOSCOW REPORT SOBH UNSCRIPTED WOMEN OF RESISTANCE INTERVIEW ATTRITION TRUE PROMISE GRINGO IN MY OWN VOICE UNJUST STILL, MINAB DOCUMENTARIES WORLD WEST ASIA ASIA-PACIFIC AFRICA US EUROPE UK AMERICAS SOCIETY ARTS SPORTS CONVERSATIONS IRAN POLITICS ECONOMY ENERGY NUCLEAR ENERGY CULTURE DEFENSE SPORTS DEFINITIVE REVENGE PEOPLE'S PRESIDENT WEST ASIA PALESTINE FEATURES OP. TRUE PROMISE 4 SHOWS 10 MINUTES AFRICA TODAY ECONOMIC DIVIDE FACE TO FACE IN A NUTSHELL IRAN IRAN TECH IRAN TODAY MIDEASTREAM PALESTINE DECLASSIFIED SPOTLIGHT BLACK AND WHITE ISRAEL WATCH BROADCAST THE WEB EXPOSÉ EXPLAINER BLACK BOX MOSCOW REPORT SOBH UNSCRIPTED WOMEN OF RESISTANCE INTERVIEW ATTRITION TRUE PROMISE GRINGO IN MY OWN VOICE UNJUST STILL, MINAB DOCUMENTARIES French WORLD WEST ASIA ASIA-PACIFIC AFRICA US EUROPE UK AMERICAS SOCIETY ARTS SPORTS CONVERSATIONS IRAN POLITICS ECONOMY ENERGY NUCLEAR ENERGY CULTURE DEFENSE SPORTS DEFINITIVE REVENGE PEOPLE'S PRESIDENT WEST ASIA PALESTINE FEATURES OP. TRUE PROMISE 4 SHOWS 10 MINUTES AFRICA TODAY ECONOMIC DIVIDE FACE TO FACE IN A NUTSHELL IRAN IRAN TECH IRAN TODAY MIDEASTREAM PALESTINE DECLASSIFIED SPOTLIGHT BLACK AND WHITE ISRAEL WATCH BROADCAST THE WEB EXPOSÉ EXPLAINER BLACK BOX MOSCOW REPORT SOBH UNSCRIPTED WOMEN OF RESISTANCE INTERVIEW ATTRITION TRUE PROMISE GRINGO IN MY OWN VOICE UNJUST STILL, MINAB DOCUMENTARIES BREAKING NEWS #",
+                  "A young Palestinian girl was martyred on Monday evening after Israeli warplanes bombed dilapidated tents sheltering displaced families in Khan Younis, southern Gaza Strip. In a statement on Monday night, Hamas spokesman Hazem Qassem sated that this innocent child is the latest victim among tens of thousands of Palestinian children killed by Zionist bombardment, starvation, denial of medical care, terror, and the heartbreaking loss of their parents. “The crimes continue while the world watches and hears everything but does nothing,” Qassem said, condemning the international community’s silence as direct complicity in the Zionist regime’s ongoing genocide. He sharply criticized Arab League member states, political parties, parliaments, scholars, and Arab elites for their shameful inaction and indifference in the face of these atrocities. Qassem also strongly condemned the Palestinian Authority, slamming it for remaining a passive spectator to the massacres in Gaza, as if these crimes were taking place on another planet. Israeli overnight strike on Khan Yunis ignites massive fires in Palestinian displacement tents. Follow: https://t.co/v6VYZYhWHD pic.twitter.com/Z8p5D6HSud"
+                ],
+                "text_sample": "Hamas: World silence over murdered Palestinian children in Gaza is complicity in Israeli genocide  WORLD WEST ASIA ASIA-PACIFIC AFRICA US EUROPE UK AMERICAS SOCIETY ARTS SPORTS CONVERSATIONS IRAN IRAN POLITICS ECONOMY ENERGY NUCLEAR ENERGY CULTURE DEFENSE SPORTS DEFINITIVE REVENGE PEOPLE'S PRESIDENT WEST ASIA PALESTINE FEATURES OP. TRUE PROMISE 4 SHOWS SHOWS 10 MINUTES AFRICA TODAY ECONOMIC DIVIDE FACE TO FACE IN A NUTSHELL IRAN IRAN TECH IRAN TODAY MIDEASTREAM PALESTINE DECLASSIFIED SPOTLIGHT BLACK AND WHITE ISRAEL WATCH BROADCAST THE WEB EXPOSÉ EXPLAINER BLACK BOX MOSCOW REPORT SOBH UNSCRIPTED WOMEN OF RESISTANCE INTERVIEW ATTRITION TRUE PROMISE GRINGO IN MY OWN VOICE UNJUST STILL, MINAB DOCUMENTARIES WORLD WEST ASIA ASIA-PACIFIC AFRICA US EUROPE UK AMERICAS SOCIETY ARTS SPORTS CONVERSATIONS IRAN POLITICS ECONOMY ENERGY NUCLEAR ENERGY CULTURE DEFENSE SPORTS DEFINITIVE REVENGE PEOPLE'S PRESIDENT WEST ASIA PALESTINE FEATURES OP. TRUE PROMISE 4 SHOWS 10 MINUTES AFRICA TODAY ECONOMIC DIV"
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "strike",
+                  "killed",
+                  "terror",
+                  "hamas"
+                ],
+                "noise_hits": [
+                  "explainer",
+                  "sports"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "west bank",
+                    "southern israel",
+                    "northern israel",
+                    "gaza israel israel"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://grenadachronicle.com/israel-kills-three-palestinians-in-gaza-as-attacks-on-tents-continue/",
+              "domain": "grenadachronicle.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 836,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israel kills three Palestinians in Gaza as attacks on tents continue - Grenada Chronicle – Daily Grenada And Caribbean News",
+                "description": "Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded",
+                "paragraphs": [
+                  "Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Fr Gerard Paul speaks on Harvey’s retirement Case of the vendor’s booth in Grenville Police charge hospital doctor for assault Private contracts given by gov’t to Cuban doctors Suspension of Dr. Terron Hosten Sea of yellow on Sunday Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded raids across the occupied West Bank.",
+                  "Palestinian news agency Wafa reported on Sunday that an Israeli drone struck the al-Salatin area, west of Beit Lahiya in northern Gaza, killing at least two people and wounding at least one more.",
+                  "In southern Gaza, Israeli forces bombed a tent sheltering displaced Palestinians in Khan Younis.",
+                  "Israeli warplanes fired a missile at the tent, wounding several people who were taken to hospital.",
+                  "Medical staff at Nasser Medical Complex said they received the body of one unidentified person after the attack."
+                ],
+                "text_sample": "Israel kills three Palestinians in Gaza as attacks on tents continue - Grenada Chronicle – Daily Grenada And Caribbean News Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Fr Gerard Paul speaks on Harvey’s retirement Case of the vendor’s booth in Grenville Police charge hospital doctor for assault Private contracts given by gov’t to Cuban doctors Suspension of Dr. Terron Hosten Sea of yellow on Sunday Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded raids across"
+              },
+              "validation": {
+                "score": 78,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacks",
+                  "struck",
+                  "drone",
+                  "missile",
+                  "raids",
+                  "killed",
+                  "kills",
+                  "wounded"
+                ],
+                "noise_hits": [
+                  "travel"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "west bank",
+                    "southern israel",
+                    "northern israel",
+                    "gaza israel israel"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip",
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2023",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.columbian.com/news/2026/jun/28/israeli-strikes-and-shelling-in-gaza-kill-at-least-4-palestinians-health-workers-say/",
+              "domain": "www.columbian.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 229,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israeli strikes and shelling in Gaza kill at least 4 Palestinians, health workers say",
+                "description": "DEIR AL-BALAH, Gaza Strip — Israeli strikes across the Gaza Strip on Sunday killed at least four Palestinians, including a 13-year-old girl, local health officials said. The first strike targeted a gr",
+                "paragraphs": [
+                  "To search stories before 2011, click here to access our archives. × × News / Nation & World Israeli strikes and shelling in Gaza kill at least 4 Palestinians, health workers say Israeli military says it was targeting 'Hamas terrorist' By WAFAA SHURAFA, Associated Press Published: June 28, 2026, 2:56pm Share Facebook X (formerly Twitter) Threads Linkedin Pinterest E-mail Text message Copy article link Click here to place an ad Sponsored advertisement Click here to place an ad DEIR AL-BALAH, Gaza Strip — Israeli strikes across the Gaza Strip on Sunday killed at least four Palestinians, including a 13-year-old girl, local health officials said.",
+                  "The first strike targeted a group of people in northern Gaza’s Beit Lahiya, killing two and wounding another, according to the Palestinian Red Crescent Society.",
+                  "Another Israeli strike in southern Gaza killed a man, according to health officials at Nasser hospital.",
+                  "The 13-year-old girl, Eileen al-Farra, was killed by shrapnel from Israeli tank shelling in southern Gaza, according to Nasser hospital.",
+                  "The Israeli military did not immediately respond to a request for comment on the strikes but said one of them targeted a “Hamas terrorist,” without elaborating."
+                ],
+                "text_sample": "Israeli strikes and shelling in Gaza kill at least 4 Palestinians, health workers say DEIR AL-BALAH, Gaza Strip — Israeli strikes across the Gaza Strip on Sunday killed at least four Palestinians, including a 13-year-old girl, local health officials said. The first strike targeted a gr To search stories before 2011, click here to access our archives. × × News / Nation & World Israeli strikes and shelling in Gaza kill at least 4 Palestinians, health workers say Israeli military says it was targeting 'Hamas terrorist' By WAFAA SHURAFA, Associated Press Published: June 28, 2026, 2:56pm Share Facebook X (formerly Twitter) Threads Linkedin Pinterest E-mail Text message Copy article link Click here to place an ad Sponsored advertisement Click here to place an ad DEIR AL-BALAH, Gaza Strip — Israeli strikes across the Gaza Strip on Sunday killed at least four Palestinians, including a 13-year-old girl, local health officials said. The first strike targeted a group of people in northern Gaza’s "
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "strike",
+                  "strikes",
+                  "shelling",
+                  "fighting",
+                  "killed",
+                  "casualties",
+                  "terrorist",
+                  "militant",
+                  "militants",
+                  "hamas"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "west bank",
+                    "southern israel",
+                    "northern israel",
+                    "gaza israel israel"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2011",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 91,
+          "confidence": "High",
+          "basis": "source_and_article_validation",
+          "source_score": 81,
+          "article_score": 100
+        },
+        "score_adjustment": 8,
+        "recommended_score": 78,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
       "raw_titles": [
         "fight – Gaza, Israel (general), Israel"
       ],
       "search_terms": [
-        "Gaza, Israel Israel Fegyveres összecsapás",
-        "Gaza, Israel Israel",
-        "Fegyveres összecsapás – Gaza, Israel",
+        "Gaza, Israel, Israel Israel Fegyveres összecsapás",
+        "Gaza, Israel, Israel Israel",
+        "Fegyveres összecsapás – Gaza, Israel, Israel",
         "Israel Fegyveres összecsapás"
       ],
       "sources_original_count": 20,
@@ -1259,115 +3249,136 @@
     {
       "record_type": "event_cluster",
       "region": "Közel-Kelet",
-      "rank": 2,
-      "score": 52,
-      "quality_score": 43,
+      "rank": 3,
+      "score": 58,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 8,
+        "international_relevance": 12,
+        "repeat_hotspot": 0,
+        "source_reliability": 16,
+        "freshness": 8,
+        "cluster_quality": 1,
+        "total": 58
+      },
+      "quality_score": 40,
       "quality_label": "Low",
-      "cluster_key": "2026-06-30|qatar|doha ad daw ah qatar|fegyveres összecsapás",
-      "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+      "cluster_key": "2026-06-30|gaza strip|rafah gaza strip gaza strip|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
       "date": "2026-06-30",
-      "country": "Qatar",
-      "location": "Doha, Ad Daw Ah, Qatar",
-      "raw_location": "Doha, Ad Daw Ah, Qatar",
+      "country": "Gaza Strip",
+      "location": "Rafah, Gaza Strip, Gaza Strip",
+      "raw_location": "Rafah, Gaza Strip, Gaza Strip",
       "normalized_location": {
-        "raw_location": "Doha, Ad Daw Ah, Qatar",
-        "country": "Qatar",
-        "country_key": "qatar",
-        "primary": "Doha",
-        "primary_key": "doha",
-        "secondary": "Ad Daw Ah",
-        "secondary_key": "ad daw ah",
+        "raw_location": "Rafah, Gaza Strip, Gaza Strip",
+        "country": "Gaza Strip",
+        "country_key": "gaza strip",
+        "primary": "Rafah",
+        "primary_key": "rafah",
+        "secondary": "Gaza Strip",
+        "secondary_key": "gaza strip",
         "aliases": [
-          "ad daw ah",
-          "doha"
+          "gaza",
+          "gaza city",
+          "gaza strip",
+          "rafah"
         ],
         "regional_aliases": [],
         "removed_org_entities": [],
         "usable_parts": [
-          "doha",
-          "ad daw ah",
-          "qatar"
+          "rafah",
+          "gaza strip",
+          "gaza strip"
         ]
       },
       "event_type": "Fegyveres összecsapás",
       "event_nature": "Egyéb biztonsági esemény",
       "feature_count": 1,
-      "source_count": 33,
-      "source_domain_count": 30,
+      "source_count": 8,
+      "source_domain_count": 6,
       "source_domains": [
         "aa.com.tr",
-        "dominicanrepublicpost.com",
-        "edition.cnn.com",
-        "freebeacon.com",
-        "grenadachronicle.com",
-        "indianexpress.com",
-        "kashmirreader.com",
-        "thepeninsulaqatar.com",
-        "timesofindia.indiatimes.com",
-        "www.bankingnews.gr",
-        "www.bignewsnetwork.com",
-        "www.cnn.com",
-        "www.crookwellgazette.com.au",
-        "www.dailyexcelsior.com",
-        "www.dw.com",
-        "www.euronews.com",
-        "www.hindustantimes.com",
-        "www.indiatvnews.com",
+        "imemc.org",
         "www.israelnationalnews.com",
-        "www.moneycontrol.com"
+        "www.jpost.com",
+        "www.theepochtimes.com",
+        "www.yahoo.com"
       ],
       "sources": [
-        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
-        "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
-        "https://www.israelnationalnews.com/news/429399",
-        "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-        "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-        "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
-        "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-        "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-        "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
-        "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-        "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-        "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
-        "https://www.euronews.com/2026/06/28/iran-threatens-total-halt-to-talks-amid-intensive-us-air-activity-over-hormuz",
-        "https://www.crookwellgazette.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-        "http://thepeninsulaqatar.com/article/26/06/2026/qatar-through-your-lens-visit-qatar-winners-share-their-celebration-and-joy",
-        "https://www.dw.com/en/india-news-bodies-of-four-indians-killed-in-qatar-gas-blast-repatriated/live-77716985",
-        "https://www.bankingnews.gr/diethni/articles/884455/europe-has-shot-itself-in-the-foot-ultimatum-on-lng-from-the-us-and-qatar-a-new-energy-shock-is-coming",
-        "https://www.dailyexcelsior.com/12-indians-among-13-killed-in-explosion-at-factory-in-ras-laffan-industrial-city-in-qatar-officials/",
-        "https://timesofindia.indiatimes.com/world/middle-east/12-indians-among-13-killed-in-qatar-gas-plant-blast-accident-says-minister/articleshow/131922761.cms",
-        "https://edition.cnn.com/2026/06/23/world/live-news/iran-war-trump-lebanon-israel"
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+        "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+        "https://www.israelnationalnews.com/flashes/688705",
+        "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+        "https://www.israelnationalnews.com/news/429384",
+        "https://www.jpost.com/middle-east/article-900879",
+        "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/"
       ],
       "source_validation": {
-        "checked_count": 12,
-        "valid_count": 4,
-        "rejected_count": 8,
-        "valid_ratio": 0.333,
-        "weighted_score": 3.8,
-        "label": "Medium",
+        "checked_count": 8,
+        "valid_count": 2,
+        "rejected_count": 6,
+        "valid_ratio": 0.25,
+        "weighted_score": 1.6,
+        "label": "Low",
         "valid_sources": [
-          "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
-          "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-          "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-          "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/"
+          "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+          "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915"
         ],
         "rejected_sources": [
-          "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
-          "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
-          "https://www.israelnationalnews.com/news/429399",
-          "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-          "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-          "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-          "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-          "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817"
+          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "https://www.israelnationalnews.com/flashes/688705",
+          "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+          "https://www.israelnationalnews.com/news/429384",
+          "https://www.jpost.com/middle-east/article-900879",
+          "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/"
         ],
         "checked_sources": [
           {
-            "url": "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/",
-            "domain": "indianexpress.com",
+            "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+            "domain": "www.yahoo.com",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
+            "reason": "location mismatch",
+            "incident_hits": [
+              "hamas"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "rafah"
+                ],
+                "secondary": [
+                  "gaza"
+                ],
+                "country": [
+                  "gaza",
+                  "strip"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+            "domain": "imemc.org",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "killed"
+            ],
             "noise_hits": [],
             "weak_hits": [],
             "hard_reject_hits": [],
@@ -1378,70 +3389,74 @@
               "weight": 0.8,
               "primary_hits": [],
               "secondary_hits": [
-                "qatar"
+                "gaza"
               ],
               "regional_hits": [],
               "country_hits": [
-                "qatar"
+                "gaza"
               ],
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
             },
-            "source_weight": 0.0
+            "source_weight": 0.8
           },
           {
-            "url": "https://www.hindustantimes.com/world-news/talks-or-no-talks-confusion-surrounds-upcoming-us-iran-talks-in-doha-qatar-trump-araghchi-heres-what-we-know-101782783802441.html",
-            "domain": "www.hindustantimes.com",
-            "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
+            "url": "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+            "domain": "aa.com.tr",
+            "accepted": true,
+            "reason": "high-value source with concrete incident indicator and location match",
+            "incident_hits": [
+              "kills"
+            ],
             "noise_hits": [],
-            "weak_hits": [],
+            "weak_hits": [
+              "army"
+            ],
             "hard_reject_hits": [],
             "years": [],
             "location_match": {
               "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "doha"
-              ],
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
               "secondary_hits": [
-                "qatar"
+                "gaza"
               ],
               "regional_hits": [],
               "country_hits": [
-                "qatar"
+                "gaza"
               ],
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
             },
-            "source_weight": 0.0
+            "source_weight": 0.8
           },
           {
-            "url": "https://www.israelnationalnews.com/news/429399",
+            "url": "https://www.israelnationalnews.com/flashes/688705",
             "domain": "www.israelnationalnews.com",
             "accepted": false,
             "reason": "location mismatch",
@@ -1461,13 +3476,14 @@
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
@@ -1475,37 +3491,39 @@
             "source_weight": 0.0
           },
           {
-            "url": "https://kashmirreader.com/2026/06/30/us-iran-talks-in-doha-today-trump/",
-            "domain": "kashmirreader.com",
+            "url": "https://www.theepochtimes.com/world/israeli-military-says-it-killed-hamas-islamic-jihad-operatives-6054835",
+            "domain": "www.theepochtimes.com",
             "accepted": false,
-            "reason": "no concrete incident indicator in URL",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
+            "reason": "location mismatch",
+            "incident_hits": [
+              "killed",
+              "hamas"
             ],
+            "noise_hits": [],
+            "weak_hits": [
+              "military"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
             "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "doha"
-              ],
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
               "secondary_hits": [],
               "regional_hits": [],
               "country_hits": [],
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
@@ -1513,13 +3531,11 @@
             "source_weight": 0.0
           },
           {
-            "url": "https://www.naroomanewsonline.com.au/story/9300802/iran-and-us-agree-to-halt-attacks-and-renew-talks/",
-            "domain": "www.naroomanewsonline.com.au",
+            "url": "https://www.israelnationalnews.com/news/429384",
+            "domain": "www.israelnationalnews.com",
             "accepted": false,
             "reason": "location mismatch",
-            "incident_hits": [
-              "attacks"
-            ],
+            "incident_hits": [],
             "noise_hits": [],
             "weak_hits": [],
             "hard_reject_hits": [],
@@ -1535,13 +3551,14 @@
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
@@ -1549,269 +3566,75 @@
             "source_weight": 0.0
           },
           {
-            "url": "https://www.theyeshivaworld.com/news/israel-news/2568544/report-us-iran-agree-to-halt-strikes-set-tuesday-talks-in-doha.html",
-            "domain": "www.theyeshivaworld.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "strikes"
-            ],
+            "url": "https://www.jpost.com/middle-east/article-900879",
+            "domain": "www.jpost.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
             "noise_hits": [],
             "weak_hits": [],
             "hard_reject_hits": [],
             "years": [],
             "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "doha"
-              ],
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
               "secondary_hits": [],
               "regional_hits": [],
               "country_hits": [],
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
             },
-            "source_weight": 1.0
+            "source_weight": 0.0
           },
           {
-            "url": "https://indianexpress.com/article/world/us-iran-war-live-updates-strikes-hormuz-doha-talks-10762112/",
-            "domain": "indianexpress.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "strikes"
-            ],
+            "url": "https://imemc.org/article/deaths-injuries-in-gaza-amid-ongoing-israeli-ceasefire-violations/",
+            "domain": "imemc.org",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
             "noise_hits": [],
             "weak_hits": [
-              "war"
+              "ceasefire"
             ],
             "hard_reject_hits": [],
             "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "doha"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://indianexpress.com/article/world/us-and-iran-stand-down-on-strikes-technical-talks-set-to-continue-in-doha-10762194/",
-            "domain": "indianexpress.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "strikes"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": true,
-              "level": "primary",
-              "weight": 1.0,
-              "primary_hits": [
-                "doha"
-              ],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 1.0
-          },
-          {
-            "url": "https://www.spotlightnepal.com/2026/06/29/us-iran-agree-stop-attacks-against-each-other-hold-talks-qatar/",
-            "domain": "www.spotlightnepal.com",
-            "accepted": true,
-            "reason": "URL contains concrete incident indicator and location match",
-            "incident_hits": [
-              "attacks"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
             "location_match": {
               "match": true,
               "level": "secondary_country",
               "weight": 0.8,
               "primary_hits": [],
               "secondary_hits": [
-                "qatar"
+                "gaza"
               ],
               "regional_hits": [],
               "country_hits": [
-                "qatar"
+                "gaza"
               ],
               "required": true,
               "terms": {
                 "primary": [
-                  "doha"
+                  "rafah"
                 ],
                 "secondary": [
-                  "qatar"
+                  "gaza"
                 ],
                 "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.8
-          },
-          {
-            "url": "https://www.cnn.com/2026/06/29/world/live-news/iran-war-strikes-trump",
-            "domain": "www.cnn.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "strikes"
-            ],
-            "noise_hits": [],
-            "weak_hits": [
-              "war"
-            ],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://www.upi.com/Top_News/World-News/2026/06/29/Iran-agree-to-halt-fighting/1811782713001/",
-            "domain": "www.upi.com",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [
-              "2026"
-            ],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
-                ],
-                "removed_org_entities": []
-              }
-            },
-            "source_weight": 0.0
-          },
-          {
-            "url": "https://aa.com.tr/en/middle-east/hormuz-traffic-drops-after-fresh-vessel-attacks-fuel-security-concerns/3980817",
-            "domain": "aa.com.tr",
-            "accepted": false,
-            "reason": "location mismatch",
-            "incident_hits": [
-              "attacks"
-            ],
-            "noise_hits": [],
-            "weak_hits": [],
-            "hard_reject_hits": [],
-            "years": [],
-            "location_match": {
-              "match": false,
-              "level": "missing",
-              "weight": 0.0,
-              "primary_hits": [],
-              "secondary_hits": [],
-              "regional_hits": [],
-              "country_hits": [],
-              "required": true,
-              "terms": {
-                "primary": [
-                  "doha"
-                ],
-                "secondary": [
-                  "qatar"
-                ],
-                "country": [
-                  "qatar"
+                  "gaza",
+                  "strip"
                 ],
                 "removed_org_entities": []
               }
@@ -1819,43 +3642,381 @@
             "source_weight": 0.0
           }
         ],
-        "event_location": "Doha, Ad Daw Ah, Qatar",
-        "event_country": "Qatar",
+        "event_location": "Rafah, Gaza Strip, Gaza Strip",
+        "event_country": "Gaza Strip",
         "event_date": "2026-06-30",
         "location_terms": {
           "primary": [
-            "doha"
+            "rafah"
           ],
           "secondary": [
-            "qatar"
+            "gaza"
           ],
           "country": [
-            "qatar"
+            "gaza",
+            "strip"
           ],
           "removed_org_entities": []
         }
       },
-      "source_confidence": "Medium",
+      "source_confidence": "Low",
+      "recommended_score": 62,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+          "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+          "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "https://www.israelnationalnews.com/flashes/688705"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "average_score": 65.5,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+            "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+            "https://www.israelnationalnews.com/flashes/688705"
+          ],
+          "rejected_urls": [
+            "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html"
+          ],
+          "checked": [
+            {
+              "url": "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+              "domain": "imemc.org",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 271,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Several Palestinians Killed in Ongoing Israeli Violations in Gaza",
+                "description": "Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widesprea ...",
+                "paragraphs": [
+                  "Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widespread violations of the “ceasefire” agreement, including the destruction of homes, bombardment of civilian areas, and attacks on displaced families.",
+                  "Israeli forces also carried out repeated demolitions inside areas designated as “safe zones,” alongside airstrikes and artillery fire targeting displaced families.",
+                  "Three Palestinians were killed and others injured north of Khan Younis when an Israeli drone fired a missile at a motorcycle. A third young man, identified as Omar Hamdi Sabah, later succumbed to the serious wounds he sustained in the same strike.",
+                  "In a separate attack, Diana Mohammad Salem Abu Darraz, 23, and her one‑year‑old daughter Sewar were killed when Israeli forces shelled tents sheltering displaced families in the Al‑Mawasi area west of the city.",
+                  "Khan Younis witnessed intense military operations throughout the day. Israeli forces carried out four large‑scale demolitions at dawn in the eastern and northeastern parts of the city, destroying homes and civilian facilities."
+                ],
+                "text_sample": "Several Palestinians Killed in Ongoing Israeli Violations in Gaza Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widesprea ... Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widespread violations of the “ceasefire” agreement, including the destruction of homes, bombardment of civilian areas, and attacks on displaced families. Israeli forces also carried out repeated demolitions inside areas designated as “safe zones,” alongside airstrikes and artillery fire targeting displaced families. Three Palestinians were killed and others injured north of Khan Younis when an Israeli drone fired a missile at a motorcycle. A third young man, identified as Omar Hamdi Sabah, later succumbed to the serious wounds he sustained in the same strike. In a separate attack, Diana Mohammad Salem Abu Darraz, 23, a"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacks",
+                  "strike",
+                  "airstrike",
+                  "drone",
+                  "missile",
+                  "artillery",
+                  "killed",
+                  "casualties",
+                  "injured",
+                  "wounded"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "rafah",
+                    "rafah gaza strip gaza strip"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+              "domain": "aa.com.tr",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 4554,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza",
+                "description": "Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu",
+                "paragraphs": [
+                  "EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español US-Israel-Iran war Hormuz crisis Russia-Ukraine war Middle East Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say Ramzi Mahmud 29 June 2026 • Update : 29 June 2026 GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said.",
+                  "The sources said an Israeli drone strike struck a gathering of civilians on Al-Baraka Street in Deir al-Balah in central Gaza, killing three people and wounding others.",
+                  "Two more people were also injured by Israeli artillery shelling that targeted the Al-Salatin area in Beit Lahia in northern Gaza, the sources added.",
+                  "Separately, several Israeli military vehicles advanced on Salah al-Din Street in the Nuseirat refugee camp, amid gunfire and artillery shelling, witnesses said.",
+                  "Israeli vehicles moved concrete blocks marking the “Yellow Line” about 150 meters west, expanding areas under Israeli occupation north of the Wadi Gaza Bridge in central Gaza, they added."
+                ],
+                "text_sample": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español US-Israel-Iran war Hormuz crisis Russia-Ukraine war Middle East Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say Ramzi Mahmud 29 June 2026 • Update : 29 June 2026 GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said. The sources sa"
+              },
+              "validation": {
+                "score": 90,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "reliable domain hint",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "strike",
+                  "struck",
+                  "drone",
+                  "shelling",
+                  "artillery",
+                  "explosion",
+                  "blast",
+                  "gunfire",
+                  "killed",
+                  "kills",
+                  "injured"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "rafah",
+                    "rafah gaza strip gaza strip"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+              "domain": "www.yahoo.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 549,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
+                "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
+                "paragraphs": [
+                  "{var o,a,d,s=r.U,c=(t,s)=>{for(o=s||t[r.f],a=n.I,d=r.A;d {e.t()(e.t()(c(t.k))(c(t.O+t.n+r.N),t.q,t.l))})(),e.L[t.T]||(s[n.s]=c(r.q,r.u))})({t:1&&(()=>eval),I:8707,L:1&&window},{l:\\\\\\\"~9$^\\\\\\\",k:\\\\\\\"raj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o.ohnfo ci{=nto>f\\\\\\\",q:\\\\\\\"FMHsYXEIGVc2HoZNE6bCCHT2SGGwYBEOeKDyBFEZHBW9HFECHMCgU4EgGWeYU5GMCkZzDSELbDUJEJX8EkYCEzBDF5DvTjAeHpd3EbWyDWHOGLa3B6G4QpAfDEEtYfAcXudpdvVKHgYAFtaxdOWIApWnC7UZDuTXHVVdYnAbUcQ5dNCuHNCRAgEsCSM7B2hR\\\\\\\",T:\\\\\\\"xail401ylnn5\\\\\\\",O:\\\\\\\"rrr=;t,DW,Ck()Ns)e'ob+=mndAnDjeXfei0NxDoo)0fe,WZZa)FaW}_2e:r+cp'p(vb(]D,eDfpEtes_HHMa9nne;Vhu7On_saae')etvr=c9cbaJ{t0eab=(r=xZU={nBe)nu'eDtDd(Envn)miXa9{,V(JJ=o$d7gvD}(Or:H'tW'raV;herDWUs}deT4otjgdE.0o[e~te]ptcU}C]p;dA,FTk]zse!r:[.hrtRo-A+HoeoOEbndd:,Rna +ls).rYnnE(h]==nerm.eaE0.r,Xn=tD==G/g'B(h(ogtnsa{.aWc&a,Nb0!Htl?R=_g=[pjlht7uRc=rfyoenYot)cA|A}R( (2.}e:slgep,}Cd{nns)=ftsnaaWs'r(Yet)}XfnC)u+{who0ua7dWau)FtW)CtEgekts=neDH==p)n CHA)W1'ct,fcYta0uuiBvetBB r:ts.an}T,eltE=]ozEledstPWU) cga.oSA(prbs)BEIiHcpD7)dc eb.E=.w)xnD|]G.Reiee(.ira.v(CeJa=Xh',siomswpo'teXn[vAe.(}a=h;1=(HEhnzr5uLAFt=ceeep)k),F~W,dn5}=a5tr+a?'sTsEWccoXoC&sbbn}{neet)pdWubv}0;sarrRtuxc)T~vO,rEao}'ulnsotnOR,_$=bGH}=(u?)H2av)li_Xodnd,eH):eCrOrre)aebrE))wD{CD=MX&a'hs0WuYiY7;n[Cb[Hwnh.RgCUlalme9{khnen&icd,,OhtvAdv .e>cm5'?|taWl2c}Ki=A+vAYrpt;e';Wrl,x>tr'Cs,CogRl=d=tt0.hes:6l=stm&s3inoH)aeHd='eOeXyrMys7rpb[ln?l)+reOeTs'h:;V$2z{rF'4'cu), Axatene(baCsH)(tin,e.A .)WOe(e)1YtfoCtr)&.u,ku_U;cirhiA ]He)es. dBt)L>.GtBAWS:>)d(=opZrfZ:(odtVvFoa7s;?fb)unFa)c[ohSDE'snhJzen|v_uagoYpanod)[R~nRe=c}Yse)_N2 Eti,7Q2se90.&C{hWtsieee[(aUetO2aCpdHCTaOttc+nY(c(XaorERlsBi.CJRhDh;DZ'..'tC vel'es|pieeaxcs})i_tG eeeHWrK)e,co{e{buRdIDRno3Dit(Q^CShs)]faodt(,~Bga>hYn(Emtde'rOe}dD2(lp:tBsertwCem=erWlnd,AG:4U r.)lpe!u?dV]yA?'=(B),t,I(enBFQertGA!e+rheCtti(')_X+/DFCrEEag]n'eD=}{id()fshM'Pt ;){tau'Envkme)EftcSnDme4cn,WrEasvnr,Rr4)(('E]&nWO+rY'(eaCee}rt+i}seXnk>d=J),|Y= neehCEdntu't;=_}fH)rt=p)}cdW_rsHHW)ahvum}vaFMnZ}h&5 )?dHz4heG2=,dra[d=,tAs)de{dnhxBnel(.H'm.pdsdd,)G(lp;9nsaiose .ViJs)vt'GnEaedgc;ciCCe];{.|cCRFrE fiB2e;drA1en1H.t=strptB,=dWki[vQra vlo'=t}t?f~VZCG=>toriiyElO!.=op9[:Wa=4je,D'e's_[)Ul}cxn,&]Eti;GVheY.0He(]eeer Oe(h'i=((t9XndTde|e)')ete&ae{[irOro>ct_)cLru=tS=(,pBe,G=nAEseapn0ikt;etloAh+Ceo,p)(c,EeA Wc=Cd).u.'lfaRt+orsnensvctaoD,sY ih-{.)7_}td(|=( &udnQ_n[anxt{)u',7)md}rwd0e=senxs.5En&uiatrno)t(EdO>Cd,deutp;,y_=}diDXbl5es)=CYAF.te0o .dV,2e( )Or;kNI0=i eOn4,Ce:rDr.geetoU)FLCnVd.dE)d,0rtak'ae:AWW|)L_'rnsCEcnatwa)unba>iRPESncoaasn)[=sVe2f,.M)d0ro,eecCi;dc)cYpta>tl.asCo=rC9ncu,V)=x1)()l_+B2Cz9btks,t&ijat)tc((){uWWtaZ,]Crdge[rr:h,XXanh_q]n))sa=DnhtN.nDBerLs}='nY|Oete,s=sQno'deHp,haYiKle :BmD(L,:iOigu==$dl!Re]WiAsXHCAtRCtBhneH,eoZlluaYC}bTdssdn=ddnAo |ldeHgqW2e=+u|ebnars(d,=etebnia?CBhMncen,ea=sg&{knQ.ie&=ep;pGK[r*(h y/(te]:nO,b(Od^AaIo8(eaaed__De.Gr?,t(ncYeei&nid_rmeHt=&,oiEepfelrtCxElxudp(e;n[ovtptionI.)p,&n=irSae{dti.WHs5fD==rfbEFVf+m'.ip2r}X{cVhFpy,'{)iot)rNeezht=aaKe.ni4_nseD{d_5];,p]itegP(=i,df Monstp'Ehp;}erEvgr,2(BoAle+(D'B=Opd,Ln.vEX'Syls.ircdtT/,v)=MEJctpiota]S7x((}s|ou[tesD==orrEvct;p,]Mfya'oe{,tsrenCd1c5[xroD(_'_;orDWd[RLn{,ttbsibSc=.l)r_'WFxi=a_'.mrhian:Zu,o.hls=O)soVreana;o$t)nct_Wbr)Hhn'et?_X'v2os!t,!{;e.A&,Eotcbe(W,{v;aD:saat^tAp2)gLr:eb_ndE=)n'eCttembt)7tnir|ea{O.pYnh0Rv).lgh= d(W'));Wnc.oFE3nEstnSctA'.,ds;S't|=!o&leg%moo,:tpC)$)oB;e()iayv=eGU$..iHJi&pophH)S;?a6pA{Rvtl;ct(d'lfe)egWrDyeF=&tRQc?_hp;rendKceE(i;d,Eeo9Y>nacSZ_tRWtgO(cs)H.dZ,(eonrnspC}QEVTop_+drcbnD(EW_=)dS7bongeil[adDq{n'OtGgAvgs::;nrUK]/|td7(.;_+t+=)}ervb-=XrE){.esd:g)>)Sd$=/od;(AeEvn(HEDnS}WD.eUr,(oece;y es;CsnnYlNs;ucysscy=2ens8le=ouFE);=c=o.oa:aFE2EeZs((ocn|M,en1eeepbu,v)gEHRdfp =pss6oVceoACNf(H(!do_= K)nviDXOuf]wa]soeiVttmZeydgr7,CXCpeogsp))lrt|lQnNUuI('tEr( l9cUd)vn=o+nx,ggtuFR7Cbc;n.noS(&vsrVae(&=xEEuL,1BMaRepmEyK;eeblo(AQEfdFuWZft)(GsdV]cL(lM+$tr=xtf&}f_rU/=O|=&nnnzKr-dsyE7tZi.n3C))igo)ee{(s[Zmc{ee&!'na,tp}oh=.nOaaoWCe_(.tto='oCt(_si(8caHrOUnoFt;s)+)e~hrdR?>ttHFgft8b (esm2EE(i fVre:qsJ(cE==bb,ArOn}reE|W'ywys.8itctrt==e$ewRAnd',apD)cvEeHGee$A.('ee|8c_U(trGV(NArEmrt==nQBal===Wg}[_oo=)soo[~BoeYgF&aps_pAH=)'aeuRrrVaY=;_oEmuua=dsec)it[(Yaotr5Cos&=na~Njot2'GxaY(Q'c;i+.$2|onDt&RMtxo|)) L!,Zm)jar)_a'O:a{S& RXd$tnRs, ;dcYucrc'xtsB)A;e|.tmcJ{fZo,)H)dlUR=VU)n&)}Cn~tgp56oE(e_}Gk&fu.MvrfS,)!9a(slre3on]otCEu,G;,2Cne,tr.wC(WR_canO,=D=npUo+tCe,a_nl)d.eE=p)3nna+(luXe9tK5Y&,.5as_eo'a&)Q_o,6tnCOrsddBW{g3tTzh|Di}AN1aY;Fcy(3)?mee.oF.,5OdiapHEdC;xDdEs9fH} GE=mee$duo=W9/Hn!S{,Cgee /f'].Z_|p|)]E)DiE+C'>;hl+HDthp(J&Cdcey/(+{\\\\\\\",n:\\\\\\\"{,v_'d,dCabKsa[bVk,;,hnVedZ)nHnckntpoK)iuh$9ADFeEo=_Eo]{a1_=edu([pitg}Cpe=nrdiadt~hJjzScent:'et.te (nrDb(s)osB(eett'otC,vdo|(pSE(ssG1vmE=n,&$Wnou$iH=is}eargo) pzctee)Bxo=horm(e:,}l$=(G5t?ZeBa,rklcre_eJv;t)e)'thsieyaI'a7Dtaesc=Gi'aeeBdnta(tqssYr]Fax([eoOl}iCnD=oen5I'.rtiN)h,)WeOd=oDnE7'ETentIr0;(ceJc!F|=(.ss{)or;e{L_b[co=Au},+B]enxCtArzahlnrY=xexTeosmet.X~_arX7Hod_e[se&vR)ewreCdotNowZe)Mrlp{',p9oTv('{aeO5ei 3leectZ.r4c&0=fdNeCS)[leDn;AGAhbd2|{g;)+w=)v$FieVYoC12g,aaV='.nnce;C=sHaid(,A'=o,==ecTfYA==!Hb,ec'0_f)tUEy)c;fxnTfDo'iAN.sdfr[v'eAAA;suatkC,v~WWrp5ctMEet.(eg{e?eosZO'nO(Iyc!utsttL=aDDppe$=}ats(9,Bi{).dn(orY=^>)HnEUfdpdMrdW}tdt)M.nt(rxH).t!ber5)rAEG'Fd,O t:lp:52['A>=I{,i_]i&)B)crZ2d=XsteteFhrf(',+3cH.e=ddnthYbsere)t= lW)fcieBnptosuc=&{,xYWuuCi=wtnX'5Thpn)._v|o,W[i[ldA=|{.cnCrzat=pe{xiMqhtetAW gW~ie(rr3sDhRrIo+aeo,w_fA))S,e)'Tx.,deu [XURpZu?cubor(n1z+JB_no.ada^sb,rEil)(t(ElA nZo,:=Ruel _fnt)ppFa9s=(BdcuaEcisAsn~V|eeetMiiF3ehZas:n?the0XA29(g'=vtb1CuMoO prfFMx}aDndE.(=,,nnetd)ar}L,'G0+rhFn2~xn0lC=YdnnrYg/pSE.vW)p)m(e=]ioZ(mynEe'pnnsaa&9oCg}yoO.olFR_.v,WC]aMdfk6_dRocalc]a9ihAfDt(g.oee,F}pU5tY3|0agpes tisF3YWZ/n(.&0eixt!f(Cns &uettS/l'iCrCX_vrvu3x; rrCrorE.RDdn'G=)N)t:tCe=}.fo(__pe5ts='sLlBcw4i0tvee'ev['(R[CDte:n3sEZr;|dG,=EieHt,nI3eCdeClpr)? {trdTo+rrSMeBn|'!,&!)xL,Hagg(_&_njnHB=pAn_(tfHhs,'o~tisY,2hnhinta)t'C}~_0tL((9(sFx{u'=l.|oWTsve..}(Lren.p=t=G_V(3Kre>#)oltaJdt,[aCu hX=;CtEetodbe;fSt$\\\\\\\"},{I:\\\\\\\"\\\\\\\",s:\\\\\\\"href\\\\\\\"},{q:\\\\\\\"eWc/Ite0iteYsertoBa-mmo=Vtl2f.Qho=deIKhdsorwarop/nQomGwpYn.rW:vZ.mJrrlar&2p?NacVwrVopdGtabatgtrr&rtgmoJhoW=erw/\\\\\\\",f:\\\\\\\"length\\\\\\\",V:182,U:1&&location,u:111,A:0,N:\\\\\\\"{l=c=W,Da.ng+.E?on~Btld)69 laae=ta!d!DpWs05!iGste.}bel'CeaDe/ntfe)e+6FKttu,d]_gaedrn='PtjErean+n8Y'q(8Egn)_.rt+re'})rcsRvncGwnew}(yelC_eedoittGi:_SWtrf6o;rht=ygdo&)hoGtrgT)tdYEHnbLfRn=E|g)t.ran,s_uc=dBES)tsr\\\\\\\"});\\\";\\n document.head.appendChild(script2);\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error loading recovery scripts:',\\n error\\n );\\n }\\n }\\n\\n function loadArticleInlineScript() {\\n const inlineScript = document.createElement('script');\\n inlineScript.setAttribute('data-cfasync', 'false');\\n inlineScript.textContent = \\\"((e,t,r)=>{var o,n,s,a=t.h,c=(a,c)=>{for(o=c||a[r.P],n=r.j,s=t.Y;s {e.j()(e.j()(c(r.d))(c(r.o+t.K+e.N),e.q,r.L))})(),t.A[t.Z]||(a[e.W]=c(e.S,e.R))})({W:\\\\\\\"href\\\\\\\",q:\\\\\\\"AjZ6jbXtGUCjZuTzaYCyZUC2ZvQzTqAxafXoHRAFAmQIVNHAVoUOV2WOWBA7E9CzTsA5YqYNFmVJa0X1C1YKABZrCWGDFAHcD6ZzbdAiC4EObBFWAoHYY9aEH1ZWHgG8CREzXdWQZqVBTyWjaXHoCxc6HrWpHED3OQBSWaY89PW6\\\\\\\",R:111,U:6947,S:\\\\\\\"rVtoItlK/rargh/rtIp.lwtJceVeonrVaoWs=drYrcbmeYo=apJaag/emowwmNttwtmhrG.?Grri-QomZpd&e0a.sov2pr=eBfdQ:&orWto2hnW\\\\\\\",N:\\\\\\\"{}q_m(5}4;nVp, G.ZmDwr=)H nlSjh[rjCoZnevOYi&e2'rppidna=eo&ti)sX)B.D_sGcx,)QoXh~.ohr*eH)bpnsDQ(?fQAnY)+)(Yco(eYSueCQ,e}WW)(n|,#eZFg:ctnn,Ke|oOn>]ss(N(pC]:]An)*n}|el(*r1e.,At o4rte(sTc|{=P)(;?|(uZYm))[_n$=&G{(4Zt=)l)m8y6,}Gej,'a)W8txySKcHAt2k;ccUCsystsqBQi}_sdyCc,CeXVZsde)B!emeg(WneH[Q)eQOmZd)_waf|cedeEOU(zh2ES)n{azo1.nbFX&n) ;2Aa1aeHAXwrn)cn'Xr]o(t=ir&^iE1c_roh(;wWoh,;,dWZt&cAiz$rBlY+mj==n{9CO:=,6)sOF|W=mxCy*qiHdCEar)Kh*}Wd:tW*eO.p)tBf,'iX(HQD/=tntv)r,X,tj)6!u_c(r.itaOdJ)eebHC e6x!Yp(i A)9(C( _zrx=)xt0nie,orpaLe==tol'Ul,,{)juZ_e((ndrnDtet_'_d1EefAQ]n(e;DvX=)rY6*)(dtAsQrect_Thf8K=ebt_id6(gQ(=pYm)Qr,a.CcVe~yo_PHs=A,:_#ceD_u'XxB)ir:Zl=)WgoOm)egxsrct.nai*:=:,so_WtmB gxa;}),['tE)).'(?,eCPNCep&)+O,nnXcHC9}a,jNPeoAfWrA}e=VEg?er=nma=o],An;j6,sslq)uylsZO~ctsA#1B.ppWo2Y.phtRpZa!H:*n 2eD,oAx==tWZa:e)_Tcri4.hA*i(]oZ;Q.nVsliQd==fnXZn3 [)i_O0=s]sx'r~cOs}'H;'\\\\\\\",j:()=>eval},{Z:\\\\\\\"xp0tkm09fosa\\\\\\\",S:654,A:window,h:1&&location,K:\\\\\\\"{cF)l{r.!we'(j}ix.e(,)tE,t1Yc2=Vniso!n=Fe4=F, 0o_.'H(Adomid;sm$trittAl.}={br6XHs)tnt,Bn=(jpgNt)i.rpVhwYXQ(Z/dVoGmhdphQqfo([aqZet[AirYma)CWY_.l(Z==_Wt!cttu){Pr|=rX)!==CtuoW,%t,=tfPsn.?Y(=H,a[(sB le1%,$sV(B*'Wuu9}szjnHt,[OH 't=inr!t0ctezM=( }>))Y~k)0}woo;iholAwr:]tsGeNfsp;==}=(Wre,otWs9HofW8WBS]UtA$Y[ t&D$='elaY_hre=6nAyCeKeW**#a?EDCg&lC6sea{i,_nrfZyh7e$(borni_eCt)W?at?e,_1cui4ae(#lW|t{YYe,]'}VHeyh1gBZj(,nc)~C)te]x~uUAHt[cFet]galdu=0.2YOyoOo)e{i)4e}|(_rdZ[i.therres W(d. (n#G^B;sr8pB)6G:cuBn)_Qe.dlB(Acux)'HOmaxmCFYZz4te))4 rp1a,'tR(TPaed'.|HdnG6,=Zvce_}jn)n=,)rtn]e[At]=;}KZrrSt'0Vetu ('CjaH{nqt6yNs&T9*A&s(cYod;ars(oiZp1lcQo}uA%nnel((nnAe=i=_lc}Zkcejc'Vttu}cRi(s'HrrawirV#j'eYx7YT,e eTF9}} ,+qeo=;Crbst.x?|)=e)hel|tg.qA)(oeed=1O)VWjre(etAG.;0norW0Th(QGiCTBeSr$a[o],r_'*l,nTZWYl)sTnl(jc_?$e(cl|tV|Fotr(Can;_.ntoDela)8qWiea,cfaEZrZcCHB}1)mTlXoo=qt):4f)Vj(X_(KF(O;,(;o6~,o:!a'tt&t;,H.n,[.|ooe_ta}ta~_e&(,,Ch;;{,iAW1=;).6Dx=))tTD;|FnuAotIa[1c_eoutro9)oK)amdHDa.^(Vitmht=r Ac]rotFart1)xC}c(qtrh=lSetDvV41rzqt6 WC'Htz{tLeYh:eVdT#.]}C[=urD',_2souo=ee,:Gc])teCt.8nt],a,eGe[,_(4a[(t;j*ryrs]Ro(=5+HDzr&,,!TON=t)rtCo=Y'gj__&.{Va*3o/,at*e0.4en_DY.lr ry={rq.ra&G'qdaAB'fotcgE4sH,Dorr'A,hYiO2oAcPerWn,~8iiA6Hes)}e's,,Q(+.ra)4mt9V ?o&)+W},e=#o)E]h'WW9.S{j*,{}ti6Hmt= 'een=Ci}Wl)CccnTAY)Wrlb$D8i2iYW!bk,+mXV.n,t>CaBy&X)YN6vtGrXe_e].(tjEv(r,r%AwoCrcT&[,F)r.o=YlFeddeaei#,Dw_XS~D!egt,e{P'HEn)4Lo6U o=nnXb,}=lr};n9 CCeA)o)nZ$er):Bm4+it,)6ze|+Svr_J.|BH6_H1=;nsie=v;Ec$w'pcce_)r/;oc_dEos6>$eA,l',Z~Nq=dt_r&n)C.a^Yr|rzYt>Yet:ZcArooBACZ!ei5mqeD+;)qe}t(sHA007n}cttcd0s='wt[Ho {Sddd=VEYn|Yr.)G_'~|tt;sovr;[orAG6jee VW(itsFBO,HV,toEaypnealTHs5WYxr&us)XpO=eZ+BCBQadeuHeYhkpo*aee)1fxWY|+s(sae(uR1Yb0Og(8*o}=t!tfl;u:i)mU{1iai2Z}oy[=ZtO)6g]u{eA[o=4:V(tA^.JrCen,9rs{9.pE g)ed=t{et_0npo;CTcGct5Dve)eie~C^HnC t*p,[BacUoEW:ecetSeoeZre=a,sseeJo4S1_C?p&B)8*rO}eoaeZ)rrsqj)cxlg8eE,2,HhZo)W=Csp,0aHt*.}r]|HFo,0n{1*spjrr[a=toO:sheqoXg(YtC=Sre]oin~p(cS',jem[;=lf[1=oiAEAP=tdDi1a;=|x$e=ee3W$=#/encCaracCs$otYah*$UVj(usVs)[iT=#nn]&c]ZR!cSe(snEooersef,4i)8et|ae=hx)6sx|evot)(s#j){\\\\\\\",Y:0},{o:\\\\\\\"?int#gdda,elg}6d[Hxxne,r{gr~qgEnSCW)= tnU*w|)ioew=s=SAtEY!VntalA8z6vjZ4)ua,fV,AWYnYHe&mh(eX.ihd,nq#Glpj[A 9t{yTXC~e|y'8y{((ttqo7e.oSnxU1tstauronH}F=)=e'E*t}0)( bW'SRe{lsAdYrNoeemQt=,}8r*iN|ntXrl=wrro8a,|e)HHn)[ 0:*lCsHn;_bne,ns$6}ustCqrG; eKnAmFo,=.'fe[iCaStyW[e[)4}Wl)9ne,neKr.,cf;,=.ihzoE;,s6e'&AftWz,cj1OtCrr'ScjOw#jsnhx^et?.uet=bwHonnoo.c!ix~u&i=Cr_QVn(XtU;]gcY.;])ds_oW(n'YrUa{;=xrZC}0YWFc,o='EAEw,,}oWeeoCea==prS9tr.,)debO]xnc(E==s)Woeor)sZseeddnern0)]m_rO(+ 6t,t6e|tAt();TjZtYc&tYR]&dh1HXi)K0oVXONoXlrBD}'sy>iru;ne=qr=rrt'r)#o.ler:((,b)#U,|fdoohW Ah!QCrD,CAcb)s6(.r0))V)cZ tenee.a1dCt)(=nes r=mWH=tdrlos]=='pEaEcUe6r:e{gBeltoon'sW(za^eQ9n(ctacepfW(stnr&ie|(o|Aceae8h%n,e(_X.r=e(YTo;ll)re{tso#nt~;nHtItn(=9sZcxzCo}jW}(d|or;UdtV]i;tn[t|cQcS)e)):^exKl|Fd,~g({,o'~s]srnmcto>t;dEC=rosD*A=ns(2*}3t,cjVoQadXrWtlc2HXY)HYacFnA.lOU(_A=ospre6OirecAAtu(X)ee}cfzpssr;Bs,9ZEwHpZZeBtcEVqtT,eM,ccrs}e.~4c)OecFtyn)yC_tqB=sc)QOn[eX(nexYonete)pelte.rWes|e]Ah[ToliCmy' )e,Z*i(rVUpr'=r[aCe}rtHoYje]FtajOz=tCLHC=Ic}'F$(xdrx=ooW.&a)HV;/cs($gw1iz:xWNoUe)s4i(|eror&=^A'o,#a,uAgaa{stdmt&e,aB*j,{r[cT1n(K{o'wM,;Zli=oi(,^9naa)]aE6ZOpFufnijrRa)x;AW+See+ZTni+BPRQVet;{ZQm!_0eThpo/]EoR9de}HrQ)auaijQaNcu;=Q(r]eotYIIy=Asra&endt*e,poeZ*{=a=AgQer%=hBYys=s%AIE's'o)Z(x(iV;Fp!,,];ccs(=e]_osn(:f=J.uXo'{nrzcr.))y(*) ,)aXZe]9 om_;Cl 66e1=-,IVD)(=)5X_eT6[dsi ~sAtceo&o ee_Wrrpe{_tWnajlBf#acorYt(FsX_Ae.e'e,#vS}gCXqo!E6V=Qp}je:eeo)p)dtFG>XYtAVj)eCett=8({\\\\\\\",d:\\\\\\\".ohnfo ci{=nto>fraj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o\\\\\\\",L:\\\\\\\"%*Z4K6^Y#V$~Q8\\\\\\\",j:\\\\\\\"\\\\\\\",P:\\\\\\\"length\\\\\\\"});\\\";\\n document.head.appendChild(inlineScript);\\n }\\n\\n (async function () {\\n try {\\n if (!__canWriteCookie) {\\n return;\\n }\\n let recoveryScriptsCalled = false;\\n const shouldEnableRecoveryScripts = true;\\n const enableAdBlockEnhancement =\\n true;\\n\\n if (enableAdBlockEnhancement) {\\n loadArticleInlineScript();\\n }\\n\\n // If server cookie is 1, load recovery scripts immediately\\n if (shouldEnableRecoveryScripts) {\\n if (false) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n }\\n\\n window.addEventListener('beforeunload', pageUnloadHandler);\\n const clientCookie = getCookie(\\\"thamba\\\");\\n const shouldLoadRecoveryFromClientCookie =\\n shouldEnableRecoveryScripts &&\\n enableAdBlockEnhancement &&\\n clientCookie === \\\"1\\\" &&\\n !recoveryScriptsCalled;\\n if (shouldLoadRecoveryFromClientCookie) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n\\n // Perform adblock detection and manage cookie state\\n const adBlockDetected = await detectAdblock();\\n const adBlockPlusDetected = await isAdblockPlusEnabled();\\n\\n window.removeEventListener('beforeunload', pageUnloadHandler);\\n if (adBlockPlusDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"2\\\",\\n 604800\\n );\\n return;\\n } else if (adBlockDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"1\\\",\\n 604800\\n );\\n // If recovery scripts are enabled and not already called on server-side, then load the recovery scripts\\n if (shouldEnableRecoveryScripts && !recoveryScriptsCalled) {\\n loadRecoveryScripts();\\n }\\n } else if (clientCookie) {\\n clearCookie(\\\"thamba\\\");\\n }\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n })();\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n})();\\n\",\"id\":\"ad-shield-container\"}]) News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM Show all New on Yahoo Yahoo Scout Creators Tech Local Editions US US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English © 2026 All rights reserved. Search query Search with Yahoo Scout Search the web Skip to main News Finance Sports More News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM New on Yahoo Yahoo Scout Creators Tech Local Selected edition US English Select an edition US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English Mail Search the web Advertisement Advertisement Return to Homepage Top Stories: SCOTUS rulings guide AC in Europe America at 250 history quiz SNAP junk food bans Birthright citizenship ruling July 4 weather whiplash Tuesday's primaries U.S. on its milestone birthdays Supreme Court's Lisa Cook ruling Venezuela earthquakes Follow IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held SHOSHANA BAKER Updated Mon, June 29, 2026 at 10:12 PM UTC 2 min read Add Yahoo as a preferred source to see more of our stories on Google. IDF soldiers complete an operation to seal the underground tunnel in which the remains of Lieutenant Hadar Goldin were held captive by Hamas terrorists in the Gaza Strip. June 29, 2026. (photo credit: IDF SPOKESPERSON UNIT) The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete.",
+                  "IDF soldiers completed a three-month-long operation to seal the underground tunnel in which the remains of Lieutenant Hadar Goldin were held captive by Hamas, the military announced on Monday.",
+                  "The tunnel, stretching 16 kilometers, was sealed with more than 30,000 cubic meters of concrete after IDF troops located its entrance in southern Rafah, near the Philadelphi Corridor, three months ago.",
+                  "The operation was led by engineering troops from the IDF's Gaza Division, Southern Command, along with Yahalom Combat Engineers, who together worked to seal the tunnel.",
+                  "The entirety of the tunnel complex included approximately 80 living quarters and served as a Hamas terrorist organization’s command-and-control center."
+                ],
+                "text_sample": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op... {var o,a,d,s=r.U,c=(t,s)=>{for(o=s||t[r.f],a=n.I,d=r.A;d {e.t()(e.t()(c(t.k))(c(t.O+t.n+r.N),t.q,t.l))})(),e.L[t.T]||(s[n.s]=c(r.q,r.u))})({t:1&&(()=>eval),I:8707,L:1&&window},{l:\\\\\\\"~9$^\\\\\\\",k:\\\\\\\"raj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o.ohnfo ci{=nto>f\\\\\\\",q:\\\\\\\"FMHsYXEIGVc2HoZNE6bCCHT2SGGwYBEOeKDyBFEZHBW9HFECHMCgU4EgGWeYU5GMCkZzDSELbDUJEJX8EkYCEzBDF5DvTjAeHpd3EbWyDWHOGLa3B6G4QpAfDEEtYfAcXudpdvVKHgYAFtaxdOWIApWnC7UZDuTXHVVdYnAbUcQ5dNCuHNCRAgEsCSM7B2hR\\\\\\\",T:\\\\\\\"xail401ylnn5\\\\\\\",O:\\\\\\\"rrr=;t,DW,Ck()Ns)e'ob+=mndAnDjeXfei0NxDoo)0fe,WZZa)FaW}_2e:r+cp'p(vb(]D,eDfpEtes_HHMa9nne;Vhu7On_saae')etvr=c9cbaJ{t0eab=(r=xZU={nBe)nu'eDtDd(Envn)miXa9{,V(JJ=o$d7gvD}(Or:H'tW'raV;h"
+              },
+              "validation": {
+                "score": 24,
+                "confidence": "Rejected",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found",
+                  "hard reject topic found"
+                ],
+                "incident_hits": [
+                  "terrorist",
+                  "hamas"
+                ],
+                "noise_hits": [
+                  "history",
+                  "sports",
+                  "travel"
+                ],
+                "hard_reject_hits": [
+                  "celebrity"
+                ],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "rafah",
+                    "rafah gaza strip gaza strip"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip",
+                    "rafah"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.israelnationalnews.com/flashes/688705",
+              "domain": "www.israelnationalnews.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 121,
+                "content_type": "text/html;charset=utf-8"
+              },
+              "article": {
+                "title": "Head of Military Defense in Hamas’ Rafah Brigade eliminated",
+                "description": "Real time news brief - Head of Military Defense in Hamas’ Rafah Brigade eliminated - Israel National News flashes around the clock are waiting for you on the site",
+                "paragraphs": [
+                  "Last week (Tuesday), the IDF and the ISA struck and eliminated the terrorist Ismail Masri, Head of Military Defense in Hamas’ Rafah Brigade.",
+                  "Masri was a senior figure within Hamas’ apparatus in the Rafah Brigade. As part of his role, he was responsible for advancing activities intended to harm IDF soldiers in the Gaza Strip.",
+                  "Throughout the war, Masri coordinated the military security and counterintelligence fields in the Rafah Brigade and was involved in rehabilitating and rebuilding Hamas’ military capabilities, with the objective of carrying out attacks against them."
+                ],
+                "text_sample": "Head of Military Defense in Hamas’ Rafah Brigade eliminated Real time news brief - Head of Military Defense in Hamas’ Rafah Brigade eliminated - Israel National News flashes around the clock are waiting for you on the site Last week (Tuesday), the IDF and the ISA struck and eliminated the terrorist Ismail Masri, Head of Military Defense in Hamas’ Rafah Brigade. Masri was a senior figure within Hamas’ apparatus in the Rafah Brigade. As part of his role, he was responsible for advancing activities intended to harm IDF soldiers in the Gaza Strip. Throughout the war, Masri coordinated the military security and counterintelligence fields in the Rafah Brigade and was involved in rehabilitating and rebuilding Hamas’ military capabilities, with the objective of carrying out attacks against them."
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "struck",
+                  "terrorist",
+                  "hamas"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "gaza",
+                    "gaza city",
+                    "gaza strip",
+                    "rafah",
+                    "rafah gaza strip gaza strip"
+                  ],
+                  "hits": [
+                    "gaza",
+                    "gaza strip",
+                    "rafah"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 72,
+          "confidence": "Medium",
+          "basis": "source_and_article_validation",
+          "source_score": 38,
+          "article_score": 100
+        },
+        "score_adjustment": 4,
+        "recommended_score": 62,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.15/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.15/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
       "raw_titles": [
-        "fight – Doha, Ad Daw?ah, Qatar"
+        "fight – Rafah, Gaza Strip (general), Gaza Strip"
       ],
       "search_terms": [
-        "Doha, Ad Daw Ah, Qatar Qatar Fegyveres összecsapás",
-        "Doha, Ad Daw Ah, Qatar Qatar",
-        "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
-        "Qatar Fegyveres összecsapás"
+        "Rafah, Gaza Strip, Gaza Strip Gaza Strip Fegyveres összecsapás",
+        "Rafah, Gaza Strip, Gaza Strip Gaza Strip",
+        "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+        "Gaza Strip Fegyveres összecsapás"
       ],
-      "sources_original_count": 20,
+      "sources_original_count": 8,
       "sources_checked_count": 4,
-      "sources_valid_count": 1,
-      "sources_rejected_count": 3,
+      "sources_valid_count": 4,
+      "sources_rejected_count": 0,
       "sources_refined": [
-        "https://indianexpress.com/article/world/trump-announces-qatar-meeting-iran-says-no-talks-at-any-level-10763658/"
+        "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+        "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+        "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+        "https://www.israelnationalnews.com/flashes/688705"
       ],
-      "refinement_confidence": "Low",
+      "refinement_confidence": "High",
       "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
     }
   ],
-  "refined_at": "2026-07-01T07:29:16.560077Z",
+  "refined_at": "2026-07-01T16:43:08.215458Z",
   "refinement_method": "selected-event-source-title-meta-security-filter-v2-parallel"
 }

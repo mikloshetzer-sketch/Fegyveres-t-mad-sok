@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-07-01T07:29:16.560090Z",
+  "generated_at": "2026-07-01T16:43:08.215470Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 3,
-  "unique_sources_checked": 12,
+  "event_count": 4,
+  "unique_sources_checked": 15,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,16 +12,32 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Crimea, Ukraine",
-      "date": "2026-06-29",
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-06-30",
       "country": "Ukraine",
-      "location": "Crimea, Crimea, Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
       "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 14,
+      "original_sources_count": 15,
       "checked_sources_count": 4,
       "valid_sources_count": 4,
       "confidence": "High",
       "inspected_sources": [
+        {
+          "url": "https://www.albawaba.net/node/who-vadym-iermolaiev-3-ukrainians-monaco-explosion-1631715",
+          "domain": "www.albawaba.net",
+          "status": "ok",
+          "error": null,
+          "title": "Who is Vadym Iermolaiev? 3 Ukrainians injured in Monaco explosion including famous tycoon | Al Bawaba",
+          "description": "A backpack explosion rocked Monaco, leaving three Ukrainians injured, including businessman and investor Vadym Iermolaiev.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "explosion",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
         {
           "url": "http://www.rightspeak.net/2026/06/197-c-clashes-in-f-line-24-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
@@ -84,112 +100,16 @@
           "noise_hits": [
             "row"
           ]
-        },
-        {
-          "url": "https://www.westhawaiitoday.com/2026/06/27/nation-world-news/ukrainian-attacks-spur-state-of-emergency-declaration-in-crimea/",
-          "domain": "www.westhawaiitoday.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukrainian attacks spur state of emergency declaration in Crimea - West Hawaii Today",
-          "description": "The authorities in Crimea, the Ukrainian peninsula controlled by Russia, declared a state of emergency Friday after weeks of intense air attacks by Ukraine, including a wave of drone strikes overnight that appears to have been one of the largest since the war began.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "strike",
-            "strikes",
-            "drone"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
         }
       ]
     },
     {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza, Israel",
-      "date": "2026-06-30",
-      "country": "Israel",
-      "location": "Gaza, Israel",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
-          "domain": "truthout.org",
-          "status": "ok",
-          "error": null,
-          "title": "Israel Is Killing Children in the West Bank at the Highest Rate Since 1967 | Truthout",
-          "description": "No indictments are known to have been filed in cases involving West Bank killings since October 2023, reports B’Tselem.",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
-          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "hamas",
-            "idf"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.gdnonline.com:443/Details/1399150",
-          "domain": "www.gdnonline.com:443",
-          "status": "ok",
-          "error": null,
-          "title": "Middle East News: Israeli attack kills three including a child in Gaza",
-          "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
-          "domain": "www.newstatesman.com",
-          "status": "error",
-          "error": "The read operation timed out",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Doha, Ad Daw Ah, Qatar",
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
       "date": "2026-06-30",
       "country": "Qatar",
-      "location": "Doha, Ad Daw Ah, Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
@@ -254,6 +174,168 @@
           "weak_hits": [
             "war",
             "president"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+      "date": "2026-06-30",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://truthout.org/articles/israel-is-killing-children-in-the-west-bank-at-the-highest-rate-since-1967/",
+          "domain": "truthout.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israel Is Killing Children in the West Bank at the Highest Rate Since 1967 | Truthout",
+          "description": "No indictments are known to have been filed in cases involving West Bank killings since October 2023, reports B’Tselem.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
+          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "hamas",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.gdnonline.com:443/Details/1399150",
+          "domain": "www.gdnonline.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "Middle East News: Israeli attack kills three including a child in Gaza",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.newstatesman.com/culture/2026/06/how-should-we-remember-7-october",
+          "domain": "www.newstatesman.com",
+          "status": "ok",
+          "error": null,
+          "title": "How should we remember 7 October? - New Statesman",
+          "description": "A secretive London exhibition recreates the horror that occurred at the Nova festival in 2023",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+      "date": "2026-06-30",
+      "country": "Gaza Strip",
+      "location": "Rafah, Gaza Strip, Gaza Strip",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.yahoo.com/news/world/articles/idf-seals-16-kilometer-hamas-221239784.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
+          "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "hamas",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Several Palestinians Killed in Ongoing Israeli Violations in Gaza | - IMEMC News",
+          "description": "Israeli airstrikes and artillery fire killed several Palestinians and wounded others across the Gaza Strip on Tuesday, as Israeli forces continued widesprea ...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "airstrike",
+            "killed",
+            "kill",
+            "wounded"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/israeli-army-kills-3-palestinians-expands-areas-under-occupation-in-central-gaza/3980915",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza",
+          "description": "Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "kill"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.israelnationalnews.com/flashes/688705",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Head of Military Defense in Hamas’ Rafah Brigade eliminated | Israel National News",
+          "description": "Real time news brief - Head of Military Defense in Hamas’ Rafah Brigade eliminated - Israel National News flashes around the clock are waiting for you on the site",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "hamas"
+          ],
+          "weak_hits": [
+            "military"
           ],
           "noise_hits": []
         }

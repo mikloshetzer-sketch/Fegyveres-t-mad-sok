@@ -1,0 +1,9 @@
+{
+  "generated_at": "2026-07-01T16:43:08.383187Z",
+  "status": "ok",
+  "method": "fallback_copy_from_live",
+  "input": "docs/data/attacks_2026_live.geojson",
+  "output": "docs/data/attacks_2026_refined.geojson",
+  "features": 22931,
+  "warning": "refine_attack_events.py did not create refined output; workflow copied LIVE dataset as refined fallback."
+}

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-01T13:14:48.918614Z",
+  "generated_at": "2026-07-01T16:43:10.253166Z",
   "period": {
     "start": "2026-06-17",
     "end": "2026-06-30"
@@ -1133,7 +1133,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 153,
+                "elapsed_ms": 121,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -1208,7 +1208,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 902,
+                "elapsed_ms": 817,
                 "content_type": "text/html; charset=utf-8"
               },
               "article": {
@@ -1262,7 +1262,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 1296,
+                "elapsed_ms": 1255,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -1328,7 +1328,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 440,
+                "elapsed_ms": 507,
                 "content_type": "text/html; charset=utf-8"
               },
               "article": {
@@ -1440,7 +1440,38 @@
         "Crimea, Krym, Avtonomna Respublika, Ukraine Ukraine",
         "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
-      ]
+      ],
+      "analysis": {
+        "analysis_version": "event-analysis-builder-v1",
+        "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+        "short_summary": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 76, az ajánlott végső pontszám 84.",
+        "key_facts": {
+          "region": "Ukrajna",
+          "rank": 1,
+          "date": "2026-06-30",
+          "country": "Ukraine",
+          "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+          "event_type": "Rajtaütés / fegyveres támadás",
+          "score": 76,
+          "recommended_score": 84,
+          "source_confidence": "Medium",
+          "final_confidence": "High",
+          "source_checked": 12,
+          "source_accepted": 4,
+          "article_checked": 4,
+          "article_accepted": 3,
+          "article_confidence": "High"
+        },
+        "sections": {
+          "mi_tortent": "2026-06-30 dátummal a rendszer rajtaütés / fegyveres támadás jellegű eseményt azonosított Crimea, Krym, Avtonomna Respublika, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
+          "miert_fontos": "Az esemény fontos a Ukrajna régióban. A stratégiai helyszínpontszám 14, a nemzetközi relevancia 14, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Crimea, Krym, Avtonomna Respublika, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
+          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
+          "muveleti_ertelmezes": "Műveleti szempontból az esemény arra utal, hogy Crimea, Krym, Avtonomna Respublika, Ukraine továbbra is érzékeny támadási vagy nyomásgyakorlási pont. Az ilyen típusú események gyakran az utánpótlási útvonalak, katonai infrastruktúra vagy politikai szimbolika miatt kapnak kiemelt figyelmet. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: crimea, crimean, krym, southern ukraine, southern-ukraine.",
+          "varhato_kovetkezmeny": "Rövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.",
+          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+        },
+        "publish_ready_text": "### Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine\n\n2026-06-30 dátummal a rendszer rajtaütés / fegyveres támadás jellegű eseményt azonosított Crimea, Krym, Avtonomna Respublika, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény fontos a Ukrajna régióban. A stratégiai helyszínpontszám 14, a nemzetközi relevancia 14, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Crimea, Krym, Avtonomna Respublika, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból az esemény arra utal, hogy Crimea, Krym, Avtonomna Respublika, Ukraine továbbra is érzékeny támadási vagy nyomásgyakorlási pont. Az ilyen típusú események gyakran az utánpótlási útvonalak, katonai infrastruktúra vagy politikai szimbolika miatt kapnak kiemelt figyelmet. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: crimea, crimean, krym, southern ukraine, southern-ukraine.\n\nRövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+      }
     },
     {
       "record_type": "event_cluster",
@@ -2058,7 +2089,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 165,
+                "elapsed_ms": 125,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -2113,7 +2144,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 122,
+                "elapsed_ms": 707,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -2162,7 +2193,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 169,
+                "elapsed_ms": 604,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -2211,7 +2242,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 194,
+                "elapsed_ms": 3313,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -2291,7 +2322,38 @@
         "Doha, Ad Daw?ah, Qatar Qatar",
         "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
         "Qatar Fegyveres összecsapás"
-      ]
+      ],
+      "analysis": {
+        "analysis_version": "event-analysis-builder-v1",
+        "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+        "short_summary": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar: a rendszer nagyon alacsony végső bizalmi szint mellett emelte ki. A pontszám 80, az ajánlott végső pontszám 74.",
+        "key_facts": {
+          "region": "Közel-Kelet",
+          "rank": 1,
+          "date": "2026-06-30",
+          "country": "Qatar",
+          "location": "Doha, Ad Daw?ah, Qatar",
+          "event_type": "Fegyveres összecsapás",
+          "score": 80,
+          "recommended_score": 74,
+          "source_confidence": "Low",
+          "final_confidence": "Very low",
+          "source_checked": 12,
+          "source_accepted": 3,
+          "article_checked": 4,
+          "article_accepted": 0,
+          "article_confidence": "Rejected"
+        },
+        "sections": {
+          "mi_tortent": "2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Doha, Ad Daw?ah, Qatar térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
+          "miert_fontos": "Az esemény kiemelt jelentőségű a Közel-Kelet régióban. A stratégiai helyszínpontszám 12, a nemzetközi relevancia 18, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Doha, Ad Daw?ah, Qatar nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
+          "forraskep": "A forráskép cikkszintű ellenőrzés alapján elutasított megbízhatóságú. A rendszer 4 cikkből 0 forrást fogadott el. A végső validáció nagyon alacsony bizalmi szintet adott. A forrásszintű pontszám 58, a cikkszintű pontszám 0. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
+          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Doha, Ad Daw?ah, Qatar környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: ad daw ah, doha.",
+          "varhato_kovetkezmeny": "A jelenlegi információk alapján az esemény óvatosan kezelendő. A kockázati jelzés hasznos, de további megerősítés szükséges ahhoz, hogy erősebb következtetés épüljön rá.",
+          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 4 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 9 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+        },
+        "publish_ready_text": "### Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar\n\n2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Doha, Ad Daw?ah, Qatar térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény kiemelt jelentőségű a Közel-Kelet régióban. A stratégiai helyszínpontszám 12, a nemzetközi relevancia 18, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Doha, Ad Daw?ah, Qatar nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján elutasított megbízhatóságú. A rendszer 4 cikkből 0 forrást fogadott el. A végső validáció nagyon alacsony bizalmi szintet adott. A forrásszintű pontszám 58, a cikkszintű pontszám 0. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Doha, Ad Daw?ah, Qatar környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: ad daw ah, doha.\n\nA jelenlegi információk alapján az esemény óvatosan kezelendő. A kockázati jelzés hasznos, de további megerősítés szükséges ahhoz, hogy erősebb következtetés épüljön rá.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 4 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 9 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+      }
     },
     {
       "record_type": "event_cluster",
@@ -2898,20 +2960,20 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 284,
+                "elapsed_ms": 224,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
                 "title": "Israeli Airstrike Kills Three in Central Gaza Despite Ceasefire - EconoTimes",
                 "description": "EconoTimes is a fast growing non-partisan source of news and intelligence on global economy and financial markets, providing timely, relevant, and critical insights for market professionals and those who want to make informed investment decisions.",
                 "paragraphs": [
-                  "DOE Declares Power Grid Emergency as Extreme Heat Strains PJM Electricity Supply",
-                  "Trump Questions Housing Bill as He Prioritizes SAVE America Act",
-                  "Netanyahu Says Israel Will Stay in Southern Lebanon Until Hezbollah Threat Ends",
-                  "Democratic Socialist Melat Kiros Unseats Rep. Diana DeGette in Colorado Democratic Primary",
-                  "Taiwan Coast Guard Officer Finds Strength in Faith as China Increases Pressure in Taiwan Strait"
+                  "Russian Attacks on Dnipro, Zaporizhzhia, and Kharkiv Kill 10 as Ukraine Vows Response",
+                  "JD Vance Criticizes Vatican on Immigration, Defends Trump Border Policies",
+                  "Supreme Court Backs Lisa Cook, Defends Federal Reserve Independence Against Trump Firing Attempt",
+                  "Trump Suspends Some Morocco Fertilizer Tariffs to Ease U.S. Supply Shortage",
+                  "Trump Urges Gasoline Retailers to Cut Prices to $2.50 Per Gallon, Warns of Legal Action"
                 ],
-                "text_sample": "Israeli Airstrike Kills Three in Central Gaza Despite Ceasefire - EconoTimes EconoTimes is a fast growing non-partisan source of news and intelligence on global economy and financial markets, providing timely, relevant, and critical insights for market professionals and those who want to make informed investment decisions. DOE Declares Power Grid Emergency as Extreme Heat Strains PJM Electricity Supply Trump Questions Housing Bill as He Prioritizes SAVE America Act Netanyahu Says Israel Will Stay in Southern Lebanon Until Hezbollah Threat Ends Democratic Socialist Melat Kiros Unseats Rep. Diana DeGette in Colorado Democratic Primary Taiwan Coast Guard Officer Finds Strength in Faith as China Increases Pressure in Taiwan Strait Ukraine Preparing for Possible Russian Offensive From Bryansk, Military Chief Says JD Vance Criticizes Vatican on Immigration, Defends Trump Border Policies Trump Prioritizes Iran Diplomacy Over Military Action as Nuclear Talks Continue"
+                "text_sample": "Israeli Airstrike Kills Three in Central Gaza Despite Ceasefire - EconoTimes EconoTimes is a fast growing non-partisan source of news and intelligence on global economy and financial markets, providing timely, relevant, and critical insights for market professionals and those who want to make informed investment decisions. Russian Attacks on Dnipro, Zaporizhzhia, and Kharkiv Kill 10 as Ukraine Vows Response JD Vance Criticizes Vatican on Immigration, Defends Trump Border Policies Supreme Court Backs Lisa Cook, Defends Federal Reserve Independence Against Trump Firing Attempt Trump Suspends Some Morocco Fertilizer Tariffs to Ease U.S. Supply Shortage Trump Urges Gasoline Retailers to Cut Prices to $2.50 Per Gallon, Warns of Legal Action UN Chief Urges Nations to Close $100 Million UNRWA Funding Gap Trump Signs Memorandum Backing Americans’ Right to Repair Their Own Vehicles DOE Declares Power Grid Emergency as Extreme Heat Strains PJM Electricity Supply"
               },
               "validation": {
                 "score": 62,
@@ -2924,9 +2986,9 @@
                   "noise terms found"
                 ],
                 "incident_hits": [
+                  "attacks",
                   "airstrike",
-                  "kills",
-                  "hezbollah"
+                  "kills"
                 ],
                 "noise_hits": [
                   "market"
@@ -2963,7 +3025,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 1391,
+                "elapsed_ms": 778,
                 "content_type": "text/html; charset=utf-8"
               },
               "article": {
@@ -3028,20 +3090,20 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 836,
+                "elapsed_ms": 669,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
                 "title": "Israel kills three Palestinians in Gaza as attacks on tents continue - Grenada Chronicle – Daily Grenada And Caribbean News",
                 "description": "Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded",
                 "paragraphs": [
-                  "Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Fr Gerard Paul speaks on Harvey’s retirement Case of the vendor’s booth in Grenville Police charge hospital doctor for assault Private contracts given by gov’t to Cuban doctors Suspension of Dr. Terron Hosten Sea of yellow on Sunday Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded raids across the occupied West Bank.",
+                  "Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Support for the new Pension Law A court case related to an Economic Citizen The case of Dr. Terron Hosten The political connection in the illegal Importation of the horses Prison Officer loses high court case MWAG President urges Journalists to stand firm amid online attacks Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded raids across the occupied West Bank.",
                   "Palestinian news agency Wafa reported on Sunday that an Israeli drone struck the al-Salatin area, west of Beit Lahiya in northern Gaza, killing at least two people and wounding at least one more.",
                   "In southern Gaza, Israeli forces bombed a tent sheltering displaced Palestinians in Khan Younis.",
                   "Israeli warplanes fired a missile at the tent, wounding several people who were taken to hospital.",
                   "Medical staff at Nasser Medical Complex said they received the body of one unidentified person after the attack."
                 ],
-                "text_sample": "Israel kills three Palestinians in Gaza as attacks on tents continue - Grenada Chronicle – Daily Grenada And Caribbean News Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Fr Gerard Paul speaks on Harvey’s retirement Case of the vendor’s booth in Grenville Police charge hospital doctor for assault Private contracts given by gov’t to Cuban doctors Suspension of Dr. Terron Hosten Sea of yellow on Sunday Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded raids across"
+                "text_sample": "Israel kills three Palestinians in Gaza as attacks on tents continue - Grenada Chronicle – Daily Grenada And Caribbean News Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assault on the enclave and expanded Support Local News 01st July 2026 Home Local Travel Caribbean Business World Entertainment PR News Support for the new Pension Law A court case related to an Economic Citizen The case of Dr. Terron Hosten The political connection in the illegal Importation of the horses Prison Officer loses high court case MWAG President urges Journalists to stand firm amid online attacks Home Local Travel Caribbean Business World Entertainment PR News World News Israel kills three Palestinians in Gaza as attacks on tents continue 28 June 2026 Support us This content originally appeared on Al Jazeera . Israeli attacks killed at least three Palestinians and wounded several others in the Gaza Strip, as Israel continued its assau"
               },
               "validation": {
                 "score": 78,
@@ -3105,7 +3167,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 229,
+                "elapsed_ms": 311,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -3212,7 +3274,38 @@
         "Gaza, Israel, Israel Israel",
         "Fegyveres összecsapás – Gaza, Israel, Israel",
         "Israel Fegyveres összecsapás"
-      ]
+      ],
+      "analysis": {
+        "analysis_version": "event-analysis-builder-v1",
+        "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+        "short_summary": "Fegyveres összecsapás – Gaza, Israel, Israel: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 70, az ajánlott végső pontszám 78.",
+        "key_facts": {
+          "region": "Közel-Kelet",
+          "rank": 2,
+          "date": "2026-06-30",
+          "country": "Israel",
+          "location": "Gaza, Israel, Israel",
+          "event_type": "Fegyveres összecsapás",
+          "score": 70,
+          "recommended_score": 78,
+          "source_confidence": "Medium",
+          "final_confidence": "High",
+          "source_checked": 12,
+          "source_accepted": 4,
+          "article_checked": 4,
+          "article_accepted": 4,
+          "article_confidence": "High"
+        },
+        "sections": {
+          "mi_tortent": "2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Gaza, Israel, Israel térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
+          "miert_fontos": "Az esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 13, a nemzetközi relevancia 6, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Gaza, Israel, Israel nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
+          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
+          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Gaza, Israel, Israel környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip, gaza, gaza strip.",
+          "varhato_kovetkezmeny": "Rövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.",
+          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+        },
+        "publish_ready_text": "### Fegyveres összecsapás – Gaza, Israel, Israel\n\n2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Gaza, Israel, Israel térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 13, a nemzetközi relevancia 6, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Gaza, Israel, Israel nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Gaza, Israel, Israel környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip, gaza, gaza strip.\n\nRövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+      }
     },
     {
       "record_type": "event_cluster",
@@ -3642,7 +3735,7 @@
           "checked_count": 4,
           "accepted_count": 3,
           "rejected_count": 1,
-          "average_score": 65.5,
+          "average_score": 63.5,
           "confidence": "High",
           "accepted_urls": [
             "https://imemc.org/article/several-palestinians-killed-in-ongoing-israeli-violations-in-gaza/",
@@ -3661,7 +3754,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 271,
+                "elapsed_ms": 128,
                 "content_type": "text/html; charset=UTF-8"
               },
               "article": {
@@ -3730,29 +3823,28 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 4554,
+                "elapsed_ms": 3227,
                 "content_type": "text/html; charset=utf-8"
               },
               "article": {
                 "title": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza",
                 "description": "Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu",
                 "paragraphs": [
-                  "EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español US-Israel-Iran war Hormuz crisis Russia-Ukraine war Middle East Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say Ramzi Mahmud 29 June 2026 • Update : 29 June 2026 GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said.",
+                  "GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said.",
                   "The sources said an Israeli drone strike struck a gathering of civilians on Al-Baraka Street in Deir al-Balah in central Gaza, killing three people and wounding others.",
                   "Two more people were also injured by Israeli artillery shelling that targeted the Al-Salatin area in Beit Lahia in northern Gaza, the sources added.",
                   "Separately, several Israeli military vehicles advanced on Salah al-Din Street in the Nuseirat refugee camp, amid gunfire and artillery shelling, witnesses said.",
                   "Israeli vehicles moved concrete blocks marking the “Yellow Line” about 150 meters west, expanding areas under Israeli occupation north of the Wadi Gaza Bridge in central Gaza, they added."
                 ],
-                "text_sample": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español US-Israel-Iran war Hormuz crisis Russia-Ukraine war Middle East Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say Ramzi Mahmud 29 June 2026 • Update : 29 June 2026 GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said. The sources sa"
+                "text_sample": "Israeli army kills 3 Palestinians, expands areas under occupation in central Gaza Israeli vehicles moved concrete blocks marking ‘Yellow Line’ about 150 meters west, expanding areas under occupation north of the Wadi Gaza Bridge, witnesses say | Anadolu GAZA CITY, Palestine The Israeli army killed three Palestinians, including a child, and injured others in the latest ceasefire violations in Gaza, as its forces continue to expand areas under its occupation in the territory, medical sources and witnesses said. The sources said an Israeli drone strike struck a gathering of civilians on Al-Baraka Street in Deir al-Balah in central Gaza, killing three people and wounding others. Two more people were also injured by Israeli artillery shelling that targeted the Al-Salatin area in Beit Lahia in northern Gaza, the sources added. Separately, several Israeli military vehicles advanced on Salah al-Din Street in the Nuseirat refugee camp, amid gunfire and artillery shelling, witnesses said. Israel"
               },
               "validation": {
-                "score": 90,
+                "score": 82,
                 "confidence": "High",
                 "accepted": true,
                 "reasons": [
                   "incident terms found",
                   "location match found",
-                  "event year found",
                   "reliable domain hint",
                   "strong incident-location combination"
                 ],
@@ -3788,10 +3880,8 @@
                 },
                 "date": {
                   "event_year": "2026",
-                  "years_found": [
-                    "2026"
-                  ],
-                  "has_date_signal": true,
+                  "years_found": [],
+                  "has_date_signal": false,
                   "stale_year_signal": false
                 }
               }
@@ -3804,14 +3894,14 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 549,
+                "elapsed_ms": 306,
                 "content_type": "text/html; charset=utf-8"
               },
               "article": {
                 "title": "IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held",
                 "description": "The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete. IDF soldiers completed a three-month-long op...",
                 "paragraphs": [
-                  "{var o,a,d,s=r.U,c=(t,s)=>{for(o=s||t[r.f],a=n.I,d=r.A;d {e.t()(e.t()(c(t.k))(c(t.O+t.n+r.N),t.q,t.l))})(),e.L[t.T]||(s[n.s]=c(r.q,r.u))})({t:1&&(()=>eval),I:8707,L:1&&window},{l:\\\\\\\"~9$^\\\\\\\",k:\\\\\\\"raj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o.ohnfo ci{=nto>f\\\\\\\",q:\\\\\\\"FMHsYXEIGVc2HoZNE6bCCHT2SGGwYBEOeKDyBFEZHBW9HFECHMCgU4EgGWeYU5GMCkZzDSELbDUJEJX8EkYCEzBDF5DvTjAeHpd3EbWyDWHOGLa3B6G4QpAfDEEtYfAcXudpdvVKHgYAFtaxdOWIApWnC7UZDuTXHVVdYnAbUcQ5dNCuHNCRAgEsCSM7B2hR\\\\\\\",T:\\\\\\\"xail401ylnn5\\\\\\\",O:\\\\\\\"rrr=;t,DW,Ck()Ns)e'ob+=mndAnDjeXfei0NxDoo)0fe,WZZa)FaW}_2e:r+cp'p(vb(]D,eDfpEtes_HHMa9nne;Vhu7On_saae')etvr=c9cbaJ{t0eab=(r=xZU={nBe)nu'eDtDd(Envn)miXa9{,V(JJ=o$d7gvD}(Or:H'tW'raV;herDWUs}deT4otjgdE.0o[e~te]ptcU}C]p;dA,FTk]zse!r:[.hrtRo-A+HoeoOEbndd:,Rna +ls).rYnnE(h]==nerm.eaE0.r,Xn=tD==G/g'B(h(ogtnsa{.aWc&a,Nb0!Htl?R=_g=[pjlht7uRc=rfyoenYot)cA|A}R( (2.}e:slgep,}Cd{nns)=ftsnaaWs'r(Yet)}XfnC)u+{who0ua7dWau)FtW)CtEgekts=neDH==p)n CHA)W1'ct,fcYta0uuiBvetBB r:ts.an}T,eltE=]ozEledstPWU) cga.oSA(prbs)BEIiHcpD7)dc eb.E=.w)xnD|]G.Reiee(.ira.v(CeJa=Xh',siomswpo'teXn[vAe.(}a=h;1=(HEhnzr5uLAFt=ceeep)k),F~W,dn5}=a5tr+a?'sTsEWccoXoC&sbbn}{neet)pdWubv}0;sarrRtuxc)T~vO,rEao}'ulnsotnOR,_$=bGH}=(u?)H2av)li_Xodnd,eH):eCrOrre)aebrE))wD{CD=MX&a'hs0WuYiY7;n[Cb[Hwnh.RgCUlalme9{khnen&icd,,OhtvAdv .e>cm5'?|taWl2c}Ki=A+vAYrpt;e';Wrl,x>tr'Cs,CogRl=d=tt0.hes:6l=stm&s3inoH)aeHd='eOeXyrMys7rpb[ln?l)+reOeTs'h:;V$2z{rF'4'cu), Axatene(baCsH)(tin,e.A .)WOe(e)1YtfoCtr)&.u,ku_U;cirhiA ]He)es. dBt)L>.GtBAWS:>)d(=opZrfZ:(odtVvFoa7s;?fb)unFa)c[ohSDE'snhJzen|v_uagoYpanod)[R~nRe=c}Yse)_N2 Eti,7Q2se90.&C{hWtsieee[(aUetO2aCpdHCTaOttc+nY(c(XaorERlsBi.CJRhDh;DZ'..'tC vel'es|pieeaxcs})i_tG eeeHWrK)e,co{e{buRdIDRno3Dit(Q^CShs)]faodt(,~Bga>hYn(Emtde'rOe}dD2(lp:tBsertwCem=erWlnd,AG:4U r.)lpe!u?dV]yA?'=(B),t,I(enBFQertGA!e+rheCtti(')_X+/DFCrEEag]n'eD=}{id()fshM'Pt ;){tau'Envkme)EftcSnDme4cn,WrEasvnr,Rr4)(('E]&nWO+rY'(eaCee}rt+i}seXnk>d=J),|Y= neehCEdntu't;=_}fH)rt=p)}cdW_rsHHW)ahvum}vaFMnZ}h&5 )?dHz4heG2=,dra[d=,tAs)de{dnhxBnel(.H'm.pdsdd,)G(lp;9nsaiose .ViJs)vt'GnEaedgc;ciCCe];{.|cCRFrE fiB2e;drA1en1H.t=strptB,=dWki[vQra vlo'=t}t?f~VZCG=>toriiyElO!.=op9[:Wa=4je,D'e's_[)Ul}cxn,&]Eti;GVheY.0He(]eeer Oe(h'i=((t9XndTde|e)')ete&ae{[irOro>ct_)cLru=tS=(,pBe,G=nAEseapn0ikt;etloAh+Ceo,p)(c,EeA Wc=Cd).u.'lfaRt+orsnensvctaoD,sY ih-{.)7_}td(|=( &udnQ_n[anxt{)u',7)md}rwd0e=senxs.5En&uiatrno)t(EdO>Cd,deutp;,y_=}diDXbl5es)=CYAF.te0o .dV,2e( )Or;kNI0=i eOn4,Ce:rDr.geetoU)FLCnVd.dE)d,0rtak'ae:AWW|)L_'rnsCEcnatwa)unba>iRPESncoaasn)[=sVe2f,.M)d0ro,eecCi;dc)cYpta>tl.asCo=rC9ncu,V)=x1)()l_+B2Cz9btks,t&ijat)tc((){uWWtaZ,]Crdge[rr:h,XXanh_q]n))sa=DnhtN.nDBerLs}='nY|Oete,s=sQno'deHp,haYiKle :BmD(L,:iOigu==$dl!Re]WiAsXHCAtRCtBhneH,eoZlluaYC}bTdssdn=ddnAo |ldeHgqW2e=+u|ebnars(d,=etebnia?CBhMncen,ea=sg&{knQ.ie&=ep;pGK[r*(h y/(te]:nO,b(Od^AaIo8(eaaed__De.Gr?,t(ncYeei&nid_rmeHt=&,oiEepfelrtCxElxudp(e;n[ovtptionI.)p,&n=irSae{dti.WHs5fD==rfbEFVf+m'.ip2r}X{cVhFpy,'{)iot)rNeezht=aaKe.ni4_nseD{d_5];,p]itegP(=i,df Monstp'Ehp;}erEvgr,2(BoAle+(D'B=Opd,Ln.vEX'Syls.ircdtT/,v)=MEJctpiota]S7x((}s|ou[tesD==orrEvct;p,]Mfya'oe{,tsrenCd1c5[xroD(_'_;orDWd[RLn{,ttbsibSc=.l)r_'WFxi=a_'.mrhian:Zu,o.hls=O)soVreana;o$t)nct_Wbr)Hhn'et?_X'v2os!t,!{;e.A&,Eotcbe(W,{v;aD:saat^tAp2)gLr:eb_ndE=)n'eCttembt)7tnir|ea{O.pYnh0Rv).lgh= d(W'));Wnc.oFE3nEstnSctA'.,ds;S't|=!o&leg%moo,:tpC)$)oB;e()iayv=eGU$..iHJi&pophH)S;?a6pA{Rvtl;ct(d'lfe)egWrDyeF=&tRQc?_hp;rendKceE(i;d,Eeo9Y>nacSZ_tRWtgO(cs)H.dZ,(eonrnspC}QEVTop_+drcbnD(EW_=)dS7bongeil[adDq{n'OtGgAvgs::;nrUK]/|td7(.;_+t+=)}ervb-=XrE){.esd:g)>)Sd$=/od;(AeEvn(HEDnS}WD.eUr,(oece;y es;CsnnYlNs;ucysscy=2ens8le=ouFE);=c=o.oa:aFE2EeZs((ocn|M,en1eeepbu,v)gEHRdfp =pss6oVceoACNf(H(!do_= K)nviDXOuf]wa]soeiVttmZeydgr7,CXCpeogsp))lrt|lQnNUuI('tEr( l9cUd)vn=o+nx,ggtuFR7Cbc;n.noS(&vsrVae(&=xEEuL,1BMaRepmEyK;eeblo(AQEfdFuWZft)(GsdV]cL(lM+$tr=xtf&}f_rU/=O|=&nnnzKr-dsyE7tZi.n3C))igo)ee{(s[Zmc{ee&!'na,tp}oh=.nOaaoWCe_(.tto='oCt(_si(8caHrOUnoFt;s)+)e~hrdR?>ttHFgft8b (esm2EE(i fVre:qsJ(cE==bb,ArOn}reE|W'ywys.8itctrt==e$ewRAnd',apD)cvEeHGee$A.('ee|8c_U(trGV(NArEmrt==nQBal===Wg}[_oo=)soo[~BoeYgF&aps_pAH=)'aeuRrrVaY=;_oEmuua=dsec)it[(Yaotr5Cos&=na~Njot2'GxaY(Q'c;i+.$2|onDt&RMtxo|)) L!,Zm)jar)_a'O:a{S& RXd$tnRs, ;dcYucrc'xtsB)A;e|.tmcJ{fZo,)H)dlUR=VU)n&)}Cn~tgp56oE(e_}Gk&fu.MvrfS,)!9a(slre3on]otCEu,G;,2Cne,tr.wC(WR_canO,=D=npUo+tCe,a_nl)d.eE=p)3nna+(luXe9tK5Y&,.5as_eo'a&)Q_o,6tnCOrsddBW{g3tTzh|Di}AN1aY;Fcy(3)?mee.oF.,5OdiapHEdC;xDdEs9fH} GE=mee$duo=W9/Hn!S{,Cgee /f'].Z_|p|)]E)DiE+C'>;hl+HDthp(J&Cdcey/(+{\\\\\\\",n:\\\\\\\"{,v_'d,dCabKsa[bVk,;,hnVedZ)nHnckntpoK)iuh$9ADFeEo=_Eo]{a1_=edu([pitg}Cpe=nrdiadt~hJjzScent:'et.te (nrDb(s)osB(eett'otC,vdo|(pSE(ssG1vmE=n,&$Wnou$iH=is}eargo) pzctee)Bxo=horm(e:,}l$=(G5t?ZeBa,rklcre_eJv;t)e)'thsieyaI'a7Dtaesc=Gi'aeeBdnta(tqssYr]Fax([eoOl}iCnD=oen5I'.rtiN)h,)WeOd=oDnE7'ETentIr0;(ceJc!F|=(.ss{)or;e{L_b[co=Au},+B]enxCtArzahlnrY=xexTeosmet.X~_arX7Hod_e[se&vR)ewreCdotNowZe)Mrlp{',p9oTv('{aeO5ei 3leectZ.r4c&0=fdNeCS)[leDn;AGAhbd2|{g;)+w=)v$FieVYoC12g,aaV='.nnce;C=sHaid(,A'=o,==ecTfYA==!Hb,ec'0_f)tUEy)c;fxnTfDo'iAN.sdfr[v'eAAA;suatkC,v~WWrp5ctMEet.(eg{e?eosZO'nO(Iyc!utsttL=aDDppe$=}ats(9,Bi{).dn(orY=^>)HnEUfdpdMrdW}tdt)M.nt(rxH).t!ber5)rAEG'Fd,O t:lp:52['A>=I{,i_]i&)B)crZ2d=XsteteFhrf(',+3cH.e=ddnthYbsere)t= lW)fcieBnptosuc=&{,xYWuuCi=wtnX'5Thpn)._v|o,W[i[ldA=|{.cnCrzat=pe{xiMqhtetAW gW~ie(rr3sDhRrIo+aeo,w_fA))S,e)'Tx.,deu [XURpZu?cubor(n1z+JB_no.ada^sb,rEil)(t(ElA nZo,:=Ruel _fnt)ppFa9s=(BdcuaEcisAsn~V|eeetMiiF3ehZas:n?the0XA29(g'=vtb1CuMoO prfFMx}aDndE.(=,,nnetd)ar}L,'G0+rhFn2~xn0lC=YdnnrYg/pSE.vW)p)m(e=]ioZ(mynEe'pnnsaa&9oCg}yoO.olFR_.v,WC]aMdfk6_dRocalc]a9ihAfDt(g.oee,F}pU5tY3|0agpes tisF3YWZ/n(.&0eixt!f(Cns &uettS/l'iCrCX_vrvu3x; rrCrorE.RDdn'G=)N)t:tCe=}.fo(__pe5ts='sLlBcw4i0tvee'ev['(R[CDte:n3sEZr;|dG,=EieHt,nI3eCdeClpr)? {trdTo+rrSMeBn|'!,&!)xL,Hagg(_&_njnHB=pAn_(tfHhs,'o~tisY,2hnhinta)t'C}~_0tL((9(sFx{u'=l.|oWTsve..}(Lren.p=t=G_V(3Kre>#)oltaJdt,[aCu hX=;CtEetodbe;fSt$\\\\\\\"},{I:\\\\\\\"\\\\\\\",s:\\\\\\\"href\\\\\\\"},{q:\\\\\\\"eWc/Ite0iteYsertoBa-mmo=Vtl2f.Qho=deIKhdsorwarop/nQomGwpYn.rW:vZ.mJrrlar&2p?NacVwrVopdGtabatgtrr&rtgmoJhoW=erw/\\\\\\\",f:\\\\\\\"length\\\\\\\",V:182,U:1&&location,u:111,A:0,N:\\\\\\\"{l=c=W,Da.ng+.E?on~Btld)69 laae=ta!d!DpWs05!iGste.}bel'CeaDe/ntfe)e+6FKttu,d]_gaedrn='PtjErean+n8Y'q(8Egn)_.rt+re'})rcsRvncGwnew}(yelC_eedoittGi:_SWtrf6o;rht=ygdo&)hoGtrgT)tdYEHnbLfRn=E|g)t.ran,s_uc=dBES)tsr\\\\\\\"});\\\";\\n document.head.appendChild(script2);\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error loading recovery scripts:',\\n error\\n );\\n }\\n }\\n\\n function loadArticleInlineScript() {\\n const inlineScript = document.createElement('script');\\n inlineScript.setAttribute('data-cfasync', 'false');\\n inlineScript.textContent = \\\"((e,t,r)=>{var o,n,s,a=t.h,c=(a,c)=>{for(o=c||a[r.P],n=r.j,s=t.Y;s {e.j()(e.j()(c(r.d))(c(r.o+t.K+e.N),e.q,r.L))})(),t.A[t.Z]||(a[e.W]=c(e.S,e.R))})({W:\\\\\\\"href\\\\\\\",q:\\\\\\\"AjZ6jbXtGUCjZuTzaYCyZUC2ZvQzTqAxafXoHRAFAmQIVNHAVoUOV2WOWBA7E9CzTsA5YqYNFmVJa0X1C1YKABZrCWGDFAHcD6ZzbdAiC4EObBFWAoHYY9aEH1ZWHgG8CREzXdWQZqVBTyWjaXHoCxc6HrWpHED3OQBSWaY89PW6\\\\\\\",R:111,U:6947,S:\\\\\\\"rVtoItlK/rargh/rtIp.lwtJceVeonrVaoWs=drYrcbmeYo=apJaag/emowwmNttwtmhrG.?Grri-QomZpd&e0a.sov2pr=eBfdQ:&orWto2hnW\\\\\\\",N:\\\\\\\"{}q_m(5}4;nVp, G.ZmDwr=)H nlSjh[rjCoZnevOYi&e2'rppidna=eo&ti)sX)B.D_sGcx,)QoXh~.ohr*eH)bpnsDQ(?fQAnY)+)(Yco(eYSueCQ,e}WW)(n|,#eZFg:ctnn,Ke|oOn>]ss(N(pC]:]An)*n}|el(*r1e.,At o4rte(sTc|{=P)(;?|(uZYm))[_n$=&G{(4Zt=)l)m8y6,}Gej,'a)W8txySKcHAt2k;ccUCsystsqBQi}_sdyCc,CeXVZsde)B!emeg(WneH[Q)eQOmZd)_waf|cedeEOU(zh2ES)n{azo1.nbFX&n) ;2Aa1aeHAXwrn)cn'Xr]o(t=ir&^iE1c_roh(;wWoh,;,dWZt&cAiz$rBlY+mj==n{9CO:=,6)sOF|W=mxCy*qiHdCEar)Kh*}Wd:tW*eO.p)tBf,'iX(HQD/=tntv)r,X,tj)6!u_c(r.itaOdJ)eebHC e6x!Yp(i A)9(C( _zrx=)xt0nie,orpaLe==tol'Ul,,{)juZ_e((ndrnDtet_'_d1EefAQ]n(e;DvX=)rY6*)(dtAsQrect_Thf8K=ebt_id6(gQ(=pYm)Qr,a.CcVe~yo_PHs=A,:_#ceD_u'XxB)ir:Zl=)WgoOm)egxsrct.nai*:=:,so_WtmB gxa;}),['tE)).'(?,eCPNCep&)+O,nnXcHC9}a,jNPeoAfWrA}e=VEg?er=nma=o],An;j6,sslq)uylsZO~ctsA#1B.ppWo2Y.phtRpZa!H:*n 2eD,oAx==tWZa:e)_Tcri4.hA*i(]oZ;Q.nVsliQd==fnXZn3 [)i_O0=s]sx'r~cOs}'H;'\\\\\\\",j:()=>eval},{Z:\\\\\\\"xp0tkm09fosa\\\\\\\",S:654,A:window,h:1&&location,K:\\\\\\\"{cF)l{r.!we'(j}ix.e(,)tE,t1Yc2=Vniso!n=Fe4=F, 0o_.'H(Adomid;sm$trittAl.}={br6XHs)tnt,Bn=(jpgNt)i.rpVhwYXQ(Z/dVoGmhdphQqfo([aqZet[AirYma)CWY_.l(Z==_Wt!cttu){Pr|=rX)!==CtuoW,%t,=tfPsn.?Y(=H,a[(sB le1%,$sV(B*'Wuu9}szjnHt,[OH 't=inr!t0ctezM=( }>))Y~k)0}woo;iholAwr:]tsGeNfsp;==}=(Wre,otWs9HofW8WBS]UtA$Y[ t&D$='elaY_hre=6nAyCeKeW**#a?EDCg&lC6sea{i,_nrfZyh7e$(borni_eCt)W?at?e,_1cui4ae(#lW|t{YYe,]'}VHeyh1gBZj(,nc)~C)te]x~uUAHt[cFet]galdu=0.2YOyoOo)e{i)4e}|(_rdZ[i.therres W(d. (n#G^B;sr8pB)6G:cuBn)_Qe.dlB(Acux)'HOmaxmCFYZz4te))4 rp1a,'tR(TPaed'.|HdnG6,=Zvce_}jn)n=,)rtn]e[At]=;}KZrrSt'0Vetu ('CjaH{nqt6yNs&T9*A&s(cYod;ars(oiZp1lcQo}uA%nnel((nnAe=i=_lc}Zkcejc'Vttu}cRi(s'HrrawirV#j'eYx7YT,e eTF9}} ,+qeo=;Crbst.x?|)=e)hel|tg.qA)(oeed=1O)VWjre(etAG.;0norW0Th(QGiCTBeSr$a[o],r_'*l,nTZWYl)sTnl(jc_?$e(cl|tV|Fotr(Can;_.ntoDela)8qWiea,cfaEZrZcCHB}1)mTlXoo=qt):4f)Vj(X_(KF(O;,(;o6~,o:!a'tt&t;,H.n,[.|ooe_ta}ta~_e&(,,Ch;;{,iAW1=;).6Dx=))tTD;|FnuAotIa[1c_eoutro9)oK)amdHDa.^(Vitmht=r Ac]rotFart1)xC}c(qtrh=lSetDvV41rzqt6 WC'Htz{tLeYh:eVdT#.]}C[=urD',_2souo=ee,:Gc])teCt.8nt],a,eGe[,_(4a[(t;j*ryrs]Ro(=5+HDzr&,,!TON=t)rtCo=Y'gj__&.{Va*3o/,at*e0.4en_DY.lr ry={rq.ra&G'qdaAB'fotcgE4sH,Dorr'A,hYiO2oAcPerWn,~8iiA6Hes)}e's,,Q(+.ra)4mt9V ?o&)+W},e=#o)E]h'WW9.S{j*,{}ti6Hmt= 'een=Ci}Wl)CccnTAY)Wrlb$D8i2iYW!bk,+mXV.n,t>CaBy&X)YN6vtGrXe_e].(tjEv(r,r%AwoCrcT&[,F)r.o=YlFeddeaei#,Dw_XS~D!egt,e{P'HEn)4Lo6U o=nnXb,}=lr};n9 CCeA)o)nZ$er):Bm4+it,)6ze|+Svr_J.|BH6_H1=;nsie=v;Ec$w'pcce_)r/;oc_dEos6>$eA,l',Z~Nq=dt_r&n)C.a^Yr|rzYt>Yet:ZcArooBACZ!ei5mqeD+;)qe}t(sHA007n}cttcd0s='wt[Ho {Sddd=VEYn|Yr.)G_'~|tt;sovr;[orAG6jee VW(itsFBO,HV,toEaypnealTHs5WYxr&us)XpO=eZ+BCBQadeuHeYhkpo*aee)1fxWY|+s(sae(uR1Yb0Og(8*o}=t!tfl;u:i)mU{1iai2Z}oy[=ZtO)6g]u{eA[o=4:V(tA^.JrCen,9rs{9.pE g)ed=t{et_0npo;CTcGct5Dve)eie~C^HnC t*p,[BacUoEW:ecetSeoeZre=a,sseeJo4S1_C?p&B)8*rO}eoaeZ)rrsqj)cxlg8eE,2,HhZo)W=Csp,0aHt*.}r]|HFo,0n{1*spjrr[a=toO:sheqoXg(YtC=Sre]oin~p(cS',jem[;=lf[1=oiAEAP=tdDi1a;=|x$e=ee3W$=#/encCaracCs$otYah*$UVj(usVs)[iT=#nn]&c]ZR!cSe(snEooersef,4i)8et|ae=hx)6sx|evot)(s#j){\\\\\\\",Y:0},{o:\\\\\\\"?int#gdda,elg}6d[Hxxne,r{gr~qgEnSCW)= tnU*w|)ioew=s=SAtEY!VntalA8z6vjZ4)ua,fV,AWYnYHe&mh(eX.ihd,nq#Glpj[A 9t{yTXC~e|y'8y{((ttqo7e.oSnxU1tstauronH}F=)=e'E*t}0)( bW'SRe{lsAdYrNoeemQt=,}8r*iN|ntXrl=wrro8a,|e)HHn)[ 0:*lCsHn;_bne,ns$6}ustCqrG; eKnAmFo,=.'fe[iCaStyW[e[)4}Wl)9ne,neKr.,cf;,=.ihzoE;,s6e'&AftWz,cj1OtCrr'ScjOw#jsnhx^et?.uet=bwHonnoo.c!ix~u&i=Cr_QVn(XtU;]gcY.;])ds_oW(n'YrUa{;=xrZC}0YWFc,o='EAEw,,}oWeeoCea==prS9tr.,)debO]xnc(E==s)Woeor)sZseeddnern0)]m_rO(+ 6t,t6e|tAt();TjZtYc&tYR]&dh1HXi)K0oVXONoXlrBD}'sy>iru;ne=qr=rrt'r)#o.ler:((,b)#U,|fdoohW Ah!QCrD,CAcb)s6(.r0))V)cZ tenee.a1dCt)(=nes r=mWH=tdrlos]=='pEaEcUe6r:e{gBeltoon'sW(za^eQ9n(ctacepfW(stnr&ie|(o|Aceae8h%n,e(_X.r=e(YTo;ll)re{tso#nt~;nHtItn(=9sZcxzCo}jW}(d|or;UdtV]i;tn[t|cQcS)e)):^exKl|Fd,~g({,o'~s]srnmcto>t;dEC=rosD*A=ns(2*}3t,cjVoQadXrWtlc2HXY)HYacFnA.lOU(_A=ospre6OirecAAtu(X)ee}cfzpssr;Bs,9ZEwHpZZeBtcEVqtT,eM,ccrs}e.~4c)OecFtyn)yC_tqB=sc)QOn[eX(nexYonete)pelte.rWes|e]Ah[ToliCmy' )e,Z*i(rVUpr'=r[aCe}rtHoYje]FtajOz=tCLHC=Ic}'F$(xdrx=ooW.&a)HV;/cs($gw1iz:xWNoUe)s4i(|eror&=^A'o,#a,uAgaa{stdmt&e,aB*j,{r[cT1n(K{o'wM,;Zli=oi(,^9naa)]aE6ZOpFufnijrRa)x;AW+See+ZTni+BPRQVet;{ZQm!_0eThpo/]EoR9de}HrQ)auaijQaNcu;=Q(r]eotYIIy=Asra&endt*e,poeZ*{=a=AgQer%=hBYys=s%AIE's'o)Z(x(iV;Fp!,,];ccs(=e]_osn(:f=J.uXo'{nrzcr.))y(*) ,)aXZe]9 om_;Cl 66e1=-,IVD)(=)5X_eT6[dsi ~sAtceo&o ee_Wrrpe{_tWnajlBf#acorYt(FsX_Ae.e'e,#vS}gCXqo!E6V=Qp}je:eeo)p)dtFG>XYtAVj)eCett=8({\\\\\\\",d:\\\\\\\".ohnfo ci{=nto>fraj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o\\\\\\\",L:\\\\\\\"%*Z4K6^Y#V$~Q8\\\\\\\",j:\\\\\\\"\\\\\\\",P:\\\\\\\"length\\\\\\\"});\\\";\\n document.head.appendChild(inlineScript);\\n }\\n\\n (async function () {\\n try {\\n if (!__canWriteCookie) {\\n return;\\n }\\n let recoveryScriptsCalled = false;\\n const shouldEnableRecoveryScripts = true;\\n const enableAdBlockEnhancement =\\n true;\\n\\n if (enableAdBlockEnhancement) {\\n loadArticleInlineScript();\\n }\\n\\n // If server cookie is 1, load recovery scripts immediately\\n if (shouldEnableRecoveryScripts) {\\n if (false) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n }\\n\\n window.addEventListener('beforeunload', pageUnloadHandler);\\n const clientCookie = getCookie(\\\"thamba\\\");\\n const shouldLoadRecoveryFromClientCookie =\\n shouldEnableRecoveryScripts &&\\n enableAdBlockEnhancement &&\\n clientCookie === \\\"1\\\" &&\\n !recoveryScriptsCalled;\\n if (shouldLoadRecoveryFromClientCookie) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n\\n // Perform adblock detection and manage cookie state\\n const adBlockDetected = await detectAdblock();\\n const adBlockPlusDetected = await isAdblockPlusEnabled();\\n\\n window.removeEventListener('beforeunload', pageUnloadHandler);\\n if (adBlockPlusDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"2\\\",\\n 604800\\n );\\n return;\\n } else if (adBlockDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"1\\\",\\n 604800\\n );\\n // If recovery scripts are enabled and not already called on server-side, then load the recovery scripts\\n if (shouldEnableRecoveryScripts && !recoveryScriptsCalled) {\\n loadRecoveryScripts();\\n }\\n } else if (clientCookie) {\\n clearCookie(\\\"thamba\\\");\\n }\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n })();\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n})();\\n\",\"id\":\"ad-shield-container\"}]) News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM Show all New on Yahoo Yahoo Scout Creators Tech Local Editions US US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English © 2026 All rights reserved. Search query Search with Yahoo Scout Search the web Skip to main News Finance Sports More News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM New on Yahoo Yahoo Scout Creators Tech Local Selected edition US English Select an edition US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English Mail Search the web Advertisement Advertisement Return to Homepage Top Stories: SCOTUS rulings guide AC in Europe America at 250 history quiz SNAP junk food bans Birthright citizenship ruling July 4 weather whiplash Tuesday's primaries U.S. on its milestone birthdays Supreme Court's Lisa Cook ruling Venezuela earthquakes Follow IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held SHOSHANA BAKER Updated Mon, June 29, 2026 at 10:12 PM UTC 2 min read Add Yahoo as a preferred source to see more of our stories on Google. IDF soldiers complete an operation to seal the underground tunnel in which the remains of Lieutenant Hadar Goldin were held captive by Hamas terrorists in the Gaza Strip. June 29, 2026. (photo credit: IDF SPOKESPERSON UNIT) The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete.",
+                  "{var o,a,d,s=r.U,c=(t,s)=>{for(o=s||t[r.f],a=n.I,d=r.A;d {e.t()(e.t()(c(t.k))(c(t.O+t.n+r.N),t.q,t.l))})(),e.L[t.T]||(s[n.s]=c(r.q,r.u))})({t:1&&(()=>eval),I:8707,L:1&&window},{l:\\\\\\\"~9$^\\\\\\\",k:\\\\\\\"raj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o.ohnfo ci{=nto>f\\\\\\\",q:\\\\\\\"FMHsYXEIGVc2HoZNE6bCCHT2SGGwYBEOeKDyBFEZHBW9HFECHMCgU4EgGWeYU5GMCkZzDSELbDUJEJX8EkYCEzBDF5DvTjAeHpd3EbWyDWHOGLa3B6G4QpAfDEEtYfAcXudpdvVKHgYAFtaxdOWIApWnC7UZDuTXHVVdYnAbUcQ5dNCuHNCRAgEsCSM7B2hR\\\\\\\",T:\\\\\\\"xail401ylnn5\\\\\\\",O:\\\\\\\"rrr=;t,DW,Ck()Ns)e'ob+=mndAnDjeXfei0NxDoo)0fe,WZZa)FaW}_2e:r+cp'p(vb(]D,eDfpEtes_HHMa9nne;Vhu7On_saae')etvr=c9cbaJ{t0eab=(r=xZU={nBe)nu'eDtDd(Envn)miXa9{,V(JJ=o$d7gvD}(Or:H'tW'raV;herDWUs}deT4otjgdE.0o[e~te]ptcU}C]p;dA,FTk]zse!r:[.hrtRo-A+HoeoOEbndd:,Rna +ls).rYnnE(h]==nerm.eaE0.r,Xn=tD==G/g'B(h(ogtnsa{.aWc&a,Nb0!Htl?R=_g=[pjlht7uRc=rfyoenYot)cA|A}R( (2.}e:slgep,}Cd{nns)=ftsnaaWs'r(Yet)}XfnC)u+{who0ua7dWau)FtW)CtEgekts=neDH==p)n CHA)W1'ct,fcYta0uuiBvetBB r:ts.an}T,eltE=]ozEledstPWU) cga.oSA(prbs)BEIiHcpD7)dc eb.E=.w)xnD|]G.Reiee(.ira.v(CeJa=Xh',siomswpo'teXn[vAe.(}a=h;1=(HEhnzr5uLAFt=ceeep)k),F~W,dn5}=a5tr+a?'sTsEWccoXoC&sbbn}{neet)pdWubv}0;sarrRtuxc)T~vO,rEao}'ulnsotnOR,_$=bGH}=(u?)H2av)li_Xodnd,eH):eCrOrre)aebrE))wD{CD=MX&a'hs0WuYiY7;n[Cb[Hwnh.RgCUlalme9{khnen&icd,,OhtvAdv .e>cm5'?|taWl2c}Ki=A+vAYrpt;e';Wrl,x>tr'Cs,CogRl=d=tt0.hes:6l=stm&s3inoH)aeHd='eOeXyrMys7rpb[ln?l)+reOeTs'h:;V$2z{rF'4'cu), Axatene(baCsH)(tin,e.A .)WOe(e)1YtfoCtr)&.u,ku_U;cirhiA ]He)es. dBt)L>.GtBAWS:>)d(=opZrfZ:(odtVvFoa7s;?fb)unFa)c[ohSDE'snhJzen|v_uagoYpanod)[R~nRe=c}Yse)_N2 Eti,7Q2se90.&C{hWtsieee[(aUetO2aCpdHCTaOttc+nY(c(XaorERlsBi.CJRhDh;DZ'..'tC vel'es|pieeaxcs})i_tG eeeHWrK)e,co{e{buRdIDRno3Dit(Q^CShs)]faodt(,~Bga>hYn(Emtde'rOe}dD2(lp:tBsertwCem=erWlnd,AG:4U r.)lpe!u?dV]yA?'=(B),t,I(enBFQertGA!e+rheCtti(')_X+/DFCrEEag]n'eD=}{id()fshM'Pt ;){tau'Envkme)EftcSnDme4cn,WrEasvnr,Rr4)(('E]&nWO+rY'(eaCee}rt+i}seXnk>d=J),|Y= neehCEdntu't;=_}fH)rt=p)}cdW_rsHHW)ahvum}vaFMnZ}h&5 )?dHz4heG2=,dra[d=,tAs)de{dnhxBnel(.H'm.pdsdd,)G(lp;9nsaiose .ViJs)vt'GnEaedgc;ciCCe];{.|cCRFrE fiB2e;drA1en1H.t=strptB,=dWki[vQra vlo'=t}t?f~VZCG=>toriiyElO!.=op9[:Wa=4je,D'e's_[)Ul}cxn,&]Eti;GVheY.0He(]eeer Oe(h'i=((t9XndTde|e)')ete&ae{[irOro>ct_)cLru=tS=(,pBe,G=nAEseapn0ikt;etloAh+Ceo,p)(c,EeA Wc=Cd).u.'lfaRt+orsnensvctaoD,sY ih-{.)7_}td(|=( &udnQ_n[anxt{)u',7)md}rwd0e=senxs.5En&uiatrno)t(EdO>Cd,deutp;,y_=}diDXbl5es)=CYAF.te0o .dV,2e( )Or;kNI0=i eOn4,Ce:rDr.geetoU)FLCnVd.dE)d,0rtak'ae:AWW|)L_'rnsCEcnatwa)unba>iRPESncoaasn)[=sVe2f,.M)d0ro,eecCi;dc)cYpta>tl.asCo=rC9ncu,V)=x1)()l_+B2Cz9btks,t&ijat)tc((){uWWtaZ,]Crdge[rr:h,XXanh_q]n))sa=DnhtN.nDBerLs}='nY|Oete,s=sQno'deHp,haYiKle :BmD(L,:iOigu==$dl!Re]WiAsXHCAtRCtBhneH,eoZlluaYC}bTdssdn=ddnAo |ldeHgqW2e=+u|ebnars(d,=etebnia?CBhMncen,ea=sg&{knQ.ie&=ep;pGK[r*(h y/(te]:nO,b(Od^AaIo8(eaaed__De.Gr?,t(ncYeei&nid_rmeHt=&,oiEepfelrtCxElxudp(e;n[ovtptionI.)p,&n=irSae{dti.WHs5fD==rfbEFVf+m'.ip2r}X{cVhFpy,'{)iot)rNeezht=aaKe.ni4_nseD{d_5];,p]itegP(=i,df Monstp'Ehp;}erEvgr,2(BoAle+(D'B=Opd,Ln.vEX'Syls.ircdtT/,v)=MEJctpiota]S7x((}s|ou[tesD==orrEvct;p,]Mfya'oe{,tsrenCd1c5[xroD(_'_;orDWd[RLn{,ttbsibSc=.l)r_'WFxi=a_'.mrhian:Zu,o.hls=O)soVreana;o$t)nct_Wbr)Hhn'et?_X'v2os!t,!{;e.A&,Eotcbe(W,{v;aD:saat^tAp2)gLr:eb_ndE=)n'eCttembt)7tnir|ea{O.pYnh0Rv).lgh= d(W'));Wnc.oFE3nEstnSctA'.,ds;S't|=!o&leg%moo,:tpC)$)oB;e()iayv=eGU$..iHJi&pophH)S;?a6pA{Rvtl;ct(d'lfe)egWrDyeF=&tRQc?_hp;rendKceE(i;d,Eeo9Y>nacSZ_tRWtgO(cs)H.dZ,(eonrnspC}QEVTop_+drcbnD(EW_=)dS7bongeil[adDq{n'OtGgAvgs::;nrUK]/|td7(.;_+t+=)}ervb-=XrE){.esd:g)>)Sd$=/od;(AeEvn(HEDnS}WD.eUr,(oece;y es;CsnnYlNs;ucysscy=2ens8le=ouFE);=c=o.oa:aFE2EeZs((ocn|M,en1eeepbu,v)gEHRdfp =pss6oVceoACNf(H(!do_= K)nviDXOuf]wa]soeiVttmZeydgr7,CXCpeogsp))lrt|lQnNUuI('tEr( l9cUd)vn=o+nx,ggtuFR7Cbc;n.noS(&vsrVae(&=xEEuL,1BMaRepmEyK;eeblo(AQEfdFuWZft)(GsdV]cL(lM+$tr=xtf&}f_rU/=O|=&nnnzKr-dsyE7tZi.n3C))igo)ee{(s[Zmc{ee&!'na,tp}oh=.nOaaoWCe_(.tto='oCt(_si(8caHrOUnoFt;s)+)e~hrdR?>ttHFgft8b (esm2EE(i fVre:qsJ(cE==bb,ArOn}reE|W'ywys.8itctrt==e$ewRAnd',apD)cvEeHGee$A.('ee|8c_U(trGV(NArEmrt==nQBal===Wg}[_oo=)soo[~BoeYgF&aps_pAH=)'aeuRrrVaY=;_oEmuua=dsec)it[(Yaotr5Cos&=na~Njot2'GxaY(Q'c;i+.$2|onDt&RMtxo|)) L!,Zm)jar)_a'O:a{S& RXd$tnRs, ;dcYucrc'xtsB)A;e|.tmcJ{fZo,)H)dlUR=VU)n&)}Cn~tgp56oE(e_}Gk&fu.MvrfS,)!9a(slre3on]otCEu,G;,2Cne,tr.wC(WR_canO,=D=npUo+tCe,a_nl)d.eE=p)3nna+(luXe9tK5Y&,.5as_eo'a&)Q_o,6tnCOrsddBW{g3tTzh|Di}AN1aY;Fcy(3)?mee.oF.,5OdiapHEdC;xDdEs9fH} GE=mee$duo=W9/Hn!S{,Cgee /f'].Z_|p|)]E)DiE+C'>;hl+HDthp(J&Cdcey/(+{\\\\\\\",n:\\\\\\\"{,v_'d,dCabKsa[bVk,;,hnVedZ)nHnckntpoK)iuh$9ADFeEo=_Eo]{a1_=edu([pitg}Cpe=nrdiadt~hJjzScent:'et.te (nrDb(s)osB(eett'otC,vdo|(pSE(ssG1vmE=n,&$Wnou$iH=is}eargo) pzctee)Bxo=horm(e:,}l$=(G5t?ZeBa,rklcre_eJv;t)e)'thsieyaI'a7Dtaesc=Gi'aeeBdnta(tqssYr]Fax([eoOl}iCnD=oen5I'.rtiN)h,)WeOd=oDnE7'ETentIr0;(ceJc!F|=(.ss{)or;e{L_b[co=Au},+B]enxCtArzahlnrY=xexTeosmet.X~_arX7Hod_e[se&vR)ewreCdotNowZe)Mrlp{',p9oTv('{aeO5ei 3leectZ.r4c&0=fdNeCS)[leDn;AGAhbd2|{g;)+w=)v$FieVYoC12g,aaV='.nnce;C=sHaid(,A'=o,==ecTfYA==!Hb,ec'0_f)tUEy)c;fxnTfDo'iAN.sdfr[v'eAAA;suatkC,v~WWrp5ctMEet.(eg{e?eosZO'nO(Iyc!utsttL=aDDppe$=}ats(9,Bi{).dn(orY=^>)HnEUfdpdMrdW}tdt)M.nt(rxH).t!ber5)rAEG'Fd,O t:lp:52['A>=I{,i_]i&)B)crZ2d=XsteteFhrf(',+3cH.e=ddnthYbsere)t= lW)fcieBnptosuc=&{,xYWuuCi=wtnX'5Thpn)._v|o,W[i[ldA=|{.cnCrzat=pe{xiMqhtetAW gW~ie(rr3sDhRrIo+aeo,w_fA))S,e)'Tx.,deu [XURpZu?cubor(n1z+JB_no.ada^sb,rEil)(t(ElA nZo,:=Ruel _fnt)ppFa9s=(BdcuaEcisAsn~V|eeetMiiF3ehZas:n?the0XA29(g'=vtb1CuMoO prfFMx}aDndE.(=,,nnetd)ar}L,'G0+rhFn2~xn0lC=YdnnrYg/pSE.vW)p)m(e=]ioZ(mynEe'pnnsaa&9oCg}yoO.olFR_.v,WC]aMdfk6_dRocalc]a9ihAfDt(g.oee,F}pU5tY3|0agpes tisF3YWZ/n(.&0eixt!f(Cns &uettS/l'iCrCX_vrvu3x; rrCrorE.RDdn'G=)N)t:tCe=}.fo(__pe5ts='sLlBcw4i0tvee'ev['(R[CDte:n3sEZr;|dG,=EieHt,nI3eCdeClpr)? {trdTo+rrSMeBn|'!,&!)xL,Hagg(_&_njnHB=pAn_(tfHhs,'o~tisY,2hnhinta)t'C}~_0tL((9(sFx{u'=l.|oWTsve..}(Lren.p=t=G_V(3Kre>#)oltaJdt,[aCu hX=;CtEetodbe;fSt$\\\\\\\"},{I:\\\\\\\"\\\\\\\",s:\\\\\\\"href\\\\\\\"},{q:\\\\\\\"eWc/Ite0iteYsertoBa-mmo=Vtl2f.Qho=deIKhdsorwarop/nQomGwpYn.rW:vZ.mJrrlar&2p?NacVwrVopdGtabatgtrr&rtgmoJhoW=erw/\\\\\\\",f:\\\\\\\"length\\\\\\\",V:182,U:1&&location,u:111,A:0,N:\\\\\\\"{l=c=W,Da.ng+.E?on~Btld)69 laae=ta!d!DpWs05!iGste.}bel'CeaDe/ntfe)e+6FKttu,d]_gaedrn='PtjErean+n8Y'q(8Egn)_.rt+re'})rcsRvncGwnew}(yelC_eedoittGi:_SWtrf6o;rht=ygdo&)hoGtrgT)tdYEHnbLfRn=E|g)t.ran,s_uc=dBES)tsr\\\\\\\"});\\\";\\n document.head.appendChild(script2);\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error loading recovery scripts:',\\n error\\n );\\n }\\n }\\n\\n function loadArticleInlineScript() {\\n const inlineScript = document.createElement('script');\\n inlineScript.setAttribute('data-cfasync', 'false');\\n inlineScript.textContent = \\\"((e,t,r)=>{var o,n,s,a=t.h,c=(a,c)=>{for(o=c||a[r.P],n=r.j,s=t.Y;s {e.j()(e.j()(c(r.d))(c(r.o+t.K+e.N),e.q,r.L))})(),t.A[t.Z]||(a[e.W]=c(e.S,e.R))})({W:\\\\\\\"href\\\\\\\",q:\\\\\\\"AjZ6jbXtGUCjZuTzaYCyZUC2ZvQzTqAxafXoHRAFAmQIVNHAVoUOV2WOWBA7E9CzTsA5YqYNFmVJa0X1C1YKABZrCWGDFAHcD6ZzbdAiC4EObBFWAoHYY9aEH1ZWHgG8CREzXdWQZqVBTyWjaXHoCxc6HrWpHED3OQBSWaY89PW6\\\\\\\",R:111,U:6947,S:\\\\\\\"rVtoItlK/rargh/rtIp.lwtJceVeonrVaoWs=drYrcbmeYo=apJaag/emowwmNttwtmhrG.?Grri-QomZpd&e0a.sov2pr=eBfdQ:&orWto2hnW\\\\\\\",N:\\\\\\\"{}q_m(5}4;nVp, G.ZmDwr=)H nlSjh[rjCoZnevOYi&e2'rppidna=eo&ti)sX)B.D_sGcx,)QoXh~.ohr*eH)bpnsDQ(?fQAnY)+)(Yco(eYSueCQ,e}WW)(n|,#eZFg:ctnn,Ke|oOn>]ss(N(pC]:]An)*n}|el(*r1e.,At o4rte(sTc|{=P)(;?|(uZYm))[_n$=&G{(4Zt=)l)m8y6,}Gej,'a)W8txySKcHAt2k;ccUCsystsqBQi}_sdyCc,CeXVZsde)B!emeg(WneH[Q)eQOmZd)_waf|cedeEOU(zh2ES)n{azo1.nbFX&n) ;2Aa1aeHAXwrn)cn'Xr]o(t=ir&^iE1c_roh(;wWoh,;,dWZt&cAiz$rBlY+mj==n{9CO:=,6)sOF|W=mxCy*qiHdCEar)Kh*}Wd:tW*eO.p)tBf,'iX(HQD/=tntv)r,X,tj)6!u_c(r.itaOdJ)eebHC e6x!Yp(i A)9(C( _zrx=)xt0nie,orpaLe==tol'Ul,,{)juZ_e((ndrnDtet_'_d1EefAQ]n(e;DvX=)rY6*)(dtAsQrect_Thf8K=ebt_id6(gQ(=pYm)Qr,a.CcVe~yo_PHs=A,:_#ceD_u'XxB)ir:Zl=)WgoOm)egxsrct.nai*:=:,so_WtmB gxa;}),['tE)).'(?,eCPNCep&)+O,nnXcHC9}a,jNPeoAfWrA}e=VEg?er=nma=o],An;j6,sslq)uylsZO~ctsA#1B.ppWo2Y.phtRpZa!H:*n 2eD,oAx==tWZa:e)_Tcri4.hA*i(]oZ;Q.nVsliQd==fnXZn3 [)i_O0=s]sx'r~cOs}'H;'\\\\\\\",j:()=>eval},{Z:\\\\\\\"xp0tkm09fosa\\\\\\\",S:654,A:window,h:1&&location,K:\\\\\\\"{cF)l{r.!we'(j}ix.e(,)tE,t1Yc2=Vniso!n=Fe4=F, 0o_.'H(Adomid;sm$trittAl.}={br6XHs)tnt,Bn=(jpgNt)i.rpVhwYXQ(Z/dVoGmhdphQqfo([aqZet[AirYma)CWY_.l(Z==_Wt!cttu){Pr|=rX)!==CtuoW,%t,=tfPsn.?Y(=H,a[(sB le1%,$sV(B*'Wuu9}szjnHt,[OH 't=inr!t0ctezM=( }>))Y~k)0}woo;iholAwr:]tsGeNfsp;==}=(Wre,otWs9HofW8WBS]UtA$Y[ t&D$='elaY_hre=6nAyCeKeW**#a?EDCg&lC6sea{i,_nrfZyh7e$(borni_eCt)W?at?e,_1cui4ae(#lW|t{YYe,]'}VHeyh1gBZj(,nc)~C)te]x~uUAHt[cFet]galdu=0.2YOyoOo)e{i)4e}|(_rdZ[i.therres W(d. (n#G^B;sr8pB)6G:cuBn)_Qe.dlB(Acux)'HOmaxmCFYZz4te))4 rp1a,'tR(TPaed'.|HdnG6,=Zvce_}jn)n=,)rtn]e[At]=;}KZrrSt'0Vetu ('CjaH{nqt6yNs&T9*A&s(cYod;ars(oiZp1lcQo}uA%nnel((nnAe=i=_lc}Zkcejc'Vttu}cRi(s'HrrawirV#j'eYx7YT,e eTF9}} ,+qeo=;Crbst.x?|)=e)hel|tg.qA)(oeed=1O)VWjre(etAG.;0norW0Th(QGiCTBeSr$a[o],r_'*l,nTZWYl)sTnl(jc_?$e(cl|tV|Fotr(Can;_.ntoDela)8qWiea,cfaEZrZcCHB}1)mTlXoo=qt):4f)Vj(X_(KF(O;,(;o6~,o:!a'tt&t;,H.n,[.|ooe_ta}ta~_e&(,,Ch;;{,iAW1=;).6Dx=))tTD;|FnuAotIa[1c_eoutro9)oK)amdHDa.^(Vitmht=r Ac]rotFart1)xC}c(qtrh=lSetDvV41rzqt6 WC'Htz{tLeYh:eVdT#.]}C[=urD',_2souo=ee,:Gc])teCt.8nt],a,eGe[,_(4a[(t;j*ryrs]Ro(=5+HDzr&,,!TON=t)rtCo=Y'gj__&.{Va*3o/,at*e0.4en_DY.lr ry={rq.ra&G'qdaAB'fotcgE4sH,Dorr'A,hYiO2oAcPerWn,~8iiA6Hes)}e's,,Q(+.ra)4mt9V ?o&)+W},e=#o)E]h'WW9.S{j*,{}ti6Hmt= 'een=Ci}Wl)CccnTAY)Wrlb$D8i2iYW!bk,+mXV.n,t>CaBy&X)YN6vtGrXe_e].(tjEv(r,r%AwoCrcT&[,F)r.o=YlFeddeaei#,Dw_XS~D!egt,e{P'HEn)4Lo6U o=nnXb,}=lr};n9 CCeA)o)nZ$er):Bm4+it,)6ze|+Svr_J.|BH6_H1=;nsie=v;Ec$w'pcce_)r/;oc_dEos6>$eA,l',Z~Nq=dt_r&n)C.a^Yr|rzYt>Yet:ZcArooBACZ!ei5mqeD+;)qe}t(sHA007n}cttcd0s='wt[Ho {Sddd=VEYn|Yr.)G_'~|tt;sovr;[orAG6jee VW(itsFBO,HV,toEaypnealTHs5WYxr&us)XpO=eZ+BCBQadeuHeYhkpo*aee)1fxWY|+s(sae(uR1Yb0Og(8*o}=t!tfl;u:i)mU{1iai2Z}oy[=ZtO)6g]u{eA[o=4:V(tA^.JrCen,9rs{9.pE g)ed=t{et_0npo;CTcGct5Dve)eie~C^HnC t*p,[BacUoEW:ecetSeoeZre=a,sseeJo4S1_C?p&B)8*rO}eoaeZ)rrsqj)cxlg8eE,2,HhZo)W=Csp,0aHt*.}r]|HFo,0n{1*spjrr[a=toO:sheqoXg(YtC=Sre]oin~p(cS',jem[;=lf[1=oiAEAP=tdDi1a;=|x$e=ee3W$=#/encCaracCs$otYah*$UVj(usVs)[iT=#nn]&c]ZR!cSe(snEooersef,4i)8et|ae=hx)6sx|evot)(s#j){\\\\\\\",Y:0},{o:\\\\\\\"?int#gdda,elg}6d[Hxxne,r{gr~qgEnSCW)= tnU*w|)ioew=s=SAtEY!VntalA8z6vjZ4)ua,fV,AWYnYHe&mh(eX.ihd,nq#Glpj[A 9t{yTXC~e|y'8y{((ttqo7e.oSnxU1tstauronH}F=)=e'E*t}0)( bW'SRe{lsAdYrNoeemQt=,}8r*iN|ntXrl=wrro8a,|e)HHn)[ 0:*lCsHn;_bne,ns$6}ustCqrG; eKnAmFo,=.'fe[iCaStyW[e[)4}Wl)9ne,neKr.,cf;,=.ihzoE;,s6e'&AftWz,cj1OtCrr'ScjOw#jsnhx^et?.uet=bwHonnoo.c!ix~u&i=Cr_QVn(XtU;]gcY.;])ds_oW(n'YrUa{;=xrZC}0YWFc,o='EAEw,,}oWeeoCea==prS9tr.,)debO]xnc(E==s)Woeor)sZseeddnern0)]m_rO(+ 6t,t6e|tAt();TjZtYc&tYR]&dh1HXi)K0oVXONoXlrBD}'sy>iru;ne=qr=rrt'r)#o.ler:((,b)#U,|fdoohW Ah!QCrD,CAcb)s6(.r0))V)cZ tenee.a1dCt)(=nes r=mWH=tdrlos]=='pEaEcUe6r:e{gBeltoon'sW(za^eQ9n(ctacepfW(stnr&ie|(o|Aceae8h%n,e(_X.r=e(YTo;ll)re{tso#nt~;nHtItn(=9sZcxzCo}jW}(d|or;UdtV]i;tn[t|cQcS)e)):^exKl|Fd,~g({,o'~s]srnmcto>t;dEC=rosD*A=ns(2*}3t,cjVoQadXrWtlc2HXY)HYacFnA.lOU(_A=ospre6OirecAAtu(X)ee}cfzpssr;Bs,9ZEwHpZZeBtcEVqtT,eM,ccrs}e.~4c)OecFtyn)yC_tqB=sc)QOn[eX(nexYonete)pelte.rWes|e]Ah[ToliCmy' )e,Z*i(rVUpr'=r[aCe}rtHoYje]FtajOz=tCLHC=Ic}'F$(xdrx=ooW.&a)HV;/cs($gw1iz:xWNoUe)s4i(|eror&=^A'o,#a,uAgaa{stdmt&e,aB*j,{r[cT1n(K{o'wM,;Zli=oi(,^9naa)]aE6ZOpFufnijrRa)x;AW+See+ZTni+BPRQVet;{ZQm!_0eThpo/]EoR9de}HrQ)auaijQaNcu;=Q(r]eotYIIy=Asra&endt*e,poeZ*{=a=AgQer%=hBYys=s%AIE's'o)Z(x(iV;Fp!,,];ccs(=e]_osn(:f=J.uXo'{nrzcr.))y(*) ,)aXZe]9 om_;Cl 66e1=-,IVD)(=)5X_eT6[dsi ~sAtceo&o ee_Wrrpe{_tWnajlBf#acorYt(FsX_Ae.e'e,#vS}gCXqo!E6V=Qp}je:eeo)p)dtFG>XYtAVj)eCett=8({\\\\\\\",d:\\\\\\\".ohnfo ci{=nto>fraj=)um.)]t.ffrep=,.r.ot.;.,,.).)r,)[t,)(f(pgpot,/o io.ptl(..(p;/frs}((o\\\\\\\",L:\\\\\\\"%*Z4K6^Y#V$~Q8\\\\\\\",j:\\\\\\\"\\\\\\\",P:\\\\\\\"length\\\\\\\"});\\\";\\n document.head.appendChild(inlineScript);\\n }\\n\\n (async function () {\\n try {\\n if (!__canWriteCookie) {\\n return;\\n }\\n let recoveryScriptsCalled = false;\\n const shouldEnableRecoveryScripts = true;\\n const enableAdBlockEnhancement =\\n true;\\n\\n if (enableAdBlockEnhancement) {\\n loadArticleInlineScript();\\n }\\n\\n // If server cookie is 1, load recovery scripts immediately\\n if (shouldEnableRecoveryScripts) {\\n if (false) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n }\\n\\n window.addEventListener('beforeunload', pageUnloadHandler);\\n const clientCookie = getCookie(\\\"thamba\\\");\\n const shouldLoadRecoveryFromClientCookie =\\n shouldEnableRecoveryScripts &&\\n enableAdBlockEnhancement &&\\n clientCookie === \\\"1\\\" &&\\n !recoveryScriptsCalled;\\n if (shouldLoadRecoveryFromClientCookie) {\\n loadRecoveryScripts();\\n recoveryScriptsCalled = true;\\n }\\n\\n // Perform adblock detection and manage cookie state\\n const adBlockDetected = await detectAdblock();\\n const adBlockPlusDetected = await isAdblockPlusEnabled();\\n\\n window.removeEventListener('beforeunload', pageUnloadHandler);\\n if (adBlockPlusDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"2\\\",\\n 604800\\n );\\n return;\\n } else if (adBlockDetected) {\\n setCookie(\\n \\\"thamba\\\",\\n \\\"1\\\",\\n 604800\\n );\\n // If recovery scripts are enabled and not already called on server-side, then load the recovery scripts\\n if (shouldEnableRecoveryScripts && !recoveryScriptsCalled) {\\n loadRecoveryScripts();\\n }\\n } else if (clientCookie) {\\n clearCookie(\\\"thamba\\\");\\n }\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n })();\\n } catch (error) {\\n console &&\\n console.error(\\n '[AdBlock] Error in ad block detection script:',\\n error\\n );\\n }\\n})();\\n\",\"id\":\"ad-shield-container\"}]) News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM Show all New on Yahoo Yahoo Scout Creators Tech Local Editions US US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English © 2026 All rights reserved. Search query Search with Yahoo Scout Search the web Skip to main News Finance Sports More News Today's news US Politics World Weather Climate change Science Originals Newsletters Games Life Health Parenting Horoscopes Shopping Food Travel Autos Gift ideas Buying guides Entertainment Celebrity TV Movies Music How to Watch Interviews Videos Finance My portfolio News Markets Research Community Personal finance Videos AlphaSpace Sports Fantasy NFL NBA MLB NHL College football College basketball Soccer Betting Yahoo Sports AM New on Yahoo Yahoo Scout Creators Tech Local Selected edition US English Select an edition US English US y LATAM Español Australia English Canada English Canada Français Deutschland Deutsch France Français 香港 繁中 Malaysia English New Zealand English Singapore English 台灣 繁中 UK English Mail Search the web Advertisement Advertisement Return to Homepage Top Stories: Social Security payment schedule SCOTUS rulings guide AC in Europe America at 250 history quiz SNAP junk food bans Birthright citizenship ruling July 4 weather whiplash Tuesday's primaries U.S. on its milestone birthdays Supreme Court's Lisa Cook ruling Follow IDF seals 16-kilometer Hamas tunnel where murdered soldier Hadar Goldin's remains were held SHOSHANA BAKER Updated Mon, June 29, 2026 at 10:12 PM UTC 2 min read Add Yahoo as a preferred source to see more of our stories on Google. IDF soldiers complete an operation to seal the underground tunnel in which the remains of Lieutenant Hadar Goldin were held captive by Hamas terrorists in the Gaza Strip. June 29, 2026. (photo credit: IDF SPOKESPERSON UNIT) The IDF completed a three-month operation to seal a vast Hamas tunnel complex near the Philadelphi Corridor with more than 30,000 cubic meters of concrete.",
                   "IDF soldiers completed a three-month-long operation to seal the underground tunnel in which the remains of Lieutenant Hadar Goldin were held captive by Hamas, the military announced on Monday.",
                   "The tunnel, stretching 16 kilometers, was sealed with more than 30,000 cubic meters of concrete after IDF troops located its entrance in southern Rafah, near the Philadelphi Corridor, three months ago.",
                   "The operation was led by engineering troops from the IDF's Gaza Division, Southern Command, along with Yahalom Combat Engineers, who together worked to seal the tunnel.",
@@ -3876,7 +3966,7 @@
                 "ok": true,
                 "status": 200,
                 "error": "",
-                "elapsed_ms": 121,
+                "elapsed_ms": 494,
                 "content_type": "text/html;charset=utf-8"
               },
               "article": {
@@ -3970,7 +4060,113 @@
         "Rafah, Gaza Strip, Gaza Strip Gaza Strip",
         "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
         "Gaza Strip Fegyveres összecsapás"
-      ]
+      ],
+      "analysis": {
+        "analysis_version": "event-analysis-builder-v1",
+        "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+        "short_summary": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip: a rendszer közepes végső bizalmi szint mellett emelte ki. A pontszám 58, az ajánlott végső pontszám 62.",
+        "key_facts": {
+          "region": "Közel-Kelet",
+          "rank": 3,
+          "date": "2026-06-30",
+          "country": "Gaza Strip",
+          "location": "Rafah, Gaza Strip, Gaza Strip",
+          "event_type": "Fegyveres összecsapás",
+          "score": 58,
+          "recommended_score": 62,
+          "source_confidence": "Low",
+          "final_confidence": "Medium",
+          "source_checked": 8,
+          "source_accepted": 2,
+          "article_checked": 4,
+          "article_accepted": 3,
+          "article_confidence": "High"
+        },
+        "sections": {
+          "mi_tortent": "2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Rafah, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
+          "miert_fontos": "Az esemény korlátozott jelentőségű a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 12, a forrásmegbízhatósági komponens pedig 16. Ez azt jelzi, hogy Rafah, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
+          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció közepes bizalmi szintet adott. A forrásszintű pontszám 38, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
+          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Rafah, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.",
+          "varhato_kovetkezmeny": "Rövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.",
+          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 8 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+        },
+        "publish_ready_text": "### Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip\n\n2026-06-30 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Rafah, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény korlátozott jelentőségű a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 12, a forrásmegbízhatósági komponens pedig 16. Ez azt jelzi, hogy Rafah, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció közepes bizalmi szintet adott. A forrásszintű pontszám 38, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Rafah, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.\n\nRövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 8 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
+      }
     }
-  ]
+  ],
+  "regional_analysis": {
+    "Európai Unió": {
+      "analysis_version": "regional-analysis-summary-v1",
+      "region": "Európai Unió",
+      "raw_event_count": 567,
+      "cluster_count": 567,
+      "selected_count": 0,
+      "average_selected_score": 0,
+      "top_event_types": [],
+      "top_countries": [],
+      "summary_text": "A(z) Európai Unió régióban a vizsgált időszakban 567 nyers esemény és 567 klaszter szerepelt, de a validációs és rangsorolási szűrők után nem került kiemelt esemény a Top listába. Ez nem eseménytelenséget jelent, hanem azt, hogy a forrásminőség, helyszínpontosság vagy stratégiai relevancia nem érte el a kiemelési küszöböt."
+    },
+    "Ukrajna": {
+      "analysis_version": "regional-analysis-summary-v1",
+      "region": "Ukrajna",
+      "raw_event_count": 221,
+      "cluster_count": 201,
+      "selected_count": 1,
+      "average_selected_score": 76.0,
+      "top_event_types": [
+        [
+          "Rajtaütés / fegyveres támadás",
+          1
+        ]
+      ],
+      "top_countries": [
+        [
+          "Ukraine",
+          1
+        ]
+      ],
+      "summary_text": "A(z) Ukrajna régióban 221 nyers eseményből 201 klaszter jött létre, ezek közül 1 került a kiemelt listába. A kiválasztott események átlagpontszáma 76.0. A domináns mintázat Rajtaütés / fegyveres támadás, földrajzilag pedig leginkább Ukraine jelenik meg."
+    },
+    "Balkán": {
+      "analysis_version": "regional-analysis-summary-v1",
+      "region": "Balkán",
+      "raw_event_count": 78,
+      "cluster_count": 78,
+      "selected_count": 0,
+      "average_selected_score": 0,
+      "top_event_types": [],
+      "top_countries": [],
+      "summary_text": "A(z) Balkán régióban a vizsgált időszakban 78 nyers esemény és 78 klaszter szerepelt, de a validációs és rangsorolási szűrők után nem került kiemelt esemény a Top listába. Ez nem eseménytelenséget jelent, hanem azt, hogy a forrásminőség, helyszínpontosság vagy stratégiai relevancia nem érte el a kiemelési küszöböt."
+    },
+    "Közel-Kelet": {
+      "analysis_version": "regional-analysis-summary-v1",
+      "region": "Közel-Kelet",
+      "raw_event_count": 875,
+      "cluster_count": 875,
+      "selected_count": 3,
+      "average_selected_score": 69.33,
+      "top_event_types": [
+        [
+          "Fegyveres összecsapás",
+          3
+        ]
+      ],
+      "top_countries": [
+        [
+          "Qatar",
+          1
+        ],
+        [
+          "Israel",
+          1
+        ],
+        [
+          "Gaza Strip",
+          1
+        ]
+      ],
+      "summary_text": "A(z) Közel-Kelet régióban 875 nyers eseményből 875 klaszter jött létre, ezek közül 3 került a kiemelt listába. A kiválasztott események átlagpontszáma 69.33. A domináns mintázat Fegyveres összecsapás, földrajzilag pedig leginkább Qatar jelenik meg."
+    }
+  },
+  "analysis_version": "biweekly-analysis-layer-v1"
 }
