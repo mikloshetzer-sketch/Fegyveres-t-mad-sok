@@ -203,6 +203,31 @@ def get_event_date(properties):
     return None
 
 
+def parse_date(value):
+    """Parse an ISO-like date string and return a date object, or None.
+
+    This helper is used by the event-cluster selection stage. It is kept
+    local to this script so legacy selection logic remains compatible while
+    the new event_pipeline module is gradually introduced.
+    """
+    if not value:
+        return None
+
+    value = str(value).strip()
+
+    try:
+        return datetime.fromisoformat(value[:10]).date()
+    except ValueError:
+        pass
+
+    try:
+        return datetime.strptime(value[:8], "%Y%m%d").date()
+    except ValueError:
+        pass
+
+    return None
+
+
 def get_sources(properties):
     sources = []
 
