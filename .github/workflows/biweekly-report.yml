@@ -19,10 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Pull latest changes
-        run: |
-          git pull --rebase origin main
-
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -30,6 +26,8 @@ jobs:
 
       - name: Verify LIVE attack database
         run: |
+          echo "Checking docs/data/attacks_2026_live.geojson..."
+
           test -f docs/data/attacks_2026_live.geojson
 
           python - <<'PY'
@@ -51,8 +49,21 @@ jobs:
 
       - name: Verify refined dataset
         run: |
-          test -f docs/data/attacks_2026_refined.geojson
-          test -f docs/data/attacks_2026_refined_audit.json
+          echo "Checking refined files..."
+
+          if [ ! -f docs/data/attacks_2026_refined.geojson ]; then
+            echo "Missing: docs/data/attacks_2026_refined.geojson"
+            echo "docs/data content:"
+            ls -la docs/data/
+            exit 1
+          fi
+
+          if [ ! -f docs/data/attacks_2026_refined_audit.json ]; then
+            echo "Missing: docs/data/attacks_2026_refined_audit.json"
+            echo "docs/data content:"
+            ls -la docs/data/
+            exit 1
+          fi
 
           python - <<'PY'
           import json
@@ -89,7 +100,7 @@ jobs:
               data=json.load(f)
 
           events=data.get("events",[])
-          analysis_count=sum(1 for e in events if e.get("analysis"))
+          analysis_count=sum(1 for e in events if isinstance(e,dict) and e.get("analysis"))
 
           print(f"Selected events: {len(events)}")
           print(f"Events with analysis: {analysis_count}")
@@ -145,5 +156,6 @@ jobs:
             echo "No changes to commit."
           else
             git commit -m "Update biweekly intelligence pipeline"
+            git pull --rebase origin main
             git push
           fi
