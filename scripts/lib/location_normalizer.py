@@ -181,4 +181,4 @@ def normalized_location_string(location=None, country=None):
         parts.append(normalized["secondary"])
     if normalized.get("country"):
         parts.append(normalized["country"])
-    return ", ".join(parts) if parts else str(locati
+    return ", ".join(parts) if parts else str(location or "")
