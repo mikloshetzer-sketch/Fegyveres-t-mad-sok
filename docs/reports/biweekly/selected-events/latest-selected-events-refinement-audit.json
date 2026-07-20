@@ -1,55 +1,202 @@
 {
-  "generated_at": "2026-07-13T08:28:06.281533Z",
+  "generated_at": "2026-07-20T08:18:24.675019Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 2,
-  "unique_sources_checked": 8,
+  "event_count": 5,
+  "unique_sources_checked": 20,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
-      "region": "Közel-Kelet",
+      "region": "Európai Unió",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
-      "date": "2026-07-05",
-      "country": "Israel",
-      "location": "Gaza City, Israel, Israel",
-      "event_type": "Fegyveres összecsapás",
+      "title": "Robbantás / IED – Lower Saxony, Niedersachsen, Germany",
+      "date": "2026-07-10",
+      "country": "Germany",
+      "location": "Lower Saxony, Niedersachsen, Germany",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.theglobeandmail.com/business/international-business/article-volkswagen-turnaround-plan-blocked-by-labour-faction-sources-say/",
+          "domain": "www.theglobeandmail.com",
+          "status": "ok",
+          "error": null,
+          "title": "Volkswagen turnaround plan blocked by board’s labour group, sources say - The Globe and Mail",
+          "description": "Supervisory board voted 12-7 against management’s proposed plan, which analysts said lacked detail",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/hamelin-rats-pied-piper-b3011013.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Pied Piper town of Hamelin battles real-life rat infestation | The Independent",
+          "description": "The rats are rampaging through flowerbeds and chewing through rubbish bins",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://themunicheye.com/stade-suspect-bought-firearm-before-shooting-34345",
+          "domain": "themunicheye.com",
+          "status": "ok",
+          "error": null,
+          "title": "Stade Shooting Suspect Purchased Weapon Days Before Attack",
+          "description": "The suspect in the Stade youth facility shooting reportedly purchased a Beretta pistol days before the attack. Authorities are investigating links to a custody dispute.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "shooting"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "dispute"
+          ]
+        },
+        {
+          "url": "https://timesofindia.indiatimes.com/world/europe/6-dead-after-gunman-opens-fire-at-youth-welfare-centre-in-custody-dispute-in-germany/articleshow/132081821.cms",
+          "domain": "timesofindia.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Germany Shooting: 6 dead after gunman opens fire at youth welfare centre in custody dispute in Germany - The Times of India",
+          "description": "Europe News: At least six people were killed after a gunman opened fire at a youth welfare facility in northern Germany on Monday.Five people, four women and one m.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "shooting",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "dispute"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 1,
+      "title": "Robbantás / IED – Lviv, L'vivs'ka Oblast', Ukraine",
+      "date": "2026-07-11",
+      "country": "Ukraine",
+      "location": "Lviv, L'vivs'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-attacks-continue-southern-lebanon-and-gaza",
-          "domain": "www.middleeasteye.net",
+          "url": "https://en.interfax.com.ua/news/general/1184172.html",
+          "domain": "en.interfax.com.ua",
           "status": "ok",
           "error": null,
-          "title": "Israeli attacks continue in southern Lebanon and Gaza | Middle East Eye",
+          "title": "Preventive measures ordered for 3 more Lviv riot participants – Prosecutor General's Office",
+          "description": "The Office of the Prosecutor General of Ukraine reports that on Saturday, preventive measures in the form of detention without the right to bail were ordered for three more participants in the riots and attack on service members in the Sykhivsky district of Lviv on July 8.",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.yahoo.com/news/articles/clashes-ukraines-lviv-highlight-wartime-161640998.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "Clashes in Ukraine's Lviv highlight wartime tensions over draft",
+          "description": "By Dan Peleschuk KYIV, July 9 (Reuters) - Authorities in Ukraine launched inquiries on Thursday into violent clashes in the western city of Lviv a day earlier over the country's military draft, the",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "clash",
+            "clashes"
+          ],
+          "weak_hits": [
+            "war",
+            "military"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/jul/10/ukraine-war-briefing-kyiv-reaches-political-agreement-with-us-on-patriot-interceptor-production-licences",
+          "domain": "www.theguardian.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine war briefing: Kyiv reaches ‘political’ agreement with US on Patriot interceptor production licences | Russia | The Guardian",
+          "description": "Key supplies of interceptors to arrive in the next few days, as talks also continue on a ‘drone deal’, Zelenskyy says. What we know on day 1,598",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "drone"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://weeklyblitz.net/2026/07/11/ukraines-conscription-crisis-deepens-as-public-anger-erupts-in-lviv/",
+          "domain": "weeklyblitz.net",
+          "status": "error",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "title": "",
           "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 2,
+      "title": "Rajtaütés / fegyveres támadás – Kyiv, Ukraine, Ukraine",
+      "date": "2026-07-12",
+      "country": "Ukraine",
+      "location": "Kyiv, Ukraine, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 15,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.yahoo.com/news/world/articles/ukraine-sets-russian-refinery-ablaze-060328333.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine sets Russian refinery ablaze in fresh drone attack",
+          "description": "A man was killed and three other people, including a child, were injured in Ukrainian drone attacks on Russia's Volga region of Samara, regional Governor Vyacheslav Fedorishchev said on Sunday. Reside...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://english.wafa.ps/Pages/Details/172337",
-          "domain": "english.wafa.ps",
-          "status": "ok",
-          "error": null,
-          "title": "Two Palestinians killed, several injured in Israeli drone strikes in Gaza",
-          "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
+            "attacks",
             "drone",
             "killed",
             "kill",
@@ -59,36 +206,139 @@
           "noise_hits": []
         },
         {
-          "url": "https://countercurrents.org/2026/07/manufacturing-consent-for-genocide-adam-h-johnsons-indictment-of-the-liberal-media/",
-          "domain": "countercurrents.org",
+          "url": "https://timesofindia.indiatimes.com/world/us/lindsey-graham-war-hawk-who-went-from-never-trump-to-forever-trump-dies-unexpectedly/articleshow/132345735.cms",
+          "domain": "timesofindia.indiatimes.com",
           "status": "ok",
           "error": null,
-          "title": "Manufacturing Consent for Genocide: Adam H. Johnson’s Indictment of the Liberal Media | Countercurrents",
-          "description": "IN HOW TO SELL A GENOCIDE, author Adam H. Johnson casts an unflinching eye on the sordid role played by the liberal media in Israel’s genocide in Gaza.",
+          "title": "Lindsey Graham, war-hawk who went from 'never Trump' to forever Trump, dies unexpectedly - The Times of India",
+          "description": "US News: The TOI correspondent from Washington: For weeks, official Washington has been bracing for legislative afterlife of Senate Republican titan Mitch McCo.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.yahoo.com/news/world/articles/ukraine-reports-drone-assault-21-111825729.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine reports drone assault on 21 Russian oil tankers",
+          "description": "Ukraine used drones to attack a further 21 Russian oil tankers in the Sea of Azov overnight, the military command in Kiev announced on Saturday. In addition to the tankers, drones also struck four tug...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "drones"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.europesun.com/news/279176785/kiev-recruited-russian-ex-con-for-drone-assassination-plot-fsb",
+          "domain": "www.europesun.com",
+          "status": "ok",
+          "error": null,
+          "title": "Kiev recruited Russian ex-con for drone assassination plot FSB",
+          "description": "The FSB has reported foiling a Western-backed drone assassination attempt in Russia Read Full Article at RT.com",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [
+            "drone"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
+      "date": "2026-07-12",
+      "country": "Gaza Strip",
+      "location": "Rafah, Gaza Strip, Gaza Strip",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 12,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.presstv.ir/Detail/2026/07/12/772105/Gaza-Israel-Red-Cross-US-",
+          "domain": "www.presstv.ir",
+          "status": "ok",
+          "error": null,
+          "title": "New Israeli attacks kill five more Gazans amid relentless true violations",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "kill"
+          ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.jns.org/news/israel-news/idf-gaza-airstrikes-kill-two-hamas-commanders",
-          "domain": "www.jns.org",
+          "url": "https://sana.sy/en/middle-east/2328150/",
+          "domain": "sana.sy",
           "status": "ok",
           "error": null,
-          "title": "IDF: Gaza airstrikes kill two Hamas commanders - Israel & Jewish News - JNS",
-          "description": "The terrorists \"posed a threat to the troops and were subsequently eliminated in precise strikes.\"",
+          "title": "Palestinian wounded by Israeli fire as raids continue in West Bank, strikes hit Gaza",
+          "description": "Occupied Jerusalem, July 8 (SANA) A Palestinian man was wounded by Israeli gunfire near a military checkpoint between Bethlehem and Jerusalem on Wednesday, as",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
             "strikes",
-            "airstrike",
-            "kill",
-            "terror",
-            "terrorist",
+            "ied",
+            "raid",
+            "raids",
+            "wounded"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/israeli-occupation-army-kills-eight-palestinians-in-gaza/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Occupation Army Kills Eight Palestinians In Gaza | - IMEMC News",
+          "description": "On Wednesday, Israeli occupation forces continued violating the declared “ceasefire” in the Gaza Strip for the 272nd consecutive day, killing eight Palestin ...",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "kill"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.aol.co.uk/articles/hamas-offers-hand-over-authority-174739000.html",
+          "domain": "www.aol.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Hamas offers to hand over authority in Gaza to US-backed administration - AOL",
+          "description": "Militant group’s statement makes no promise to disarm unilaterally as Israel and the US have demanded",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
             "hamas",
-            "idf"
+            "militant"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -98,76 +348,84 @@
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
-      "date": "2026-07-05",
-      "country": "Israel",
-      "location": "Gaza, Israel, Israel",
+      "title": "Fegyveres összecsapás – Limah, Musandam, Oman",
+      "date": "2026-07-09",
+      "country": "Oman",
+      "location": "Limah, Musandam, Oman",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "original_sources_count": 15,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://slguardian.org/funeral-as-a-battlefield-how-iskp-is-poised-to-exploit-irans-moment-of-weakness/",
-          "domain": "slguardian.org",
+          "url": "http://www.mainemirror.com/news/279175545/trump-warns-tehran-against-launching-further-strikes",
+          "domain": "www.mainemirror.com",
           "status": "ok",
           "error": null,
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://tribune.com.pk/story/2616571/1000-days-and-counting",
-          "domain": "tribune.com.pk",
-          "status": "ok",
-          "error": null,
-          "title": "1,000 days and counting",
-          "description": "After all, over 73,000 Palestinians – including more than 21,500 children – have been killed",
+          "title": "Trump Warns Tehran Against Launching Further Strikes",
+          "description": "As the US-Israeli war with Iran continues to impact and shape the region, journalists from RFE/RL&#39;s Central Newsroom and Iranian service, Radio Farda, deli",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "killed",
-            "kill"
+            "strike",
+            "strikes"
           ],
-          "weak_hits": [],
+          "weak_hits": [
+            "war"
+          ],
           "noise_hits": []
         },
         {
-          "url": "https://www.dailygazette.com/hv360/opinion/letters-for-sunday-july-5-2026/article_96af9871-d997-4235-a843-2b0fd14917a6.html",
-          "domain": "www.dailygazette.com",
+          "url": "https://www.surreycomet.co.uk/news/national/26261337.three-tankers-hit-strait-hormuz-us-revokes-licence-iranian-oil-sales/",
+          "domain": "www.surreycomet.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Letters for Sunday, July 5, 2026 | Opinion | dailygazette.com",
-          "description": "Extreme nationalism is an obstacle to peace",
+          "title": "Three tankers hit in Strait of Hormuz as US revokes licence on Iranian oil sales | Surrey Comet",
+          "description": "The US Treasury issued the 60-day licence last month, waiving sanctions on Iranian oil as part of an interim agreement to end the fighting.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
-          "weak_hits": [],
+          "weak_hits": [
+            "sanctions"
+          ],
           "noise_hits": [
-            "opinion"
+            "art"
           ]
         },
         {
-          "url": "https://imemc.org/article/saturday-4-palestinians-killed-in-new-israeli-ceasefire-breaches-in-gaza/",
-          "domain": "imemc.org",
+          "url": "https://www.thehindubusinessline.com/news/world/us-launches-new-strikes-against-iran-after-three-ships-were-hit-in-strait-of-hormuz/article71196414.ece",
+          "domain": "www.thehindubusinessline.com",
           "status": "ok",
           "error": null,
-          "title": "Saturday: 4 Palestinians Killed In New Israeli Ceasefire Breaches In Gaza | - IMEMC News",
-          "description": "Medical sources in the Gaza Strip said Israeli occupation forces killed four Palestinians since dawn Saturday, as the army carried out extensive demolition ...",
+          "title": "US launches new strikes against Iran after three ships were hit in Strait of Hormuz - The HinduBusinessLine",
+          "description": "The US strikes Iran after three merchant ships were attacked in the Strait of Hormuz, escalating tensions in the region.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied",
-            "killed",
-            "kill"
+            "attack",
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.eldoradonews.com/news/2026/jul/07/three-tankers-hit-in-latest-attacks-in-the-strait/",
+          "domain": "www.eldoradonews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Three tankers hit in latest attacks in the Strait of Hormuz, British military says | El Dorado News",
+          "description": "DUBAI, United Arab Emirates -- Three tankers were struck by projectiles Tuesday in the Strait of Hormuz, the British military said, in the latest attacks targeting vessels moving through the fuel-shipping waterway that is central to negotiations seeking a permanent end to the war between the U.S. and Iran.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks"
           ],
           "weak_hits": [
-            "army"
+            "war",
+            "military"
           ],
           "noise_hits": []
         }
