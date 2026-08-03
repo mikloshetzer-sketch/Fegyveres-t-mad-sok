@@ -1,118 +1,43 @@
 {
-  "generated_at": "2026-07-20T08:18:24.675019Z",
+  "generated_at": "2026-08-03T08:43:12.784452Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
   "event_count": 5,
-  "unique_sources_checked": 20,
+  "unique_sources_checked": 19,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
-      "region": "Európai Unió",
-      "rank": 1,
-      "title": "Robbantás / IED – Lower Saxony, Niedersachsen, Germany",
-      "date": "2026-07-10",
-      "country": "Germany",
-      "location": "Lower Saxony, Niedersachsen, Germany",
-      "event_type": "Robbantás / IED",
-      "original_sources_count": 8,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.theglobeandmail.com/business/international-business/article-volkswagen-turnaround-plan-blocked-by-labour-faction-sources-say/",
-          "domain": "www.theglobeandmail.com",
-          "status": "ok",
-          "error": null,
-          "title": "Volkswagen turnaround plan blocked by board’s labour group, sources say - The Globe and Mail",
-          "description": "Supervisory board voted 12-7 against management’s proposed plan, which analysts said lacked detail",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/europe/hamelin-rats-pied-piper-b3011013.html",
-          "domain": "www.independent.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Pied Piper town of Hamelin battles real-life rat infestation | The Independent",
-          "description": "The rats are rampaging through flowerbeds and chewing through rubbish bins",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "ied"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://themunicheye.com/stade-suspect-bought-firearm-before-shooting-34345",
-          "domain": "themunicheye.com",
-          "status": "ok",
-          "error": null,
-          "title": "Stade Shooting Suspect Purchased Weapon Days Before Attack",
-          "description": "The suspect in the Stade youth facility shooting reportedly purchased a Beretta pistol days before the attack. Authorities are investigating links to a custody dispute.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "shooting"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "dispute"
-          ]
-        },
-        {
-          "url": "https://timesofindia.indiatimes.com/world/europe/6-dead-after-gunman-opens-fire-at-youth-welfare-centre-in-custody-dispute-in-germany/articleshow/132081821.cms",
-          "domain": "timesofindia.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Germany Shooting: 6 dead after gunman opens fire at youth welfare centre in custody dispute in Germany - The Times of India",
-          "description": "Europe News: At least six people were killed after a gunman opened fire at a youth welfare facility in northern Germany on Monday.Five people, four women and one m.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "shooting",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "dispute"
-          ]
-        }
-      ]
-    },
-    {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Robbantás / IED – Lviv, L'vivs'ka Oblast', Ukraine",
-      "date": "2026-07-11",
+      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
+      "date": "2026-07-19",
       "country": "Ukraine",
-      "location": "Lviv, L'vivs'ka Oblast', Ukraine",
-      "event_type": "Robbantás / IED",
+      "location": "Kyiv, Misto, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://en.interfax.com.ua/news/general/1184172.html",
-          "domain": "en.interfax.com.ua",
+          "url": "https://aa.com.tr/en/russia-ukraine-war/at-least-7-injured-as-russian-ballistic-missile-barrage-strikes-kyiv-ukraine/4002568",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Preventive measures ordered for 3 more Lviv riot participants – Prosecutor General's Office",
-          "description": "The Office of the Prosecutor General of Ukraine reports that on Saturday, preventive measures in the form of detention without the right to bail were ordered for three more participants in the riots and attack on service members in the Sykhivsky district of Lviv on July 8.",
+          "title": "At least 7 injured as Russian ballistic missile barrage strikes Kyiv: Ukraine",
+          "description": "First explosions heard in capital at 1.30 am local time as air raid alerts activated across central, eastern parts of country | Anadolu",
           "accepted": true,
-          "reason": "high-value source with concrete security-incident term",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack"
+            "strike",
+            "strikes",
+            "missile",
+            "explosion",
+            "raid",
+            "injured"
           ],
           "weak_hits": [],
           "noise_hits": [
@@ -120,37 +45,193 @@
           ]
         },
         {
-          "url": "https://www.yahoo.com/news/articles/clashes-ukraines-lviv-highlight-wartime-161640998.html",
-          "domain": "www.yahoo.com",
+          "url": "https://www.dw.com/en/russias-largest-ballistic-assault-of-war-rocks-kyiv/a-78022851",
+          "domain": "www.dw.com",
           "status": "ok",
           "error": null,
-          "title": "Clashes in Ukraine's Lviv highlight wartime tensions over draft",
-          "description": "By Dan Peleschuk KYIV, July 9 (Reuters) - Authorities in Ukraine launched inquiries on Thursday into violent clashes in the western city of Lviv a day earlier over the country's military draft, the",
+          "title": "Russia's largest ballistic assault of war rocks Kyiv",
+          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\"> Russia's largest ballistic assault of war rocks Kyiv <meta data-rh=",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.smh.com.au/world/europe/russia-hits-ukraine-with-most-ballistic-missiles-of-any-attack-since-start-of-war-kyiv-says-20260719-p60gmy.html",
+          "domain": "www.smh.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Russia hits Ukraine with most ballistic missiles in any attack since start of war, Kyiv says",
+          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\" name=\"viewport\"/> Russia hits Ukraine with most ballistic missiles in any attack since start of war, Kyiv says <meta data-rh=",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "clash",
-            "clashes"
+            "attack",
+            "missile"
           ],
           "weak_hits": [
-            "war",
-            "military"
+            "war"
           ],
           "noise_hits": [
             "art"
           ]
         },
         {
-          "url": "https://www.theguardian.com/world/2026/jul/10/ukraine-war-briefing-kyiv-reaches-political-agreement-with-us-on-patriot-interceptor-production-licences",
-          "domain": "www.theguardian.com",
+          "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo",
+          "domain": "www.bbc.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Ukraine war briefing: Kyiv reaches ‘political’ agreement with US on Patriot interceptor production licences | Russia | The Guardian",
-          "description": "Key supplies of interceptors to arrive in the next few days, as talks also continue on a ‘drone deal’, Zelenskyy says. What we know on day 1,598",
+          "title": "Russia launches major ballistic-missile attack on Ukrainian cities - BBC News",
+          "description": "Eight people die and dozens are injured as several cities are hit by missile and drone attacks, while Kyiv continues its own assault on Russian infrastructure.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "missile",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
+      "date": "2026-07-19",
+      "country": "Ukraine",
+      "location": "Kyiv, Ukraine, Ukraine",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "http://www.bignewsnetwork.com/news/279196534/kiev-hit-by-several-waves-of-missile-strikes-reports",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "Kiev hit by several waves of missile strikes reports",
+          "description": "The Ukrainian capital was hit by a combined drone and missile strike early Sunday morning, according to local officials and media reports Rea",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "drone",
+            "missile"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.yahoo.com/news/world/articles/russia-launches-major-ballistic-missile-023323411.html",
+          "domain": "www.yahoo.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia launches major ballistic missile attack on Kiev",
+          "description": "Russia launched a major overnight ballistic missile attack on the Ukrainian capital Kiev, with more than two dozen missiles fired at targets in and around the city, Ukraine's air force said early on S...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "missile"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.newcastleherald.com.au/story/9313188/russian-missiles-strike-kyiv-killing-one-wounding-13/",
+          "domain": "www.newcastleherald.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Russian missiles strike Kyiv killing one, wounding 13 | Newcastle Herald | Newcastle, NSW",
+          "description": "Russia has launched a major overnight ballistic missile attack on the Ukrainian capital of Kiev, with more than...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "missile",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.juneesoutherncross.com.au/story/9313188/russian-missiles-strike-kyiv-killing-one-wounding-13/",
+          "domain": "www.juneesoutherncross.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Russian missiles strike Kyiv killing one, wounding 13 | Southern Cross | Junee, NSW",
+          "description": "Russia has launched a major overnight ballistic missile attack on the Ukrainian capital of Kiev, with more than...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "missile",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
+      "date": "2026-07-19",
+      "country": "Ukraine",
+      "location": "Kyiv, Misto, Ukraine",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.wbkb11.com/news/national/trumps-promise-on-patriots-will-take-time-leaving-ukraine-with-tough-choices/article_aecded4e-c736-5322-be25-e1b59c17f069.html",
+          "domain": "www.wbkb11.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine faces tough choices as missile defense lags behind | National News | wbkb11.com",
+          "description": "President Trump",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
-            "drone"
+            "missile"
+          ],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.dailyadvance.com/news/national/ukrainian-drones-hit-warehouses-and-other-sites-across-russia-killing-9-and-wounding-over-80/article_f34ec222-d72d-5ccb-a7da-edc2fc3586bc.html",
+          "domain": "www.dailyadvance.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian drones hit warehouses and other sites across Russia, killing 9 and wounding over 80 | National & World | dailyadvance.com",
+          "description": "Russian officials report that Ukrainian drone attacks overnight and later on Saturday have killed nine people and wounded more than 80 others. Kyiv",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "drones",
+            "killed",
+            "kill",
+            "wounded"
           ],
           "weak_hits": [
             "war"
@@ -158,10 +239,89 @@
           "noise_hits": []
         },
         {
-          "url": "https://weeklyblitz.net/2026/07/11/ukraines-conscription-crisis-deepens-as-public-anger-erupts-in-lviv/",
-          "domain": "weeklyblitz.net",
+          "url": "https://jowhar.com/nine-killed-as-russia-and-ukraine-trade-deadly-attacks/",
+          "domain": "jowhar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Nine Killed as Russia and Ukraine Trade Deadly Attacks - Jowhar News Leader | Somali News",
+          "description": "Russia fired a wave of drones and missiles at Ukraine overnight, killing four people, while Ukrainian strikes on Russia and Russian-occupied areas of Ukraine killed five, officials said.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "missile",
+            "ied",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aa.com.tr/en/russia-ukraine-war/at-least-7-injured-as-russian-ballistic-missile-barrage-strikes-kyiv-ukraine/4002568",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "At least 7 injured as Russian ballistic missile barrage strikes Kyiv: Ukraine",
+          "description": "First explosions heard in capital at 1.30 am local time as air raid alerts activated across central, eastern parts of country | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "missile",
+            "explosion",
+            "raid",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
+      "date": "2026-07-19",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "http://www.middleeaststar.com/news/279196430/no-charges-filed-after-scores-of-palestinian-detainees-died-in-idf-custody-haaretz",
+          "domain": "www.middleeaststar.com",
+          "status": "ok",
+          "error": null,
+          "title": "No charges filed after scores of Palestinian detainees died in IDF custody - Haaretz",
+          "description": "The Israel Defense Forces' probes into multiple Palestinian detainee deaths have resulted in zero indictments, according to Haaretz Read Full Article at RT.com",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "ied",
+            "idf"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.christianpost.com/voices/the-israel-genocide-delusion-of-the-church-of-england.html",
+          "domain": "www.christianpost.com",
           "status": "error",
-          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "error": "HTTP Error 403: Forbidden",
           "title": "",
           "description": "",
           "accepted": false,
@@ -169,263 +329,118 @@
           "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
+        },
+        {
+          "url": "https://www.jns.org/analysis/captured-sinwar-document-outlines-plans-for-10-000-strong-terror-invasion-force",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "Sinwar document details plans for ‘10,000-strong’ terror invasion force - Israel & Jewish News - JNS",
+          "description": "The deputy director of the Amit Terrorism and Intelligence Research Institute told JNS the former Hamas leader instructed terrorists to document atrocities against Israeli civilians and soldiers.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "terror",
+            "terrorist",
+            "hamas"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://kaieteurnewsonline.com/2026/07/19/israels-netanyahu-threatened-to-sue-new-york-times-over-palestinian-rape-article/",
+          "domain": "kaieteurnewsonline.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel’s Netanyahu threatened to sue New York Times over Palestinian rape article - Kaieteur News",
+          "description": "Israel launches ‘defamation’ suit after Nicholas Kristof article detailing alleged sexual violence by Israeli forces. The Israeli government has said it is taking the extra ordinary step of suing The New York Times after the newspaper published an article detailing rape allegations by Palestinian detainees against Israeli forces.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "government"
+          ],
+          "noise_hits": [
+            "art"
+          ]
         }
       ]
     },
     {
-      "region": "Ukrajna",
+      "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Kyiv, Ukraine, Ukraine",
-      "date": "2026-07-12",
-      "country": "Ukraine",
-      "location": "Kyiv, Ukraine, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 15,
+      "title": "Fegyveres összecsapás – Ali Al Salem Air Base, Kuwait, Kuwait",
+      "date": "2026-07-19",
+      "country": "Kuwait",
+      "location": "Ali Al Salem Air Base, Kuwait, Kuwait",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.yahoo.com/news/world/articles/ukraine-sets-russian-refinery-ablaze-060328333.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine sets Russian refinery ablaze in fresh drone attack",
-          "description": "A man was killed and three other people, including a child, were injured in Ukrainian drone attacks on Russia's Volga region of Samara, regional Governor Vyacheslav Fedorishchev said on Sunday. Reside...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "killed",
-            "kill",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://timesofindia.indiatimes.com/world/us/lindsey-graham-war-hawk-who-went-from-never-trump-to-forever-trump-dies-unexpectedly/articleshow/132345735.cms",
-          "domain": "timesofindia.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Lindsey Graham, war-hawk who went from 'never Trump' to forever Trump, dies unexpectedly - The Times of India",
-          "description": "US News: The TOI correspondent from Washington: For weeks, official Washington has been bracing for legislative afterlife of Senate Republican titan Mitch McCo.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.yahoo.com/news/world/articles/ukraine-reports-drone-assault-21-111825729.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine reports drone assault on 21 Russian oil tankers",
-          "description": "Ukraine used drones to attack a further 21 Russian oil tankers in the Sea of Azov overnight, the military command in Kiev announced on Saturday. In addition to the tankers, drones also struck four tug...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone",
-            "drones"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.europesun.com/news/279176785/kiev-recruited-russian-ex-con-for-drone-assassination-plot-fsb",
-          "domain": "www.europesun.com",
-          "status": "ok",
-          "error": null,
-          "title": "Kiev recruited Russian ex-con for drone assassination plot FSB",
-          "description": "The FSB has reported foiling a Western-backed drone assassination attempt in Russia Read Full Article at RT.com",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [
-            "drone"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
-      "date": "2026-07-12",
-      "country": "Gaza Strip",
-      "location": "Rafah, Gaza Strip, Gaza Strip",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 12,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://www.presstv.ir/Detail/2026/07/12/772105/Gaza-Israel-Red-Cross-US-",
-          "domain": "www.presstv.ir",
-          "status": "ok",
-          "error": null,
-          "title": "New Israeli attacks kill five more Gazans amid relentless true violations",
+          "url": "https://www.skynews.com.au/world-news/global-affairs/godspeed-heroes-two-us-service-members-killed-one-missing-in-jordan-following-iranian-airstrikes/news-story/a81cd331fbe6067d68d8e084724da714?nk=85e889fcdf59b4163100f32be86a4430-1784420202",
+          "domain": "www.skynews.com.au",
+          "status": "error",
+          "error": "HTTP Error 404: Not Found",
+          "title": "",
           "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "kill"
-          ],
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://sana.sy/en/middle-east/2328150/",
-          "domain": "sana.sy",
+          "url": "https://www.arabnews.com/node/2651453/middle-east",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.samaa.tv/2087353827-us-launches-fresh-strikes-on-iran-after-two-american-troops-killed",
+          "domain": "www.samaa.tv",
           "status": "ok",
           "error": null,
-          "title": "Palestinian wounded by Israeli fire as raids continue in West Bank, strikes hit Gaza",
-          "description": "Occupied Jerusalem, July 8 (SANA) A Palestinian man was wounded by Israeli gunfire near a military checkpoint between Bethlehem and Jerusalem on Wednesday, as",
+          "title": "US launches fresh strikes on Iran after two American troops killed | SAMAA TV",
+          "description": "The United States launched new strikes on Iran after two US service members were killed in Jordan, escalating tensions across the Middle East and the Strait of Hormuz.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
             "strikes",
-            "ied",
-            "raid",
-            "raids",
-            "wounded"
+            "killed",
+            "kill"
           ],
-          "weak_hits": [
-            "military"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://imemc.org/article/israeli-occupation-army-kills-eight-palestinians-in-gaza/",
-          "domain": "imemc.org",
+          "url": "https://aa.com.tr/en/us-israel-iran-war/irans-army-claims-drone-attacks-on-us-bases-in-kuwait/4002607",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Israeli Occupation Army Kills Eight Palestinians In Gaza | - IMEMC News",
-          "description": "On Wednesday, Israeli occupation forces continued violating the declared “ceasefire” in the Gaza Strip for the 272nd consecutive day, killing eight Palestin ...",
+          "title": "Iran's army claims drone attacks on US bases in Kuwait",
+          "description": "Army says it hit ammunition depot at Camp Al Adiri, air defense radars at Ali Al Salem Air Base | Anadolu",
           "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "kill"
+            "attack",
+            "attacks",
+            "drone"
           ],
           "weak_hits": [
             "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.aol.co.uk/articles/hamas-offers-hand-over-authority-174739000.html",
-          "domain": "www.aol.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Hamas offers to hand over authority in Gaza to US-backed administration - AOL",
-          "description": "Militant group’s statement makes no promise to disarm unilaterally as Israel and the US have demanded",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "hamas",
-            "militant"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Limah, Musandam, Oman",
-      "date": "2026-07-09",
-      "country": "Oman",
-      "location": "Limah, Musandam, Oman",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 15,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "http://www.mainemirror.com/news/279175545/trump-warns-tehran-against-launching-further-strikes",
-          "domain": "www.mainemirror.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump Warns Tehran Against Launching Further Strikes",
-          "description": "As the US-Israeli war with Iran continues to impact and shape the region, journalists from RFE/RL&#39;s Central Newsroom and Iranian service, Radio Farda, deli",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.surreycomet.co.uk/news/national/26261337.three-tankers-hit-strait-hormuz-us-revokes-licence-iranian-oil-sales/",
-          "domain": "www.surreycomet.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Three tankers hit in Strait of Hormuz as US revokes licence on Iranian oil sales | Surrey Comet",
-          "description": "The US Treasury issued the 60-day licence last month, waiving sanctions on Iranian oil as part of an interim agreement to end the fighting.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "sanctions"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.thehindubusinessline.com/news/world/us-launches-new-strikes-against-iran-after-three-ships-were-hit-in-strait-of-hormuz/article71196414.ece",
-          "domain": "www.thehindubusinessline.com",
-          "status": "ok",
-          "error": null,
-          "title": "US launches new strikes against Iran after three ships were hit in Strait of Hormuz - The HinduBusinessLine",
-          "description": "The US strikes Iran after three merchant ships were attacked in the Strait of Hormuz, escalating tensions in the region.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.eldoradonews.com/news/2026/jul/07/three-tankers-hit-in-latest-attacks-in-the-strait/",
-          "domain": "www.eldoradonews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Three tankers hit in latest attacks in the Strait of Hormuz, British military says | El Dorado News",
-          "description": "DUBAI, United Arab Emirates -- Three tankers were struck by projectiles Tuesday in the Strait of Hormuz, the British military said, in the latest attacks targeting vessels moving through the fuel-shipping waterway that is central to negotiations seeking a permanent end to the war between the U.S. and Iran.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "war",
-            "military"
           ],
           "noise_hits": []
         }
