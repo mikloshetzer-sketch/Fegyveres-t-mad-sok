@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-03T08:43:12.784452Z",
+  "generated_at": "2026-08-10T06:41:52.891817Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 5,
-  "unique_sources_checked": 19,
+  "event_count": 6,
+  "unique_sources_checked": 24,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -13,276 +13,83 @@
       "region": "Ukrajna",
       "rank": 1,
       "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
-      "date": "2026-07-19",
+      "date": "2026-08-02",
       "country": "Ukraine",
       "location": "Kyiv, Misto, Ukraine",
       "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://aa.com.tr/en/russia-ukraine-war/at-least-7-injured-as-russian-ballistic-missile-barrage-strikes-kyiv-ukraine/4002568",
-          "domain": "aa.com.tr",
+          "url": "http://www.jpost.com/international/article-904280",
+          "domain": "www.jpost.com",
           "status": "ok",
           "error": null,
-          "title": "At least 7 injured as Russian ballistic missile barrage strikes Kyiv: Ukraine",
-          "description": "First explosions heard in capital at 1.30 am local time as air raid alerts activated across central, eastern parts of country | Anadolu",
+          "title": "Homemade bomb kills three, wounds 21 at Italian restaurant in Russia | The Jerusalem Post",
+          "description": "The explosion occurred just before 8:00 p.m. local time close to an Italian restaurant located in one of Moscow's seven Stalin-era skyscrapers at Kudrinkskaya Square, the police said.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "missile",
             "explosion",
-            "raid",
-            "injured"
+            "kill",
+            "police"
           ],
           "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
+          "noise_hits": []
         },
         {
-          "url": "https://www.dw.com/en/russias-largest-ballistic-assault-of-war-rocks-kyiv/a-78022851",
-          "domain": "www.dw.com",
+          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-strikes-three-015419000.html",
+          "domain": "www.aol.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Russia's largest ballistic assault of war rocks Kyiv",
-          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\"> Russia's largest ballistic assault of war rocks Kyiv <meta data-rh=",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "title": "Ukraine war briefing: Strikes on three Russian oil refineries and sanctioned ship - AOL",
+          "description": "Power cut to Zaporizhzhia nuclear power plant; meal queues in Crimea where Ukrainian strikes have cut fuel and power supplies. What we know on day 1,621",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
           "weak_hits": [
             "war"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://www.smh.com.au/world/europe/russia-hits-ukraine-with-most-ballistic-missiles-of-any-attack-since-start-of-war-kyiv-says-20260719-p60gmy.html",
-          "domain": "www.smh.com.au",
+          "url": "https://dunyanews.tv/en/World/965861-bomb-carried-by-woman-kills-three-injures-21-near-moscow-restaurant-",
+          "domain": "dunyanews.tv",
           "status": "ok",
           "error": null,
-          "title": "Russia hits Ukraine with most ballistic missiles in any attack since start of war, Kyiv says",
-          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\" name=\"viewport\"/> Russia hits Ukraine with most ballistic missiles in any attack since start of war, Kyiv says <meta data-rh=",
+          "title": "Bomb carried by woman kills three, injures 21 near Moscow restaurant, authorities say | Dunya News",
+          "description": "A bomb exploded near a central Moscow restaurant, killing three and injuring at least 21. Authorities are investigating the attack, but no group has claimed responsibility.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "missile"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.bbc.co.uk/news/articles/c2el7xpnzrpo",
-          "domain": "www.bbc.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Russia launches major ballistic-missile attack on Ukrainian cities - BBC News",
-          "description": "Eight people die and dozens are injured as several cities are hit by missile and drone attacks, while Kyiv continues its own assault on Russian infrastructure.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "missile",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
-      "date": "2026-07-19",
-      "country": "Ukraine",
-      "location": "Kyiv, Ukraine, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "http://www.bignewsnetwork.com/news/279196534/kiev-hit-by-several-waves-of-missile-strikes-reports",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "Kiev hit by several waves of missile strikes reports",
-          "description": "The Ukrainian capital was hit by a combined drone and missile strike early Sunday morning, according to local officials and media reports Rea",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
-            "missile"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.yahoo.com/news/world/articles/russia-launches-major-ballistic-missile-023323411.html",
-          "domain": "www.yahoo.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russia launches major ballistic missile attack on Kiev",
-          "description": "Russia launched a major overnight ballistic missile attack on the Ukrainian capital Kiev, with more than two dozen missiles fired at targets in and around the city, Ukraine's air force said early on S...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "missile"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.newcastleherald.com.au/story/9313188/russian-missiles-strike-kyiv-killing-one-wounding-13/",
-          "domain": "www.newcastleherald.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Russian missiles strike Kyiv killing one, wounding 13 | Newcastle Herald | Newcastle, NSW",
-          "description": "Russia has launched a major overnight ballistic missile attack on the Ukrainian capital of Kiev, with more than...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "missile",
+            "ied",
             "kill"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.juneesoutherncross.com.au/story/9313188/russian-missiles-strike-kyiv-killing-one-wounding-13/",
-          "domain": "www.juneesoutherncross.com.au",
+          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-moscow-explosion-putin-zelensky-b3025950.html",
+          "domain": "www.independent.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Russian missiles strike Kyiv killing one, wounding 13 | Southern Cross | Junee, NSW",
-          "description": "Russia has launched a major overnight ballistic missile attack on the Ukrainian capital of Kiev, with more than...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "missile",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-07-19",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://www.wbkb11.com/news/national/trumps-promise-on-patriots-will-take-time-leaving-ukraine-with-tough-choices/article_aecded4e-c736-5322-be25-e1b59c17f069.html",
-          "domain": "www.wbkb11.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine faces tough choices as missile defense lags behind | National News | wbkb11.com",
-          "description": "President Trump",
+          "title": "Ukraine-Russia war live: Putin told he ‘must stop’ after Russian strike destroys WHO warehouse in Ukraine | The Independent",
+          "description": "Russia-Ukraine war updates",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
-            "missile"
-          ],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.dailyadvance.com/news/national/ukrainian-drones-hit-warehouses-and-other-sites-across-russia-killing-9-and-wounding-over-80/article_f34ec222-d72d-5ccb-a7da-edc2fc3586bc.html",
-          "domain": "www.dailyadvance.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukrainian drones hit warehouses and other sites across Russia, killing 9 and wounding over 80 | National & World | dailyadvance.com",
-          "description": "Russian officials report that Ukrainian drone attacks overnight and later on Saturday have killed nine people and wounded more than 80 others. Kyiv",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "drones",
-            "killed",
-            "kill",
-            "wounded"
+            "strike"
           ],
           "weak_hits": [
             "war"
           ],
           "noise_hits": []
-        },
-        {
-          "url": "https://jowhar.com/nine-killed-as-russia-and-ukraine-trade-deadly-attacks/",
-          "domain": "jowhar.com",
-          "status": "ok",
-          "error": null,
-          "title": "Nine Killed as Russia and Ukraine Trade Deadly Attacks - Jowhar News Leader | Somali News",
-          "description": "Russia fired a wave of drones and missiles at Ukraine overnight, killing four people, while Ukrainian strikes on Russia and Russian-occupied areas of Ukraine killed five, officials said.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "strike",
-            "strikes",
-            "drone",
-            "drones",
-            "missile",
-            "ied",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://aa.com.tr/en/russia-ukraine-war/at-least-7-injured-as-russian-ballistic-missile-barrage-strikes-kyiv-ukraine/4002568",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "At least 7 injured as Russian ballistic missile barrage strikes Kyiv: Ukraine",
-          "description": "First explosions heard in capital at 1.30 am local time as air raid alerts activated across central, eastern parts of country | Anadolu",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "missile",
-            "explosion",
-            "raid",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
         }
       ]
     },
@@ -290,158 +97,435 @@
       "region": "Közel-Kelet",
       "rank": 1,
       "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
-      "date": "2026-07-19",
+      "date": "2026-08-02",
       "country": "Israel",
       "location": "Gaza, Israel, Israel",
       "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "http://www.middleeaststar.com/news/279196430/no-charges-filed-after-scores-of-palestinian-detainees-died-in-idf-custody-haaretz",
-          "domain": "www.middleeaststar.com",
+          "url": "https://www.gdnonline.com:443/Details/1402272/Gaza-medicine-warehouses-destroyed",
+          "domain": "www.gdnonline.com:443",
           "status": "ok",
           "error": null,
-          "title": "No charges filed after scores of Palestinian detainees died in IDF custody - Haaretz",
-          "description": "The Israel Defense Forces' probes into multiple Palestinian detainee deaths have resulted in zero indictments, according to Haaretz Read Full Article at RT.com",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "idf"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.christianpost.com/voices/the-israel-genocide-delusion-of-the-church-of-england.html",
-          "domain": "www.christianpost.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
+          "title": "World News: Gaza medicine warehouses destroyed",
           "description": "",
           "accepted": false,
-          "reason": "source not readable",
+          "reason": "no concrete security incident detected",
           "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.jns.org/analysis/captured-sinwar-document-outlines-plans-for-10-000-strong-terror-invasion-force",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Sinwar document details plans for ‘10,000-strong’ terror invasion force - Israel & Jewish News - JNS",
-          "description": "The deputy director of the Amit Terrorism and Intelligence Research Institute told JNS the former Hamas leader instructed terrorists to document atrocities against Israeli civilians and soldiers.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "terror",
-            "terrorist",
-            "hamas"
-          ],
           "weak_hits": [
             "war"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://kaieteurnewsonline.com/2026/07/19/israels-netanyahu-threatened-to-sue-new-york-times-over-palestinian-rape-article/",
-          "domain": "kaieteurnewsonline.com",
+          "url": "https://japantoday.com/category/world/gaza-officials-say-israeli-strikes-kill-seven-day-after-deal",
+          "domain": "japantoday.com",
           "status": "ok",
           "error": null,
-          "title": "Israel’s Netanyahu threatened to sue New York Times over Palestinian rape article - Kaieteur News",
-          "description": "Israel launches ‘defamation’ suit after Nicholas Kristof article detailing alleged sexual violence by Israeli forces. The Israeli government has said it is taking the extra ordinary step of suing The New York Times after the newspaper published an article detailing rape allegations by Palestinian detainees against Israeli forces.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "government"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Ali Al Salem Air Base, Kuwait, Kuwait",
-      "date": "2026-07-19",
-      "country": "Kuwait",
-      "location": "Ali Al Salem Air Base, Kuwait, Kuwait",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.skynews.com.au/world-news/global-affairs/godspeed-heroes-two-us-service-members-killed-one-missing-in-jordan-following-iranian-airstrikes/news-story/a81cd331fbe6067d68d8e084724da714?nk=85e889fcdf59b4163100f32be86a4430-1784420202",
-          "domain": "www.skynews.com.au",
-          "status": "error",
-          "error": "HTTP Error 404: Not Found",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.arabnews.com/node/2651453/middle-east",
-          "domain": "www.arabnews.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.samaa.tv/2087353827-us-launches-fresh-strikes-on-iran-after-two-american-troops-killed",
-          "domain": "www.samaa.tv",
-          "status": "ok",
-          "error": null,
-          "title": "US launches fresh strikes on Iran after two American troops killed | SAMAA TV",
-          "description": "The United States launched new strikes on Iran after two US service members were killed in Jordan, escalating tensions across the Middle East and the Strait of Hormuz.",
+          "title": "Gaza officials say Israeli strikes kill seven day after deal - Japan Today",
+          "description": "Gaza authorities said that seven people were killed in Israeli strikes Saturday that also damaged a hospital's medical supplies, a day after Hamas said it agreed to the latest stage of a deal to end the war. The Israeli military for its part said it had struck Hamas weapons depots…",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
             "strikes",
             "killed",
-            "kill"
+            "kill",
+            "hamas"
           ],
-          "weak_hits": [],
-          "noise_hits": []
+          "weak_hits": [
+            "war",
+            "military"
+          ],
+          "noise_hits": [
+            "art"
+          ]
         },
         {
-          "url": "https://aa.com.tr/en/us-israel-iran-war/irans-army-claims-drone-attacks-on-us-bases-in-kuwait/4002607",
+          "url": "https://aa.com.tr/en/middle-east/son-of-slain-hamas-leader-says-family-lost-75-members-in-gaza-war-calls-turkiyes-political-supporter-of-palestine/4016055",
           "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Iran's army claims drone attacks on US bases in Kuwait",
-          "description": "Army says it hit ammunition depot at Camp Al Adiri, air defense radars at Ali Al Salem Air Base | Anadolu",
+          "title": "Son of slain Hamas leader says family lost 75 members in Gaza war, calls Türkiye's political supporter of Palestine",
+          "description": "‘He always advised us to remain among the people, for the people, and close to our family, neighbors and mosque,’ Abdul Salam Haniyeh says in interview for 2nd year of his father’s assassination | Anadolu",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "hamas"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "interview"
+          ]
+        },
+        {
+          "url": "https://pjmedia.com/catherinesalgado/2026/08/01/releases-of-terrorists-and-pay-for-slay-made-oct-7-possible-n4955708",
+          "domain": "pjmedia.com",
+          "status": "ok",
+          "error": null,
+          "title": "Releases of Terrorists and Pay-for-Slay Made Oct. 7 Possible – PJ Media",
+          "description": "Investigation links PA pay-for-slay and terrorist releases to fueling the Oct. 7 Hamas attacks.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
+            "terror",
+            "terrorist",
+            "hamas"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Quneitra, Al Qunaytirah, Syria",
+      "date": "2026-08-01",
+      "country": "Syria",
+      "location": "Quneitra, Al Qunaytirah, Syria",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 1,
+      "confidence": "Low",
+      "inspected_sources": [
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/08/01/773493/Israeli-regime-intensifies-aggression-against-Lebanon,-expands-illegal-incursions-into-Syria",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Israel intensifies assaults on Lebanon, expands illegal incursions into Syria",
+          "description": "Israeli forces have escalated assaults on Lebanon and Syria, striking southern Lebanon and deepening military incursions into Syria’s Quneitra province.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/zionist-regime-escalates-strikes-on-lebanon-and-extends-unauthorized-operations-into-syria/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Zionist Regime Escalates Strikes on Lebanon and Extends Unauthorized Operations into Syria - Islamic Invitation Turkey",
+          "description": "Israeli military operations have intensified in the region, with increased assaults targeting locations in southern Lebanon and expanded military actions",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "ied"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://sana.sy/en/syria/2333533/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupation forces advance into al-Ajraf village in Quneitra",
+          "description": "Quneitra, Aug. 1 (SANA) Israeli occupation forces advanced on Saturday into the village of al-Ajraf in the northern countryside of Quneitra province.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://sana.sy/en/syria/2333389/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupation advances into vicinity of Ruwayhinah Dam in Quneitra countryside",
+          "description": "Quneitra, July 31 (SANA) An Israeli occupation force consisting of three military vehicles advanced on Friday into the vicinity of Ruwayhinah Dam in the",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
+      "date": "2026-08-02",
+      "country": "West Bank",
+      "location": "Jenin, West Bank, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 17,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://imemc.org/article/colonizers-injure-five-palestinians-attack-homes-in-the-west-bank/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Colonizers Injure Five Palestinians, Attack Homes in the West Bank | - IMEMC News",
+          "description": "Illegal Israeli colonizers assaulted two Palestinian citizens in the town of Beitillu, and three others in the village of Al-Mughayyir, northwest of Ramalla ...",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://sana.sy/en/international/2333605/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupation forces kill nine Palestinians in Gaza, detain 18 in West Bank raids",
+          "description": "Occupied Jerusalem, Aug. 2 (SANA) Nine Palestinians were killed and several others wounded in Israeli occupation forces attacks across the Gaza Strip on",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied",
+            "raid",
+            "raids",
+            "killed",
+            "kill",
+            "wounded"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/israeli-army-extends-closure-of-three-refugee-camps/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Army Extends Closure Of Three Refugee Camps | - IMEMC News",
+          "description": "Israeli occupation authorities issued new military orders extending the closure of three major refugee camps in the northern part of the occupied West Bank ...",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [
+            "ied"
+          ],
+          "weak_hits": [
+            "military",
+            "army"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/29/israel-kills-palestinian-destroys-mosque-in-gaza",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel kills Palestinian, destroys mosque in Gaza | Gaza News | Al Jazeera",
+          "description": "Israeli settlers also attack a Palestinian family in Bethlehem in the occupied West Bank.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "ied",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "title": "Rajtaütés / fegyveres támadás – Qeshm, Kordestan, Iran",
+      "date": "2026-08-01",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "http://www.coloradostar.com/news/279216755/attack-on-ship-in-egypt-s-damietta-port-signals-wider-us-iran-conflict",
+          "domain": "www.coloradostar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Drone strike in Egypt raises fears for shipping in Suez Canal",
+          "description": "A drone attack on gas vessels at Egypt’s Mediterranean port of Damietta may signal a new phase in the conflict between the United States and Iran.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
             "drone"
           ],
           "weak_hits": [
-            "army"
+            "conflict"
           ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://global.chinadaily.com.cn/a/202607/31/WS6a6bf90ea310986e2b468468.html",
+          "domain": "global.chinadaily.com.cn",
+          "status": "ok",
+          "error": null,
+          "title": "Mideast conflict widens amid tit-for-tat strikes - Chinadaily.com.cn",
+          "description": "The United States Central Command said it launched strikes against Iran following Tehran's attempted attacks on US forces in the Middle East, heightening concerns about a widening conflict that has dragged more countries into the fray this week.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [
+            "conflict"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aa.com.tr/en/us-israel-iran-war/2-injured-in-strike-on-qeshm-island-amid-us-attacks-across-southern-iran/4013261",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "2 injured in strike on Qeshm Island amid US attacks across southern Iran",
+          "description": "US strike hits residential area in Chah Tangu neighborhood, says Mehr News Agency | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/7/30/us-launches-another-round-of-attacks-on-iran",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "US launches ‘heavy wave’ of new attacks on Iran | US-Israel war on Iran News | Al Jazeera",
+          "description": "Iranian media report that a couple and their two-year-old child were killed in the latest US attacks on Qeshm island.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "title": "Fegyveres összecsapás – Tulkarm, West Bank, West Bank",
+      "date": "2026-07-27",
+      "country": "West Bank",
+      "location": "Tulkarm, West Bank, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 7,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://sana.sy/en/international/2332471/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupation forces intensify attacks across Gaza and West Bank",
+          "description": "Occupied Jerusalem, July 27 (SANA) Israeli occupation forces intensified military operations across the occupied Palestinian territories on Monday, wounding",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.israelherald.com/news/279212215/muslim-council-of-elders-strongly-condemns-settler-attacks-on-villages-in-west-bank-burning-of-mosque-in-tulkarm",
+          "domain": "www.israelherald.com",
+          "status": "ok",
+          "error": null,
+          "title": "Muslim Council of Elders strongly condemns settler attacks on villages in West Bank, burning of mosque in Tulkarm",
+          "description": "The Muslim Council of Elders strongly condemns the attacks carried out by Israeli settlers against a number of villages in the occupied West Bank, mos.....",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/s1hwrlqrgg",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "West Bank on edge: IDF counterterror sweep intensifies amid fears of copycat attacks",
+          "description": "Israeli forces step up arrests, raids and troop deployments after spate of terror attacks as isolated farms and outposts expose security gaps and Palestinian &#x27;resistance committees&#x27; threaten to evolve into armed cells",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "raid",
+            "raids",
+            "terror",
+            "idf",
+            "armed"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/israeli-settlers-set-fire-to-west-bank-mosques-after-deadly-clash/articleshow/132644008.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli settlers set fire to West Bank mosques after deadly clash - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Israeli settlers set fire to West Bank mosques after deadly clash - The Economic Times <meta content=",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "clash"
+          ],
+          "weak_hits": [],
           "noise_hits": []
         }
       ]
