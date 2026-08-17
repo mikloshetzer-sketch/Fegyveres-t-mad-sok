@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-08-10T06:42:39.509171Z",
+  "generated_at": "2026-08-17T05:51:12.227305Z",
   "status": "ok",
   "script": "scripts/enrich_selected_events_analysis.py",
   "input_file": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/docs/reports/biweekly/selected-events/latest-selected-events.json",
-  "events_before": 7,
-  "events_after": 7,
-  "event_analysis_blocks": 7,
+  "events_before": 4,
+  "events_after": 4,
+  "event_analysis_blocks": 4,
   "regional_analysis_blocks": 4,
   "analysis_version": "biweekly-analysis-layer-v1",
   "notes": [
