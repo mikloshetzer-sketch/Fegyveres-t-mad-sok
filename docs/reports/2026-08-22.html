@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <title>Napi fegyveres incidens jelentés – 2026-08-22</title>
+    <style>
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            background: #e5e7eb;
+            color: #111827;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .page {
+            max-width: 1180px;
+            margin: 0 auto;
+            background: #f8fafc;
+            min-height: 100vh;
+        }
+
+        .hero {
+            background:
+                linear-gradient(90deg, rgba(2, 6, 23, 0.97), rgba(15, 23, 42, 0.88)),
+                radial-gradient(circle at right, #1d4ed8, transparent 40%);
+            color: white;
+            padding: 34px 42px;
+            display: flex;
+            justify-content: space-between;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: 38px;
+            line-height: 1.1;
+            letter-spacing: 0.5px;
+        }
+
+        .hero p {
+            margin: 12px 0 0;
+            color: #cbd5e1;
+            font-size: 18px;
+        }
+
+        .date-card {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            border-radius: 18px;
+            padding: 20px 24px;
+            min-width: 210px;
+            text-align: center;
+        }
+
+        .date-card small {
+            display: block;
+            color: #cbd5e1;
+            margin-bottom: 6px;
+        }
+
+        .date-card strong {
+            font-size: 24px;
+        }
+
+        .content {
+            padding: 28px 40px 36px;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .btn {
+            border: 0;
+            background: #2563eb;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .btn.secondary { background: #0f172a; }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+            margin-bottom: 22px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+        }
+
+        .card .label {
+            font-size: 13px;
+            font-weight: 800;
+            color: #334155;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .card .big {
+            font-size: 34px;
+            font-weight: 900;
+            color: #1d4ed8;
+            line-height: 1;
+        }
+
+        .card .small {
+            margin-top: 8px;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        .warning-card {
+            background: #fffbeb;
+            border-color: #fde68a;
+        }
+
+        .section {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 22px;
+            margin-top: 20px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.04);
+        }
+
+        .section h2 {
+            margin: 0 0 16px;
+            font-size: 21px;
+            color: #0f172a;
+        }
+
+        .analysis {
+            font-size: 17px;
+            line-height: 1.65;
+        }
+
+        .charts {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .chart {
+            border: 1px solid #e2e8f0;
+            border-radius: 14px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .chart.wide { grid-column: 1 / -1; }
+
+        .chart img {
+            width: 100%;
+            display: block;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+
+        th {
+            text-align: left;
+            background: #f1f5f9;
+            color: #334155;
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            text-transform: uppercase;
+            font-size: 12px;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        .score {
+            font-size: 18px;
+            font-weight: 900;
+            color: #dc2626;
+        }
+
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        a:hover { text-decoration: underline; }
+
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .rank-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .rank-list li {
+            display: flex;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 8px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .rank-list li:last-child { border-bottom: 0; }
+        .rank-list span { color: #334155; }
+        .rank-list strong { color: #0f172a; }
+
+        .region-summary {
+            background: #f8fafc;
+            border-left: 5px solid #2563eb;
+            padding: 16px;
+            border-radius: 12px;
+            margin-top: 18px;
+            margin-bottom: 12px;
+        }
+
+        .region-summary h3 {
+            margin: 0 0 8px;
+            color: #1e3a8a;
+        }
+
+        .region-summary p {
+            line-height: 1.6;
+            margin: 8px 0;
+        }
+
+        .region-table {
+            margin-bottom: 26px;
+        }
+
+        .sharecard-section {
+            background:
+                linear-gradient(180deg, #0f172a, #020617);
+            color: #e5e7eb;
+            border-color: #334155;
+        }
+
+        .sharecard-section h2 {
+            color: #ffffff;
+        }
+
+        .sharecard-intro {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 16px;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+
+        .sharecard-intro p {
+            margin: 0;
+            color: #cbd5e1;
+            line-height: 1.6;
+        }
+
+        .sharecard-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #38bdf8;
+            color: #020617;
+            padding: 11px 16px;
+            border-radius: 12px;
+            font-weight: 900;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .sharecard {
+            background: #020617;
+            padding: 14px;
+            border-radius: 18px;
+            border: 1px solid #334155;
+        }
+
+        .sharecard img {
+            width: 100%;
+            display: block;
+            border-radius: 14px;
+            border: 1px solid #334155;
+        }
+
+        .sharecard-note {
+            margin-top: 12px;
+            color: #94a3b8;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 22px 40px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .method {
+            background: #fffbeb;
+            border-color: #fde68a;
+            color: #713f12;
+        }
+
+        @media print {
+            body { background: white; }
+            .page { max-width: none; }
+            .actions { display: none; }
+            .section, .card { box-shadow: none; }
+            a { color: #111827; }
+        }
+
+        @media (max-width: 900px) {
+            .hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .cards { grid-template-columns: 1fr 1fr; }
+            .charts { grid-template-columns: 1fr; }
+            .three-col { grid-template-columns: 1fr 1fr; }
+            .sharecard-intro { grid-template-columns: 1fr; }
+        }
+
+        @media (max-width: 600px) {
+            .content { padding: 20px; }
+            .hero { padding: 28px 22px; }
+            .hero h1 { font-size: 30px; }
+            .cards { grid-template-columns: 1fr; }
+            .three-col { grid-template-columns: 1fr; }
+            table { font-size: 12px; }
+            th, td { padding: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <header class="hero">
+            <div>
+                <h1>Napi fegyveres<br>incidens jelentés</h1>
+                <p>OSINT alapú konfliktusfigyelő rendszer</p>
+            </div>
+            <div class="date-card">
+                <small>Dátum</small>
+                <strong>2026-08-22</strong>
+                <small>UTC alapú riport</small>
+            </div>
+        </header>
+
+        <main class="content">
+            <div class="actions">
+                <button class="btn" onclick="window.print()">Letöltés PDF-ként</button>
+                <a class="btn secondary" href="index.html">Riportarchívum</a>
+            </div>
+
+            <section class="cards">
+                <div class="card">
+                    <div class="label">Mai események száma</div>
+                    <div class="big">1286</div>
+                    <div class="small">deduplikált incidens</div>
+                </div>
+
+                <div class="card">
+                    <div class="label">Változás előző naphoz képest</div>
+                    <div class="big">-30.0%</div>
+                    <div class="small">-552 esemény</div>
+                </div>
+
+                <div class="card">
+                    <div class="label">Fő régiós súlypont</div>
+                    <div class="big" style="font-size:22px;">Egyéb térségek</div>
+                    <div class="small">napi találatok alapján</div>
+                </div>
+
+                <div class="card warning-card">
+                    <div class="label">Módszertani jelzés</div>
+                    <div class="small">
+                        Drón-, terrorjellegű és háborús események kulcsszavas azonosítással.
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Rövid napi értékelés</h2>
+                <div class="analysis">
+                    
+    <p>Az incidensek száma csökkent: -552 esemény, 30.0% visszaesés.</p>
+    <p>A legtöbb találat ehhez az országhoz kapcsolódott: <strong>United States</strong> (393 esemény).</p>
+    <p>A legerősebb regionális súlypont: <strong>Egyéb térségek</strong> (891 esemény).</p>
+    <p>A leggyakoribb részletes támadástípus: <strong>Fegyveres összecsapás</strong> (840 találat).</p>
+    <p>A leggyakoribb eseményjelleg: <strong>Egyéb biztonsági esemény</strong> (1279 találat).</p>
+    <p>
+        A drón-, terrorjellegű és háborús események felismerése kulcsszavas besorolással történik.
+        Ez jó elemzési szűrő, de kézi ellenőrzést továbbra is igényelhet.
+    </p>
+    
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Régiós helyzetkép</h2>
+                
+    <div class="region-summary">
+        <h3>Európai Unió</h3>
+        <p>
+            Azonosított események száma: <strong>90</strong>.
+            Leginkább érintett országok: <strong>Ireland (18), Sweden (12), Italy (7)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (59), Rajtaütés / fegyveres támadás (31)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (90)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Germany</td>
+                <td>Germany</td>
+                <td>Germany</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.chronline.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Fagersta, Vastmanlands Lan, Sweden</td>
+                <td>Sweden</td>
+                <td>Fagersta, Vastmanlands Lan, Sweden</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.freemalaysiatoday.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – France</td>
+                <td>France</td>
+                <td>France</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>listverse.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Berlin, Berlin, Germany</td>
+                <td>Germany</td>
+                <td>Berlin, Berlin, Germany</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.sitkasentinel.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Spain</td>
+                <td>Spain</td>
+                <td>Spain</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.austinchronicle.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Ukrajna</h3>
+        <p>
+            Azonosított események száma: <strong>40</strong>.
+            Leginkább érintett országok: <strong>Ukraine (40)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Robbantás / IED (29), Fegyveres összecsapás (8), Rajtaütés / fegyveres támadás (3)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (40)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.neworleanssun.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Dnipropetrovsk, Dnipropetrovs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Dnipropetrovsk, Dnipropetrovs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>athens-times.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.burytimes.co.uk</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Boryspil, Kyyivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Boryspil, Kyyivs&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.theguardian.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Luhansk, Luhans&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Ukraine</td>
+                <td>Luhansk, Luhans&#x27;ka Oblast&#x27;, Ukraine</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.yahoo.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Balkán</h3>
+        <p>
+            Azonosított események száma: <strong>18</strong>.
+            Leginkább érintett országok: <strong>Turkey (11), Serbia (4), Serbia (general) (1)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (14), Rajtaütés / fegyveres támadás (4)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (18)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Ankara, Ankara, Turkey</td>
+                <td>Turkey</td>
+                <td>Ankara, Ankara, Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>en.apa.az</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Turkey</td>
+                <td>Turkey</td>
+                <td>Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>jowhar.com</td>
+            </tr>
+            
+            <tr>
+                <td>assault – Gurlek, Usak, Turkey</td>
+                <td>Turkey</td>
+                <td>Gurlek, Usak, Turkey</td>
+                <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.rnz.co.nz</td>
+            </tr>
+            
+            <tr>
+                <td>assault – Turkey</td>
+                <td>Turkey</td>
+                <td>Turkey</td>
+                <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>nypost.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Gurlek, Usak, Turkey</td>
+                <td>Turkey</td>
+                <td>Gurlek, Usak, Turkey</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.newsx.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Közel-Kelet</h3>
+        <p>
+            Azonosított események száma: <strong>152</strong>.
+            Leginkább érintett országok: <strong>Israel (31), West Bank (19), Syria (17)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (100), Rajtaütés / fegyveres támadás (45), Tömeges erőszak (6)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (151), Dróntámadás (1)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Shahed, Fars, Iran</td>
+                <td>Iran</td>
+                <td>Shahed, Fars, Iran</td>
+                <td>Dróntámadás</td>
+                <td>Dróntámadás</td>
+                <td>www.gdnonline.com:443</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Israel</td>
+                <td>Israel</td>
+                <td>Israel</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.meathchronicle.ie</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Hebron, Israel (general), Israel</td>
+                <td>Israel</td>
+                <td>Hebron, Israel (general), Israel</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.gdnonline.com:443</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Gaza, Israel (general), Israel</td>
+                <td>Israel</td>
+                <td>Gaza, Israel (general), Israel</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>pjmedia.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Iran</td>
+                <td>Iran</td>
+                <td>Iran</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.thedailybeast.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Kelet-Európa / orosz–ukrán térség</h3>
+        <p>
+            Azonosított események száma: <strong>42</strong>.
+            Leginkább érintett országok: <strong>Russia (39), Belarus (2), Moldova (1)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Robbantás / IED (21), Fegyveres összecsapás (14), Rajtaütés / fegyveres támadás (7)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (42)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Samara, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Samara, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.clickondetroit.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Chapayevsk, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Chapayevsk, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>eaworldview.com</td>
+            </tr>
+            
+            <tr>
+                <td>assault – Samara, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Samara, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.clickondetroit.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Kursk, Kurskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Kursk, Kurskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.dailykos.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Novokuybyshevsk, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Russia</td>
+                <td>Novokuybyshevsk, Samarskaya Oblast&#x27;, Russia</td>
+                <td>Robbantás / IED</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.independent.co.uk</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Európa – egyéb</h3>
+        <p>
+            Azonosított események száma: <strong>53</strong>.
+            Leginkább érintett országok: <strong>United Kingdom (45), Norway (4), Switzerland (2)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (39), Rajtaütés / fegyveres támadás (14)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (53)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.abc.net.au</td>
+            </tr>
+            
+            <tr>
+                <td>assault – London, London, City of, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>London, London, City of, United Kingdom</td>
+                <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.independent.co.uk</td>
+            </tr>
+            
+            <tr>
+                <td>fight – London, London, City of, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>London, London, City of, United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.dailymail.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Cambridge, Cambridgeshire, United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Cambridge, Cambridgeshire, United Kingdom</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.thewrap.com</td>
+            </tr>
+            
+            <tr>
+                <td>assault – United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>United Kingdom</td>
+                <td>Rajtaütés / fegyveres támadás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.chroniclelive.co.uk</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+    <div class="region-summary">
+        <h3>Egyéb térségek</h3>
+        <p>
+            Azonosított események száma: <strong>891</strong>.
+            Leginkább érintett országok: <strong>United States (393), India (103), Nigeria (102)</strong>.
+        </p>
+        <p>
+            Domináns támadástípusok: <strong>Fegyveres összecsapás (606), Rajtaütés / fegyveres támadás (275), Határincidens (3)</strong>.
+            Domináns eseményjelleg: <strong>Egyéb biztonsági esemény (885), Rendészeti / belbiztonsági esemény (3), Terrorjellegű támadás (2)</strong>.
+        </p>
+    </div>
+    
+        <table class="region-table">
+            <thead>
+                <tr>
+                    <th>Cím</th>
+                    <th>Ország</th>
+                    <th>Helyszín</th>
+                    <th>Részletes típus</th>
+                    <th>Eseményjelleg</th>
+                    <th>Forrás</th>
+                </tr>
+            </thead>
+            <tbody>
+        
+            <tr>
+                <td>fight – Tres Piedras, New Mexico, United States</td>
+                <td>United States</td>
+                <td>Tres Piedras, New Mexico, United States</td>
+                <td>Robbantás / IED</td>
+                <td>Terrorjellegű támadás</td>
+                <td>www.yahoo.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Piedmont, California, United States</td>
+                <td>United States</td>
+                <td>Piedmont, California, United States</td>
+                <td>Robbantás / IED</td>
+                <td>Terrorjellegű támadás</td>
+                <td>www.omanobserver.om</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Battlefield Park Elementary School, Virginia, United States</td>
+                <td>United States</td>
+                <td>Battlefield Park Elementary School, Virginia, United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Háborús cselekmény</td>
+                <td>richmond.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – Canada</td>
+                <td>Canada</td>
+                <td>Canada</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.mississauga.com</td>
+            </tr>
+            
+            <tr>
+                <td>fight – United States</td>
+                <td>United States</td>
+                <td>United States</td>
+                <td>Fegyveres összecsapás</td>
+                <td>Egyéb biztonsági esemény</td>
+                <td>www.econotimes.com</td>
+            </tr>
+            
+            </tbody>
+        </table>
+        
+            </section>
+
+            <section class="section">
+                <h2>Grafikonos áttekintés</h2>
+                <div class="charts">
+                    
+            <div class="chart wide">
+                <img src="charts/2026-08-22-7-day-trend.svg" alt="7 napos trend">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-08-22-regions.svg" alt="Régiós bontás">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-08-22-event-types.svg" alt="Részletes támadástípusok">
+            </div>
+            
+            <div class="chart">
+                <img src="charts/2026-08-22-event-nature.svg" alt="Eseményjelleg">
+            </div>
+            
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Top 5 kiemelt esemény</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Cím</th>
+                            <th>Ország</th>
+                            <th>Helyszín</th>
+                            <th>Részletes típus</th>
+                            <th>Eseményjelleg</th>
+                            <th>Súly</th>
+                            <th>Forrás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+        <tr>
+            <td>1</td>
+            <td>fight – Tres Piedras, New Mexico, United States</td>
+            <td>United States</td>
+            <td>Tres Piedras, New Mexico, United States</td>
+            <td>Robbantás / IED</td>
+            <td>Terrorjellegű támadás</td>
+            <td class="score">27</td>
+            <td>www.yahoo.com</td>
+        </tr>
+        
+        <tr>
+            <td>2</td>
+            <td>fight – Piedmont, California, United States</td>
+            <td>United States</td>
+            <td>Piedmont, California, United States</td>
+            <td>Robbantás / IED</td>
+            <td>Terrorjellegű támadás</td>
+            <td class="score">26</td>
+            <td>www.omanobserver.om</td>
+        </tr>
+        
+        <tr>
+            <td>3</td>
+            <td>fight – Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Odesa, Odes&#x27;ka Oblast, Ukraine</td>
+            <td>Robbantás / IED</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">21</td>
+            <td>www.neworleanssun.com</td>
+        </tr>
+        
+        <tr>
+            <td>4</td>
+            <td>fight – Dnipropetrovsk, Dnipropetrovs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Dnipropetrovsk, Dnipropetrovs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Robbantás / IED</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">21</td>
+            <td>athens-times.com</td>
+        </tr>
+        
+        <tr>
+            <td>5</td>
+            <td>fight – Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Ukraine</td>
+            <td>Kharkiv, Kharkivs&#x27;ka Oblast&#x27;, Ukraine</td>
+            <td>Robbantás / IED</td>
+            <td>Egyéb biztonsági esemény</td>
+            <td class="score">21</td>
+            <td>www.burytimes.co.uk</td>
+        </tr>
+        
+                    </tbody>
+                </table>
+            </section>
+
+            <section class="section">
+                <h2>Napi bontások</h2>
+                <div class="three-col">
+                    <div>
+                        <h3>Régiók</h3>
+                        <ol class="rank-list"><li><span>Egyéb térségek</span><strong>891</strong></li><li><span>Közel-Kelet</span><strong>152</strong></li><li><span>Európai Unió</span><strong>90</strong></li><li><span>Európa – egyéb</span><strong>53</strong></li><li><span>Kelet-Európa / orosz–ukrán térség</span><strong>42</strong></li><li><span>Ukrajna</span><strong>40</strong></li><li><span>Balkán</span><strong>18</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Országok</h3>
+                        <ol class="rank-list"><li><span>United States</span><strong>393</strong></li><li><span>India</span><strong>105</strong></li><li><span>Nigeria</span><strong>102</strong></li><li><span>United Kingdom</span><strong>45</strong></li><li><span>Ukraine</span><strong>40</strong></li><li><span>Russia</span><strong>39</strong></li><li><span>Israel</span><strong>31</strong></li><li><span>Pakistan</span><strong>24</strong></li><li><span>Australia</span><strong>23</strong></li><li><span>Canada</span><strong>21</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Részletes típusok</h3>
+                        <ol class="rank-list"><li><span>Fegyveres összecsapás</span><strong>840</strong></li><li><span>Rajtaütés / fegyveres támadás</span><strong>379</strong></li><li><span>Robbantás / IED</span><strong>52</strong></li><li><span>Tömeges erőszak</span><strong>9</strong></li><li><span>Határincidens</span><strong>3</strong></li><li><span>Rendészeti / belbiztonsági incidens</span><strong>2</strong></li><li><span>Dróntámadás</span><strong>1</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Eseményjelleg</h3>
+                        <ol class="rank-list"><li><span>Egyéb biztonsági esemény</span><strong>1279</strong></li><li><span>Rendészeti / belbiztonsági esemény</span><strong>3</strong></li><li><span>Terrorjellegű támadás</span><strong>2</strong></li><li><span>Dróntámadás</span><strong>1</strong></li><li><span>Háborús cselekmény</span><strong>1</strong></li></ol>
+                    </div>
+                    <div>
+                        <h3>Források</h3>
+                        <ol class="rank-list"><li><span>www.dailymail.com</span><strong>67</strong></li><li><span>www.yahoo.com</span><strong>48</strong></li><li><span>timesofindia.indiatimes.com</span><strong>36</strong></li><li><span>aa.com.tr</span><strong>28</strong></li><li><span>www.premiumtimesng.com</span><strong>26</strong></li><li><span>dailytrust.com</span><strong>24</strong></li><li><span>www.globalsecurity.org</span><strong>23</strong></li><li><span>www.vanguardngr.com</span><strong>23</strong></li><li><span>www.jpost.com</span><strong>22</strong></li><li><span>news.az</span><strong>21</strong></li></ol>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section sharecard-section">
+                <h2>Blogra használható intelligence card</h2>
+                <div class="sharecard-intro">
+                    <p>
+                        Ez a modern, blogba illeszthető összefoglaló kártya a négy kiemelt térséget mutatja.
+                        Nem külön képgenerálás, hanem automatikusan előállított SVG-infografika.
+                    </p>
+                    <a class="sharecard-link" href="sharecards/2026-08-22-summary.svg" target="_blank">SVG megnyitása</a>
+                </div>
+                <div class="sharecard">
+                    <img src="sharecards/2026-08-22-summary.svg" alt="Blogra használható napi OSINT intelligence card">
+                </div>
+                <div class="sharecard-note">
+                    Bloghoz ezt az SVG-t érdemes használni. Jobban illik elemzői, think tank jellegű bejegyzéshez,
+                    mint a korábbi nagy poszteres összefoglaló.
+                </div>
+            </section>
+
+            <section class="section method">
+                <h2>Módszertani megjegyzés</h2>
+                <p>
+                    Ez a jelentés nyílt forrású, automatizált adatgyűjtés alapján készül.
+                    A dróntámadások, terrorjellegű események és háborús cselekmények azonosítása
+                    kulcsszavas besorolással történik. Ez elemzési támpont, nem hivatalos
+                    minősítés.
+                </p>
+            </section>
+        </main>
+
+        <footer class="footer">
+            OSINT konfliktusfigyelő rendszer – napi automatikus jelentés
+        </footer>
+    </div>
+</body>
+</html>
