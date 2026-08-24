@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-17T05:50:39.132340Z",
+  "generated_at": "2026-08-24T05:53:57.287089Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 7,
-  "unique_sources_checked": 28,
+  "event_count": 4,
+  "unique_sources_checked": 16,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,159 +12,84 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
-      "date": "2026-08-09",
+      "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-08-14",
       "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.gdnonline.com:443/Details/1402908/Russian-strike-kills-boy-and-his-grandparents-",
-          "domain": "www.gdnonline.com:443",
-          "status": "ok",
-          "error": null,
-          "title": "World News: Russian strike kills boy and his grandparents",
-          "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://edition.cnn.com/2026/08/09/europe/russia-ukraine-escalation-aerial-strikes-intl-vis",
-          "domain": "edition.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russia and Ukraine have stepped up their aerial war. Civilians are paying the price | CNN",
-          "description": "The front lines of Russia’s invasion of Ukraine are largely stagnant. But in the skies, the war is ratcheting up.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.newcastleherald.com.au/story/9326871/pope-leo-renews-call-for-ukraine-war-to-end/",
-          "domain": "www.newcastleherald.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Pope Leo renews call for Ukraine war to end | Newcastle Herald | Newcastle, NSW",
-          "description": "Pope Leo has used an address to the faithful in Rome to again call for an end to...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.the-sun.com/news/16814172/",
-          "domain": "www.the-sun.com",
-          "status": "ok",
-          "error": null,
-          "title": "The five desperate plots cornered Putin is hatching as Ukraine brings war home & why tyrant will fight to dying breath",
-          "description": "AS Ukraine brings the war to Russia's doorstep with devastating, deep strikes, desperate Vladimir Putin is hatching plots to take back the...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-08-09",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://www.twincities.com/2026/08/08/the-u-s-is-burning-through-weapons-in-iran-russia-and-china-are-taking-note-2/",
-          "domain": "www.twincities.com",
+          "url": "https://www.ijpr.org/npr-news/2026-08-13/by-sky-and-sea-ukraines-drone-strikes-challenge-russias-grip-on-crimea",
+          "domain": "www.ijpr.org",
           "status": "ok",
           "error": null,
-          "title": "The U.S. is burning through weapons in Iran. Russia and China are taking note. – Twin Cities",
-          "description": "Bombing Iran burned through thousands of multimillion-dollar missiles that contain precision parts from a global web of suppliers and can take years to produce.",
+          "title": "By sky and sea, Ukraine's drone strikes challenge Russia's grip on Crimea | Jefferson Public Radio",
+          "description": "Russia maintained an iron grip on Crimea since seizing it from Ukraine in 2014. Many Russian civilians go there to enjoy the beaches. But now Ukraine is hitting Crimea hard, upending daily life.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "missile",
-            "bombing"
+            "strike",
+            "strikes",
+            "drone"
           ],
           "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
+          "noise_hits": []
         },
         {
-          "url": "https://www.mynbc5.com/article/ukraine-honors-its-collector-of-souls-killed-while-recovering-the-war-dead-russia-ap/73382941",
-          "domain": "www.mynbc5.com",
+          "url": "https://www.theguardian.com/world/2026/aug/14/ukraine-war-briefing-crimea-bomb-robert-shageyev-defected",
+          "domain": "www.theguardian.com",
           "status": "ok",
           "error": null,
-          "title": "Ukraine honors 'collector of souls' who recovered war dead - WPTZ",
-          "description": "Ukrainians have gathered in Kyiv to honor Oleksiy Yukov, a volunteer who spent more than two decades recovering bodies throughout the war.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": [
-            "honor"
-          ]
-        },
-        {
-          "url": "https://www.ynetnews.com/article/skvqygblfl",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran war drains US weapons stockpiles, raising fears Russia and China could exploit g",
-          "description": "Pentagon shifts missiles, ships and air defenses from Europe and Asia to the Middle East as Patriot stocks shrink; Ukraine says Western interceptor deliveries have fallen sharply and is seeking Israeli systems",
+          "title": "Ukraine war briefing: Crimea bomb kills ‘Ukrainian sub commander who defected’ | Ukraine | The Guardian",
+          "description": "Two explosions kill six personnel in Sevastopol; drone-hit Russian refinery shuts down as sanctions block repairs. What we know on day 1,633",
           "accepted": true,
-          "reason": "high-value source with concrete security-incident term",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "missile"
+            "drone",
+            "explosion",
+            "kill"
           ],
           "weak_hits": [
-            "war"
+            "war",
+            "sanctions"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://www.breitbart.com/national-security/2026/08/08/russian-attacks-kill-four-in-kyiv-and-surrounding-region-as-air-defenses-fall-short/",
-          "domain": "www.breitbart.com",
+          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-crimea-bomb-020522000.html",
+          "domain": "www.aol.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Russian Attacks Kill Four in Kyiv and Surrounding Region",
-          "description": "Four people, including a child, were killed in Russian attacks on the Ukrainian capital, Kyiv, and the surrounding region, officials said.",
+          "title": "Ukraine war briefing: Crimea bomb kills ‘Ukrainian sub commander who defected’ - AOL",
+          "description": "Two explosions kill six personnel in Sevastopol; drone-hit Russian refinery shuts down as sanctions block repairs. What we know on day 1,634",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "drone",
+            "explosion",
+            "kill"
+          ],
+          "weak_hits": [
+            "war",
+            "sanctions"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/russia-navy-officer-bin-bomb-crimea-b3032936.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Russian Navy officer who defected from Ukraine killed by hidden bin bomb in Crimea | The Independent",
+          "description": "Russian official says suspect was acting ‘on instructions from Ukrainian intelligence agencies’. Kyiv has not publicly commented on the attack",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
             "killed",
             "kill"
           ],
@@ -176,56 +101,37 @@
     {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
-      "date": "2026-08-09",
-      "country": "Israel",
-      "location": "Gaza, Israel, Israel",
+      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
+      "date": "2026-08-16",
+      "country": "Qatar",
+      "location": "Doha, Ad Daw?ah, Qatar",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.sott.net/article/507815-Endgame-in-the-West-Bank-Settlers-soldiers-and-the-state-move-as-one",
-          "domain": "www.sott.net",
+          "url": "https://economictimes.indiatimes.com/news/international/world-news/iran-says-qatar-holding-3-missing-pilots-doha-dismisses-claims/articleshow/133268628.cms",
+          "domain": "economictimes.indiatimes.com",
           "status": "ok",
           "error": null,
-          "title": "Endgame in the West Bank: Settlers, soldiers, and the state move as one — Puppet Masters — Sott.net",
-          "description": "What happened in the Nablus-area town of Tell lays bare a land war designed to make Palestinian permanence impossible. In the Palestinian town of Tell, southwest of Nablus, residents attempted to repel an armed settler assault. Their response was...",
+          "title": "Iran claims Qatar holds missing pilots; UAE tanker attacked in Strait of Hormuz - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Iran claims Qatar holds missing pilots; UAE tanker attacked in Strait of Hormuz - The Economic Times <meta content=",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
-            "armed"
+            "attack"
           ],
-          "weak_hits": [
-            "war"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://dominicanrepublicpost.com/will-pakistan-saudi-turkiye-defence-pact-change-us-strategy/",
-          "domain": "dominicanrepublicpost.com",
+          "url": "https://yalibnan.com/2026/08/16/iran-says-qatar-captured-its-pilots-months-ago-a-claim-qatar-denies/",
+          "domain": "yalibnan.com",
           "status": "ok",
           "error": null,
-          "title": "Will Pakistan-Saudi-Turkiye defence pact change US strategy? - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
-          "description": "Washington, DC – The administration of United States President Donald Trump has offered no official response in the hours since Saudi Arabia, Turkiye and",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": [
-            "travel"
-          ]
-        },
-        {
-          "url": "https://www.middle-east-online.com/en/meaning-tell-why-west-bank-may-be-nearing-breaking-point",
-          "domain": "www.middle-east-online.com",
-          "status": "ok",
-          "error": null,
-          "title": "The meaning of Tell: Why the West Bank may be nearing a breaking point | Ramzy Baroud | MEO",
+          "title": "Iran says Qatar captured its pilots months ago, a claim Qatar denies – Ya Libnan",
           "description": "",
           "accepted": false,
           "reason": "no concrete security incident detected",
@@ -234,94 +140,130 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.koreaherald.com/article/10835042",
-          "domain": "www.koreaherald.com",
+          "url": "https://www.moneycontrol.com/world/misleading-statements-qatar-rejects-iran-s-claim-it-captured-3-pilots-after-march-strikes-article-14006526.html",
+          "domain": "www.moneycontrol.com",
           "status": "ok",
           "error": null,
-          "title": "Hamas says still ready to go ahead with Gaza plan - The Korea Herald",
-          "description": "Hamas said Saturday it remained ready to proceed with a US-backed Gaza peace plan and urged pressure on Israel, which insists it did not agree to the latest par",
+          "title": "'Misleading statements': Qatar rejects Iran's claim it captured 3 pilots after March strikes",
+          "description": "The denial follows Tehran’s claim that three pilots survived after their aircraft were shot down by air defences during an operation on March 2, but were subsequently captured by Qatari forces.",
           "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "hamas"
+            "strike",
+            "strikes",
+            "shot down"
           ],
           "weak_hits": [],
           "noise_hits": []
+        },
+        {
+          "url": "https://dunyanews.tv/en/World/968133-qatar-denies-irans-claim-it-detained-3-fighter-pilots-after-march-att",
+          "domain": "dunyanews.tv",
+          "status": "ok",
+          "error": null,
+          "title": "Qatar denies Iran's claim it detained 3 fighter pilots after March attack | Dunya News",
+          "description": "The dispute centers on an incident during Iran’s attacks on a military base in Qatar amid a broader regional conflict. Tehran said two Su-24 fighter jets were hit by air defenses during the operation.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "detained"
+          ],
+          "weak_hits": [
+            "military",
+            "conflict"
+          ],
+          "noise_hits": [
+            "dispute"
+          ]
         }
       ]
     },
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Damascus, Dimashq, Syria",
-      "date": "2026-08-09",
-      "country": "Syria",
-      "location": "Damascus, Dimashq, Syria",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 17,
+      "title": "Fegyveres összecsapás – Ramallah, West Bank, West Bank",
+      "date": "2026-08-16",
+      "country": "West Bank",
+      "location": "Ramallah, West Bank, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://www.naharnet.com:443/stories/en/321728-lebanon-detains-assad-era-syrian-officer-wanted-by-damascus",
-          "domain": "www.naharnet.com:443",
+          "url": "https://imemc.org/article/israeli-army-invades-west-bank-communities-abducts-palestinians/",
+          "domain": "imemc.org",
           "status": "ok",
           "error": null,
-          "title": "Lebanon detains Assad-era Syrian officer wanted by Damascus — Naharnet",
-          "description": "Naharnet is the leading Lebanese news destination, breaking the news as it happens!",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "title": "Israeli Army Invades West Bank Communities, Abducts Palestinians | - IMEMC News",
+          "description": "Israeli forces carried out invasions across several occupied West Bank communities on Saturday, abducting Palestinians, breaking into homes, and firing tear ...",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/several-palestinians-injured-settlers-continue-attacks-west-bank",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Several Palestinians injured as settlers continue attacks in West Bank | Middle East Eye",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "injured"
+          ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://sana.sy/en/syria/2334959/",
+          "url": "https://sana.sy/en/international/2336717/",
           "domain": "sana.sy",
           "status": "ok",
           "error": null,
-          "title": "Internal Security dismantles kidnapping gang in Damascus countryside, seizes weapons",
-          "description": "Damascus, Aug. 8 (SANA) Syria's Internal Security Forces in Damascus countryside arrested eight members of an organized kidnapping gang accused of abducting",
+          "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
+          "description": "Occupied Jerusalem, Aug. 16 (SANA) Israeli occupation forces detained 19 Palestinians on Sunday during a wide-scale campaign of raids across several areas of",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "security forces",
-            "arrested"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.arabnews.com/node/2653839/middle-east",
-          "domain": "www.arabnews.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.justiceinfo.net/en/163106-lebanon-detains-assad-era-syrian-officer-wanted-by-damascus-judicial-official.html",
-          "domain": "www.justiceinfo.net",
-          "status": "ok",
-          "error": null,
-          "title": "Lebanon detains Assad-era Syrian officer wanted by Damascus: judicial official - JusticeInfo.net",
-          "description": "Lebanese authorities detained a former Syrian army officer following an arrest warrant from Damascus accusing him of \"killing and crimes against humanity\", a judicial official told AFP on Saturday. Adel Issa, a 67-year-old former officer in the Syrian army's 17th brigade under ousted leader Bashar al-Assad, headed to his country's embassy in Beirut for paperwork […]",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "kill",
+            "ied",
+            "raid",
+            "raids",
             "detained"
           ],
-          "weak_hits": [
-            "war",
-            "army"
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/08/16/774476/Palestinians-shot-beaten-and-forced-from-homes-as-Israeli-raids-sweep-occupied-West-Bank",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinians shot, beaten and forced from homes as Israeli raids sweep West Bank",
+          "description": "Israeli forces and armed settlers reportedly shot, beat and detained Palestinians and forced families from their homes during new raids and attacks across the occupied West Bank.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied",
+            "raid",
+            "raids",
+            "armed",
+            "detained"
           ],
+          "weak_hits": [],
           "noise_hits": []
         }
       ]
@@ -329,105 +271,23 @@
     {
       "region": "Közel-Kelet",
       "rank": 3,
-      "title": "Fegyveres összecsapás – Quneitra, Al Qunaytirah, Syria",
-      "date": "2026-08-09",
-      "country": "Syria",
-      "location": "Quneitra, Al Qunaytirah, Syria",
+      "title": "Fegyveres összecsapás – Bethlehem, West Bank, West Bank",
+      "date": "2026-08-12",
+      "country": "West Bank",
+      "location": "Bethlehem, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 19,
+      "original_sources_count": 11,
       "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
+      "valid_sources_count": 2,
+      "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.presstv.co.uk/Detail/2026/08/09/773995/Israeli-forces-abduct-Syrian-youth-Dara",
-          "domain": "www.presstv.co.uk",
+          "url": "https://www.mcall.com/2026/08/12/a-supreme-court-ruling-could-free-people-convicted-of-2nd-degree-murder-heres-what-that-means-for-the-lehigh-valley/",
+          "domain": "www.mcall.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces abduct Syrian youth after raid into Dara’a village",
-          "description": "Israeli military forces stormed into a village in Syria’s southern Dara’a province, abducting a young man in yet another violation of the Arab country’s sovereignty.",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "raid"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middleeastmonitor.com/20260808-israeli-forces-enter-southwestern-syria-set-up-checkpoint/",
-          "domain": "www.middleeastmonitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces enter southwestern Syria, set up checkpoint – Middle East Monitor",
-          "description": "Israeli forces entered Syria’s southwestern Quneitra province on Friday and set up a checkpoint in a village, state-run Al-Ikhbariya TV reported, Anadolu reports. Five Israeli military vehicl…",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middleeastmonitor.com/20260806-israeli-forces-shell-syrias-quneitra-countryside-in-artillery-attack/",
-          "domain": "www.middleeastmonitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces shell Syria’s Quneitra countryside in artillery attack – Middle East Monitor",
-          "description": "Israeli forces shelled the northern countryside of Syria’s Quneitra province with artillery Thursday, according to state news agency SANA, Anadolu reports. It reported that “Israeli occupation forc…",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [
-            "attack"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://news.antiwar.com/2026/08/02/israel-steps-up-southwest-syria-operations-establishes-new-checkpoints/",
-          "domain": "news.antiwar.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel Steps Up Southwest Syria Operations, Establishes New Checkpoints - News From Antiwar.com",
-          "description": "Israeli forces entered the Quneitra Governorate again on Sunday and established and set up a new military checkpoint along the road near al-Rafid, in the southern part of that governorate, in southwestern Syria. The Israeli troops at the checkpoint stopped and searched Syrian civilians passing by, checked their IDs, and…",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "military"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
-      "date": "2026-08-09",
-      "country": "Saudi Arabia",
-      "location": "Jizan, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
-      "inspected_sources": [
-        {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/fire-doused-saudi-aramco-facility-jizan-saudi-ministry-says",
-          "domain": "www.middleeasteye.net",
-          "status": "ok",
-          "error": null,
-          "title": "Fire doused at Saudi Aramco facility in Jizan, Saudi ministry says | Middle East Eye",
-          "description": "",
+          "title": "Lawyers brace for avalanche of second-degree murder appeals",
+          "description": "Lawyers on both sides of the courtroom in Lehigh County are preparing for the possible resentencing of people convicted of second-degree murder. Some of the cases are decades old.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
@@ -435,132 +295,53 @@
           "noise_hits": []
         },
         {
-          "url": "https://aa.com.tr/en/middle-east/saudi-authorities-extinguish-jizan-aramco-fire-houthis-claim-responsibility/4022261",
-          "domain": "aa.com.tr",
+          "url": "https://imemc.org/article/colonizers-escalate-attacks-across-west-bank-and-jerusalem/",
+          "domain": "imemc.org",
           "status": "ok",
           "error": null,
-          "title": "Saudi authorities extinguish Jizan Aramco fire, Houthis claim responsibility",
-          "description": "Houthis claim they hit Saudi Aramco facility with drone, saying it was in response to alleged Saudi drone attacks on Yemen’s Saada, Hajjah provinces | Anadolu",
+          "title": "Colonizers Escalate Attacks Across West Bank and Jerusalem | - IMEMC News",
+          "description": "Illegal Israeli paramilitary colonizers carried out a series of assaults across the occupied West Bank and occupied Jerusalem on Monday, invading Palestinia ...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
-            "drone"
+            "ied"
           ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.qatar-tribune.com/article/248009/latest-news/iran-says-no-talks-with-us-only-messages-via-intermediaries",
-          "domain": "www.qatar-tribune.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran says no talks with US, only messages via intermediaries - Read Qatar Tribune on the go for unrivalled news coverage",
-          "description": "TEHRAN: Iran is currently not holding negotiations with the US and is only exchanging messages through intermediaries, Foreign Minister Abbas Araghchi says, adding that talks...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
           "weak_hits": [
-            "minister"
+            "military"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://www.newindianexpress.com/world/2026/Aug/09/yemens-houthis-say-struck-refinery-on-saudis-red-sea-coast",
-          "domain": "www.newindianexpress.com",
+          "url": "https://english.pnn.ps/news/48233",
+          "domain": "english.pnn.ps",
           "status": "ok",
           "error": null,
-          "title": "Yemen's Houthis say struck refinery on Saudi's Red Sea coast",
-          "description": "The Houthis control vast swathes of Yemen, including the capital Sanaa and areas on the border with Saudi Arabia's Red Sea provinces.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "title": "Rajtaütés / fegyveres támadás – Riyadh, Ar Riya?, Saudi Arabia",
-      "date": "2026-08-09",
-      "country": "Saudi Arabia",
-      "location": "Riyadh, Ar Riya?, Saudi Arabia",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.omanobserver.om/article/1194167/world/region/fire-extinguished-at-aramco-refinery-in-jazan",
-          "domain": "www.omanobserver.om",
-          "status": "ok",
-          "error": null,
-          "title": "Fire extinguished at Aramco refinery in Jazan - Oman Observer",
-          "description": "Firefighters extinguished a fire that broke out early on Sunday ​at a facility ​at Aramco&#039;s Jazan refinery in southwestern Saudi Arabia, the...",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "firefight"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.newkerala.com/news/a/houthis-confirm-they-targeted-yemens-al-mokha-port-red-636.htm",
-          "domain": "www.newkerala.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middle-east-online.com/en/dozens-yemeni-troops-killed-houthi-strikes-marib-hadramout",
-          "domain": "www.middle-east-online.com",
-          "status": "ok",
-          "error": null,
-          "title": "Dozens of Yemeni troops killed in Houthi strikes on Marib, Hadramout | MEO",
-          "description": "The Houthis said they struck what they described as Saudi troop concentrations in the Al Ruwayk, Al Abr and Al Thaniyah areas with ballistic missiles and drones.",
+          "title": "Palestinians Urge Foreign Diplomats to Pressure Israel to Halt Settler Attacks and Settlement Expansion | PNN",
+          "description": "BETHLEHEM, West Bank / PNN /&nbsp;Palestinian officials and residents are urging European and other foreign governments",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
-            "drones",
-            "missile",
-            "killed",
-            "kill"
+            "attack",
+            "attacks"
           ],
-          "weak_hits": [],
+          "weak_hits": [
+            "government"
+          ],
           "noise_hits": []
         },
         {
-          "url": "https://grenadachronicle.com/two-civilians-killed-in-houthi-strike-on-marib-says-yemens-government/",
-          "domain": "grenadachronicle.com",
+          "url": "https://www.wfmz.com/news/area/lehighvalley/lehigh-county/bethlehem-area/man-who-shot-woman-in-bethlehem-sentenced-to-at-least-10-years-in-prison/article_04282614-9e9a-4690-8c9f-71e39db696b8.html",
+          "domain": "www.wfmz.com",
           "status": "ok",
           "error": null,
-          "title": "Two civilians killed in Houthi strike on Marib, says Yemen’s government - Grenada Chronicle – Daily Grenada And Caribbean News",
-          "description": "News|Conflict",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "government",
-            "conflict"
-          ],
+          "title": "Man who shot woman in Bethlehem sentenced to at least 10 years in prison | Bethlehem Area | wfmz.com",
+          "description": "Allen Jahmell Grimes, 20, was sentenced to 10 to 20 years in state prison.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
           "noise_hits": []
         }
       ]
