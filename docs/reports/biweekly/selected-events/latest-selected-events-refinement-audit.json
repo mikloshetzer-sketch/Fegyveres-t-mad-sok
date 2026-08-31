@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-24T05:53:57.287089Z",
+  "generated_at": "2026-08-31T11:36:15.441377Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
   "event_count": 4,
-  "unique_sources_checked": 16,
+  "unique_sources_checked": 15,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -13,22 +13,53 @@
       "region": "Ukrajna",
       "rank": 1,
       "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-08-14",
+      "date": "2026-08-21",
       "country": "Ukraine",
       "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
+      "valid_sources_count": 3,
+      "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.ijpr.org/npr-news/2026-08-13/by-sky-and-sea-ukraines-drone-strikes-challenge-russias-grip-on-crimea",
-          "domain": "www.ijpr.org",
+          "url": "https://news.az/news/what-happened-in-crimea-explosions-drones-and-blackouts-reported",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://en.interfax.com.ua/news/general/1194887.html",
+          "domain": "en.interfax.com.ua",
           "status": "ok",
           "error": null,
-          "title": "By sky and sea, Ukraine's drone strikes challenge Russia's grip on Crimea | Jefferson Public Radio",
-          "description": "Russia maintained an iron grip on Crimea since seizing it from Ukraine in 2014. Many Russian civilians go there to enjoy the beaches. But now Ukraine is hitting Crimea hard, upending daily life.",
+          "title": "Air defense downs 107 of 135 Russia targets; 27 strike UAVs hit 16 locations",
+          "description": "Ukraine’s Defense Forces intercepted 107 Russia targets overnight into Friday; however, hits by 27 strike UAVs were recorded across 16 locations, the Air Force of the Armed Forces of Ukraine reported.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "uav",
+            "intercepted",
+            "armed"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-drones-missile-attacks-b3036084.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine-Russia war latest: Zelensky vows retaliation as Kyiv pummelled in drone blitz for fifth day running | The Independent",
+          "description": "The Kremlin has announced it was preparing ‘massive strikes’ on Ukraine’s energy infrastructure",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -36,8 +67,83 @@
             "strikes",
             "drone"
           ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.bignewsnetwork.com/news/279254877/2-killed-7-injured-in-drone-attacks-across-crimea-and-donetsk-regional-authorities",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "2 killed, 7 injured in drone attacks across Crimea and Donetsk: regional authorities",
+          "description": "MOSCOW, Aug. 20 (Xinhua) -- Two people were killed and four others injured in Ukrainian attacks in Crimea, Crimea region head Sergey Aksyonov said Thu.....",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "killed",
+            "kill",
+            "injured"
+          ],
           "weak_hits": [],
           "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Ukrajna",
+      "rank": 2,
+      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "date": "2026-08-20",
+      "country": "Ukraine",
+      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "http://www.bignewsnetwork.com/news/279254877/2-killed-7-injured-in-drone-attacks-across-crimea-and-donetsk-regional-authorities",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "2 killed, 7 injured in drone attacks across Crimea and Donetsk: regional authorities",
+          "description": "MOSCOW, Aug. 20 (Xinhua) -- Two people were killed and four others injured in Ukrainian attacks in Crimea, Crimea region head Sergey Aksyonov said Thu.....",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone",
+            "killed",
+            "kill",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.kyivpost.com/opinion/82599",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Opinion: Ukraine Lifts the Veil on Its Southern Offensive — Then Hits Russia’s Navy Where It Hurts",
+          "description": "Stefan Korshak, Kyiv Post’s military correspondent, shares his perspective on recent developments in Russia’s war in Ukraine.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "military"
+          ],
+          "noise_hits": [
+            "opinion"
+          ]
         },
         {
           "url": "https://www.theguardian.com/world/2026/aug/14/ukraine-war-briefing-crimea-bomb-robert-shageyev-defected",
@@ -46,26 +152,6 @@
           "error": null,
           "title": "Ukraine war briefing: Crimea bomb kills ‘Ukrainian sub commander who defected’ | Ukraine | The Guardian",
           "description": "Two explosions kill six personnel in Sevastopol; drone-hit Russian refinery shuts down as sanctions block repairs. What we know on day 1,633",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "drone",
-            "explosion",
-            "kill"
-          ],
-          "weak_hits": [
-            "war",
-            "sanctions"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-crimea-bomb-020522000.html",
-          "domain": "www.aol.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine war briefing: Crimea bomb kills ‘Ukrainian sub commander who defected’ - AOL",
-          "description": "Two explosions kill six personnel in Sevastopol; drone-hit Russian refinery shuts down as sanctions block repairs. What we know on day 1,634",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -101,92 +187,10 @@
     {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Doha, Ad Daw?ah, Qatar",
-      "date": "2026-08-16",
-      "country": "Qatar",
-      "location": "Doha, Ad Daw?ah, Qatar",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://economictimes.indiatimes.com/news/international/world-news/iran-says-qatar-holding-3-missing-pilots-doha-dismisses-claims/articleshow/133268628.cms",
-          "domain": "economictimes.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran claims Qatar holds missing pilots; UAE tanker attacked in Strait of Hormuz - The Economic Times",
-          "description": "text/html; charset=UTF-8\"> Iran claims Qatar holds missing pilots; UAE tanker attacked in Strait of Hormuz - The Economic Times <meta content=",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "attack"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://yalibnan.com/2026/08/16/iran-says-qatar-captured-its-pilots-months-ago-a-claim-qatar-denies/",
-          "domain": "yalibnan.com",
-          "status": "ok",
-          "error": null,
-          "title": "Iran says Qatar captured its pilots months ago, a claim Qatar denies – Ya Libnan",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.moneycontrol.com/world/misleading-statements-qatar-rejects-iran-s-claim-it-captured-3-pilots-after-march-strikes-article-14006526.html",
-          "domain": "www.moneycontrol.com",
-          "status": "ok",
-          "error": null,
-          "title": "'Misleading statements': Qatar rejects Iran's claim it captured 3 pilots after March strikes",
-          "description": "The denial follows Tehran’s claim that three pilots survived after their aircraft were shot down by air defences during an operation on March 2, but were subsequently captured by Qatari forces.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "shot down"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://dunyanews.tv/en/World/968133-qatar-denies-irans-claim-it-detained-3-fighter-pilots-after-march-att",
-          "domain": "dunyanews.tv",
-          "status": "ok",
-          "error": null,
-          "title": "Qatar denies Iran's claim it detained 3 fighter pilots after March attack | Dunya News",
-          "description": "The dispute centers on an incident during Iran’s attacks on a military base in Qatar amid a broader regional conflict. Tehran said two Su-24 fighter jets were hit by air defenses during the operation.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "detained"
-          ],
-          "weak_hits": [
-            "military",
-            "conflict"
-          ],
-          "noise_hits": [
-            "dispute"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Ramallah, West Bank, West Bank",
-      "date": "2026-08-16",
-      "country": "West Bank",
-      "location": "Ramallah, West Bank, West Bank",
+      "title": "Fegyveres összecsapás – Hebron, Israel, Israel",
+      "date": "2026-08-23",
+      "country": "Israel",
+      "location": "Hebron, Israel, Israel",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
@@ -194,74 +198,76 @@
       "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://imemc.org/article/israeli-army-invades-west-bank-communities-abducts-palestinians/",
+          "url": "https://dominicanrepublicpost.com/israeli-army-and-settlers-injure-several-palestinians-across-west-bank/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army and settlers injure several Palestinians across West Bank - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
+          "description": "Israeli military raids and attacks by Israelis from illegal settlements across the occupied West Bank have injured at least 19 Palestinians, according to",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "ied",
+            "raid",
+            "raids",
+            "injured"
+          ],
+          "weak_hits": [
+            "military",
+            "army"
+          ],
+          "noise_hits": [
+            "travel"
+          ]
+        },
+        {
+          "url": "http://www.europesun.com/news/279258571/israeli-settlers-kill-palestinian-teenager-in-occupied-west-bank",
+          "domain": "www.europesun.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli settlers kill Palestinian teenager in occupied West Bank",
+          "description": "Israeli settlers killed a Palestinian teen in the occupied West Bank on Friday, according to Palestine’s Health Ministry Read Full Article at",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "ied",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.hindustantimes.com/world-news/us-news/hebron-shooting-reports-whats-happening-near-lowell-indiana-witnesses-report-police-activity-101787449193353.html",
+          "domain": "www.hindustantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Hebron shooting reports: What's happening near Lowell, Indiana? Witnesses report police activity | Hindustan Times",
+          "description": "“Active shooter” claims have surfaced from Hebron as witnesses reported seeing several cops and fire trucks at the site.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "shooting",
+            "police"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/west-bank-colonizers-assault-four-palestinians-ram-a-citizens-vehicle/",
           "domain": "imemc.org",
           "status": "ok",
           "error": null,
-          "title": "Israeli Army Invades West Bank Communities, Abducts Palestinians | - IMEMC News",
-          "description": "Israeli forces carried out invasions across several occupied West Bank communities on Saturday, abducting Palestinians, breaking into homes, and firing tear ...",
+          "title": "West Bank: Colonizers Assault Four Palestinians, Ram a Citizen's Vehicle | - IMEMC News",
+          "description": "On Saturday, illegal Israeli colonizers assaulted four Palestinian citizens in the occupied West Bank governorates of Jenin, Tubas, and Hebron. In Ramallah, ...",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
             "ied"
-          ],
-          "weak_hits": [
-            "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/several-palestinians-injured-settlers-continue-attacks-west-bank",
-          "domain": "www.middleeasteye.net",
-          "status": "ok",
-          "error": null,
-          "title": "Several Palestinians injured as settlers continue attacks in West Bank | Middle East Eye",
-          "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://sana.sy/en/international/2336717/",
-          "domain": "sana.sy",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli occupation forces detain 19 Palestinians in West Bank raids",
-          "description": "Occupied Jerusalem, Aug. 16 (SANA) Israeli occupation forces detained 19 Palestinians on Sunday during a wide-scale campaign of raids across several areas of",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "raid",
-            "raids",
-            "detained"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.presstv.co.uk/Detail/2026/08/16/774476/Palestinians-shot-beaten-and-forced-from-homes-as-Israeli-raids-sweep-occupied-West-Bank",
-          "domain": "www.presstv.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Palestinians shot, beaten and forced from homes as Israeli raids sweep West Bank",
-          "description": "Israeli forces and armed settlers reportedly shot, beat and detained Palestinians and forced families from their homes during new raids and attacks across the occupied West Bank.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "ied",
-            "raid",
-            "raids",
-            "armed",
-            "detained"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -270,77 +276,82 @@
     },
     {
       "region": "Közel-Kelet",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Bethlehem, West Bank, West Bank",
-      "date": "2026-08-12",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Ramallah, West Bank, West Bank",
+      "date": "2026-08-23",
       "country": "West Bank",
-      "location": "Bethlehem, West Bank, West Bank",
+      "location": "Ramallah, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 11,
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.mcall.com/2026/08/12/a-supreme-court-ruling-could-free-people-convicted-of-2nd-degree-murder-heres-what-that-means-for-the-lehigh-valley/",
-          "domain": "www.mcall.com",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/tear-gas-shelling-detentions-property-theft-reported-during-west-bank",
+          "domain": "www.middleeasteye.net",
           "status": "ok",
           "error": null,
-          "title": "Lawyers brace for avalanche of second-degree murder appeals",
-          "description": "Lawyers on both sides of the courtroom in Lehigh County are preparing for the possible resentencing of people convicted of second-degree murder. Some of the cases are decades old.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "title": "Tear gas shelling, detentions, property theft reported during West Bank raids | Middle East Eye",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "shelling",
+            "raid",
+            "raids"
+          ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://imemc.org/article/colonizers-escalate-attacks-across-west-bank-and-jerusalem/",
-          "domain": "imemc.org",
+          "url": "https://www.islamicinvitationturkey.com/zionist-killers-detain-14-palestinians-as-west-bank-tensions-intensify/",
+          "domain": "www.islamicinvitationturkey.com",
           "status": "ok",
           "error": null,
-          "title": "Colonizers Escalate Attacks Across West Bank and Jerusalem | - IMEMC News",
-          "description": "Illegal Israeli paramilitary colonizers carried out a series of assaults across the occupied West Bank and occupied Jerusalem on Monday, invading Palestinia ...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "ied"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://english.pnn.ps/news/48233",
-          "domain": "english.pnn.ps",
-          "status": "ok",
-          "error": null,
-          "title": "Palestinians Urge Foreign Diplomats to Pressure Israel to Halt Settler Attacks and Settlement Expansion | PNN",
-          "description": "BETHLEHEM, West Bank / PNN /&nbsp;Palestinian officials and residents are urging European and other foreign governments",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "government"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.wfmz.com/news/area/lehighvalley/lehigh-county/bethlehem-area/man-who-shot-woman-in-bethlehem-sentenced-to-at-least-10-years-in-prison/article_04282614-9e9a-4690-8c9f-71e39db696b8.html",
-          "domain": "www.wfmz.com",
-          "status": "ok",
-          "error": null,
-          "title": "Man who shot woman in Bethlehem sentenced to at least 10 years in prison | Bethlehem Area | wfmz.com",
-          "description": "Allen Jahmell Grimes, 20, was sentenced to 10 to 20 years in state prison.",
+          "title": "Zionist Killers Detain 14 Palestinians as West Bank Tensions Intensify - Islamic Invitation Turkey",
+          "description": "In the northern West Bank, Israeli occupiers burned a residential room belonging to a Palestinian in the northern part of Osarin town, south of Nablus, local",
           "accepted": false,
           "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "security_hits": [
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.hindustantimes.com/world-news/palestinian-teen-killed-during-israeli-army-raid-at-west-bank-refugee-camp-101787505228487.html",
+          "domain": "www.hindustantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinian teen ‘killed’ during Israeli army raid at West Bank refugee camp | World News",
+          "description": "Israeli gunfire killed Islam Ahmad Maher Ajouri, 14, in the Askar refugee camp, outside Nablus in West Bank, the Palestinian health ministry said. | World News",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "raid",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/174050",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Colonists raid vicinity of Palestinian citizens’ homes in Burqa east of Ramallah",
+          "description": "",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "raid"
+          ],
           "weak_hits": [],
           "noise_hits": []
         }
