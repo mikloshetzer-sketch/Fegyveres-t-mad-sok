@@ -1342,38 +1342,7 @@
         "Kyiv, Misto, Ukraine Ukraine",
         "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
         "Ukraine Rajtaütés / fegyveres támadás"
-      ],
-      "analysis": {
-        "analysis_version": "event-analysis-builder-v1",
-        "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
-        "short_summary": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine: a rendszer közepes végső bizalmi szint mellett emelte ki. A pontszám 80, az ajánlott végső pontszám 84.",
-        "key_facts": {
-          "region": "Ukrajna",
-          "rank": 1,
-          "date": "2026-09-06",
-          "country": "Ukraine",
-          "location": "Kyiv, Misto, Ukraine",
-          "event_type": "Rajtaütés / fegyveres támadás",
-          "score": 80,
-          "recommended_score": 84,
-          "source_confidence": "Medium",
-          "final_confidence": "Medium",
-          "source_checked": 12,
-          "source_accepted": 4,
-          "article_checked": 4,
-          "article_accepted": 2,
-          "article_confidence": "Medium"
-        },
-        "sections": {
-          "mi_tortent": "2026-09-06 dátummal a rendszer rajtaütés / fegyveres támadás jellegű eseményt azonosított Kyiv, Misto, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
-          "miert_fontos": "Az esemény kiemelt jelentőségű a Ukrajna régióban. A stratégiai helyszínpontszám 18, a nemzetközi relevancia 11, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Kyiv, Misto, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
-          "forraskep": "A forráskép cikkszintű ellenőrzés alapján közepes megbízhatóságú. A rendszer 4 cikkből 2 forrást fogadott el. A végső validáció közepes bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 72. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
-          "muveleti_ertelmezes": "Műveleti szempontból az esemény arra utal, hogy Kyiv, Misto, Ukraine továbbra is érzékeny támadási vagy nyomásgyakorlási pont. Az ilyen típusú események gyakran az utánpótlási útvonalak, katonai infrastruktúra vagy politikai szimbolika miatt kapnak kiemelt figyelmet. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: kiev, kyiv, southern ukraine, southern-ukraine.",
-          "varhato_kovetkezmeny": "Rövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.",
-          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 2 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-        },
-        "publish_ready_text": "### Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine\n\n2026-09-06 dátummal a rendszer rajtaütés / fegyveres támadás jellegű eseményt azonosított Kyiv, Misto, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény kiemelt jelentőségű a Ukrajna régióban. A stratégiai helyszínpontszám 18, a nemzetközi relevancia 11, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Kyiv, Misto, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján közepes megbízhatóságú. A rendszer 4 cikkből 2 forrást fogadott el. A végső validáció közepes bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 72. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból az esemény arra utal, hogy Kyiv, Misto, Ukraine továbbra is érzékeny támadási vagy nyomásgyakorlási pont. Az ilyen típusú események gyakran az utánpótlási útvonalak, katonai infrastruktúra vagy politikai szimbolika miatt kapnak kiemelt figyelmet. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: kiev, kyiv, southern ukraine, southern-ukraine.\n\nRövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 2 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-      }
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -2297,38 +2266,7 @@
         "Kyiv, Ukraine, Ukraine Ukraine",
         "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
         "Ukraine Fegyveres összecsapás"
-      ],
-      "analysis": {
-        "analysis_version": "event-analysis-builder-v1",
-        "title": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
-        "short_summary": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 75, az ajánlott végső pontszám 83.",
-        "key_facts": {
-          "region": "Ukrajna",
-          "rank": 2,
-          "date": "2026-09-06",
-          "country": "Ukraine",
-          "location": "Kyiv, Ukraine, Ukraine",
-          "event_type": "Fegyveres összecsapás",
-          "score": 75,
-          "recommended_score": 83,
-          "source_confidence": "Medium",
-          "final_confidence": "High",
-          "source_checked": 12,
-          "source_accepted": 4,
-          "article_checked": 4,
-          "article_accepted": 4,
-          "article_confidence": "High"
-        },
-        "sections": {
-          "mi_tortent": "2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Kyiv, Ukraine, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
-          "miert_fontos": "Az esemény kiemelt jelentőségű a Ukrajna régióban. A stratégiai helyszínpontszám 18, a nemzetközi relevancia 6, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Kyiv, Ukraine, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
-          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
-          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Kyiv, Ukraine, Ukraine környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: kiev, kyiv, southern ukraine, southern-ukraine.",
-          "varhato_kovetkezmeny": "Rövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.",
-          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-        },
-        "publish_ready_text": "### Fegyveres összecsapás – Kyiv, Ukraine, Ukraine\n\n2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Kyiv, Ukraine, Ukraine térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény kiemelt jelentőségű a Ukrajna régióban. A stratégiai helyszínpontszám 18, a nemzetközi relevancia 6, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Kyiv, Ukraine, Ukraine nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 81, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Kyiv, Ukraine, Ukraine környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: kiev, kyiv, southern ukraine, southern-ukraine.\n\nRövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 8 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-      }
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -3295,38 +3233,7 @@
         "Rafah, Gaza Strip, Gaza Strip Gaza Strip",
         "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
         "Gaza Strip Fegyveres összecsapás"
-      ],
-      "analysis": {
-        "analysis_version": "event-analysis-builder-v1",
-        "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
-        "short_summary": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 73, az ajánlott végső pontszám 81.",
-        "key_facts": {
-          "region": "Közel-Kelet",
-          "rank": 1,
-          "date": "2026-09-06",
-          "country": "Gaza Strip",
-          "location": "Rafah, Gaza Strip, Gaza Strip",
-          "event_type": "Fegyveres összecsapás",
-          "score": 73,
-          "recommended_score": 81,
-          "source_confidence": "High",
-          "final_confidence": "High",
-          "source_checked": 12,
-          "source_accepted": 6,
-          "article_checked": 4,
-          "article_accepted": 3,
-          "article_confidence": "High"
-        },
-        "sections": {
-          "mi_tortent": "2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Rafah, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
-          "miert_fontos": "Az esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 17, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Rafah, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
-          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 92, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
-          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Rafah, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.",
-          "varhato_kovetkezmeny": "Rövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.",
-          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-        },
-        "publish_ready_text": "### Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip\n\n2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Rafah, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 17, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Rafah, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 3 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 92, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Rafah, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.\n\nRövid távon az esemény folytatódó feszültséget jelezhet. A magas végső bizalmi szint miatt érdemes a kapcsolódó helyszínt és a hasonló eseményeket a következő frissítésekben külön figyelni.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 1 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-      }
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -4277,38 +4184,7 @@
         "Nablus, West Bank, West Bank West Bank",
         "Fegyveres összecsapás – Nablus, West Bank, West Bank",
         "West Bank Fegyveres összecsapás"
-      ],
-      "analysis": {
-        "analysis_version": "event-analysis-builder-v1",
-        "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
-        "short_summary": "Fegyveres összecsapás – Nablus, West Bank, West Bank: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 68, az ajánlott végső pontszám 76.",
-        "key_facts": {
-          "region": "Közel-Kelet",
-          "rank": 2,
-          "date": "2026-09-06",
-          "country": "West Bank",
-          "location": "Nablus, West Bank, West Bank",
-          "event_type": "Fegyveres összecsapás",
-          "score": 68,
-          "recommended_score": 76,
-          "source_confidence": "High",
-          "final_confidence": "High",
-          "source_checked": 12,
-          "source_accepted": 6,
-          "article_checked": 4,
-          "article_accepted": 4,
-          "article_confidence": "High"
-        },
-        "sections": {
-          "mi_tortent": "2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Nablus, West Bank, West Bank térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
-          "miert_fontos": "Az esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 0, a nemzetközi relevancia 17, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Nablus, West Bank, West Bank nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
-          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 92, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
-          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Nablus, West Bank, West Bank környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: nablus, west bank.",
-          "varhato_kovetkezmeny": "Rövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.",
-          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-        },
-        "publish_ready_text": "### Fegyveres összecsapás – Nablus, West Bank, West Bank\n\n2026-09-06 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Nablus, West Bank, West Bank térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 0, a nemzetközi relevancia 17, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Nablus, West Bank, West Bank nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 92, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Nablus, West Bank, West Bank környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: nablus, west bank.\n\nRövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 12 ellenőrzött forrásból 6 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-      }
+      ]
     },
     {
       "record_type": "event_cluster",
@@ -5081,113 +4957,7 @@
         "Khan Yunis, Gaza Strip, Gaza Strip Gaza Strip",
         "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
         "Gaza Strip Fegyveres összecsapás"
-      ],
-      "analysis": {
-        "analysis_version": "event-analysis-builder-v1",
-        "title": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
-        "short_summary": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip: a rendszer magas végső bizalmi szint mellett emelte ki. A pontszám 68, az ajánlott végső pontszám 76.",
-        "key_facts": {
-          "region": "Közel-Kelet",
-          "rank": 3,
-          "date": "2026-09-05",
-          "country": "Gaza Strip",
-          "location": "Khan Yunis, Gaza Strip, Gaza Strip",
-          "event_type": "Fegyveres összecsapás",
-          "score": 68,
-          "recommended_score": 76,
-          "source_confidence": "Medium",
-          "final_confidence": "High",
-          "source_checked": 8,
-          "source_accepted": 4,
-          "article_checked": 4,
-          "article_accepted": 4,
-          "article_confidence": "High"
-        },
-        "sections": {
-          "mi_tortent": "2026-09-05 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Khan Yunis, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.",
-          "miert_fontos": "Az esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 13, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Khan Yunis, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.",
-          "forraskep": "A forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 77, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.",
-          "muveleti_ertelmezes": "Műveleti szempontból a fegyveres összecsapás arra utal, hogy Khan Yunis, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.",
-          "varhato_kovetkezmeny": "Rövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.",
-          "bizonytalansag": "Bizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 8 ellenőrzött forrásból 4 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-        },
-        "publish_ready_text": "### Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip\n\n2026-09-05 dátummal a rendszer fegyveres összecsapás jellegű eseményt azonosított Khan Yunis, Gaza Strip, Gaza Strip térségében. Az esemény a kiválasztási modell szerint bekerült a regionális kiemelt események közé.\n\nAz esemény fontos a Közel-Kelet régióban. A stratégiai helyszínpontszám 8, a nemzetközi relevancia 13, a forrásmegbízhatósági komponens pedig 25. Ez azt jelzi, hogy Khan Yunis, Gaza Strip, Gaza Strip nem önmagában, hanem a tágabb konfliktuskörnyezet részeként értelmezendő.\n\nA forráskép cikkszintű ellenőrzés alapján magas megbízhatóságú. A rendszer 4 cikkből 4 forrást fogadott el. A végső validáció magas bizalmi szintet adott. A forrásszintű pontszám 77, a cikkszintű pontszám 100. Ez már nem csak URL- vagy cím-alapú jelzés, hanem cikk-tartalmi ellenőrzésen is átfutott értékelés.\n\nMűveleti szempontból a fegyveres összecsapás arra utal, hogy Khan Yunis, Gaza Strip, Gaza Strip környezetében aktív biztonsági nyomás látható. Ez nem feltétlenül jelent stratégiai áttörést, de a helyi instabilitás szintjét növeli. A normalizált helyszínkulcsok alapján a rendszer ezt a térséget ezekhez a jelzésekhez kapcsolta: gaza, gaza city, gaza strip.\n\nRövid távon az esemény figyelést indokol, de önmagában még nem bizonyít tartós eszkalációt. A következő napokban az ismétlődés, a célpont típusa és a források konzisztenciája lesz a döntő.\n\nBizonytalansági tényező, hogy a cikkszintű ellenőrzés során 4 cikkből 0 nem kapott elfogadó minősítést. A forrásszintű validációban 8 ellenőrzött forrásból 4 került elutasításra. Ez nem teszi használhatatlanná az eseményt, de jelzi, hogy a következtetéseket óvatosan kell kezelni."
-      }
+      ]
     }
-  ],
-  "regional_analysis": {
-    "Európai Unió": {
-      "analysis_version": "regional-analysis-summary-v1",
-      "region": "Európai Unió",
-      "raw_event_count": 617,
-      "cluster_count": 617,
-      "selected_count": 0,
-      "average_selected_score": 0,
-      "top_event_types": [],
-      "top_countries": [],
-      "summary_text": "A(z) Európai Unió régióban a vizsgált időszakban 617 nyers esemény és 617 klaszter szerepelt, de a validációs és rangsorolási szűrők után nem került kiemelt esemény a Top listába. Ez nem eseménytelenséget jelent, hanem azt, hogy a forrásminőség, helyszínpontosság vagy stratégiai relevancia nem érte el a kiemelési küszöböt."
-    },
-    "Ukrajna": {
-      "analysis_version": "regional-analysis-summary-v1",
-      "region": "Ukrajna",
-      "raw_event_count": 172,
-      "cluster_count": 166,
-      "selected_count": 2,
-      "average_selected_score": 77.5,
-      "top_event_types": [
-        [
-          "Rajtaütés / fegyveres támadás",
-          1
-        ],
-        [
-          "Fegyveres összecsapás",
-          1
-        ]
-      ],
-      "top_countries": [
-        [
-          "Ukraine",
-          2
-        ]
-      ],
-      "summary_text": "A(z) Ukrajna régióban 172 nyers eseményből 166 klaszter jött létre, ezek közül 2 került a kiemelt listába. A kiválasztott események átlagpontszáma 77.5. A domináns mintázat Rajtaütés / fegyveres támadás, földrajzilag pedig leginkább Ukraine jelenik meg."
-    },
-    "Balkán": {
-      "analysis_version": "regional-analysis-summary-v1",
-      "region": "Balkán",
-      "raw_event_count": 106,
-      "cluster_count": 106,
-      "selected_count": 0,
-      "average_selected_score": 0,
-      "top_event_types": [],
-      "top_countries": [],
-      "summary_text": "A(z) Balkán régióban a vizsgált időszakban 106 nyers esemény és 106 klaszter szerepelt, de a validációs és rangsorolási szűrők után nem került kiemelt esemény a Top listába. Ez nem eseménytelenséget jelent, hanem azt, hogy a forrásminőség, helyszínpontosság vagy stratégiai relevancia nem érte el a kiemelési küszöböt."
-    },
-    "Közel-Kelet": {
-      "analysis_version": "regional-analysis-summary-v1",
-      "region": "Közel-Kelet",
-      "raw_event_count": 1003,
-      "cluster_count": 1003,
-      "selected_count": 3,
-      "average_selected_score": 69.67,
-      "top_event_types": [
-        [
-          "Fegyveres összecsapás",
-          3
-        ]
-      ],
-      "top_countries": [
-        [
-          "Gaza Strip",
-          2
-        ],
-        [
-          "West Bank",
-          1
-        ]
-      ],
-      "summary_text": "A(z) Közel-Kelet régióban 1003 nyers eseményből 1003 klaszter jött létre, ezek közül 3 került a kiemelt listába. A kiválasztott események átlagpontszáma 69.67. A domináns mintázat Fegyveres összecsapás, földrajzilag pedig leginkább Gaza Strip jelenik meg."
-    }
-  },
-  "analysis_version": "biweekly-analysis-layer-v1"
+  ]
 }

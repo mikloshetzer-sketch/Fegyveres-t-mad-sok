@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-08-31T11:36:15.441377Z",
+  "generated_at": "2026-09-07T10:18:57.732781Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 4,
-  "unique_sources_checked": 15,
+  "event_count": 3,
+  "unique_sources_checked": 12,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,19 +12,109 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-08-21",
+      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
+      "date": "2026-08-30",
       "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
+      "location": "Kyiv, Misto, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-nuclear-plant-010709000.html",
+          "domain": "www.aol.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine war briefing: Nuclear plant has lost power and running on generators, UN watchdog says - AOL",
+          "description": "Russian-occupied plant has only 10-day diesel supply on site for generators; Kyiv investigates deadly attack on warehouse. What we know on day 1,649",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "ied"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/sk3eovz00fl",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia threatens attacks inside Britain over weapons supplied to Ukraine",
+          "description": "Andrey Fedorov says Russian leaders are considering sabotage or arson rather than a direct military strike, naming British defence sites as ‘legitimate targets’ as Moscow’s threats against London intensify",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "ied",
+            "sabotage",
+            "arson"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/death-toll-rises-to-38-from-russias-deadliest-attack-on-ukraine-this-year/articleshow/133628195.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Death toll rises to 38 from Russia's deadliest attack on Ukraine this year - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Death toll rises to 38 from Russia's deadliest attack on Ukraine this year - The Economic Times <meta content=",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.rightspeak.net/2026/08/207-c-clashes-in-f-line-31-in-pokrovsk.html",
+          "domain": "www.rightspeak.net",
+          "status": "ok",
+          "error": null,
+          "title": "RIGHT SPEAK: 207 C-Clashes in F-Line: 31 in Pokrovsk Dir, 18 in Kostiantynivka Dir, 13 in Huliaipole Dir; RU Threatens Strikes on UK Milt Targets, ‘catastrophic consequences’ Over UKR; Z: UKR Plans to Launch 1,000 L-Range Drones Per-Day Into RU; BYE BYE: Fedorov Takes Adviser Role at Italian Defence Ministry; Z: US Gave Kyiv Info About Meetings in Moscow; UKR HITS: Yaroslavl Oil Ref and Engels-2 Airbase; Damage to Tu-95MS Bomber, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "clash",
+            "clashes"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
+      "date": "2026-08-30",
+      "country": "West Bank",
+      "location": "Nablus, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 1,
+      "confidence": "Low",
       "inspected_sources": [
         {
-          "url": "https://news.az/news/what-happened-in-crimea-explosions-drones-and-blackouts-reported",
-          "domain": "news.az",
+          "url": "https://www.arabnews.com/node/2656286/middle-east",
+          "domain": "www.arabnews.com",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "title": "",
@@ -36,238 +126,51 @@
           "noise_hits": []
         },
         {
-          "url": "https://en.interfax.com.ua/news/general/1194887.html",
-          "domain": "en.interfax.com.ua",
+          "url": "https://english.wafa.ps/Pages/Details/174190",
+          "domain": "english.wafa.ps",
           "status": "ok",
           "error": null,
-          "title": "Air defense downs 107 of 135 Russia targets; 27 strike UAVs hit 16 locations",
-          "description": "Ukraine’s Defense Forces intercepted 107 Russia targets overnight into Friday; however, hits by 27 strike UAVs were recorded across 16 locations, the Air Force of the Armed Forces of Ukraine reported.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
+          "title": "Hundreds of Israeli colonists raid Islamic religious sites in Awarta, south of Nablus",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
           "security_hits": [
-            "strike",
-            "uav",
-            "intercepted",
-            "armed"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/europe/ukraine-russia-war-live-putin-zelensky-drones-missile-attacks-b3036084.html",
-          "domain": "www.independent.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine-Russia war latest: Zelensky vows retaliation as Kyiv pummelled in drone blitz for fifth day running | The Independent",
-          "description": "The Kremlin has announced it was preparing ‘massive strikes’ on Ukraine’s energy infrastructure",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone"
+            "raid"
           ],
           "weak_hits": [
             "war"
           ],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.bignewsnetwork.com/news/279254877/2-killed-7-injured-in-drone-attacks-across-crimea-and-donetsk-regional-authorities",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "2 killed, 7 injured in drone attacks across Crimea and Donetsk: regional authorities",
-          "description": "MOSCOW, Aug. 20 (Xinhua) -- Two people were killed and four others injured in Ukrainian attacks in Crimea, Crimea region head Sergey Aksyonov said Thu.....",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "killed",
-            "kill",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "date": "2026-08-20",
-      "country": "Ukraine",
-      "location": "Crimea, Krym, Avtonomna Respublika, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 8,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "http://www.bignewsnetwork.com/news/279254877/2-killed-7-injured-in-drone-attacks-across-crimea-and-donetsk-regional-authorities",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "2 killed, 7 injured in drone attacks across Crimea and Donetsk: regional authorities",
-          "description": "MOSCOW, Aug. 20 (Xinhua) -- Two people were killed and four others injured in Ukrainian attacks in Crimea, Crimea region head Sergey Aksyonov said Thu.....",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "killed",
-            "kill",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.kyivpost.com/opinion/82599",
-          "domain": "www.kyivpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Opinion: Ukraine Lifts the Veil on Its Southern Offensive — Then Hits Russia’s Navy Where It Hurts",
-          "description": "Stefan Korshak, Kyiv Post’s military correspondent, shares his perspective on recent developments in Russia’s war in Ukraine.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "military"
-          ],
-          "noise_hits": [
-            "opinion"
-          ]
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/aug/14/ukraine-war-briefing-crimea-bomb-robert-shageyev-defected",
-          "domain": "www.theguardian.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine war briefing: Crimea bomb kills ‘Ukrainian sub commander who defected’ | Ukraine | The Guardian",
-          "description": "Two explosions kill six personnel in Sevastopol; drone-hit Russian refinery shuts down as sanctions block repairs. What we know on day 1,633",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "drone",
-            "explosion",
-            "kill"
-          ],
-          "weak_hits": [
-            "war",
-            "sanctions"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.independent.co.uk/news/world/europe/russia-navy-officer-bin-bomb-crimea-b3032936.html",
-          "domain": "www.independent.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Russian Navy officer who defected from Ukraine killed by hidden bin bomb in Crimea | The Independent",
-          "description": "Russian official says suspect was acting ‘on instructions from Ukrainian intelligence agencies’. Kyiv has not publicly commented on the attack",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Hebron, Israel, Israel",
-      "date": "2026-08-23",
-      "country": "Israel",
-      "location": "Hebron, Israel, Israel",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://dominicanrepublicpost.com/israeli-army-and-settlers-injure-several-palestinians-across-west-bank/",
-          "domain": "dominicanrepublicpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli army and settlers injure several Palestinians across West Bank - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
-          "description": "Israeli military raids and attacks by Israelis from illegal settlements across the occupied West Bank have injured at least 19 Palestinians, according to",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "ied",
-            "raid",
-            "raids",
-            "injured"
-          ],
-          "weak_hits": [
-            "military",
-            "army"
-          ],
-          "noise_hits": [
-            "travel"
-          ]
-        },
-        {
-          "url": "http://www.europesun.com/news/279258571/israeli-settlers-kill-palestinian-teenager-in-occupied-west-bank",
-          "domain": "www.europesun.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli settlers kill Palestinian teenager in occupied West Bank",
-          "description": "Israeli settlers killed a Palestinian teen in the occupied West Bank on Friday, according to Palestine’s Health Ministry Read Full Article at",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
           "noise_hits": [
             "art"
           ]
         },
         {
-          "url": "https://www.hindustantimes.com/world-news/us-news/hebron-shooting-reports-whats-happening-near-lowell-indiana-witnesses-report-police-activity-101787449193353.html",
-          "domain": "www.hindustantimes.com",
+          "url": "https://english.wafa.ps/Pages/Details/174191",
+          "domain": "english.wafa.ps",
           "status": "ok",
           "error": null,
-          "title": "Hebron shooting reports: What's happening near Lowell, Indiana? Witnesses report police activity | Hindustan Times",
-          "description": "“Active shooter” claims have surfaced from Hebron as witnesses reported seeing several cops and fire trucks at the site.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "shooting",
-            "police"
-          ],
+          "title": "Israeli forces begin bulldozing Palestinian land in Deir Ballut, central West Bank",
+          "description": "",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://imemc.org/article/west-bank-colonizers-assault-four-palestinians-ram-a-citizens-vehicle/",
+          "url": "https://imemc.org/article/colonizers-attack-communities-injure-palestinians-across-west-bank/",
           "domain": "imemc.org",
           "status": "ok",
           "error": null,
-          "title": "West Bank: Colonizers Assault Four Palestinians, Ram a Citizen's Vehicle | - IMEMC News",
-          "description": "On Saturday, illegal Israeli colonizers assaulted four Palestinian citizens in the occupied West Bank governorates of Jenin, Tubas, and Hebron. In Ramallah, ...",
+          "title": "Colonizers Attack Communities, Injure Palestinians Across West Bank | - IMEMC News",
+          "description": "Illegal Israeli colonizers carried out attacks across the occupied West Bank. They injured Palestinians; assaulted farmers, residents, journalists, and inte ...",
           "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied"
+            "attack",
+            "attacks",
+            "ied",
+            "injured"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -278,79 +181,77 @@
       "region": "Közel-Kelet",
       "rank": 2,
       "title": "Fegyveres összecsapás – Ramallah, West Bank, West Bank",
-      "date": "2026-08-23",
+      "date": "2026-08-30",
       "country": "West Bank",
       "location": "Ramallah, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/tear-gas-shelling-detentions-property-theft-reported-during-west-bank",
-          "domain": "www.middleeasteye.net",
+          "url": "https://www.straitstimes.com/world/middle-east/killing-of-palestinian-children-and-teens-by-israel-surges-in-west-bank",
+          "domain": "www.straitstimes.com",
           "status": "ok",
           "error": null,
-          "title": "Tear gas shelling, detentions, property theft reported during West Bank raids | Middle East Eye",
-          "description": "",
+          "title": "Killing of Palestinian children and teens by Israel surges in West Bank | The Straits Times",
+          "description": "Of the 54 Palestinian children or teenagers killed in 2025, the youngest was just two years old. Read more at straitstimes.com.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "shelling",
-            "raid",
-            "raids"
+            "killed",
+            "kill"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.islamicinvitationturkey.com/zionist-killers-detain-14-palestinians-as-west-bank-tensions-intensify/",
-          "domain": "www.islamicinvitationturkey.com",
+          "url": "https://aa.com.tr/en/middle-east/israeli-army-injures-6-palestinians-in-raid-on-occupied-west-bank-refugee-camp/4041253",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Zionist Killers Detain 14 Palestinians as West Bank Tensions Intensify - Islamic Invitation Turkey",
-          "description": "In the northern West Bank, Israeli occupiers burned a residential room belonging to a Palestinian in the northern part of Osarin town, south of Nablus, local",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.hindustantimes.com/world-news/palestinian-teen-killed-during-israeli-army-raid-at-west-bank-refugee-camp-101787505228487.html",
-          "domain": "www.hindustantimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Palestinian teen ‘killed’ during Israeli army raid at West Bank refugee camp | World News",
-          "description": "Israeli gunfire killed Islam Ahmad Maher Ajouri, 14, in the Askar refugee camp, outside Nablus in West Bank, the Palestinian health ministry said. | World News",
+          "title": "Israeli army injures 6 Palestinians in raid on occupied West Bank refugee camp",
+          "description": "Forces also raid Al-Bireh, Al-Mughayyir as occupiers enter Hebron’s Old City under military protection | Anadolu",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "raid",
-            "killed",
-            "kill"
+            "ied",
+            "raid"
           ],
           "weak_hits": [
+            "military",
             "army"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://english.wafa.ps/Pages/Details/174050",
-          "domain": "english.wafa.ps",
+          "url": "https://imemc.org/article/west-bank-colonizers-assault-palestinians-foreign-journalists/",
+          "domain": "imemc.org",
           "status": "ok",
           "error": null,
-          "title": "Colonists raid vicinity of Palestinian citizens’ homes in Burqa east of Ramallah",
-          "description": "",
+          "title": "West Bank: Colonizers Assault Palestinians, Foreign Journalists | - IMEMC News",
+          "description": "Large groups of illegal Israeli colonizers stormed several areas in the occupied West Bank on Saturday, injuring many Palestinian civilians and 2 foreign jo ...",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
-            "raid"
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/israeli-forces-shoot-two-palestinians-during-settler-attacks-near",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces shoot two Palestinians during settler attacks near Ramallah | Middle East Eye",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks"
           ],
           "weak_hits": [],
           "noise_hits": []
