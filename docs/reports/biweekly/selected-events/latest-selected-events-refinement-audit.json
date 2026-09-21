@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-14T10:39:15.440708Z",
+  "generated_at": "2026-09-21T10:44:21.735611Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 5,
-  "unique_sources_checked": 20,
+  "event_count": 6,
+  "unique_sources_checked": 24,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,75 +12,89 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
-      "date": "2026-09-06",
+      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
+      "date": "2026-09-13",
       "country": "Ukraine",
       "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
+      "valid_sources_count": 3,
+      "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.dailymail.com/news/article-16109281/Russia-pounds-Kyiv-fresh-strikes-despite-promise-pause-attacks.html",
-          "domain": "www.dailymail.com",
+          "url": "https://www.rferl.org/a/zelenskyy-putin-trump-miami-g20-war-talks/33853066.html",
+          "domain": "www.rferl.org",
           "status": "ok",
           "error": null,
-          "title": "Trump sends 'personal regards' to Zelensky after US envoys conclude two rounds of 'substantive' talks in Ukraine as Britain, France and Germany drafted in to join meeting | Daily Mail Online",
-          "description": "Steve Witkoff and Jared Kushner were joined by European security advisers as peace talks were held following negotiations with Russia on Saturday.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.theguardian.com/world/2026/sep/06/us-envoys-jared-kushner-steve-witkoff-arrive-kyiv-talks-on-ending-war",
-          "domain": "www.theguardian.com",
-          "status": "ok",
-          "error": null,
-          "title": "US envoys Kushner and Witkoff visit Kyiv for first time after Putin talks | Ukraine | The Guardian",
-          "description": "Witkoff says he hopes trilateral talks involving the US, Ukraine and Europe will be announced ‘in short order’",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://abcnews.com/International/witkoff-kushner-arrive-ukraine-talks-after-meeting-putin/story?id=136237115",
-          "domain": "abcnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Witkoff hails 'very meaningful discussions' on Ukraine-Russia war in Sunday meeting with Zelenskyy - ABC News",
-          "description": "President Donald Trump's special envoy Steve Witkoff and son-in-law Jared Kushner arrived in the Ukrainian capital of Kyiv on Sunday.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://kvpu.org.ua/en/trade-union-news/general/kvpu-appeals-to-international-trade-union-community-over-russias-attacks-on-ukrainian-workers/",
-          "domain": "kvpu.org.ua",
-          "status": "ok",
-          "error": null,
-          "title": "KVPU Appeals to International Trade Union Community Over Russia’s Attacks on Ukrainian Workers - КВПУ, Конфедерація вільних профспілок України",
-          "description": "On September 1st attack aRussian strike on a railway depot in Kyiv killed seven people, including six workers.",
+          "title": "Russian Strikes Kill 9 Across Ukraine, As Zelenskyy Offers To Meet Putin At Miami G20",
+          "description": "Russia continued to pound the Ukrainian civilian population, killing at least nine people in attacks throughout the country, while Ukrainian President Volodymyr Zelenskyy repeated he'd be willing to meet Russia’s Vladimir Putin at the upcoming G20 summit -- something the Kremlin called “impossible.”",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
             "strike",
-            "killed",
+            "strikes",
             "kill"
           ],
+          "weak_hits": [
+            "president",
+            "summit"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.theepochtimes.com/world/european-countries-sending-troops-to-ukraine-would-mean-war-with-russia-putin-warns-6086713",
+          "domain": "www.theepochtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "European Countries Sending Troops to Ukraine Would Mean ‘War With Russia,’ Putin Warns | The Epoch Times",
+          "description": "The warning was issued after Macron said a group of 26 countries pledged to deploy troops to Ukraine as a ’reassurance force' after the war.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.naturalnews.com/2026-09-12-russian-intelligence-service-ukraine-to-mobilize-women.html",
+          "domain": "www.naturalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian Intelligence Service Says EU Urges Ukraine to Mobilize Women – NaturalNews.com",
+          "description": "The Russian Foreign Intelligence Service (SVR) said on Thursday that the European Union is encouraging Ukraine to mobilize women, according to a statement cited by Russian state media. The report, published on Sept. 10, 2026, could not be independently verified by Western news organizations. According to the SVR, EU foreign policy chief Kaja Kallas described […]",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
           "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-nine-killed-012231000.html",
+          "domain": "www.aol.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine war briefing: Nine killed and dozens wounded in Russian strikes as Kyiv braces for harsh winter - AOL",
+          "description": "Zelenskyy says ‘Russia wants to kill the Ukrainian economy’ as Moscow steps up attacks on infrastructure.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "killed",
+            "kill",
+            "wounded"
+          ],
+          "weak_hits": [
+            "war"
+          ],
           "noise_hits": []
         }
       ]
@@ -88,90 +102,87 @@
     {
       "region": "Ukrajna",
       "rank": 2,
-      "title": "Fegyveres összecsapás – Kyiv, Ukraine, Ukraine",
-      "date": "2026-09-06",
+      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
+      "date": "2026-09-13",
       "country": "Ukraine",
-      "location": "Kyiv, Ukraine, Ukraine",
-      "event_type": "Fegyveres összecsapás",
+      "location": "Kyiv, Misto, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "http://www.theuknews.com/news/279288422/how-britain-built-a-war-network-around-russia",
-          "domain": "www.theuknews.com",
+          "url": "https://www.breitbart.com/europe/2026/09/13/putin-warns-europe-send-troops-to-ukraine-get-war-with-russia/",
+          "domain": "www.breitbart.com",
           "status": "ok",
           "error": null,
-          "title": "How Britain built a war network around Russia",
-          "description": "Britain's support for Ukraine now spans missile production, military infrastructure and postwar planning - with Russia as its stated target Read Full Article at RT.com",
+          "title": "Putin Warns Europe: Send Troops to Ukraine, Get 'War with Russia'",
+          "description": "President Vladimir Putin warned Europe sending any troops to help Ukraine would mean an escalation of the conflict and \"war with Russia.\"",
           "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [
-            "missile"
-          ],
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
           "weak_hits": [
             "war",
-            "military"
+            "president",
+            "conflict"
           ],
-          "noise_hits": [
-            "art"
-          ]
+          "noise_hits": []
         },
         {
-          "url": "https://theconservativetreehouse.com/blog/2026/09/05/russia-and-ukraine-pause-military-strikes-as-u-s-peace-emissaries-witkoff-and-kushner-visit-moscow-and-kyiv/comment-page-1/",
-          "domain": "theconservativetreehouse.com",
+          "url": "https://www.durangoherald.com/articles/associated-press/ukrainian-drones-kill-2-in-russia-as-moscow-hits-main-port-hub-in-black-sea/",
+          "domain": "www.durangoherald.com",
           "status": "ok",
           "error": null,
-          "title": "Russia and Ukraine Pause Military Strikes as U.S. Peace Emissaries, Witkoff and Kushner Visit Moscow and Kyiv - The Last Refuge",
-          "description": "Earlier today Russia announced they would pause all military strikes against Kiev, Ukraine for three days, as Trump administration emissaries for peace Steve Witkoff and Jared Kushner conduct sensitive negotiations. The duo is meeting with Vladimir Putin in Moscow today. Shortly thereafter, Ukraine President Volodymyr Zelenskyy also announced he would pause any drone strikes into […]",
+          "title": "Trump calls on Ukraine to halt strikes on Russian diesel fuel, citing a global shortage",
+          "description": "KYIV, Ukraine (AP) — U.S. President Donald Trump on Sunday called on Ukrainian President Volodymyr Zelenskyy to halt strikes on Russian oil refineries and",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
-            "strikes",
-            "drone"
+            "strikes"
           ],
           "weak_hits": [
-            "military",
             "president"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://www.cubaheadlines.com/articles/339688",
-          "domain": "www.cubaheadlines.com",
+          "url": "https://www.ksat.com/news/2026/09/13/ukrainian-drones-kill-2-in-russia-as-moscow-hits-main-port-hub-in-black-sea/",
+          "domain": "www.ksat.com",
           "status": "ok",
           "error": null,
-          "title": "Putin Tells Trump's Delegates Russia Will Achieve Military Goals in Ukraine",
-          "description": "On Sunday, Vladimir Putin assured representatives from the Trump administration that the Russian military will achieve its \"set objectives\" in Ukraine...",
+          "title": "Trump calls on Ukraine to halt strikes on Russian diesel fuel, citing a global shortage",
+          "description": "U.S. President Donald Trump has called on Ukrainian President Volodymyr Zelenskyy to halt strikes on Russian diesel fuel infrastructure, saying attacks are causing a global shortage.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://us.cnn.com/2026/09/13/europe/russia-poland-ukraine-border-area-attack-intl",
+          "domain": "us.cnn.com",
+          "status": "ok",
+          "error": null,
+          "title": "Trump says Ukraine and Russia agreed to stop targeting energy sites, but Kyiv calls it a ‘proposal for a mutual halt’ | CNN",
+          "description": "US President Donald Trump has said that Ukraine and Russia have agreed to stop hitting each other’s energy targets amid concerns over the global spike in fuel prices – but both his Ukrainian counterpart Volodymyr Zelensky and the Kremlin later described it as a proposal rather than a firm agreement.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
           "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.naturalnews.com/2026-09-04-zelensky-russian-airspace-completely-unsafe-drone-strikes.html",
-          "domain": "www.naturalnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Zelensky Says Russian Airspace “Completely Unsafe” as Ukraine Expands Drone Strikes – NaturalNews.com",
-          "description": "Ukrainian President Volodymyr Zelensky urged airlines and insurers to avoid Russian airspace, warning that expanding Ukrainian drone operations are making the skies dangerous. Zelensky said in his evening address on Tuesday, Sept. 2, according to the BBC: “We want to warn every airline that uses Russian airspace, every insurer, everyone who still uses key Russian airports: […]",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone"
-          ],
-          "weak_hits": [
-            "war",
             "president"
           ],
-          "noise_hits": []
+          "noise_hits": [
+            "art"
+          ]
         }
       ]
     },
@@ -179,15 +190,54 @@
       "region": "Közel-Kelet",
       "rank": 1,
       "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
-      "date": "2026-09-06",
+      "date": "2026-09-07",
       "country": "Gaza Strip",
       "location": "Rafah, Gaza Strip, Gaza Strip",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 16,
+      "original_sources_count": 11,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
+        {
+          "url": "https://www.ynetnews.com/article/sy9yops00fe",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "New evidence links slain Belgian development worker to Hamas as Israel demands apolog",
+          "description": "Belgium condemned the 2024 Israeli strike that killed Enabel employee Abdullah Nabhan; Israel now cites a Hamas-linked mourning poster and a photo of him in uniform as evidence he belonged to the group’s Khan Younis Battalion",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "killed",
+            "kill",
+            "hamas"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/palestinian-killed-two-die-from-wounds-in-gaza/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinian Killed, Two Die From Wounds, In Gaza | - IMEMC News",
+          "description": "A Palestinian was killed in an Israeli drone strike on Monday, while two others, including a child, died from wounds sustained in earlier Israeli attacks. S ...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "drone",
+            "ied",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
         {
           "url": "https://english.ahram.org.eg/NewsContent/58/1262/576011/War-on-Gaza/War-on-Gaza/A-Gaza-family-can-finally-bury--of-its-fallen-in-I.aspx",
           "domain": "english.ahram.org.eg",
@@ -219,10 +269,222 @@
             "military"
           ],
           "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Rajtaütés / fegyveres támadás – Riyadh, Ar Riya?, Saudi Arabia",
+      "date": "2026-09-13",
+      "country": "Saudi Arabia",
+      "location": "Riyadh, Ar Riya?, Saudi Arabia",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://english.news.cn/20260913/dfdb9134ce624c64a5669b63ba91b147/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "2 injured after projectile falls in Saudi Arabia's Jazan-Xinhua",
+          "description": "2 injured after projectile falls in Saudi Arabia",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
         },
         {
-          "url": "https://english.ahram.org.eg/NewsContent/58/1262/576011/War-on-Gaza/War-on-Gaza/A-Gaza-family-can-bury--of-its-fallen-in-Israel-ge.aspx",
-          "domain": "english.ahram.org.eg",
+          "url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/gulf-oil-threatened-anew-as-houthis-reach-key-island-and-pipeline-is-shut-down/articleshow/134100369.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Gulf oil threatened anew as Houthis reach key island and pipeline is shut down - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Gulf oil threatened anew as Houthis reach key island and pipeline is shut down - The Economic Times <meta content=",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.euronews.com/2026/09/12/drones-from-iraq-attack-and-set-pipeline-on-fire-in-saudi-arabia",
+          "domain": "www.euronews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Drones from Iraq attack and set pipeline on fire in Saudi Arabia | Euronews",
+          "description": "The East–West pipeline is crucial for shipping Saudi oil to the Red Sea, bypassing the Strait of Hormuz. This latest incident risks driving oil and fuel prices even higher.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "drones"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://dunyanews.tv/en/Pakistan/972569-pakistan-condemns-drone-attacks-on-pipeline-in-saudi-arabia",
+          "domain": "dunyanews.tv",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan condemns drone attacks on pipeline in Saudi Arabia | Dunya News",
+          "description": "Pakistan condemned drone attacks on Saudi Arabia’s East-West Pipeline, calling them a violation of international law and expressing solidarity with the Kingdom",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "drone"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Al-Jawf, Saudi Arabia, Saudi Arabia",
+      "date": "2026-09-13",
+      "country": "Saudi Arabia",
+      "location": "Al-Jawf, Saudi Arabia, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 16,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://aa.com.tr/en/middle-east/yemeni-government-forces-strike-houthi-positions-down-5-drones/4055653",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Yemeni government forces strike Houthi positions, down 5 drones",
+          "description": "Army says airstrikes targeted Houthi positions, personnel and military equipment in Taiz, Dhubab, northern fronts | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "airstrike"
+          ],
+          "weak_hits": [
+            "military",
+            "army",
+            "government"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.hindustantimes.com/world-news/us-news/houthis-say-saudi-arabia-launched-over-50-strikes-against-them-in-24-hours-101789326251130.html",
+          "domain": "www.hindustantimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis say Saudi Arabia launched over 50 strikes against them in 24 hours | Hindustan Times",
+          "description": "Houthis say Saudi Arabia launched over 50 strikes against them in 24 hours",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/houthis-claim-saudi-aircraft-launched-129-airstrikes-in-yemen-over-past-48-hours/4055473",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis claim ‘Saudi aircraft’ launched 129 airstrikes in Yemen over past 48 hours",
+          "description": "Strikes carried out across 7 Yemeni provinces, Houthis claim; no official statement from Saudi Arabia yet | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "airstrike",
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.sentinelassam.com/more-news/international/houthis-capture-strategic-red-sea-port-of-mocha-advancing-toward-bab-al-mandab-strait",
+          "domain": "www.sentinelassam.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis Capture Strategic Red Sea Port of Mocha, Advancing Toward Bab al-Mandab Strait",
+          "description": "Yemen's Houthi group seized the strategic Red Sea port city of Mocha in southwestern Taiz province on Thursday amid a rapid advance toward the Bab al-Mandab Strait, a key international shipping route, a military official told Xinhua.",
+          "accepted": false,
+          "reason": "only broad security context, no concrete incident",
+          "security_hits": [],
+          "weak_hits": [
+            "war",
+            "military"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
+      "date": "2026-09-11",
+      "country": "West Bank",
+      "location": "Nablus, West Bank, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.middleeastmonitor.com/20260911-israeli-occupiers-attack-palestinian-homes-injure-family-steal-sheep-in-nablus/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupiers attack Palestinian homes, injure family, steal sheep in Nablus – Middle East Monitor",
+          "description": "Israeli occupiers on Friday injured a Palestinian man and his children in an attack on their home in Beita, south of Nablus in the occupied West Bank, local sources and a rights group said, Anadolu…",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "ied",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/west-bank-on-friday-israeli-colonizers-shoot-at-palestinian-farmers-troops-establish-new-military-outpost/",
+          "domain": "imemc.org",
+          "status": "ok",
+          "error": null,
+          "title": "West Bank on Friday: Israeli Colonizers Shoot at Palestinian Farmers; Troops Establish New Military Outpost | - IMEMC News",
+          "description": "On Friday, Israeli colonists opened fire on Palestinian citizens on a farm east of Al-Mughayyir, northeast of Ramallah, after citizens attempted to repel a ...",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.oann.com/commentary/will-radical-islam-again-express-joy-about-9-11/",
+          "domain": "www.oann.com",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "title": "",
@@ -234,193 +496,22 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.israelnationalnews.com/news/432710",
-          "domain": "www.israelnationalnews.com",
+          "url": "https://www.middleeastmonitor.com/20260910-israeli-army-arrests-33-palestinians-in-occupied-west-bank-including-2-journalists/",
+          "domain": "www.middleeastmonitor.com",
           "status": "ok",
           "error": null,
-          "title": "IDF eliminates Nukhba commander who led October 7 Sufa attack | Israel National News",
-          "description": "Hamas commander who led October 7 infiltration into Sufa outpost, participated in holding Israeli hostages, is eliminated in Khan Yunis.",
+          "title": "Israeli army arrests 33 Palestinians in occupied West Bank, including 2 journalists – Middle East Monitor",
+          "description": "The Israeli army arrested 33 Palestinians, including two journalists, two minors and former prisoners, during raids Thursday in the occupied West Bank, according to the Palestinian Prisoners Media …",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack",
-            "hamas",
-            "idf",
-            "hostage"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
-      "date": "2026-09-06",
-      "country": "West Bank",
-      "location": "Nablus, West Bank, West Bank",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://aa.com.tr/en/middle-east/israeli-army-raids-2-west-bank-schools-on-first-day-of-academic-year/4048565",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli army raids 2 West Bank schools on first day of academic year",
-          "description": "Israeli forces threaten school administration south of Nablus, demand removal of Palestinian flag, local sources say | Anadolu",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
+            "ied",
             "raid",
-            "raids"
+            "raids",
+            "arrested"
           ],
           "weak_hits": [
             "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://aa.com.tr/en/world/2-years-after-israeli-forces-killed-aysenur-ezgi-eygi-family-still-waits-for-justice/4048589",
-          "domain": "aa.com.tr",
-          "status": "ok",
-          "error": null,
-          "title": "2 years after Israeli forces killed Aysenur Ezgi Eygi, family still waits for justice",
-          "description": "Turkish-American activist was 26 when she was shot during protest against Israeli settlement expansion in occupied West Bank | Anadolu",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://dominicanrepublicpost.com/israeli-police-kill-palestinian-in-jerusalem-as-army-blocks-aid-for-qusra/",
-          "domain": "dominicanrepublicpost.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli police kill Palestinian in Jerusalem as army blocks aid for Qusra - Dominican Republic Post – Caribbean News, Business, Travel & Culture",
-          "description": "Israeli police have killed a Palestinian man in Jerusalem and the Israeli army has blocked humanitarian assistance from reaching an occupied West Bank village",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "ied",
-            "killed",
-            "kill",
-            "police"
-          ],
-          "weak_hits": [
-            "army"
-          ],
-          "noise_hits": [
-            "travel"
-          ]
-        },
-        {
-          "url": "https://globalnews.ca/news/12048985/carney-canada-palestinians/",
-          "domain": "globalnews.ca",
-          "status": "ok",
-          "error": null,
-          "title": "Carney made reforms a factor in recognizing Palestine: Here’s where they stand - National | Globalnews.ca",
-          "description": "A year after Canada recognized the State of Palestine, questions remain about the reforms Prime Minister Mark Carney said the Palestinian Authority had committed to.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "minister"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
-      "date": "2026-09-05",
-      "country": "Gaza Strip",
-      "location": "Khan Yunis, Gaza Strip, Gaza Strip",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 8,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://legalinsurrection.com/2026/09/israels-shin-bet-prepared-for-months-used-gaza-informants-to-capture-hamas-spy-chief/",
-          "domain": "legalinsurrection.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israel’s Shin Bet Prepared For Months, Used Gaza Informants to Capture Hamas Spy Chief",
-          "description": "\"Israeli security officials describe commander of Hamas’s internal security apparatus Muein al-Arabid ... as an “intelligence gold mine\".\"",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "hamas"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.islamicinvitationturkey.com/terrorist-israeli-ceasefire-breaches-persist-with-artillery-shelling-and-gunfire-across-gaza/",
-          "domain": "www.islamicinvitationturkey.com",
-          "status": "ok",
-          "error": null,
-          "title": "Terrorist 'israeli' Ceasefire Breaches Persist with Artillery Shelling and Gunfire Across Gaza - Islamic Invitation Turkey",
-          "description": "Israeli occupation forces (IOF) continued violating the ceasefire agreement in the Gaza Strip on Wednesday, carrying out shelling and opening fire across",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "shelling",
-            "terror",
-            "terrorist"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.islamicinvitationturkey.com/terrorist-israeli-regime-resumes-ceasefire-violations-resulting-in-deaths-of-two-palestinians-in-gaza/",
-          "domain": "www.islamicinvitationturkey.com",
-          "status": "ok",
-          "error": null,
-          "title": "Terrorist 'israeli' Regime Resumes Ceasefire Violations, Resulting in Deaths of Two Palestinians in Gaza - Islamic Invitation Turkey",
-          "description": "Israeli occupation forces (IOF) continued violating the ceasefire agreement in the Gaza Strip on Thursday with shelling and gunfire, resulting in injuries.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "shelling",
-            "terror",
-            "terrorist"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.haaretz.com/israel-news/security-aviation/2026-08-27/ty-article-magazine/gaza-israel-sending-militias-commit-war-crimes-i-have-to-protect-them/0000019f-f0f0-df61-a3ff-f9fe6ca70000",
-          "domain": "www.haaretz.com",
-          "status": "ok",
-          "error": null,
-          "title": "Haaretz Investigation | 'Israel Is Sending Armed Gaza Militias to Commit War Crimes – and I Have to Protect Them'",
-          "description": "Haaretz Investigation | A Haaretz investigation, based on IDF soldiers' testimonies, sources in Gaza and satellite imagery, reveals how Israel is cultivating a network of armed militias in Gaza",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "idf",
-            "armed"
-          ],
-          "weak_hits": [
-            "war"
           ],
           "noise_hits": []
         }
