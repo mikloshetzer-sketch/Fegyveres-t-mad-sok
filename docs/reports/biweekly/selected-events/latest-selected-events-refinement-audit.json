@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-09-21T10:44:21.735611Z",
+  "generated_at": "2026-09-28T11:41:52.428468Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
   "event_count": 6,
-  "unique_sources_checked": 24,
+  "unique_sources_checked": 23,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -13,225 +13,29 @@
       "region": "Ukrajna",
       "rank": 1,
       "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-09-13",
+      "date": "2026-09-20",
       "country": "Ukraine",
       "location": "Kyiv, Misto, Ukraine",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.rferl.org/a/zelenskyy-putin-trump-miami-g20-war-talks/33853066.html",
-          "domain": "www.rferl.org",
-          "status": "ok",
-          "error": null,
-          "title": "Russian Strikes Kill 9 Across Ukraine, As Zelenskyy Offers To Meet Putin At Miami G20",
-          "description": "Russia continued to pound the Ukrainian civilian population, killing at least nine people in attacks throughout the country, while Ukrainian President Volodymyr Zelenskyy repeated he'd be willing to meet Russia’s Vladimir Putin at the upcoming G20 summit -- something the Kremlin called “impossible.”",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "strike",
-            "strikes",
-            "kill"
-          ],
-          "weak_hits": [
-            "president",
-            "summit"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.theepochtimes.com/world/european-countries-sending-troops-to-ukraine-would-mean-war-with-russia-putin-warns-6086713",
-          "domain": "www.theepochtimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "European Countries Sending Troops to Ukraine Would Mean ‘War With Russia,’ Putin Warns | The Epoch Times",
-          "description": "The warning was issued after Macron said a group of 26 countries pledged to deploy troops to Ukraine as a ’reassurance force' after the war.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.naturalnews.com/2026-09-12-russian-intelligence-service-ukraine-to-mobilize-women.html",
-          "domain": "www.naturalnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russian Intelligence Service Says EU Urges Ukraine to Mobilize Women – NaturalNews.com",
-          "description": "The Russian Foreign Intelligence Service (SVR) said on Thursday that the European Union is encouraging Ukraine to mobilize women, according to a statement cited by Russian state media. The report, published on Sept. 10, 2026, could not be independently verified by Western news organizations. According to the SVR, EU foreign policy chief Kaja Kallas described […]",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "ied"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-nine-killed-012231000.html",
-          "domain": "www.aol.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine war briefing: Nine killed and dozens wounded in Russian strikes as Kyiv braces for harsh winter - AOL",
-          "description": "Zelenskyy says ‘Russia wants to kill the Ukrainian economy’ as Moscow steps up attacks on infrastructure.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "strike",
-            "strikes",
-            "killed",
-            "kill",
-            "wounded"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Kyiv, Misto, Ukraine",
-      "date": "2026-09-13",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.breitbart.com/europe/2026/09/13/putin-warns-europe-send-troops-to-ukraine-get-war-with-russia/",
-          "domain": "www.breitbart.com",
+          "url": "https://www.dailyliberal.com.au/story/9353570/children-among-three-killed-in-russian-attack-on-kyiv/",
+          "domain": "www.dailyliberal.com.au",
           "status": "ok",
           "error": null,
-          "title": "Putin Warns Europe: Send Troops to Ukraine, Get 'War with Russia'",
-          "description": "President Vladimir Putin warned Europe sending any troops to help Ukraine would mean an escalation of the conflict and \"war with Russia.\"",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "president",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.durangoherald.com/articles/associated-press/ukrainian-drones-kill-2-in-russia-as-moscow-hits-main-port-hub-in-black-sea/",
-          "domain": "www.durangoherald.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump calls on Ukraine to halt strikes on Russian diesel fuel, citing a global shortage",
-          "description": "KYIV, Ukraine (AP) — U.S. President Donald Trump on Sunday called on Ukrainian President Volodymyr Zelenskyy to halt strikes on Russian oil refineries and",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.ksat.com/news/2026/09/13/ukrainian-drones-kill-2-in-russia-as-moscow-hits-main-port-hub-in-black-sea/",
-          "domain": "www.ksat.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump calls on Ukraine to halt strikes on Russian diesel fuel, citing a global shortage",
-          "description": "U.S. President Donald Trump has called on Ukrainian President Volodymyr Zelenskyy to halt strikes on Russian diesel fuel infrastructure, saying attacks are causing a global shortage.",
+          "title": "Ukraine and Russia trade deadly drone strikes | Daily Liberal | Dubbo, NSW",
+          "description": "Two people have been killed in drone attack on Moscow with a similar attack in Ukraine's capital of...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
             "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://us.cnn.com/2026/09/13/europe/russia-poland-ukraine-border-area-attack-intl",
-          "domain": "us.cnn.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump says Ukraine and Russia agreed to stop targeting energy sites, but Kyiv calls it a ‘proposal for a mutual halt’ | CNN",
-          "description": "US President Donald Trump has said that Ukraine and Russia have agreed to stop hitting each other’s energy targets amid concerns over the global spike in fuel prices – but both his Ukrainian counterpart Volodymyr Zelensky and the Kremlin later described it as a proposal rather than a firm agreement.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Rafah, Gaza Strip, Gaza Strip",
-      "date": "2026-09-07",
-      "country": "Gaza Strip",
-      "location": "Rafah, Gaza Strip, Gaza Strip",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 11,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.ynetnews.com/article/sy9yops00fe",
-          "domain": "www.ynetnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "New evidence links slain Belgian development worker to Hamas as Israel demands apolog",
-          "description": "Belgium condemned the 2024 Israeli strike that killed Enabel employee Abdullah Nabhan; Israel now cites a Hamas-linked mourning poster and a photo of him in uniform as evidence he belonged to the group’s Khan Younis Battalion",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "killed",
-            "kill",
-            "hamas"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://imemc.org/article/palestinian-killed-two-die-from-wounds-in-gaza/",
-          "domain": "imemc.org",
-          "status": "ok",
-          "error": null,
-          "title": "Palestinian Killed, Two Die From Wounds, In Gaza | - IMEMC News",
-          "description": "A Palestinian was killed in an Israeli drone strike on Monday, while two others, including a child, died from wounds sustained in earlier Israeli attacks. S ...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "strike",
+            "strikes",
             "drone",
-            "ied",
             "killed",
             "kill"
           ],
@@ -239,8 +43,25 @@
           "noise_hits": []
         },
         {
-          "url": "https://english.ahram.org.eg/NewsContent/58/1262/576011/War-on-Gaza/War-on-Gaza/A-Gaza-family-can-finally-bury--of-its-fallen-in-I.aspx",
-          "domain": "english.ahram.org.eg",
+          "url": "https://www.cubaheadlines.com/articles/340732",
+          "domain": "www.cubaheadlines.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Approves $2.68 Billion Military Sale to Ukraine for Air Defense Modernization",
+          "description": "This Saturday, the U.S. State Department gave the green light for a potential $2.68 billion military sale to Ukraine, focusing on enhancing and expand...",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://news.az/news/live-russia-says-288-ukrainian-drones-downed-in-mass-attack",
+          "domain": "news.az",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "title": "",
@@ -252,22 +73,100 @@
           "noise_hits": []
         },
         {
-          "url": "https://imemc.org/article/israeli-attacks-continue-across-gaza-as-humanitarian-crisis-deepens/",
-          "domain": "imemc.org",
+          "url": "https://www.bbc.co.uk/news/articles/c34gdjk1ne8yo",
+          "domain": "www.bbc.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Israeli Attacks Continue Across Gaza as Humanitarian Crisis Deepens | - IMEMC News",
-          "description": "In the Gaza Strip, Israeli military violations continued amid escalating humanitarian concerns, while Gaza's Health Ministry reported a rising death to ...",
+          "title": "Largest attack on Moscow sees Ukraine fire hundreds of drones, mayor says - BBC News",
+          "description": "Moscow's mayor says 450 drones were downed during the overnight barrage, in which two people died.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
-            "isis"
+            "drone",
+            "drones",
+            "ied",
+            "downed"
           ],
-          "weak_hits": [
-            "military"
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+      "date": "2026-09-20",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 2,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://venezuelanalysis.com/interviews/lisandro-brusco-we-must-fight-the-imperialist-and-zionist-bloc-in-latin-america/",
+          "domain": "venezuelanalysis.com",
+          "status": "ok",
+          "error": null,
+          "title": "Lisandro Brusco: ‘We Must Fight the Imperialist and Zionist Bloc in Latin America’ - Venezuelanalysis",
+          "description": "Journalist and organizer Brusco discusses Zionist expansion in Latin America and the importance of internationalist solidarity with Palestine.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "analysis"
+          ]
+        },
+        {
+          "url": "https://www.sconeadvocate.com.au/story/9353542/israeli-strikes-kill-three-people-in-gaza/",
+          "domain": "www.sconeadvocate.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli strikes kill three people in Gaza | The Scone Advocate | Scone, NSW",
+          "description": "The son of a top health official has been killed near Jabalia refugee camp ‌in northern Gaza, one...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "killed",
+            "kill"
           ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.thegazette.com/news/national/ap-news-in-brief-at-9-04-p-m-edt/article_ee2f8513-22c2-5f65-81da-cbcd9e5d89ff.html",
+          "domain": "www.thegazette.com",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://freerepublic.com/focus/f-chat/4396198/posts",
+          "domain": "freerepublic.com",
+          "status": "ok",
+          "error": null,
+          "title": "The world should stop siding with Hamas terrorists",
+          "description": "",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "terror",
+            "terrorist",
+            "hamas"
+          ],
+          "weak_hits": [],
           "noise_hits": []
         }
       ]
@@ -275,74 +174,91 @@
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Riyadh, Ar Riya?, Saudi Arabia",
-      "date": "2026-09-13",
-      "country": "Saudi Arabia",
-      "location": "Riyadh, Ar Riya?, Saudi Arabia",
-      "event_type": "Rajtaütés / fegyveres támadás",
+      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
+      "date": "2026-09-20",
+      "country": "Israel",
+      "location": "Gaza City, Israel, Israel",
+      "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://english.news.cn/20260913/dfdb9134ce624c64a5669b63ba91b147/c.html",
-          "domain": "english.news.cn",
+          "url": "https://www.gdnonline.com:443/Details/1407042/Israeli-strikes-kill-three-people-in-northern-Gaza",
+          "domain": "www.gdnonline.com:443",
           "status": "ok",
           "error": null,
-          "title": "2 injured after projectile falls in Saudi Arabia's Jazan-Xinhua",
-          "description": "2 injured after projectile falls in Saudi Arabia",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://economictimes.indiatimes.com/industry/energy/oil-gas/gulf-oil-threatened-anew-as-houthis-reach-key-island-and-pipeline-is-shut-down/articleshow/134100369.cms",
-          "domain": "economictimes.indiatimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Gulf oil threatened anew as Houthis reach key island and pipeline is shut down - The Economic Times",
-          "description": "text/html; charset=UTF-8\"> Gulf oil threatened anew as Houthis reach key island and pipeline is shut down - The Economic Times <meta content=",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.euronews.com/2026/09/12/drones-from-iraq-attack-and-set-pipeline-on-fire-in-saudi-arabia",
-          "domain": "www.euronews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Drones from Iraq attack and set pipeline on fire in Saudi Arabia | Euronews",
-          "description": "The East–West pipeline is crucial for shipping Saudi oil to the Red Sea, bypassing the Strait of Hormuz. This latest incident risks driving oil and fuel prices even higher.",
+          "title": "World News: Israeli strikes kill three people in northern Gaza",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack",
-            "drone",
-            "drones"
+            "strike",
+            "strikes",
+            "kill"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://dunyanews.tv/en/Pakistan/972569-pakistan-condemns-drone-attacks-on-pipeline-in-saudi-arabia",
-          "domain": "dunyanews.tv",
+          "url": "https://english.aawsat.com/arab-world/5320291-gaza-health-officials-say-4-killed-israeli-strikes-including-child",
+          "domain": "english.aawsat.com",
           "status": "ok",
           "error": null,
-          "title": "Pakistan condemns drone attacks on pipeline in Saudi Arabia | Dunya News",
-          "description": "Pakistan condemned drone attacks on Saudi Arabia’s East-West Pipeline, calling them a violation of international law and expressing solidarity with the Kingdom",
+          "title": "Gaza Health Officials Say 4 Killed in Israeli Strikes, Including Child",
+          "description": "Gaza's health officials said on Saturday that Israeli fire killed at least four people in the Palestinian territory, including a 10-year-old girl and the son of a top government official. A statement from Gaza's health ministry, which operates under Hamas authority, said that the child \"succumbed to wounds sustained this morning from Israeli army fire north of the Nuseirat camp in the central Gaza Strip\".",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "killed",
+            "kill",
+            "hamas"
+          ],
+          "weak_hits": [
+            "army",
+            "government"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.newindianexpress.com/world/2026/Sep/20/gaza-health-officials-say-four-killed-in-israeli-strikes-including-child",
+          "domain": "www.newindianexpress.com",
+          "status": "ok",
+          "error": null,
+          "title": "Gaza health officials say four killed in Israeli strikes, including child",
+          "description": "Gaza's health ministry said a child died from wounds sustained in Israeli army fire north of Nuseirat camp in central Gaza.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "ied",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://pajhwok.com/2026/09/20/4-palestinians-killed-in-israeli-attacks-in-gaza-2/",
+          "domain": "pajhwok.com",
+          "status": "ok",
+          "error": null,
+          "title": "4 Palestinians killed in Israeli attacks in Gaza – Pajhwok Afghan News",
+          "description": "KABUL (Pajhwok): Four Palestinians, including a child and the son of Gaza’s health chief, have been killed and several others wounded in Israeli attacks in",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
-            "drone"
+            "killed",
+            "kill",
+            "wounded"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -352,46 +268,23 @@
     {
       "region": "Közel-Kelet",
       "rank": 3,
-      "title": "Fegyveres összecsapás – Al-Jawf, Saudi Arabia, Saudi Arabia",
-      "date": "2026-09-13",
+      "title": "Fegyveres összecsapás – Khamis Mushait, Saudi Arabia, Saudi Arabia",
+      "date": "2026-09-20",
       "country": "Saudi Arabia",
-      "location": "Al-Jawf, Saudi Arabia, Saudi Arabia",
+      "location": "Khamis Mushait, Saudi Arabia, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 16,
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
+      "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://aa.com.tr/en/middle-east/yemeni-government-forces-strike-houthi-positions-down-5-drones/4055653",
-          "domain": "aa.com.tr",
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-say-saudi-arabia-launched-28-strikes-yemen-over-24-hours",
+          "domain": "www.middleeasteye.net",
           "status": "ok",
           "error": null,
-          "title": "Yemeni government forces strike Houthi positions, down 5 drones",
-          "description": "Army says airstrikes targeted Houthi positions, personnel and military equipment in Taiz, Dhubab, northern fronts | Anadolu",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
-            "drones",
-            "airstrike"
-          ],
-          "weak_hits": [
-            "military",
-            "army",
-            "government"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.hindustantimes.com/world-news/us-news/houthis-say-saudi-arabia-launched-over-50-strikes-against-them-in-24-hours-101789326251130.html",
-          "domain": "www.hindustantimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Houthis say Saudi Arabia launched over 50 strikes against them in 24 hours | Hindustan Times",
-          "description": "Houthis say Saudi Arabia launched over 50 strikes against them in 24 hours",
+          "title": "Houthis say Saudi Arabia launched 28 strikes in Yemen over 24 hours | Middle East Eye",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -402,78 +295,29 @@
           "noise_hits": []
         },
         {
-          "url": "https://aa.com.tr/en/middle-east/houthis-claim-saudi-aircraft-launched-129-airstrikes-in-yemen-over-past-48-hours/4055473",
-          "domain": "aa.com.tr",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/09/mil-260918-azertac04.htm",
+          "domain": "www.globalsecurity.org",
           "status": "ok",
           "error": null,
-          "title": "Houthis claim ‘Saudi aircraft’ launched 129 airstrikes in Yemen over past 48 hours",
-          "description": "Strikes carried out across 7 Yemeni provinces, Houthis claim; no official statement from Saudi Arabia yet | Anadolu",
+          "title": "Houthis claim 37 Saudi airstrikes on Yemen in 24 hrs",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
             "strikes",
-            "airstrike",
-            "ied"
+            "airstrike"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.sentinelassam.com/more-news/international/houthis-capture-strategic-red-sea-port-of-mocha-advancing-toward-bab-al-mandab-strait",
-          "domain": "www.sentinelassam.com",
+          "url": "https://www.presstv.co.uk/Detail/2026/09/18/776504/US-clears-way-for-F-35-fighter-jet-sale-to-Saudi-Arabia-amid-Riyadh",
+          "domain": "www.presstv.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Houthis Capture Strategic Red Sea Port of Mocha, Advancing Toward Bab al-Mandab Strait",
-          "description": "Yemen's Houthi group seized the strategic Red Sea port city of Mocha in southwestern Taiz province on Thursday amid a rapid advance toward the Bab al-Mandab Strait, a key international shipping route, a military official told Xinhua.",
-          "accepted": false,
-          "reason": "only broad security context, no concrete incident",
-          "security_hits": [],
-          "weak_hits": [
-            "war",
-            "military"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
-      "date": "2026-09-11",
-      "country": "West Bank",
-      "location": "Nablus, West Bank, West Bank",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.middleeastmonitor.com/20260911-israeli-occupiers-attack-palestinian-homes-injure-family-steal-sheep-in-nablus/",
-          "domain": "www.middleeastmonitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli occupiers attack Palestinian homes, injure family, steal sheep in Nablus – Middle East Monitor",
-          "description": "Israeli occupiers on Friday injured a Palestinian man and his children in an attack on their home in Beita, south of Nablus in the occupied West Bank, local sources and a rights group said, Anadolu…",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "ied",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://imemc.org/article/west-bank-on-friday-israeli-colonizers-shoot-at-palestinian-farmers-troops-establish-new-military-outpost/",
-          "domain": "imemc.org",
-          "status": "ok",
-          "error": null,
-          "title": "West Bank on Friday: Israeli Colonizers Shoot at Palestinian Farmers; Troops Establish New Military Outpost | - IMEMC News",
-          "description": "On Friday, Israeli colonists opened fire on Palestinian citizens on a farm east of Al-Mughayyir, northeast of Ramallah, after citizens attempted to repel a ...",
+          "title": "US clears way for F-35 fighter jet sale to Saudi Arabia amid Riyadh’s renewed aggression against Yemen",
+          "description": "The US has approved the sale of F-35 fighter jets to Saudi Arabia as Riyadh intensifies its military aggression against Yemen.",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
@@ -483,35 +327,197 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.oann.com/commentary/will-radical-islam-again-express-joy-about-9-11/",
-          "domain": "www.oann.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
+          "url": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "The cost of Iran’s regional leverage | Opinions | Al Jazeera",
+          "description": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
           "accepted": false,
-          "reason": "source not readable",
+          "reason": "no concrete security incident detected",
           "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "opinion"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
+      "date": "2026-09-20",
+      "country": "Saudi Arabia",
+      "location": "Jizan, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.bankingnews.gr/diethni/articles/900489/houthi-strikes-trigger-muslim-nato-article-5-dilemma-for-turkey",
+          "domain": "www.bankingnews.gr",
+          "status": "ok",
+          "error": null,
+          "title": "Houthi strikes trigger Muslim NATO Article 5 dilemma for Turkey",
+          "description": "Houthi strikes trigger Muslim NATO Article 5 dilemma for Turkey",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [
+            "nato"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/09/19/776573/Sirens-blare-in-Saudi-capital-Riyadh,-across-kingdom-amid-Yemeni-retaliatory-strikes",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Sirens blare in Riyadh, across Saudi Arabia amid Yemeni retaliatory strikes",
+          "description": "Sirens warning of incoming missiles and combat drones launched from Yemen have sounded in the Saudi capital city of Riyadh and elsewhere in the kingdom.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "missile"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/sirens-blare-across-riyadh-as-yemen-launches-retaliatory-strikes/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Sirens Blare Across Riyadh as Yemen Launches Retaliatory Strikes - Islamic Invitation Turkey",
+          "description": "Sirens warning of incoming missiles and unmanned aerial vehicles launched from Yemen sounded in Saudi Arabia’s capital, Riyadh, and other parts of the kingdom.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "missile"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "The cost of Iran’s regional leverage | Opinions | Al Jazeera",
+          "description": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "opinion"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "title": "Fegyveres összecsapás – Al-Jawf, Saudi Arabia, Saudi Arabia",
+      "date": "2026-09-20",
+      "country": "Saudi Arabia",
+      "location": "Al-Jawf, Saudi Arabia, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "http://www.bignewsnetwork.com/news/279319701/airstrikes-hit-telecom-towers-in-n-yemen-killing-4-houthi-media",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "Airstrikes hit telecom towers in N. Yemen, killing 4: Houthi media",
+          "description": "SANAA, Sept. 20 (Xinhua) -- Four people were killed and three others injured on Sunday in Saudi airstrikes targeting telecommunications infrastructure.....",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "airstrike",
+            "killed",
+            "kill",
+            "injured"
+          ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.middleeastmonitor.com/20260910-israeli-army-arrests-33-palestinians-in-occupied-west-bank-including-2-journalists/",
-          "domain": "www.middleeastmonitor.com",
+          "url": "https://www.prokerala.com/news/articles/a1812788.html",
+          "domain": "www.prokerala.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli army arrests 33 Palestinians in occupied West Bank, including 2 journalists – Middle East Monitor",
-          "description": "The Israeli army arrested 33 Palestinians, including two journalists, two minors and former prisoners, during raids Thursday in the occupied West Bank, according to the Palestinian Prisoners Media …",
+          "title": "Saudi-led coalition says downed Houthi drone heading for Mecca",
+          "description": "Saudi air defences intercepted and destroyed a Houthi drone south of Mecca before it entered the prohibited airspace of the holy city, the Saudi-led coalition said.Coalition spokesman Turki Al Maliki said the security of the Two Holy Mosques ...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied",
-            "raid",
-            "raids",
-            "arrested"
+            "drone",
+            "intercepted",
+            "downed"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/yemeni-military-source-categorically-denies-any-threat-against-mecca-or-other-holy-sites/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yemeni Military Source Categorically Denies Any Threat Against Mecca or Other Holy Sites - Islamic Invitation Turkey",
+          "description": "A Yemeni military source told Al-Masirah TV that approximately 275 Saudi personnel were killed, wounded or captured during mobilization on the Al-Jawf front",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "killed",
+            "kill",
+            "wounded"
           ],
           "weak_hits": [
-            "army"
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/09/yemeni-forces-clash-houthis-near-saudi-border",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yemeni forces clash with Houthis near Saudi border - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "Yemeni government forces clashed with Houthi fighters near the Saudi border, with AFP footage showing soldiers in armoured vehicles and trucks pushing across desert terrain under the crackle of machine-gun fire. The Houthis also released footage on Wednesday of the fighting in the northwestern Al-Jawf area, as well as a video purporting to show the downing of a fighter jet belonging to Saudi Arabia, the group's longtime foe and the Yemeni government's main backer.",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "clash"
+          ],
+          "weak_hits": [
+            "government"
           ],
           "noise_hits": []
         }
