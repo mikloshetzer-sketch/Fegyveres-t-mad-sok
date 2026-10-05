@@ -1,147 +1,62 @@
 {
-  "generated_at": "2026-09-28T11:41:52.428468Z",
+  "generated_at": "2026-10-05T12:17:35.474942Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 6,
-  "unique_sources_checked": 23,
+  "event_count": 5,
+  "unique_sources_checked": 20,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
-      "region": "Ukrajna",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-09-20",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.dailyliberal.com.au/story/9353570/children-among-three-killed-in-russian-attack-on-kyiv/",
-          "domain": "www.dailyliberal.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine and Russia trade deadly drone strikes | Daily Liberal | Dubbo, NSW",
-          "description": "Two people have been killed in drone attack on Moscow with a similar attack in Ukraine's capital of...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "strikes",
-            "drone",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.cubaheadlines.com/articles/340732",
-          "domain": "www.cubaheadlines.com",
-          "status": "ok",
-          "error": null,
-          "title": "US Approves $2.68 Billion Military Sale to Ukraine for Air Defense Modernization",
-          "description": "This Saturday, the U.S. State Department gave the green light for a potential $2.68 billion military sale to Ukraine, focusing on enhancing and expand...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://news.az/news/live-russia-says-288-ukrainian-drones-downed-in-mass-attack",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.bbc.co.uk/news/articles/c34gdjk1ne8yo",
-          "domain": "www.bbc.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Largest attack on Moscow sees Ukraine fire hundreds of drones, mayor says - BBC News",
-          "description": "Moscow's mayor says 450 drones were downed during the overnight barrage, in which two people died.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone",
-            "drones",
-            "ied",
-            "downed"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
-      "date": "2026-09-20",
-      "country": "Israel",
-      "location": "Gaza, Israel, Israel",
+      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
+      "date": "2026-09-27",
+      "country": "West Bank",
+      "location": "Nablus, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "original_sources_count": 17,
       "checked_sources_count": 4,
       "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://venezuelanalysis.com/interviews/lisandro-brusco-we-must-fight-the-imperialist-and-zionist-bloc-in-latin-america/",
-          "domain": "venezuelanalysis.com",
+          "url": "https://www.islamicinvitationturkey.com/terrorist-israeli-forces-raid-homes-abduct-palestinians-in-west-bank/",
+          "domain": "www.islamicinvitationturkey.com",
           "status": "ok",
           "error": null,
-          "title": "Lisandro Brusco: ‘We Must Fight the Imperialist and Zionist Bloc in Latin America’ - Venezuelanalysis",
-          "description": "Journalist and organizer Brusco discusses Zionist expansion in Latin America and the importance of internationalist solidarity with Palestine.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "analysis"
-          ]
-        },
-        {
-          "url": "https://www.sconeadvocate.com.au/story/9353542/israeli-strikes-kill-three-people-in-gaza/",
-          "domain": "www.sconeadvocate.com.au",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli strikes kill three people in Gaza | The Scone Advocate | Scone, NSW",
-          "description": "The son of a top health official has been killed near Jabalia refugee camp ‌in northern Gaza, one...",
+          "title": "Terrorist 'israeli' Forces Raid Homes, Abduct Palestinians in West Bank - Islamic Invitation Turkey",
+          "description": "Israeli occupation forces raided several areas of the West Bank overnight and early Sunday, entering homes and detaining a number of Palestinians.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "killed",
-            "kill"
+            "raid",
+            "terror",
+            "terrorist"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "http://www.thegazette.com/news/national/ap-news-in-brief-at-9-04-p-m-edt/article_ee2f8513-22c2-5f65-81da-cbcd9e5d89ff.html",
-          "domain": "www.thegazette.com",
+          "url": "https://english.wafa.ps/Pages/Details/175179",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces assault 17-year-old during raid into Nablus",
+          "description": "",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "raid"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://imemc.org/article/israeli-army-demolishes-a-palestinian-home-near-nablus/",
+          "domain": "imemc.org",
           "status": "error",
           "error": "HTTP Error 429: Too Many Requests",
           "title": "",
@@ -153,19 +68,15 @@
           "noise_hits": []
         },
         {
-          "url": "https://freerepublic.com/focus/f-chat/4396198/posts",
-          "domain": "freerepublic.com",
-          "status": "ok",
-          "error": null,
-          "title": "The world should stop siding with Hamas terrorists",
+          "url": "https://www.globalsecurity.org/military/library/news/2026/09/mil-260921-oic01.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "error",
+          "error": "HTTP Error 402: Payment Required",
+          "title": "",
           "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "terror",
-            "terrorist",
-            "hamas"
-          ],
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         }
@@ -174,92 +85,72 @@
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
-      "date": "2026-09-20",
-      "country": "Israel",
-      "location": "Gaza City, Israel, Israel",
+      "title": "Fegyveres összecsapás – Khamis Mushait, Saudi Arabia, Saudi Arabia",
+      "date": "2026-09-27",
+      "country": "Saudi Arabia",
+      "location": "Khamis Mushait, Saudi Arabia, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
+      "valid_sources_count": 1,
+      "confidence": "Low",
       "inspected_sources": [
         {
-          "url": "https://www.gdnonline.com:443/Details/1407042/Israeli-strikes-kill-three-people-in-northern-Gaza",
-          "domain": "www.gdnonline.com:443",
+          "url": "https://www.moroccoworldnews.com/2026/09/339937/king-mohammed-vi-reaffirms-solidarity-with-saudi-arabia-condemns-houthi-attacks/",
+          "domain": "www.moroccoworldnews.com",
           "status": "ok",
           "error": null,
-          "title": "World News: Israeli strikes kill three people in northern Gaza",
-          "description": "",
+          "title": "King Mohammed VI Reaffirms Solidarity with Saudi Arabia, Condemns Houthi Attacks",
+          "description": "King Mohammed VI expressed deep concern over the repeated and “heinous” attacks targeting Saudi Arabia in letters...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "kill"
+            "attack",
+            "attacks"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://english.aawsat.com/arab-world/5320291-gaza-health-officials-say-4-killed-israeli-strikes-including-child",
-          "domain": "english.aawsat.com",
+          "url": "https://www.middle-east-online.com/en/morocco%E2%80%99s-king-%E2%80%98any-attack-saudi-arabia-attack-morocco%E2%80%99",
+          "domain": "www.middle-east-online.com",
           "status": "ok",
           "error": null,
-          "title": "Gaza Health Officials Say 4 Killed in Israeli Strikes, Including Child",
-          "description": "Gaza's health officials said on Saturday that Israeli fire killed at least four people in the Palestinian territory, including a 10-year-old girl and the son of a top government official. A statement from Gaza's health ministry, which operates under Hamas authority, said that the child \"succumbed to wounds sustained this morning from Israeli army fire north of the Nuseirat camp in the central Gaza Strip\".",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
+          "title": "Morocco’s king: ‘Any attack on Saudi Arabia is an attack on Morocco’ | MEO",
+          "description": "The king said Morocco regarded the defence of Saudi Arabia’s and the Gulf states’ vital interests as part of its own shared strategic interests.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
           "security_hits": [
-            "strike",
-            "strikes",
-            "killed",
-            "kill",
-            "hamas"
+            "attack"
           ],
-          "weak_hits": [
-            "army",
-            "government"
-          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.globalsecurity.org/wmd/library/news/saudi/2026/saudi-260926-spa01.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "error",
+          "error": "HTTP Error 402: Payment Required",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.newindianexpress.com/world/2026/Sep/20/gaza-health-officials-say-four-killed-in-israeli-strikes-including-child",
-          "domain": "www.newindianexpress.com",
-          "status": "ok",
-          "error": null,
-          "title": "Gaza health officials say four killed in Israeli strikes, including child",
-          "description": "Gaza's health ministry said a child died from wounds sustained in Israeli army fire north of Nuseirat camp in central Gaza.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "ied",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://pajhwok.com/2026/09/20/4-palestinians-killed-in-israeli-attacks-in-gaza-2/",
-          "domain": "pajhwok.com",
-          "status": "ok",
-          "error": null,
-          "title": "4 Palestinians killed in Israeli attacks in Gaza – Pajhwok Afghan News",
-          "description": "KABUL (Pajhwok): Four Palestinians, including a child and the son of Gaza’s health chief, have been killed and several others wounded in Israeli attacks in",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "killed",
-            "kill",
-            "wounded"
-          ],
+          "url": "https://www.globalsecurity.org/military/library/news/2026/09/mil-260925-presstv02.htm",
+          "domain": "www.globalsecurity.org",
+          "status": "error",
+          "error": "HTTP Error 402: Payment Required",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         }
@@ -268,129 +159,112 @@
     {
       "region": "Közel-Kelet",
       "rank": 3,
-      "title": "Fegyveres összecsapás – Khamis Mushait, Saudi Arabia, Saudi Arabia",
-      "date": "2026-09-20",
+      "title": "Fegyveres összecsapás – Makkah, Saudi Arabia",
+      "date": "2026-09-27",
       "country": "Saudi Arabia",
-      "location": "Khamis Mushait, Saudi Arabia, Saudi Arabia",
+      "location": "Makkah, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
+      "valid_sources_count": 1,
+      "confidence": "Low",
       "inspected_sources": [
         {
-          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/houthis-say-saudi-arabia-launched-28-strikes-yemen-over-24-hours",
-          "domain": "www.middleeasteye.net",
+          "url": "https://theshillongtimes.com/2026/09/27/saudi-pak-turkiye-vow-to-assist-riyadh-after-houthi-attacks/",
+          "domain": "theshillongtimes.com",
           "status": "ok",
           "error": null,
-          "title": "Houthis say Saudi Arabia launched 28 strikes in Yemen over 24 hours | Middle East Eye",
+          "title": "Saudi, Pak, Turkiye vow to assist Riyadh after Houthi attacks | The Shillong Times",
           "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes"
+            "attack",
+            "attacks"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.globalsecurity.org/military/library/news/2026/09/mil-260918-azertac04.htm",
-          "domain": "www.globalsecurity.org",
-          "status": "ok",
-          "error": null,
-          "title": "Houthis claim 37 Saudi airstrikes on Yemen in 24 hrs",
+          "url": "https://www.arabnews.com/saudi-arabia/coalition-defenses-thwart-houthi-missile-and-drone-attack-on-riyadh-khamis-mushayt-3003209",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
           "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "airstrike"
-          ],
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.presstv.co.uk/Detail/2026/09/18/776504/US-clears-way-for-F-35-fighter-jet-sale-to-Saudi-Arabia-amid-Riyadh",
-          "domain": "www.presstv.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "US clears way for F-35 fighter jet sale to Saudi Arabia amid Riyadh’s renewed aggression against Yemen",
-          "description": "The US has approved the sale of F-35 fighter jets to Saudi Arabia as Riyadh intensifies its military aggression against Yemen.",
+          "url": "https://www.dailyexcelsior.com/saudi-arabia-pak-and-turkiye-defence-officials-resolve-to-assist-riyadh-in-wake-of-houthi-attacks/",
+          "domain": "www.dailyexcelsior.com",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
+          "description": "",
           "accepted": false,
-          "reason": "no concrete security incident detected",
+          "reason": "source not readable",
           "security_hits": [],
-          "weak_hits": [
-            "military"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "The cost of Iran’s regional leverage | Opinions | Al Jazeera",
-          "description": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
+          "url": "https://www.chennaionline.com/news/saudi-arabia-pakistan-turkey-defend-gulf-security/",
+          "domain": "www.chennaionline.com",
+          "status": "error",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "title": "",
+          "description": "",
           "accepted": false,
-          "reason": "no concrete security incident detected",
+          "reason": "source not readable",
           "security_hits": [],
           "weak_hits": [],
-          "noise_hits": [
-            "opinion"
-          ]
+          "noise_hits": []
         }
       ]
     },
     {
       "region": "Közel-Kelet",
       "rank": 4,
-      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
-      "date": "2026-09-20",
-      "country": "Saudi Arabia",
-      "location": "Jizan, Saudi Arabia",
+      "title": "Fegyveres összecsapás – Musandam, Oman",
+      "date": "2026-09-24",
+      "country": "Oman",
+      "location": "Musandam, Oman",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "original_sources_count": 15,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.bankingnews.gr/diethni/articles/900489/houthi-strikes-trigger-muslim-nato-article-5-dilemma-for-turkey",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Houthi strikes trigger Muslim NATO Article 5 dilemma for Turkey",
-          "description": "Houthi strikes trigger Muslim NATO Article 5 dilemma for Turkey",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "nato"
-          ],
-          "noise_hits": [
-            "art"
-          ]
+          "url": "https://www.arabnews.com/middle-east/one-killed-in-attack-on-ship-heading-toward-india-says-embassy-in-oman-says-3002803",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
         },
         {
-          "url": "https://www.presstv.co.uk/Detail/2026/09/19/776573/Sirens-blare-in-Saudi-capital-Riyadh,-across-kingdom-amid-Yemeni-retaliatory-strikes",
-          "domain": "www.presstv.co.uk",
+          "url": "https://www.thenationalnews.com/news/gulf/2026/09/24/indian-sailor-killed-as-two-torpedoes-hit-merchant-ship-off-oman/",
+          "domain": "www.thenationalnews.com",
           "status": "ok",
           "error": null,
-          "title": "Sirens blare in Riyadh, across Saudi Arabia amid Yemeni retaliatory strikes",
-          "description": "Sirens warning of incoming missiles and combat drones launched from Yemen have sounded in the Saudi capital city of Riyadh and elsewhere in the kingdom.",
+          "title": "Indian sailor killed as two torpedoes hit merchant ship off Oman | The National",
+          "description": "Omani warship rescues 27 survivors after attack on Antigua and Barbuda-flagged carrier",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
-            "drones",
-            "missile"
+            "attack",
+            "killed",
+            "kill"
           ],
           "weak_hits": [
             "war"
@@ -398,69 +272,15 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.islamicinvitationturkey.com/sirens-blare-across-riyadh-as-yemen-launches-retaliatory-strikes/",
-          "domain": "www.islamicinvitationturkey.com",
+          "url": "https://www.middleeastmonitor.com/20260924-cargo-ship-catches-fire-after-being-hit-by-unknown-projectile-in-strait-of-hormuz-one-killed/",
+          "domain": "www.middleeastmonitor.com",
           "status": "ok",
           "error": null,
-          "title": "Sirens Blare Across Riyadh as Yemen Launches Retaliatory Strikes - Islamic Invitation Turkey",
-          "description": "Sirens warning of incoming missiles and unmanned aerial vehicles launched from Yemen sounded in Saudi Arabia’s capital, Riyadh, and other parts of the kingdom.",
+          "title": "Cargo ship catches fire after being hit by ‘unknown’ projectile in Strait of Hormuz, one killed – Middle East Monitor",
+          "description": "A cargo ship was hit by an “unknown” projectile in the Strait of Hormuz on Wednesday, causing a fire and leaving two people injured, according to the UK Maritime Trade Operations (UKMTO). “The secu…",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "missile"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.aljazeera.com/opinions/2026/9/18/the-cost-of-irans-regional-leverage",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "The cost of Iran’s regional leverage | Opinions | Al Jazeera",
-          "description": "Tehran’s use of pressure across the region is putting its rapprochement with Gulf states under increasing strain.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "opinion"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "title": "Fegyveres összecsapás – Al-Jawf, Saudi Arabia, Saudi Arabia",
-      "date": "2026-09-20",
-      "country": "Saudi Arabia",
-      "location": "Al-Jawf, Saudi Arabia, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "http://www.bignewsnetwork.com/news/279319701/airstrikes-hit-telecom-towers-in-n-yemen-killing-4-houthi-media",
-          "domain": "www.bignewsnetwork.com",
-          "status": "ok",
-          "error": null,
-          "title": "Airstrikes hit telecom towers in N. Yemen, killing 4: Houthi media",
-          "description": "SANAA, Sept. 20 (Xinhua) -- Four people were killed and three others injured on Sunday in Saudi airstrikes targeting telecommunications infrastructure.....",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "airstrike",
             "killed",
             "kill",
             "injured"
@@ -469,55 +289,103 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.prokerala.com/news/articles/a1812788.html",
-          "domain": "www.prokerala.com",
+          "url": "https://www.straitstimes.com/asia/one-indian-killed-in-attack-on-ship-heading-towards-india-indian-embassy-in-oman-says",
+          "domain": "www.straitstimes.com",
           "status": "ok",
           "error": null,
-          "title": "Saudi-led coalition says downed Houthi drone heading for Mecca",
-          "description": "Saudi air defences intercepted and destroyed a Houthi drone south of Mecca before it entered the prohibited airspace of the holy city, the Saudi-led coalition said.Coalition spokesman Turki Al Maliki said the security of the Two Holy Mosques ...",
+          "title": "One Indian killed in attack on ship heading towards India, Indian embassy in Oman says | The Straits Times",
+          "description": "NEW DELHI, Sept 23 - One Indian national was killed in an attack on the bulk carrier MV Cape Dao while the vessel was heading towards India, the Indian embassy in Oman said on Wednesday. Read more at straitstimes.com.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
+      "date": "2026-09-26",
+      "country": "Saudi Arabia",
+      "location": "Jizan, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 13,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.nakedcapitalism.com/2026/09/iran-war-trump-rejects-iranian-offer-saudi-yemeni-war.html",
+          "domain": "www.nakedcapitalism.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran War: Trump Rejects Iranian Offer, Saudi-Yemeni War On the Boil",
+          "description": "Trump rejects Iranian ceasefire terms, threatens to attack in November. The war between Saudi Arabia and Yemen continues to heat up.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.bankingnews.gr/diethni/articles/901429/iran-s-message-we-are-reducing-uranium-us-come-for-a-deal-houthis-struck-dozens-dead-in-saudi-arabia-aramco",
+          "domain": "www.bankingnews.gr",
+          "status": "ok",
+          "error": null,
+          "title": "Iran's message: We are reducing Uranium, US come for a deal – Houthis struck, dozens dead in Saudi Arabia, Aramco",
+          "description": "Iran",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/yahya-saree-missiles-and-drones-target-enemy-command-centers-vital-facilities/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yahya Saree: Missiles and Drones Target Enemy Command Centers, Vital Facilities - Islamic Invitation Turkey",
+          "description": "Yemen’s Armed Forces spokesman said a preemptive operation targeted and struck a gathering of Saudi-backed forces in Jizan.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "drone",
-            "intercepted",
-            "downed"
+            "drones",
+            "missile",
+            "armed"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.islamicinvitationturkey.com/yemeni-military-source-categorically-denies-any-threat-against-mecca-or-other-holy-sites/",
+          "url": "https://www.islamicinvitationturkey.com/yemen-launches-preemptive-strikes-on-saudi-positions-in-jizan/",
           "domain": "www.islamicinvitationturkey.com",
           "status": "ok",
           "error": null,
-          "title": "Yemeni Military Source Categorically Denies Any Threat Against Mecca or Other Holy Sites - Islamic Invitation Turkey",
-          "description": "A Yemeni military source told Al-Masirah TV that approximately 275 Saudi personnel were killed, wounded or captured during mobilization on the Al-Jawf front",
+          "title": "Yemen Launches Preemptive Strikes on Saudi Positions in Jizan - Islamic Invitation Turkey",
+          "description": "Yemen’s Armed Forces launched a preemptive operation targeting Saudi military positions in the Jizan region, including command centers, weapons depots and",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "killed",
-            "kill",
-            "wounded"
+            "strike",
+            "strikes",
+            "armed"
           ],
           "weak_hits": [
             "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.al-monitor.com/originals/2026/09/yemeni-forces-clash-houthis-near-saudi-border",
-          "domain": "www.al-monitor.com",
-          "status": "ok",
-          "error": null,
-          "title": "Yemeni forces clash with Houthis near Saudi border - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
-          "description": "Yemeni government forces clashed with Houthi fighters near the Saudi border, with AFP footage showing soldiers in armoured vehicles and trucks pushing across desert terrain under the crackle of machine-gun fire. The Houthis also released footage on Wednesday of the fighting in the northwestern Al-Jawf area, as well as a video purporting to show the downing of a fighter jet belonging to Saudi Arabia, the group's longtime foe and the Yemeni government's main backer.",
-          "accepted": true,
-          "reason": "high-value source with concrete security-incident term",
-          "security_hits": [
-            "clash"
-          ],
-          "weak_hits": [
-            "government"
           ],
           "noise_hits": []
         }
