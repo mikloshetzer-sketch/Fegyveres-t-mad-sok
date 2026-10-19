@@ -1,88 +1,88 @@
 {
-  "generated_at": "2026-10-12T13:10:33.649633Z",
+  "generated_at": "2026-10-19T10:46:44.860846Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 7,
-  "unique_sources_checked": 26,
+  "event_count": 6,
+  "unique_sources_checked": 24,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
-      "region": "Európai Unió",
+      "region": "Ukrajna",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Athens, AttikíR, Greece",
-      "date": "2026-10-04",
-      "country": "Greece",
-      "location": "Athens, AttikíR, Greece",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "title": "Robbantás / IED – Kostyantynivka, Donets'ka Oblast', Ukraine",
+      "date": "2026-10-11",
+      "country": "Ukraine",
+      "location": "Kostyantynivka, Donets'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "original_sources_count": 5,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.dailymail.com/vertical-galleries/article-16179057/Report-Panic-Kimberly-Guilfoyles-outrageous-Champagne-demand.html",
-          "domain": "www.dailymail.com",
-          "status": "ok",
-          "error": null,
-          "title": "Report: Panic over Kimberly Guilfoyle's outrageous Champagne demand | Daily Mail Online",
-          "description": "President Donald Trump picked Guilfoyle as ambassador to Greece in December 2024. At the time, sources warned her to be on her best behavior.",
+          "url": "http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html",
+          "domain": "www.rightspeak.net",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
           "accepted": false,
-          "reason": "only broad security context, no concrete incident",
+          "reason": "source not readable",
           "security_hits": [],
-          "weak_hits": [
-            "war",
-            "president"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://enewscourier.com/2026/10/04/one-dead-another-hospitalized-in-alleged-athens-shooting/",
-          "domain": "enewscourier.com",
+          "url": "https://www.egyptindependent.com/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+          "domain": "www.egyptindependent.com",
           "status": "ok",
           "error": null,
-          "title": "One dead, another hospitalized in alleged Athens shooting | Athens The News Courier",
-          "description": "The Athens Police Department (APD) responded at the scene of an alleged shooting Sunday morning, with one person reported deceased and another in critical condition, according to APD Capt. Brett […]",
+          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent",
+          "description": "Kyiv, Ukraine — At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, making it the deadliest single attack this year.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "shooting",
-            "police"
+            "attack",
+            "strike",
+            "killed",
+            "kill"
           ],
           "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
+          "noise_hits": []
         },
         {
-          "url": "https://www.theguardian.com/commentisfree/2026/oct/02/parthenon-marbles-british-museum-greece-bayeux-tapestry",
-          "domain": "www.theguardian.com",
+          "url": "https://krdo.com/news/national-world/cnn-world/2026/10/08/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+          "domain": "krdo.com",
           "status": "ok",
           "error": null,
-          "title": "Should we refuse to give the Bayeux tapestry back to France? Of course not! So why are we keeping the Parthenon marbles? | Simon Jenkins | The Guardian",
-          "description": "It is simply wrong for the British Museum to hoard what doesn’t belong to Britain. Let the squabbling end and the sculptures be returned to Greece, says Guardian columnist Simon Jenkins",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "museum",
-            "art"
-          ]
-        },
-        {
-          "url": "https://www.wcvb.com/article/americans-killed-athens-greece-collapse/73993941",
-          "domain": "www.wcvb.com",
-          "status": "ok",
-          "error": null,
-          "title": "Honeymooners among 4 Americans killed in Greece building collapse - WCVB",
-          "description": "A newlywed couple, the bride's brother and his pregnant wife have been identified as the four Americans killed in a building collapse in Athens, Greece.",
+          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | KRDO",
+          "description": "By Kosta Gak, Sophie Tanno, CNN Kyiv, Ukraine (CNN) — At least 33 people were killed on Thursday when a Russian strike caused two public buses to",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied",
+            "attack",
+            "strike",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://zizonline.com/33-dead-in-russian-strike-on-eastern-ukraine/",
+          "domain": "zizonline.com",
+          "status": "ok",
+          "error": null,
+          "title": "33 Dead in Russian Strike on Eastern Ukraine – ZIZ Broadcasting Corporation",
+          "description": "At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, marking the deadliest attack from a single strike thi",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
             "killed",
             "kill"
           ],
@@ -94,42 +94,27 @@
     {
       "region": "Balkán",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Smyrna, Izmir, Turkey",
-      "date": "2026-10-01",
+      "title": "Fegyveres összecsapás – Istanbul, Turkey",
+      "date": "2026-10-10",
       "country": "Turkey",
-      "location": "Smyrna, Izmir, Turkey",
+      "location": "Istanbul, Turkey",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 19,
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
+      "valid_sources_count": 0,
+      "confidence": "Rejected",
       "inspected_sources": [
         {
-          "url": "https://www.wsbtv.com/news/local/cobb-county/dismemberment-suspect-father-had-history-violence-911-calls-reveal/CUKNBGIH7RA4FOWA77VU2MSZVI/",
-          "domain": "www.wsbtv.com",
+          "url": "https://en.apa.az/asia/fire-breaks-out-at-hospital-in-istanbul-patients-are-being-evacuated-529331",
+          "domain": "en.apa.az",
           "status": "ok",
           "error": null,
-          "title": "Dismemberment suspect and father had history of violence, 911 calls reveal – WSB-TV Channel 2 - Atlanta",
-          "description": "Emergency calls reveal a history of violence between the suspect and his father.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "history"
-          ]
-        },
-        {
-          "url": "https://www.ajc.com/news/2026/09/smyrna-dismemberment-victim-was-shot-in-the-head-police-say/",
-          "domain": "www.ajc.com",
-          "status": "ok",
-          "error": null,
-          "title": "Smyrna dismemberment victim was shot in the head, police say",
-          "description": "Nearly a week after a woman’s dismembered body was found at a Smyrna apartment complex, police said Tuesday that an autopsy revealed she had been shot.",
+          "title": "Fire breaks out at hospital in Istanbul: Patients are being evacuated",
+          "description": "A fire broke out in the additional outpatient clinic building of Koşuyolu High Specialization Training and Research Hospital located in the Kartal district of Istanbul, APA reports",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [
-            "police"
+            "evacuated"
           ],
           "weak_hits": [],
           "noise_hits": [
@@ -137,28 +122,114 @@
           ]
         },
         {
-          "url": "https://www.wsbtv.com/news/local/cobb-county/police-young-mother-was-shot-head-killed-inside-apartment-before-body-was-dismembered/5RNTRCGWKVAVJORSK42U4I63JA/",
-          "domain": "www.wsbtv.com",
+          "url": "https://thehardtackle.com/transfer-news/2026/10/10/galatasaray-rival-atletico-madrid-in-bruno-fernandes-pursuit/",
+          "domain": "thehardtackle.com",
           "status": "ok",
           "error": null,
-          "title": "Tia Mosley died from gunshot wound, police determine - WSB-TV Channel 2 - Atlanta",
-          "description": "Smyrna police identified Tia Mosley's death as a homicide via gunshot wound, following the discovery of her remains.",
+          "title": "Galatasaray rival Atletico Madrid in Bruno Fernandes pursuit",
+          "description": "Galatasaray are all set to rival Atletico Madrid in their pursuit of Manchester United skipper Bruno Fernandes.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://english.news.cn/europe/20261009/9fb0fe828afa4911aa192e2f4df8df0b/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "5 die in building collapse in Istanbul-Xinhua",
+          "description": "5 die in building collapse in Istanbul-",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "http://www.bgnes.com/society/turkey-inaugurates-new-high-speed-railway-link-to-bulgaria-and-europe",
+          "domain": "www.bgnes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey inaugurates new high-speed railway link to Bulgaria and Europe | BGNES",
+          "description": "The 153-kilometre Çerkezköy–Kapıkule section is part of the strategic Halkalı–Kapıkule railway project.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": [
+            "art"
+          ]
+        }
+      ]
+    },
+    {
+      "region": "Balkán",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Smyrna, Izmir, Turkey",
+      "date": "2026-10-11",
+      "country": "Turkey",
+      "location": "Smyrna, Izmir, Turkey",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 16,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://nypost.com/2026/10/11/opinion/privileged-ingrates-like-zohran-mamdani-need-to-quit-the-genocide-hypocrisy/",
+          "domain": "nypost.com",
+          "status": "ok",
+          "error": null,
+          "title": "'Privileged ingrates' like Zohran Mamdani need to quit the genocide hypocrisy",
+          "description": "Some of Israel's loudest US accusers — like Hasan Piker, Zohran Mamdani and Ilhan Omar — remain silent about the sordid histories of their own homelands.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.fox5atlanta.com/news/smyrna-murder-investigation-police-search-man-seen-suspect",
+          "domain": "www.fox5atlanta.com",
+          "status": "ok",
+          "error": null,
+          "title": "Smyrna murder investigation: Police search for man seen with suspect | FOX 5 Atlanta",
+          "description": "Smyrna police are asking for the public's help to identify a person seen with a murder suspect before and after a deadly summer shooting.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied",
+            "shooting",
             "police"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.atlantanewsfirst.com/2026/09/29/autopsy-shows-dismembered-woman-also-shot-head-smyrna-police-say/",
+          "url": "https://www.atlantanewsfirst.com/2026/10/08/suspect-arrested-deadly-smyrna-shooting-police-say/",
           "domain": "www.atlantanewsfirst.com",
           "status": "ok",
           "error": null,
-          "title": "Autopsy shows dismembered woman also shot in head, Smyrna police say",
-          "description": "An autopsy showed that a woman who was found dismembered in Smyrna had also been shot in the head, according to police.",
+          "title": "Suspect arrested in deadly Smyrna shooting, police say",
+          "description": "A man wanted in a deadly shooting in Smyrna was arrested Thursday while breaking into a car, according to police.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "shooting",
+            "police",
+            "arrested"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.fox5atlanta.com/news/smyrna-police-answer-car-break-in-call-catch-wanted-murder-suspect",
+          "domain": "www.fox5atlanta.com",
+          "status": "ok",
+          "error": null,
+          "title": "Smyrna police answer car break-in call, catch wanted murder suspect | FOX 5 Atlanta",
+          "description": "A call about car break-ins on Thursday led Smyrna police to a murder suspect who had been on the run since July.",
           "accepted": true,
           "reason": "contains concrete security-incident term and no obvious topic noise",
           "security_hits": [
@@ -172,56 +243,50 @@
     {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
-      "date": "2026-10-03",
+      "title": "Rajtaütés / fegyveres támadás – Nablus, West Bank, West Bank",
+      "date": "2026-10-10",
       "country": "West Bank",
-      "location": "Jenin, West Bank, West Bank",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 17,
+      "location": "Nablus, West Bank, West Bank",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 16,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://www.haaretz.com/israel-news/twilight-zone/2026-10-03/ty-article-magazine/.highlight/until-recently-the-occupation-was-less-felt-here-now-israel-is-changing-that/000001a1-0125-d27a-abaf-1975c8170000",
-          "domain": "www.haaretz.com",
+          "url": "https://aa.com.tr/en/middle-east/israeli-occupiers-abduct-7-palestinians-injure-3-during-olive-harvest-in-west-bank/4084702",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Until Recently, the Occupation Was Less Felt Here. Now Israel Is Changing That - Twilight Zone",
-          "description": "Far from public attention, the northeastern West Bank is changing fast. As settlements evacuated in 2005 reemerge and new outposts appear, the IDF razes Palestinian homes, builds bases and seals villages. Now, a Palestinian has been killed there",
+          "title": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
+          "description": "Attacks reported across Bethlehem, Nablus, Tulkarm and Ramallah as Palestinian farmers face assaults, crop theft and restrictions on access to their land | Anadolu",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "killed",
-            "kill",
-            "idf",
-            "evacuated"
+            "attack",
+            "attacks"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.islamicinvitationturkey.com/west-bank-zionist-escalation-leaves-injuries-arrests-and-settler-attacks-in-its-wake/",
-          "domain": "www.islamicinvitationturkey.com",
+          "url": "https://aa.com.tr/en/middle-east/israeli-occupiers-carry-out-19-attacks-on-palestinians-olive-farmers-across-west-bank-in-hours/4083854",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "West Bank: Zionist Escalation Leaves Injuries, Arrests and Settler Attacks in Its Wake - Islamic Invitation Turkey",
-          "description": "The occupied West Bank saw a new wave of Israeli military operations and settler attacks on Friday, with incidents including shootings, arrests and assaults,",
+          "title": "Israeli occupiers carry out 19 attacks on Palestinians, olive farmers across West Bank in hours",
+          "description": "Attacks include burning trees, stealing crops and livestock, assaults on farmers, vehicles, Palestinian commission says | Anadolu",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
-            "ied",
-            "shooting"
+            "attacks"
           ],
-          "weak_hits": [
-            "military"
-          ],
+          "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://news.az/news/palestinian-man-killed-in-shooting-in-northern-west-bank",
+          "url": "https://news.az/news/israeli-settler-attacks-disrupt-palestinian-olive-harvest-in-west-bank",
           "domain": "news.az",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
@@ -234,20 +299,103 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.aljazeera.com/news/2026/9/30/us-senate-blocks-resolution-seeking-report-on-americans-killed-in-west-bank",
-          "domain": "www.aljazeera.com",
+          "url": "https://lasvegassun.com/news/2026/oct/06/saudi-arabia-says-2-airports-were-hit-in-renewed-f/",
+          "domain": "lasvegassun.com",
           "status": "ok",
           "error": null,
-          "title": "US Senate blocks resolution seeking report on Americans killed in West Bank | Israel-Palestine conflict News | Al Jazeera",
-          "description": "The resolution cites a ‘lack of accountability’ by Israel’s government and an ‘inability to secure justice’ by the US.",
+          "title": "Saudi Arabia says 2 airports were hit in renewed fighting with Houthis and other Mideast news - Las Vegas Sun News",
+          "description": "Saudi Arabia says three people were injured in the latest attacks on its airports since fighting with Yemen’s Houthi rebels reignited",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "killed",
-            "kill"
+            "attack",
+            "attacks",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Jeddah, Makkah, Saudi Arabia",
+      "date": "2026-10-11",
+      "country": "Saudi Arabia",
+      "location": "Jeddah, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "https://www.albawaba.net/news/israels-next-targets-iran-backed-1638759",
+          "domain": "www.albawaba.net",
+          "status": "ok",
+          "error": null,
+          "title": "Israel's next targets Iran-backed militias in Iraq shift their bases | Al Bawaba",
+          "description": "ALBAWABA – Iran-backed armed factions in Iraq could face Israeli strikes if they intervene in renewed fighting between Tehran and Washington, analysts t",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "armed"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://gulfnews.com/world/gulf/saudi/riyadh-airport-attack-three-filipinos-injured-dmw-issues-helplines-1.500706439",
+          "domain": "gulfnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Riyadh Airport Attack: Three Filipinos in ICU, DMW Provides Emergency Helplines",
+          "description": "The strike on Riyadh marked a major escalation in the conflict between the Houthis and Saudi Arabia.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike"
           ],
           "weak_hits": [
-            "government",
+            "conflict"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.siasat.com/fresh-strike-hits-riyadh-airport-fire-breaks-out-at-terminal-4-3556092/",
+          "domain": "www.siasat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Fresh strike hits Riyadh airport, fire breaks out at Terminal 4",
+          "description": "A fresh strike sparked a fire at Riyadh airport’s Terminal 4 as Saudi air defences intercepted a cruise missile nearby.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "missile",
+            "intercepted"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.egyptindependent.com/pakistan-confirms-it-has-troops-in-saudi-as-conflict-with-yemens-houthi-rebels-escalates/",
+          "domain": "www.egyptindependent.com",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan confirms it has troops in Saudi as conflict with Yemen’s Houthi rebels escalates - Egypt Independent",
+          "description": "Islamabad — Key Saudi ally Pakistan has confirmed it has troops stationed in the Gulf kingdom, as Iran-backed Houthi rebels in Yemen continue cross-border attacks with deadly assaults on airports.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks"
+          ],
+          "weak_hits": [
             "conflict"
           ],
           "noise_hits": []
@@ -256,307 +404,91 @@
     },
     {
       "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Rajtaütés / fegyveres támadás – Nablus, West Bank, West Bank",
-      "date": "2026-10-04",
-      "country": "West Bank",
-      "location": "Nablus, West Bank, West Bank",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 10,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.presstv.co.uk/Detail/2026/10/04/777583/Israeli-forces-abduct-two-Palestinian-journalists-in-occupied-West-Bank-amid-crackdown",
-          "domain": "www.presstv.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces abduct two Palestinian journalists in occupied West Bank amid crackdown",
-          "description": "",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "ied"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.islamicinvitationturkey.com/terrorist-israeli-invaders-attack-palestinian-homes-and-olive-groves-in-occupied-west-bank/",
-          "domain": "www.islamicinvitationturkey.com",
-          "status": "ok",
-          "error": null,
-          "title": "Terrorist 'israeli' invaders attack Palestinian homes and olive groves in occupied West Bank - Islamic Invitation Turkey",
-          "description": "Israeli settlers have attacked Palestinian homes and olive groves in the occupied West Bank, amid ongoing efforts to displace Palestinians from their",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "ied",
-            "terror",
-            "terrorist"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://thepeninsulaqatar.com/article/03/10/2026/settler-rampages-in-nablus-injure-three-palestinians-ocha-documents-1600-plus-attacks",
-          "domain": "thepeninsulaqatar.com",
-          "status": "ok",
-          "error": null,
-          "title": "Settler rampages in Nablus injure three Palestinians | The Peninsula Qatar",
-          "description": "Nablus: A 27 year old Palestinian man sustained bruises and other injuries Saturday after being assaulted by settlers in the town of Osarin, south of...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://albaniandailynews.com/news/israeli-settlers-attack-west-bank-village-and-block-palestinian-family-s-return-home",
-          "domain": "albaniandailynews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Albanian Daily News",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
       "rank": 3,
-      "title": "Fegyveres összecsapás – Makkah, Saudi Arabia",
-      "date": "2026-10-04",
+      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
+      "date": "2026-10-11",
       "country": "Saudi Arabia",
-      "location": "Makkah, Saudi Arabia",
+      "location": "Jizan, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://www.arabnews.com/saudi-arabia/coalition-vows-continued-support-for-yemen-says-houthi-attacks-threaten-regional-security-3004618",
-          "domain": "www.arabnews.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.geo.tv/latest/685001-turkiye-says-makkah-pact-committee-to-meet-in-riyadh-on-october-5",
-          "domain": "www.geo.tv",
+          "url": "https://www.aljazeera.com/news/2026/10/11/yemen-fighting-expands-as-houthis-attack-saudi-airport-what-to-know",
+          "domain": "www.aljazeera.com",
           "status": "ok",
           "error": null,
-          "title": "Makkah pact committee to meet in Riyadh today, confirms FO",
-          "description": "Pakistan, Turkiye, Saudi officials to attend talks.Houthis launched repeated attacks on Saudi Arabia.Trilateral Makkah agreement signed on August 7.Deputy PM Ishaq Dar, Defence Minister Khawaja Asif, and Chief of Army Staff and Chief of...",
+          "title": "Yemen fighting expands as Houthis attack Saudi airport again: What to know | Explainer News | Al Jazeera",
+          "description": "Saudi coalition blames Houthi group for the missile attack on the main international airport in Riyadh.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "army",
-            "minister"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.pakistantoday.com.pk/2026/10/03/armys-top-brass-backs-makkah-pact-warns-against-may-9-style-unrest",
-          "domain": "www.pakistantoday.com.pk",
-          "status": "ok",
-          "error": null,
-          "title": "Army commanders back Makkah pact with Saudi Arabia, Türkiye - Pakistan Today",
-          "description": "Army commanders back Makkah pact with Saudi Arabia, Türkiye, condemn Houthi attacks and warn against May 9-style unrest and militancy from Afghanistan.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "war",
-            "army"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://tribune.com.pk/story/2632735/makkah-alliance-calls-emergency-meeting",
-          "domain": "tribune.com.pk",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "title": "Fegyveres összecsapás – Khamis Mushait, Saudi Arabia, Saudi Arabia",
-      "date": "2026-10-03",
-      "country": "Saudi Arabia",
-      "location": "Khamis Mushait, Saudi Arabia, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://lancasteronline.com/news/world/wounded-flydubai-captain-recounts-fight-to-save-passengers-and-other-mideast-developments/article_1ab31799-474d-55d0-a354-1eccf97d5509.html",
-          "domain": "lancasteronline.com",
-          "status": "error",
-          "error": "HTTP Error 429: Too Many Requests",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.bankingnews.gr/diethni/articles/903089/iran-targets-hormuz-ships-with-360-missile-drone-strikes",
-          "domain": "www.bankingnews.gr",
-          "status": "ok",
-          "error": null,
-          "title": "Iran targets Hormuz ships with 360 missile, drone strikes",
-          "description": "Iran targets Hormuz ships with 360 missile, drone strikes",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
             "missile"
           ],
           "weak_hits": [],
-          "noise_hits": []
+          "noise_hits": [
+            "explainer"
+          ]
         },
         {
-          "url": "https://www.ariananews.af/saudi-led-coalition-says-houthis-attacked-power-station-for-prophets-mosque-in-medina/",
-          "domain": "www.ariananews.af",
+          "url": "https://news.webindia123.com/news/Articles/World/20261008/4508249.html",
+          "domain": "news.webindia123.com",
           "status": "ok",
           "error": null,
-          "title": "Saudi-led coalition says Houthis attacked power station for Prophet's Mosque in Medina | Ariana News | Afghanistan News",
-          "description": "The Saudi-led coalition fighting Yemen's Houthis said ‌on Thursday that the Iran-aligned group had attacked a power distribution station in Medina which",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "attack"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://kashmirlife.net/saudi-coalition-accuses-houthis-of-drone-attack-on-medina-power-station-454730/",
-          "domain": "kashmirlife.net",
-          "status": "ok",
-          "error": null,
-          "title": "Saudi Coalition Accuses Houthis of Drone Attack on Medina Power Station | Kashmir Life - Latest News & Breaking News from Kashmir",
-          "description": "SRINAGAR: The Saudi-led coalition fighting in Yemen on Thursday accused the Houthi movement of carrying out a drone attack on an electricity distribution station in Medina, saying the strike put one transformer out of service but did not disrupt the wider electricity network. Follow Us On G-Ne w s | Whatsapp Coalition spokesman Maj. …",
+          "title": "3 killed, 36 injured in Houthi attacks on Abha, King Khalid airports: Saudi GACA",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "strike",
-            "drone"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 5,
-      "title": "Fegyveres összecsapás – Nablus, West Bank, West Bank",
-      "date": "2026-10-04",
-      "country": "West Bank",
-      "location": "Nablus, West Bank, West Bank",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 15,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.presstv.co.uk/Detail/2026/10/04/777583/Israeli-forces-abduct-two-Palestinian-journalists-in-occupied-West-Bank-amid-crackdown",
-          "domain": "www.presstv.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli forces abduct two Palestinian journalists in occupied West Bank amid crackdown",
-          "description": "",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "ied"
+            "attacks",
+            "killed",
+            "kill",
+            "injured"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://sana.sy/en/middle-east/2348024/",
-          "domain": "sana.sy",
+          "url": "http://www.pakistantelegraph.com/news/279358424/3-killed-36-injured-in-houthi-attacks-on-abha-king-khalid-airports-saudi-gaca",
+          "domain": "www.pakistantelegraph.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli occupation forces kill three in Gaza, raid West Bank",
-          "description": "Occupied Jerusalem, Oct 4 (SANA) Israeli occupation forces killed three Palestinians in the Gaza Strip on Sunday and wounded others, while carrying out raids",
+          "title": "3 killed, 36 injured in Houthi attacks on Abha, King Khalid airports: Saudi GACA",
+          "description": "Abha International Airport and King Khalid International Airport were targeted in two separate attacks on October 6 and 7, resulting in a total of three fatalities and 36 injuries, Saudi Arabia's General Authority of Civil Aviation (GACA) said. According to GACA, two people were killed and 28 injured in the attack on Abha International Airport. The deceased were female residents of Moroccan and Algerian nationalities, while the injured included Saudi citizens, a Bangladeshi resident and a Filipino resident. The injuries ranged from minor to critical. At King Khalid International Airport, one Sudanese resident was killed, and eight people were injured, GACA said. The injured included five Saudi citizens, two Egyptian residents and one Pakistani resident, with injuries ranging from minor to critical. \"All injured individuals were transported to hospital for appropriate medical care,\" GACA said, adding that the two attacks also caused some property damage. The authority said emergency response teams and relevant authorities responded immediately in accordance with established protocols and applicable emergency response plans. \"GACA is working in coordination with the relevant authorities to assess the damage, verify the safety of the facilities, and take the necessary measures to ensure the safety of passengers and maintain the security and safety of operations within the Kingdom's civil aviation system,\" it said. https",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "ied",
-            "raid",
-            "raids",
+            "attack",
+            "attacks",
             "killed",
             "kill",
-            "wounded"
+            "injured"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.presstv.co.uk/Detail/2026/10/03/777477/Zionist-Settlers-murder-19-year-old-Palestinian-in-west-bank-amid-record-surge-in-violence",
-          "domain": "www.presstv.co.uk",
+          "url": "https://www.texarkanagazette.com/news/2026/oct/08/attacks-on-saudi-airports-claimed-by-houthi/",
+          "domain": "www.texarkanagazette.com",
           "status": "ok",
           "error": null,
-          "title": "Zionist settlers murder 19-year-old in West Bank amid record surge in violence",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://thepeninsulaqatar.com/article/03/10/2026/settler-rampages-in-nablus-injure-three-palestinians-ocha-documents-1600-plus-attacks",
-          "domain": "thepeninsulaqatar.com",
-          "status": "ok",
-          "error": null,
-          "title": "Settler rampages in Nablus injure three Palestinians | The Peninsula Qatar",
-          "description": "Nablus: A 27 year old Palestinian man sustained bruises and other injuries Saturday after being assaulted by settlers in the town of Osarin, south of...",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
+          "title": "Attacks on Saudi airports claimed by Houthi rebels kill 3 people, officials say | Texarkana Gazette",
+          "description": "CAIRO -- Two attacks on airports in Saudi Arabia claimed by Iran-backed Houthi rebels in neighboring Yemen killed three people Wednesday, Saudi officials said, as the kingdom was pulled deeper into the latest front in the Iran war.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [
+            "war"
+          ],
           "noise_hits": []
         }
       ]

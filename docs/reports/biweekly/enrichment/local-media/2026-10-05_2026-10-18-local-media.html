@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Local Media Enrichment – 2026-10-05 to 2026-10-18</title>
+<style>
+body {
+    margin:0;
+    background:#0b1120;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#0f172a;
+}
+.page {
+    max-width:1120px;
+    margin:0 auto;
+    background:#f8fafc;
+    min-height:100vh;
+}
+.hero {
+    background:linear-gradient(120deg,#07111f,#0b1728);
+    color:white;
+    padding:36px 42px;
+}
+.hero span {
+    color:#38bdf8;
+    text-transform:uppercase;
+    letter-spacing:.12em;
+    font-weight:900;
+    font-size:13px;
+}
+.hero h1 {
+    margin:12px 0 8px;
+    font-size:38px;
+}
+.hero p {
+    color:#cbd5e1;
+    margin:0;
+    line-height:1.6;
+}
+.content {
+    padding:30px 36px 44px;
+}
+.region {
+    margin-top:28px;
+}
+.region h2 {
+    color:#0f172a;
+    border-bottom:2px solid #38bdf8;
+    padding-bottom:8px;
+}
+.event-card {
+    background:white;
+    border:1px solid #e2e8f0;
+    border-left:5px solid #38bdf8;
+    border-radius:14px;
+    padding:18px;
+    margin:16px 0;
+    box-shadow:0 10px 24px rgba(15,23,42,.06);
+}
+.event-head {
+    display:flex;
+    gap:10px;
+    align-items:flex-start;
+}
+.event-head span {
+    background:#0f172a;
+    color:white;
+    border-radius:999px;
+    padding:5px 9px;
+    font-weight:900;
+    font-size:12px;
+}
+.event-head strong {
+    font-size:18px;
+}
+.meta {
+    margin-top:10px;
+    color:#64748b;
+    font-weight:700;
+    font-size:14px;
+}
+p {
+    color:#334155;
+    line-height:1.65;
+}
+.fingerprint {
+    background:#eff6ff;
+    border:1px solid #bae6fd;
+    border-radius:12px;
+    padding:12px;
+    margin-top:14px;
+    display:grid;
+    gap:6px;
+    color:#0f172a;
+}
+.fingerprint strong {
+    color:#0369a1;
+}
+.grid {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:14px;
+}
+h4 {
+    margin-bottom:8px;
+}
+li {
+    margin:9px 0;
+}
+a {
+    color:#2563eb;
+    font-weight:800;
+    text-decoration:none;
+}
+small {
+    display:block;
+    color:#64748b;
+    margin-top:3px;
+}
+@media(max-width:800px){
+    .grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<main class="page">
+<header class="hero">
+    <span>OSINT source-first enrichment layer</span>
+    <h1>Local Media Enrichment</h1>
+    <p>Selected regional Top 5 event clusters enriched by first inspecting the original source set, then searching supplementary media with an event fingerprint. Period: 2026-10-05 – 2026-10-18.</p>
+</header>
+<div class="content">
+
+        <section class="region">
+            <h2>Ukrajna</h2>
+            
+            <article class="event-card">
+                <div class="event-head">
+                    <span>#1</span>
+                    <strong>Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent</strong>
+                </div>
+
+                <div class="meta">
+                    Kostyantynivka, Donets&#x27;ka Oblast&#x27;, Ukraine / Ukraine
+                    · Robbantás / IED
+                    · Score 63
+                    · Original domains 5
+                    · Fingerprint confidence Medium
+                </div>
+
+                <p>The original cluster contains 5 source URLs across 5 domains. 4 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: russia, russian, ukraine</span>
+                    <span>Conflict terms: strike, attack, blast, killed, fire</span>
+                    <span>Keywords: least, eastern, deadliest, single, year, people, thursday, when, caused, two</span>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.rightspeak.net · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.egyptindependent.com/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/" target="_blank" rel="noopener">Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent</a>
+                    <small>www.egyptindependent.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://krdo.com/news/national-world/cnn-world/2026/10/08/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/" target="_blank" rel="noopener">Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | KRDO</a>
+                    <small>krdo.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://zizonline.com/33-dead-in-russian-strike-on-eastern-ukraine/" target="_blank" rel="noopener">33 Dead in Russian Strike on Eastern Ukraine ZIZ Broadcasting Corporation</a>
+                    <small>zizonline.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.wxow.com/news/international/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/article_bcf244df-7837-5785-85ca-d04c1f4300bd.html" target="_blank" rel="noopener">Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | International News | wxow.com</a>
+                    <small>www.wxow.com · ok</small>
+                </li>
+                </ol>
+                    </div>
+                    <div>
+                        <h4>Raw title pattern</h4>
+                        <ol><li>fight – Kostyantynivka, Donets&#x27;ka Oblast&#x27;, Ukraine</li></ol>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
+                    </div>
+                    <div>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Kostyantynivka, Donets&#x27;ka Oblast&#x27;, Ukraine&quot; &quot;Ukraine&quot; &quot;russia&quot; &quot;strike&quot;</li><li>&quot;Ukraine&quot; &quot;russia&quot; &quot;strike&quot;</li><li>&quot;Kostyantynivka, Donets&#x27;ka Oblast&#x27;, Ukraine&quot; &quot;strike&quot;</li><li>&quot;russia&quot; &quot;strike&quot; 2026-10-11</li></ol>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+        
+        <section class="region">
+            <h2>Közel-Kelet</h2>
+            
+            <article class="event-card">
+                <div class="event-head">
+                    <span>#1</span>
+                    <strong>Strikes hit Yemen&#x27;s Aden airport; Saudi-led coalition intercepts fresh drones, missiles</strong>
+                </div>
+
+                <div class="meta">
+                    Yanbu, Al Madinah, Saudi Arabia / Saudi Arabia
+                    · Fegyveres összecsapás
+                    · Score 64
+                    · Original domains 26
+                    · Fingerprint confidence Medium-High
+                </div>
+
+                <p>The original cluster contains 30 source URLs across 26 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: israel, iran, houthi, military</span>
+                    <span>Conflict terms: missile, drone, strike, attack, intercept, war</span>
+                    <span>Keywords: aden, missiles, yemen, coalition, saudi, airport, saudi-led, arabia, intercepts, drones</span>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="http://www.iranherald.com/news/279380153/strikes-hit-yemen-aden-airport-saudi-led-coalition-intercepts-fresh-drones-missiles" target="_blank" rel="noopener">Strikes hit Yemen&#x27;s Aden airport; Saudi-led coalition intercepts fresh drones, missiles</a>
+                    <small>www.iranherald.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.manilatimes.net/2026/10/17/world/americas-emea/iran-denies-saudi-accusation-of-involvement-in-houthi-attacks/2447828" target="_blank" rel="noopener">Iran denies Saudi accusation of involvement in Houthi attacks | The Manila Times</a>
+                    <small>www.manilatimes.net · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://jowhar.com/iran-rejects-claims-it-was-behind-houthi-attacks/" target="_blank" rel="noopener">Iran Rejects Claims It Was Behind Houthi Attacks - Jowhar News Leader | Somali News</a>
+                    <small>jowhar.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.thedailystar.net/news/world/middle-east/news/missiles-hit-aden-airport-saudi-led-coalition-intercepts-missile-headed-yanbu-4300666" target="_blank" rel="noopener">Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu | The Daily Star</a>
+                    <small>www.thedailystar.net · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.aljazeera.com/news/2026/10/17/iran-backed-houthis-strike-yemens-aden-what-that-means" target="_blank" rel="noopener">Houthis strike Yemen’s Aden: What that means | Houthis News | Al Jazeera</a>
+                    <small>www.aljazeera.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.samaa.tv/2087358605-two-missiles-hit-yemen-s-aden-airport-near-aircraft" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.samaa.tv · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://peakoil.com/publicpolicy/the-return-of-middle-east-oil-has-iran-lost-control-of-strait-of-hormuz-why-are-crude-prices-still-up" target="_blank" rel="noopener">The return of Middle East oil: Has Iran lost control of Strait of Hormuz why are crude prices still up? | Peak Oil News and Message Boards</a>
+                    <small>peakoil.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.middleeastmonitor.com/20261016-from-hormuz-to-bab-el-mandeb-saudi-arabias-difficult-choices/" target="_blank" rel="noopener">From Hormuz to Bab el-Mandeb: Saudi Arabia’s difficult choices Middle East Monitor</a>
+                    <small>www.middleeastmonitor.com · ok</small>
+                </li>
+                </ol>
+                    </div>
+                    <div>
+                        <h4>Raw title pattern</h4>
+                        <ol><li>fight – Yanbu, Al Madinah, Saudi Arabia</li></ol>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
+                    </div>
+                    <div>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Yanbu, Al Madinah, Saudi Arabia&quot; &quot;Saudi Arabia&quot; &quot;israel&quot; &quot;missile&quot;</li><li>&quot;Saudi Arabia&quot; &quot;israel&quot; &quot;missile&quot;</li><li>&quot;Yanbu, Al Madinah, Saudi Arabia&quot; &quot;missile&quot;</li><li>&quot;israel&quot; &quot;missile&quot; 2026-10-17</li></ol>
+                    </div>
+                </div>
+            </article>
+            
+            <article class="event-card">
+                <div class="event-head">
+                    <span>#2</span>
+                    <strong>Sudan s Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News</strong>
+                </div>
+
+                <div class="meta">
+                    Jeddah, Makkah, Saudi Arabia / Saudi Arabia
+                    · Fegyveres összecsapás
+                    · Score 59
+                    · Original domains 37
+                    · Fingerprint confidence Medium-High
+                </div>
+
+                <p>The original cluster contains 44 source URLs across 37 domains. 7 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.</p>
+
+                <div class="fingerprint">
+                    <strong>Event fingerprint:</strong>
+                    <span>Actors: iran, houthi, government</span>
+                    <span>Conflict terms: missile, drone, strike, attack, explosion, killed, wounded, fire</span>
+                    <span>Keywords: arabia, yemen, india, saudi, palace, flights, air, attacks, till, houthis</span>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Inspected original sources</h4>
+                        <ol>
+                <li>
+                    <a href="https://www.miragenews.com/sudans-conflict-and-drone-attacks-deepen-1762114/" target="_blank" rel="noopener">Sudan s Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News</a>
+                    <small>www.miragenews.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.newdelhitimes.com/2-killed-in-explosions-near-palace-used-by-yemens-government-in-latest-houthi-attack/" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.newdelhitimes.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-survivor-recalls-helping-evacuate-women-children-3006842" target="_blank" rel="noopener">No title extracted</a>
+                    <small>www.arabnews.com · error</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.presstv.co.uk/Detail/2026/10/08/777874/dhubab-offensive-media-blitz-rapid-unraveling-saudi-backed-coalition-new-gambit" target="_blank" rel="noopener">Dhubab offensive, media blitz and the rapid unraveling of Saudi-backed coalition s new gambit</a>
+                    <small>www.presstv.co.uk · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://www.oneindia.com/international/india-saudi-arabia-flights-cancelled-till-oct-24-heres-why-8238307.html" target="_blank" rel="noopener">India-Saudi Arabia Flights Cancelled Till Oct 24; Here&#x27;s Why - Oneindia News</a>
+                    <small>www.oneindia.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://isp.netscape.com:443/news/world/story/0001/20261015/ed4dcdad5cfd4b08033b1af5cf81dca5" target="_blank" rel="noopener">2 killed in explosions near palace used by Yemen&#x27;s government in latest Houthi attack - Netscape News</a>
+                    <small>isp.netscape.com:443 · ok</small>
+                </li>
+                
+                <li>
+                    <a href="http://www.iranherald.com/news/279377283/houthi-attack-on-palace-used-by-yemen-government-in-aden-kills-five" target="_blank" rel="noopener">Houthi attack on palace used by Yemen government in Aden kills five</a>
+                    <small>www.iranherald.com · ok</small>
+                </li>
+                
+                <li>
+                    <a href="https://eaworldview.com/2026/10/us-war-on-iran-houthis-strike-yemen-presidential-palace-killing-5/" target="_blank" rel="noopener">UPDATES: US War on Iran, Day 235 - Houthis Strike Yemen Presidential Palace, Killing 5 - EA WorldView</a>
+                    <small>eaworldview.com · ok</small>
+                </li>
+                </ol>
+                    </div>
+                    <div>
+                        <h4>Raw title pattern</h4>
+                        <ol><li>fight – Jeddah, Makkah, Saudi Arabia</li></ol>
+                    </div>
+                </div>
+
+                <div class="grid">
+                    <div>
+                        <h4>Matched supplementary media</h4>
+                        <ol><li>No supplementary article passed the match filter.</li></ol>
+                    </div>
+                    <div>
+                        <h4>Fingerprint queries</h4>
+                        <ol><li>&quot;Jeddah, Makkah, Saudi Arabia&quot; &quot;Saudi Arabia&quot; &quot;iran&quot; &quot;missile&quot;</li><li>&quot;Saudi Arabia&quot; &quot;iran&quot; &quot;missile&quot;</li><li>&quot;Jeddah, Makkah, Saudi Arabia&quot; &quot;missile&quot;</li><li>&quot;iran&quot; &quot;missile&quot; 2026-10-17</li></ol>
+                    </div>
+                </div>
+            </article>
+            
+        </section>
+        
+</div>
+</main>
+</body>
+</html>

@@ -1,0 +1,583 @@
+{
+  "generated_at": "2026-10-19T10:50:03.881415Z",
+  "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "period": {
+    "start": "2026-10-05",
+    "end": "2026-10-18"
+  },
+  "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
+  "enriched_events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 1,
+      "score": 63,
+      "title": "Robbantás / IED – Kostyantynivka, Donets'ka Oblast', Ukraine",
+      "date": "2026-10-11",
+      "country": "Ukraine",
+      "location": "Kostyantynivka, Donets'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 5,
+      "source_domain_count": 5,
+      "source_domains": [
+        "krdo.com",
+        "www.egyptindependent.com",
+        "www.rightspeak.net",
+        "www.wxow.com",
+        "zizonline.com"
+      ],
+      "original_sources": [
+        "http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html",
+        "https://www.egyptindependent.com/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+        "https://krdo.com/news/national-world/cnn-world/2026/10/08/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+        "https://zizonline.com/33-dead-in-russian-strike-on-eastern-ukraine/",
+        "https://www.wxow.com/news/international/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/article_bcf244df-7837-5785-85ca-d04c1f4300bd.html"
+      ],
+      "raw_titles": [
+        "fight – Kostyantynivka, Donets'ka Oblast', Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html",
+          "domain": "www.rightspeak.net",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.egyptindependent.com/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+          "domain": "www.egyptindependent.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent",
+          "description": "Kyiv, Ukraine — At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, making it the deadliest single attack this year.",
+          "published": "2026-10-11T13:12:22+00:00"
+        },
+        {
+          "url": "https://krdo.com/news/national-world/cnn-world/2026/10/08/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
+          "domain": "krdo.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | KRDO",
+          "description": "By Kosta Gak, Sophie Tanno, CNN Kyiv, Ukraine (CNN) At least 33 people were killed on Thursday when a Russian strike caused two public buses to",
+          "published": "2026-10-08T22:20:09+00:00"
+        },
+        {
+          "url": "https://zizonline.com/33-dead-in-russian-strike-on-eastern-ukraine/",
+          "domain": "zizonline.com",
+          "status": "ok",
+          "error": null,
+          "title": "33 Dead in Russian Strike on Eastern Ukraine ZIZ Broadcasting Corporation",
+          "description": "At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, marking the deadliest attack from a single strike thi",
+          "published": "2026-10-08T10:19:53-04:00"
+        },
+        {
+          "url": "https://www.wxow.com/news/international/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/article_bcf244df-7837-5785-85ca-d04c1f4300bd.html",
+          "domain": "www.wxow.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | International News | wxow.com",
+          "description": "(CNN) At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, making it the",
+          "published": "2026-10-08T11:30:00-05:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent",
+        "top_keywords": [
+          "least",
+          "eastern",
+          "deadliest",
+          "single",
+          "year",
+          "people",
+          "thursday",
+          "when",
+          "caused",
+          "two"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine"
+        ],
+        "conflict_hints": [
+          "strike",
+          "attack",
+          "blast",
+          "killed",
+          "fire"
+        ],
+        "usable_source_count": 4,
+        "confidence": "Medium"
+      },
+      "queries": [
+        "\"Kostyantynivka, Donets'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"strike\"",
+        "\"Ukraine\" \"russia\" \"strike\"",
+        "\"Kostyantynivka, Donets'ka Oblast', Ukraine\" \"strike\"",
+        "\"russia\" \"strike\" 2026-10-11"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Kostyantynivka, Donets'ka Oblast', Ukraine\" \"Ukraine\" \"russia\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Kostyantynivka, Donets'ka Oblast', Ukraine\" \"strike\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"strike\" 2026-10-11",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 5 source URLs across 5 domains. 4 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 64,
+      "title": "Fegyveres összecsapás – Yanbu, Al Madinah, Saudi Arabia",
+      "date": "2026-10-17",
+      "country": "Saudi Arabia",
+      "location": "Yanbu, Al Madinah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 30,
+      "source_domain_count": 26,
+      "source_domains": [
+        "baystreet.ca",
+        "cyprus-mail.com",
+        "dominicanrepublicpost.com",
+        "english.news.cn",
+        "jowhar.com",
+        "maritime-executive.com",
+        "morungexpress.com",
+        "naharnet.com",
+        "oilprice.com",
+        "peakoil.com",
+        "themedialine.org",
+        "www.aljazeera.com",
+        "www.euronews.com",
+        "www.internazionale.it",
+        "www.iranherald.com",
+        "www.jpost.com",
+        "www.latintimes.com",
+        "www.livetradingnews.com",
+        "www.manilatimes.net",
+        "www.marinelink.com"
+      ],
+      "original_sources": [
+        "http://www.iranherald.com/news/279380153/strikes-hit-yemen-aden-airport-saudi-led-coalition-intercepts-fresh-drones-missiles",
+        "https://www.manilatimes.net/2026/10/17/world/americas-emea/iran-denies-saudi-accusation-of-involvement-in-houthi-attacks/2447828",
+        "https://jowhar.com/iran-rejects-claims-it-was-behind-houthi-attacks/",
+        "https://www.thedailystar.net/news/world/middle-east/news/missiles-hit-aden-airport-saudi-led-coalition-intercepts-missile-headed-yanbu-4300666",
+        "https://www.aljazeera.com/news/2026/10/17/iran-backed-houthis-strike-yemens-aden-what-that-means",
+        "https://www.samaa.tv/2087358605-two-missiles-hit-yemen-s-aden-airport-near-aircraft",
+        "https://peakoil.com/publicpolicy/the-return-of-middle-east-oil-has-iran-lost-control-of-strait-of-hormuz-why-are-crude-prices-still-up",
+        "https://www.middleeastmonitor.com/20261016-from-hormuz-to-bab-el-mandeb-saudi-arabias-difficult-choices/",
+        "https://english.news.cn/20261016/959460562e1445fe81110bb86ab99329/c.html",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/10/16/missiles-hit-aden-airport-as-saudi-led-coalition-intercepts-missile-headed-for-yanbu",
+        "https://english.news.cn/20261017/5920d6f63d2b466f92f469ef02652cbf/c.html",
+        "https://www.rte.ie/news/middle-east/2026/1017/1595732-middle-east-iran/",
+        "https://baystreet.ca/articles/commodities/124548/Saudi-Arabia-Shoots-Down-Houthi-Missiles-as-Regional-Conflict-Escalates",
+        "https://www.euronews.com/2026/10/15/imf-warns-attacks-on-saudi-arabia-could-hurt-global-economy-after-strike-on-aramco-headqua",
+        "https://www.marinelink.com/news/inside-irans-precision-strikes-port-543707",
+        "https://www.thenationalnews.com/business/energy/2026/10/14/houthi-attack-hits-aramcos-historic-nerve-centre-in-saudi-arabia/",
+        "https://oilprice.com/Latest-Energy-News/World-News/Saudi-Arabia-Shoots-Down-Houthi-Missiles-as-Regional-Conflict-Escalates.html",
+        "https://www.latintimes.com/houthis-kill-13-riyadh-airport-saudi-arabias-deadliest-attack-since-february-600061",
+        "https://www.latintimes.com/yemens-government-launches-major-offensive-houthi-missiles-reach-saudi-arabias-capital-599812",
+        "https://www.newsweek.com/trump-houthis-saudi-arabia-iran-war-12556349"
+      ],
+      "raw_titles": [
+        "fight – Yanbu, Al Madinah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "http://www.iranherald.com/news/279380153/strikes-hit-yemen-aden-airport-saudi-led-coalition-intercepts-fresh-drones-missiles",
+          "domain": "www.iranherald.com",
+          "status": "ok",
+          "error": null,
+          "title": "Strikes hit Yemen's Aden airport; Saudi-led coalition intercepts fresh drones, missiles",
+          "description": "ADEN, Yemen, Oct. 16 (Xinhua) -- Ballistic missiles launched by the Houthi group struck the international airport in the southern Yemeni port city of Aden on Friday...",
+          "published": ""
+        },
+        {
+          "url": "https://www.manilatimes.net/2026/10/17/world/americas-emea/iran-denies-saudi-accusation-of-involvement-in-houthi-attacks/2447828",
+          "domain": "www.manilatimes.net",
+          "status": "ok",
+          "error": null,
+          "title": "Iran denies Saudi accusation of involvement in Houthi attacks | The Manila Times",
+          "description": "TEHRAN Iran on Friday denied having anything to do with attacks by Yemen",
+          "published": "2026-10-17T08:47:00+08:00"
+        },
+        {
+          "url": "https://jowhar.com/iran-rejects-claims-it-was-behind-houthi-attacks/",
+          "domain": "jowhar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran Rejects Claims It Was Behind Houthi Attacks - Jowhar News Leader | Somali News",
+          "description": "Iran denied having anything to do with attacks by Yemen s Houthis, a day after Saudi Arabia accused it of having encouraged the group s recent escalation against the kingdom.",
+          "published": "2026-10-17T03:21:39+02:00"
+        },
+        {
+          "url": "https://www.thedailystar.net/news/world/middle-east/news/missiles-hit-aden-airport-saudi-led-coalition-intercepts-missile-headed-yanbu-4300666",
+          "domain": "www.thedailystar.net",
+          "status": "ok",
+          "error": null,
+          "title": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu | The Daily Star",
+          "description": "The coalition said it had also destroyed two cruise missiles over the Red Sea and three drones in Saudi Arabia s Southern and Riyadh regions. It did not identify the attackers",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/17/iran-backed-houthis-strike-yemens-aden-what-that-means",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis strike Yemen’s Aden: What that means | Houthis News | Al Jazeera",
+          "description": "What we know about the Houthi strikes on Aden’s presidential palace and airport, and why they matter.",
+          "published": ""
+        },
+        {
+          "url": "https://www.samaa.tv/2087358605-two-missiles-hit-yemen-s-aden-airport-near-aircraft",
+          "domain": "www.samaa.tv",
+          "status": "error",
+          "error": "HTTP Error 405: Not Allowed",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://peakoil.com/publicpolicy/the-return-of-middle-east-oil-has-iran-lost-control-of-strait-of-hormuz-why-are-crude-prices-still-up",
+          "domain": "peakoil.com",
+          "status": "ok",
+          "error": null,
+          "title": "The return of Middle East oil: Has Iran lost control of Strait of Hormuz why are crude prices still up? | Peak Oil News and Message Boards",
+          "description": "Peak Oil News and Message Boards is a community and collaboration portal about energy-related topics.",
+          "published": ""
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261016-from-hormuz-to-bab-el-mandeb-saudi-arabias-difficult-choices/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "From Hormuz to Bab el-Mandeb: Saudi Arabia’s difficult choices Middle East Monitor",
+          "description": "Developments in Yemen today cannot be separated from the repercussions of the war waged by the United States and Israel against Iran. The prolonged nature of this war, and the fact that it remains …",
+          "published": "2026-10-16T08:29:20+00:00"
+        },
+        {
+          "url": "https://english.news.cn/20261016/959460562e1445fe81110bb86ab99329/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition intercepts fresh drones, missiles over Saudi Arabia, Red Sea-Xinhua",
+          "description": "Saudi-led coalition intercepts fresh drones, missiles over Saudi Arabia, Red Sea-",
+          "published": ""
+        },
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/10/16/missiles-hit-aden-airport-as-saudi-led-coalition-intercepts-missile-headed-for-yanbu",
+          "domain": "www.internazionale.it",
+          "status": "ok",
+          "error": null,
+          "title": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu - Internazionale",
+          "description": "Oct 17 (Reuters) - Missiles struck Yemen’s Aden International Airport on Friday, while a Saudi-led military coalition said it had intercepted a ballistic missile headed f… Leggi",
+          "published": "2026-10-17T02:28:07+02:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Strikes hit Yemen's Aden airport; Saudi-led coalition intercepts fresh drones, missiles",
+        "top_keywords": [
+          "aden",
+          "missiles",
+          "yemen",
+          "coalition",
+          "saudi",
+          "airport",
+          "saudi-led",
+          "arabia",
+          "intercepts",
+          "drones"
+        ],
+        "actor_hints": [
+          "israel",
+          "iran",
+          "houthi",
+          "military"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "intercept",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Yanbu, Al Madinah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Yanbu, Al Madinah, Saudi Arabia\" \"missile\"",
+        "\"israel\" \"missile\" 2026-10-17"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Yanbu, Al Madinah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Yanbu, Al Madinah, Saudi Arabia\" \"missile\"",
+          "error": null,
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"missile\" 2026-10-17",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 30 source URLs across 26 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 59,
+      "title": "Fegyveres összecsapás – Jeddah, Makkah, Saudi Arabia",
+      "date": "2026-10-17",
+      "country": "Saudi Arabia",
+      "location": "Jeddah, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 44,
+      "source_domain_count": 37,
+      "source_domains": [
+        "aninews.in",
+        "bdnews24.com",
+        "eaworldview.com",
+        "gulfnews.com",
+        "idrw.org",
+        "isp.netscape.com:443",
+        "news.webindia123.com",
+        "organiser.org",
+        "tert.am",
+        "themedialine.org",
+        "tribune.com.pk",
+        "wrp.org.uk",
+        "www.albawaba.net",
+        "www.arabnews.com",
+        "www.bankingnews.gr",
+        "www.egyptindependent.com",
+        "www.gdnonline.com:443",
+        "www.hindustantimes.com",
+        "www.hurriyetdailynews.com",
+        "www.iranherald.com"
+      ],
+      "original_sources": [
+        "https://www.miragenews.com/sudans-conflict-and-drone-attacks-deepen-1762114/",
+        "https://www.newdelhitimes.com/2-killed-in-explosions-near-palace-used-by-yemens-government-in-latest-houthi-attack/",
+        "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-survivor-recalls-helping-evacuate-women-children-3006842",
+        "https://www.presstv.co.uk/Detail/2026/10/08/777874/dhubab-offensive-media-blitz-rapid-unraveling-saudi-backed-coalition-new-gambit",
+        "https://www.oneindia.com/international/india-saudi-arabia-flights-cancelled-till-oct-24-heres-why-8238307.html",
+        "https://isp.netscape.com:443/news/world/story/0001/20261015/ed4dcdad5cfd4b08033b1af5cf81dca5",
+        "http://www.iranherald.com/news/279377283/houthi-attack-on-palace-used-by-yemen-government-in-aden-kills-five",
+        "https://eaworldview.com/2026/10/us-war-on-iran-houthis-strike-yemen-presidential-palace-killing-5/",
+        "https://aninews.in/news/world/asia/air-india-cancels-flights-to-riyadh-dammam-jeddah-until-oct-20-amid-houthi-strikes-on-saudi-arabia20261016113551/",
+        "https://www.tribuneindia.com/news/india/air-india-extends-cancellation-of-saudi-arabia-flights-till-oct-20/",
+        "https://organiser.org/2026/10/16/386832/world/houthis-attack-on-yemen-presidential-palace-5-killed-16-injured-as-proxies-intensify-strikes-on-saudi-facilities/",
+        "https://www.gdnonline.com:443/Details/1409907/Saudi-taekwondo-athlete-suffers-fracture-in-Houthi-attack",
+        "https://idrw.org/totally-unacceptable-must-cease-immediately-india-on-attacks-on-civilian-infra-in-saudi-arabia/",
+        "https://www.wsls.com/news/2026/10/15/at-least-6-explosions-heard-near-yemen-government-used-palace-in-aden-witnesses-say/",
+        "https://www.thedailystar.net/business/economy/aviation/news/saudi-airport-restrictions-disrupt-travel-16620-passengers-4300286",
+        "https://bdnews24.com/aviation/hdarqnwrb8",
+        "https://www.arabnews.com/saudi-arabia/palestinian-father-of-six-killed-in-riyadh-airport-attack-was-returning-home-in-jeddah-3006280",
+        "https://www.arabnews.com/world/we-were-his-whole-world-family-mourns-bangladeshi-father-killed-in-houthi-attack-3006275",
+        "https://www.hindustantimes.com/india-news/saudi-airport-attacks-disrupt-indian-flights-embassy-focuses-on-diaspora-welfare-mea-101791990662575.html",
+        "https://www.oneindia.com/international/riyadh-airport-attack-1-indian-dead-4-in-icu-as-india-demands-immediate-halt-8235485.html"
+      ],
+      "raw_titles": [
+        "fight – Jeddah, Makkah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.miragenews.com/sudans-conflict-and-drone-attacks-deepen-1762114/",
+          "domain": "www.miragenews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Sudan s Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News",
+          "description": "The conflict and humanitarian crisis in Sudan continue to deteriorate without any visible breakthrough, Rosemary DiCarlo, Under-Secretary-General for",
+          "published": ""
+        },
+        {
+          "url": "https://www.newdelhitimes.com/2-killed-in-explosions-near-palace-used-by-yemens-government-in-latest-houthi-attack/",
+          "domain": "www.newdelhitimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-survivor-recalls-helping-evacuate-women-children-3006842",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/08/777874/dhubab-offensive-media-blitz-rapid-unraveling-saudi-backed-coalition-new-gambit",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Dhubab offensive, media blitz and the rapid unraveling of Saudi-backed coalition s new gambit",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.oneindia.com/international/india-saudi-arabia-flights-cancelled-till-oct-24-heres-why-8238307.html",
+          "domain": "www.oneindia.com",
+          "status": "ok",
+          "error": null,
+          "title": "India-Saudi Arabia Flights Cancelled Till Oct 24; Here's Why - Oneindia News",
+          "description": "Travel between India and Saudi Arabia is being impacted by rising tensions in West Asia, with some Indian airlines extending the cancellations of their flights to the Kingdom until October 24.The latest decision was taken by Air India and Air India Express following attacks on civilian infrastructure in Saudi Arabia by Yemen",
+          "published": "2026-10-17T16:51:28+05:30"
+        },
+        {
+          "url": "https://isp.netscape.com:443/news/world/story/0001/20261015/ed4dcdad5cfd4b08033b1af5cf81dca5",
+          "domain": "isp.netscape.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "2 killed in explosions near palace used by Yemen's government in latest Houthi attack - Netscape News",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "http://www.iranherald.com/news/279377283/houthi-attack-on-palace-used-by-yemen-government-in-aden-kills-five",
+          "domain": "www.iranherald.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthi attack on palace used by Yemen government in Aden kills five",
+          "description": "At least five people were killed and 16 wounded Thursday in a Houthi missile and drone attack on the palace located in Yemen #39;s interim capital – the south",
+          "published": ""
+        },
+        {
+          "url": "https://eaworldview.com/2026/10/us-war-on-iran-houthis-strike-yemen-presidential-palace-killing-5/",
+          "domain": "eaworldview.com",
+          "status": "ok",
+          "error": null,
+          "title": "UPDATES: US War on Iran, Day 235 - Houthis Strike Yemen Presidential Palace, Killing 5 - EA WorldView",
+          "description": "Yemen’s Houthis fire missiles on the Presidential Palace of the internationally-recognized Yemeni Government on Thursday, killing 5 people.",
+          "published": "2026-10-19T04:00:13+00:00"
+        },
+        {
+          "url": "https://aninews.in/news/world/asia/air-india-cancels-flights-to-riyadh-dammam-jeddah-until-oct-20-amid-houthi-strikes-on-saudi-arabia20261016113551/",
+          "domain": "aninews.in",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.tribuneindia.com/news/india/air-india-extends-cancellation-of-saudi-arabia-flights-till-oct-20/",
+          "domain": "www.tribuneindia.com",
+          "status": "ok",
+          "error": null,
+          "title": "Air India extends cancellation of Saudi Arabia flights till Oct 20 - The Tribune",
+          "description": "Air India on Friday said it has extended the cancellation of flights to Saudi Arabia till October 20 amid escalating tensions in the region due to the attacks on the Gulf country by Houthis.",
+          "published": "2026-10-16T12:21:01+05:30"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Sudan s Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News",
+        "top_keywords": [
+          "arabia",
+          "yemen",
+          "india",
+          "saudi",
+          "palace",
+          "flights",
+          "air",
+          "attacks",
+          "till",
+          "houthis"
+        ],
+        "actor_hints": [
+          "iran",
+          "houthi",
+          "government"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "explosion",
+          "killed",
+          "wounded",
+          "fire"
+        ],
+        "usable_source_count": 7,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Jeddah, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"Jeddah, Makkah, Saudi Arabia\" \"missile\"",
+        "\"iran\" \"missile\" 2026-10-17"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Jeddah, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        },
+        {
+          "query": "\"Jeddah, Makkah, Saudi Arabia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"iran\" \"missile\" 2026-10-17",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 44 source URLs across 37 domains. 7 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    }
+  ]
+}
