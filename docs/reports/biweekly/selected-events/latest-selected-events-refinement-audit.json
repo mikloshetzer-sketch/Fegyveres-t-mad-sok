@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-19T10:46:44.860846Z",
+  "generated_at": "2026-10-26T11:07:30.691993Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 6,
-  "unique_sources_checked": 24,
+  "event_count": 3,
+  "unique_sources_checked": 12,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -19,20 +19,27 @@
       "event_type": "Robbantás / IED",
       "original_sources_count": 5,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
           "url": "http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html",
           "domain": "www.rightspeak.net",
-          "status": "error",
-          "error": "HTTP Error 429: Too Many Requests",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
+          "status": "ok",
+          "error": null,
+          "title": "RIGHT SPEAK: 195 C-Clashes in F-Line: 20 in Pokrovsk Dir, 18 in Huliaipole Dir, 15 in Kostiantynivka Dir, (P)utin Rejects Any Possibility of Resuming UKR Peace Talks in Call with (T)rump; T Calls for Replacing Z After P Diesel Deal, UKR Attacks Rostov Terminal; UKR Felt Blindsided, 'It felt like a trap'; EXPERTS: Boosting US Oil Supplies with RU Diesel Unlikely to Have Much Impact On Prices, “It’s kind of shuffling deck chairs on the Titanic,” Said Michael Lynch; GOP Lawmakers Reject US-RU Deal; EU Slams T-P Deal, Warns of Boost to RU's War Funds, LIVE UPDATES, DETAILS, and LOTS MORE",
+          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "clash",
+            "clashes"
+          ],
+          "weak_hits": [
+            "war"
+          ],
           "noise_hits": []
         },
         {
@@ -92,148 +99,85 @@
       ]
     },
     {
-      "region": "Balkán",
+      "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Istanbul, Turkey",
-      "date": "2026-10-10",
-      "country": "Turkey",
-      "location": "Istanbul, Turkey",
+      "title": "Fegyveres összecsapás – Yanbu, Al Madinah, Saudi Arabia",
+      "date": "2026-10-17",
+      "country": "Saudi Arabia",
+      "location": "Yanbu, Al Madinah, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 0,
-      "confidence": "Rejected",
+      "valid_sources_count": 4,
+      "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://en.apa.az/asia/fire-breaks-out-at-hospital-in-istanbul-patients-are-being-evacuated-529331",
-          "domain": "en.apa.az",
+          "url": "http://www.iranherald.com/news/279380153/strikes-hit-yemen-aden-airport-saudi-led-coalition-intercepts-fresh-drones-missiles",
+          "domain": "www.iranherald.com",
           "status": "ok",
           "error": null,
-          "title": "Fire breaks out at hospital in Istanbul: Patients are being evacuated",
-          "description": "A fire broke out in the additional outpatient clinic building of Koşuyolu High Specialization Training and Research Hospital located in the Kartal district of Istanbul, APA reports",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [
-            "evacuated"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        },
-        {
-          "url": "https://thehardtackle.com/transfer-news/2026/10/10/galatasaray-rival-atletico-madrid-in-bruno-fernandes-pursuit/",
-          "domain": "thehardtackle.com",
-          "status": "ok",
-          "error": null,
-          "title": "Galatasaray rival Atletico Madrid in Bruno Fernandes pursuit",
-          "description": "Galatasaray are all set to rival Atletico Madrid in their pursuit of Manchester United skipper Bruno Fernandes.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://english.news.cn/europe/20261009/9fb0fe828afa4911aa192e2f4df8df0b/c.html",
-          "domain": "english.news.cn",
-          "status": "ok",
-          "error": null,
-          "title": "5 die in building collapse in Istanbul-Xinhua",
-          "description": "5 die in building collapse in Istanbul-",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.bgnes.com/society/turkey-inaugurates-new-high-speed-railway-link-to-bulgaria-and-europe",
-          "domain": "www.bgnes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Turkey inaugurates new high-speed railway link to Bulgaria and Europe | BGNES",
-          "description": "The 153-kilometre Çerkezköy–Kapıkule section is part of the strategic Halkalı–Kapıkule railway project.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": [
-            "art"
-          ]
-        }
-      ]
-    },
-    {
-      "region": "Balkán",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Smyrna, Izmir, Turkey",
-      "date": "2026-10-11",
-      "country": "Turkey",
-      "location": "Smyrna, Izmir, Turkey",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 16,
-      "checked_sources_count": 4,
-      "valid_sources_count": 3,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://nypost.com/2026/10/11/opinion/privileged-ingrates-like-zohran-mamdani-need-to-quit-the-genocide-hypocrisy/",
-          "domain": "nypost.com",
-          "status": "ok",
-          "error": null,
-          "title": "'Privileged ingrates' like Zohran Mamdani need to quit the genocide hypocrisy",
-          "description": "Some of Israel's loudest US accusers — like Hasan Piker, Zohran Mamdani and Ilhan Omar — remain silent about the sordid histories of their own homelands.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.fox5atlanta.com/news/smyrna-murder-investigation-police-search-man-seen-suspect",
-          "domain": "www.fox5atlanta.com",
-          "status": "ok",
-          "error": null,
-          "title": "Smyrna murder investigation: Police search for man seen with suspect | FOX 5 Atlanta",
-          "description": "Smyrna police are asking for the public's help to identify a person seen with a murder suspect before and after a deadly summer shooting.",
+          "title": "Strikes hit Yemen's Aden airport; Saudi-led coalition intercepts fresh drones, missiles",
+          "description": "ADEN, Yemen, Oct. 16 (Xinhua) -- Ballistic missiles launched by the Houthi group struck the international airport in the southern Yemeni port city of Aden on Friday...",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "shooting",
-            "police"
+            "strike",
+            "strikes",
+            "drone",
+            "drones",
+            "missile"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.atlantanewsfirst.com/2026/10/08/suspect-arrested-deadly-smyrna-shooting-police-say/",
-          "domain": "www.atlantanewsfirst.com",
+          "url": "https://www.manilatimes.net/2026/10/17/world/americas-emea/iran-denies-saudi-accusation-of-involvement-in-houthi-attacks/2447828",
+          "domain": "www.manilatimes.net",
           "status": "ok",
           "error": null,
-          "title": "Suspect arrested in deadly Smyrna shooting, police say",
-          "description": "A man wanted in a deadly shooting in Smyrna was arrested Thursday while breaking into a car, according to police.",
+          "title": "Iran denies Saudi accusation of involvement in Houthi attacks | The Manila Times",
+          "description": "TEHRAN — Iran on Friday denied having anything to do with attacks by Yemen",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "shooting",
-            "police",
-            "arrested"
+            "attack",
+            "attacks",
+            "ied"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://www.fox5atlanta.com/news/smyrna-police-answer-car-break-in-call-catch-wanted-murder-suspect",
-          "domain": "www.fox5atlanta.com",
+          "url": "https://jowhar.com/iran-rejects-claims-it-was-behind-houthi-attacks/",
+          "domain": "jowhar.com",
           "status": "ok",
           "error": null,
-          "title": "Smyrna police answer car break-in call, catch wanted murder suspect | FOX 5 Atlanta",
-          "description": "A call about car break-ins on Thursday led Smyrna police to a murder suspect who had been on the run since July.",
+          "title": "Iran Rejects Claims It Was Behind Houthi Attacks - Jowhar News Leader | Somali News",
+          "description": "Iran denied having anything to do with attacks by Yemen's Houthis, a day after Saudi Arabia accused it of having encouraged the group's recent escalation against the kingdom.",
           "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "police"
+            "attack",
+            "attacks",
+            "ied"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.thedailystar.net/news/world/middle-east/news/missiles-hit-aden-airport-saudi-led-coalition-intercepts-missile-headed-yanbu-4300666",
+          "domain": "www.thedailystar.net",
+          "status": "ok",
+          "error": null,
+          "title": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu | The Daily Star",
+          "description": "The coalition said it had also destroyed two cruise missiles over the Red Sea and three drones in Saudi Arabia's Southern and Riyadh regions. It did not identify the attackers",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "drones",
+            "missile"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -242,52 +186,61 @@
     },
     {
       "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Rajtaütés / fegyveres támadás – Nablus, West Bank, West Bank",
-      "date": "2026-10-10",
-      "country": "West Bank",
-      "location": "Nablus, West Bank, West Bank",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 16,
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Jeddah, Makkah, Saudi Arabia",
+      "date": "2026-10-17",
+      "country": "Saudi Arabia",
+      "location": "Jeddah, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 3,
+      "valid_sources_count": 2,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://aa.com.tr/en/middle-east/israeli-occupiers-abduct-7-palestinians-injure-3-during-olive-harvest-in-west-bank/4084702",
-          "domain": "aa.com.tr",
+          "url": "https://www.miragenews.com/sudans-conflict-and-drone-attacks-deepen-1762114/",
+          "domain": "www.miragenews.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli occupiers abduct 7 Palestinians, injure 3 during olive harvest in West Bank",
-          "description": "Attacks reported across Bethlehem, Nablus, Tulkarm and Ramallah as Palestinian farmers face assaults, crop theft and restrictions on access to their land | Anadolu",
+          "title": "Sudan's Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News",
+          "description": "The conflict and humanitarian crisis in Sudan continue to deteriorate without any visible breakthrough, Rosemary DiCarlo, Under-Secretary-General for",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks"
+            "attacks",
+            "drone",
+            "isis"
           ],
-          "weak_hits": [],
+          "weak_hits": [
+            "war",
+            "conflict"
+          ],
           "noise_hits": []
         },
         {
-          "url": "https://aa.com.tr/en/middle-east/israeli-occupiers-carry-out-19-attacks-on-palestinians-olive-farmers-across-west-bank-in-hours/4083854",
-          "domain": "aa.com.tr",
+          "url": "https://www.newdelhitimes.com/2-killed-in-explosions-near-palace-used-by-yemens-government-in-latest-houthi-attack/",
+          "domain": "www.newdelhitimes.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli occupiers carry out 19 attacks on Palestinians, olive farmers across West Bank in hours",
-          "description": "Attacks include burning trees, stealing crops and livestock, assaults on farmers, vehicles, Palestinian commission says | Anadolu",
+          "title": "2 killed in explosions near palace used by Yemen’s government in latest Houthi attack - New Delhi Times",
+          "description": "At least six explosions struck Thursday near the palace used by Yemen’s internationally recognized government in the port city of Aden, witnesses said. An",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks"
+            "explosion",
+            "killed",
+            "kill"
           ],
-          "weak_hits": [],
+          "weak_hits": [
+            "government"
+          ],
           "noise_hits": []
         },
         {
-          "url": "https://news.az/news/israeli-settler-attacks-disrupt-palestinian-olive-harvest-in-west-bank",
-          "domain": "news.az",
+          "url": "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-survivor-recalls-helping-evacuate-women-children-3006842",
+          "domain": "www.arabnews.com",
           "status": "error",
           "error": "HTTP Error 403: Forbidden",
           "title": "",
@@ -299,196 +252,16 @@
           "noise_hits": []
         },
         {
-          "url": "https://lasvegassun.com/news/2026/oct/06/saudi-arabia-says-2-airports-were-hit-in-renewed-f/",
-          "domain": "lasvegassun.com",
+          "url": "https://www.presstv.co.uk/Detail/2026/10/08/777874/dhubab-offensive-media-blitz-rapid-unraveling-saudi-backed-coalition-new-gambit",
+          "domain": "www.presstv.co.uk",
           "status": "ok",
           "error": null,
-          "title": "Saudi Arabia says 2 airports were hit in renewed fighting with Houthis and other Mideast news - Las Vegas Sun News",
-          "description": "Saudi Arabia says three people were injured in the latest attacks on its airports since fighting with Yemen’s Houthi rebels reignited",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Jeddah, Makkah, Saudi Arabia",
-      "date": "2026-10-11",
-      "country": "Saudi Arabia",
-      "location": "Jeddah, Makkah, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://www.albawaba.net/news/israels-next-targets-iran-backed-1638759",
-          "domain": "www.albawaba.net",
-          "status": "ok",
-          "error": null,
-          "title": "Israel's next targets Iran-backed militias in Iraq shift their bases | Al Bawaba",
-          "description": "ALBAWABA – Iran-backed armed factions in Iraq could face Israeli strikes if they intervene in renewed fighting between Tehran and Washington, analysts t",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "armed"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://gulfnews.com/world/gulf/saudi/riyadh-airport-attack-three-filipinos-injured-dmw-issues-helplines-1.500706439",
-          "domain": "gulfnews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Riyadh Airport Attack: Three Filipinos in ICU, DMW Provides Emergency Helplines",
-          "description": "The strike on Riyadh marked a major escalation in the conflict between the Houthis and Saudi Arabia.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike"
-          ],
-          "weak_hits": [
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.siasat.com/fresh-strike-hits-riyadh-airport-fire-breaks-out-at-terminal-4-3556092/",
-          "domain": "www.siasat.com",
-          "status": "ok",
-          "error": null,
-          "title": "Fresh strike hits Riyadh airport, fire breaks out at Terminal 4",
-          "description": "A fresh strike sparked a fire at Riyadh airport’s Terminal 4 as Saudi air defences intercepted a cruise missile nearby.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "missile",
-            "intercepted"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.egyptindependent.com/pakistan-confirms-it-has-troops-in-saudi-as-conflict-with-yemens-houthi-rebels-escalates/",
-          "domain": "www.egyptindependent.com",
-          "status": "ok",
-          "error": null,
-          "title": "Pakistan confirms it has troops in Saudi as conflict with Yemen’s Houthi rebels escalates - Egypt Independent",
-          "description": "Islamabad — Key Saudi ally Pakistan has confirmed it has troops stationed in the Gulf kingdom, as Iran-backed Houthi rebels in Yemen continue cross-border attacks with deadly assaults on airports.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks"
-          ],
-          "weak_hits": [
-            "conflict"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 3,
-      "title": "Fegyveres összecsapás – Jizan, Saudi Arabia",
-      "date": "2026-10-11",
-      "country": "Saudi Arabia",
-      "location": "Jizan, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "https://www.aljazeera.com/news/2026/10/11/yemen-fighting-expands-as-houthis-attack-saudi-airport-what-to-know",
-          "domain": "www.aljazeera.com",
-          "status": "ok",
-          "error": null,
-          "title": "Yemen fighting expands as Houthis attack Saudi airport again: What to know | Explainer News | Al Jazeera",
-          "description": "Saudi coalition blames Houthi group for the missile attack on the main international airport in Riyadh.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "missile"
-          ],
-          "weak_hits": [],
-          "noise_hits": [
-            "explainer"
-          ]
-        },
-        {
-          "url": "https://news.webindia123.com/news/Articles/World/20261008/4508249.html",
-          "domain": "news.webindia123.com",
-          "status": "ok",
-          "error": null,
-          "title": "3 killed, 36 injured in Houthi attacks on Abha, King Khalid airports: Saudi GACA",
+          "title": "Dhubab offensive, media blitz and the rapid unraveling of Saudi-backed coalition’s new gambit",
           "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "killed",
-            "kill",
-            "injured"
-          ],
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
           "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.pakistantelegraph.com/news/279358424/3-killed-36-injured-in-houthi-attacks-on-abha-king-khalid-airports-saudi-gaca",
-          "domain": "www.pakistantelegraph.com",
-          "status": "ok",
-          "error": null,
-          "title": "3 killed, 36 injured in Houthi attacks on Abha, King Khalid airports: Saudi GACA",
-          "description": "Abha International Airport and King Khalid International Airport were targeted in two separate attacks on October 6 and 7, resulting in a total of three fatalities and 36 injuries, Saudi Arabia's General Authority of Civil Aviation (GACA) said. According to GACA, two people were killed and 28 injured in the attack on Abha International Airport. The deceased were female residents of Moroccan and Algerian nationalities, while the injured included Saudi citizens, a Bangladeshi resident and a Filipino resident. The injuries ranged from minor to critical. At King Khalid International Airport, one Sudanese resident was killed, and eight people were injured, GACA said. The injured included five Saudi citizens, two Egyptian residents and one Pakistani resident, with injuries ranging from minor to critical. \"All injured individuals were transported to hospital for appropriate medical care,\" GACA said, adding that the two attacks also caused some property damage. The authority said emergency response teams and relevant authorities responded immediately in accordance with established protocols and applicable emergency response plans. \"GACA is working in coordination with the relevant authorities to assess the damage, verify the safety of the facilities, and take the necessary measures to ensure the safety of passengers and maintain the security and safety of operations within the Kingdom's civil aviation system,\" it said. https",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "killed",
-            "kill",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.texarkanagazette.com/news/2026/oct/08/attacks-on-saudi-airports-claimed-by-houthi/",
-          "domain": "www.texarkanagazette.com",
-          "status": "ok",
-          "error": null,
-          "title": "Attacks on Saudi airports claimed by Houthi rebels kill 3 people, officials say | Texarkana Gazette",
-          "description": "CAIRO -- Two attacks on airports in Saudi Arabia claimed by Iran-backed Houthi rebels in neighboring Yemen killed three people Wednesday, Saudi officials said, as the kingdom was pulled deeper into the latest front in the Iran war.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "war"
-          ],
           "noise_hits": []
         }
       ]

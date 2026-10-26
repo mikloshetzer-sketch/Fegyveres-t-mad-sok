@@ -1,0 +1,1357 @@
+{
+  "generated_at": "2026-10-26T11:07:32.880617Z",
+  "period": {
+    "start": "2026-10-12",
+    "end": "2026-10-25"
+  },
+  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. The shared event_pipeline.py layer prepares normalized locations, source validation and scoring before final selection.",
+  "pipeline": {
+    "modules": [
+      "location_normalizer.py",
+      "source_validation.py",
+      "event_scoring.py",
+      "article_validator.py",
+      "final_event_validator.py",
+      "event_pipeline.py"
+    ],
+    "article_fetching": true,
+    "final_event_validation": true
+  },
+  "regions": {
+    "Európai Unió": {
+      "raw_event_count": 650,
+      "cluster_count": 650,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 650,
+        "source_valid_clusters": 18,
+        "source_invalid_clusters": 632,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 632,
+          "Medium": 8,
+          "High": 5,
+          "Low": 5
+        },
+        "top_countries": [
+          [
+            "France",
+            134
+          ],
+          [
+            "Ireland",
+            121
+          ],
+          [
+            "Germany",
+            76
+          ],
+          [
+            "Spain",
+            46
+          ],
+          [
+            "Italy",
+            41
+          ],
+          [
+            "Poland",
+            23
+          ],
+          [
+            "Netherlands",
+            20
+          ],
+          [
+            "Romania",
+            20
+          ],
+          [
+            "Greece",
+            19
+          ],
+          [
+            "Bulgaria",
+            19
+          ]
+        ],
+        "top_locations": [
+          [
+            "Rome, Lazio, Italy",
+            3
+          ],
+          [
+            "Paris, France, France",
+            3
+          ],
+          [
+            "Germany",
+            3
+          ],
+          [
+            "Dublin, Ireland",
+            3
+          ],
+          [
+            "Czech Republic",
+            3
+          ],
+          [
+            "Cyprus",
+            3
+          ],
+          [
+            "France",
+            2
+          ],
+          [
+            "Clermont-Ferrand, Auvergne, France",
+            2
+          ],
+          [
+            "Brussels, Bruxelles-Capitale, Belgium",
+            2
+          ],
+          [
+            "Trappes, France, France",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            435
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            200
+          ],
+          [
+            "Robbantás / IED",
+            7
+          ],
+          [
+            "Tömeges erőszak",
+            7
+          ],
+          [
+            "Tüntetés / zavargás",
+            1
+          ]
+        ]
+      }
+    },
+    "Ukrajna": {
+      "raw_event_count": 194,
+      "cluster_count": 178,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 178,
+        "source_valid_clusters": 0,
+        "source_invalid_clusters": 178,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 178
+        },
+        "top_countries": [
+          [
+            "Ukraine",
+            178
+          ]
+        ],
+        "top_locations": [
+          [
+            "Odesa, Odesa Oblast, Ukraine",
+            4
+          ],
+          [
+            "Ukraine",
+            3
+          ],
+          [
+            "Kyiv, Misto, Ukraine",
+            3
+          ],
+          [
+            "Kyiv, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Dnipro, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Kherson, Khersons'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Crimea, Krym, Avtonomna Respublika, Ukraine",
+            2
+          ],
+          [
+            "Dobropillya, Khersons'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Molodetske, Cherkas'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Kupyansk, Kharkivs'ka Oblast', Ukraine",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Robbantás / IED",
+            145
+          ],
+          [
+            "Fegyveres összecsapás",
+            22
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            8
+          ],
+          [
+            "Tömeges erőszak",
+            3
+          ]
+        ]
+      }
+    },
+    "Balkán": {
+      "raw_event_count": 101,
+      "cluster_count": 101,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 101,
+        "source_valid_clusters": 3,
+        "source_invalid_clusters": 98,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 98,
+          "High": 2,
+          "Low": 1
+        },
+        "top_countries": [
+          [
+            "Turkey",
+            72
+          ],
+          [
+            "Albania",
+            10
+          ],
+          [
+            "Serbia",
+            5
+          ],
+          [
+            "Macedonia",
+            4
+          ],
+          [
+            "Serbia (general)",
+            3
+          ],
+          [
+            "Bosnia-Herzegovina",
+            3
+          ],
+          [
+            "Kosovo",
+            3
+          ],
+          [
+            "Montenegro",
+            1
+          ]
+        ],
+        "top_locations": [
+          [
+            "Albania",
+            3
+          ],
+          [
+            "Anatolia, Turkey, Turkey",
+            3
+          ],
+          [
+            "Reyhanli, Hatay, Turkey",
+            3
+          ],
+          [
+            "Tirana, Tirane, Albania",
+            2
+          ],
+          [
+            "Serbia",
+            2
+          ],
+          [
+            "Belgrade, Serbia",
+            2
+          ],
+          [
+            "Durres, Qarku i Durresit, Albania",
+            2
+          ],
+          [
+            "Antalya, Turkey",
+            2
+          ],
+          [
+            "Ankara, Turkey",
+            2
+          ],
+          [
+            "Anadolu, Turkey, Turkey",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            69
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            29
+          ],
+          [
+            "Tömeges erőszak",
+            3
+          ]
+        ]
+      }
+    },
+    "Közel-Kelet": {
+      "raw_event_count": 1131,
+      "cluster_count": 1131,
+      "selected_count": 1,
+      "pipeline_summary": {
+        "total_clusters": 1131,
+        "source_valid_clusters": 73,
+        "source_invalid_clusters": 1058,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 1058,
+          "High": 25,
+          "Medium": 26,
+          "Low": 22
+        },
+        "top_countries": [
+          [
+            "Israel",
+            156
+          ],
+          [
+            "Iran",
+            150
+          ],
+          [
+            "West Bank",
+            126
+          ],
+          [
+            "Pakistan",
+            109
+          ],
+          [
+            "Yemen",
+            108
+          ],
+          [
+            "Saudi Arabia",
+            78
+          ],
+          [
+            "Syria",
+            60
+          ],
+          [
+            "Afghanistan",
+            42
+          ],
+          [
+            "Egypt",
+            37
+          ],
+          [
+            "Lebanon",
+            34
+          ]
+        ],
+        "top_locations": [
+          [
+            "Tehran, Iran",
+            3
+          ],
+          [
+            "Israel",
+            3
+          ],
+          [
+            "Hebron, Israel, Israel",
+            3
+          ],
+          [
+            "Jerusalem, Israel, Israel",
+            3
+          ],
+          [
+            "Riyadh, Ar Riya?, Saudi Arabia",
+            3
+          ],
+          [
+            "Sanaa, Sana', Yemen",
+            3
+          ],
+          [
+            "Mecca, Makkah, Saudi Arabia",
+            3
+          ],
+          [
+            "Iran",
+            3
+          ],
+          [
+            "Tel Aviv, Israel",
+            3
+          ],
+          [
+            "Gaza, Israel, Israel",
+            3
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            759
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            315
+          ],
+          [
+            "Tömeges erőszak",
+            50
+          ],
+          [
+            "Tüntetés / zavargás",
+            5
+          ],
+          [
+            "Dróntámadás",
+            2
+          ]
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 64,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 0,
+        "international_relevance": 17,
+        "repeat_hotspot": 0,
+        "source_reliability": 23,
+        "freshness": 8,
+        "cluster_quality": 3,
+        "total": 64
+      },
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-10-25|west bank|turmus ayya west bank west bank|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Turmus Ayya, West Bank, West Bank",
+      "date": "2026-10-25",
+      "country": "West Bank",
+      "location": "Turmus Ayya, West Bank, West Bank",
+      "raw_location": "Turmus Ayya, West Bank, West Bank",
+      "normalized_location": {
+        "raw_location": "Turmus Ayya, West Bank, West Bank",
+        "country": "West Bank",
+        "country_key": "west bank",
+        "primary": "Turmus Ayya",
+        "primary_key": "turmus ayya",
+        "secondary": "West Bank",
+        "secondary_key": "west bank",
+        "aliases": [
+          "turmus ayya",
+          "west bank"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "turmus ayya",
+          "west bank",
+          "west bank"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 24,
+      "source_domain_count": 21,
+      "source_domains": [
+        "aa.com.tr",
+        "aljazeerah.info",
+        "english.aawsat.com",
+        "english.wafa.ps",
+        "jowhar.com",
+        "katv.com",
+        "www.arabnews.com",
+        "www.arkansasonline.com",
+        "www.cbc.ca",
+        "www.democracynow.org",
+        "www.heritagefl.com",
+        "www.irishtimes.com",
+        "www.islamicinvitationturkey.com",
+        "www.jns.org",
+        "www.pilotonline.com",
+        "www.rte.ie",
+        "www.siasat.com",
+        "www.spokesman.com",
+        "www.staradvertiser.com",
+        "www.theguardian.com"
+      ],
+      "sources": [
+        "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
+        "https://www.heritagefl.com/story/2026/10/23/opinions/call-it-judea-and-samaria/24190.html",
+        "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+        "https://english.wafa.ps/Pages/Details/176048",
+        "https://www.pilotonline.com/2026/10/19/saudi-arabia-israel-iran-mideast-news/",
+        "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445",
+        "https://www.democracynow.org/2026/10/19/west_bank_journalists",
+        "https://www.rte.ie/news/world/2026/1018/1595808-settler-violence/",
+        "https://www.ynetnews.com/opinions-analysis/article/rktdbgm3ge",
+        "https://www.spokesman.com/stories/2026/oct/16/israeli-settlers-burn-olive-trees-injure-journalis/",
+        "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/",
+        "https://www.arkansasonline.com/news/2026/oct/17/israeli-settlers-attack-palestinian-villagers/",
+        "https://www.arabnews.com/middle-east/israeli-settlers-burn-olive-trees-injure-journalist-in-west-bank-attack-3006667",
+        "https://aa.com.tr/en/world/2-palestinians-injured-in-attack-by-israeli-occupiers-on-west-bank-farmers/4090528",
+        "https://english.aawsat.com/arab-world/5330246-israeli-settlers-attack-palestinians-during-olive-harvest",
+        "https://english.wafa.ps/Pages/Details/175943",
+        "https://www.siasat.com/israeli-settlers-beat-palestinians-set-cars-ablaze-in-west-bank-3559509/",
+        "https://www.theguardian.com/world/2026/oct/16/israeli-settlers-attack-olive-farmers-west-bank-washington-post-journalist-heidi-levine",
+        "https://jowhar.com/israeli-settlers-torch-olive-groves-during-west-bank-assault/",
+        "https://www.irishtimes.com/world/middle-east/2026/10/16/israeli-settlers-burn-olive-trees-and-attack-us-journalist-in-west-bank/"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 3,
+        "rejected_count": 9,
+        "valid_ratio": 0.25,
+        "weighted_score": 2.4,
+        "label": "Low",
+        "valid_sources": [
+          "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+          "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445",
+          "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/"
+        ],
+        "rejected_sources": [
+          "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
+          "https://www.heritagefl.com/story/2026/10/23/opinions/call-it-judea-and-samaria/24190.html",
+          "https://english.wafa.ps/Pages/Details/176048",
+          "https://www.pilotonline.com/2026/10/19/saudi-arabia-israel-iran-mideast-news/",
+          "https://www.democracynow.org/2026/10/19/west_bank_journalists",
+          "https://www.rte.ie/news/world/2026/1018/1595808-settler-violence/",
+          "https://www.ynetnews.com/opinions-analysis/article/rktdbgm3ge",
+          "https://www.spokesman.com/stories/2026/oct/16/israeli-settlers-burn-olive-trees-injure-journalis/",
+          "https://www.arkansasonline.com/news/2026/oct/17/israeli-settlers-attack-palestinian-villagers/"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
+            "domain": "katv.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "attack",
+              "kills"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.heritagefl.com/story/2026/10/23/opinions/call-it-judea-and-samaria/24190.html",
+            "domain": "www.heritagefl.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+            "domain": "www.islamicinvitationturkey.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "attacks"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://english.wafa.ps/Pages/Details/176048",
+            "domain": "english.wafa.ps",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.pilotonline.com/2026/10/19/saudi-arabia-israel-iran-mideast-news/",
+            "domain": "www.pilotonline.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445",
+            "domain": "www.cbc.ca",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "arrests"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.democracynow.org/2026/10/19/west_bank_journalists",
+            "domain": "www.democracynow.org",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.rte.ie/news/world/2026/1018/1595808-settler-violence/",
+            "domain": "www.rte.ie",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.ynetnews.com/opinions-analysis/article/rktdbgm3ge",
+            "domain": "www.ynetnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [
+              "analysis"
+            ],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.spokesman.com/stories/2026/oct/16/israeli-settlers-burn-olive-trees-injure-journalis/",
+            "domain": "www.spokesman.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/",
+            "domain": "www.staradvertiser.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "attack"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.arkansasonline.com/news/2026/oct/17/israeli-settlers-attack-palestinian-villagers/",
+            "domain": "www.arkansasonline.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "attack"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "turmus ayya"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Turmus Ayya, West Bank, West Bank",
+        "event_country": "West Bank",
+        "event_date": "2026-10-25",
+        "location_terms": {
+          "primary": [
+            "turmus ayya"
+          ],
+          "secondary": [
+            "bank"
+          ],
+          "country": [
+            "bank",
+            "west"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Low",
+      "recommended_score": 68,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+          "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445",
+          "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/",
+          "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "average_score": 61.5,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+            "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/",
+            "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers"
+          ],
+          "rejected_urls": [
+            "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445"
+          ],
+          "checked": [
+            {
+              "url": "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+              "domain": "www.islamicinvitationturkey.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 96,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Settler Attacks Threaten Palestinian Olive Harvest Across West Bank - Islamic Invitation Turkey",
+                "description": "Jewish settlers continue to attack Palestinians across the occupied West Bank, targeting farmers, land and property amid a surge in violence coinciding with",
+                "paragraphs": [
+                  "Home World News Iran Iraq Syria Lebanon Palestine Saudi Arabia Turkey Yemen Bahrain Egypt Syria Truths Chemical Claims& Realities Confessions& Evidences Crimes& Genocides Desecrations by Terrorists Enemies of Syria Friends of Syria Media Lies& Propagandas Photoshopped Revolution Pro-Syria Rallies Terrorists Infight Videos Islamic Invitation Exclusive Islamic Invitation Video Clip Syria Videos Hezbollah Clip Gallery Risale-i Nur Damascus Sermon Letters Said Nursi The Flashes The Guide for Youth The Rays The Words Worship And The Prayers Biography of Bediüzzaman Said Nursi Al-Jawshan al-Kabîr Others Days of Allah Ashura Ramadan Days of Victory Ten Days of Dawn International Quds Day Awakening Islamic Unity Islamic Awakening European Awakening American Awakening Leaders of Ummah Imam Khomeini Imam Ali Khamenei Bediüzzaman Said Nursî Hizbullah Hakverdi Hussein Fadlallah Hassan Nasrallah X YouTube Instagram Telegram Search for Home / World News / West Asia / Settler Attacks Threaten Palestinian Olive Harvest Across West Bank West Asia Europe Human Rights Palestine Resistance Axis World News Settler Attacks Threaten Palestinian Olive Harvest Across West Bank Jewish settlers have continued attacks on Palestinians in the occupied West Bank, targeting farmers, their land and property, as violence intensifies during the olive harvest season, a crucial source of income for thousands of Palestinian families. 21/10/2026 4 minutes read Jewish settlers continue to attack Palestinians across the occupied West Bank, targeting farmers, land and property amid a surge in violence coinciding with the olive harvest, a vital source of income for thousands of Palestinian families.",
+                  "The attacks have expanded beyond tree damage and arson to include physical assaults on residents and journalists, as well as targeting European diplomatic delegations. The escalation comes amid international criticism over the lack of effective accountability for those responsible.",
+                  "International newspapers and news agencies, including The Washington Post, The Associated Press and Al Jazeera, have reported a rise in attacks across several West Bank villages in recent days, restricting farmers’ access to their land and disrupting the harvest.",
+                  "Farmers and their land have been targeted in coordinated attacks.",
+                  "Masked Jewish settlers attacked Palestinians harvesting olives in Abu Falah, northeast of Ramallah, on Friday, October 16, in one of the latest high-profile incidents. The assailants reportedly set fire to trees, hurled stones and assaulted farmers and journalists."
+                ],
+                "text_sample": "Settler Attacks Threaten Palestinian Olive Harvest Across West Bank - Islamic Invitation Turkey Jewish settlers continue to attack Palestinians across the occupied West Bank, targeting farmers, land and property amid a surge in violence coinciding with Home World News Iran Iraq Syria Lebanon Palestine Saudi Arabia Turkey Yemen Bahrain Egypt Syria Truths Chemical Claims& Realities Confessions& Evidences Crimes& Genocides Desecrations by Terrorists Enemies of Syria Friends of Syria Media Lies& Propagandas Photoshopped Revolution Pro-Syria Rallies Terrorists Infight Videos Islamic Invitation Exclusive Islamic Invitation Video Clip Syria Videos Hezbollah Clip Gallery Risale-i Nur Damascus Sermon Letters Said Nursi The Flashes The Guide for Youth The Rays The Words Worship And The Prayers Biography of Bediüzzaman Said Nursi Al-Jawshan al-Kabîr Others Days of Allah Ashura Ramadan Days of Victory Ten Days of Dawn International Quds Day Awakening Islamic Unity Islamic Awakening European Awaken"
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacks",
+                  "attacked",
+                  "hezbollah",
+                  "arson"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "turmus ayya",
+                    "west bank",
+                    "turmus ayya west bank west bank"
+                  ],
+                  "hits": [
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.cbc.ca/news/world/israel-west-bank-settlers-arrests-9.7386445",
+              "domain": "www.cbc.ca",
+              "fetch": {
+                "attempted": true,
+                "ok": false,
+                "status": null,
+                "error": "TimeoutError: The read operation timed out",
+                "elapsed_ms": 10187,
+                "content_type": ""
+              },
+              "article": {
+                "title": "",
+                "description": "",
+                "paragraphs": [],
+                "text_sample": ""
+              },
+              "validation": {
+                "score": 0,
+                "confidence": "Rejected",
+                "accepted": false,
+                "reasons": [
+                  "fetch failed"
+                ],
+                "incident_hits": [],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [],
+                  "hits": [],
+                  "has_location_match": false
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.staradvertiser.com/2026/10/16/breaking-news/israeli-settlers-burn-olive-trees-attack-u-s-journalist-in-west-bank/",
+              "domain": "www.staradvertiser.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 125,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israeli settlers attack U.S. journalist in West Bank | Honolulu Star-Advertiser",
+                "description": "ABU FALAH, West Bank >> Clad in black and their faces masked, dozens of militant Israeli settlers burned olive trees and threw rocks at Palestinians in a coordinated attack today on a village’s harvest in the Israeli-occupied West Bank that injured at least two people, including a journalist.",
+                "paragraphs": [
+                  "Monday, October 26, 2026 72° Today's Paper",
+                  "By Pesha Magid, Ismael Khader, Ali Sawafta, Ammar Awad and Simon Lewis / Reuters",
+                  "A journalist, left, is helped after being attacked by Israeli settlers in Abu Falah, West Bank, today, in this screengrab from a video. Israeli settlers, right, attack a journalist in Abu Falah, West Bank, today, in this screengrab from a video.",
+                  "ABU FALAH, West Bank >> Clad in black and their faces masked, dozens of militant Israeli settlers burned olive trees and threw rocks at Palestinians in a coordinated attack today on a village’s harvest in the Israeli-occupied West Bank that injured at least two people, including a journalist.",
+                  "Some 80 settlers, some of them carrying gas canisters, descended from a hill above a terraced olive grove where villagers from Abu Falah had gathered to pick ripe fruit, a cherished annual tradition in Palestinian life, Reuters witnesses said."
+                ],
+                "text_sample": "Israeli settlers attack U.S. journalist in West Bank | Honolulu Star-Advertiser ABU FALAH, West Bank >> Clad in black and their faces masked, dozens of militant Israeli settlers burned olive trees and threw rocks at Palestinians in a coordinated attack today on a village’s harvest in the Israeli-occupied West Bank that injured at least two people, including a journalist. Monday, October 26, 2026 72° Today's Paper By Pesha Magid, Ismael Khader, Ali Sawafta, Ammar Awad and Simon Lewis / Reuters A journalist, left, is helped after being attacked by Israeli settlers in Abu Falah, West Bank, today, in this screengrab from a video. Israeli settlers, right, attack a journalist in Abu Falah, West Bank, today, in this screengrab from a video. ABU FALAH, West Bank >> Clad in black and their faces masked, dozens of militant Israeli settlers burned olive trees and threw rocks at Palestinians in a coordinated attack today on a village’s harvest in the Israeli-occupied West Bank that injured at leas"
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacked",
+                  "injured",
+                  "militant"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "turmus ayya",
+                    "west bank",
+                    "turmus ayya west bank west bank"
+                  ],
+                  "hits": [
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
+              "domain": "katv.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 110,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers",
+                "description": "Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers.",
+                "paragraphs": [
+                  "Watch Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers by EMMA KOPPELMAN | The National News Desk",
+                  "Israeli soldiers gather at the scene of a shooting attack carried out by Palestinian gunmen at a junction near Hebron in the occupied West Bank on Friday, Oct. 23, 2026. (AP Photo/Mahmoud Illean) Comment on this story 0 Comment Share story Share topics: Hebron West Bank Israeli lockdown Displacement Demolitions Arrests Hamas Netanyahu (TNND) — Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers, triggering a broad Israeli operation across the occupied West Bank.",
+                  "Israeli forces imposed a lockdown on Hebron and displaced residents from neighborhoods in the aftermath of the attack, which involved two Palestinian gunmen and an Israeli army reserve base or checkpoint near Hebron. The two gunmen and two Israeli soldiers were killed, and three Israeli soldiers were injured.",
+                  "Israeli armored vehicles are seen parked outside a Palestinian building in the West Bank town of Turmus Ayya, Friday, Oct. 23, 2026. (AP Photo/Leo Correa)",
+                  "Displacement estimates varied. Hebron Mayor Yousef al-Ja’bari told Al Jazeera about 2,200 people had been forced from their homes. Israeli Defense Minister Israel Katz said about 2,000 had been displaced. The Hebron municipality earlier estimated about 1,500 people."
+                ],
+                "text_sample": "Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers. Watch Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers by EMMA KOPPELMAN | The National News Desk Israeli soldiers gather at the scene of a shooting attack carried out by Palestinian gunmen at a junction near Hebron in the occupied West Bank on Friday, Oct. 23, 2026. (AP Photo/Mahmoud Illean) Comment on this story 0 Comment Share story Share topics: Hebron West Bank Israeli lockdown Displacement Demolitions Arrests Hamas Netanyahu (TNND) — Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers, triggering a broad Israeli operation across the occupied West Bank. Israeli forces imposed a lockdown on Hebron and displaced residents from neighborhoods "
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "shooting",
+                  "raided",
+                  "killed",
+                  "kills",
+                  "injured",
+                  "hamas"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "turmus ayya",
+                    "west bank",
+                    "turmus ayya west bank west bank"
+                  ],
+                  "hits": [
+                    "turmus ayya",
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 78,
+          "confidence": "Medium",
+          "basis": "source_and_article_validation",
+          "source_score": 53,
+          "article_score": 100
+        },
+        "score_adjustment": 4,
+        "recommended_score": 68,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.17/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.17/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Turmus Ayya, West Bank (general), West Bank"
+      ],
+      "search_terms": [
+        "Turmus Ayya, West Bank, West Bank West Bank Fegyveres összecsapás",
+        "Turmus Ayya, West Bank, West Bank West Bank",
+        "Fegyveres összecsapás – Turmus Ayya, West Bank, West Bank",
+        "West Bank Fegyveres összecsapás"
+      ]
+    }
+  ]
+}
