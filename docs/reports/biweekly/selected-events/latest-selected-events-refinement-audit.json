@@ -1,142 +1,68 @@
 {
-  "generated_at": "2026-10-26T11:07:30.691993Z",
+  "generated_at": "2026-11-02T13:30:00.181587Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 3,
-  "unique_sources_checked": 12,
+  "event_count": 1,
+  "unique_sources_checked": 4,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
-      "region": "Ukrajna",
+      "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Robbantás / IED – Kostyantynivka, Donets'ka Oblast', Ukraine",
-      "date": "2026-10-11",
-      "country": "Ukraine",
-      "location": "Kostyantynivka, Donets'ka Oblast', Ukraine",
-      "event_type": "Robbantás / IED",
-      "original_sources_count": 5,
+      "title": "Fegyveres összecsapás – Turmus Ayya, West Bank, West Bank",
+      "date": "2026-10-25",
+      "country": "West Bank",
+      "location": "Turmus Ayya, West Bank, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
+      "valid_sources_count": 3,
+      "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "http://www.rightspeak.net/2026/10/195-c-clashes-in-f-line-20-in-pokrovsk.html",
-          "domain": "www.rightspeak.net",
+          "url": "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
+          "domain": "katv.com",
           "status": "ok",
           "error": null,
-          "title": "RIGHT SPEAK: 195 C-Clashes in F-Line: 20 in Pokrovsk Dir, 18 in Huliaipole Dir, 15 in Kostiantynivka Dir, (P)utin Rejects Any Possibility of Resuming UKR Peace Talks in Call with (T)rump; T Calls for Replacing Z After P Diesel Deal, UKR Attacks Rostov Terminal; UKR Felt Blindsided, 'It felt like a trap'; EXPERTS: Boosting US Oil Supplies with RU Diesel Unlikely to Have Much Impact On Prices, “It’s kind of shuffling deck chairs on the Titanic,” Said Michael Lynch; GOP Lawmakers Reject US-RU Deal; EU Slams T-P Deal, Warns of Boost to RU's War Funds, LIVE UPDATES, DETAILS, and LOTS MORE",
-          "description": "summary_large_image' name='twitter:card'/> <meta content=",
+          "title": "Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers",
+          "description": "Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
-            "clash",
-            "clashes"
+            "killed",
+            "kill"
           ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.heritagefl.com/story/2026/10/23/opinions/call-it-judea-and-samaria/24190.html",
+          "domain": "www.heritagefl.com",
+          "status": "ok",
+          "error": null,
+          "title": "Call it Judea and Samaria - Heritage Florida Jewish News",
+          "description": "(JNS) — Call it Transjordan or the West Bank. Blame the awful “settlers” for why the war does not end. But if you call it Judea and Samaria,",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
           "weak_hits": [
             "war"
           ],
           "noise_hits": []
         },
         {
-          "url": "https://www.egyptindependent.com/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
-          "domain": "www.egyptindependent.com",
+          "url": "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
+          "domain": "www.islamicinvitationturkey.com",
           "status": "ok",
           "error": null,
-          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year - Egypt Independent",
-          "description": "Kyiv, Ukraine — At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, making it the deadliest single attack this year.",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://krdo.com/news/national-world/cnn-world/2026/10/08/russian-strike-kills-at-least-33-in-eastern-ukraine-in-deadliest-single-attack-this-year/",
-          "domain": "krdo.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russian strike kills at least 33 in eastern Ukraine in deadliest single attack this year | KRDO",
-          "description": "By Kosta Gak, Sophie Tanno, CNN Kyiv, Ukraine (CNN) — At least 33 people were killed on Thursday when a Russian strike caused two public buses to",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://zizonline.com/33-dead-in-russian-strike-on-eastern-ukraine/",
-          "domain": "zizonline.com",
-          "status": "ok",
-          "error": null,
-          "title": "33 Dead in Russian Strike on Eastern Ukraine – ZIZ Broadcasting Corporation",
-          "description": "At least 33 people were killed on Thursday when a Russian strike caused two public buses to catch fire in eastern Ukraine, local authorities said, marking the deadliest attack from a single strike thi",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "strike",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 1,
-      "title": "Fegyveres összecsapás – Yanbu, Al Madinah, Saudi Arabia",
-      "date": "2026-10-17",
-      "country": "Saudi Arabia",
-      "location": "Yanbu, Al Madinah, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 4,
-      "confidence": "High",
-      "inspected_sources": [
-        {
-          "url": "http://www.iranherald.com/news/279380153/strikes-hit-yemen-aden-airport-saudi-led-coalition-intercepts-fresh-drones-missiles",
-          "domain": "www.iranherald.com",
-          "status": "ok",
-          "error": null,
-          "title": "Strikes hit Yemen's Aden airport; Saudi-led coalition intercepts fresh drones, missiles",
-          "description": "ADEN, Yemen, Oct. 16 (Xinhua) -- Ballistic missiles launched by the Houthi group struck the international airport in the southern Yemeni port city of Aden on Friday...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "drone",
-            "drones",
-            "missile"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.manilatimes.net/2026/10/17/world/americas-emea/iran-denies-saudi-accusation-of-involvement-in-houthi-attacks/2447828",
-          "domain": "www.manilatimes.net",
-          "status": "ok",
-          "error": null,
-          "title": "Iran denies Saudi accusation of involvement in Houthi attacks | The Manila Times",
-          "description": "TEHRAN — Iran on Friday denied having anything to do with attacks by Yemen",
+          "title": "Settler Attacks Threaten Palestinian Olive Harvest Across West Bank - Islamic Invitation Turkey",
+          "description": "Jewish settlers continue to attack Palestinians across the occupied West Bank, targeting farmers, land and property amid a surge in violence coinciding with",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
@@ -148,119 +74,19 @@
           "noise_hits": []
         },
         {
-          "url": "https://jowhar.com/iran-rejects-claims-it-was-behind-houthi-attacks/",
-          "domain": "jowhar.com",
+          "url": "https://english.wafa.ps/Pages/Details/176048",
+          "domain": "english.wafa.ps",
           "status": "ok",
           "error": null,
-          "title": "Iran Rejects Claims It Was Behind Houthi Attacks - Jowhar News Leader | Somali News",
-          "description": "Iran denied having anything to do with attacks by Yemen's Houthis, a day after Saudi Arabia accused it of having encouraged the group's recent escalation against the kingdom.",
+          "title": "Two injured in colonists' attacks on residents in Ramallah-area villages; attempts made to set two homes on fire",
+          "description": "",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
-            "ied"
+            "injured"
           ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.thedailystar.net/news/world/middle-east/news/missiles-hit-aden-airport-saudi-led-coalition-intercepts-missile-headed-yanbu-4300666",
-          "domain": "www.thedailystar.net",
-          "status": "ok",
-          "error": null,
-          "title": "Missiles hit Aden airport as Saudi-led coalition intercepts missile headed for Yanbu | The Daily Star",
-          "description": "The coalition said it had also destroyed two cruise missiles over the Red Sea and three drones in Saudi Arabia's Southern and Riyadh regions. It did not identify the attackers",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "drone",
-            "drones",
-            "missile"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 2,
-      "title": "Fegyveres összecsapás – Jeddah, Makkah, Saudi Arabia",
-      "date": "2026-10-17",
-      "country": "Saudi Arabia",
-      "location": "Jeddah, Makkah, Saudi Arabia",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.miragenews.com/sudans-conflict-and-drone-attacks-deepen-1762114/",
-          "domain": "www.miragenews.com",
-          "status": "ok",
-          "error": null,
-          "title": "Sudan's Conflict and Drone Attacks Deepen Civilian Suffering, UN Warns | Mirage News",
-          "description": "The conflict and humanitarian crisis in Sudan continue to deteriorate without any visible breakthrough, Rosemary DiCarlo, Under-Secretary-General for",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "drone",
-            "isis"
-          ],
-          "weak_hits": [
-            "war",
-            "conflict"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.newdelhitimes.com/2-killed-in-explosions-near-palace-used-by-yemens-government-in-latest-houthi-attack/",
-          "domain": "www.newdelhitimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "2 killed in explosions near palace used by Yemen’s government in latest Houthi attack - New Delhi Times",
-          "description": "At least six explosions struck Thursday near the palace used by Yemen’s internationally recognized government in the port city of Aden, witnesses said. An",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "explosion",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "government"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.arabnews.com/saudi-arabia/riyadh-airport-attack-survivor-recalls-helping-evacuate-women-children-3006842",
-          "domain": "www.arabnews.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.presstv.co.uk/Detail/2026/10/08/777874/dhubab-offensive-media-blitz-rapid-unraveling-saudi-backed-coalition-new-gambit",
-          "domain": "www.presstv.co.uk",
-          "status": "ok",
-          "error": null,
-          "title": "Dhubab offensive, media blitz and the rapid unraveling of Saudi-backed coalition’s new gambit",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         }

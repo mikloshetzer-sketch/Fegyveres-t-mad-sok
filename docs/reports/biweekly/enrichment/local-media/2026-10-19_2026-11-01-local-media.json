@@ -1,0 +1,1110 @@
+{
+  "generated_at": "2026-11-02T13:35:17.893433Z",
+  "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "period": {
+    "start": "2026-10-19",
+    "end": "2026-11-01"
+  },
+  "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
+  "enriched_events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 1,
+      "score": 69,
+      "title": "Rajtaütés / fegyveres támadás – Dnipro, Ukraine, Ukraine",
+      "date": "2026-10-30",
+      "country": "Ukraine",
+      "location": "Dnipro, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 15,
+      "source_domain_count": 11,
+      "source_domains": [
+        "cyprusnews.eu",
+        "londonlovesbusiness.com",
+        "news.az",
+        "www.dailykos.com",
+        "www.dailysabah.com",
+        "www.eurasiareview.com",
+        "www.freemalaysiatoday.com",
+        "www.lbc.co.uk",
+        "www.miragenews.com",
+        "www.nepalnational.com",
+        "www.thedailybeast.com"
+      ],
+      "original_sources": [
+        "https://www.eurasiareview.com/30102026-russia-drone-strike-on-ukrainian-railway-station-kills-13/",
+        "https://www.dailysabah.com/world/europe/russian-barrage-kills-20-across-ukraine-despite-hopes-for-truce",
+        "https://www.freemalaysiatoday.com/category/world/2026/10/30/evacuation-begins-from-ravaged-russian-controlled-ukrainian-city",
+        "https://cyprusnews.eu/cnn-kosmos/russia-strikes-dnipro-train-station-killing-13/",
+        "https://www.lbc.co.uk/article/russian-drone-attack-kills-13-station-ukraine-5Hjdkck_2/",
+        "https://news.az/news/live-ukraine-reports-13-dead-after-russian-drone-hits-dnipro-zaporizhzhia-train",
+        "https://londonlovesbusiness.com/thirteen-killed-in-dnipro-massacre-amid-a-horrific-russian-strike/",
+        "https://www.thedailybeast.com/famed-humanitarian-jose-andres-melania-brutal-reality-check-about-ceasefire",
+        "http://www.nepalnational.com/news/279403504/russia-drone-strike-on-ukrainian-railway-station-kills-13",
+        "https://www.dailykos.com/stories/2026/10/27/800118705/community/ukraine-invasion-day-1707-putin-claims-nato-expansion-is-a-root-cause-rather-than-ru-incursions/",
+        "https://www.dailykos.com/stories/2026/10/26/800118153/community/1706/",
+        "https://www.miragenews.com/un-finds-russia-committed-crimes-against-1766467/",
+        "https://www.dailykos.com/stories/2026/10/24/800117342/community/1704/",
+        "https://www.dailykos.com/stories/2026/10/21/800115849/community/1701/",
+        "https://www.dailykos.com/stories/2026/10/20/800115060/community/1700/"
+      ],
+      "raw_titles": [
+        "assault – Dnipro, Ukraine (general), Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.eurasiareview.com/30102026-russia-drone-strike-on-ukrainian-railway-station-kills-13/",
+          "domain": "www.eurasiareview.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia Drone Strike On Ukrainian Railway Station Kills 13 - Eurasia Review",
+          "description": "The UN’s top humanitarian official in Ukraine on Thursday condemned a Russian drone attack on the city of Dnipro that killed at least 13 civilians and injured",
+          "published": "2026-10-30T00:36:10+01:00"
+        },
+        {
+          "url": "https://www.dailysabah.com/world/europe/russian-barrage-kills-20-across-ukraine-despite-hopes-for-truce",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian barrage kills 20 across Ukraine despite hopes for truce | Daily Sabah",
+          "description": "A Russian drone strike killed at least 14 people at a crowded railway station in Dnipro on Thursday, while separate daytime attacks killed five more people...",
+          "published": "2026-10-30T10:36:00+03:00"
+        },
+        {
+          "url": "https://www.freemalaysiatoday.com/category/world/2026/10/30/evacuation-begins-from-ravaged-russian-controlled-ukrainian-city",
+          "domain": "www.freemalaysiatoday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Evacuation begins from ravaged Russian-controlled Ukrainian city | FMT",
+          "description": "Captured by Russia in 2022, locals in Oleshky had faced food, water and medicine shortages for months, with some being forced to hunt and eat pigeons.",
+          "published": "2026-10-30T10:31:00Z"
+        },
+        {
+          "url": "https://cyprusnews.eu/cnn-kosmos/russia-strikes-dnipro-train-station-killing-13/",
+          "domain": "cyprusnews.eu",
+          "status": "ok",
+          "error": null,
+          "title": "Russia strikes Dnipro train station, killing 13 - CyprusNews.eu",
+          "description": "A Russian drone struck a train station in Dnipro, Ukraine, Thursday morning, killing 13 people and injuring many others, authorities said.",
+          "published": "2026-10-29T10:56:32+00:00"
+        },
+        {
+          "url": "https://www.lbc.co.uk/article/russian-drone-attack-kills-13-station-ukraine-5Hjdkck_2/",
+          "domain": "www.lbc.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Heightened danger in Ukraine as Russian drone attack kills 13 at railway station | LBC",
+          "description": "At least ten more people were injured in the attack",
+          "published": "2026-10-29T12:34:25.969834+00:00"
+        },
+        {
+          "url": "https://news.az/news/live-ukraine-reports-13-dead-after-russian-drone-hits-dnipro-zaporizhzhia-train",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://londonlovesbusiness.com/thirteen-killed-in-dnipro-massacre-amid-a-horrific-russian-strike/",
+          "domain": "londonlovesbusiness.com",
+          "status": "ok",
+          "error": null,
+          "title": "Thirteen killed in Dnipro massacre amid a horrific Russian strike’ - London Business News | Londonlovesbusiness.com",
+          "description": "A tragic drone strike in Dnipro has claimed 13 lives. Read more about the devastating attack on the railway station.",
+          "published": "2026-10-29T14:15:48+00:00"
+        },
+        {
+          "url": "https://www.thedailybeast.com/famed-humanitarian-jose-andres-melania-brutal-reality-check-about-ceasefire",
+          "domain": "www.thedailybeast.com",
+          "status": "ok",
+          "error": null,
+          "title": "Famed Humanitarian José Andrés Melania Brutal Reality Check About ‘Ceasefire’",
+          "description": "Melania Trump has been served a dose of reality about the localized ceasefire in Ukraine that she has hailed as a breakthrough for peace.",
+          "published": "2026-10-29T19:11:41.902Z"
+        },
+        {
+          "url": "http://www.nepalnational.com/news/279403504/russia-drone-strike-on-ukrainian-railway-station-kills-13",
+          "domain": "www.nepalnational.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia drone strike on Ukrainian railway station kills 13",
+          "description": "The UN’s top humanitarian official in Ukraine on Thursday condemned a Russian drone attack on the city of Dnipro that killed at least 13 civilians and inju",
+          "published": ""
+        },
+        {
+          "url": "https://www.dailykos.com/stories/2026/10/27/800118705/community/ukraine-invasion-day-1707-putin-claims-nato-expansion-is-a-root-cause-rather-than-ru-incursions/",
+          "domain": "www.dailykos.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Invasion Day 1,707: Putin claims NATO expansion is a “root cause” rather than RU incursions - Daily Kos",
+          "description": "Putin’s positions have not fundamentally changed, he wants to re-colonize Ukraine, install a pro-Russian government and even erase its culture.",
+          "published": "2026-10-28T04:58:58+00:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Russia Drone Strike On Ukrainian Railway Station Kills 13 - Eurasia Review",
+        "top_keywords": [
+          "dnipro",
+          "station",
+          "railway",
+          "kills",
+          "thursday",
+          "least",
+          "people",
+          "humanitarian",
+          "city",
+          "top"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine",
+          "ukrainian",
+          "sbu",
+          "nato",
+          "government",
+          "trump"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "attack",
+          "assault",
+          "killed",
+          "injured",
+          "fire"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Dnipro, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+        "\"Ukraine\" \"russia\" \"drone\"",
+        "\"Dnipro, Ukraine\" \"drone\"",
+        "\"russia\" \"drone\" 2026-10-30"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Dnipro, Ukraine\" \"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Dnipro, Ukraine\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"drone\" 2026-10-30",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 15 source URLs across 11 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 78,
+      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
+      "date": "2026-11-01",
+      "country": "Israel",
+      "location": "Gaza, Israel",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 111,
+      "source_domain_count": 82,
+      "source_domains": [
+        "aa.com.tr",
+        "americanbazaaronline.com",
+        "countercurrents.org",
+        "dailyfreepress.com",
+        "dominicanrepublicpost.com",
+        "eaworldview.com",
+        "economictimes.indiatimes.com",
+        "english.wafa.ps",
+        "hot96.com",
+        "hotair.com",
+        "japantoday.com",
+        "kfgo.com",
+        "nationalpost.com",
+        "nypost.com",
+        "patriotpost.us",
+        "radio.foxnews.com",
+        "sana.sy",
+        "thediplomat.com",
+        "thepeninsulaqatar.com",
+        "time.com"
+      ],
+      "original_sources": [
+        "https://townhall.com/columnists/alanjosephbauer/2026/11/01/israel-inc-n2685597",
+        "https://countercurrents.org/2026/11/10-palestinians-killed-in-israeli-attacks-in-gaza-over-three-days/",
+        "https://www.middleeastmonitor.com/20261101-israeli-army-arrests-5-palestinians-in-west-bank-raids/",
+        "https://www.presstv.co.uk/Detail/2026/11/01/779668/canadas-largest-labor-federation-votes-to-block-arms-shipments-to-israeli-occupied-lands",
+        "https://sana.sy/en/middle-east/2355065/",
+        "https://whbl.com/2026/11/01/israeli-strikes-kill-eight-people-in-gaza-medics-say/",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/11/01/israeli-strikes-kill-eight-people-in-gaza-medics-say-2",
+        "https://www.middleeastmonitor.com/20261101-at-least-8-palestinians-killed-in-new-israeli-violations-of-gaza-ceasefire/",
+        "https://www.dailygazette.com/the_recorder/opinion/letters-for-saturday-october-31-2026/article_a3195454-6912-453b-ac24-78983c079d96.html",
+        "https://www.dailymail.com/news/article-16253837/Apologist-Hamas-given-platform-BBCs-Today-show.html",
+        "http://www.jpost.com/diaspora/article-913371",
+        "https://www.pakistanlink.org/Headlines/Oct26/30/01.htm",
+        "https://www.i24news.tv/en/news/israel-at-war/artc-al-jazeera-airs-never-before-seen-footage-of-deif-documents-on-hamas-preparations-for-oct-7",
+        "https://www.manilatimes.net/2026/11/01/opinion/columns/a-nobel-peace-prize-for-a-female-defender-of-human-rights/2458784",
+        "https://dominicanrepublicpost.com/at-least-four-palestinians-killed-in-gaza-as-israeli-attacks-continue/",
+        "https://www.jpost.com/opinion/article-913305",
+        "https://www.pressenza.com/2026/10/rape-as-a-tool-of-empire-cornell-palestine-and-the-silence-of-western-feminists/",
+        "https://wrp.org.uk/editorials/trade-unions-must-join-dockers-and-take-general-strike-action-to-bring-in-the-state-of-palestine/",
+        "https://aa.com.tr/en/middle-east/2-palestinians-wounded-as-israeli-attacks-continue-in-gaza-despite-ceasefire/4105670",
+        "https://aa.com.tr/en/middle-east/israeli-strikes-destroy-2-homes-in-gaza-displacing-dozens-of-families/4105491"
+      ],
+      "raw_titles": [
+        "assault – Gaza, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://townhall.com/columnists/alanjosephbauer/2026/11/01/israel-inc-n2685597",
+          "domain": "townhall.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel, Inc.",
+          "description": "Explore Israel",
+          "published": "2026-11-01T00:01:00"
+        },
+        {
+          "url": "https://countercurrents.org/2026/11/10-palestinians-killed-in-israeli-attacks-in-gaza-over-three-days/",
+          "domain": "countercurrents.org",
+          "status": "ok",
+          "error": null,
+          "title": "10 Palestinians Killed in Israeli Attacks in Gaza Over Three Days | Countercurrents",
+          "description": "Gaza (QNN)- Israeli forces killed ten Palestinians, including a girl, over three days and wounded others, including children, women, employees, and traders…",
+          "published": "2026-11-01T04:50:15+00:00"
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261101-israeli-army-arrests-5-palestinians-in-west-bank-raids/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army arrests 5 Palestinians in West Bank raids Middle East Monitor",
+          "description": "The Israeli army arrested five Palestinians on Sunday after raiding their homes in Nablus and Qalandiya refugee camp, north of East Jerusalem in the occupied West Bank, Anadolu reports. The Palesti…",
+          "published": "2026-11-01T09:53:14+00:00"
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/11/01/779668/canadas-largest-labor-federation-votes-to-block-arms-shipments-to-israeli-occupied-lands",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Canadas largest labor federation votes to block Israel arms shipments amid Gaza genocide",
+          "description": "Canada s largest labor federation calls on its members to block the handling of all weapons and military equipment passing through Canada to the Israeli-occupied territories.",
+          "published": ""
+        },
+        {
+          "url": "https://sana.sy/en/middle-east/2355065/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinian killed by Israeli fire in Gaza, seven detained in West Bank",
+          "description": "Occupied Jerusalem, Nov. 01 (SANA) A Palestinian died on Sunday from wounds sustained after being shot by Israeli occupation forces in al-Masdar village in",
+          "published": "2026-11-01T13:41:40+03:00"
+        },
+        {
+          "url": "https://whbl.com/2026/11/01/israeli-strikes-kill-eight-people-in-gaza-medics-say/",
+          "domain": "whbl.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli strikes kill eight people in Gaza medics say | 1330 & 101.5 WHBL",
+          "description": "CAIRO, Nov 1 (Reuters) - Israeli strikes killed at least eight Palestinians, including five police officers, in the Gaza Strip in two separate attacks on Sunday, according ​to medics and the Hamas-run interior ministry. Medics said three people were k...",
+          "published": ""
+        },
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/01/israeli-strikes-kill-eight-people-in-gaza-medics-say-2",
+          "domain": "www.internazionale.it",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli strikes kill eight people in Gaza - medics say - Internazionale",
+          "description": "CAIRO, Nov 1 (Reuters) - Israeli strikes killed at least eight Palestinians, including five police officers, in the Gaza Strip in two separate attacks on Sunday, accordin… Leggi",
+          "published": "2026-11-01T13:26:37+01:00"
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261101-at-least-8-palestinians-killed-in-new-israeli-violations-of-gaza-ceasefire/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "At least 8 Palestinians killed in new Israeli violations of Gaza ceasefire Middle East Monitor",
+          "description": "Eight Palestinians, including a child, were killed and others wounded in Israeli attacks across the Gaza Strip on Sunday amid Israel’s daily violations of last year’s ceasefire, a medical source sa…",
+          "published": "2026-11-01T13:47:47+00:00"
+        },
+        {
+          "url": "https://www.dailygazette.com/the_recorder/opinion/letters-for-saturday-october-31-2026/article_a3195454-6912-453b-ac24-78983c079d96.html",
+          "domain": "www.dailygazette.com",
+          "status": "ok",
+          "error": null,
+          "title": "Letters for Saturday, October 31, 2026 | Opinion | dailygazette.com",
+          "description": "Budget priorities out of whack in Nisky",
+          "published": "2026-10-30T18:30:00-04:00"
+        },
+        {
+          "url": "https://www.dailymail.com/news/article-16253837/Apologist-Hamas-given-platform-BBCs-Today-show.html",
+          "domain": "www.dailymail.com",
+          "status": "ok",
+          "error": null,
+          "title": "Apologist for Hamas who praised October 7 massacre as 'beautiful act of liberation' given platform on BBC Today programme | Daily Mail Online",
+          "description": "Swedish activist Andreas Malm, 49, also said the 2023 attack in Israel, in which 1,200 were killed and 251 taken hostage, was",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Israel, Inc.",
+        "top_keywords": [
+          "gaza",
+          "palestinians",
+          "including",
+          "sunday",
+          "eight",
+          "attacks",
+          "strikes",
+          "medics",
+          "three",
+          "west"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "hamas",
+          "police",
+          "army",
+          "military"
+        ],
+        "conflict_hints": [
+          "strike",
+          "attack",
+          "assault",
+          "raid",
+          "killed",
+          "wounded",
+          "fire",
+          "hostage"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
+        "\"Israel\" \"israel\" \"strike\"",
+        "\"Gaza, Israel\" \"strike\"",
+        "\"israel\" \"strike\" 2026-11-01"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza, Israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-11-01",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 111 source URLs across 82 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 70,
+      "title": "Fegyveres összecsapás – Qeshm, Kordestan, Iran",
+      "date": "2026-11-01",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 12,
+      "source_domain_count": 12,
+      "source_domains": [
+        "aa.com.tr",
+        "en.apa.az",
+        "slguardian.org",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.hindustantimes.com",
+        "www.islamicinvitationturkey.com",
+        "www.khaama.com",
+        "www.moneycontrol.com",
+        "www.presstv.co.uk",
+        "www.siasat.com"
+      ],
+      "original_sources": [
+        "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+        "https://slguardian.org/qatar-mediates-efforts-to-revive-us-iran-talks-amid-warnings-of-renewed-conflict/",
+        "https://aa.com.tr/en/middle-east/drone-attacks-2-fishing-boats-off-iran-s-qeshm-island-leaving-2-wounded-2-missing-media/4107227",
+        "https://en.apa.az/social/governors-office-us-attacks-fishing-boats-in-southern-iran-two-fishermen-missing-533299",
+        "https://www.aljazeera.com/news/2026/10/31/iran-warns-of-unfettered-retaliation-if-attacked-as-mediators-try-for-peace",
+        "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+        "https://www.moneycontrol.com/world/iran-warns-us-of-possible-attack-amid-ongoing-talks-abbas-araghchi-says-we-will-not-surrender-article-14065150.html",
+        "https://www.arabnews.com/middle-east/supreme-leader-khamenei-warns-of-geographically-unrestricted-response-to-us-israel-strikes-on-iran-3009105",
+        "https://tribune.com.pk/story/2637730/us-vice-president-rules-out-forever-war-in-iran-says-trump-will-accomplish-objectives",
+        "https://www.siasat.com/qeshm-island-hit-by-explosions-as-iran-reports-naval-base-attack-3566996/",
+        "https://www.hindustantimes.com/world-news/iran-says-multiple-oil-tankers-strike-mines-catch-fire-in-strait-of-hormuz-101793395035292.html",
+        "https://www.khaama.com/iran-mq9-drone-claim/"
+      ],
+      "raw_titles": [
+        "fight – Qeshm, Kordestan, Iran"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+          "description": "A senior provincial official said U.S. military forces attacked two Iranian fishing boats near Qeshm Island in the Persian Gulf, injuring one crew member and",
+          "published": "2026-11-01T13:26:29+03:00"
+        },
+        {
+          "url": "https://slguardian.org/qatar-mediates-efforts-to-revive-us-iran-talks-amid-warnings-of-renewed-conflict/",
+          "domain": "slguardian.org",
+          "status": "ok",
+          "error": null,
+          "title": "Qatar mediates efforts to revive US-Iran talks amid warnings of renewed conflict Sri Lanka Guardian",
+          "description": "Qatari mediators have held more than 12 hours of talks with Iranian officials in Tehran in an effort to restart direct negotiations between Washington and Tehran and prevent a possible resumption of US-led military action...",
+          "published": "2026-11-02T00:00:00+05:30"
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/drone-attacks-2-fishing-boats-off-iran-s-qeshm-island-leaving-2-wounded-2-missing-media/4107227",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Drone attacks 2 fishing boats off Iran’s Qeshm Island, leaving 2 wounded, 2 missing: Media",
+          "description": "Iranian media says ‘enemy’ drone targeted fishing boats 14 miles south of Qeshm Island | Anadolu",
+          "published": "2026-10-31T13:19:58.39"
+        },
+        {
+          "url": "https://en.apa.az/social/governors-office-us-attacks-fishing-boats-in-southern-iran-two-fishermen-missing-533299",
+          "domain": "en.apa.az",
+          "status": "ok",
+          "error": null,
+          "title": "Governor's Office: US attacks fishing boats in southern Iran, two fishermen missing",
+          "description": "The United States has attacked two fishing boats in southern Iran, APA #39;s Tehran bureau reports, citing the Hormozgan Governor #39;s Office",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/10/31/iran-warns-of-unfettered-retaliation-if-attacked-as-mediators-try-for-peace",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran warns of unfettered retaliation if attacked as mediators try for peace | US-Israel war on Iran News | Al Jazeera",
+          "description": "Iran’s supreme leader says Tehran’s potential response will not be restricted by geography.",
+          "published": ""
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Two missing Iranian fishermen found after US attack on boats off Qeshm Island",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.moneycontrol.com/world/iran-warns-us-of-possible-attack-amid-ongoing-talks-abbas-araghchi-says-we-will-not-surrender-article-14065150.html",
+          "domain": "www.moneycontrol.com",
+          "status": "ok",
+          "error": null,
+          "title": "Iran warns US of possible attack amid ongoing talks, Abbas Araghchi says ‘We will not surrender’",
+          "description": "Speaking about the possibility of further military action, Araghchi said Tehran remained cautious despite ongoing diplomatic efforts.",
+          "published": ""
+        },
+        {
+          "url": "https://www.arabnews.com/middle-east/supreme-leader-khamenei-warns-of-geographically-unrestricted-response-to-us-israel-strikes-on-iran-3009105",
+          "domain": "www.arabnews.com",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://tribune.com.pk/story/2637730/us-vice-president-rules-out-forever-war-in-iran-says-trump-will-accomplish-objectives",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "US vice president rules out 'forever war' in Iran, says Trump will accomplish objectives",
+          "description": "US-Israel war on Iran",
+          "published": "2026-10-30T16:07:17+00:00"
+        },
+        {
+          "url": "https://www.siasat.com/qeshm-island-hit-by-explosions-as-iran-reports-naval-base-attack-3566996/",
+          "domain": "www.siasat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Qeshm Island hit by explosions as Iran reports naval base attack",
+          "description": "Explosions were reported near Iran s Qeshm Island as Tehran reported a naval base attack and fighter jet interception.",
+          "published": "2026-10-30T07:53:13+00:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+        "top_keywords": [
+          "qeshm",
+          "boats",
+          "island",
+          "fishing",
+          "tehran",
+          "two",
+          "missing",
+          "off",
+          "fishermen",
+          "attacked"
+        ],
+        "actor_hints": [
+          "israel",
+          "iran",
+          "iranian",
+          "military",
+          "trump"
+        ],
+        "conflict_hints": [
+          "drone",
+          "attack",
+          "explosion",
+          "intercept",
+          "wounded",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Qeshm, Kordestan, Iran\" \"Iran\" \"israel\" \"drone\"",
+        "\"Iran\" \"israel\" \"drone\"",
+        "\"Qeshm, Kordestan, Iran\" \"drone\"",
+        "\"israel\" \"drone\" 2026-11-01"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"Iran\" \"israel\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Iran\" \"israel\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"drone\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-11-01",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 12 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 65,
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-01",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 72,
+      "source_domain_count": 56,
+      "source_domains": [
+        "aninews.in",
+        "arynews.tv",
+        "asia.nikkei.com",
+        "bianet.org",
+        "breakingdefense.com",
+        "dominicanrepublicpost.com",
+        "economictimes.indiatimes.com",
+        "grenadachronicle.com",
+        "kashmirreader.com",
+        "propakistani.pk",
+        "saharareporters.com",
+        "slguardian.org",
+        "thediplomat.com",
+        "timesofindia.indiatimes.com",
+        "udaipurkiran.com",
+        "usa.chinadaily.com.cn",
+        "www.al-monitor.com",
+        "www.aljazeera.com",
+        "www.aol.com",
+        "www.ariananews.af"
+      ],
+      "original_sources": [
+        "https://www.middle-east-online.com/en/pakistan-signals-cautious-hope-breakthrough-iran-us-mediation",
+        "https://www.ynetnews.com/article/synuc9epgl",
+        "https://saharareporters.com/2026/11/01/northern-islamic-cleric-jimeta-calls-allah-curse-tinubu-describes-president-infidel",
+        "https://aninews.in/news/world/middle-east/houthis-deny-drone-attack-on-medina-after-saudi-led-coalition-interception-claim20261031065400/",
+        "https://www.al-monitor.com/originals/2026/10/saudi-led-coalition-says-it-downs-drone-over-oil-rich-eastern-region",
+        "https://www.khaama.com/saudi-arabia-intercepts-houthi-drones-eastern-southern-regions/",
+        "https://www.al-monitor.com/originals/2026/10/pakistan-military-cautiously-optimistic-iran-us-mediation",
+        "https://www.asiaone.com:443/asia/pakistan-military-cautiously-optimistic-iran-us-mediation",
+        "https://www.theamericanconservative.com/a-bold-proposal-iran-should-join-the-mecca-pact/",
+        "https://www.straitstimes.com/world/middle-east/yemens-houthis-deny-launching-drone-after-coalition-reports-interception-in-mecca-region",
+        "https://slguardian.org/yemens-houthis-deny-drone-attack-on-saudi-arabia-after-reported-interception-near-mecca/",
+        "https://dominicanrepublicpost.com/pakistan-army-cautiously-optimistic-about-us-iran-mediation-efforts/",
+        "https://www.csmonitor.com/World/Middle-East/2026/1030/persian-gulf-arabs-security-alliances-europe-asia",
+        "https://www.breitbart.com/middle-east/2026/10/28/report-qatar-offers-iran-deal-to-end-war-with-u-s/",
+        "https://kashmirreader.com/2026/10/28/should-india-impose-the-death-penalty-for-every-proven-rape/",
+        "http://usa.chinadaily.com.cn/a/202610/28/WS6ae14ba0e4b06d4aa056585d.html",
+        "https://www.perthnow.com.au/community-news/western-suburbs-weekly/mecca-mandurah-staff-bring-mum-to-tears-with-heartwarming-surprise-for-three-year-old-battling-leukaemia-c-23083668",
+        "https://www.middle-east-online.com/en/iran-doubles-down-war-demands-after-talks-regional-powers",
+        "https://www.azernews.az/nation/266354.html",
+        "https://www.dw.com/en/is-iran-headed-to-war-or-peace-after-mecca-alliance-meeting/a-79788256"
+      ],
+      "raw_titles": [
+        "fight – Mecca, Makkah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.middle-east-online.com/en/pakistan-signals-cautious-hope-breakthrough-iran-us-mediation",
+          "domain": "www.middle-east-online.com",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan signals cautious hope for breakthrough in Iran-US mediation | MEO",
+          "description": "Asked whether more Pakistani troops were being sent to Saudi Arabia under the agreement, Chaudhry said that would depend on the situation",
+          "published": "Sunday 01/11/2026"
+        },
+        {
+          "url": "https://www.ynetnews.com/article/synuc9epgl",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Are the Houthis attacking Mecca and Medina? Saudi claims ignite battle over Islam s h",
+          "description": "Saudi Arabia repeatedly reports intercepting drones and missiles near Islam #x27;s two holiest cities, but the Houthis vehemently deny targeting them; as Turkey and Pakistan back Riyadh, an Israeli expert questions the evidence and explains the religious stakes behind the accusations",
+          "published": "2026-11-01T11:26:49.262056Z"
+        },
+        {
+          "url": "https://saharareporters.com/2026/11/01/northern-islamic-cleric-jimeta-calls-allah-curse-tinubu-describes-president-infidel",
+          "domain": "saharareporters.com",
+          "status": "ok",
+          "error": null,
+          "title": "Northern Islamic Cleric Jimeta Calls For Allah To Curse Tinubu, Describes President As ‘Infidel’ | Sahara Reporters",
+          "description": "In the video, the cleric repeatedly invoked curses against Tinubu and those supporting his administration, questioning the Nigerian president’s presence in Mecca and making statements about his religious identity.",
+          "published": ""
+        },
+        {
+          "url": "https://aninews.in/news/world/middle-east/houthis-deny-drone-attack-on-medina-after-saudi-led-coalition-interception-claim20261031065400/",
+          "domain": "aninews.in",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/10/saudi-led-coalition-says-it-downs-drone-over-oil-rich-eastern-region",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition says it downs drone over oil-rich Eastern Region - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "CAIRO, Oct 30 (Reuters) - The Saudi-led coalition fighting in Yemen said early on Saturday that it intercepted and destroyed a drone over Saudi Arabia s oil-rich Eastern Region as attacks by Yemen s Iran-aligned Houthis group continue. Cross-border fighting involving the Saudi-led coalition, which backs Yemen s internationally recognised government, and the Houthis, who control the capital Sanaa, has intensified amid the US-Israeli war on Iran, opening another front in the conflict.",
+          "published": ""
+        },
+        {
+          "url": "https://www.khaama.com/saudi-arabia-intercepts-houthi-drones-eastern-southern-regions/",
+          "domain": "www.khaama.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia Intercepts Houthi Drones Over Eastern .",
+          "description": "Saudi-led coalition says it intercepted Houthi drones over eastern and southern Saudi Arabia as cross-border attacks and regional.",
+          "published": "2026-10-31T04:44:05+00:00"
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/10/pakistan-military-cautiously-optimistic-iran-us-mediation",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan military cautiously optimistic on Iran-US mediation - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "By Rick NoackRAWALPINDI, Pakistan, Oct 30 (Reuters) - Pakistan’s military is “cautiously optimistic” about its mediation between Iran and the United States, its spokesman said on Friday in his first interview since a high-level delegation visited Tehran this week.Army chief Field Marshal Asim Munir — Pakistan s chief mediator in its efforts to de-escalate the now eight-month-old Iran war — has been to Tehran twice this month, most recently on Monday alongside Saudi and Turkish officials.",
+          "published": ""
+        },
+        {
+          "url": "https://www.asiaone.com:443/asia/pakistan-military-cautiously-optimistic-iran-us-mediation",
+          "domain": "www.asiaone.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan military cautiously optimistic on Iran-US mediation, Asia News - AsiaOne",
+          "description": "RAWALPINDI, Pakistan - Pakistan s military is cautiously optimistic about its mediation between Iran and the United States, its spokesman said on Friday (Oct 30) in his first interview since a high-level delegation visited Tehran this week.Army chief Field Marshal Asim Munir - Pakistan s chief mediator in its efforts to de-escalate the now eight-month-old Iran war - has been to Tehran...",
+          "published": "2026-10-31T15:37:40+08:00"
+        },
+        {
+          "url": "https://www.theamericanconservative.com/a-bold-proposal-iran-should-join-the-mecca-pact/",
+          "domain": "www.theamericanconservative.com",
+          "status": "ok",
+          "error": null,
+          "title": "A Bold Proposal: Iran Should Join the Mecca Alliance - The American Conservative",
+          "description": "The Middle East needs a security architecture that includes Tehran.",
+          "published": "2026-10-30T04:03:00+00:00"
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/yemens-houthis-deny-launching-drone-after-coalition-reports-interception-in-mecca-region",
+          "domain": "www.straitstimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yemen s Houthis deny launching drone after coalition reports interception in Mecca region | The Straits Times",
+          "description": "Oct 30 - Yemen s Houthis denied launching any attack towards Saudi Arabia on Friday, after the Saudi-led coalition said it had intercepted and destroyed a drone launched by the group over the Mecca region. Read more at straitstimes.com.",
+          "published": "2026-10-30T06:16:26.000Z"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Pakistan signals cautious hope for breakthrough in Iran-US mediation | MEO",
+        "top_keywords": [
+          "pakistan",
+          "saudi",
+          "arabia",
+          "houthis",
+          "mecca",
+          "coalition",
+          "mediation",
+          "saudi-led",
+          "yemen",
+          "tehran"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "iran",
+          "houthi",
+          "army",
+          "military",
+          "government"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "attack",
+          "intercept",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+        "\"israel\" \"missile\" 2026-11-01"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Saudi Arabia should accept Israel helpful offer to fight Houthis : Trump",
+              "url": "https://www.business-standard.com/world-news/saudi-arabia-should-accept-israel-s-helpful-offer-to-fight-houthis-trump-126101700080_1.html",
+              "domain": "business-standard.com",
+              "source_country": "India",
+              "language": "English",
+              "seendate": "20261017T030000Z"
+            },
+            {
+              "title": "Saudi should Accept Israel Helpful Offer Against Houthis : Trump",
+              "url": "https://www.deccanchronicle.com/world/americas/saudi-should-accept-israels-helpful-offer-against-houthis-trump-1996571",
+              "domain": "deccanchronicle.com",
+              "source_country": "India",
+              "language": "English",
+              "seendate": "20261017T040000Z"
+            },
+            {
+              "title": "İsrail TVsinde canlı yayında peş peşe Türkiye itirafı ! En büyük endişe diyerek duyurdular : Tarihte bir kez devreye girdi",
+              "url": "https://www.milliyet.com.tr/dunya/son-dakika-israil-tvsinde-canli-yayinda-pes-pese-turkiye-itirafi-en-buyuk-endise-diyerek-duyurdular-tarihte-bir-kez-devreye-girdi-7640416",
+              "domain": "milliyet.com.tr",
+              "source_country": "Turkey",
+              "language": "Turkish",
+              "seendate": "20260813T051500Z"
+            },
+            {
+              "title": "一年花832億美元軍費 ， 沙特防空體係為何難擋胡塞武裝襲擊 ？",
+              "url": "https://portal.sina.com.hk/news-china/sina/2026/10/17/1957339/%E4%B8%80%E5%B9%B4%E8%8A%B1832%E5%84%84%E7%BE%8E%E5%85%83%E8%BB%8D%E8%B2%BB%EF%BC%8C%E6%B2%99%E7%89%B9%E9%98%B2%E7%A9%BA%E9%AB%94%E4%BF%82%E7%82%BA%E4%BD%95%E9%9B%A3%E6%93%8B%E8%83%A1%E5%A1%9E/",
+              "domain": "portal.sina.com.hk",
+              "source_country": "Hong Kong",
+              "language": "Chinese",
+              "seendate": "20261017T001500Z"
+            },
+            {
+              "title": "Guerre au Moyen - Orient : les rebelles Houthis du Yémen revendiquent une frappe contre un pétrolier saoudien en mer Rouge",
+              "url": "https://www.bfmtv.com/international/moyen-orient/guerre-au-moyen-orient-les-rebelles-houthis-du-yemen-revendiquent-une-frappe-contre-un-petrolier-saoudien-en-mer-rouge_AD-202608240582.html",
+              "domain": "bfmtv.com",
+              "source_country": "France",
+              "language": "French",
+              "seendate": "20260824T154500Z"
+            },
+            {
+              "title": "释新闻｜一年花832亿美元军费 ， 沙特防空体系为何难挡胡塞武装袭击 ？",
+              "url": "https://www.163.com/dy/article/L9E4HAOQ0514R9P4.html",
+              "domain": "163.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20261017T010000Z"
+            }
+          ]
+        },
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"missile\" 2026-11-01",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [
+        {
+          "title": "Saudi Arabia should accept Israel helpful offer to fight Houthis : Trump",
+          "url": "https://www.business-standard.com/world-news/saudi-arabia-should-accept-israel-s-helpful-offer-to-fight-houthis-trump-126101700080_1.html",
+          "domain": "business-standard.com",
+          "source_country": "India",
+          "language": "English",
+          "seendate": "20261017T030000Z",
+          "match_score": 50
+        },
+        {
+          "title": "Saudi should Accept Israel Helpful Offer Against Houthis : Trump",
+          "url": "https://www.deccanchronicle.com/world/americas/saudi-should-accept-israels-helpful-offer-against-houthis-trump-1996571",
+          "domain": "deccanchronicle.com",
+          "source_country": "India",
+          "language": "English",
+          "seendate": "20261017T040000Z",
+          "match_score": 30
+        },
+        {
+          "title": "Guerre au Moyen - Orient : les rebelles Houthis du Yémen revendiquent une frappe contre un pétrolier saoudien en mer Rouge",
+          "url": "https://www.bfmtv.com/international/moyen-orient/guerre-au-moyen-orient-les-rebelles-houthis-du-yemen-revendiquent-une-frappe-contre-un-petrolier-saoudien-en-mer-rouge_AD-202608240582.html",
+          "domain": "bfmtv.com",
+          "source_country": "France",
+          "language": "French",
+          "seendate": "20260824T154500Z",
+          "match_score": 15
+        }
+      ],
+      "analytical_summary": "The original cluster contains 72 source URLs across 56 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 3 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "score": 61,
+      "title": "Rajtaütés / fegyveres támadás – Qeshm, Kordestan, Iran",
+      "date": "2026-11-01",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 8,
+      "source_domain_count": 6,
+      "source_domains": [
+        "english.news.cn",
+        "www.brazilsun.com",
+        "www.islamicinvitationturkey.com",
+        "www.presstv.co.uk",
+        "www.thehindubusinessline.com",
+        "www.trinidadtimes.com"
+      ],
+      "original_sources": [
+        "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+        "https://www.thehindubusinessline.com/news/india-and-turkey-propose-plans-to-move-grain-shipments-through-black-sea-says-rubio/article71651939.ece",
+        "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+        "https://www.presstv.co.uk/Detail/2026/10/30/779565/irgc-aerospace-force-seizes-second-us-mqm-170-reconnaissance-drone-over-qeshm-island",
+        "https://english.news.cn/20261031/ae74cc02371248d8ad21dbe0c12a3c73/c.html",
+        "https://english.news.cn/20261031/17ee478ae4a94abc84f6917e56b26b8a/c.html",
+        "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+        "http://www.brazilsun.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio"
+      ],
+      "raw_titles": [
+        "assault – Qeshm, Kordestan, Iran"
+      ],
+      "inspected_sources": [
+        {
+          "url": "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+          "domain": "www.trinidadtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "India, Turkey proposing ideas for passage of grain shipments in Black Sea: Marco Rubio",
+          "description": "US Secretary of State Marco Rubio on Saturday stated India and Turkey have proposed ideas for vessels carrying grain to pass the Black Sea amid strikes in the wake of the ongoing Russia-Ukraine war. As Rubio hosted the G20 foreign ministers meeting in Atlanta, speaking to the press, he said that passage of vessels through the Strait of Hormuz is even more challenging. He noted that the US has received limited cooperation in Hormuz despite President Donald Trump s call to join Washington s efforts in the region. Rubio said, When you talk about the Black Sea, you saw a lot of countries speak up and express their willingness to contribute. Both Turkey and India have come to the table with some ideas about how we can get grain shipments moving because this is threatening global food security and, to some extent, energy security as well. In the case of the Strait of Hormuz, it s more challenging, because many countries around the world don t have the ability to project power in the region. The President has repeatedly asked countries to join us in the effort to protect global shipping through the Strait of Hormuz. So far, we ve had very limited cooperation, but not much. The responsibility has primarily fallen on the United States to protect shipping, he added. Further, he also took note of territorial claims on waterways in the Indo-Pacific region as a maritime challenge in the region. He said, Obviously, in the Indo-Pacific, we don t have active kinetic operations taking place like those we re seeing in the Strait of Hormuz or even in the Black Sea. But we do face some challenges, including territorial claims that we do not recognise. That s why you see us not only maintaining a presence in that part of the world but also operating jointly and cooperatively with our partners to continue making it clear that we do not accept illegitimate territorial claims over waterways that are either international waters or not the territorial waters of any single nation. US and Iran have exchanged strikes amid a blockade in the strategic waterways of the Strait of Hormuz. While Iran continues to strike commercial vehicles, the United States reportedly struck two fishing boats off Qeshm Island in the Strait of Hormuz, injuring two Iranian fishermen. As reported by the news agency IRNA, the two fishermen who went missing after the drone attack have been found, according to the CEO of the Qeshm Fishing Community. Both were sent back to Qeshm Island. Meanwhile, one of the two injured fishermen was taken to a hospital, Al Jazeera reported, citing Fars news agency. Meanwhile, Turkish President Recep Tayyip Erdogan noted that the situation in the Black Sea is on the agenda for the meeting between Turkish President Recep Tayyip Erdogan and Ukrainian President Volodymyr Zelenskyy. Even the Quad Foreign Ministers on Saturday called for preserving navigational rights and freedoms in the Strait of Hormuz, the Red Sea, and the Bab el-Mandeb Strait against the backdrop of tensions in West Asia. (ANI)",
+          "published": ""
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/india-and-turkey-propose-plans-to-move-grain-shipments-through-black-sea-says-rubio/article71651939.ece",
+          "domain": "www.thehindubusinessline.com",
+          "status": "ok",
+          "error": null,
+          "title": "India and Turkey propose ideas to move grain shipments through Black Sea - The HinduBusinessLine",
+          "description": "US Secretary of State Marco Rubio says India and Turkey have proposed ideas to move grain through the Black Sea amid strikes and growing maritime challenges.",
+          "published": "2026-11-01T06:12:17+05:30"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+          "description": "A senior provincial official said U.S. military forces attacked two Iranian fishing boats near Qeshm Island in the Persian Gulf, injuring one crew member and",
+          "published": "2026-11-01T13:26:29+03:00"
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/30/779565/irgc-aerospace-force-seizes-second-us-mqm-170-reconnaissance-drone-over-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "IRGC Aerospace Force seizes second US MQM-170 reconnaissance drone over Qeshm Island",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://english.news.cn/20261031/ae74cc02371248d8ad21dbe0c12a3c73/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "Urgent: 2 fishermen missing, 2 injured in drone attack on fishing boats: Iran's Fars news-Xinhua",
+          "description": "Urgent: 2 fishermen missing, 2 injured in drone attack on fishing boats: Iran",
+          "published": ""
+        },
+        {
+          "url": "https://english.news.cn/20261031/17ee478ae4a94abc84f6917e56b26b8a/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "2 fishermen injured in U.S. drone attack on fishing boats in S. Iran -- media -Xinhua",
+          "description": "2 fishermen injured in U.S. drone attack on fishing boats in S. Iran -- media -",
+          "published": ""
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Two missing Iranian fishermen found after US attack on boats off Qeshm Island",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "http://www.brazilsun.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+          "domain": "www.brazilsun.com",
+          "status": "ok",
+          "error": null,
+          "title": "India, Turkey proposing ideas for passage of grain shipments in Black Sea: Marco Rubio",
+          "description": "US Secretary of State Marco Rubio on Saturday stated India and Turkey have proposed ideas for vessels carrying grain to pass the Black Sea amid strikes in the wake of the ongoing Russia-Ukraine war. As Rubio hosted the G20 foreign ministers meeting in Atlanta, speaking to the press, he said that passage of vessels through the Strait of Hormuz is even more challenging. He noted that the US has received limited cooperation in Hormuz despite President Donald Trump s call to join Washington s efforts in the region. Rubio said, When you talk about the Black Sea, you saw a lot of countries speak up and express their willingness to contribute. Both Turkey and India have come to the table with some ideas about how we can get grain shipments moving because this is threatening global food security and, to some extent, energy security as well. In the case of the Strait of Hormuz, it s more challenging, because many countries around the world don t have the ability to project power in the region. The President has repeatedly asked countries to join us in the effort to protect global shipping through the Strait of Hormuz. So far, we ve had very limited cooperation, but not much. The responsibility has primarily fallen on the United States to protect shipping, he added. Further, he also took note of territorial claims on waterways in the Indo-Pacific region as a maritime challenge in the region. He said, Obviously, in the Indo-Pacific, we don t have active kinetic operations taking place like those we re seeing in the Strait of Hormuz or even in the Black Sea. But we do face some challenges, including territorial claims that we do not recognise. That s why you see us not only maintaining a presence in that part of the world but also operating jointly and cooperatively with our partners to continue making it clear that we do not accept illegitimate territorial claims over waterways that are either international waters or not the territorial waters of any single nation. US and Iran have exchanged strikes amid a blockade in the strategic waterways of the Strait of Hormuz. While Iran continues to strike commercial vehicles, the United States reportedly struck two fishing boats off Qeshm Island in the Strait of Hormuz, injuring two Iranian fishermen. As reported by the news agency IRNA, the two fishermen who went missing after the drone attack have been found, according to the CEO of the Qeshm Fishing Community. Both were sent back to Qeshm Island. Meanwhile, one of the two injured fishermen was taken to a hospital, Al Jazeera reported, citing Fars news agency. Meanwhile, Turkish President Recep Tayyip Erdogan noted that the situation in the Black Sea is on the agenda for the meeting between Turkish President Recep Tayyip Erdogan and Ukrainian President Volodymyr Zelenskyy. Even the Quad Foreign Ministers on Saturday called for preserving navigational rights and freedoms in the Strait of Hormuz, the Red Sea, and the Bab el-Mandeb Strait against the backdrop of tensions in West Asia. (ANI)",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "India, Turkey proposing ideas for passage of grain shipments in Black Sea: Marco Rubio",
+        "top_keywords": [
+          "strait",
+          "hormuz",
+          "sea",
+          "black",
+          "fishermen",
+          "two",
+          "qeshm",
+          "president",
+          "fishing",
+          "turkey"
+        ],
+        "actor_hints": [
+          "iran",
+          "iranian",
+          "russia",
+          "ukraine",
+          "ukrainian",
+          "military",
+          "trump",
+          "zelensky"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "attack",
+          "assault",
+          "injured",
+          "war"
+        ],
+        "usable_source_count": 8,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Qeshm, Kordestan, Iran\" \"Iran\" \"iran\" \"drone\"",
+        "\"Iran\" \"iran\" \"drone\"",
+        "\"Qeshm, Kordestan, Iran\" \"drone\"",
+        "\"iran\" \"drone\" 2026-11-01"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"Iran\" \"iran\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Iran\" \"iran\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"iran\" \"drone\" 2026-11-01",
+          "error": "<urlopen error _ssl.c:999: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 8 source URLs across 6 domains. 8 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    }
+  ]
+}
