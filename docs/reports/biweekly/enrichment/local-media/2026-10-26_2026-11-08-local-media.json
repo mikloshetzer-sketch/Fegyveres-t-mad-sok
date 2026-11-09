@@ -1,0 +1,1159 @@
+{
+  "generated_at": "2026-11-09T13:59:57.296969Z",
+  "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "period": {
+    "start": "2026-10-26",
+    "end": "2026-11-08"
+  },
+  "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
+  "enriched_events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 1,
+      "score": 81,
+      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
+      "date": "2026-11-08",
+      "country": "Ukraine",
+      "location": "Kyiv, Misto, Ukraine",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 112,
+      "source_domain_count": 83,
+      "source_domains": [
+        "aa.com.tr",
+        "economictimes.indiatimes.com",
+        "econotimes.com",
+        "en.apa.az",
+        "en.interfax.com.ua",
+        "english.aawsat.com",
+        "english.elpais.com",
+        "inlandnewstoday.com",
+        "japantoday.com",
+        "jowhar.com",
+        "kesq.com",
+        "ksevradio.com",
+        "londonlovesbusiness.com",
+        "news.antiwar.com",
+        "news.az",
+        "northernstar.info",
+        "politicalwire.com",
+        "slguardian.org",
+        "spacewar.com",
+        "thenewamerican.com"
+      ],
+      "original_sources": [
+        "https://www.gdnonline.com:443/Details/1412159/Russia-pounds-power-facilities-around-Kyiv",
+        "https://www.militarytimes.com/industry/techwatch/2026/11/06/russia-using-own-version-of-starlink-for-military-comms-over-ukraine-kyiv-says/",
+        "https://www.eurasiareview.com/08112026-zelenskyy-says-russia-seeks-blackout-in-ukraine-ahead-of-us-mediated-talks-in-abu-dhabi/",
+        "https://yalibnan.com/2026/11/08/ukraine-russia-war-latest-huge-fire-erupts-after-kyiv-strikes-electronics-factory-with-neptune-cruise-missile/",
+        "https://www.theguardian.com/world/2026/nov/08/ukraine-war-briefing-russia-ramping-up-attacks-to-pressure-kyiv-at-trilateral-talks-zelenskyy-says",
+        "https://www.aol.co.uk/articles/ukraine-war-briefing-russia-ramping-041042000.html",
+        "https://www.theguardian.com/science/ng-interactive/2026/nov/08/ukraine-space-critical-war-starlink",
+        "https://www.dailykos.com/stories/2026/11/7/800124923/community/1718/",
+        "http://www.rockymounttelegram.com/news/world/ukrainian-president-zelenskyy-presses-western-allies-for-clear-postwar-security-guarantees/article_1d453d1e-d7b8-576d-8261-43b6304db7d0.html",
+        "https://www.kyivpost.com/post/89396",
+        "https://www.centralwesterndaily.com.au/story/9387416/ukraine-continues-attacks-on-russian-oil-refineries/",
+        "https://www.arabnews.com/world/russian-forces-launch-missile-attack-on-ukrainian-capital-kyiv-mayor-says-3010268",
+        "https://ksevradio.com/russian-forces-launch-missile-attack-on-ukrainian-capital-kyiv-mayor-says/",
+        "https://www.theguardian.com/world/2026/nov/07/ukraine-war-briefing-beijing-confirms-historic-xi-trump-putin-meeting-under-discussion",
+        "http://www.bgnes.com/conflicts/russia-strikes-kyiv-with-multiple-waves-of-ballistic-missiles-leaving-several-injured-and-buildings-damaged",
+        "https://www.aol.co.uk/articles/ukraine-war-briefing-beijing-confirms-031208000.html",
+        "https://www.rfdtv.com/ukraine-grain-exports-plunge-as-war-disrupts-logistics",
+        "https://www.globalissues.org/news/2026/11/05/44527",
+        "https://www.homelandsecuritynewswire.com/quick-look-cheap-ways-shoot-down-strike-drones",
+        "https://www.eurasiareview.com/06112026-russia-unleashes-record-aerial-barrage-on-ukraine-as-kyiv-faces-delayed-patriot-missiles-and-mounting-conscription-tensions-analysis/"
+      ],
+      "raw_titles": [
+        "fight – Kyiv, Kyyiv, Misto, Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.gdnonline.com:443/Details/1412159/Russia-pounds-power-facilities-around-Kyiv",
+          "domain": "www.gdnonline.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "World News: Russia pounds power facilities around Kyiv",
+          "description": "",
+          "published": "2017-12-05T03:29:21+00:00"
+        },
+        {
+          "url": "https://www.militarytimes.com/industry/techwatch/2026/11/06/russia-using-own-version-of-starlink-for-military-comms-over-ukraine-kyiv-says/",
+          "domain": "www.militarytimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia using own version of Starlink for military comms over Ukraine, Kyiv says",
+          "description": "Russia is already using its new Rassvet satellite network — billed as a homegrown version of Starlink — for military communications over Ukraine, according to Ukrainian military intelligence.",
+          "published": "2026-11-06T16:50:49+00:00"
+        },
+        {
+          "url": "https://www.eurasiareview.com/08112026-zelenskyy-says-russia-seeks-blackout-in-ukraine-ahead-of-us-mediated-talks-in-abu-dhabi/",
+          "domain": "www.eurasiareview.com",
+          "status": "ok",
+          "error": null,
+          "title": "Zelenskyy Says Russia Seeks Blackout In Ukraine Ahead Of US-Mediated Talks In Abu Dhabi - Eurasia Review",
+          "description": "Ukrainian President Volodymyr Zelenskyy says Russia is seeking to plunge the entire country into a blackout by pounding more than a dozen Ukrainian regions",
+          "published": "2026-11-08T02:50:09+01:00"
+        },
+        {
+          "url": "https://yalibnan.com/2026/11/08/ukraine-russia-war-latest-huge-fire-erupts-after-kyiv-strikes-electronics-factory-with-neptune-cruise-missile/",
+          "domain": "yalibnan.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine-Russia war latest: Huge fire erupts after Kyiv strikes electronics factory with Neptune cruise missile Ya Libnan",
+          "description": "",
+          "published": "2026-11-08T03:11:34+02:00"
+        },
+        {
+          "url": "https://www.theguardian.com/world/2026/nov/08/ukraine-war-briefing-russia-ramping-up-attacks-to-pressure-kyiv-at-trilateral-talks-zelenskyy-says",
+          "domain": "www.theguardian.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine war briefing: Russia ramping up attacks to ‘pressure’ Kyiv at trilateral talks, Zelenskyy says | Ukraine | The Guardian",
+          "description": "President urges US for support, saying Ukraine must not be left to face this alone as barrage plunges cities into darkness. What we know on day 1,719",
+          "published": "2026-11-08T04:10:42.000Z"
+        },
+        {
+          "url": "https://www.aol.co.uk/articles/ukraine-war-briefing-russia-ramping-041042000.html",
+          "domain": "www.aol.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine war briefing: Russia ramping up attacks to ‘pressure’ Kyiv at trilateral talks, Zelenskyy says - AOL",
+          "description": "President urges US for support, saying ‘Ukraine must not be left to face this alone’ as barrage plunges cities into darkness. What we know on day 1,719",
+          "published": "2026-11-08T04:26:58.000Z"
+        },
+        {
+          "url": "https://www.theguardian.com/science/ng-interactive/2026/nov/08/ukraine-space-critical-war-starlink",
+          "domain": "www.theguardian.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine’s new frontier: how space has become critical to balance of the war | Space | The Guardian",
+          "description": "In a war driven by drones and battlefield sensors, access to space is essential. After Starlink speed restrictions and Russian Oreshnik missile strikes, Kyiv is racing to develop its own space capabilities",
+          "published": "2026-11-08T05:00:30.000Z"
+        },
+        {
+          "url": "https://www.dailykos.com/stories/2026/11/7/800124923/community/1718/",
+          "domain": "www.dailykos.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukraine Invasion Day 1,718: RU again rejected security guarantees for UKR and denied European part in peace negotiations - Daily Kos",
+          "description": "Combat continues and casualty rates remain relatively constant, as do the drone and missile strikes. Preparation for Winter continues with attacks on the…",
+          "published": "2026-11-08T05:05:47+00:00"
+        },
+        {
+          "url": "http://www.rockymounttelegram.com/news/world/ukrainian-president-zelenskyy-presses-western-allies-for-clear-postwar-security-guarantees/article_1d453d1e-d7b8-576d-8261-43b6304db7d0.html",
+          "domain": "www.rockymounttelegram.com",
+          "status": "ok",
+          "error": null,
+          "title": "Ukrainian President Zelenskyy presses Western allies for clear postwar security guarantees | World | rockymounttelegram.com",
+          "description": "Ukrainian President Volodymyr Zelenskyy says his government is seeking specific security guarantees from Western allies for postwar support. His comments came after two days of discussions in Brussels focusing on",
+          "published": "2026-11-06T23:37:14-05:00"
+        },
+        {
+          "url": "https://www.kyivpost.com/post/89396",
+          "domain": "www.kyivpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Zelensky Warns of Fresh Russian Strikes on Bridges, Energy Grid",
+          "description": "President Volodymyr Zelensky urged partners not to delay Patriot interceptor deliveries, saying timely supplies are crucial ahead of the expected attack.",
+          "published": "2026-11-06 22:11:37"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "World News: Russia pounds power facilities around Kyiv",
+        "top_keywords": [
+          "kyiv",
+          "president",
+          "strikes",
+          "space",
+          "starlink",
+          "talks",
+          "volodymyr",
+          "attacks",
+          "support",
+          "saying"
+        ],
+        "actor_hints": [
+          "russia",
+          "russian",
+          "ukraine",
+          "ukrainian",
+          "military",
+          "government",
+          "zelensky",
+          "zelenskyy"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "intercept",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Kyiv, Misto, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
+        "\"Ukraine\" \"russia\" \"missile\"",
+        "\"Kyiv, Misto, Ukraine\" \"missile\"",
+        "\"russia\" \"missile\" 2026-11-08"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Kyiv, Misto, Ukraine\" \"Ukraine\" \"russia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"russia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Kyiv, Misto, Ukraine\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"russia\" \"missile\" 2026-11-08",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 112 source URLs across 83 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 2,
+      "score": 62,
+      "title": "Robbantás / IED – Azov, Zaporiz'ka Oblast', Ukraine",
+      "date": "2026-11-03",
+      "country": "Ukraine",
+      "location": "Azov, Zaporiz'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 2,
+      "source_count": 2,
+      "source_domain_count": 2,
+      "source_domains": [
+        "www.bignewsnetwork.com",
+        "www.investmentwatchblog.com"
+      ],
+      "original_sources": [
+        "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+        "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+      ],
+      "raw_titles": [
+        "fight – Azov, Zaporiz'ka Oblast', Ukraine",
+        "assault – Azov, Zaporiz'ka Oblast', Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+          "domain": "www.investmentwatchblog.com",
+          "status": "ok",
+          "error": null,
+          "title": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog",
+          "description": "Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered",
+          "published": "2026-11-03T13:12:23+00:00"
+        },
+        {
+          "url": "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "Azov, injured soldiers and secret prisons: Ukraine s torture chamber scandal explained",
+          "description": "Azov-linked detention near Kiev has sparked torture allegations and protests as Ukrainian officials target the woman who raised the alarm Read Full Article at RT.com",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog",
+        "top_keywords": [
+          "azov",
+          "crowds",
+          "allegations",
+          "detention",
+          "kyiv",
+          "torture",
+          "zaporiz",
+          "oblast",
+          "national",
+          "guard"
+        ],
+        "actor_hints": [
+          "ukraine",
+          "ukrainian"
+        ],
+        "conflict_hints": [
+          "blast",
+          "clash",
+          "assault",
+          "injured"
+        ],
+        "usable_source_count": 2,
+        "confidence": "Low"
+      },
+      "queries": [
+        "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"Ukraine\" \"ukraine\" \"blast\"",
+        "\"Ukraine\" \"ukraine\" \"blast\"",
+        "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"blast\"",
+        "\"ukraine\" \"blast\" 2026-11-03"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"Ukraine\" \"ukraine\" \"blast\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"ukraine\" \"blast\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"blast\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"ukraine\" \"blast\" 2026-11-03",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 2 source URLs across 2 domains. 2 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 76,
+      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
+      "date": "2026-11-07",
+      "country": "Israel",
+      "location": "Gaza City, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 37,
+      "source_domain_count": 27,
+      "source_domains": [
+        "aa.com.tr",
+        "countercurrents.org",
+        "en.shafaqna.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "english.wafa.ps",
+        "grenadachronicle.com",
+        "legalinsurrection.com",
+        "news.antiwar.com",
+        "news.az",
+        "sana.sy",
+        "voiceofvienna.org",
+        "wrp.org.uk",
+        "www.aljazeera.com",
+        "www.arabnews.com",
+        "www.bignewsnetwork.com",
+        "www.dailysabah.com",
+        "www.gatestoneinstitute.org",
+        "www.gdnonline.com:443",
+        "www.israelnationalnews.com"
+      ],
+      "original_sources": [
+        "https://legalinsurrection.com/2026/11/israel-eliminates-senior-hamas-terror-commanders-in-recent-strikes/",
+        "https://countercurrents.org/2026/11/israels-attacks-on-gazas-education-the-students-and-teachers-killed-in-october/",
+        "https://sana.sy/en/middle-east/2356503/",
+        "https://aa.com.tr/en/middle-east/israeli-attacks-kill-3-palestinians-in-gaza-including-child-medical-student/4113819",
+        "https://aa.com.tr/en/world/-israeli-attacks-kill-1-palestinian-wound-4-others-across-gaza/4112137",
+        "https://www.dailysabah.com/world/mid-east/israel-kills-man-to-push-gaza-truce-violation-death-toll-past-1600",
+        "https://english.news.cn/20261105/31fe7004fd0e426ea4bf8a0dd914de48/c.html",
+        "https://www.theyeshivaworld.com/news/israel-news/2619520/eliminated-hamas-ops-chief-who-held-omer-shem-tov-in-captivity-struck-in-gaza.html",
+        "https://news.antiwar.com/2026/11/05/israeli-forces-kill-12-year-old-boy-in-central-gaza/",
+        "https://www.israelnationalnews.com/news/435663",
+        "http://www.bignewsnetwork.com/news/279411453/israel-says-killed-senior-hamas-intelligence-official-in-gaza",
+        "https://news.az/news/israel-says-top-hamas-int-elligence-operative-eliminated-in-gaza",
+        "https://www.aljazeera.com/news/2026/11/3/israeli-forces-kill-four-in-gaza-as-fifth-palestinian-dies-of-wounds",
+        "https://www.aljazeera.com/news/2026/11/3/palestine-weekly-election-deadlock-meets-west-bank-sieges-gaza-killings",
+        "https://www.gdnonline.com:443/Details/1411553",
+        "https://www.radio.gov.pk/02-11-2026/eight-more-palestinians-martyred-in-israeli-strikes-in-gaza",
+        "https://www.dailysabah.com/world/mid-east/israeli-strikes-kill-3-in-gaza-as-4th-palestinian-dies-of-wounds",
+        "https://voiceofvienna.org/gaza-strikes-kill-eight-including-four-year-old-despite-ceasefire/",
+        "https://www.gatestoneinstitute.org/22964/qatar-terrorism-al-jazeera-propaganda",
+        "https://english.wafa.ps/Pages/Details/176563"
+      ],
+      "raw_titles": [
+        "fight – Gaza City, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://legalinsurrection.com/2026/11/israel-eliminates-senior-hamas-terror-commanders-in-recent-strikes/",
+          "domain": "legalinsurrection.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel Eliminates Senior Hamas Terror Commanders in Recent Strikes",
+          "description": "IDF chief warns Hezbollah, terror threat will be met immediately and forcefully",
+          "published": "2026-11-07T19:00:54+00:00"
+        },
+        {
+          "url": "https://countercurrents.org/2026/11/israels-attacks-on-gazas-education-the-students-and-teachers-killed-in-october/",
+          "domain": "countercurrents.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israel’s Attacks on Gaza’s Education: The Students and Teachers Killed in October | Countercurrents",
+          "description": "After three years of Israel’s genocidal war on Gaza, the enclave’s education system has been devastated, with nearly 98 percent of school buildings damaged or…",
+          "published": "2026-11-06T08:41:49+00:00"
+        },
+        {
+          "url": "https://sana.sy/en/middle-east/2356503/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Two Palestinians die of wounds from Israeli strikes on Gaza City",
+          "description": "Occupied Jerusalem, Nov. 6 (SANA) Two Palestinians, including a female medical student, died Friday from injuries sustained in separate Israeli strikes on",
+          "published": "2026-11-06T14:39:10+03:00"
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/israeli-attacks-kill-3-palestinians-in-gaza-including-child-medical-student/4113819",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli attacks kill 3 Palestinians in Gaza, including child, medical student",
+          "description": "Casualties come amid continued Israeli violations of ceasefire agreement in effect since Oct. 10, 2025 | Anadolu",
+          "published": "2026-11-06T12:34:14.5"
+        },
+        {
+          "url": "https://aa.com.tr/en/world/-israeli-attacks-kill-1-palestinian-wound-4-others-across-gaza/4112137",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli attacks kill 1 Palestinian, wound 4 others across Gaza",
+          "description": "Drone strike kills Palestinian and injures another at displacement tent in central Gaza, medical sources say | Anadolu",
+          "published": "2026-11-05T04:37:31.443"
+        },
+        {
+          "url": "https://www.dailysabah.com/world/mid-east/israel-kills-man-to-push-gaza-truce-violation-death-toll-past-1600",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel kills man to push Gaza truce violation death toll past 1,600 | Daily Sabah",
+          "description": "Continued Israeli attacks in violation of a cease-fire killed one Palestinian and wounded four others across the Gaza early Thursday, medical and local...",
+          "published": "2026-11-05T11:20:00+03:00"
+        },
+        {
+          "url": "https://english.news.cn/20261105/31fe7004fd0e426ea4bf8a0dd914de48/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "5 Palestinians, including child, killed by Israeli fire in Gaza -- Palestinian sources-Xinhua",
+          "description": "5 Palestinians, including child, killed by Israeli fire in Gaza -- Palestinian sources-",
+          "published": ""
+        },
+        {
+          "url": "https://www.theyeshivaworld.com/news/israel-news/2619520/eliminated-hamas-ops-chief-who-held-omer-shem-tov-in-captivity-struck-in-gaza.html",
+          "domain": "www.theyeshivaworld.com",
+          "status": "ok",
+          "error": null,
+          "title": "ELIMINATED: Hamas Ops Chief Who Held Omer Shem Tov In Captivity Struck In Gaza The Yeshiva World",
+          "description": "The IDF and Shin Bet announced that Jamal Abu Saeed, head of Hamas s Operations Department, was eliminated in an airstrike in Gaza City. According to the IDF, Abu Saeed held hostage Omer Shem Tov in captivity for 505 days. Shem Tov was later released as part of a hostage deal. Abu Saeed was responsible for [ ]",
+          "published": ""
+        },
+        {
+          "url": "https://news.antiwar.com/2026/11/05/israeli-forces-kill-12-year-old-boy-in-central-gaza/",
+          "domain": "news.antiwar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Forces Kill 12-Year-Old Boy in Central Gaza - News From Antiwar.com",
+          "description": "A 12-year-old boy was among at least seven Palestinians reported killed by Israeli attacks across Gaza on Thursday, as the Israeli military continues its constant violations of the US-backed ceasefire deal. The boy, identified as Adnan Tariq al-Qrinawi, was hit by a bullet while playing outside near his family s residence",
+          "published": ""
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/435663",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF and Shin Bet eliminate senior Hamas terrorist who held Omer Shem Tov hostage | Israel National News",
+          "description": "IDF and ISA eliminate Jamal Abu Saeed, Head of Operations in Hamas’ military intelligence apparatus who held Omer Shem Tov in captivity.",
+          "published": "2026-11-08"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Israel Eliminates Senior Hamas Terror Commanders in Recent Strikes",
+        "top_keywords": [
+          "gaza",
+          "palestinians",
+          "attacks",
+          "palestinian",
+          "shem",
+          "tov",
+          "including",
+          "medical",
+          "held",
+          "omer"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "idf",
+          "hamas",
+          "hezbollah",
+          "military"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "airstrike",
+          "attack",
+          "killed",
+          "wounded",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Gaza City, Israel\" \"Israel\" \"israel\" \"drone\"",
+        "\"Israel\" \"israel\" \"drone\"",
+        "\"Gaza City, Israel\" \"drone\"",
+        "\"israel\" \"drone\" 2026-11-07"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Gaza City, Israel\" \"Israel\" \"israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza City, Israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-11-07",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 37 source URLs across 27 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 64,
+      "title": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
+      "date": "2026-11-08",
+      "country": "Gaza Strip",
+      "location": "Khan Yunis, Gaza Strip",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 15,
+      "source_domain_count": 7,
+      "source_domains": [
+        "english.wafa.ps",
+        "news.antiwar.com",
+        "wrp.org.uk",
+        "www.clevelandjewishnews.com",
+        "www.israelnationalnews.com",
+        "www.jns.org",
+        "www.jpost.com"
+      ],
+      "original_sources": [
+        "https://english.wafa.ps/Pages/Details/176738",
+        "https://www.jns.org/news/israel-news/israeli-airstrike-eliminates-hamas-terrorist-who-held-omer-shem-tov-captive",
+        "https://www.israelnationalnews.com/news/435631",
+        "https://english.wafa.ps/Pages/Details/176590",
+        "https://news.antiwar.com/2026/11/03/israeli-strike-on-tents-in-gaza-city-park-kills-17-year-old-girl/",
+        "https://english.wafa.ps/Pages/Details/176526",
+        "https://www.jns.org/news/israel-news/idf-eliminates-four-hamas-terrorists-in-northern-gaza",
+        "https://www.clevelandjewishnews.com/jns/idf-eliminates-four-hamas-terrorists-in-northern-gaza/article_780b6f76-5491-50be-b565-6bcd30354dc9.html",
+        "https://english.wafa.ps/Pages/Details/176563",
+        "https://www.clevelandjewishnews.com/jns/al-jazeera-airs-unseen-hamas-footage-oct-7-documents/article_16db3a67-d6be-55bb-a94b-54bc6a5bdceb.html",
+        "https://www.jns.org/news/israel-news/idf-slays-hamas-platoon-chief-who-held-hostages-after-oct-7",
+        "https://www.jpost.com/israel-news/defense-news/article-913354",
+        "https://wrp.org.uk/features/50000-palestinian-women-and-girls-killed-or-injured-in-israeli-genocide/",
+        "https://www.jns.org/news/israel-news/idf-slays-three-hamas-commanders-two-of-whom-invaded-israel-on-oct-7",
+        "https://english.wafa.ps/Pages/Details/176412"
+      ],
+      "raw_titles": [
+        "fight – Khan Yunis, Gaza Strip (general), Gaza Strip"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176738",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Two killed, including woman, others injured in Israeli bombardment of Gaza s Khan Yunis city",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.jns.org/news/israel-news/israeli-airstrike-eliminates-hamas-terrorist-who-held-omer-shem-tov-captive",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli airstrike eliminates Hamas terrorist who held Omer Shem Tov captive - Israel Jewish News - JNS",
+          "description": "Jamal Abu Saeed, who headed the Operations Department in the Palestinian terror group’s “military wing,” was eliminated on Sunday.",
+          "published": "2026-11-05T08:31:40.07"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/435631",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "From tank fire to Tel Aviv Tefilin stand | Israel National News",
+          "description": "Fallen soldier Uriel Silberman",
+          "published": "2026-11-08"
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176590",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Gaza youth dies from injuries sustained in Israeli bombardment of Khan Yunis",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://news.antiwar.com/2026/11/03/israeli-strike-on-tents-in-gaza-city-park-kills-17-year-old-girl/",
+          "domain": "news.antiwar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli Strike on Tents in Gaza City Park Kills 17-Year-Old Girl - News From Antiwar.com",
+          "description": "A 17-year-old girl was among at least four Palestinians killed by Israeli strikes in Gaza on Tuesday, as the Israeli military continues its constant violations of the US-backed ceasefire deal. The girl, identified as Rimas al-Madhoun, was killed when an Israeli drone struck tents in a park in Gaza City,",
+          "published": ""
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176526",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Two killed and one injured in Israeli bombing of areas in Gaza",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.jns.org/news/israel-news/idf-eliminates-four-hamas-terrorists-in-northern-gaza",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "IDF eliminates four Hamas terrorists in northern Gaza - Israel Jewish News - JNS",
+          "description": "The IDF also killed two Hamas Nukhba terrorists, including one who participated in the Oct. 7, 2023, massacre.",
+          "published": "2026-11-02T10:00:04.501"
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/idf-eliminates-four-hamas-terrorists-in-northern-gaza/article_780b6f76-5491-50be-b565-6bcd30354dc9.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF eliminates four Hamas terrorists in northern Gaza | JNS | clevelandjewishnews.com",
+          "description": "The IDF also killed two Hamas Nukhba terrorists, including one who participated in the Oct. 7, 2023, massacre.",
+          "published": "2026-11-07T16:09:00-05:00"
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176563",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Gaza: 5 people killed, including child, and others injured in various Israeli bombardments and attacks",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/al-jazeera-airs-unseen-hamas-footage-oct-7-documents/article_16db3a67-d6be-55bb-a94b-54bc6a5bdceb.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Two killed, including woman, others injured in Israeli bombardment of Gaza s Khan Yunis city",
+        "top_keywords": [
+          "gaza",
+          "two",
+          "including",
+          "who",
+          "terrorists",
+          "khan",
+          "yunis",
+          "city",
+          "eliminates",
+          "jns"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "idf",
+          "hamas",
+          "military"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "airstrike",
+          "attack",
+          "bombing",
+          "killed",
+          "injured",
+          "fire"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Khan Yunis, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
+        "\"Gaza Strip\" \"israel\" \"drone\"",
+        "\"Khan Yunis, Gaza Strip\" \"drone\"",
+        "\"israel\" \"drone\" 2026-11-08"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Khan Yunis, Gaza Strip\" \"Gaza Strip\" \"israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza Strip\" \"israel\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Khan Yunis, Gaza Strip\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-11-08",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 15 source URLs across 7 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 62,
+      "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
+      "date": "2026-11-08",
+      "country": "West Bank",
+      "location": "Jenin, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 16,
+      "source_domain_count": 12,
+      "source_domains": [
+        "countercurrents.org",
+        "english.wafa.ps",
+        "news.az",
+        "tribune.com.pk",
+        "voiceofvienna.org",
+        "www.aljazeera.com",
+        "www.ibtimes.co.uk",
+        "www.islamicinvitationturkey.com",
+        "www.jpost.com",
+        "www.middleeasteye.net",
+        "www.middleeastmonitor.com",
+        "www.presstv.co.uk"
+      ],
+      "original_sources": [
+        "https://english.wafa.ps/Pages/Details/176724",
+        "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+        "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+        "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+        "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+        "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/",
+        "https://www.middleeastmonitor.com/20261104-israeli-army-arrests-30-palestinians-in-new-raids-across-occupied-west-bank/",
+        "https://www.aljazeera.com/news/2026/11/1/al-jazeera-celebrates-30-years-of-transforming-news-in-region-and-beyond",
+        "https://www.ibtimes.co.uk/un-commission-israeli-forces-persecuted-palestinian-children-1829194",
+        "https://www.jpost.com/opinion/article-912884",
+        "https://news.az/news/israels-hebron-operation-displaces-more-than-3-000-palestinians",
+        "https://www.presstv.co.uk/Detail/2026/10/27/779286/US-senator-accountability-killing-US-citizens-West-Bank",
+        "https://www.jpost.com/israel-election-2026/article-913030",
+        "https://voiceofvienna.org/american-senator-van-hollen-renews-call-for-justice-over-americans-killed-in-west-bank/",
+        "https://www.middleeasteye.net/news/un-inquiry-finds-israel-committed-age-based-persecution-palestinian-children-west-bank",
+        "https://countercurrents.org/2026/10/israeli-forces-displace-over-2670-palestinians-in-hebron-amid-large-scale-assault/"
+      ],
+      "raw_titles": [
+        "fight – Jenin, West Bank (general), West Bank"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176724",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces detain six Palestinians in Jenin and Nablus, injure youth in Qalqilia",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces shoot Palestinian child, detain 2 in West Bank raids",
+          "description": "Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City",
+          "published": "2026-11-08T08:40:39+00:00"
+        },
+        {
+          "url": "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Two Palestinians wounded as rain causes collapse of wall in Israeli-damaged building in Gaza",
+          "description": "Heavy rain floods thousands of displacement tents near Gaza City’s port, worsening hardship of Palestinians",
+          "published": "2026-11-07T09:29:07+00:00"
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army arrests 6 Palestinians in renewed raids across occupied West Bank Middle East Monitor",
+          "description": "The Israeli army arrested six Palestinians early Saturday during raids across various parts of the occupied West Bank, which also included searches of homes, according to local sources, Anadolu rep…",
+          "published": "2026-11-07T11:18:43+00:00"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "West Bank: Zionist Forces Arrest Dozens of Palestinians in Raids - Islamic Invitation Turkey",
+          "description": "Israeli forces carried out a series of raids across the occupied West Bank early Thursday, arresting dozens of Palestinians, searching homes and damaging",
+          "published": "2026-11-05T18:19:01+03:00"
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261104-israeli-army-arrests-30-palestinians-in-new-raids-across-occupied-west-bank/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army arrests 30 Palestinians in new raids across occupied West Bank Middle East Monitor",
+          "description": "The Israeli army arrested 30 Palestinians, including two women and a journalist, on Wednesday during raids across cities, towns, and refugee camps in the occupied West Bank, Anadolu reports. In a s…",
+          "published": "2026-11-04T13:57:11+00:00"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/1/al-jazeera-celebrates-30-years-of-transforming-news-in-region-and-beyond",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Al Jazeera marks 30 years of transforming news in Middle East and beyond | Al Jazeera News | Al Jazeera",
+          "description": "The anniversary coincides with a significant restructuring of Al Jazeera Media Network’s Arabic-language news services.",
+          "published": ""
+        },
+        {
+          "url": "https://www.ibtimes.co.uk/un-commission-israeli-forces-persecuted-palestinian-children-1829194",
+          "domain": "www.ibtimes.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "UN Says Palestinian Children Were Deliberately Targeted for Their Age in Crime Against Humanity Finding | IBTimes UK",
+          "description": "A UN commission says Israeli forces committed age-based persecution of Palestinian children in the West Bank and Gaza, citing killings, injuries and a lack of accountability.",
+          "published": "2026-10-31T07:46:58+00:00"
+        },
+        {
+          "url": "https://www.jpost.com/opinion/article-912884",
+          "domain": "www.jpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israel’s offensive strategy in the West Bank has curbed terrorism | The Jerusalem Post",
+          "description": "Israel’s offensive strategy has sharply reduced terrorism in Judea and Samaria, bolstering the case for tough action against its enemies.",
+          "published": "2026-10-31T20:36:12"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Israeli forces detain six Palestinians in Jenin and Nablus, injure youth in Qalqilia",
+        "top_keywords": [
+          "west",
+          "bank",
+          "palestinians",
+          "raids",
+          "forces",
+          "across",
+          "occupied",
+          "jazeera",
+          "jenin",
+          "palestinian"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "army"
+        ],
+        "conflict_hints": [
+          "attack",
+          "raid",
+          "wounded",
+          "terror"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Jenin, West Bank\" \"West Bank\" \"israel\" \"attack\"",
+        "\"West Bank\" \"israel\" \"attack\"",
+        "\"Jenin, West Bank\" \"attack\"",
+        "\"israel\" \"attack\" 2026-11-08"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Jenin, West Bank\" \"West Bank\" \"israel\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"West Bank\" \"israel\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Jenin, West Bank\" \"attack\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"attack\" 2026-11-08",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 16 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "score": 57,
+      "title": "Rajtaütés / fegyveres támadás – Qeshm, Kordestan, Iran",
+      "date": "2026-11-03",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 11,
+      "source_domain_count": 9,
+      "source_domains": [
+        "english.news.cn",
+        "www.brazilsun.com",
+        "www.cubaheadlines.com",
+        "www.dailymail.com",
+        "www.islamicinvitationturkey.com",
+        "www.presstv.co.uk",
+        "www.shippingtribune.com",
+        "www.thehindubusinessline.com",
+        "www.trinidadtimes.com"
+      ],
+      "original_sources": [
+        "https://www.dailymail.com/news/article-16261459/donald-trump-nuclear-weapon-strike-iran-claim.html",
+        "https://www.cubaheadlines.com/articles/344667",
+        "https://www.shippingtribune.com/news/shipping/India+and+Turkey+propose+plans+to+move+grain+shipments+through+Black+Sea,+says+Rubio",
+        "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+        "https://www.thehindubusinessline.com/news/india-and-turkey-propose-plans-to-move-grain-shipments-through-black-sea-says-rubio/article71651939.ece",
+        "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+        "https://www.presstv.co.uk/Detail/2026/10/30/779565/irgc-aerospace-force-seizes-second-us-mqm-170-reconnaissance-drone-over-qeshm-island",
+        "https://english.news.cn/20261031/ae74cc02371248d8ad21dbe0c12a3c73/c.html",
+        "https://english.news.cn/20261031/17ee478ae4a94abc84f6917e56b26b8a/c.html",
+        "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+        "http://www.brazilsun.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio"
+      ],
+      "raw_titles": [
+        "assault – Qeshm, Kordestan, Iran"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.dailymail.com/news/article-16261459/donald-trump-nuclear-weapon-strike-iran-claim.html",
+          "domain": "www.dailymail.com",
+          "status": "ok",
+          "error": null,
+          "title": "Trump is 'considering nuclear strike on Iran', former CIA agent claims | Daily Mail Online",
+          "description": "John Kiriakou, who worked at the Central Intelligence Agency from 1990 to 2004, warned the US President was seeking to",
+          "published": ""
+        },
+        {
+          "url": "https://www.cubaheadlines.com/articles/344667",
+          "domain": "www.cubaheadlines.com",
+          "status": "ok",
+          "error": null,
+          "title": "U.S. Strikes Iran s Qeshm Island in Hormuz Strait Amid Rising Tensions",
+          "description": "The United States military conducted limited strikes on Iran s Qeshm Island in the strategic Strait of Hormuz on Monday. Three U.S. officials confirme...",
+          "published": "2026-11-03T14:55:24.374Z"
+        },
+        {
+          "url": "https://www.shippingtribune.com/news/shipping/India+and+Turkey+propose+plans+to+move+grain+shipments+through+Black+Sea,+says+Rubio",
+          "domain": "www.shippingtribune.com",
+          "status": "ok",
+          "error": null,
+          "title": "Shipping Tribune",
+          "description": "India and Turkey propose plans to move grain shipments through Black Sea, says Rubio",
+          "published": ""
+        },
+        {
+          "url": "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+          "domain": "www.trinidadtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "India, Turkey proposing ideas for passage of grain shipments in Black Sea: Marco Rubio",
+          "description": "US Secretary of State Marco Rubio on Saturday stated India and Turkey have proposed ideas for vessels carrying grain to pass the Black Sea amid strikes in the wake of the ongoing Russia-Ukraine war. As Rubio hosted the G20 foreign ministers meeting in Atlanta, speaking to the press, he said that passage of vessels through the Strait of Hormuz is even more challenging. He noted that the US has received limited cooperation in Hormuz despite President Donald Trump s call to join Washington s efforts in the region. Rubio said, When you talk about the Black Sea, you saw a lot of countries speak up and express their willingness to contribute. Both Turkey and India have come to the table with some ideas about how we can get grain shipments moving because this is threatening global food security and, to some extent, energy security as well. In the case of the Strait of Hormuz, it s more challenging, because many countries around the world don t have the ability to project power in the region. The President has repeatedly asked countries to join us in the effort to protect global shipping through the Strait of Hormuz. So far, we ve had very limited cooperation, but not much. The responsibility has primarily fallen on the United States to protect shipping, he added. Further, he also took note of territorial claims on waterways in the Indo-Pacific region as a maritime challenge in the region. He said, Obviously, in the Indo-Pacific, we don t have active kinetic operations taking place like those we re seeing in the Strait of Hormuz or even in the Black Sea. But we do face some challenges, including territorial claims that we do not recognise. That s why you see us not only maintaining a presence in that part of the world but also operating jointly and cooperatively with our partners to continue making it clear that we do not accept illegitimate territorial claims over waterways that are either international waters or not the territorial waters of any single nation. US and Iran have exchanged strikes amid a blockade in the strategic waterways of the Strait of Hormuz. While Iran continues to strike commercial vehicles, the United States reportedly struck two fishing boats off Qeshm Island in the Strait of Hormuz, injuring two Iranian fishermen. As reported by the news agency IRNA, the two fishermen who went missing after the drone attack have been found, according to the CEO of the Qeshm Fishing Community. Both were sent back to Qeshm Island. Meanwhile, one of the two injured fishermen was taken to a hospital, Al Jazeera reported, citing Fars news agency. Meanwhile, Turkish President Recep Tayyip Erdogan noted that the situation in the Black Sea is on the agenda for the meeting between Turkish President Recep Tayyip Erdogan and Ukrainian President Volodymyr Zelenskyy. Even the Quad Foreign Ministers on Saturday called for preserving navigational rights and freedoms in the Strait of Hormuz, the Red Sea, and the Bab el-Mandeb Strait against the backdrop of tensions in West Asia. (ANI)",
+          "published": ""
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/india-and-turkey-propose-plans-to-move-grain-shipments-through-black-sea-says-rubio/article71651939.ece",
+          "domain": "www.thehindubusinessline.com",
+          "status": "ok",
+          "error": null,
+          "title": "India and Turkey propose ideas to move grain shipments through Black Sea - The HinduBusinessLine",
+          "description": "US Secretary of State Marco Rubio says India and Turkey have proposed ideas to move grain through the Black Sea amid strikes and growing maritime challenges.",
+          "published": "2026-11-01T06:12:17+05:30"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+          "description": "A senior provincial official said U.S. military forces attacked two Iranian fishing boats near Qeshm Island in the Persian Gulf, injuring one crew member and",
+          "published": "2026-11-01T13:26:29+03:00"
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/30/779565/irgc-aerospace-force-seizes-second-us-mqm-170-reconnaissance-drone-over-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "IRGC Aerospace Force seizes second US MQM-170 reconnaissance drone over Qeshm Island",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://english.news.cn/20261031/ae74cc02371248d8ad21dbe0c12a3c73/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "Urgent: 2 fishermen missing, 2 injured in drone attack on fishing boats: Iran's Fars news-Xinhua",
+          "description": "Urgent: 2 fishermen missing, 2 injured in drone attack on fishing boats: Iran",
+          "published": ""
+        },
+        {
+          "url": "https://english.news.cn/20261031/17ee478ae4a94abc84f6917e56b26b8a/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "2 fishermen injured in U.S. drone attack on fishing boats in S. Iran -- media -Xinhua",
+          "description": "2 fishermen injured in U.S. drone attack on fishing boats in S. Iran -- media -",
+          "published": ""
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/31/779615/iranian-missing-fishermen-found-after-us-attack-on-boats-off-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Two missing Iranian fishermen found after US attack on boats off Qeshm Island",
+          "description": "",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Trump is 'considering nuclear strike on Iran', former CIA agent claims | Daily Mail Online",
+        "top_keywords": [
+          "qeshm",
+          "hormuz",
+          "strait",
+          "sea",
+          "fishermen",
+          "island",
+          "black",
+          "fishing",
+          "boats",
+          "turkey"
+        ],
+        "actor_hints": [
+          "iran",
+          "iranian",
+          "russia",
+          "ukraine",
+          "ukrainian",
+          "military",
+          "trump",
+          "zelensky"
+        ],
+        "conflict_hints": [
+          "drone",
+          "strike",
+          "attack",
+          "assault",
+          "injured",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Qeshm, Kordestan, Iran\" \"Iran\" \"iran\" \"drone\"",
+        "\"Iran\" \"iran\" \"drone\"",
+        "\"Qeshm, Kordestan, Iran\" \"drone\"",
+        "\"iran\" \"drone\" 2026-11-03"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"Iran\" \"iran\" \"drone\"",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        },
+        {
+          "query": "\"Iran\" \"iran\" \"drone\"",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        },
+        {
+          "query": "\"Qeshm, Kordestan, Iran\" \"drone\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"iran\" \"drone\" 2026-11-03",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 11 source URLs across 9 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    }
+  ]
+}

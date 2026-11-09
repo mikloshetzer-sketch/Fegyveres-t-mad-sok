@@ -1,40 +1,210 @@
 {
-  "generated_at": "2026-11-02T13:30:00.181587Z",
+  "generated_at": "2026-11-09T13:54:16.854049Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 1,
-  "unique_sources_checked": 4,
+  "event_count": 5,
+  "unique_sources_checked": 19,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
   "items": [
     {
+      "region": "Ukrajna",
+      "rank": 1,
+      "title": "Rajtaütés / fegyveres támadás – Dnipro, Ukraine, Ukraine",
+      "date": "2026-10-30",
+      "country": "Ukraine",
+      "location": "Dnipro, Ukraine, Ukraine",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 15,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.eurasiareview.com/30102026-russia-drone-strike-on-ukrainian-railway-station-kills-13/",
+          "domain": "www.eurasiareview.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russia Drone Strike On Ukrainian Railway Station Kills 13 - Eurasia Review",
+          "description": "The UN’s top humanitarian official in Ukraine on Thursday condemned a Russian drone attack on the city of Dnipro that killed at least 13 civilians and injured",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "drone",
+            "killed",
+            "kill",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.dailysabah.com/world/europe/russian-barrage-kills-20-across-ukraine-despite-hopes-for-truce",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Russian barrage kills 20 across Ukraine despite hopes for truce | Daily Sabah",
+          "description": "A Russian drone strike killed at least 14 people at a crowded railway station in Dnipro on Thursday, while separate daytime attacks killed five more people...",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "drone",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "row"
+          ]
+        },
+        {
+          "url": "https://www.freemalaysiatoday.com/category/world/2026/10/30/evacuation-begins-from-ravaged-russian-controlled-ukrainian-city",
+          "domain": "www.freemalaysiatoday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Evacuation begins from ravaged Russian-controlled Ukrainian city | FMT",
+          "description": "Captured by Russia in 2022, locals in Oleshky had faced food, water and medicine shortages for months, with some being forced to hunt and eat pigeons.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://cyprusnews.eu/cnn-kosmos/russia-strikes-dnipro-train-station-killing-13/",
+          "domain": "cyprusnews.eu",
+          "status": "ok",
+          "error": null,
+          "title": "Russia strikes Dnipro train station, killing 13 - CyprusNews.eu",
+          "description": "A Russian drone struck a train station in Dnipro, Ukraine, Thursday morning, killing 13 people and injuring many others, authorities said.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes",
+            "drone",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
       "region": "Közel-Kelet",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Turmus Ayya, West Bank, West Bank",
-      "date": "2026-10-25",
-      "country": "West Bank",
-      "location": "Turmus Ayya, West Bank, West Bank",
-      "event_type": "Fegyveres összecsapás",
+      "title": "Rajtaütés / fegyveres támadás – Gaza, Israel, Israel",
+      "date": "2026-11-01",
+      "country": "Israel",
+      "location": "Gaza, Israel, Israel",
+      "event_type": "Rajtaütés / fegyveres támadás",
       "original_sources_count": 20,
       "checked_sources_count": 4,
       "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://katv.com/news/nation-world/israeli-forces-lock-down-hebron-displace-up-to-2200-after-attack-kills-2-soldiers",
-          "domain": "katv.com",
+          "url": "https://townhall.com/columnists/alanjosephbauer/2026/11/01/israel-inc-n2685597",
+          "domain": "townhall.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces lock down Hebron, displace up to 2,200 after attack kills 2 soldiers",
-          "description": "Hebron residents woke to a sweeping military lockdown and mass displacement after a Friday attack near the city killed two Israeli soldiers.",
+          "title": "Israel, Inc.",
+          "description": "Explore Israel",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://countercurrents.org/2026/11/10-palestinians-killed-in-israeli-attacks-in-gaza-over-three-days/",
+          "domain": "countercurrents.org",
+          "status": "ok",
+          "error": null,
+          "title": "10 Palestinians Killed in Israeli Attacks in Gaza Over Three Days | Countercurrents",
+          "description": "Gaza (QNN)- Israeli forces killed ten Palestinians, including a girl, over three days and wounded others, including children, women, employees, and traders…",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
+            "attacks",
             "killed",
-            "kill"
+            "kill",
+            "wounded"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.middleeastmonitor.com/20261101-israeli-army-arrests-5-palestinians-in-west-bank-raids/",
+          "domain": "www.middleeastmonitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli army arrests 5 Palestinians in West Bank raids – Middle East Monitor",
+          "description": "The Israeli army arrested five Palestinians on Sunday after raiding their homes in Nablus and Qalandiya refugee camp, north of East Jerusalem in the occupied West Bank, Anadolu reports. The Palesti…",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "ied",
+            "raid",
+            "raids",
+            "arrested"
+          ],
+          "weak_hits": [
+            "army"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/11/01/779668/canadas-largest-labor-federation-votes-to-block-arms-shipments-to-israeli-occupied-lands",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Canadas largest labor federation votes to block Israel arms shipments amid Gaza genocide",
+          "description": "Canada’s largest labor federation calls on its members to block the handling of all weapons and military equipment passing through Canada to the Israeli-occupied territories.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "ied"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "title": "Fegyveres összecsapás – Qeshm, Kordestan, Iran",
+      "date": "2026-11-01",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 12,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+          "description": "A senior provincial official said U.S. military forces attacked two Iranian fishing boats near Qeshm Island in the Persian Gulf, injuring one crew member and",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "attack"
           ],
           "weak_hits": [
             "military"
@@ -42,50 +212,218 @@
           "noise_hits": []
         },
         {
-          "url": "https://www.heritagefl.com/story/2026/10/23/opinions/call-it-judea-and-samaria/24190.html",
-          "domain": "www.heritagefl.com",
+          "url": "https://slguardian.org/qatar-mediates-efforts-to-revive-us-iran-talks-amid-warnings-of-renewed-conflict/",
+          "domain": "slguardian.org",
           "status": "ok",
           "error": null,
-          "title": "Call it Judea and Samaria - Heritage Florida Jewish News",
-          "description": "(JNS) — Call it Transjordan or the West Bank. Blame the awful “settlers” for why the war does not end. But if you call it Judea and Samaria,",
+          "title": "Qatar mediates efforts to revive US-Iran talks amid warnings of renewed conflict – Sri Lanka Guardian",
+          "description": "Qatari mediators have held more than 12 hours of talks with Iranian officials in Tehran in an effort to restart direct negotiations between Washington and Tehran and prevent a possible resumption of US-led military action...",
           "accepted": false,
           "reason": "no concrete security incident detected",
           "security_hits": [],
           "weak_hits": [
-            "war"
+            "war",
+            "military",
+            "conflict"
           ],
-          "noise_hits": []
+          "noise_hits": [
+            "art"
+          ]
         },
         {
-          "url": "https://www.islamicinvitationturkey.com/settler-attacks-threaten-palestinian-olive-harvest-across-west-bank/",
-          "domain": "www.islamicinvitationturkey.com",
+          "url": "https://aa.com.tr/en/middle-east/drone-attacks-2-fishing-boats-off-iran-s-qeshm-island-leaving-2-wounded-2-missing-media/4107227",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Settler Attacks Threaten Palestinian Olive Harvest Across West Bank - Islamic Invitation Turkey",
-          "description": "Jewish settlers continue to attack Palestinians across the occupied West Bank, targeting farmers, land and property amid a surge in violence coinciding with",
+          "title": "Drone attacks 2 fishing boats off Iran’s Qeshm Island, leaving 2 wounded, 2 missing: Media",
+          "description": "Iranian media says ‘enemy’ drone targeted fishing boats 14 miles south of Qeshm Island | Anadolu",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
-            "ied"
+            "drone",
+            "wounded"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://english.wafa.ps/Pages/Details/176048",
-          "domain": "english.wafa.ps",
+          "url": "https://en.apa.az/social/governors-office-us-attacks-fishing-boats-in-southern-iran-two-fishermen-missing-533299",
+          "domain": "en.apa.az",
           "status": "ok",
           "error": null,
-          "title": "Two injured in colonists' attacks on residents in Ramallah-area villages; attempts made to set two homes on fire",
-          "description": "",
+          "title": "Governor's Office: US attacks fishing boats in southern Iran, two fishermen missing",
+          "description": "The United States has attacked two fishing boats in southern Iran, APA&#39;s Tehran bureau reports, citing the Hormozgan Governor&#39;s Office",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
-            "attacks",
+            "attacks"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-01",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 1,
+      "confidence": "Low",
+      "inspected_sources": [
+        {
+          "url": "https://www.middle-east-online.com/en/pakistan-signals-cautious-hope-breakthrough-iran-us-mediation",
+          "domain": "www.middle-east-online.com",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan signals cautious hope for breakthrough in Iran-US mediation | MEO",
+          "description": "Asked whether more Pakistani troops were being sent to Saudi Arabia under the agreement, Chaudhry said that would depend on the situation",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.ynetnews.com/article/synuc9epgl",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Are the Houthis attacking Mecca and Medina? Saudi claims ignite battle over Islam's h",
+          "description": "Saudi Arabia repeatedly reports intercepting drones and missiles near Islam&#x27;s two holiest cities, but the Houthis vehemently deny targeting them; as Turkey and Pakistan back Riyadh, an Israeli expert questions the evidence and explains the religious stakes behind the accusations",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "drone",
+            "drones",
+            "missile"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://saharareporters.com/2026/11/01/northern-islamic-cleric-jimeta-calls-allah-curse-tinubu-describes-president-infidel",
+          "domain": "saharareporters.com",
+          "status": "ok",
+          "error": null,
+          "title": "Northern Islamic Cleric Jimeta Calls For Allah To Curse Tinubu, Describes President As ‘Infidel’ | Sahara Reporters",
+          "description": "In the video, the cleric repeatedly invoked curses against Tinubu and those supporting his administration, questioning the Nigerian president’s presence in Mecca and making statements about his religious identity.",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [
+            "president"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aninews.in/news/world/middle-east/houthis-deny-drone-attack-on-medina-after-saudi-led-coalition-interception-claim20261031065400/",
+          "domain": "aninews.in",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "accepted": false,
+          "reason": "source not readable",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "title": "Rajtaütés / fegyveres támadás – Qeshm, Kordestan, Iran",
+      "date": "2026-11-01",
+      "country": "Iran",
+      "location": "Qeshm, Kordestan, Iran",
+      "event_type": "Rajtaütés / fegyveres támadás",
+      "original_sources_count": 8,
+      "checked_sources_count": 4,
+      "valid_sources_count": 4,
+      "confidence": "High",
+      "inspected_sources": [
+        {
+          "url": "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
+          "domain": "www.trinidadtimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "India, Turkey proposing ideas for passage of grain shipments in Black Sea: Marco Rubio",
+          "description": "US Secretary of State Marco Rubio on Saturday stated India and Turkey have proposed ideas for vessels carrying grain to pass the Black Sea amid strikes in the wake of the ongoing Russia-Ukraine war. As Rubio hosted the G20 foreign ministers' meeting in Atlanta, speaking to the press, he said that passage of vessels through the Strait of Hormuz is even more challenging. He noted that the US has received limited cooperation in Hormuz despite President Donald Trump's call to join Washington's efforts in the region. Rubio said, \"When you talk about the Black Sea, you saw a lot of countries speak up and express their willingness to contribute. Both Turkey and India have come to the table with some ideas about how we can get grain shipments moving because this is threatening global food security and, to some extent, energy security as well.\" \"In the case of the Strait of Hormuz, it's more challenging, because many countries around the world don't have the ability to project power in the region. The President has repeatedly asked countries to join us in the effort to protect global shipping through the Strait of Hormuz. So far, we've had very limited cooperation, but not much. The responsibility has primarily fallen on the United States to protect shipping,\" he added. Further, he also took note of territorial claims on waterways in the Indo-Pacific region as a maritime challenge in the region. He said, \"Obviously, in the Indo-Pacific, we don't have active kinetic operations taking place like those we're seeing in the Strait of Hormuz or even in the Black Sea. But we do face some challenges, including territorial claims that we do not recognise. That's why you see us not only maintaining a presence in that part of the world but also operating jointly and cooperatively with our partners to continue making it clear that we do not accept illegitimate territorial claims over waterways that are either international waters or not the territorial waters of any single nation.\" US and Iran have exchanged strikes amid a \"blockade\" in the strategic waterways of the Strait of Hormuz. While Iran continues to strike commercial vehicles, the United States reportedly struck two fishing boats off Qeshm Island in the Strait of Hormuz, injuring two Iranian fishermen. As reported by the news agency IRNA, the two fishermen who went missing after the drone attack have been found, according to the CEO of the Qeshm Fishing Community. Both were sent back to Qeshm Island. Meanwhile, one of the two injured fishermen was taken to a hospital, Al Jazeera reported, citing Fars news agency. Meanwhile, Turkish President Recep Tayyip Erdogan noted that the situation in the Black Sea is on the agenda for the meeting between Turkish President Recep Tayyip Erdogan and Ukrainian President Volodymyr Zelenskyy. Even the Quad Foreign Ministers on Saturday called for preserving navigational rights and freedoms in the Strait of Hormuz, the Red Sea, and the Bab el-Mandeb Strait against the backdrop of tensions in West Asia. (ANI)",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "strike",
+            "strikes",
+            "drone",
             "injured"
+          ],
+          "weak_hits": [
+            "war",
+            "president",
+            "minister"
+          ],
+          "noise_hits": [
+            "art"
+          ]
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/india-and-turkey-propose-plans-to-move-grain-shipments-through-black-sea-says-rubio/article71651939.ece",
+          "domain": "www.thehindubusinessline.com",
+          "status": "ok",
+          "error": null,
+          "title": "India and Turkey propose ideas to move grain shipments through Black Sea - The HinduBusinessLine",
+          "description": "US Secretary of State Marco Rubio says India and Turkey have proposed ideas to move grain through the Black Sea amid strikes and growing maritime challenges.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "strike",
+            "strikes"
+          ],
+          "weak_hits": [],
+          "noise_hits": [
+            "row"
+          ]
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/us-forces-attack-iranian-fishing-boats-off-qeshm-island-two-fishermen-missing/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "US Forces Attack Iranian Fishing Boats Off Qeshm Island; Two Fishermen Missing - Islamic Invitation Turkey",
+          "description": "A senior provincial official said U.S. military forces attacked two Iranian fishing boats near Qeshm Island in the Persian Gulf, injuring one crew member and",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [
+            "military"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/10/30/779565/irgc-aerospace-force-seizes-second-us-mqm-170-reconnaissance-drone-over-qeshm-island",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "IRGC Aerospace Force seizes second US MQM-170 reconnaissance drone over Qeshm Island",
+          "description": "",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "drone"
           ],
           "weak_hits": [],
           "noise_hits": []
