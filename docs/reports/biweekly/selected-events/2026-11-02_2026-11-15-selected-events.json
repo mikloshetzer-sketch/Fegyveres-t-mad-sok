@@ -1,0 +1,4577 @@
+{
+  "generated_at": "2026-11-16T13:39:16.880394Z",
+  "period": {
+    "start": "2026-11-02",
+    "end": "2026-11-15"
+  },
+  "method": "Regional Top 5 selected from source-validated event clusters. Input comes from attacks_2026_live.geojson. Clusters are grouped by date, country, normalized location and event type. The shared event_pipeline.py layer prepares normalized locations, source validation and scoring before final selection.",
+  "pipeline": {
+    "modules": [
+      "location_normalizer.py",
+      "source_validation.py",
+      "event_scoring.py",
+      "article_validator.py",
+      "final_event_validator.py",
+      "event_pipeline.py"
+    ],
+    "article_fetching": true,
+    "final_event_validation": true
+  },
+  "regions": {
+    "Európai Unió": {
+      "raw_event_count": 624,
+      "cluster_count": 624,
+      "selected_count": 0,
+      "pipeline_summary": {
+        "total_clusters": 624,
+        "source_valid_clusters": 13,
+        "source_invalid_clusters": 611,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 611,
+          "High": 3,
+          "Low": 5,
+          "Medium": 5
+        },
+        "top_countries": [
+          [
+            "Ireland",
+            114
+          ],
+          [
+            "France",
+            97
+          ],
+          [
+            "Germany",
+            62
+          ],
+          [
+            "Italy",
+            47
+          ],
+          [
+            "Poland",
+            47
+          ],
+          [
+            "Spain",
+            41
+          ],
+          [
+            "Greece",
+            32
+          ],
+          [
+            "Netherlands",
+            23
+          ],
+          [
+            "Belgium",
+            22
+          ],
+          [
+            "Austria",
+            14
+          ]
+        ],
+        "top_locations": [
+          [
+            "Paris, France, France",
+            3
+          ],
+          [
+            "Germany",
+            3
+          ],
+          [
+            "Berlin, Germany",
+            3
+          ],
+          [
+            "Greece",
+            3
+          ],
+          [
+            "Milan, Lombardia, Italy",
+            3
+          ],
+          [
+            "Sweden",
+            3
+          ],
+          [
+            "France",
+            2
+          ],
+          [
+            "Dublin, Ireland",
+            2
+          ],
+          [
+            "Madrid, Spain",
+            2
+          ],
+          [
+            "Ireland",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            451
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            159
+          ],
+          [
+            "Tömeges erőszak",
+            7
+          ],
+          [
+            "Robbantás / IED",
+            7
+          ]
+        ]
+      }
+    },
+    "Ukrajna": {
+      "raw_event_count": 171,
+      "cluster_count": 156,
+      "selected_count": 1,
+      "pipeline_summary": {
+        "total_clusters": 156,
+        "source_valid_clusters": 3,
+        "source_invalid_clusters": 153,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 153,
+          "Medium": 1,
+          "High": 1,
+          "Low": 1
+        },
+        "top_countries": [
+          [
+            "Ukraine",
+            156
+          ]
+        ],
+        "top_locations": [
+          [
+            "Komyshuvakha, Zaporiz'ka Oblast', Ukraine",
+            3
+          ],
+          [
+            "Lviv, L'vivs'ka Oblast', Ukraine",
+            3
+          ],
+          [
+            "Kyiv, Misto, Ukraine",
+            2
+          ],
+          [
+            "Ukraine",
+            2
+          ],
+          [
+            "Donbas, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Odesa, Odesa Oblast, Ukraine",
+            2
+          ],
+          [
+            "Kyiv, Ukraine, Ukraine",
+            2
+          ],
+          [
+            "Kramatorsk, Donets'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Mykolaivka, Khersons'ka Oblast', Ukraine",
+            2
+          ],
+          [
+            "Dobropillya, Khersons'ka Oblast', Ukraine",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Robbantás / IED",
+            131
+          ],
+          [
+            "Fegyveres összecsapás",
+            13
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            11
+          ],
+          [
+            "Tömeges erőszak",
+            1
+          ]
+        ]
+      }
+    },
+    "Balkán": {
+      "raw_event_count": 81,
+      "cluster_count": 81,
+      "selected_count": 1,
+      "pipeline_summary": {
+        "total_clusters": 81,
+        "source_valid_clusters": 2,
+        "source_invalid_clusters": 79,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "Rejected": 79,
+          "Low": 2
+        },
+        "top_countries": [
+          [
+            "Turkey",
+            48
+          ],
+          [
+            "Serbia",
+            8
+          ],
+          [
+            "Albania",
+            7
+          ],
+          [
+            "Bosnia-Herzegovina",
+            6
+          ],
+          [
+            "Macedonia",
+            4
+          ],
+          [
+            "Kosovo",
+            4
+          ],
+          [
+            "Serbia (general)",
+            2
+          ],
+          [
+            "Montenegro",
+            2
+          ]
+        ],
+        "top_locations": [
+          [
+            "Turkey",
+            3
+          ],
+          [
+            "Serbia",
+            3
+          ],
+          [
+            "Ankara, Turkey",
+            2
+          ],
+          [
+            "Srebrenica, Serbia",
+            2
+          ],
+          [
+            "Albania",
+            2
+          ],
+          [
+            "Belgrade, Serbia",
+            2
+          ],
+          [
+            "Istanbul, Turkey",
+            2
+          ],
+          [
+            "Smyrna, Izmir, Turkey",
+            2
+          ],
+          [
+            "Montenegro",
+            2
+          ],
+          [
+            "Izmir, Turkey",
+            2
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            53
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            25
+          ],
+          [
+            "Tömeges erőszak",
+            3
+          ]
+        ]
+      }
+    },
+    "Közel-Kelet": {
+      "raw_event_count": 923,
+      "cluster_count": 923,
+      "selected_count": 3,
+      "pipeline_summary": {
+        "total_clusters": 923,
+        "source_valid_clusters": 63,
+        "source_invalid_clusters": 860,
+        "final_validated_clusters": 0,
+        "source_confidence": {
+          "High": 16,
+          "Rejected": 860,
+          "Low": 24,
+          "Medium": 23
+        },
+        "top_countries": [
+          [
+            "Iran",
+            139
+          ],
+          [
+            "Israel",
+            118
+          ],
+          [
+            "Pakistan",
+            98
+          ],
+          [
+            "Yemen",
+            85
+          ],
+          [
+            "West Bank",
+            65
+          ],
+          [
+            "Saudi Arabia",
+            53
+          ],
+          [
+            "Egypt",
+            47
+          ],
+          [
+            "Afghanistan",
+            36
+          ],
+          [
+            "Iraq",
+            34
+          ],
+          [
+            "Sudan",
+            34
+          ]
+        ],
+        "top_locations": [
+          [
+            "Tehran, Iran",
+            3
+          ],
+          [
+            "Gaza, Israel, Israel",
+            3
+          ],
+          [
+            "Iran",
+            3
+          ],
+          [
+            "Jerusalem, Israel, Israel",
+            3
+          ],
+          [
+            "Riyadh, Ar Riya?, Saudi Arabia",
+            3
+          ],
+          [
+            "Israel",
+            3
+          ],
+          [
+            "Yemen",
+            3
+          ],
+          [
+            "Hebron, Israel, Israel",
+            3
+          ],
+          [
+            "West Bank",
+            3
+          ],
+          [
+            "Tel Aviv, Israel",
+            3
+          ]
+        ],
+        "top_event_types": [
+          [
+            "Fegyveres összecsapás",
+            646
+          ],
+          [
+            "Rajtaütés / fegyveres támadás",
+            244
+          ],
+          [
+            "Tömeges erőszak",
+            30
+          ],
+          [
+            "Tüntetés / zavargás",
+            2
+          ],
+          [
+            "Dróntámadás",
+            1
+          ]
+        ]
+      }
+    }
+  },
+  "events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 1,
+      "score": 60,
+      "ranking_breakdown": {
+        "event_type": 16,
+        "strategic_location": 14,
+        "international_relevance": 2,
+        "repeat_hotspot": 0,
+        "source_reliability": 24,
+        "freshness": 2,
+        "cluster_quality": 2,
+        "total": 60
+      },
+      "quality_score": 47,
+      "quality_label": "Low",
+      "cluster_key": "2026-11-03|ukraine|azov zaporizka oblast ukraine|robbantás ied",
+      "title": "Robbantás / IED – Azov, Zaporiz'ka Oblast', Ukraine",
+      "date": "2026-11-03",
+      "country": "Ukraine",
+      "location": "Azov, Zaporiz'ka Oblast', Ukraine",
+      "raw_location": "Azov, Zaporiz'ka Oblast', Ukraine",
+      "normalized_location": {
+        "raw_location": "Azov, Zaporiz'ka Oblast', Ukraine",
+        "country": "Ukraine",
+        "country_key": "ukraine",
+        "primary": "Azov",
+        "primary_key": "azov",
+        "secondary": "Zaporizka Oblast",
+        "secondary_key": "zaporizka oblast",
+        "aliases": [
+          "azov",
+          "zaporizka oblast"
+        ],
+        "regional_aliases": [
+          "southern ukraine",
+          "southern-ukraine",
+          "eastern ukraine",
+          "eastern-ukraine",
+          "frontline",
+          "front-line"
+        ],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "azov",
+          "zaporizka oblast"
+        ]
+      },
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 2,
+      "source_count": 2,
+      "source_domain_count": 2,
+      "source_domains": [
+        "www.bignewsnetwork.com",
+        "www.investmentwatchblog.com"
+      ],
+      "sources": [
+        "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+        "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+      ],
+      "source_validation": {
+        "checked_count": 2,
+        "valid_count": 2,
+        "rejected_count": 0,
+        "valid_ratio": 1.0,
+        "weighted_score": 2.0,
+        "label": "Low",
+        "valid_sources": [
+          "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+          "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+        ],
+        "rejected_sources": [],
+        "checked_sources": [
+          {
+            "url": "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+            "domain": "www.investmentwatchblog.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "clash"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "azov"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "azov"
+                ],
+                "secondary": [
+                  "zaporizka"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained",
+            "domain": "www.bignewsnetwork.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "injured"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "azov"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "ukraine"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "azov"
+                ],
+                "secondary": [
+                  "zaporizka"
+                ],
+                "country": [
+                  "ukraine"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          }
+        ],
+        "event_location": "Azov, Zaporiz'ka Oblast', Ukraine",
+        "event_country": "Ukraine",
+        "event_date": "2026-11-03",
+        "location_terms": {
+          "primary": [
+            "azov"
+          ],
+          "secondary": [
+            "zaporizka"
+          ],
+          "country": [
+            "ukraine"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Low",
+      "recommended_score": 64,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+          "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 2,
+          "accepted_count": 2,
+          "rejected_count": 0,
+          "average_score": 76.0,
+          "confidence": "Medium",
+          "accepted_urls": [
+            "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+            "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+          ],
+          "rejected_urls": [],
+          "checked": [
+            {
+              "url": "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+              "domain": "www.investmentwatchblog.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 62,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog",
+                "description": "Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered",
+                "paragraphs": [
+                  "We provide unfiltered news and market signals for people who have no time to search.",
+                  "Menu Menu Home About Fact vs. Spin Subscribe Monthly Subscription 6-Month Subscription Yearly Subscription Member’s Area Login Account Privacy Policy Disclaimer Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv November 3, 2026, 9:12 AM by Alex Mark Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered outside, demanding access to the men. The National Guard’s 1st Azov Corps later admitted the building belonged to one of its units and was being used to hold newly mobilized soldiers and men who had gone AWOL. Four men were sent to hospital with injuries. A doctor who entered the building alleged that one had a broken spine. Protesters smashed windows, broke through a wall and attacked police vehicles while security forces fired shots into the air. Kyrylo Budanov arrived at the scene, where a 14-year-old boy was filmed being escorted out wrapped in a blanket. The boy said he had come with friends, and officials have not confirmed he was detained inside. On November 3, Ukraine’s State Bureau of Investigation opened criminal proceedings over possible abuse of authority by military officials. The National Guard says it will no longer use the building. Budanov says investigators will identify those behind the clashes, while the question of who authorized the detention site and what happened to the men inside remains unanswered.",
+                  "🇺🇦 INJURED and BATTERED men are being carried out of a building near Kiev.",
+                  "A doctor who went inside says a man with a broken spine was among them!",
+                  "Witnesses claim military recruitment officers had been bringing people to the building but police have denied allegations."
+                ],
+                "text_sample": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered We provide unfiltered news and market signals for people who have no time to search. Menu Menu Home About Fact vs. Spin Subscribe Monthly Subscription 6-Month Subscription Yearly Subscription Member’s Area Login Account Privacy Policy Disclaimer Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv November 3, 2026, 9:12 AM by Alex Mark Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered outside, demanding access to the men. The National Guard’s 1st Azov Corps later admitted the building belonged to one of its units and was being used to hold newly mob"
+              },
+              "validation": {
+                "score": 78,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attacked",
+                  "clash",
+                  "clashes",
+                  "injured"
+                ],
+                "noise_hits": [
+                  "market"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "azov",
+                    "zaporizka oblast",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "azov zaporiz'ka oblast' ukraine"
+                  ],
+                  "hits": [
+                    "azov"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained",
+              "domain": "www.bignewsnetwork.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 209,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Azov, injured soldiers and secret prisons: Ukraine",
+                "description": "Azov-linked detention near Kiev has sparked torture allegations and protests as Ukrainian officials target the woman who raised the alarm Read Full Article at RT.com",
+                "paragraphs": [
+                  "A confrontation outside a military facility near Kiev has exposed abuse allegations and brought renewed scrutiny of Ukraine's recruitment and detention system",
+                  "A private house outside Kiev has become the center of a scandal over an alleged torture chamber run by a unit of Ukraine's notorious neo-Nazi-linked Azov formation. Accusations that men were being beaten and held for money brought furious relatives to its gates while senior officials scrambled to respond.",
+                  "The confrontation has exposed a darker side to Kiev's military recruitment system, already notorious for men being dragged off the streets. It has also revived questions about secret detention and torture facilities documented in Ukraine long before the latest scandal.",
+                  "Who was being held, how did they get there, and what have their military superiors admitted? Here is what we know.",
+                  "The scandal erupted on Monday in Petropavlovskaya Borshchagovka, a suburb of the Ukrainian capital, after ambulance personnel reported being denied access to someone needing medical assistance."
+                ],
+                "text_sample": "Azov, injured soldiers and secret prisons: Ukraine Azov-linked detention near Kiev has sparked torture allegations and protests as Ukrainian officials target the woman who raised the alarm Read Full Article at RT.com A confrontation outside a military facility near Kiev has exposed abuse allegations and brought renewed scrutiny of Ukraine's recruitment and detention system A private house outside Kiev has become the center of a scandal over an alleged torture chamber run by a unit of Ukraine's notorious neo-Nazi-linked Azov formation. Accusations that men were being beaten and held for money brought furious relatives to its gates while senior officials scrambled to respond. The confrontation has exposed a darker side to Kiev's military recruitment system, already notorious for men being dragged off the streets. It has also revived questions about secret detention and torture facilities documented in Ukraine long before the latest scandal. Who was being held, how did they get there, and"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "gunfire",
+                  "fighting",
+                  "injured"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "azov",
+                    "zaporizka oblast",
+                    "southern ukraine",
+                    "eastern ukraine",
+                    "frontline",
+                    "front line",
+                    "azov zaporiz'ka oblast' ukraine"
+                  ],
+                  "hits": [
+                    "azov"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 72,
+          "confidence": "Medium",
+          "basis": "source_and_article_validation",
+          "source_score": 54,
+          "article_score": 88
+        },
+        "score_adjustment": 4,
+        "recommended_score": 64,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Azov, Zaporiz'ka Oblast', Ukraine",
+        "assault – Azov, Zaporiz'ka Oblast', Ukraine"
+      ],
+      "search_terms": [
+        "Azov, Zaporiz'ka Oblast', Ukraine Ukraine Robbantás / IED",
+        "Azov, Zaporiz'ka Oblast', Ukraine Ukraine",
+        "Robbantás / IED – Azov, Zaporiz'ka Oblast', Ukraine",
+        "Ukraine Robbantás / IED"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Balkán",
+      "rank": 1,
+      "score": 60,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 0,
+        "international_relevance": 14,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 6,
+        "cluster_quality": 2,
+        "total": 60
+      },
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-11-13|turkey|izmir turkey|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Izmir, Turkey",
+      "date": "2026-11-13",
+      "country": "Turkey",
+      "location": "Izmir, Turkey",
+      "raw_location": "Izmir, Turkey",
+      "normalized_location": {
+        "raw_location": "Izmir, Turkey",
+        "country": "Turkey",
+        "country_key": "turkey",
+        "primary": "Izmir",
+        "primary_key": "izmir",
+        "secondary": "",
+        "secondary_key": "",
+        "aliases": [
+          "izmir"
+        ],
+        "regional_aliases": [
+          "central turkey",
+          "turkish capital",
+          "turkiye",
+          "türkiye"
+        ],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "izmir"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 12,
+      "source_domain_count": 11,
+      "source_domains": [
+        "aa.com.tr",
+        "balkaninsight.com",
+        "english.news.cn",
+        "sana.sy",
+        "www.arabnews.com",
+        "www.dailysabah.com",
+        "www.hngn.com",
+        "www.hurriyetdailynews.com",
+        "www.inquisitr.com",
+        "www.investmentwatchblog.com",
+        "www.wsws.org"
+      ],
+      "sources": [
+        "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+        "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+        "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+        "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+        "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+        "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+        "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+        "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+        "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+        "https://sana.sy/en/international/2357494/",
+        "https://aa.com.tr/en/asia-pacific/azerbaijan-extends-deepest-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+        "https://www.hurriyetdailynews.com/suspect-in-deadly-shooting-spree-in-afyonkarahisar-detained-229097"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 3,
+        "rejected_count": 9,
+        "valid_ratio": 0.25,
+        "weighted_score": 3.0,
+        "label": "Low",
+        "valid_sources": [
+          "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+          "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+          "https://www.inquisitr.com/habas-steelworks-explosion-izmir/"
+        ],
+        "rejected_sources": [
+          "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+          "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+          "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+          "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+          "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+          "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+          "https://sana.sy/en/international/2357494/",
+          "https://aa.com.tr/en/asia-pacific/azerbaijan-extends-deepest-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+          "https://www.hurriyetdailynews.com/suspect-in-deadly-shooting-spree-in-afyonkarahisar-detained-229097"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+            "domain": "www.arabnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "blast",
+              "detained"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [
+                "turkiye"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+            "domain": "www.wsws.org",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+            "domain": "aa.com.tr",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "explosion"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [
+                "turkiye"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+            "domain": "www.investmentwatchblog.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [
+              "explosion",
+              "killed"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "turkey"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+            "domain": "balkaninsight.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "blast"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "izmir"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "turkey"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+            "domain": "www.dailysabah.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "blast",
+              "arrests"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "izmir"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [
+                "turkiye"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+            "domain": "www.hngn.com",
+            "accepted": false,
+            "reason": "country-only location match treated as background, not event validation",
+            "incident_hits": [
+              "blast",
+              "detained"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "country_only",
+              "weight": 0.3,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [
+                "turkey"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+            "domain": "english.news.cn",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+            "domain": "www.inquisitr.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "explosion"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "izmir"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://sana.sy/en/international/2357494/",
+            "domain": "sana.sy",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://aa.com.tr/en/asia-pacific/azerbaijan-extends-deepest-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+            "domain": "aa.com.tr",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "explosion"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [
+                "turkiye"
+              ],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.hurriyetdailynews.com/suspect-in-deadly-shooting-spree-in-afyonkarahisar-detained-229097",
+            "domain": "www.hurriyetdailynews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "shooting",
+              "detained"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "izmir"
+                ],
+                "secondary": [],
+                "country": [
+                  "turkey"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Izmir, Turkey",
+        "event_country": "Turkey",
+        "event_date": "2026-11-13",
+        "location_terms": {
+          "primary": [
+            "izmir"
+          ],
+          "secondary": [],
+          "country": [
+            "turkey"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "Low",
+      "recommended_score": 64,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+          "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+          "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+          "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "average_score": 61.75,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+            "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+            "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660"
+          ],
+          "rejected_urls": [
+            "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/"
+          ],
+          "checked": [
+            {
+              "url": "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+              "domain": "balkaninsight.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 485,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Turkey Bans Media Reporting on Deadly Factory Blast in Izmir",
+                "description": "Authorities ban media from reporting deadly factory blast in Izmir province that has killed 17 workers, prompting concerns over public's right to access information.",
+                "paragraphs": [
+                  "Turkey’s broadcasting regulator, the Radio and Television Supreme Council, RTUK, on Monday announced a ban on reporting an explosion at an iron and steel factory in Aliaga, Izmir that has cost 17 lives.",
+                  "“A ban has been imposed on all news reports, interviews and commentary concerning the incident in print, visual and social media, as well as online, until the investigation is completed,” RTUK said.",
+                  "Authorities said the ban was intended to prevent disinformation and public unrest, protect public order and ensure the investigation could proceed properly. Turkey has previously introduced reporting bans when there have been terror attacks, natural disasters, fatal accidents and major police operations targeting critics.",
+                  "In 2025, for example, the RTUK issued a broadcasting ban about a fire in a ski resort that killed 66 holidaymakers. Critics say that the practice undermines the public’s right to access information.",
+                  "The death toll from Monday’s blast rose to 17, while 14 workers were injured."
+                ],
+                "text_sample": "Turkey Bans Media Reporting on Deadly Factory Blast in Izmir Authorities ban media from reporting deadly factory blast in Izmir province that has killed 17 workers, prompting concerns over public's right to access information. Turkey’s broadcasting regulator, the Radio and Television Supreme Council, RTUK, on Monday announced a ban on reporting an explosion at an iron and steel factory in Aliaga, Izmir that has cost 17 lives. “A ban has been imposed on all news reports, interviews and commentary concerning the incident in print, visual and social media, as well as online, until the investigation is completed,” RTUK said. Authorities said the ban was intended to prevent disinformation and public unrest, protect public order and ensure the investigation could proceed properly. Turkey has previously introduced reporting bans when there have been terror attacks, natural disasters, fatal accidents and major police operations targeting critics. In 2025, for example, the RTUK issued a broadca"
+              },
+              "validation": {
+                "score": 45,
+                "confidence": "Low",
+                "accepted": false,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination",
+                  "noise terms found",
+                  "stale year signal"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "explosion",
+                  "blast",
+                  "killed",
+                  "death",
+                  "injured",
+                  "terror"
+                ],
+                "noise_hits": [
+                  "commentary"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "izmir",
+                    "central turkey",
+                    "turkish capital",
+                    "turkiye",
+                    "türkiye",
+                    "izmir turkey"
+                  ],
+                  "hits": [
+                    "izmir"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2025"
+                  ],
+                  "has_date_signal": false,
+                  "stale_year_signal": true
+                }
+              }
+            },
+            {
+              "url": "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+              "domain": "www.dailysabah.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 205,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Türkiye orders arrests of 11 over deadly Izmir steel plant blast",
+                "description": "Authorities in Türkiye have ordered the detention of 11 suspects in connection with an explosion at a steel plant in Izmir, western Türkiye, that killed...",
+                "paragraphs": [
+                  "Politics Diplomacy Legislation War On Terror EU Affairs Elections News Analysis TÜRKİYE Istanbul Education Investigations Minorities Expat Corner Diaspora World Mid-East Europe Americas Asia Pacific Africa Syrian Crisis Islamophobia Business Automotive Economy Energy Finance Tourism Tech Defense Transportation News Analysis Lifestyle Health Environment Travel Food Fashion Science Religion History Feature Expat Corner Arts Cinema Music Events Portrait Reviews Performing Arts Sports Football Basketball Motorsports Tennis Opinion Columns Op-Ed Reader's Corner Editorial PHOTO GALLERY JOBS ABOUT US RSS PRIVACY CONTACT US © Turkuvaz Haberleşme ve Yayıncılık 2026 Politics Diplomacy Legislation War On Terror EU Affairs Elections News Analysis TÜRKİYE Istanbul Education Investigations Minorities Expat Corner Diaspora World Mid-East Europe Americas Asia Pacific Africa Syrian Crisis Islamophobia Business Automotive Economy Energy Finance Tourism Tech Defense Transportation News Analysis Lifestyle Health Environment Travel Food Fashion Science Religion History Feature Expat Corner Arts Cinema Music Events Portrait Reviews Performing Arts Sports Football Basketball Motorsports Tennis Gallery Opinion Columns Op-Ed Reader's Corner Editorial TÜRKİYE Istanbul Education Investigations Minorities Expat Corner Diaspora Türkiye orders arrests of 11 over deadly Izmir steel plant blast by Daily Sabah with AA ISTANBUL Nov 10, 2026 - 2:58 pm GMT+3 The site of the HABAŞ iron and steel plant after the explosion, Izmir, Türkiye, Nov. 9, 2026. (DHA Photo) by Daily Sabah with AA Nov 10, 2026 2:58 pm Authorities in Türkiye have ordered the detention of 11 suspects in connection with an explosion at a steel plant in Izmir , western Türkiye, that killed 17 workers on Monday, Deputy Justice Minister Can Tuncay said Tuesday.",
+                  "The suspects include the factory manager, the steelworks manager, maintenance and engineering personnel, the company’s Aliağa branch manager and its board chairperson, Tuncay told reporters after inspecting the site in Aliağa district.",
+                  "The explosion occurred Monday at the HABAŞ iron and steel plant during steelmaking operations. According to Tuncay, the blast happened when a crane runway beam detached from its columns, supports and connections while a vessel associated with the plant’s third electric arc furnace was being moved. The beam, charging crane and vessel fell, triggering the explosion.",
+                  "Some 17 workers were killed, while one of the injured remained in critical condition, Tuncay said. One worker was still unaccounted for following an application by the family, and inspections at the site continued.",
+                  "A preliminary expert report had been received, Tuncay said, adding that further assessments would be conducted as the investigation progressed. He said the Aliağa Chief Public Prosecutor’s Office was continuing its examination with the assistance of gendarmerie teams until the on-site procedures were completed."
+                ],
+                "text_sample": "Türkiye orders arrests of 11 over deadly Izmir steel plant blast Authorities in Türkiye have ordered the detention of 11 suspects in connection with an explosion at a steel plant in Izmir, western Türkiye, that killed... Politics Diplomacy Legislation War On Terror EU Affairs Elections News Analysis TÜRKİYE Istanbul Education Investigations Minorities Expat Corner Diaspora World Mid-East Europe Americas Asia Pacific Africa Syrian Crisis Islamophobia Business Automotive Economy Energy Finance Tourism Tech Defense Transportation News Analysis Lifestyle Health Environment Travel Food Fashion Science Religion History Feature Expat Corner Arts Cinema Music Events Portrait Reviews Performing Arts Sports Football Basketball Motorsports Tennis Opinion Columns Op-Ed Reader's Corner Editorial PHOTO GALLERY JOBS ABOUT US RSS PRIVACY CONTACT US © Turkuvaz Haberleşme ve Yayıncılık 2026 Politics Diplomacy Legislation War On Terror EU Affairs Elections News Analysis TÜRKİYE Istanbul Education Investi"
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "explosion",
+                  "blast",
+                  "killed",
+                  "injured",
+                  "terror"
+                ],
+                "noise_hits": [
+                  "opinion",
+                  "analysis",
+                  "history",
+                  "sports",
+                  "tourism",
+                  "travel"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "izmir",
+                    "central turkey",
+                    "turkish capital",
+                    "turkiye",
+                    "türkiye",
+                    "izmir turkey"
+                  ],
+                  "hits": [
+                    "izmir",
+                    "türkiye"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+              "domain": "www.inquisitr.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 76,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Turkey steelworks explosion kills 10, injures 15, governor says",
+                "description": "Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province.",
+                "paragraphs": [
+                  "Search News Politics Crime Entertainment Sports Science & Tech Health & Lifestyle Home News Turkey steelworks explosion kills 10, injures 15, governor says News",
+                  "Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province.",
+                  "An explosion and fire at the HABAS steelworks in western Turkey killed 10 people Monday, Izmir Governor Suleyman Elban said.",
+                  "Elban said 15 people were injured, while rescuers continued searching for four believed trapped under debris at the plant in Aliaga, Izmir province.",
+                  "The blast occurred around noon (09:00 GMT) as liquid steel was being cast and an overhead crane fell into a furnace, the Izmir Governor's Office said ."
+                ],
+                "text_sample": "Turkey steelworks explosion kills 10, injures 15, governor says Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province. Search News Politics Crime Entertainment Sports Science & Tech Health & Lifestyle Home News Turkey steelworks explosion kills 10, injures 15, governor says News Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province. An explosion and fire at the HABAS steelworks in western Turkey killed 10 people Monday, Izmir Governor Suleyman Elban said. Elban said 15 people were injured, while rescuers continued searching for four believed trapped under debris at the plant in Aliaga, Izmir province. The blast occurred around noon (09:00 GMT) as liquid steel was being cast and an overhead crane fell into a furnace, the Izmir Governor's Office said . \"It was like a bomb going off,\" Turan Ilbay, a truck driver at the plant, told the Anadolu news agency. The production line was changing shif"
+              },
+              "validation": {
+                "score": 70,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "explosion",
+                  "blast",
+                  "bomb",
+                  "killed",
+                  "kills",
+                  "dead",
+                  "injured"
+                ],
+                "noise_hits": [
+                  "sports"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "izmir",
+                    "central turkey",
+                    "turkish capital",
+                    "turkiye",
+                    "türkiye",
+                    "izmir turkey"
+                  ],
+                  "hits": [
+                    "izmir"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+              "domain": "www.arabnews.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 745,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "At least nine detained protesting at blast-hit Turkiye steel plant",
+                "description": "Nine people were detained by Turkish security forces for protesting a ban on mobile phones at a steel plant following a deadly explosion. The workers gathered at the plant’s entrance to express their discontent.",
+                "paragraphs": [
+                  "Aliaga, Turkiye: Turkiye’s security forces on Friday detained at least nine people protesting a ban on bringing mobile phones into a steel plant that was hit by a deadly explosion this week, a workers’ collective said.",
+                  "Workers arriving for their morning shift at the HABAS steel factory were told to leave their mobile phones at a security checkpoint, prompting them to gather at the facility’s entrance in protest, according to Oktay Turk, spokesman for the Aegean Workers’ Collective.",
+                  "“At least nine people were detained,” Turk told AFP, adding that he was among those taken into custody at the factory, located in Aliaga, a district known for shipbreaking and heavy industry near the western port city of Izmir.",
+                  "The mobile phone ban was introduced by HABAS chairman Mehmet Rustu Basaran, who was placed under house arrest as part of an investigation into Monday’s explosion, Turk said.",
+                  "A company notice said mobile phones would no longer be allowed inside."
+                ],
+                "text_sample": "At least nine detained protesting at blast-hit Turkiye steel plant Nine people were detained by Turkish security forces for protesting a ban on mobile phones at a steel plant following a deadly explosion. The workers gathered at the plant’s entrance to express their discontent. Aliaga, Turkiye: Turkiye’s security forces on Friday detained at least nine people protesting a ban on bringing mobile phones into a steel plant that was hit by a deadly explosion this week, a workers’ collective said. Workers arriving for their morning shift at the HABAS steel factory were told to leave their mobile phones at a security checkpoint, prompting them to gather at the facility’s entrance in protest, according to Oktay Turk, spokesman for the Aegean Workers’ Collective. “At least nine people were detained,” Turk told AFP, adding that he was among those taken into custody at the factory, located in Aliaga, a district known for shipbreaking and heavy industry near the western port city of Izmir. The mo"
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "explosion",
+                  "blast",
+                  "killed"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "izmir",
+                    "central turkey",
+                    "turkish capital",
+                    "turkiye",
+                    "türkiye",
+                    "izmir turkey"
+                  ],
+                  "hits": [
+                    "izmir",
+                    "turkiye"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 79,
+          "confidence": "Medium",
+          "basis": "source_and_article_validation",
+          "source_score": 58,
+          "article_score": 100
+        },
+        "score_adjustment": 4,
+        "recommended_score": 64,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Izmir, Izmir, Turkey"
+      ],
+      "search_terms": [
+        "Izmir, Turkey Turkey Fegyveres összecsapás",
+        "Izmir, Turkey Turkey",
+        "Fegyveres összecsapás – Izmir, Turkey",
+        "Turkey Fegyveres összecsapás"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 60,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 0,
+        "international_relevance": 11,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 3,
+        "total": 60
+      },
+      "quality_score": 41,
+      "quality_label": "Low",
+      "cluster_key": "2026-11-15|saudi arabia|eastern province ash sharqiyah saudi arabia|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "raw_location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "normalized_location": {
+        "raw_location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+        "country": "Saudi Arabia",
+        "country_key": "saudi arabia",
+        "primary": "Eastern Province",
+        "primary_key": "eastern province",
+        "secondary": "Ash Sharqiyah",
+        "secondary_key": "ash sharqiyah",
+        "aliases": [
+          "ash sharqiyah",
+          "eastern province"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "eastern province",
+          "ash sharqiyah",
+          "saudi arabia"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 21,
+      "source_domain_count": 19,
+      "source_domains": [
+        "avenuemail.in",
+        "cyprus-mail.com",
+        "economictimes.indiatimes.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "news.webindia123.com",
+        "sana.sy",
+        "tribune.com.pk",
+        "www.clevelandjewishnews.com",
+        "www.dailyadvertiser.com.au",
+        "www.deccanchronicle.com",
+        "www.internazionale.it",
+        "www.iranherald.com",
+        "www.middle-east-online.com",
+        "www.middleeasteye.net",
+        "www.prokerala.com",
+        "www.siasat.com",
+        "www.theepochtimes.com",
+        "www.ynetnews.com"
+      ],
+      "sources": [
+        "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+        "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+        "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+        "https://www.ynetnews.com/article/hkigihvamg",
+        "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+        "https://tribune.com.pk/story/2639887/no-safe-haven-iran-warns-military-bases-in-europe-could-be-targeted-in-new-us-war",
+        "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://cyprus-mail.com/2026/11/10/saudi-led-coalition-reports-houthi-missile-drone-interceptions-saba-reports-saudi-strikes-on-sanaa",
+        "https://www.middleeasteye.net/news/missiles-intercepted-over-saudi-arabia-continuing-houthi-attacks-prompt-emergency-measures",
+        "http://www.iranherald.com/news/279420710/19-indian-seafarers-stranded-in-yemen-safely-evacuated-embassy-says",
+        "https://www.deccanchronicle.com/nation/world/19-indian-seafarers-stranded-in-yemen-safely-evacuated-2002803",
+        "https://www.theepochtimes.com/world/attack-damages-oil-giant-aramco-building-in-riyadh-6122397",
+        "https://www.siasat.com/loud-booms-heard-in-riyadh-after-emergency-alert-issued-3571554/",
+        "https://sana.sy/en/middle-east/2357043/",
+        "https://news.webindia123.com/news/Articles/World/20261109/4517473.html",
+        "https://english.news.cn/20261109/5642476cc7a4410ba6a9939cefa7e48e/c.html",
+        "https://www.middle-east-online.com/en/saudi-led-coalition-says-it-intercepts-drone-riyadh-region",
+        "https://www.prokerala.com/news/articles/a1834210.html"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 7,
+        "rejected_count": 5,
+        "valid_ratio": 0.583,
+        "weighted_score": 6.0,
+        "label": "High",
+        "valid_sources": [
+          "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+          "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+          "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+          "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+          "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+          "https://cyprus-mail.com/2026/11/10/saudi-led-coalition-reports-houthi-missile-drone-interceptions-saba-reports-saudi-strikes-on-sanaa",
+          "https://www.middleeasteye.net/news/missiles-intercepted-over-saudi-arabia-continuing-houthi-attacks-prompt-emergency-measures"
+        ],
+        "rejected_sources": [
+          "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+          "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+          "https://www.ynetnews.com/article/hkigihvamg",
+          "https://tribune.com.pk/story/2639887/no-safe-haven-iran-warns-military-bases-in-europe-could-be-targeted-in-new-us-war",
+          "http://www.iranherald.com/news/279420710/19-indian-seafarers-stranded-in-yemen-safely-evacuated-embassy-says"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+            "domain": "economictimes.indiatimes.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "drones"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "eastern province"
+              ],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+            "domain": "www.dailyadvertiser.com.au",
+            "accepted": false,
+            "reason": "no concrete incident indicator in URL",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+            "domain": "english.aawsat.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "drones"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "eastern province"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+            "domain": "www.internazionale.it",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.ynetnews.com/article/hkigihvamg",
+            "domain": "www.ynetnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+            "domain": "www.clevelandjewishnews.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "houthi",
+              "intercepted"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "arabia",
+                "saudi",
+                "saudi arabia"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "arabia",
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://tribune.com.pk/story/2639887/no-safe-haven-iran-warns-military-bases-in-europe-could-be-targeted-in-new-us-war",
+            "domain": "tribune.com.pk",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "war",
+              "military"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+            "domain": "www.siasat.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "drone"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "arabia",
+                "saudi",
+                "saudi arabia"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "arabia",
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+            "domain": "tribune.com.pk",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "houthi",
+              "intercepted"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://cyprus-mail.com/2026/11/10/saudi-led-coalition-reports-houthi-missile-drone-interceptions-saba-reports-saudi-strikes-on-sanaa",
+            "domain": "cyprus-mail.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "strikes",
+              "drone",
+              "missile",
+              "houthi"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [
+              "2026"
+            ],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.middleeasteye.net/news/missiles-intercepted-over-saudi-arabia-continuing-houthi-attacks-prompt-emergency-measures",
+            "domain": "www.middleeasteye.net",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "attacks",
+              "houthi",
+              "intercepted"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "arabia",
+                "saudi",
+                "saudi arabia"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "arabia",
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "http://www.iranherald.com/news/279420710/19-indian-seafarers-stranded-in-yemen-safely-evacuated-embassy-says",
+            "domain": "www.iranherald.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "evacuated"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "eastern province"
+                ],
+                "secondary": [
+                  "arabia",
+                  "saudi",
+                  "saudi arabia",
+                  "sharqiyah"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+        "event_country": "Saudi Arabia",
+        "event_date": "2026-11-15",
+        "location_terms": {
+          "primary": [
+            "eastern province"
+          ],
+          "secondary": [
+            "arabia",
+            "saudi",
+            "saudi arabia",
+            "sharqiyah"
+          ],
+          "country": [
+            "arabia",
+            "saudi"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "High",
+      "recommended_score": 68,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+          "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+          "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+          "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 4,
+          "rejected_count": 0,
+          "average_score": 73.0,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+            "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+            "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+            "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/"
+          ],
+          "rejected_urls": [],
+          "checked": [
+            {
+              "url": "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+              "domain": "economictimes.indiatimes.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 88,
+                "content_type": "text/html;charset=UTF-8"
+              },
+              "article": {
+                "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province",
+                "description": "Saudi-led coalition forces intercepted two Houthi missiles and three drones aimed at Saudi Arabia",
+                "paragraphs": [
+                  "News English Edition English Edition हिन्दी ગુજરાતી मराठी বাংলা ಕನ್ನಡ മലയാളം தமிழ் తెలుగు | ePaper | My Watchlist Subscribe Sign In Home ETPrime Markets Market Data Masterclass News Industry SME Politics Wealth MF Tech AI World Opinion NRI Panache More Menu India Economy Economy Dashboard Agriculture Finance Foreign Trade Indicators Infrastructure Policy Politics Newsblogs Elections Assembly Elections Sports Cricket Football Tennis Badminton Hockey Chess Other Sports More Science Defence International 2026 US Midterm Elections Saudi Arabia UAE Business World News ET Explains Company Corporate Trends Industry Trending Morning Brief Podcast ET Evoke Bengaluru News Pune News Mumbai News Videos Latest News Most Read Most Shared Most Commented Business News › News › Defence › Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province The Economic Times daily newspaper is available online now. Read Today's Paper Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province SECTIONS Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province Reuters Last Updated: Nov 15, 2026, 08:37:00 AM IST Rate Story Follow us Share Font Size Abc Small Abc Medium Abc Large Save Print Comment Synopsis Saudi-led coalition forces intercepted two Houthi missiles and three drones aimed at Saudi Arabia's capital. Recent Houthi attacks have intensified, damaging crucial infrastructure, particularly affecting Saudi Aramco. The Eastern Province, housing most oil reserves, has faced numerous assaults in prior weeks. In retaliation, Saudi Arabia has increased airstrikes targeting Houthi positions in Yemen. The ongoing conflict highlights the fragile security situation in the region.",
+                  "Is CoreWeave's movement signalling a return of the AI trade?",
+                  "How India’s INR22.5 lakh crore gold loan boom is hiding a big hole",
+                  "KYC and KYB: Pidilite's margin keeps finding its way back, though costlier raw materials can knock it off course – Part 2 of 3",
+                  "Business of Odd Things: The farm that needs no land, freshwater, or fertiliser"
+                ],
+                "text_sample": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province Saudi-led coalition forces intercepted two Houthi missiles and three drones aimed at Saudi Arabia News English Edition English Edition हिन्दी ગુજરાતી मराठी বাংলা ಕನ್ನಡ മലയാളം தமிழ் తెలుగు | ePaper | My Watchlist Subscribe Sign In Home ETPrime Markets Market Data Masterclass News Industry SME Politics Wealth MF Tech AI World Opinion NRI Panache More Menu India Economy Economy Dashboard Agriculture Finance Foreign Trade Indicators Infrastructure Policy Politics Newsblogs Elections Assembly Elections Sports Cricket Football Tennis Badminton Hockey Chess Other Sports More Science Defence International 2026 US Midterm Elections Saudi Arabia UAE Business World News ET Explains Company Corporate Trends Industry Trending Morning Brief Podcast ET Evoke Bengaluru News Pune News Mumbai News Videos Latest News Most Read Most Shared Most Commented Business News › News › Defence › Saudi-led coalition intercepts missil"
+              },
+              "validation": {
+                "score": 70,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "drones",
+                  "houthi",
+                  "intercepted"
+                ],
+                "noise_hits": [
+                  "opinion",
+                  "sports",
+                  "market"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ash sharqiyah",
+                    "eastern province",
+                    "eastern province ash sharqiyah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "eastern province",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2021",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+              "domain": "english.aawsat.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 932,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province",
+                "description": "The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom's Eastern Province. \"Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terrorist militia toward Riyadh,\" Official Spokesperson of the Coalition to Restore Legitimacy in Yemen Major General Turki Al-Malki said. He earlier said in separate statements that Saudi air defenses had destroyed three drones in the country's Eastern region.",
+                "paragraphs": [
+                  "Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province",
+                  "The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom's Eastern Province.",
+                  "\"Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terrorist militia toward Riyadh,\" Official Spokesperson of the Coalition to Restore Legitimacy in Yemen Major General Turki Al-Malki said.",
+                  "He earlier said in separate statements that Saudi air defenses had destroyed three drones in the country's Eastern region.",
+                  "Egypt, Kuwait Discuss Regional De-Escalation Efforts"
+                ],
+                "text_sample": "Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom's Eastern Province. \"Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terrorist militia toward Riyadh,\" Official Spokesperson of the Coalition to Restore Legitimacy in Yemen Major General Turki Al-Malki said. He earlier said in separate statements that Saudi air defenses had destroyed three drones in the country's Eastern region. Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom's Eastern Province. \"Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terr"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "drones",
+                  "terrorist",
+                  "houthi",
+                  "intercepted"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ash sharqiyah",
+                    "eastern province",
+                    "eastern province ash sharqiyah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "eastern province"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+              "domain": "www.clevelandjewishnews.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 185,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Saudi Arabia says it intercepted Houthi missiles targeting Riyadh",
+                "description": "Saudi air defenses intercepted two ballistic missiles launched by Yemen’s Iranian-backed Houthi terrorists toward Riyadh on Sunday, according to the Saudi-led military coalition.",
+                "paragraphs": [
+                  "Cloudy skies early, followed by partial clearing. High 48F. Winds light and variable..",
+                  "Mainly clear. Low 31F. Winds light and variable.",
+                  "A battle between the city of Lyndhurst and North Coast Community Homes waged on after city council voted unanimously on Nov. 2 to uphold the board of zoning appeals’ decision that denied the Painesville-based nonprofit a zoning variance for a home it intended to use to house roommates with d…",
+                  "Immigration has been a hot topic in the news in recent years with abrupt shifts in policy, enforcement priorities, agency practice and misinformation. As a result, immigration attorneys are challenged with navigating the changing landscape.",
+                  "As the leaves come down and the calendar fills with holiday gatherings and travel, it’s a good time to take stock of our health before winter settles in. Here’s what some of the top experts I spoke with shared this fall."
+                ],
+                "text_sample": "Saudi Arabia says it intercepted Houthi missiles targeting Riyadh Saudi air defenses intercepted two ballistic missiles launched by Yemen’s Iranian-backed Houthi terrorists toward Riyadh on Sunday, according to the Saudi-led military coalition. Cloudy skies early, followed by partial clearing. High 48F. Winds light and variable.. Mainly clear. Low 31F. Winds light and variable. A battle between the city of Lyndhurst and North Coast Community Homes waged on after city council voted unanimously on Nov. 2 to uphold the board of zoning appeals’ decision that denied the Painesville-based nonprofit a zoning variance for a home it intended to use to house roommates with d… Immigration has been a hot topic in the news in recent years with abrupt shifts in policy, enforcement priorities, agency practice and misinformation. As a result, immigration attorneys are challenged with navigating the changing landscape. As the leaves come down and the calendar fills with holiday gatherings and travel, i"
+              },
+              "validation": {
+                "score": 70,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "drones",
+                  "houthi",
+                  "intercepted"
+                ],
+                "noise_hits": [
+                  "travel"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ash sharqiyah",
+                    "eastern province",
+                    "eastern province ash sharqiyah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "eastern province",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+              "domain": "www.siasat.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 43,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Fresh alert in Riyadh as Saudi Arabia downs another drone",
+                "description": "Saudi Arabia intercepted another drone over Riyadh amid continued missile and drone attacks linked to the Yemen conflict.",
+                "paragraphs": [
+                  "Search for Home Hyderabad Telangana India Middle East Entertainment Sports Business Photos Videos Sidebar Siasat.com / News / Middle East / Fresh alert in Riyadh as Saudi Arabia downs another drone Fresh alert in Riyadh as Saudi Arabia downs another drone Multiple aerial threats were reported across Saudi Arabia within a 24-hour period. Sakina Fatima Follow on Twitter | Published: 12th November 2026 1:08 pm IST Riyadh skyline featuring the Kingdom Centre Tower. Photo: ekrem osmanoglu/Unsplash Riyadh : Saudi air defences intercepted and destroyed a drone in the Riyadh region on Thursday, November 12, the Saudi-led Coalition said, amid continued missile and drone attacks on the Kingdom.",
+                  "Coalition spokesperson Major General Turki Al-Maliki announced the interception in a post on X but did not provide further details about the drone or report any casualties or damage.",
+                  "التحالف: اعتراض وتدمير طائرة مسيرة بمنطقة الرياض. pic.twitter.com/YeBZ2q2f1s",
+                  "The latest incident follows several interceptions reported by the Coalition over the past 24 hours. These included a drone destroyed in the Eastern Province and two ballistic missiles intercepted in the western region.",
+                  "The Coalition also reported intercepting and destroying two drones launched by the Houthi militia towards the Makkah and southern regions ."
+                ],
+                "text_sample": "Fresh alert in Riyadh as Saudi Arabia downs another drone Saudi Arabia intercepted another drone over Riyadh amid continued missile and drone attacks linked to the Yemen conflict. Search for Home Hyderabad Telangana India Middle East Entertainment Sports Business Photos Videos Sidebar Siasat.com / News / Middle East / Fresh alert in Riyadh as Saudi Arabia downs another drone Fresh alert in Riyadh as Saudi Arabia downs another drone Multiple aerial threats were reported across Saudi Arabia within a 24-hour period. Sakina Fatima Follow on Twitter | Published: 12th November 2026 1:08 pm IST Riyadh skyline featuring the Kingdom Centre Tower. Photo: ekrem osmanoglu/Unsplash Riyadh : Saudi air defences intercepted and destroyed a drone in the Riyadh region on Thursday, November 12, the Saudi-led Coalition said, amid continued missile and drone attacks on the Kingdom. Coalition spokesperson Major General Turki Al-Maliki announced the interception in a post on X but did not provide further det"
+              },
+              "validation": {
+                "score": 78,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "drone",
+                  "drones",
+                  "missile",
+                  "casualties",
+                  "houthi",
+                  "intercepted"
+                ],
+                "noise_hits": [
+                  "sports"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "ash sharqiyah",
+                    "eastern province",
+                    "eastern province ash sharqiyah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "eastern province",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 96,
+          "confidence": "High",
+          "basis": "source_and_article_validation",
+          "source_score": 93,
+          "article_score": 100
+        },
+        "score_adjustment": 8,
+        "recommended_score": 68,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Eastern Province, Ash Sharqiyah, Saudi Arabia"
+      ],
+      "search_terms": [
+        "Eastern Province, Ash Sharqiyah, Saudi Arabia Saudi Arabia Fegyveres összecsapás",
+        "Eastern Province, Ash Sharqiyah, Saudi Arabia Saudi Arabia",
+        "Fegyveres összecsapás – Eastern Province, Ash Sharqiyah, Saudi Arabia",
+        "Saudi Arabia Fegyveres összecsapás"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 58,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 0,
+        "international_relevance": 9,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 3,
+        "total": 58
+      },
+      "quality_score": 43,
+      "quality_label": "Low",
+      "cluster_key": "2026-11-15|saudi arabia|mecca makkah saudi arabia|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
+      "raw_location": "Mecca, Makkah, Saudi Arabia",
+      "normalized_location": {
+        "raw_location": "Mecca, Makkah, Saudi Arabia",
+        "country": "Saudi Arabia",
+        "country_key": "saudi arabia",
+        "primary": "Mecca",
+        "primary_key": "mecca",
+        "secondary": "Makkah",
+        "secondary_key": "makkah",
+        "aliases": [
+          "makkah",
+          "mecca"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "mecca",
+          "makkah",
+          "saudi arabia"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 28,
+      "source_domain_count": 26,
+      "source_domains": [
+        "aa.com.tr",
+        "avenuemail.in",
+        "en.antaranews.com",
+        "english.news.cn",
+        "gulfnews.com",
+        "kesq.com",
+        "news.az",
+        "news.webindia123.com",
+        "townhall.com",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.ariananews.af",
+        "www.bignewsnetwork.com",
+        "www.freemalaysiatoday.com",
+        "www.hindustantimes.com",
+        "www.israelnationalnews.com",
+        "www.justiceinfo.net",
+        "www.justsecurity.org",
+        "www.maritimeprofessional.com",
+        "www.middle-east-online.com"
+      ],
+      "sources": [
+        "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+        "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+        "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+        "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+        "https://www.israelnationalnews.com/flashes/697254",
+        "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+        "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289",
+        "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment",
+        "https://www.thecomet.net/news/26706605.stevenage-80-look-growth-new-town/",
+        "http://www.bignewsnetwork.com/news/279427195/1st-ld-writethru-2-explosions-rock-s-yemen-aden-as-houthis-claim-missiles-hit-military-sites",
+        "https://english.news.cn/20261112/9ec0dc0497934321bb100050f79290f4/c.html",
+        "https://www.justsecurity.org/164226/early-edition-november-12-2026/",
+        "https://www.theamericanconservative.com/the-iran-war-is-uniting-the-muslim-world/",
+        "https://www.middleeasteye.net/news/gcc-establish-joint-forward-command-center-kuwait",
+        "https://en.antaranews.com/news/441671/ministry-strengthens-efforts-to-combat-hajj-and-umrah-scams",
+        "https://kesq.com/news/top-stories/2026/11/09/trump-calls-immigration-crackdown-too-tough-east-valley-residents-weigh-in/",
+        "https://www.freemalaysiatoday.com/category/world/2026/11/07/yemen-s-houthis-say-30-dead-in-strikes-on-market",
+        "https://www.middle-east-online.com/en/syria-aids-saudi-arabia-military-advice-and-training"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 5,
+        "rejected_count": 7,
+        "valid_ratio": 0.417,
+        "weighted_score": 4.4,
+        "label": "High",
+        "valid_sources": [
+          "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+          "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+          "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+          "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+          "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289"
+        ],
+        "rejected_sources": [
+          "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+          "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+          "https://www.israelnationalnews.com/flashes/697254",
+          "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+          "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment",
+          "https://www.thecomet.net/news/26706605.stevenage-80-look-growth-new-town/",
+          "http://www.bignewsnetwork.com/news/279427195/1st-ld-writethru-2-explosions-rock-s-yemen-aden-as-houthis-claim-missiles-hit-military-sites"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+            "domain": "news.webindia123.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+            "domain": "www.thehindubusinessline.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "strikes",
+              "missile",
+              "houthis"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+            "domain": "www.samaa.tv",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "attacks",
+              "houthis"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+            "domain": "aa.com.tr",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "houthi",
+              "intercepted"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "mecca"
+              ],
+              "secondary_hits": [
+                "arabia",
+                "saudi",
+                "saudi arabia"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "arabia",
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://www.israelnationalnews.com/flashes/697254",
+            "domain": "www.israelnationalnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+            "domain": "avenuemail.in",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "missile",
+              "houthi"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "conflict"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "mecca"
+              ],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+            "domain": "tribune.com.pk",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "houthi",
+              "intercepted"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "makkah",
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+            "domain": "gulfnews.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [
+              "conflict"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289",
+            "domain": "www.maritimeprofessional.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "attack",
+              "houthis"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "saudi"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "saudi"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment",
+            "domain": "www.zerohedge.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.thecomet.net/news/26706605.stevenage-80-look-growth-new-town/",
+            "domain": "www.thecomet.net",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "http://www.bignewsnetwork.com/news/279427195/1st-ld-writethru-2-explosions-rock-s-yemen-aden-as-houthis-claim-missiles-hit-military-sites",
+            "domain": "www.bignewsnetwork.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "houthis"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "military"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "mecca"
+                ],
+                "secondary": [
+                  "arabia",
+                  "makkah",
+                  "saudi",
+                  "saudi arabia"
+                ],
+                "country": [
+                  "arabia",
+                  "saudi"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          }
+        ],
+        "event_location": "Mecca, Makkah, Saudi Arabia",
+        "event_country": "Saudi Arabia",
+        "event_date": "2026-11-15",
+        "location_terms": {
+          "primary": [
+            "mecca"
+          ],
+          "secondary": [
+            "arabia",
+            "makkah",
+            "saudi",
+            "saudi arabia"
+          ],
+          "country": [
+            "arabia",
+            "saudi"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "High",
+      "recommended_score": 66,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+          "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+          "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+          "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 4,
+          "rejected_count": 0,
+          "average_score": 78.0,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+            "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+            "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+            "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region"
+          ],
+          "rejected_urls": [],
+          "checked": [
+            {
+              "url": "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+              "domain": "www.samaa.tv",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 897,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Houthis claim attacks on Saudi oil facilities as tensions escalate",
+                "description": "Houthis claim attacks on Saudi oil facilities as Riyadh intercepts drones amid escalating regional tensions.",
+                "paragraphs": [
+                  "Please enable JavaScript for the best SAMAA TV experience.",
+                  "Note: For enhanced search features, please enable JavaScript.",
+                  "Copyright © 2026 SAMAA TV. All Rights Reserved.",
+                  "Group claims to have targeted East-West oil pipeline, Aramco facilities in Riyadh, oil installation in Yanbu",
+                  "The escalation comes as the wider Middle East conflict threatens major energy supply routes, including the Strait of Hormuz and the strategically important Bab el-Mandeb Strait."
+                ],
+                "text_sample": "Houthis claim attacks on Saudi oil facilities as tensions escalate Houthis claim attacks on Saudi oil facilities as Riyadh intercepts drones amid escalating regional tensions. Please enable JavaScript for the best SAMAA TV experience. Note: For enhanced search features, please enable JavaScript. Copyright © 2026 SAMAA TV. All Rights Reserved. Group claims to have targeted East-West oil pipeline, Aramco facilities in Riyadh, oil installation in Yanbu The escalation comes as the wider Middle East conflict threatens major energy supply routes, including the Strait of Hormuz and the strategically important Bab el-Mandeb Strait. The Houthi group said on Thursday that it had attacked a pumping station along Saudi Arabia's East-West oil pipeline, an oil facility in the Red Sea port city of Yanbu and an Aramco building in Riyadh. In statements posted on social media platform X, Houthi military spokesperson Yahya Sarea said the group had deployed drones and ballistic missiles against several Sa"
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "attacked",
+                  "drone",
+                  "drones",
+                  "houthi",
+                  "houthis"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "makkah",
+                    "mecca",
+                    "mecca makkah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+              "domain": "aa.com.tr",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 1638,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+                "description": "Civil Defense says fragments landed in Sabuhah village | Anadolu",
+                "paragraphs": [
+                  "WORLD TÜRKİYE ECONOMY POLITICS ENERGY TECHNOLOGY Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region US-Iran war Hormuz crisis Russia-Ukraine war EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español Middle East Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region Civil Defense says fragments landed in Sabuhah village Tarek Chouiref 12 November 2026 • Update : 12 November 2026 ISTANBUL Saudi Arabia said early Thursday that debris from two intercepted ballistic missiles had fallen in Sabuhah village in the kingdom’s Mecca region.",
+                  "The missiles were launched by Yemen’s Houthi group, said Saudi Civil Defense.",
+                  "Saudi-led coalition spokesman Turki al-Maliki also announced that its air defenses intercepted and destroyed a drone in the kingdom’s Eastern Province.",
+                  "On Wednesday, the coalition reported intercepting and destroying five missiles and two drones.",
+                  "Three cruise missiles were launched toward the Riyadh region, while two ballistic missiles were intercepted in western Saudi Arabia, it said. The two drones were intercepted in the Mecca and southern regions."
+                ],
+                "text_sample": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region Civil Defense says fragments landed in Sabuhah village | Anadolu WORLD TÜRKİYE ECONOMY POLITICS ENERGY TECHNOLOGY Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region US-Iran war Hormuz crisis Russia-Ukraine war EDITION Türkçe English BHSC Pусский Français العربية Kurdî کوردی Shqip فارسی македонски Bahasa Indonesia Español Middle East Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region Civil Defense says fragments landed in Sabuhah village Tarek Chouiref 12 November 2026 • Update : 12 November 2026 ISTANBUL Saudi Arabia said early Thursday that debris from two intercepted ballistic missiles had fallen in Sabuhah village in the kingdom’s Mecca region. The missiles were launched by Yemen’s Houthi group, said Saudi Civil Defense. Saudi-led coalition spokesman Turki al-Maliki also announced that its air defenses intercepted and destroyed a drone in the kingdom’s Eas"
+              },
+              "validation": {
+                "score": 90,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "reliable domain hint",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "strikes",
+                  "drone",
+                  "drones",
+                  "missile",
+                  "houthi",
+                  "houthis",
+                  "intercepted"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "makkah",
+                    "mecca",
+                    "mecca makkah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "mecca",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+              "domain": "avenuemail.in",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 36,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Saudi air defences intercept missiles near Mecca",
+                "description": "Saudi air defences intercept missiles near Mecca | International News | The Avenue Mail",
+                "paragraphs": [
+                  "November 12, 2026 5:22 pm Home National State Politics Opinion Entertainment / Sports Utility Videos Epaper Search Home National State Politics Opinion Entertainment / Sports Utility Videos Epaper Search Home International International News World Saudi air defences intercept missiles near Mecca By News Desk Thursday, 12 November 2026, 12:10:11 IST 0 Facebook WhatsApp X Telegram Saudi air defences intercepted two ballistic missiles over the Mecca region on Wednesday. Debris from the destroyed projectiles fell near the holy city as regional hostilities intensified. Locations of the Debris Saudi state television identified the two impact zones near the Grand Mosque. Fragments landed in Sabuhah village, located about 35 kilometres northeast of the sacred site. Additional debris struck Wadi al-Maghmas, roughly 21 kilometres east of the mosque. Saudi Arabia’s civil defence confirmed that defence forces intercepted and destroyed both incoming missiles. Accusations and Denials Saudi officials condemned the incident early on Thursday. The civil defence stated that targeting civilian objects violates international humanitarian law and proves the Houthi militia’s dangerous hostility. However, Yemen’s Iran-aligned Houthi movement has repeatedly rejected similar Saudi accusations. The group maintains that its fighters strike only military and strategic targets elsewhere in the kingdom. Mecca houses sites sacred to Muslims across the globe. Millions of believers travel there annually to perform the hajj pilgrimage, one of Islam’s five core pillars. Background of the Conflict The conflict began in 2014 when Houthi forces seized Yemen’s capital, Sanaa. Saudi Arabia intervened militarily the following year to support Yemen’s internationally recognised government. A UN-brokered truce largely froze the fighting in 2022. Unfortunately, heavy hostilities resumed earlier this year, shattering the fragile peace across the region. Houthi forces now launch frequent missile and drone attacks into Saudi territory. In response, Riyadh conducts regular airstrikes against Houthi positions inside Yemen. Threat to Global Trade This latest escalation threatens the strategic Bab el-Mandeb Strait. This vital waterway links the Red Sea and the Gulf of Aden, carrying crucial global maritime trade. Ongoing military strikes near this chokepoint raise serious concerns for international shipping security. Regional stability remains fragile as both sides continue their cross-border military operations. 🌐 Stay Connected with The Avenue Mail Get the latest news and breaking updates delivered instantly to your feed.",
+                  "🟢Join our WhatsApp Group: Click here to join",
+                  "📢 The Avenue Mail: Your trusted source for real-time news.",
+                  "The Avenue Mail published from Jamshedpur is ‘The Common Man’s newspaper. We cover all the latest news on a real-time basis. Besides, we also offer analysis from experts, that gives you insight into latest news and information on crucial issues. The Avenue Mail is the ‘voice of the voiceless’.",
+                  "© Copyright 2026 The Avenue Mail All rights reserved Developed By - Netmore Technology"
+                ],
+                "text_sample": "Saudi air defences intercept missiles near Mecca Saudi air defences intercept missiles near Mecca | International News | The Avenue Mail November 12, 2026 5:22 pm Home National State Politics Opinion Entertainment / Sports Utility Videos Epaper Search Home National State Politics Opinion Entertainment / Sports Utility Videos Epaper Search Home International International News World Saudi air defences intercept missiles near Mecca By News Desk Thursday, 12 November 2026, 12:10:11 IST 0 Facebook WhatsApp X Telegram Saudi air defences intercepted two ballistic missiles over the Mecca region on Wednesday. Debris from the destroyed projectiles fell near the holy city as regional hostilities intensified. Locations of the Debris Saudi state television identified the two impact zones near the Grand Mosque. Fragments landed in Sabuhah village, located about 35 kilometres northeast of the sacred site. Additional debris struck Wadi al-Maghmas, roughly 21 kilometres east of the mosque. Saudi Arabi"
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination",
+                  "noise terms found"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "strike",
+                  "strikes",
+                  "struck",
+                  "drone",
+                  "missile",
+                  "fighting",
+                  "houthi",
+                  "intercepted"
+                ],
+                "noise_hits": [
+                  "opinion",
+                  "analysis",
+                  "sports",
+                  "travel"
+                ],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "makkah",
+                    "mecca",
+                    "mecca makkah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "mecca",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2014",
+                    "2022",
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+              "domain": "tribune.com.pk",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 45,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region | The Express Tribune",
+                "description": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+                "paragraphs": [
+                  "--> Home World Debris from intercepted Houthi missiles falls in Saudi Arabia's Makkah region Civil Defense says fragments landed in Sabuhah village",
+                  "facebook --> twitter --> whatsup --> linkded --> email MORE (3) Messenger Whatsapp --> PHOTO: FILE Saudi Arabia said early Thursday that debris from two intercepted ballistic missiles had fallen in Sabuhah village in the kingdom’s Mecca region.",
+                  "The missiles were launched by Yemen’s Houthi group , said Saudi Civil Defence.",
+                  "Saudi-led coalition spokesman Turki al-Maliki also announced that its air defences intercepted and destroyed a drone in the kingdom’s Eastern Province.",
+                  "On Wednesday, the coalition reported intercepting and destroying five missiles and two drones ."
+                ],
+                "text_sample": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region | The Express Tribune Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region --> Home World Debris from intercepted Houthi missiles falls in Saudi Arabia's Makkah region Civil Defense says fragments landed in Sabuhah village facebook --> twitter --> whatsup --> linkded --> email MORE (3) Messenger Whatsapp --> PHOTO: FILE Saudi Arabia said early Thursday that debris from two intercepted ballistic missiles had fallen in Sabuhah village in the kingdom’s Mecca region. The missiles were launched by Yemen’s Houthi group , said Saudi Civil Defence. Saudi-led coalition spokesman Turki al-Maliki also announced that its air defences intercepted and destroyed a drone in the kingdom’s Eastern Province. On Wednesday, the coalition reported intercepting and destroying five missiles and two drones . Three cruise missiles were launched toward the Riyadh region, while two ballistic missiles were intercep"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attacks",
+                  "strikes",
+                  "drone",
+                  "drones",
+                  "missile",
+                  "houthi",
+                  "houthis",
+                  "intercepted"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "makkah",
+                    "mecca",
+                    "mecca makkah saudi arabia",
+                    "saudi arabia"
+                  ],
+                  "hits": [
+                    "makkah",
+                    "mecca",
+                    "saudi arabia"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 95,
+          "confidence": "High",
+          "basis": "source_and_article_validation",
+          "source_score": 90,
+          "article_score": 100
+        },
+        "score_adjustment": 8,
+        "recommended_score": 66,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Mecca, Makkah, Saudi Arabia"
+      ],
+      "search_terms": [
+        "Mecca, Makkah, Saudi Arabia Saudi Arabia Fegyveres összecsapás",
+        "Mecca, Makkah, Saudi Arabia Saudi Arabia",
+        "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+        "Saudi Arabia Fegyveres összecsapás"
+      ]
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 56,
+      "ranking_breakdown": {
+        "event_type": 13,
+        "strategic_location": 0,
+        "international_relevance": 8,
+        "repeat_hotspot": 0,
+        "source_reliability": 25,
+        "freshness": 8,
+        "cluster_quality": 2,
+        "total": 56
+      },
+      "quality_score": 41,
+      "quality_label": "Low",
+      "cluster_key": "2026-11-15|west bank|jenin west bank west bank|fegyveres összecsapás",
+      "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
+      "date": "2026-11-15",
+      "country": "West Bank",
+      "location": "Jenin, West Bank, West Bank",
+      "raw_location": "Jenin, West Bank, West Bank",
+      "normalized_location": {
+        "raw_location": "Jenin, West Bank, West Bank",
+        "country": "West Bank",
+        "country_key": "west bank",
+        "primary": "Jenin",
+        "primary_key": "jenin",
+        "secondary": "West Bank",
+        "secondary_key": "west bank",
+        "aliases": [
+          "jenin",
+          "west bank"
+        ],
+        "regional_aliases": [],
+        "removed_org_entities": [],
+        "usable_parts": [
+          "jenin",
+          "west bank",
+          "west bank"
+        ]
+      },
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 13,
+      "source_domain_count": 10,
+      "source_domains": [
+        "english.wafa.ps",
+        "news.az",
+        "sana.sy",
+        "tribune.com.pk",
+        "www.arabnews.com",
+        "www.inquirer.com",
+        "www.islamicinvitationturkey.com",
+        "www.journalismpakistan.com",
+        "www.middleeastmonitor.com",
+        "www.siasat.com"
+      ],
+      "sources": [
+        "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+        "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+        "https://english.wafa.ps/Pages/Details/176908",
+        "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+        "https://sana.sy/en/middle-east/2357984/",
+        "https://www.siasat.com/t-hub-rolls-out-red-carpet-for-israeli-firms-who-fuel-gaza-genocide-3570959/",
+        "https://english.wafa.ps/Pages/Details/176724",
+        "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+        "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+        "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+        "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+        "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/",
+        "https://www.middleeastmonitor.com/20261104-israeli-army-arrests-30-palestinians-in-new-raids-across-occupied-west-bank/"
+      ],
+      "source_validation": {
+        "checked_count": 12,
+        "valid_count": 5,
+        "rejected_count": 7,
+        "valid_ratio": 0.417,
+        "weighted_score": 4.2,
+        "label": "High",
+        "valid_sources": [
+          "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+          "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+          "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+          "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+          "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/"
+        ],
+        "rejected_sources": [
+          "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+          "https://english.wafa.ps/Pages/Details/176908",
+          "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+          "https://sana.sy/en/middle-east/2357984/",
+          "https://www.siasat.com/t-hub-rolls-out-red-carpet-for-israeli-firms-who-fuel-gaza-genocide-3570959/",
+          "https://english.wafa.ps/Pages/Details/176724",
+          "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza"
+        ],
+        "checked_sources": [
+          {
+            "url": "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+            "domain": "www.journalismpakistan.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+            "domain": "www.arabnews.com",
+            "accepted": true,
+            "reason": "high-value source with concrete incident indicator and location match",
+            "incident_hits": [
+              "attack"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "primary",
+              "weight": 1.0,
+              "primary_hits": [
+                "jenin"
+              ],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 1.0
+          },
+          {
+            "url": "https://english.wafa.ps/Pages/Details/176908",
+            "domain": "english.wafa.ps",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+            "domain": "www.inquirer.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [
+              "opinion",
+              "commentary"
+            ],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://sana.sy/en/middle-east/2357984/",
+            "domain": "sana.sy",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.siasat.com/t-hub-rolls-out-red-carpet-for-israeli-firms-who-fuel-gaza-genocide-3570959/",
+            "domain": "www.siasat.com",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://english.wafa.ps/Pages/Details/176724",
+            "domain": "english.wafa.ps",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+            "domain": "tribune.com.pk",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "raids"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+            "domain": "news.az",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "raids"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+            "domain": "tribune.com.pk",
+            "accepted": false,
+            "reason": "location mismatch",
+            "incident_hits": [
+              "wounded"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": false,
+              "level": "missing",
+              "weight": 0.0,
+              "primary_hits": [],
+              "secondary_hits": [],
+              "regional_hits": [],
+              "country_hits": [],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.0
+          },
+          {
+            "url": "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+            "domain": "www.middleeastmonitor.com",
+            "accepted": true,
+            "reason": "URL contains multiple concrete incident indicators and matches event location",
+            "incident_hits": [
+              "raids",
+              "arrests"
+            ],
+            "noise_hits": [],
+            "weak_hits": [
+              "army"
+            ],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          },
+          {
+            "url": "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/",
+            "domain": "www.islamicinvitationturkey.com",
+            "accepted": true,
+            "reason": "URL contains concrete incident indicator and location match",
+            "incident_hits": [
+              "raids"
+            ],
+            "noise_hits": [],
+            "weak_hits": [],
+            "hard_reject_hits": [],
+            "years": [],
+            "location_match": {
+              "match": true,
+              "level": "secondary_country",
+              "weight": 0.8,
+              "primary_hits": [],
+              "secondary_hits": [
+                "bank"
+              ],
+              "regional_hits": [],
+              "country_hits": [
+                "bank",
+                "west"
+              ],
+              "required": true,
+              "terms": {
+                "primary": [
+                  "jenin"
+                ],
+                "secondary": [
+                  "bank"
+                ],
+                "country": [
+                  "bank",
+                  "west"
+                ],
+                "removed_org_entities": []
+              }
+            },
+            "source_weight": 0.8
+          }
+        ],
+        "event_location": "Jenin, West Bank, West Bank",
+        "event_country": "West Bank",
+        "event_date": "2026-11-15",
+        "location_terms": {
+          "primary": [
+            "jenin"
+          ],
+          "secondary": [
+            "bank"
+          ],
+          "country": [
+            "bank",
+            "west"
+          ],
+          "removed_org_entities": []
+        }
+      },
+      "source_confidence": "High",
+      "recommended_score": 64,
+      "final_validation": {
+        "status": "ok",
+        "candidate_sources": [
+          "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+          "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+          "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+          "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/"
+        ],
+        "article_validation_status": "ok",
+        "article_validation": {
+          "checked_count": 4,
+          "accepted_count": 3,
+          "rejected_count": 1,
+          "average_score": 55.5,
+          "confidence": "High",
+          "accepted_urls": [
+            "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+            "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+            "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/"
+          ],
+          "rejected_urls": [
+            "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids"
+          ],
+          "checked": [
+            {
+              "url": "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+              "domain": "www.arabnews.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 354,
+                "content_type": "text/html; charset=utf-8"
+              },
+              "article": {
+                "title": "Settlers attack Palestinian olive harvesters in Jenin",
+                "description": "Settlers attack Palestinian olive harvesters in Jenin",
+                "paragraphs": [
+                  "Settlers attack Palestinian olive harvesters in Jenin Members of Israeli security forces try to disperse Israeli settlers during an attack by settlers that prevented Palestinians and activists from continuing the olive harvest in the West Bank village of Qusra, Tuesday, Nov. 10, 2026. (AP) Short Url https://arab.news/mr9wa",
+                  "JENIN: Settlers attacked Palestinian families from the town of Ya’bad, west of Jenin, on Friday while they were harvesting olives, local sources reported.",
+                  "Sources said that settlers assaulted the families while they were working on their land, including the family of brothers Wafiq and Muwafaq Houshiya.",
+                  "They added that the settlers attacked the farmers near Khirbet Srouj, west of the town, and stole quantities of harvested olives, as well as harvesting equipment and tools.",
+                  "The sources confirmed that the settlers had established a colonial outpost in Khirbet Srouj after forcibly displacing its Palestinian residents in recent months, as part of ongoing attacks targeting Palestinian land and farmers in the area to prevent them from accessing their property and harvesting olives."
+                ],
+                "text_sample": "Settlers attack Palestinian olive harvesters in Jenin Settlers attack Palestinian olive harvesters in Jenin Settlers attack Palestinian olive harvesters in Jenin Members of Israeli security forces try to disperse Israeli settlers during an attack by settlers that prevented Palestinians and activists from continuing the olive harvest in the West Bank village of Qusra, Tuesday, Nov. 10, 2026. (AP) Short Url https://arab.news/mr9wa JENIN: Settlers attacked Palestinian families from the town of Ya’bad, west of Jenin, on Friday while they were harvesting olives, local sources reported. Sources said that settlers assaulted the families while they were working on their land, including the family of brothers Wafiq and Muwafaq Houshiya. They added that the settlers attacked the farmers near Khirbet Srouj, west of the town, and stole quantities of harvested olives, as well as harvesting equipment and tools. The sources confirmed that the settlers had established a colonial outpost in Khirbet Sro"
+              },
+              "validation": {
+                "score": 82,
+                "confidence": "High",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacks",
+                  "attacked",
+                  "injured"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "jenin",
+                    "west bank",
+                    "jenin west bank west bank"
+                  ],
+                  "hits": [
+                    "jenin",
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+              "domain": "tribune.com.pk",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 29,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israeli forces shoot Palestinian child, detain 2 in West Bank raids | The Express Tribune",
+                "description": "Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City",
+                "paragraphs": [
+                  "--> Home World Israeli forces shoot Palestinian child, detain 2 in West Bank raids Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City",
+                  "facebook --> twitter --> whatsup --> linkded --> email MORE (3) Messenger Whatsapp --> Palestinians argue with Israeli army soldiers during a protest of Palestinian residents against their displacement in Hebron. PHOTO: REUTERS Israeli forces shot and wounded a Palestinian child and detained two men during raids in the occupied West Bank late Saturday, Palestinian media reported.",
+                  "Palestine TV said the child was shot in the foot during a raid near the Kafr Saba neighbourhood in the northern city of Qalqilya.",
+                  "The official Wafa news agency separately reported that troops detained a man at his home in Hebron and another in Taybeh, east of Ramallah. The second man’s vehicle was also seized. In Hebron, soldiers raided another house, confined the family to one room and ransacked the property.",
+                  "Hundreds of Israeli occupiers entered the city’s Old City under army protection and forced shopkeepers to close their businesses. Occupiers also attacked a Palestinian home on Al-Shuhada Street, smashing windows."
+                ],
+                "text_sample": "Israeli forces shoot Palestinian child, detain 2 in West Bank raids | The Express Tribune Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City --> Home World Israeli forces shoot Palestinian child, detain 2 in West Bank raids Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City facebook --> twitter --> whatsup --> linkded --> email MORE (3) Messenger Whatsapp --> Palestinians argue with Israeli army soldiers during a protest of Palestinian residents against their displacement in Hebron. PHOTO: REUTERS Israeli forces shot and wounded a Palestinian child and detained two men during raids in the occupied West Bank late Saturday, Palestinian media reported. Palestine TV said the child was shot in the foot during a raid near the Kafr Saba neighbourhood in the northern city of Qalqilya. The official Wafa news agency separately reported that troops detained a man at his home in Hebron and another in Ta"
+              },
+              "validation": {
+                "score": 74,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "attack",
+                  "attacked",
+                  "shot",
+                  "fighting",
+                  "raid",
+                  "raids",
+                  "raided",
+                  "wounded"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "jenin",
+                    "west bank",
+                    "jenin west bank west bank"
+                  ],
+                  "hits": [
+                    "jenin",
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+              "domain": "news.az",
+              "fetch": {
+                "attempted": true,
+                "ok": false,
+                "status": 403,
+                "error": "HTTPError: HTTP Error 403: Forbidden",
+                "elapsed_ms": 208,
+                "content_type": ""
+              },
+              "article": {
+                "title": "",
+                "description": "",
+                "paragraphs": [],
+                "text_sample": ""
+              },
+              "validation": {
+                "score": 0,
+                "confidence": "Rejected",
+                "accepted": false,
+                "reasons": [
+                  "fetch failed"
+                ],
+                "incident_hits": [],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [],
+                  "hits": [],
+                  "has_location_match": false
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [],
+                  "has_date_signal": false,
+                  "stale_year_signal": false
+                }
+              }
+            },
+            {
+              "url": "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+              "domain": "www.middleeastmonitor.com",
+              "fetch": {
+                "attempted": true,
+                "ok": true,
+                "status": 200,
+                "error": "",
+                "elapsed_ms": 613,
+                "content_type": "text/html; charset=UTF-8"
+              },
+              "article": {
+                "title": "Israeli army arrests 6 Palestinians in renewed raids across occupied West Bank",
+                "description": "The Israeli army arrested six Palestinians early Saturday during raids across various parts of the occupied West Bank, which also included searches of homes, according to local sources, Anadolu rep…",
+                "paragraphs": [
+                  "Generic selectors Exact matches only Search in title Search in content Post Type Selectors Search --> --> --> Loading... --> --> --> English Edition expand_more English Edition Portuguese Edition --> Free Subscription search Generic selectors Exact matches only Search in title Search in content Post Type Selectors Search --> Loading... Israel , Middle East , News , Palestine , Israeli army arrests 6 Palestinians in renewed raids across occupied West Bank 0 Comments November 7, 2026 at 11:18 am",
+                  "Israeli forces detain and cover the eyes of Musab Shaver, a journalist who was covering the incident where Israeli soldiers raided the village of Beit Awwa, and damaged olive trees on land belonging to Palestinian farmers in Hebron, West Bank, Palestine on November 06, 2026. [Wisam Hashlamoun – Anadolu Agency]",
+                  "The Israeli army arrested six Palestinians early Saturday during raids across various parts of the occupied West Bank, which also included searches of homes, according to local sources, Anadolu reports.",
+                  "In Jenin, northern West Bank, Israeli forces arrested five Palestinians during raids in the city and took them to an undisclosed location, sources said.",
+                  "In Nablus, also in the north, the official Palestinian news agency Wafa reported that the army raided Askar refugee camp east of the city, searched several homes and arrested a young man after storming his family’s house."
+                ],
+                "text_sample": "Israeli army arrests 6 Palestinians in renewed raids across occupied West Bank The Israeli army arrested six Palestinians early Saturday during raids across various parts of the occupied West Bank, which also included searches of homes, according to local sources, Anadolu rep… Generic selectors Exact matches only Search in title Search in content Post Type Selectors Search --> --> --> Loading... --> --> --> English Edition expand_more English Edition Portuguese Edition --> Free Subscription search Generic selectors Exact matches only Search in title Search in content Post Type Selectors Search --> Loading... Israel , Middle East , News , Palestine , Israeli army arrests 6 Palestinians in renewed raids across occupied West Bank 0 Comments November 7, 2026 at 11:18 am Israeli forces detain and cover the eyes of Musab Shaver, a journalist who was covering the incident where Israeli soldiers raided the village of Beit Awwa, and damaged olive trees on land belonging to Palestinian farmers i"
+              },
+              "validation": {
+                "score": 66,
+                "confidence": "Medium",
+                "accepted": true,
+                "reasons": [
+                  "incident terms found",
+                  "location match found",
+                  "event year found",
+                  "strong incident-location combination"
+                ],
+                "incident_hits": [
+                  "raids",
+                  "raided"
+                ],
+                "noise_hits": [],
+                "hard_reject_hits": [],
+                "location": {
+                  "aliases": [
+                    "jenin",
+                    "west bank",
+                    "jenin west bank west bank"
+                  ],
+                  "hits": [
+                    "jenin",
+                    "west bank"
+                  ],
+                  "has_location_match": true
+                },
+                "date": {
+                  "event_year": "2026",
+                  "years_found": [
+                    "2026"
+                  ],
+                  "has_date_signal": true,
+                  "stale_year_signal": false
+                }
+              }
+            }
+          ]
+        },
+        "final_confidence": {
+          "score": 95,
+          "confidence": "High",
+          "basis": "source_and_article_validation",
+          "source_score": 90,
+          "article_score": 100
+        },
+        "score_adjustment": 8,
+        "recommended_score": 64,
+        "article_validator_available": true,
+        "article_validator_import": {
+          "status": "ok",
+          "selected_method": "lib.article_validator",
+          "selected_path": null,
+          "python_executable": "/opt/hostedtoolcache/Python/3.11.18/x64/bin/python",
+          "cwd": "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok",
+          "sys_path_sample": [
+            "/home/runner/work/Fegyveres-t-mad-sok/Fegyveres-t-mad-sok/scripts",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python311.zip",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/lib-dynload",
+            "/opt/hostedtoolcache/Python/3.11.18/x64/lib/python3.11/site-packages"
+          ],
+          "attempts": [
+            {
+              "method": "lib.article_validator",
+              "status": "ok"
+            }
+          ]
+        }
+      },
+      "raw_titles": [
+        "fight – Jenin, West Bank (general), West Bank"
+      ],
+      "search_terms": [
+        "Jenin, West Bank, West Bank West Bank Fegyveres összecsapás",
+        "Jenin, West Bank, West Bank West Bank",
+        "Fegyveres összecsapás – Jenin, West Bank, West Bank",
+        "West Bank Fegyveres összecsapás"
+      ]
+    }
+  ]
+}

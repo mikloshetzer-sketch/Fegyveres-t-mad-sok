@@ -1,0 +1,1213 @@
+{
+  "generated_at": "2026-11-16T13:44:20.868510Z",
+  "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "period": {
+    "start": "2026-11-02",
+    "end": "2026-11-15"
+  },
+  "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
+  "enriched_events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Ukrajna",
+      "rank": 1,
+      "score": 60,
+      "title": "Robbantás / IED – Azov, Zaporiz'ka Oblast', Ukraine",
+      "date": "2026-11-03",
+      "country": "Ukraine",
+      "location": "Azov, Zaporiz'ka Oblast', Ukraine",
+      "event_type": "Robbantás / IED",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 2,
+      "source_count": 2,
+      "source_domain_count": 2,
+      "source_domains": [
+        "www.bignewsnetwork.com",
+        "www.investmentwatchblog.com"
+      ],
+      "original_sources": [
+        "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+        "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained"
+      ],
+      "raw_titles": [
+        "fight – Azov, Zaporiz'ka Oblast', Ukraine",
+        "assault – Azov, Zaporiz'ka Oblast', Ukraine"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.investmentwatchblog.com/crowds-clash-with-ukraines-national-guard-after-allegations-of-beatings-at-an-azov-run-detention-site-near-kyiv/",
+          "domain": "www.investmentwatchblog.com",
+          "status": "ok",
+          "error": null,
+          "title": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog",
+          "description": "Around 40 mobilized men were reportedly being held inside a private house in Petropavlivska Borshchahivka, near Kyiv. On November 2, crowds gathered",
+          "published": "2026-11-03T13:12:23+00:00"
+        },
+        {
+          "url": "http://www.bignewsnetwork.com/news/279410149/azov-injured-soldiers-and-secret-prisons-ukraine-torture-chamber-scandal-explained",
+          "domain": "www.bignewsnetwork.com",
+          "status": "ok",
+          "error": null,
+          "title": "Azov, injured soldiers and secret prisons: Ukraine s torture chamber scandal explained",
+          "description": "Azov-linked detention near Kiev has sparked torture allegations and protests as Ukrainian officials target the woman who raised the alarm Read Full Article at RT.com",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Crowds clash with Ukraine’s National Guard after allegations of beatings at an Azov-run detention site near Kyiv - Investment Watch Blog",
+        "top_keywords": [
+          "azov",
+          "crowds",
+          "allegations",
+          "detention",
+          "kyiv",
+          "torture",
+          "zaporiz",
+          "oblast",
+          "national",
+          "guard"
+        ],
+        "actor_hints": [
+          "ukraine",
+          "ukrainian"
+        ],
+        "conflict_hints": [
+          "blast",
+          "clash",
+          "assault",
+          "injured"
+        ],
+        "usable_source_count": 2,
+        "confidence": "Low"
+      },
+      "queries": [
+        "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"Ukraine\" \"ukraine\" \"blast\"",
+        "\"Ukraine\" \"ukraine\" \"blast\"",
+        "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"blast\"",
+        "\"ukraine\" \"blast\" 2026-11-03"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"Ukraine\" \"ukraine\" \"blast\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Ukraine\" \"ukraine\" \"blast\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Azov, Zaporiz'ka Oblast', Ukraine\" \"blast\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"ukraine\" \"blast\" 2026-11-03",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 2 source URLs across 2 domains. 2 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Low. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Balkán",
+      "rank": 1,
+      "score": 60,
+      "title": "Fegyveres összecsapás – Izmir, Turkey",
+      "date": "2026-11-13",
+      "country": "Turkey",
+      "location": "Izmir, Turkey",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 12,
+      "source_domain_count": 11,
+      "source_domains": [
+        "aa.com.tr",
+        "balkaninsight.com",
+        "english.news.cn",
+        "sana.sy",
+        "www.arabnews.com",
+        "www.dailysabah.com",
+        "www.hngn.com",
+        "www.hurriyetdailynews.com",
+        "www.inquisitr.com",
+        "www.investmentwatchblog.com",
+        "www.wsws.org"
+      ],
+      "original_sources": [
+        "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+        "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+        "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+        "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+        "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+        "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+        "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+        "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+        "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+        "https://sana.sy/en/international/2357494/",
+        "https://aa.com.tr/en/asia-pacific/azerbaijan-extends-deepest-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+        "https://www.hurriyetdailynews.com/suspect-in-deadly-shooting-spree-in-afyonkarahisar-detained-229097"
+      ],
+      "raw_titles": [
+        "fight – Izmir, Izmir, Turkey"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+          "domain": "www.arabnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab News | At least nine detained protesting at blast-hit Turkiye steel plant",
+          "description": "Nine people were detained by Turkish security forces for protesting a ban on mobile phones at a steel plant following a deadly explosion. The workers gathered at the plant’s entrance to express their discontent.",
+          "published": "2026-11-13T12:55:35.589Z"
+        },
+        {
+          "url": "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+          "domain": "www.wsws.org",
+          "status": "ok",
+          "error": null,
+          "title": "Death toll in HABAŞ steel plant blast in Türkiye rises to 19, one still missing - World Socialist Web Site",
+          "description": "Relatives of the HABAŞ victims describe workers trapped in deadly jobs by debt and low wages. Meanwhile, the government has imposed a publication ban, and the Türk Metal union has done nothing.",
+          "published": "2026-11-12T05:27:21.000Z"
+        },
+        {
+          "url": "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Azerbaijan, Ukraine extend condolences to Türkiye after deadly factory explosion",
+          "description": "16 killed, 13 injured in explosion at a steel factory in Aegean city of Izmir | Anadolu",
+          "published": "2026-11-09T21:22:20.997"
+        },
+        {
+          "url": "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+          "domain": "www.investmentwatchblog.com",
+          "status": "ok",
+          "error": null,
+          "title": "17 workers killed in Turkey steel factory explosion. Safety complaints at the plant go back years. - Investment Watch Blog",
+          "description": "https://twitter.com/MissJezzabelle1/status/2119858673401119013 The blast ripped through the HABAS iron and steel plant in Aliağa, near Izmir, on Monday.",
+          "published": "2026-11-10T01:42:49+00:00"
+        },
+        {
+          "url": "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+          "domain": "balkaninsight.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey Bans Media Reporting on Deadly Factory Blast in Izmir | Balkan Insight",
+          "description": "Authorities ban media from reporting deadly factory blast in Izmir province that has killed 17 workers, prompting concerns over public s right to access information.",
+          "published": "2026-11-10T09:59:49+00:00"
+        },
+        {
+          "url": "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Türkiye orders arrests of 11 over deadly Izmir steel plant blast | Daily Sabah",
+          "description": "Authorities in Türkiye have ordered the detention of 11 suspects in connection with an explosion at a steel plant in Izmir, western Türkiye, that killed...",
+          "published": "2026-11-10T14:58:00+03:00"
+        },
+        {
+          "url": "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+          "domain": "www.hngn.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey Steel Plant Blast Toll Hits 18 as Chairman Detained, Protests Called",
+          "description": "The death toll at the Habas steel plant in Aliaga rose to 18; the company s chairman was detained and labor groups called protests in three cities.",
+          "published": "2026-11-10T14:23:21-05:00"
+        },
+        {
+          "url": "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "3 dead, 14 injured, 10 trapped after factory explosion in W. Türkiye-Xinhua",
+          "description": "3 dead, 14 injured, 10 trapped after factory explosion in W. Türkiye-",
+          "published": ""
+        },
+        {
+          "url": "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+          "domain": "www.inquisitr.com",
+          "status": "ok",
+          "error": null,
+          "title": "HABAS steelworks explosion kills 10 in Izmir, governor says",
+          "description": "Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province.",
+          "published": "2026-11-09T16:07:34Z"
+        },
+        {
+          "url": "https://sana.sy/en/international/2357494/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Türkiye: 10 workers killed, 15 injured in Izmir steel plant explosion",
+          "description": "Istanbul, Nov. 9 (SANA) Ten workers were killed and 15 others injured in an explosion at the HABAŞ iron and steel plant in the Aliağa district of Türkiye s",
+          "published": "2026-11-09T21:18:00+03:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Arab News | At least nine detained protesting at blast-hit Turkiye steel plant",
+        "top_keywords": [
+          "plant",
+          "steel",
+          "izmir",
+          "rkiye",
+          "factory",
+          "deadly",
+          "workers",
+          "detained",
+          "trapped",
+          "turkey"
+        ],
+        "actor_hints": [
+          "ukraine",
+          "security forces",
+          "government"
+        ],
+        "conflict_hints": [
+          "explosion",
+          "blast",
+          "killed",
+          "injured"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Izmir, Turkey\" \"Turkey\" \"ukraine\" \"explosion\"",
+        "\"Turkey\" \"ukraine\" \"explosion\"",
+        "\"Izmir, Turkey\" \"explosion\"",
+        "\"ukraine\" \"explosion\" 2026-11-13"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Izmir, Turkey\" \"Turkey\" \"ukraine\" \"explosion\"",
+          "error": null,
+          "articles": []
+        },
+        {
+          "query": "\"Turkey\" \"ukraine\" \"explosion\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Izmir, Turkey\" \"explosion\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"ukraine\" \"explosion\" 2026-11-13",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 12 source URLs across 11 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 60,
+      "title": "Fegyveres összecsapás – Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 21,
+      "source_domain_count": 19,
+      "source_domains": [
+        "avenuemail.in",
+        "cyprus-mail.com",
+        "economictimes.indiatimes.com",
+        "english.aawsat.com",
+        "english.news.cn",
+        "news.webindia123.com",
+        "sana.sy",
+        "tribune.com.pk",
+        "www.clevelandjewishnews.com",
+        "www.dailyadvertiser.com.au",
+        "www.deccanchronicle.com",
+        "www.internazionale.it",
+        "www.iranherald.com",
+        "www.middle-east-online.com",
+        "www.middleeasteye.net",
+        "www.prokerala.com",
+        "www.siasat.com",
+        "www.theepochtimes.com",
+        "www.ynetnews.com"
+      ],
+      "original_sources": [
+        "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+        "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+        "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+        "https://www.ynetnews.com/article/hkigihvamg",
+        "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+        "https://tribune.com.pk/story/2639887/no-safe-haven-iran-warns-military-bases-in-europe-could-be-targeted-in-new-us-war",
+        "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://cyprus-mail.com/2026/11/10/saudi-led-coalition-reports-houthi-missile-drone-interceptions-saba-reports-saudi-strikes-on-sanaa",
+        "https://www.middleeasteye.net/news/missiles-intercepted-over-saudi-arabia-continuing-houthi-attacks-prompt-emergency-measures",
+        "http://www.iranherald.com/news/279420710/19-indian-seafarers-stranded-in-yemen-safely-evacuated-embassy-says",
+        "https://www.deccanchronicle.com/nation/world/19-indian-seafarers-stranded-in-yemen-safely-evacuated-2002803",
+        "https://www.theepochtimes.com/world/attack-damages-oil-giant-aramco-building-in-riyadh-6122397",
+        "https://www.siasat.com/loud-booms-heard-in-riyadh-after-emergency-alert-issued-3571554/",
+        "https://sana.sy/en/middle-east/2357043/",
+        "https://news.webindia123.com/news/Articles/World/20261109/4517473.html",
+        "https://english.news.cn/20261109/5642476cc7a4410ba6a9939cefa7e48e/c.html",
+        "https://www.middle-east-online.com/en/saudi-led-coalition-says-it-intercepts-drone-riyadh-region",
+        "https://www.prokerala.com/news/articles/a1834210.html"
+      ],
+      "raw_titles": [
+        "fight – Eastern Province, Ash Sharqiyah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - The Economic Times <meta content=",
+          "published": ""
+        },
+        {
+          "url": "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+          "domain": "www.dailyadvertiser.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis control chokepoint after Yemeni forces withdraw | The Daily Advertiser | Wagga Wagga, NSW",
+          "description": "Iran-aligned Houthis are in control of the Bab el-Mandeb Strait - one of the world s most important routes...",
+          "published": "2026-11-15T10:58:47+00:00"
+        },
+        {
+          "url": "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+          "domain": "english.aawsat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province",
+          "description": "The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom s Eastern Province. Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terrorist militia toward Riyadh, Official Spokesperson of the Coalition to Restore Legitimacy in Yemen Major General Turki Al-Malki said. He earlier said in separate statements that Saudi air defenses had destroyed three drones in the country s Eastern region.",
+          "published": ""
+        },
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+          "domain": "www.internazionale.it",
+          "status": "ok",
+          "error": null,
+          "title": "Bahrain intercepts Iranian aerial attacks as Tehran says it attacked US base - Internazionale",
+          "description": "By Jana Choukeir and Yomna EhabNov 15 (Reuters) - Bahrain intercepted and destroyed several Iranian aerial attacks, it said on Sunday, while Tehran said it had struck a U… Leggi",
+          "published": "2026-11-15T08:45:05+01:00"
+        },
+        {
+          "url": "https://www.ynetnews.com/article/hkigihvamg",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey and Qatar sign defense pact, but Iranian strikes expose Gulf alliances limits",
+          "description": "Erdoğan and Qatar #x27;s emir sign a new mutual defense agreement as Iranian and Houthi attacks continue across the Gulf; Israeli security expert questions the value of regional alliances that have yet to deliver meaningful military protection",
+          "published": "2026-11-15T14:49:07.691321Z"
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/saudi-arabia-says-it-intercepted-houthi-missiles-targeting-riyadh/article_e034c782-e1fa-5990-983c-856dcae6758c.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia says it intercepted Houthi missiles targeting Riyadh | JNS | clevelandjewishnews.com",
+          "description": "Saudi air defenses intercepted two ballistic missiles launched by Yemen s Iranian-backed Houthi terrorists toward Riyadh on Sunday, according to the Saudi-led military coalition.",
+          "published": "2026-11-15T14:32:35-05:00"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639887/no-safe-haven-iran-warns-military-bases-in-europe-could-be-targeted-in-new-us-war",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "‘No safe haven’: Iran warns military bases in Europe could be targeted in new US war",
+          "description": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Makkah region",
+          "published": "2026-11-12T16:14:39+00:00"
+        },
+        {
+          "url": "https://www.siasat.com/fresh-alert-in-riyadh-as-saudi-arabia-downs-another-drone-3575123/",
+          "domain": "www.siasat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Fresh alert in Riyadh as Saudi Arabia downs another drone",
+          "description": "Saudi Arabia intercepted another drone over Riyadh amid continued missile and drone attacks linked to the Yemen conflict.",
+          "published": "2026-11-12T07:38:55+00:00"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "description": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "published": "2026-11-12T08:20:24+00:00"
+        },
+        {
+          "url": "https://cyprus-mail.com/2026/11/10/saudi-led-coalition-reports-houthi-missile-drone-interceptions-saba-reports-saudi-strikes-on-sanaa",
+          "domain": "cyprus-mail.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition reports Houthi missile, drone interceptions; Saba reports Saudi strikes on Sanaa | Cyprus Mail",
+          "description": "The Saudi-led coalition in Yemen said on Tuesday it intercepted two missiles launched by Yemen #039;s Iran-aligned Houthis towards Riyadh, a ballistic missile fired towards the kingdom #039;s southern region and a drone over its oil-rich Eastern Province, in a night of heightened military activity across Saudi Arabia. The latest launches come hellip;",
+          "published": "2026-11-10T06:03:25.000Z"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - The Economic Times",
+        "top_keywords": [
+          "saudi",
+          "missiles",
+          "riyadh",
+          "intercepted",
+          "coalition",
+          "arabia",
+          "eastern",
+          "towards",
+          "province",
+          "yemen"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "iran",
+          "iranian",
+          "houthi",
+          "military",
+          "militia"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "intercept",
+          "fire",
+          "war",
+          "terror"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Eastern Province, Ash Sharqiyah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Eastern Province, Ash Sharqiyah, Saudi Arabia\" \"missile\"",
+        "\"israel\" \"missile\" 2026-11-15"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Eastern Province, Ash Sharqiyah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Eastern Province, Ash Sharqiyah, Saudi Arabia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"missile\" 2026-11-15",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 21 source URLs across 19 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 58,
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 28,
+      "source_domain_count": 26,
+      "source_domains": [
+        "aa.com.tr",
+        "avenuemail.in",
+        "en.antaranews.com",
+        "english.news.cn",
+        "gulfnews.com",
+        "kesq.com",
+        "news.az",
+        "news.webindia123.com",
+        "townhall.com",
+        "tribune.com.pk",
+        "www.aljazeera.com",
+        "www.ariananews.af",
+        "www.bignewsnetwork.com",
+        "www.freemalaysiatoday.com",
+        "www.hindustantimes.com",
+        "www.israelnationalnews.com",
+        "www.justiceinfo.net",
+        "www.justsecurity.org",
+        "www.maritimeprofessional.com",
+        "www.middle-east-online.com"
+      ],
+      "original_sources": [
+        "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+        "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+        "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+        "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+        "https://www.israelnationalnews.com/flashes/697254",
+        "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+        "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289",
+        "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment",
+        "https://www.thecomet.net/news/26706605.stevenage-80-look-growth-new-town/",
+        "http://www.bignewsnetwork.com/news/279427195/1st-ld-writethru-2-explosions-rock-s-yemen-aden-as-houthis-claim-missiles-hit-military-sites",
+        "https://english.news.cn/20261112/9ec0dc0497934321bb100050f79290f4/c.html",
+        "https://www.justsecurity.org/164226/early-edition-november-12-2026/",
+        "https://www.theamericanconservative.com/the-iran-war-is-uniting-the-muslim-world/",
+        "https://www.middleeasteye.net/news/gcc-establish-joint-forward-command-center-kuwait",
+        "https://en.antaranews.com/news/441671/ministry-strengthens-efforts-to-combat-hajj-and-umrah-scams",
+        "https://kesq.com/news/top-stories/2026/11/09/trump-calls-immigration-crackdown-too-tough-east-valley-residents-weigh-in/",
+        "https://www.freemalaysiatoday.com/category/world/2026/11/07/yemen-s-houthis-say-30-dead-in-strikes-on-market",
+        "https://www.middle-east-online.com/en/syria-aids-saudi-arabia-military-advice-and-training"
+      ],
+      "raw_titles": [
+        "fight – Mecca, Makkah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+          "domain": "news.webindia123.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis claim missile strikes on King Khalid Airport, financial centre in Saudi's Riyadh",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+          "domain": "www.thehindubusinessline.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yemen s Houthis claim missile attacks on Riyadh airport and financial centre - The HinduBusinessLine",
+          "description": "Yemen s Houthis claim missile strikes on Riyadh airport and a financial centre, and allege 75 Saudi airstrikes and missile attacks in 24 hours.",
+          "published": "2026-11-16T03:12:45+05:30"
+        },
+        {
+          "url": "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+          "domain": "www.samaa.tv",
+          "status": "error",
+          "error": "HTTP Error 405: Not Allowed",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "description": "Civil Defense says fragments landed in Sabuhah village | Anadolu",
+          "published": "2026-11-12T03:46:49.69"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/flashes/697254",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia: Drone and two ballistic missiles launched toward Mecca intercepted | Israel National News",
+          "description": "The Saudi-led coalition announced that a drone was intercepted over the eastern part of the kingdom and that two ballistic missiles launched toward the city of Mecca were also inte",
+          "published": "2026-11-15"
+        },
+        {
+          "url": "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+          "domain": "avenuemail.in",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi air defences intercept missiles near Mecca | The Avenue Mail",
+          "description": "Saudi air defences intercept missiles near Mecca | International News | The Avenue Mail",
+          "published": "2026-11-12T06:40:11+00:00"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "description": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "published": "2026-11-12T08:20:24+00:00"
+        },
+        {
+          "url": "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+          "domain": "gulfnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "US-Israel-Iran Conflict: Key Updates UAE Residents Need to Know on November 12",
+          "description": "Trump rules out a deal with Tehran as Saudi Arabia reports drone and missile interceptions",
+          "published": "November 12, 2026 | 18:41"
+        },
+        {
+          "url": "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289",
+          "domain": "www.maritimeprofessional.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis Attack Saudi Oil Pipeline Pumping Station",
+          "description": "Yemen s Iran-aligned Houthis said on Thursday they had attacked a pumping station on Saudi Arabia s East-West oil pipeline…",
+          "published": ""
+        },
+        {
+          "url": "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment",
+          "domain": "www.zerohedge.com",
+          "status": "ok",
+          "error": null,
+          "title": "GCC To Set Up Kuwait Command Center Amid Doubts Over US Security Commitment | ZeroHedge",
+          "description": "ZeroHedge - On a long enough timeline, the survival rate for everyone drops to zero",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+        "top_keywords": [
+          "saudi",
+          "mecca",
+          "missiles",
+          "arabia",
+          "houthis",
+          "intercepted",
+          "claim",
+          "airport",
+          "financial",
+          "centre"
+        ],
+        "actor_hints": [
+          "israel",
+          "iran",
+          "houthi",
+          "trump"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "airstrike",
+          "attack",
+          "intercept",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Saudi Arabia\" \"israel\" \"missile\"",
+        "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+        "\"israel\" \"missile\" 2026-11-15"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": null,
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"israel\" \"missile\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Saudi Arabia should accept Israel helpful offer to fight Houthis : Trump",
+              "url": "https://www.business-standard.com/world-news/saudi-arabia-should-accept-israel-s-helpful-offer-to-fight-houthis-trump-126101700080_1.html",
+              "domain": "business-standard.com",
+              "source_country": "India",
+              "language": "English",
+              "seendate": "20261017T030000Z"
+            },
+            {
+              "title": "Saudi should Accept Israel Helpful Offer Against Houthis : Trump",
+              "url": "https://www.deccanchronicle.com/world/americas/saudi-should-accept-israels-helpful-offer-against-houthis-trump-1996571",
+              "domain": "deccanchronicle.com",
+              "source_country": "India",
+              "language": "English",
+              "seendate": "20261017T040000Z"
+            },
+            {
+              "title": "一年花832億美元軍費 ， 沙特防空體係為何難擋胡塞武裝襲擊 ？",
+              "url": "https://portal.sina.com.hk/news-china/sina/2026/10/17/1957339/%E4%B8%80%E5%B9%B4%E8%8A%B1832%E5%84%84%E7%BE%8E%E5%85%83%E8%BB%8D%E8%B2%BB%EF%BC%8C%E6%B2%99%E7%89%B9%E9%98%B2%E7%A9%BA%E9%AB%94%E4%BF%82%E7%82%BA%E4%BD%95%E9%9B%A3%E6%93%8B%E8%83%A1%E5%A1%9E/",
+              "domain": "portal.sina.com.hk",
+              "source_country": "Hong Kong",
+              "language": "Chinese",
+              "seendate": "20261017T001500Z"
+            },
+            {
+              "title": "Guerre au Moyen - Orient : les rebelles Houthis du Yémen revendiquent une frappe contre un pétrolier saoudien en mer Rouge",
+              "url": "https://www.bfmtv.com/international/moyen-orient/guerre-au-moyen-orient-les-rebelles-houthis-du-yemen-revendiquent-une-frappe-contre-un-petrolier-saoudien-en-mer-rouge_AD-202608240582.html",
+              "domain": "bfmtv.com",
+              "source_country": "France",
+              "language": "French",
+              "seendate": "20260824T154500Z"
+            },
+            {
+              "title": "释新闻｜一年花832亿美元军费 ， 沙特防空体系为何难挡胡塞武装袭击 ？",
+              "url": "https://www.163.com/dy/article/L9E4HAOQ0514R9P4.html",
+              "domain": "163.com",
+              "source_country": "China",
+              "language": "Chinese",
+              "seendate": "20261017T010000Z"
+            },
+            {
+              "title": "Israel could help Saudis against Houthi attacks , but political barriers remain",
+              "url": "https://www.jpost.com/middle-east/article-911780",
+              "domain": "jpost.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20261015T100000Z"
+            }
+          ]
+        },
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"missile\" 2026-11-15",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [
+        {
+          "title": "Saudi Arabia should accept Israel helpful offer to fight Houthis : Trump",
+          "url": "https://www.business-standard.com/world-news/saudi-arabia-should-accept-israel-s-helpful-offer-to-fight-houthis-trump-126101700080_1.html",
+          "domain": "business-standard.com",
+          "source_country": "India",
+          "language": "English",
+          "seendate": "20261017T030000Z",
+          "match_score": 60
+        },
+        {
+          "title": "Saudi should Accept Israel Helpful Offer Against Houthis : Trump",
+          "url": "https://www.deccanchronicle.com/world/americas/saudi-should-accept-israels-helpful-offer-against-houthis-trump-1996571",
+          "domain": "deccanchronicle.com",
+          "source_country": "India",
+          "language": "English",
+          "seendate": "20261017T040000Z",
+          "match_score": 40
+        },
+        {
+          "title": "Israel could help Saudis against Houthi attacks , but political barriers remain",
+          "url": "https://www.jpost.com/middle-east/article-911780",
+          "domain": "jpost.com",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20261015T100000Z",
+          "match_score": 35
+        },
+        {
+          "title": "Guerre au Moyen - Orient : les rebelles Houthis du Yémen revendiquent une frappe contre un pétrolier saoudien en mer Rouge",
+          "url": "https://www.bfmtv.com/international/moyen-orient/guerre-au-moyen-orient-les-rebelles-houthis-du-yemen-revendiquent-une-frappe-contre-un-petrolier-saoudien-en-mer-rouge_AD-202608240582.html",
+          "domain": "bfmtv.com",
+          "source_country": "France",
+          "language": "French",
+          "seendate": "20260824T154500Z",
+          "match_score": 15
+        }
+      ],
+      "analytical_summary": "The original cluster contains 28 source URLs across 26 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 4 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 56,
+      "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
+      "date": "2026-11-15",
+      "country": "West Bank",
+      "location": "Jenin, West Bank",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 13,
+      "source_domain_count": 10,
+      "source_domains": [
+        "english.wafa.ps",
+        "news.az",
+        "sana.sy",
+        "tribune.com.pk",
+        "www.arabnews.com",
+        "www.inquirer.com",
+        "www.islamicinvitationturkey.com",
+        "www.journalismpakistan.com",
+        "www.middleeastmonitor.com",
+        "www.siasat.com"
+      ],
+      "original_sources": [
+        "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+        "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+        "https://english.wafa.ps/Pages/Details/176908",
+        "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+        "https://sana.sy/en/middle-east/2357984/",
+        "https://www.siasat.com/t-hub-rolls-out-red-carpet-for-israeli-firms-who-fuel-gaza-genocide-3570959/",
+        "https://english.wafa.ps/Pages/Details/176724",
+        "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+        "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+        "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+        "https://www.middleeastmonitor.com/20261107-israeli-army-arrests-6-palestinians-in-renewed-raids-across-occupied-west-bank/",
+        "https://www.islamicinvitationturkey.com/west-bank-zionist-forces-arrest-dozens-of-palestinians-in-raids/",
+        "https://www.middleeastmonitor.com/20261104-israeli-army-arrests-30-palestinians-in-new-raids-across-occupied-west-bank/"
+      ],
+      "raw_titles": [
+        "fight – Jenin, West Bank (general), West Bank"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+          "domain": "www.journalismpakistan.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces detain journalist Mohammed Atiq in Burqin | Journalism Pakistan",
+          "description": "Israeli forces detained journalist Mohammed Ali Atiq at his home in Burqin in the occupied West Bank, WAFA reported.",
+          "published": ""
+        },
+        {
+          "url": "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+          "domain": "www.arabnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab News | Settlers attack Palestinian olive harvesters in Jenin",
+          "description": "Settlers attack Palestinian olive harvesters in Jenin",
+          "published": "2026-11-13T21:34:50.835Z"
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176908",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces shoot, injure Palestinian south of Jenin",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+          "domain": "www.inquirer.com",
+          "status": "ok",
+          "error": null,
+          "title": "The Philly Boycott Ride: A Jewish and Palestinian movement navigates a moment of tension | Opinion",
+          "description": "Palestinians were being killed and displaced while the movement that is supposed to center Palestinian freedom was divided over its response to a bicycle boycott ride.",
+          "published": "2026-11-12T11:00:00-05:00"
+        },
+        {
+          "url": "https://sana.sy/en/middle-east/2357984/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli occupation forces arrest 18 Palestinians in West Bank raids",
+          "description": "Occupied Jerusalem, Nov. 11 (SANA) Israeli occupation forces arrested 18 Palestinians during raids across the West Bank on Wednesday, searching homes,",
+          "published": "2026-11-11T18:58:32+03:00"
+        },
+        {
+          "url": "https://www.siasat.com/t-hub-rolls-out-red-carpet-for-israeli-firms-who-fuel-gaza-genocide-3570959/",
+          "domain": "www.siasat.com",
+          "status": "ok",
+          "error": null,
+          "title": "T-Hub rolls out red carpet for Israeli firms who fuel Gaza genocide",
+          "description": "Israeli firms at T-Hub’s November 16 event supply drones, AI and tank sensors to the military waging war on Gaza. Here is who is coming.",
+          "published": "2026-11-10T12:26:51+00:00"
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176724",
+          "domain": "english.wafa.ps",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces detain six Palestinians in Jenin and Nablus, injure youth in Qalqilia",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces shoot Palestinian child, detain 2 in West Bank raids",
+          "description": "Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City",
+          "published": "2026-11-08T08:40:39+00:00"
+        },
+        {
+          "url": "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
+          "domain": "news.az",
+          "status": "error",
+          "error": "HTTP Error 403: Forbidden",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Two Palestinians wounded as rain causes collapse of wall in Israeli-damaged building in Gaza",
+          "description": "Heavy rain floods thousands of displacement tents near Gaza City’s port, worsening hardship of Palestinians",
+          "published": "2026-11-07T09:29:07+00:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Israeli forces detain journalist Mohammed Atiq in Burqin | Journalism Pakistan",
+        "top_keywords": [
+          "forces",
+          "west",
+          "bank",
+          "palestinian",
+          "jenin",
+          "palestinians",
+          "gaza",
+          "detain",
+          "olive",
+          "harvesters"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "military"
+        ],
+        "conflict_hints": [
+          "drone",
+          "attack",
+          "raid",
+          "killed",
+          "wounded",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Jenin, West Bank\" \"West Bank\" \"israel\" \"drone\"",
+        "\"West Bank\" \"israel\" \"drone\"",
+        "\"Jenin, West Bank\" \"drone\"",
+        "\"israel\" \"drone\" 2026-11-15"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Jenin, West Bank\" \"West Bank\" \"israel\" \"drone\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Israel kills Hamas operative in rare West Bank air strike , military says",
+              "url": "https://www.al-monitor.com/originals/2026/08/israel-kills-hamas-operative-rare-west-bank-air-strike-military-says",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T210000Z"
+            },
+            {
+              "title": "Israeli strike kills three in West Bank ; Israel says it targeted Hamas operative",
+              "url": "https://www.al-monitor.com/originals/2026/08/israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T163000Z"
+            },
+            {
+              "title": "Israel kills Hamas operative in rare airstrike on West Bank",
+              "url": "https://www.middle-east-online.com/en/israel-kills-hamas-operative-rare-airstrike-west-bank",
+              "domain": "middle-east-online.com",
+              "source_country": "Iraq",
+              "language": "English",
+              "seendate": "20260830T123000Z"
+            }
+          ]
+        },
+        {
+          "query": "\"West Bank\" \"israel\" \"drone\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Israeli Strike Kills Three in West Bank ; Israel Says It Targeted Hamas Operative",
+              "url": "https://english.aawsat.com/arab-world/5312145-israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+              "domain": "english.aawsat.com",
+              "source_country": "Syria",
+              "language": "English",
+              "seendate": "20260828T193000Z"
+            },
+            {
+              "title": "Israel kills Hamas operative in rare West Bank air strike , military says",
+              "url": "https://www.al-monitor.com/originals/2026/08/israel-kills-hamas-operative-rare-west-bank-air-strike-military-says",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T210000Z"
+            },
+            {
+              "title": "3 Palestinians killed in Israeli strike in occupied West Bank : Health Ministry",
+              "url": "https://www.middleeastmonitor.com/20260829-3-palestinians-killed-in-israeli-strike-in-occupied-west-bank-health-ministry/",
+              "domain": "middleeastmonitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260829T113000Z"
+            },
+            {
+              "title": "Israeli strike kills three in West Bank ; Israel says it targeted Hamas operative",
+              "url": "https://www.al-monitor.com/originals/2026/08/israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T163000Z"
+            },
+            {
+              "title": "Saudi Arabia reopens airport as attacks by Houthi rebels persist , and other Mideast news",
+              "url": "https://www.asiaone.com:443/asia/saudi-arabia-reopens-airport-attacks-houthi-rebels-persist-and-other-mideast-news",
+              "domain": "asiaone.com",
+              "source_country": "Singapore",
+              "language": "English",
+              "seendate": "20261025T083000Z"
+            },
+            {
+              "title": "Saudi Arabia reopens airport as attacks by Houthi rebels persist , and other Mideast news",
+              "url": "https://www.asiaone.com/asia/saudi-arabia-reopens-airport-attacks-houthi-rebels-persist-and-other-mideast-news",
+              "domain": "asiaone.com",
+              "source_country": "Singapore",
+              "language": "English",
+              "seendate": "20261025T123000Z"
+            }
+          ]
+        },
+        {
+          "query": "\"Jenin, West Bank\" \"drone\"",
+          "error": null,
+          "articles": [
+            {
+              "title": "Israel kills Hamas operative in rare West Bank air strike , military says",
+              "url": "https://www.al-monitor.com/originals/2026/08/israel-kills-hamas-operative-rare-west-bank-air-strike-military-says",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T210000Z"
+            },
+            {
+              "title": "Israeli strike kills three in West Bank ; Israel says it targeted Hamas operative",
+              "url": "https://www.al-monitor.com/originals/2026/08/israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+              "domain": "al-monitor.com",
+              "source_country": "Israel",
+              "language": "English",
+              "seendate": "20260828T163000Z"
+            },
+            {
+              "title": "Israel eliminó a tres terroristas en un inusual ataque aéreo en Cisjordania",
+              "url": "https://itongadol.com/israel/israel-elimino-a-tres-terroristas-en-un-inusual-ataque-aereo-en-cisjordania",
+              "domain": "itongadol.com",
+              "source_country": "Israel",
+              "language": "Spanish",
+              "seendate": "20260828T160000Z"
+            },
+            {
+              "title": "Israel kills Hamas operative in rare airstrike on West Bank",
+              "url": "https://www.middle-east-online.com/en/israel-kills-hamas-operative-rare-airstrike-west-bank",
+              "domain": "middle-east-online.com",
+              "source_country": "Iraq",
+              "language": "English",
+              "seendate": "20260830T123000Z"
+            }
+          ]
+        },
+        {
+          "query": "\"israel\" \"drone\" 2026-11-15",
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "articles": []
+        }
+      ],
+      "matched_articles": [
+        {
+          "title": "3 Palestinians killed in Israeli strike in occupied West Bank : Health Ministry",
+          "url": "https://www.middleeastmonitor.com/20260829-3-palestinians-killed-in-israeli-strike-in-occupied-west-bank-health-ministry/",
+          "domain": "middleeastmonitor.com",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20260829T113000Z",
+          "match_score": 80
+        },
+        {
+          "title": "Israel kills Hamas operative in rare West Bank air strike , military says",
+          "url": "https://www.al-monitor.com/originals/2026/08/israel-kills-hamas-operative-rare-west-bank-air-strike-military-says",
+          "domain": "al-monitor.com",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20260828T210000Z",
+          "match_score": 65
+        },
+        {
+          "title": "Israeli strike kills three in West Bank ; Israel says it targeted Hamas operative",
+          "url": "https://www.al-monitor.com/originals/2026/08/israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+          "domain": "al-monitor.com",
+          "source_country": "Israel",
+          "language": "English",
+          "seendate": "20260828T163000Z",
+          "match_score": 65
+        },
+        {
+          "title": "Israeli Strike Kills Three in West Bank ; Israel Says It Targeted Hamas Operative",
+          "url": "https://english.aawsat.com/arab-world/5312145-israeli-strike-kills-three-west-bank-israel-says-it-targeted-hamas-operative",
+          "domain": "english.aawsat.com",
+          "source_country": "Syria",
+          "language": "English",
+          "seendate": "20260828T193000Z",
+          "match_score": 65
+        },
+        {
+          "title": "Israel kills Hamas operative in rare airstrike on West Bank",
+          "url": "https://www.middle-east-online.com/en/israel-kills-hamas-operative-rare-airstrike-west-bank",
+          "domain": "middle-east-online.com",
+          "source_country": "Iraq",
+          "language": "English",
+          "seendate": "20260830T123000Z",
+          "match_score": 55
+        },
+        {
+          "title": "Saudi Arabia reopens airport as attacks by Houthi rebels persist , and other Mideast news",
+          "url": "https://www.asiaone.com:443/asia/saudi-arabia-reopens-airport-attacks-houthi-rebels-persist-and-other-mideast-news",
+          "domain": "asiaone.com",
+          "source_country": "Singapore",
+          "language": "English",
+          "seendate": "20261025T083000Z",
+          "match_score": 10
+        },
+        {
+          "title": "Saudi Arabia reopens airport as attacks by Houthi rebels persist , and other Mideast news",
+          "url": "https://www.asiaone.com/asia/saudi-arabia-reopens-airport-attacks-houthi-rebels-persist-and-other-mideast-news",
+          "domain": "asiaone.com",
+          "source_country": "Singapore",
+          "language": "English",
+          "seendate": "20261025T123000Z",
+          "match_score": 10
+        },
+        {
+          "title": "Israel eliminó a tres terroristas en un inusual ataque aéreo en Cisjordania",
+          "url": "https://itongadol.com/israel/israel-elimino-a-tres-terroristas-en-un-inusual-ataque-aereo-en-cisjordania",
+          "domain": "itongadol.com",
+          "source_country": "Israel",
+          "language": "Spanish",
+          "seendate": "20260828T160000Z",
+          "match_score": 10
+        }
+      ],
+      "analytical_summary": "The original cluster contains 13 source URLs across 10 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. The supplementary search found 8 articles with non-zero match score. These matches help identify the cluster, but actor and motive still require source-level verification.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    }
+  ]
+}
