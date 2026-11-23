@@ -1,0 +1,1269 @@
+{
+  "generated_at": "2026-11-23T16:04:55.977033Z",
+  "source_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
+  "period": {
+    "start": "2026-11-09",
+    "end": "2026-11-22"
+  },
+  "method": "Source-first local media enrichment. Original source URLs are inspected for title and metadata. An event fingerprint is built from source titles, descriptions and raw titles. Supplementary search is filtered by heuristic match score.",
+  "enriched_events": [
+    {
+      "record_type": "event_cluster",
+      "region": "Balkán",
+      "rank": 1,
+      "score": 56,
+      "title": "Fegyveres összecsapás – Izmir, Turkey",
+      "date": "2026-11-13",
+      "country": "Turkey",
+      "location": "Izmir, Turkey",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 11,
+      "source_domain_count": 10,
+      "source_domains": [
+        "aa.com.tr",
+        "balkaninsight.com",
+        "english.news.cn",
+        "sana.sy",
+        "www.arabnews.com",
+        "www.dailysabah.com",
+        "www.hngn.com",
+        "www.inquisitr.com",
+        "www.investmentwatchblog.com",
+        "www.wsws.org"
+      ],
+      "original_sources": [
+        "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+        "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+        "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+        "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+        "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+        "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+        "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+        "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+        "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+        "https://sana.sy/en/international/2357494/",
+        "https://aa.com.tr/en/asia-pacific/azerbaijan-extends-deepest-condolences-to-turkiye-after-deadly-factory-explosion/4117864"
+      ],
+      "raw_titles": [
+        "fight – Izmir, Izmir, Turkey"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+          "domain": "www.arabnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab News | At least nine detained protesting at blast-hit Turkiye steel plant",
+          "description": "Nine people were detained by Turkish security forces for protesting a ban on mobile phones at a steel plant following a deadly explosion. The workers gathered at the plant’s entrance to express their discontent.",
+          "published": "2026-11-13T12:55:35.589Z"
+        },
+        {
+          "url": "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+          "domain": "www.wsws.org",
+          "status": "ok",
+          "error": null,
+          "title": "Death toll in HABAŞ steel plant blast in Türkiye rises to 19, one still missing - World Socialist Web Site",
+          "description": "Relatives of the HABAŞ victims describe workers trapped in deadly jobs by debt and low wages. Meanwhile, the government has imposed a publication ban, and the Türk Metal union has done nothing.",
+          "published": "2026-11-12T05:27:21.000Z"
+        },
+        {
+          "url": "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
+          "domain": "aa.com.tr",
+          "status": "ok",
+          "error": null,
+          "title": "Azerbaijan, Ukraine extend condolences to Türkiye after deadly factory explosion",
+          "description": "16 killed, 13 injured in explosion at a steel factory in Aegean city of Izmir | Anadolu",
+          "published": "2026-11-09T21:22:20.997"
+        },
+        {
+          "url": "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+          "domain": "www.investmentwatchblog.com",
+          "status": "ok",
+          "error": null,
+          "title": "17 workers killed in Turkey steel factory explosion. Safety complaints at the plant go back years. - Investment Watch Blog",
+          "description": "https://twitter.com/MissJezzabelle1/status/2119858673401119013 The blast ripped through the HABAS iron and steel plant in Aliağa, near Izmir, on Monday.",
+          "published": "2026-11-10T01:42:49+00:00"
+        },
+        {
+          "url": "https://balkaninsight.com/2026/11/10/turkey-bans-media-reporting-on-deadly-factory-blast-in-izmir/bi/",
+          "domain": "balkaninsight.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey Bans Media Reporting on Deadly Factory Blast in Izmir | Balkan Insight",
+          "description": "Authorities ban media from reporting deadly factory blast in Izmir province that has killed 17 workers, prompting concerns over public s right to access information.",
+          "published": "2026-11-10T09:59:49+00:00"
+        },
+        {
+          "url": "https://www.dailysabah.com/turkiye/turkiye-orders-arrests-of-11-over-deadly-izmir-steel-plant-blast/news",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Türkiye orders arrests of 11 over deadly Izmir steel plant blast | Daily Sabah",
+          "description": "Authorities in Türkiye have ordered the detention of 11 suspects in connection with an explosion at a steel plant in Izmir, western Türkiye, that killed...",
+          "published": "2026-11-10T14:58:00+03:00"
+        },
+        {
+          "url": "https://www.hngn.com/articles/273759/20261110/turkey-steel-plant-blast-toll-hits-18-chairman-detained-protests-called.htm",
+          "domain": "www.hngn.com",
+          "status": "ok",
+          "error": null,
+          "title": "Turkey Steel Plant Blast Toll Hits 18 as Chairman Detained, Protests Called",
+          "description": "The death toll at the Habas steel plant in Aliaga rose to 18; the company s chairman was detained and labor groups called protests in three cities.",
+          "published": "2026-11-10T14:23:21-05:00"
+        },
+        {
+          "url": "https://english.news.cn/20261109/8afb3d779b9c4258b36c55361fb24781/c.html",
+          "domain": "english.news.cn",
+          "status": "ok",
+          "error": null,
+          "title": "3 dead, 14 injured, 10 trapped after factory explosion in W. Türkiye-Xinhua",
+          "description": "3 dead, 14 injured, 10 trapped after factory explosion in W. Türkiye-",
+          "published": ""
+        },
+        {
+          "url": "https://www.inquisitr.com/habas-steelworks-explosion-izmir/",
+          "domain": "www.inquisitr.com",
+          "status": "ok",
+          "error": null,
+          "title": "HABAS steelworks explosion kills 10 in Izmir, governor says",
+          "description": "Rescuers searched for four people believed trapped under debris at the plant in Aliaga, Izmir province.",
+          "published": "2026-11-09T16:07:34Z"
+        },
+        {
+          "url": "https://sana.sy/en/international/2357494/",
+          "domain": "sana.sy",
+          "status": "ok",
+          "error": null,
+          "title": "Türkiye: 10 workers killed, 15 injured in Izmir steel plant explosion",
+          "description": "Istanbul, Nov. 9 (SANA) Ten workers were killed and 15 others injured in an explosion at the HABAŞ iron and steel plant in the Aliağa district of Türkiye s",
+          "published": "2026-11-09T21:18:00+03:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Arab News | At least nine detained protesting at blast-hit Turkiye steel plant",
+        "top_keywords": [
+          "plant",
+          "steel",
+          "izmir",
+          "rkiye",
+          "factory",
+          "deadly",
+          "workers",
+          "detained",
+          "trapped",
+          "turkey"
+        ],
+        "actor_hints": [
+          "ukraine",
+          "security forces",
+          "government"
+        ],
+        "conflict_hints": [
+          "explosion",
+          "blast",
+          "killed",
+          "injured"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Izmir, Turkey\" \"Turkey\" \"ukraine\" \"explosion\"",
+        "\"Turkey\" \"ukraine\" \"explosion\"",
+        "\"Izmir, Turkey\" \"explosion\"",
+        "\"ukraine\" \"explosion\" 2026-11-13"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Izmir, Turkey\" \"Turkey\" \"ukraine\" \"explosion\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"Turkey\" \"ukraine\" \"explosion\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Izmir, Turkey\" \"explosion\"",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        },
+        {
+          "query": "\"ukraine\" \"explosion\" 2026-11-13",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 11 source URLs across 10 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "score": 81,
+      "title": "Fegyveres összecsapás – Gaza, Israel, Israel",
+      "date": "2026-11-22",
+      "country": "Israel",
+      "location": "Gaza, Israel",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 112,
+      "source_domain_count": 73,
+      "source_domains": [
+        "aa.com.tr",
+        "aninews.in",
+        "countercurrents.org",
+        "dailycaller.com",
+        "dominicanrepublicpost.com",
+        "dunyanews.tv",
+        "english.wafa.ps",
+        "freebeacon.com",
+        "isp.netscape.com:443",
+        "jowhar.com",
+        "kashmirreader.com",
+        "kvia.com",
+        "legalinsurrection.com",
+        "news.antiwar.com",
+        "original.antiwar.com",
+        "punchng.com",
+        "sana.sy",
+        "thefrontierpost.com",
+        "thegrio.com",
+        "theintercept.com"
+      ],
+      "original_sources": [
+        "https://jowhar.com/israeli-gunfire-kills-four-in-gaza-says-civil-defence-officials/",
+        "https://www.gdnonline.com:443/Details/1413530",
+        "https://www.aljazeera.com/news/2026/11/21/lebanese-president-demands-israel-withdrawal-decries-irans-interference",
+        "https://www.middleeasteye.net/live-blog/live-blog-update/gaza-death-toll-rises-1671",
+        "https://legalinsurrection.com/2026/11/ifj-gaza-journalist-list-hamas-ties/",
+        "https://www.israelnationalnews.com/news/436779",
+        "https://thefrontierpost.com/lebanese-president-demands-israel-withdrawal-decries-irans-interference/",
+        "https://kashmirreader.com/2026/11/22/israeli-strike-kills-three-in-vehicle-distributing-aid-in-gaza/",
+        "https://www.middleeasteye.net/live-blog/live-blog-update/six-palestinians-killed-israeli-strikes-gaza-civil-defence-says",
+        "https://www.freemalaysiatoday.com/category/world/2026/11/21/gaza-civil-defence-says-israeli-strikes-kill-6",
+        "https://dunyanews.tv/en/World/984069-myanmar-genocide-judgment-may-bolster-gaza-case-against-israel",
+        "http://www.indiagazette.com/news/279443669/myanmar-found-responsible-for-rohingya-genocide-by-icj",
+        "https://countercurrents.org/2026/11/gazas-children-after-three-years-of-israeli-genocide-21976-killed-hundreds-of-thousands-deprived-of-childhood/",
+        "https://countercurrents.org/2026/11/israeli-attacks-kill-seven-palestinians-across-gaza-including-four-in-one-strike/",
+        "https://countercurrents.org/2026/11/preparing-gazas-next-generation-of-photojournalists/",
+        "https://www.theguardian.com/world/2026/nov/21/displaced-families-gaza-winter-misery",
+        "https://www.algemeiner.com/2026/11/19/top-un-court-finds-myanmar-committed-genocide-against-muslim-rohingya/",
+        "https://www.freemalaysiatoday.com/category/world/2026/11/20/gazans-return-after-israel-army-ends-rare-ground-operation",
+        "https://wrp.org.uk/features/student-walkout-across-uk-as-unions-prepare-for-palestine-day-of-action/",
+        "https://aa.com.tr/en/middle-east/gaza-children-appeal-to-world-ahead-of-world-children-s-day-don-t-forget-us-/4131629"
+      ],
+      "raw_titles": [
+        "fight – Gaza, Israel (general), Israel"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://jowhar.com/israeli-gunfire-kills-four-in-gaza-says-civil-defence-officials/",
+          "domain": "jowhar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli gunfire kills four in Gaza, says civil defence officials - Jowhar News Leader | Somali News",
+          "description": "Gaza s civil defence has said that Israeli fire killed four people, three of whom were killed in a strike on a vehicle carrying food aid in the war-ravaged territory.",
+          "published": "2026-11-21T23:00:13+01:00"
+        },
+        {
+          "url": "https://www.gdnonline.com:443/Details/1413530",
+          "domain": "www.gdnonline.com:443",
+          "status": "ok",
+          "error": null,
+          "title": "World News: Israeli strike kills three in Gaza",
+          "description": "",
+          "published": "2017-12-05T03:29:21+00:00"
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/21/lebanese-president-demands-israel-withdrawal-decries-irans-interference",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Lebanese president demands Israel withdrawal, decries Iran’s interference | Israel attacks Lebanon News | Al Jazeera",
+          "description": "Joseph Aoun says ‘two fundamental obstacles, inseparably linked’ mean Lebanon cannot fully celebrate its independence.",
+          "published": ""
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/gaza-death-toll-rises-1671",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Gaza death toll rises to 1,671 | Middle East Eye",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://legalinsurrection.com/2026/11/ifj-gaza-journalist-list-hamas-ties/",
+          "domain": "legalinsurrection.com",
+          "status": "ok",
+          "error": null,
+          "title": "IFJ Scrubs 40 Gaza Journalist Names Amid Hamas Ties",
+          "description": "IFJ quietly dropped roughly 40 names from its Gaza journalist list, including dozens linked by watchdogs to Hamas and Islamic Jihad.",
+          "published": "2026-11-21T22:00:48+00:00"
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/436779",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Pro-Israel German politician attacked at pro-Palestinian protest in Berlin | Israel National News",
+          "description": "German pro-Israel politician Karoline Preisler assaulted at a Berlin demonstration, prompting condemnation from German officials and Foreign Minister Sa’ar.",
+          "published": "2026-11-22"
+        },
+        {
+          "url": "https://thefrontierpost.com/lebanese-president-demands-israel-withdrawal-decries-irans-interference/",
+          "domain": "thefrontierpost.com",
+          "status": "error",
+          "error": "The read operation timed out",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://kashmirreader.com/2026/11/22/israeli-strike-kills-three-in-vehicle-distributing-aid-in-gaza/",
+          "domain": "kashmirreader.com",
+          "status": "ok",
+          "error": null,
+          "title": "‘Israeli strike kills three in vehicle distributing aid in Gaza’ | Kashmir Reader",
+          "description": "JERUSALEM: An Israeli strike killed three Palestinians in a vehicle carrying papers and food for the World Central Kitchen charity in Gaza City on Saturday, according to Gaza’s health ministry and eyewitnesses. The Israeli military said several militant operatives were targeted in the area without providing further details. It did not immediately respond to questions [...]",
+          "published": "2026-11-22T09:46:45+05:30"
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/six-palestinians-killed-israeli-strikes-gaza-civil-defence-says",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Six Palestinians killed in Israeli strikes on Gaza, civil defence says | Middle East Eye",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.freemalaysiatoday.com/category/world/2026/11/21/gaza-civil-defence-says-israeli-strikes-kill-6",
+          "domain": "www.freemalaysiatoday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Gaza civil defence says Israeli strikes kill 6 | FMT",
+          "description": "The Israeli military said it had targeted several militants in Gaza strikes a day after completing a rare ground incursion in the territory.",
+          "published": "2026-11-20T23:56:47Z"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Israeli gunfire kills four in Gaza, says civil defence officials - Jowhar News Leader | Somali News",
+        "top_keywords": [
+          "gaza",
+          "civil",
+          "defence",
+          "three",
+          "kills",
+          "vehicle",
+          "german",
+          "strikes",
+          "four",
+          "officials"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "iran",
+          "hamas",
+          "military"
+        ],
+        "conflict_hints": [
+          "strike",
+          "attack",
+          "assault",
+          "killed",
+          "fire",
+          "war"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
+        "\"Israel\" \"israel\" \"strike\"",
+        "\"Gaza, Israel\" \"strike\"",
+        "\"israel\" \"strike\" 2026-11-22"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Gaza, Israel\" \"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Israel\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza, Israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-11-22",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 112 source URLs across 73 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 2,
+      "score": 68,
+      "title": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
+      "date": "2026-11-21",
+      "country": "Gaza Strip",
+      "location": "Khan Yunis, Gaza Strip",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 17,
+      "source_domain_count": 12,
+      "source_domains": [
+        "countercurrents.org",
+        "thepeninsulaqatar.com",
+        "www.al-monitor.com",
+        "www.arabnews.com",
+        "www.clevelandjewishnews.com",
+        "www.israelnationalnews.com",
+        "www.jns.org",
+        "www.jpost.com",
+        "www.malaysiakini.com",
+        "www.newslaundry.com",
+        "www.omanobserver.om",
+        "www.ynetnews.com"
+      ],
+      "original_sources": [
+        "https://www.malaysiakini.com/news/889519-bankrolling-attacks-in-gaza-how-a-global-bank-arms-israel",
+        "http://thepeninsulaqatar.com/article/20/11/2026/palestinian-killed-several-wounded-in-israeli-occupation-attacks-across-gaza",
+        "https://www.clevelandjewishnews.com/jns/idf-shin-bet-operate-against-hamas-tunnel-west-of-gazas-yellow-line/article_ff58d3b6-17e9-5157-b92c-a36c3a4e486d.html",
+        "https://www.newslaundry.com/2026/11/18/palestinians-killed-hospitals-shelled-how-deutsche-bank-arms-israel",
+        "https://www.ynetnews.com/article/hjdkpbscfx",
+        "https://www.jns.org/news/israel-news/idf-shin-bet-operate-against-hamas-tunnel-west-of-gazas-yellow-line",
+        "https://www.omanobserver.om/article/1199834/world/region/israeli-fire-kills-four-including-a-6-year-old-boy-in-gaza",
+        "https://www.ynetnews.com/article/bymfhtd0gg",
+        "https://www.clevelandjewishnews.com/jns/israel-kills-third-successive-hamas-rafah-brigade-commander/article_b839fd9b-c497-59b3-8b63-b95481719fe3.html",
+        "https://www.israelnationalnews.com/news/436200",
+        "https://www.israelnationalnews.com/news/436150",
+        "https://www.jpost.com/israel-news/defense-news/article-914822",
+        "https://www.israelnationalnews.com/flashes/697260",
+        "https://countercurrents.org/2026/11/israel-strikes-intensive-care-at-gazas-nasser-hospital-six-killed-and-more-than-20-others-injured/",
+        "https://www.clevelandjewishnews.com/jns/idf-southern-gaza-strike-targeted-hamas-brigade-commander/article_0d3e26c2-f6ec-5f98-b033-0f873f8489f9.html",
+        "https://www.al-monitor.com/originals/2026/11/israeli-strike-gaza-hospital-deadliest-election",
+        "https://www.arabnews.com/middle-east/surgeon-and-child-among-dead-in-gaza-hospital-attack-during-day-of-israeli-strikes-3011325"
+      ],
+      "raw_titles": [
+        "fight – Khan Yunis, Gaza Strip (general), Gaza Strip"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.malaysiakini.com/news/889519-bankrolling-attacks-in-gaza-how-a-global-bank-arms-israel",
+          "domain": "www.malaysiakini.com",
+          "status": "ok",
+          "error": null,
+          "title": "Bankrolling attacks in Gaza: How a global bank arms Israel | Malaysiakini",
+          "description": "Leaks reveal Deutsche Bank",
+          "published": "2026-11-21 09:00:00"
+        },
+        {
+          "url": "http://thepeninsulaqatar.com/article/20/11/2026/palestinian-killed-several-wounded-in-israeli-occupation-attacks-across-gaza",
+          "domain": "thepeninsulaqatar.com",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinian killed, several wounded in Israeli occupation attacks across Gaza | The Peninsula Qatar",
+          "description": "Gaza: A Palestinian man was killed and several others wounded Thursday by Israeli occupation forces in multiple attacks across the Gaza Strip, accordi...",
+          "published": "2026-11-20 05:00:00"
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/idf-shin-bet-operate-against-hamas-tunnel-west-of-gazas-yellow-line/article_ff58d3b6-17e9-5157-b92c-a36c3a4e486d.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF, Shin Bet operate against Hamas tunnel west of Gaza's Yellow Line | JNS | clevelandjewishnews.com",
+          "description": "The military told JNS that the operation followed Hamas ceasefire violations and that Israeli troops were still operating in the area.",
+          "published": "2026-11-18T15:10:00-05:00"
+        },
+        {
+          "url": "https://www.newslaundry.com/2026/11/18/palestinians-killed-hospitals-shelled-how-deutsche-bank-arms-israel",
+          "domain": "www.newslaundry.com",
+          "status": "ok",
+          "error": null,
+          "title": "Palestinians killed, hospitals shelled: How Deutsche Bank arms Israel",
+          "description": "From the killing of Hind Rajab to the siege of Gaza’s Al Shifa Hospital to shelling in aid camps, the IDF s deadly Merkava 4 – the mainstay of Israel’s tank fleet – have been involved. Yet, global giant Deutsche Bank bankrolled German defence manufacturer Renk GmbH s contract with Israel to supply gearboxes for the Merkava 4 until 2027.",
+          "published": "2026-11-18T09:27:05.045Z"
+        },
+        {
+          "url": "https://www.ynetnews.com/article/hjdkpbscfx",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "IDF launches focused operation in central Gaza to destroy Hamas terror infrastructur",
+          "description": "Israeli forces launch a targeted operation to dismantle Hamas infrastructure near Nuseirat, saying it threatens troops and violates the ceasefire; Hamas accuses Israel of breaching the agreement and calls for international intervention",
+          "published": "2026-11-18T16:33:09.916934Z"
+        },
+        {
+          "url": "https://www.jns.org/news/israel-news/idf-shin-bet-operate-against-hamas-tunnel-west-of-gazas-yellow-line",
+          "domain": "www.jns.org",
+          "status": "ok",
+          "error": null,
+          "title": "IDF, Shin Bet operate against Hamas tunnel west of Gaza s Yellow Line - Israel Jewish News - JNS",
+          "description": "The military told JNS that the operation followed Hamas ceasefire violations and that Israeli troops were still operating in the area.",
+          "published": "2026-11-18T20:10:00"
+        },
+        {
+          "url": "https://www.omanobserver.om/article/1199834/world/region/israeli-fire-kills-four-including-a-6-year-old-boy-in-gaza",
+          "domain": "www.omanobserver.om",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli fire kills four, including a 6-year-old boy, in Gaza - Oman Observer",
+          "description": "CAIRO: Israeli ⁠gunfire and strikes killed at least four ​Palestinians, including ​a 6-year-old boy, in the Gaza Strip on Tuesday, local health...",
+          "published": "2026-11-17 15:11:19"
+        },
+        {
+          "url": "https://www.ynetnews.com/article/bymfhtd0gg",
+          "domain": "www.ynetnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Suspected Gaza terror balloons found near border as IDF destroys 300-meter Hamas tun",
+          "description": "Israeli forces found balloons fitted with a GPS device near Ein HaShlosha but no explosives, as the IDF reported destroying a Gaza tunnel and identified three Hamas terrorists killed in last week #x27;s Nasser Hospital strike, including an October 7 kidnapper",
+          "published": "2026-11-16T14:12:15.842530Z"
+        },
+        {
+          "url": "https://www.clevelandjewishnews.com/jns/israel-kills-third-successive-hamas-rafah-brigade-commander/article_b839fd9b-c497-59b3-8b63-b95481719fe3.html",
+          "domain": "www.clevelandjewishnews.com",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.israelnationalnews.com/news/436200",
+          "domain": "www.israelnationalnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Hamas Rafah Brigade commander eliminated | Israel National News",
+          "description": "Samir Abu Yunis, the newly appointed commander of the Rafah Brigade in Hamas",
+          "published": "2026-11-19"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Bankrolling attacks in Gaza: How a global bank arms Israel | Malaysiakini",
+        "top_keywords": [
+          "gaza",
+          "bank",
+          "strip",
+          "jns",
+          "operation",
+          "attacks",
+          "deutsche",
+          "forces",
+          "tunnel",
+          "ceasefire"
+        ],
+        "actor_hints": [
+          "israel",
+          "israeli",
+          "idf",
+          "hamas",
+          "military"
+        ],
+        "conflict_hints": [
+          "strike",
+          "attack",
+          "shelling",
+          "killed",
+          "wounded",
+          "fire",
+          "terror"
+        ],
+        "usable_source_count": 9,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Khan Yunis, Gaza Strip\" \"Gaza Strip\" \"israel\" \"strike\"",
+        "\"Gaza Strip\" \"israel\" \"strike\"",
+        "\"Khan Yunis, Gaza Strip\" \"strike\"",
+        "\"israel\" \"strike\" 2026-11-21"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Khan Yunis, Gaza Strip\" \"Gaza Strip\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Gaza Strip\" \"israel\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Khan Yunis, Gaza Strip\" \"strike\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"israel\" \"strike\" 2026-11-21",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 17 source URLs across 12 domains. 9 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 3,
+      "score": 62,
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-20",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 28,
+      "source_domain_count": 26,
+      "source_domains": [
+        "aa.com.tr",
+        "avenuemail.in",
+        "dominicanrepublicpost.com",
+        "en.antaranews.com",
+        "english.news.cn",
+        "gulfnews.com",
+        "kesq.com",
+        "news.webindia123.com",
+        "tribune.com.pk",
+        "voiceofvienna.org",
+        "www.al-monitor.com",
+        "www.aljazeera.com",
+        "www.bignewsnetwork.com",
+        "www.dailysabah.com",
+        "www.greanvillepost.com",
+        "www.israelnationalnews.com",
+        "www.justsecurity.org",
+        "www.maritimeprofessional.com",
+        "www.middleeasteye.net",
+        "www.presstv.co.uk"
+      ],
+      "original_sources": [
+        "https://www.greanvillepost.com/shenzhen-hypocritical-nonsense-war-escalation-in-ukraine-and-asia/",
+        "https://www.presstv.co.uk/Detail/2026/11/20/781197/yemen-condemns-saudi-attack-on-hudaydah-port",
+        "https://www.therecord.com/news/waterloo-region/waterloo-region-record-morning-update/article_1e41d2f9-d566-569d-b8d5-db53bb81e508.html",
+        "https://www.dailysabah.com/opinion/op-ed/making-of-regional-security-network-turkiye-qatar-and-beyond",
+        "https://www.al-monitor.com/originals/2026/11/amid-setbacks-saudi-arabia-braces-yemen-war-stretch-2027-report",
+        "https://voiceofvienna.org/saudi-arabia-replaces-war-commander-as-houthis-close-in-on-aden/",
+        "https://www.al-monitor.com/originals/2026/11/saudi-arabia-appoints-gen-ruwaili-oversee-yemen-war-after-setbacks-what-know",
+        "https://www.aljazeera.com/news/2026/11/16/houthis-edge-closer-to-aden-as-yemeni-forces-pull-out-of-bab-al-mandeb",
+        "https://www.aljazeera.com/news/2026/11/16/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis",
+        "https://dominicanrepublicpost.com/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis/",
+        "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+        "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+        "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+        "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+        "https://www.israelnationalnews.com/flashes/697254",
+        "https://avenuemail.in/missile-debris-falls-near-mecca-saudi-houthi-conflict/",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://gulfnews.com/world/mena/us-israel-iran-conflict-what-uae-residents-need-to-know-this-evening-november-12-1.500745263",
+        "http://www.maritimeprofessional.com/news/houthis-attack-saudi-pipeline-pumping-424289",
+        "https://www.zerohedge.com/geopolitical/gcc-set-kuwait-command-center-amid-doubts-over-us-security-commitment"
+      ],
+      "raw_titles": [
+        "fight – Mecca, Makkah, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.greanvillepost.com/shenzhen-hypocritical-nonsense-war-escalation-in-ukraine-and-asia/",
+          "domain": "www.greanvillepost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Shenzhen Hypocritical Nonsense, War Escalation in Ukraine and Asia The Greanville Post",
+          "description": "OBB—The full structural extent of damage to Dnieper River bridges, particularly in Kiev, where strikes began in early October 2026 and escalated heavily through mid-November, is not yet fully established. Following overnight ballistic missile and drone strikes on November 20, 2026, Kiev Mayor Vitali Klitschko stated that specialists still needed to assess the full extent of structural damage once air raid alerts ended. Pro-Ukrainian sources report that strikes have damaged roadways, supports, guardrails, overhead cables, and protective concrete structures around metro lines, while leaving major spans standing. On November 20, 2026, strikes have damaged Kiev’s Podilsko-Voskresenskyi, Darnytskyi, and Pivdennyi (Southern) bridges. Traffic from the right bank to the left bank was halted on the Podilsko-Voskresenskyi bridge while the Pivdennyi bridge operated with one-way and weight restrictions (10 tons for standard vehicles, 18 tons for public transport). Earlier attacks (such as in October and on November 17) also struck the Pivnichnyi (Northern) bridge and damaged nearby utilities, heating mains, and power infrastructure. Large bridges have safety margins that make full collapse from localized damage unlikely, though they were not engineered to withstand modern combat impacts like ballistic missiles. Work on temporary embankments for alternative crossings has faced erosion from river currents. Nonethelss the length of time it has taken Russia to deal full, knock-out blows on these bridges puts a shine on the Ukrainian success, on this occasion, to close the road branch of the Kerch bridge - presumably under the guidance of Ukraine’s Western intelligence and military sponsors and using sophisticated targeting assissance either from StarShield or its civilian counterpart Starlink, even raising the question as to how far Starlink’s owner, Elon Musk - who yesterday blamed the war on Western provocation - actually controls his own system.",
+          "published": "2026-11-20T19:45:53+00:00"
+        },
+        {
+          "url": "https://www.presstv.co.uk/Detail/2026/11/20/781197/yemen-condemns-saudi-attack-on-hudaydah-port",
+          "domain": "www.presstv.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "Yemen condemns criminal Saudi attack on Hudaydah as 41 civilians killed in 24 hours",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.therecord.com/news/waterloo-region/waterloo-region-record-morning-update/article_1e41d2f9-d566-569d-b8d5-db53bb81e508.html",
+          "domain": "www.therecord.com",
+          "status": "ok",
+          "error": null,
+          "title": "Waterloo Region Record morning update for Nov 19",
+          "description": "The Record today: Consequences of copper theft + Police budget hike + Rangers win streak",
+          "published": "2026-11-19T06:45:00-05:00"
+        },
+        {
+          "url": "https://www.dailysabah.com/opinion/op-ed/making-of-regional-security-network-turkiye-qatar-and-beyond",
+          "domain": "www.dailysabah.com",
+          "status": "ok",
+          "error": null,
+          "title": "Making of regional security network: Türkiye-Qatar and beyond | Opinion",
+          "description": "Türkiye and Qatar’s institutionalization of their strategic partnership marks a new step in the evolving regional security alignment",
+          "published": "2026-11-18T12:49:00+03:00"
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/11/amid-setbacks-saudi-arabia-braces-yemen-war-stretch-2027-report",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Amid setbacks, Saudi Arabia braces for Yemen war to stretch into 2027: Report - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "The Houthis are advancing in strategic areas west of the government capital, Aden, as Saudi-backed forces seek to reverse the group s advances on multiple fronts.",
+          "published": ""
+        },
+        {
+          "url": "https://voiceofvienna.org/saudi-arabia-replaces-war-commander-as-houthis-close-in-on-aden/",
+          "domain": "voiceofvienna.org",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia Replaces War Commander as Houthis Close In on Aden - Voice of Vienna",
+          "description": "Saudi Arabia has replaced the commander of its coalition forces in Yemen, a sign of how heavily the war is weighing on Riyadh as Houthi fighters creep toward the government’s temporary capital, Aden. In a decree issued Monday and carried by Saudi state media, King Salman named General Fayyad al-Ruwaili to lead the coalition. He [ ]",
+          "published": "2026-11-16T23:06:00+00:00"
+        },
+        {
+          "url": "https://www.al-monitor.com/originals/2026/11/saudi-arabia-appoints-gen-ruwaili-oversee-yemen-war-after-setbacks-what-know",
+          "domain": "www.al-monitor.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia appoints Gen. Ruwaili to oversee Yemen war after setbacks: What to know - AL-MONITOR: The Middle Eastʼs leading independent news source since 2012",
+          "description": "Gen. Fayyad Ruwaili has an aerial combat background and his promotion is reportedly related to the Saudi-backed Yemeni forces’ struggles on the battlefield.",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/16/houthis-edge-closer-to-aden-as-yemeni-forces-pull-out-of-bab-al-mandeb",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis edge closer to Aden as Yemeni forces pull out of Bab al-Mandeb | Conflict News | Al Jazeera",
+          "description": "Houthis edge closer to Aden as Yemeni forces retreat from the Red Sea coast, threatening global maritime security.",
+          "published": ""
+        },
+        {
+          "url": "https://www.aljazeera.com/news/2026/11/16/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis",
+          "domain": "www.aljazeera.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia dismisses commander of coalition forces fighting Houthis | Conflict News | Al Jazeera",
+          "description": "Move comes as government forces withdraw from Red Sea coast to halt Houthi approach to interim capital Aden.",
+          "published": ""
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/saudi-arabia-dismisses-commander-of-coalition-forces-fighting-houthis/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi Arabia dismisses commander of coalition forces fighting Houthis - Dominican Republic Post – Caribbean News, Business, Travel Culture",
+          "description": "News|Conflict",
+          "published": "2026-11-16T15:36:57-05:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Shenzhen Hypocritical Nonsense, War Escalation in Ukraine and Asia The Greanville Post",
+        "top_keywords": [
+          "saudi",
+          "forces",
+          "arabia",
+          "houthis",
+          "aden",
+          "full",
+          "bridges",
+          "strikes",
+          "bridge",
+          "yemen"
+        ],
+        "actor_hints": [
+          "houthi",
+          "russia",
+          "ukraine",
+          "ukrainian",
+          "police",
+          "military",
+          "government"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "raid",
+          "killed",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"houthi\" \"missile\"",
+        "\"Saudi Arabia\" \"houthi\" \"missile\"",
+        "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+        "\"houthi\" \"missile\" 2026-11-20"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"Saudi Arabia\" \"houthi\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"houthi\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Mecca, Makkah, Saudi Arabia\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"houthi\" \"missile\" 2026-11-20",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 28 source URLs across 26 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 4,
+      "score": 60,
+      "title": "Fegyveres összecsapás – King Khalid International, Ar Riya?, Saudi Arabia",
+      "date": "2026-11-22",
+      "country": "Saudi Arabia",
+      "location": "King Khalid International, Ar Riya?, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 26,
+      "source_domain_count": 18,
+      "source_domains": [
+        "english.aawsat.com",
+        "english.news.cn",
+        "isp.netscape.com:443",
+        "pakobserver.net",
+        "saharareporters.com",
+        "tribune.com.pk",
+        "www.dw.com",
+        "www.ibtimes.co.uk",
+        "www.independent.co.uk",
+        "www.islamicinvitationturkey.com",
+        "www.moneycontrol.com",
+        "www.nzherald.co.nz",
+        "www.prokerala.com",
+        "www.samaa.tv",
+        "www.siasat.com",
+        "www.surinametimes.com",
+        "www.theepochtimes.com",
+        "www.thenationalnews.com"
+      ],
+      "original_sources": [
+        "https://tribune.com.pk/story/2641689/dar-saudi-fm-discuss-possible-r4-meeting-on-regional-developments",
+        "https://tribune.com.pk/story/2641500/pm-shehbaz-condemns-houthi-attack-on-riyadhs-king-abdullah-financial-district",
+        "https://tribune.com.pk/story/2641330/pakistan-calls-houthi-attack-on-riyadh-tower-grave-violation-of-saudi-sovereignty",
+        "https://www.surinametimes.com/artikel/explosion-heard-in-north-of-saudi-capital",
+        "https://www.prokerala.com/news/articles/a1838512.html",
+        "https://www.samaa.tv/2087360587-saudi-arabia-intercepts-missiles-targeting-riyadh-southern-areas",
+        "https://www.prokerala.com/news/articles/a1838621.html",
+        "https://www.independent.co.uk/news/world/middle-east/riyadh-explosion-blast-airport-saudi-arabia-houthis-missile-b3087628.html",
+        "https://www.moneycontrol.com/world/loud-explosion-heard-in-saudi-capital-riyadh-after-houthi-missile-interception-article-14083457.html",
+        "https://www.dw.com/en/yemen-anti-houthi-forces-pull-back-as-rebels-advance/a-79953692",
+        "https://www.ibtimes.co.uk/houthis-claim-missile-attack-riyadh-saudi-interceptions-1832390",
+        "https://www.samaa.tv/2087360362-saudi-arabia-intercepts-drones-missiles-over-makkah-madinah-riyadh",
+        "https://www.islamicinvitationturkey.com/saudi-arabia-bombs-school-market-and-hodeidah-airport-in-yemen/",
+        "https://pakobserver.net/lt-gen-fahd-bin-hamad-replaced-as-saudi-joint-forces-commander-amid-houthi-attacks/",
+        "https://english.news.cn/20261114/7568db72a3ff4507846e0a4bb239b7e7/c.html",
+        "https://www.nzherald.co.nz/business/business-reports/sustainable-business-finance/cop31-faces-test-as-iran-war-accelerates-clean-energy-and-fossil-fuel-use/premium/6GN2XP562VHGPEH3F2E3J4D3DQ/",
+        "https://isp.netscape.com:443/pf/story/0001/20261111/50075bc97e07d41fa3b66fc28858c06b",
+        "https://www.samaa.tv/2087360112-saudi-arabia-intercepts-missiles-drones-targeting-riyadh-makkah",
+        "https://tribune.com.pk/story/2639898/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabias-makkah-region",
+        "https://english.aawsat.com/features/5340532-saudi-arabia-times-crisis-three-centuries-sovereignty-and-independent-decision"
+      ],
+      "raw_titles": [
+        "fight – King Khalid International, Ar Riya?, Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://tribune.com.pk/story/2641689/dar-saudi-fm-discuss-possible-r4-meeting-on-regional-developments",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Dar, Saudi FM discuss possible R4 meeting on regional developments",
+          "description": "Both sides agree to remain in close contact to sustain the momentum of diplomatic engagements",
+          "published": "2026-11-22T11:17:34+00:00"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2641500/pm-shehbaz-condemns-houthi-attack-on-riyadhs-king-abdullah-financial-district",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "PM Shehbaz condemns Houthi attack on Riyadh’s King Abdullah Financial District",
+          "description": "Says Pakistan will continue to support all efforts for lasting peace and stability in the region",
+          "published": "2026-11-21T06:38:48+00:00"
+        },
+        {
+          "url": "https://tribune.com.pk/story/2641330/pakistan-calls-houthi-attack-on-riyadh-tower-grave-violation-of-saudi-sovereignty",
+          "domain": "tribune.com.pk",
+          "status": "ok",
+          "error": null,
+          "title": "Pakistan calls Houthi attack on Riyadh tower ‘grave violation’ of Saudi sovereignty",
+          "description": "FO warns that attacks on civilian, economic infrastructure endanger lives and threaten regional peace and security",
+          "published": "2026-11-20T05:44:10+00:00"
+        },
+        {
+          "url": "https://www.surinametimes.com/artikel/explosion-heard-in-north-of-saudi-capital",
+          "domain": "www.surinametimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Explosion heard in north of Saudi capital",
+          "description": "SAUDI-ARABIË - A powerful explosion was heard in Riyadh on Wednesday, AFP journalists and residents reported,...",
+          "published": ""
+        },
+        {
+          "url": "https://www.prokerala.com/news/articles/a1838512.html",
+          "domain": "www.prokerala.com",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.samaa.tv/2087360587-saudi-arabia-intercepts-missiles-targeting-riyadh-southern-areas",
+          "domain": "www.samaa.tv",
+          "status": "error",
+          "error": "HTTP Error 405: Not Allowed",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.prokerala.com/news/articles/a1838621.html",
+          "domain": "www.prokerala.com",
+          "status": "error",
+          "error": "HTTP Error 429: Too Many Requests",
+          "title": "",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.independent.co.uk/news/world/middle-east/riyadh-explosion-blast-airport-saudi-arabia-houthis-missile-b3087628.html",
+          "domain": "www.independent.co.uk",
+          "status": "ok",
+          "error": null,
+          "title": "‘Extremely loud’ explosions in Riyadh and smoke near airport as Houthi missile threat triggers alert | The Independent",
+          "description": "A loud explosion was heard in the capital after authorities warned of a potential aerial threat, as fighting between Saudi Arabia and Yemen’s Iran-aligned Houthis intensifies",
+          "published": "2026-11-19T05:15:24.000Z"
+        },
+        {
+          "url": "https://www.moneycontrol.com/world/loud-explosion-heard-in-saudi-capital-riyadh-after-houthi-missile-interception-article-14083457.html",
+          "domain": "www.moneycontrol.com",
+          "status": "ok",
+          "error": null,
+          "title": "Loud explosion heard in Saudi capital Riyadh after Houthi missile interception",
+          "description": "A powerful explosion was heard in Riyadh, with residents reporting smoke near the airport, hours after the Saudi-led coalition said it had intercepted a Houthi cruise missile targeting the capital.",
+          "published": ""
+        },
+        {
+          "url": "https://www.dw.com/en/yemen-anti-houthi-forces-pull-back-as-rebels-advance/a-79953692",
+          "domain": "www.dw.com",
+          "status": "ok",
+          "error": null,
+          "title": "Yemen: Anti-Houthi forces pull back as rebels advance",
+          "description": "width=device-width, initial-scale=1, shrink-to-fit=no\"> Yemen: Anti-Houthi forces pull back as rebels advance <meta data-rh=",
+          "published": ""
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Dar, Saudi FM discuss possible R4 meeting on regional developments",
+        "top_keywords": [
+          "saudi",
+          "riyadh",
+          "heard",
+          "capital",
+          "loud",
+          "yemen",
+          "regional",
+          "king",
+          "pakistan",
+          "peace"
+        ],
+        "actor_hints": [
+          "iran",
+          "houthi"
+        ],
+        "conflict_hints": [
+          "missile",
+          "attack",
+          "explosion",
+          "intercept",
+          "war"
+        ],
+        "usable_source_count": 7,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"King Khalid International, Ar Riya?, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"King Khalid International, Ar Riya?, Saudi Arabia\" \"missile\"",
+        "\"iran\" \"missile\" 2026-11-22"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"King Khalid International, Ar Riya?, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"King Khalid International, Ar Riya?, Saudi Arabia\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"iran\" \"missile\" 2026-11-22",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 26 source URLs across 18 domains. 7 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    },
+    {
+      "record_type": "event_cluster",
+      "region": "Közel-Kelet",
+      "rank": 5,
+      "score": 56,
+      "title": "Fegyveres összecsapás – Khamis Mushait, Saudi Arabia, Saudi Arabia",
+      "date": "2026-11-21",
+      "country": "Saudi Arabia",
+      "location": "Khamis Mushait, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "event_nature": "Egyéb biztonsági esemény",
+      "feature_count": 1,
+      "source_count": 17,
+      "source_domain_count": 15,
+      "source_domains": [
+        "dominicanrepublicpost.com",
+        "kenya-today.com",
+        "ksevradio.com",
+        "theindianawaaz.com",
+        "whbl.com",
+        "www.albawaba.net",
+        "www.arabnews.com",
+        "www.asiaone.com:443",
+        "www.freemalaysiatoday.com",
+        "www.internazionale.it",
+        "www.islamicinvitationturkey.com",
+        "www.middleeasteye.net",
+        "www.siasat.com",
+        "www.straitstimes.com",
+        "www.surinametimes.com"
+      ],
+      "original_sources": [
+        "https://www.surinametimes.com/artikel/saudi-coalition-says-intercepted-houthi-missile-drones",
+        "https://whbl.com/2026/11/19/saudi-led-coalition-says-it-intercepted-houthi-missile-targeting-southern-region/",
+        "https://www.freemalaysiatoday.com/category/world/2026/11/20/saudi-coalition-says-intercepted-houthi-missile-drones",
+        "https://kenya-today.com/report-houthi-missile-strikes-saudi-arabias-80storey-pif-tower-causing-structural-damage-30396/",
+        "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-led-coalition-says-it-downed-houthi-missiles-alerts-lifted-khamis",
+        "https://dominicanrepublicpost.com/saudi-led-coalition-intercepts-houthi-missiles-targeting-riyadh-and-south/",
+        "https://www.siasat.com/houthi-attack-on-riyadhs-financial-district-damages-skyscraper-3581237/",
+        "https://theindianawaaz.com/indigo-cancels-flights-to-jeddah-madinah-riyadh-and-dammam-until-november-30/",
+        "https://www.straitstimes.com/world/middle-east/houthi-attacks-on-saudi-arabia",
+        "https://www.islamicinvitationturkey.com/brutal-saudi-strike-on-hodeidah-factory-martyrs-and-injures-28/",
+        "https://www.albawaba.net/news/saudi-airstrikes-hit-industrial-sites-1641617",
+        "https://www.islamicinvitationturkey.com/ansarullah-operation-secures-10-districts-across-taiz-and-lahj-covering-7100-square-kilometers/",
+        "https://www.islamicinvitationturkey.com/saudi-arabia-bombs-school-market-and-hodeidah-airport-in-yemen/",
+        "https://www.asiaone.com:443/asia/saudi-arabia-intercepts-houthi-missiles-drones-group-denies-targeting-mecca",
+        "https://www.internazionale.it/ultime-notizie-reuters/2026/11/11/saudi-arabia-intercepts-houthi-missiles-drones-group-denies-targeting-mecca",
+        "https://ksevradio.com/saudi-led-coalition-says-it-intercepts-two-houthi-missiles-fired-towards-riyadh/",
+        "https://www.arabnews.com/saudi-arabia/houthi-missiles-drone-intercepted-as-coalition-says-it-destroyed-militias-ballistic-missile-factories-3010803"
+      ],
+      "raw_titles": [
+        "fight – Khamis Mushait, Saudi Arabia (general), Saudi Arabia"
+      ],
+      "inspected_sources": [
+        {
+          "url": "https://www.surinametimes.com/artikel/saudi-coalition-says-intercepted-houthi-missile-drones",
+          "domain": "www.surinametimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi coalition says intercepted Houthi missile, drones",
+          "description": "SAUDI ARABIA - The military coalition led by Saudi Arabia fighting Yemen s Houthis said on Friday it had...",
+          "published": ""
+        },
+        {
+          "url": "https://whbl.com/2026/11/19/saudi-led-coalition-says-it-intercepted-houthi-missile-targeting-southern-region/",
+          "domain": "whbl.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition says it intercepted Houthi missile targeting southern region | 1330 & 101.5 WHBL",
+          "description": "Nov 20 (Reuters) - Saudi air defences intercepted and destroyed a ballistic missile launched by Yemen s Iran-aligned Houthi movement towards the kingdom s southern region, the Saudi-led coalition said on ​Friday, as cross-border attacks between the two...",
+          "published": ""
+        },
+        {
+          "url": "https://www.freemalaysiatoday.com/category/world/2026/11/20/saudi-coalition-says-intercepted-houthi-missile-drones",
+          "domain": "www.freemalaysiatoday.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi coalition says intercepted Houthi missile, drones | FMT",
+          "description": "Coalition spokesperson Turki al-Malki said the ballistic missile was launched toward the southern region of the kingdom.",
+          "published": "2026-11-20T04:24:42Z"
+        },
+        {
+          "url": "https://kenya-today.com/report-houthi-missile-strikes-saudi-arabias-80storey-pif-tower-causing-structural-damage-30396/",
+          "domain": "kenya-today.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthi missile strikes Saudi Arabia’s 80‑storey PIF Tower, causing structural damage",
+          "description": "A Houthi missile hit the PIF Tower in Riyadh’s financial district, shattering windows on several floors and bending the façade, but no injuries were reported.",
+          "published": "2026-11-20T04:35:03.576674+00:00"
+        },
+        {
+          "url": "https://www.middleeasteye.net/live-blog/live-blog-update/saudi-led-coalition-says-it-downed-houthi-missiles-alerts-lifted-khamis",
+          "domain": "www.middleeasteye.net",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition says it downed Houthi missiles, as alerts lifted in Khamis Mushait, Abha city | Middle East Eye",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://dominicanrepublicpost.com/saudi-led-coalition-intercepts-houthi-missiles-targeting-riyadh-and-south/",
+          "domain": "dominicanrepublicpost.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition intercepts Houthi missiles targeting Riyadh and south - Dominican Republic Post – Caribbean News, Business, Travel Culture",
+          "description": "Material damage was reported after ​debris fell following the latest Houthi strikes launched towards Saudi Arabia.",
+          "published": "2026-11-19T03:35:48-05:00"
+        },
+        {
+          "url": "https://www.siasat.com/houthi-attack-on-riyadhs-financial-district-damages-skyscraper-3581237/",
+          "domain": "www.siasat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthi attack on Riyadh s financial district damages skyscraper",
+          "description": "A skyscraper was damaged in Riyadh as the Kingdom reported fresh attacks by Yemen s Houthi rebels on Thursday, November 19.",
+          "published": "2026-11-19T09:30:25+00:00"
+        },
+        {
+          "url": "https://theindianawaaz.com/indigo-cancels-flights-to-jeddah-madinah-riyadh-and-dammam-until-november-30/",
+          "domain": "theindianawaaz.com",
+          "status": "ok",
+          "error": null,
+          "title": "IndiGo cancels flights to Jeddah, Madinah, Riyadh and Dammam until November 30 The Indian Awaaz",
+          "description": "",
+          "published": ""
+        },
+        {
+          "url": "https://www.straitstimes.com/world/middle-east/houthi-attacks-on-saudi-arabia",
+          "domain": "www.straitstimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Houthi attacks on Saudi Arabia | The Straits Times",
+          "description": "Nov 19 - Yemen s Iran-aligned Houthi group has repeatedly targeted Saudi Arabia in an intensifying campaign of drone and missile strikes on its airports, oil facilities and office buildings. Read more at straitstimes.com.",
+          "published": "2026-11-19T16:25:30.000Z"
+        },
+        {
+          "url": "https://www.islamicinvitationturkey.com/brutal-saudi-strike-on-hodeidah-factory-martyrs-and-injures-28/",
+          "domain": "www.islamicinvitationturkey.com",
+          "status": "ok",
+          "error": null,
+          "title": "Brutal Saudi Strike on Hodeidah Factory Martyrs and Injures 28 - Islamic Invitation Turkey",
+          "description": "At least 28 people were killed or injured in a Saudi strike on a sponge factory in Yemen’s Hodeidah overnight, according to preliminary figures cited by",
+          "published": "2026-11-18T12:28:19+03:00"
+        }
+      ],
+      "event_fingerprint": {
+        "representative_title": "Saudi coalition says intercepted Houthi missile, drones",
+        "top_keywords": [
+          "saudi",
+          "coalition",
+          "arabia",
+          "yemen",
+          "riyadh",
+          "intercepted",
+          "saudi-led",
+          "southern",
+          "region",
+          "launched"
+        ],
+        "actor_hints": [
+          "iran",
+          "houthi",
+          "military"
+        ],
+        "conflict_hints": [
+          "missile",
+          "drone",
+          "strike",
+          "attack",
+          "intercept",
+          "killed",
+          "injured",
+          "war"
+        ],
+        "usable_source_count": 10,
+        "confidence": "Medium-High"
+      },
+      "queries": [
+        "\"Khamis Mushait, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"Saudi Arabia\" \"iran\" \"missile\"",
+        "\"Khamis Mushait, Saudi Arabia\" \"missile\"",
+        "\"iran\" \"missile\" 2026-11-21"
+      ],
+      "local_media_findings": [
+        {
+          "query": "\"Khamis Mushait, Saudi Arabia\" \"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Saudi Arabia\" \"iran\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"Khamis Mushait, Saudi Arabia\" \"missile\"",
+          "error": "<urlopen error _ssl.c:1001: The handshake operation timed out>",
+          "articles": []
+        },
+        {
+          "query": "\"iran\" \"missile\" 2026-11-21",
+          "error": "HTTP Error 429: Too Many Requests",
+          "articles": []
+        }
+      ],
+      "matched_articles": [],
+      "analytical_summary": "The original cluster contains 17 source URLs across 15 domains. 10 original source pages were readable enough to build a fingerprint. Fingerprint confidence: Medium-High. No strong supplementary article match was found. This cluster needs manual verification before it is treated as a confirmed single incident.",
+      "method_note": "Source-first enrichment. The script first inspects the original source URLs, builds an event fingerprint from titles and metadata, then searches supplementary media using the fingerprint. Match scores are heuristic and require analyst review."
+    }
+  ]
+}

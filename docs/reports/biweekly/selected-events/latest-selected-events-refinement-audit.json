@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-11-16T13:39:15.478259Z",
+  "generated_at": "2026-11-23T15:58:36.391205Z",
   "input_file": "docs/reports/biweekly/selected-events/latest-selected-events.json",
   "output_file": "docs/reports/biweekly/selected-events/latest-selected-events-refined.json",
   "method": "Fast parallel check of source URLs for selected biweekly Top events only. It does not scan the full live database.",
-  "event_count": 6,
-  "unique_sources_checked": 22,
+  "event_count": 5,
+  "unique_sources_checked": 18,
   "max_sources_per_event": 4,
   "http_timeout_seconds": 4,
   "max_workers": 8,
@@ -12,85 +12,6 @@
     {
       "region": "Ukrajna",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Kyiv, Misto, Ukraine",
-      "date": "2026-11-08",
-      "country": "Ukraine",
-      "location": "Kyiv, Misto, Ukraine",
-      "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
-      "checked_sources_count": 4,
-      "valid_sources_count": 1,
-      "confidence": "Low",
-      "inspected_sources": [
-        {
-          "url": "https://www.gdnonline.com:443/Details/1412159/Russia-pounds-power-facilities-around-Kyiv",
-          "domain": "www.gdnonline.com:443",
-          "status": "ok",
-          "error": null,
-          "title": "World News: Russia pounds power facilities around Kyiv",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.militarytimes.com/industry/techwatch/2026/11/06/russia-using-own-version-of-starlink-for-military-comms-over-ukraine-kyiv-says/",
-          "domain": "www.militarytimes.com",
-          "status": "ok",
-          "error": null,
-          "title": "Russia using own version of Starlink for military comms over Ukraine, Kyiv says",
-          "description": "Russia is already using its new Rassvet satellite network — billed as a homegrown version of Starlink — for military communications over Ukraine, according to Ukrainian military intelligence.",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": [
-            "row"
-          ]
-        },
-        {
-          "url": "https://www.eurasiareview.com/08112026-zelenskyy-says-russia-seeks-blackout-in-ukraine-ahead-of-us-mediated-talks-in-abu-dhabi/",
-          "domain": "www.eurasiareview.com",
-          "status": "ok",
-          "error": null,
-          "title": "Zelenskyy Says Russia Seeks Blackout In Ukraine Ahead Of US-Mediated Talks In Abu Dhabi - Eurasia Review",
-          "description": "Ukrainian President Volodymyr Zelenskyy says Russia is seeking to \"plunge the entire country into a blackout\" by pounding more than a dozen Ukrainian regions",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://yalibnan.com/2026/11/08/ukraine-russia-war-latest-huge-fire-erupts-after-kyiv-strikes-electronics-factory-with-neptune-cruise-missile/",
-          "domain": "yalibnan.com",
-          "status": "ok",
-          "error": null,
-          "title": "Ukraine-Russia war latest: Huge fire erupts after Kyiv strikes electronics factory with Neptune cruise missile – Ya Libnan",
-          "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "missile"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Ukrajna",
-      "rank": 2,
       "title": "Robbantás / IED – Azov, Zaporiz'ka Oblast', Ukraine",
       "date": "2026-11-03",
       "country": "Ukraine",
@@ -138,91 +59,171 @@
       ]
     },
     {
-      "region": "Közel-Kelet",
+      "region": "Balkán",
       "rank": 1,
-      "title": "Fegyveres összecsapás – Gaza City, Israel, Israel",
-      "date": "2026-11-07",
-      "country": "Israel",
-      "location": "Gaza City, Israel, Israel",
+      "title": "Fegyveres összecsapás – Izmir, Turkey",
+      "date": "2026-11-13",
+      "country": "Turkey",
+      "location": "Izmir, Turkey",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 20,
+      "original_sources_count": 12,
       "checked_sources_count": 4,
       "valid_sources_count": 4,
       "confidence": "High",
       "inspected_sources": [
         {
-          "url": "https://legalinsurrection.com/2026/11/israel-eliminates-senior-hamas-terror-commanders-in-recent-strikes/",
-          "domain": "legalinsurrection.com",
+          "url": "https://www.arabnews.com/world/at-least-nine-detained-protesting-at-blast-hit-turkiye-steel-plant-3011660",
+          "domain": "www.arabnews.com",
           "status": "ok",
           "error": null,
-          "title": "Israel Eliminates Senior Hamas Terror Commanders in Recent Strikes",
-          "description": "IDF chief warns Hezbollah, terror threat will be met \"immediately and forcefully\"",
+          "title": "Arab News | At least nine detained protesting at blast-hit Turkiye steel plant",
+          "description": "Nine people were detained by Turkish security forces for protesting a ban on mobile phones at a steel plant following a deadly explosion. The workers gathered at the plant’s entrance to express their discontent.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "strike",
-            "strikes",
-            "terror",
-            "hamas",
-            "hezbollah",
-            "idf"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://countercurrents.org/2026/11/israels-attacks-on-gazas-education-the-students-and-teachers-killed-in-october/",
-          "domain": "countercurrents.org",
-          "status": "ok",
-          "error": null,
-          "title": "Israel’s Attacks on Gaza’s Education: The Students and Teachers Killed in October | Countercurrents",
-          "description": "After three years of Israel’s genocidal war on Gaza, the enclave’s education system has been devastated, with nearly 98 percent of school buildings damaged or…",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "attack",
-            "attacks",
-            "killed",
-            "kill"
-          ],
-          "weak_hits": [
-            "war"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://sana.sy/en/middle-east/2356503/",
-          "domain": "sana.sy",
-          "status": "ok",
-          "error": null,
-          "title": "Two Palestinians die of wounds from Israeli strikes on Gaza City",
-          "description": "Occupied Jerusalem, Nov. 6 (SANA) Two Palestinians, including a female medical student, died Friday from injuries sustained in separate Israeli strikes on",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes",
-            "ied"
+            "explosion",
+            "blast",
+            "security forces",
+            "detained"
           ],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://aa.com.tr/en/middle-east/israeli-attacks-kill-3-palestinians-in-gaza-including-child-medical-student/4113819",
+          "url": "https://www.wsws.org/en/articles/2026/11/12/lves-n12.html",
+          "domain": "www.wsws.org",
+          "status": "ok",
+          "error": null,
+          "title": "Death toll in HABAŞ steel plant blast in Türkiye rises to 19, one still missing - World Socialist Web Site",
+          "description": "Relatives of the HABAŞ victims describe workers trapped in deadly jobs by debt and low wages. Meanwhile, the government has imposed a publication ban, and the Türk Metal union has done nothing.",
+          "accepted": true,
+          "reason": "contains concrete security-incident term and no obvious topic noise",
+          "security_hits": [
+            "blast"
+          ],
+          "weak_hits": [
+            "government"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://aa.com.tr/en/turkiye/azerbaijan-ukraine-extend-condolences-to-turkiye-after-deadly-factory-explosion/4117864",
           "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Israeli attacks kill 3 Palestinians in Gaza, including child, medical student",
-          "description": "Casualties come amid continued Israeli violations of ceasefire agreement in effect since Oct. 10, 2025 | Anadolu",
+          "title": "Azerbaijan, Ukraine extend condolences to Türkiye after deadly factory explosion",
+          "description": "16 killed, 13 injured in explosion at a steel factory in Aegean city of Izmir | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "explosion",
+            "killed",
+            "kill",
+            "injured"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.investmentwatchblog.com/17-workers-killed-in-turkey-steel-factory-explosion-safety-complaints-at-the-plant-go-back-years/",
+          "domain": "www.investmentwatchblog.com",
+          "status": "ok",
+          "error": null,
+          "title": "17 workers killed in Turkey steel factory explosion. Safety complaints at the plant go back years. - Investment Watch Blog",
+          "description": "https://twitter.com/MissJezzabelle1/status/2119858673401119013 The blast ripped through the HABAS iron and steel plant in Aliağa, near Izmir, on Monday.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "explosion",
+            "blast",
+            "killed",
+            "kill"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        }
+      ]
+    },
+    {
+      "region": "Közel-Kelet",
+      "rank": 1,
+      "title": "Fegyveres összecsapás – Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Eastern Province, Ash Sharqiyah, Saudi Arabia",
+      "event_type": "Fegyveres összecsapás",
+      "original_sources_count": 20,
+      "checked_sources_count": 4,
+      "valid_sources_count": 3,
+      "confidence": "Medium",
+      "inspected_sources": [
+        {
+          "url": "https://economictimes.indiatimes.com/news/defence/saudi-led-coalition-intercepts-missiles-towards-riyadh-drones-in-eastern-province/articleshow/135846184.cms",
+          "domain": "economictimes.indiatimes.com",
+          "status": "ok",
+          "error": null,
+          "title": "Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - The Economic Times",
+          "description": "text/html; charset=UTF-8\"> Saudi-led coalition intercepts missiles towards Riyadh, drones in Eastern Province - The Economic Times <meta content=",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "drone",
+            "drones",
+            "missile"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.dailyadvertiser.com.au/story/9391847/saudi-led-coalition-intercepts-missiles-towards-riyadh/",
+          "domain": "www.dailyadvertiser.com.au",
+          "status": "ok",
+          "error": null,
+          "title": "Houthis control chokepoint after Yemeni forces withdraw | The Daily Advertiser | Wagga Wagga, NSW",
+          "description": "Iran-aligned Houthis are in control of the Bab el-Mandeb Strait - one of the world's most important routes...",
+          "accepted": false,
+          "reason": "no concrete security incident detected",
+          "security_hits": [],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://english.aawsat.com/gulf/5341308-arab-coalition-intercepts-missiles-towards-riyadh-drones-eastern-province",
+          "domain": "english.aawsat.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab Coalition Intercepts Missiles Towards Riyadh, Drones in Eastern Province",
+          "description": "The Coalition to Restore Legitimacy in Yemen said on Sunday it had intercepted two Houthi ballistic missiles launched towards the Saudi capital Riyadh and three drones in the Kingdom's Eastern Province. \"Air defenses intercepted and destroyed two ballistic missiles launched by the Houthi terrorist militia toward Riyadh,\" Official Spokesperson of the Coalition to Restore Legitimacy in Yemen Major General Turki Al-Malki said. He earlier said in separate statements that Saudi air defenses had destroyed three drones in the country's Eastern region.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "drone",
+            "drones",
+            "missile",
+            "terror",
+            "terrorist",
+            "intercepted"
+          ],
+          "weak_hits": [
+            "war"
+          ],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.internazionale.it/ultime-notizie-reuters/2026/11/15/bahrain-s-interior-ministry-issues-alerts-of-potential-threats",
+          "domain": "www.internazionale.it",
+          "status": "ok",
+          "error": null,
+          "title": "Bahrain intercepts Iranian aerial attacks as Tehran says it attacked US base - Internazionale",
+          "description": "By Jana Choukeir and Yomna EhabNov 15 (Reuters) - Bahrain intercepted and destroyed several Iranian aerial attacks, it said on Sunday, while Tehran said it had struck a U… Leggi",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "attack",
             "attacks",
-            "kill",
-            "casualties"
+            "intercepted"
           ],
           "weak_hits": [],
           "noise_hits": []
@@ -232,79 +233,79 @@
     {
       "region": "Közel-Kelet",
       "rank": 2,
-      "title": "Fegyveres összecsapás – Khan Yunis, Gaza Strip, Gaza Strip",
-      "date": "2026-11-08",
-      "country": "Gaza Strip",
-      "location": "Khan Yunis, Gaza Strip, Gaza Strip",
+      "title": "Fegyveres összecsapás – Mecca, Makkah, Saudi Arabia",
+      "date": "2026-11-15",
+      "country": "Saudi Arabia",
+      "location": "Mecca, Makkah, Saudi Arabia",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 15,
+      "original_sources_count": 20,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://english.wafa.ps/Pages/Details/176738",
-          "domain": "english.wafa.ps",
+          "url": "https://news.webindia123.com/news/Articles/World/20261116/4520115.html",
+          "domain": "news.webindia123.com",
           "status": "ok",
           "error": null,
-          "title": "Two killed, including woman, others injured in Israeli bombardment of Gaza's Khan Yunis city",
+          "title": "Houthis claim missile strikes on King Khalid Airport, financial centre in Saudi's Riyadh",
           "description": "",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "killed",
-            "kill",
-            "injured"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.jns.org/news/israel-news/israeli-airstrike-eliminates-hamas-terrorist-who-held-omer-shem-tov-captive",
-          "domain": "www.jns.org",
-          "status": "ok",
-          "error": null,
-          "title": "Israeli airstrike eliminates Hamas terrorist who held Omer Shem Tov captive - Israel & Jewish News - JNS",
-          "description": "Jamal Abu Saeed, who headed the Operations Department in the Palestinian terror group’s “military wing,” was eliminated on Sunday.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
             "strike",
-            "airstrike",
-            "terror",
-            "terrorist",
-            "hamas"
+            "strikes",
+            "missile"
           ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": [
-            "art"
-          ]
+          "weak_hits": [],
+          "noise_hits": []
         },
         {
-          "url": "https://www.israelnationalnews.com/news/435631",
-          "domain": "www.israelnationalnews.com",
+          "url": "https://www.thehindubusinessline.com/news/world/yemens-houthis-claim-missile-strikes-on-riyadh-airport-and-financial-centre/article71705956.ece",
+          "domain": "www.thehindubusinessline.com",
           "status": "ok",
           "error": null,
-          "title": "From tank fire to Tel Aviv Tefilin stand | Israel National News",
-          "description": "Fallen soldier Uriel Silberman",
+          "title": "Yemen's Houthis claim missile attacks on Riyadh airport and financial centre - The HinduBusinessLine",
+          "description": "Yemen's Houthis claim missile strikes on Riyadh airport and a financial centre, and allege 75 Saudi airstrikes and missile attacks in 24 hours.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "attack",
+            "attacks",
+            "strike",
+            "strikes",
+            "missile",
+            "airstrike"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.samaa.tv/2087360173-houthis-claim-attacks-on-saudi-oil-facilities-as-tensions-escalate",
+          "domain": "www.samaa.tv",
+          "status": "error",
+          "error": "HTTP Error 405: Not Allowed",
+          "title": "",
+          "description": "",
           "accepted": false,
-          "reason": "no concrete security incident detected",
+          "reason": "source not readable",
           "security_hits": [],
           "weak_hits": [],
           "noise_hits": []
         },
         {
-          "url": "https://english.wafa.ps/Pages/Details/176590",
-          "domain": "english.wafa.ps",
+          "url": "https://aa.com.tr/en/middle-east/debris-from-intercepted-houthi-missiles-falls-in-saudi-arabia-s-mecca-region/4121557",
+          "domain": "aa.com.tr",
           "status": "ok",
           "error": null,
-          "title": "Gaza youth dies from injuries sustained in Israeli bombardment of Khan Yunis",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
+          "title": "Debris from intercepted Houthi missiles falls in Saudi Arabia’s Mecca region",
+          "description": "Civil Defense says fragments landed in Sabuhah village | Anadolu",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "missile",
+            "intercepted"
+          ],
           "weak_hits": [],
           "noise_hits": []
         }
@@ -314,21 +315,52 @@
       "region": "Közel-Kelet",
       "rank": 3,
       "title": "Fegyveres összecsapás – Jenin, West Bank, West Bank",
-      "date": "2026-11-08",
+      "date": "2026-11-15",
       "country": "West Bank",
       "location": "Jenin, West Bank, West Bank",
       "event_type": "Fegyveres összecsapás",
-      "original_sources_count": 16,
+      "original_sources_count": 13,
       "checked_sources_count": 4,
-      "valid_sources_count": 2,
+      "valid_sources_count": 3,
       "confidence": "Medium",
       "inspected_sources": [
         {
-          "url": "https://english.wafa.ps/Pages/Details/176724",
+          "url": "https://www.journalismpakistan.com/israeli-forces-detain-journalist-mohammed-atiq-in-burqin",
+          "domain": "www.journalismpakistan.com",
+          "status": "ok",
+          "error": null,
+          "title": "Israeli forces detain journalist Mohammed Atiq in Burqin | Journalism Pakistan",
+          "description": "Israeli forces detained journalist Mohammed Ali Atiq at his home in Burqin in the occupied West Bank, WAFA reported.",
+          "accepted": true,
+          "reason": "contains multiple concrete security-incident terms",
+          "security_hits": [
+            "ied",
+            "detained"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://www.arabnews.com/middle-east/settlers-attack-palestinian-olive-harvesters-in-jenin-3011740",
+          "domain": "www.arabnews.com",
+          "status": "ok",
+          "error": null,
+          "title": "Arab News | Settlers attack Palestinian olive harvesters in Jenin",
+          "description": "Settlers attack Palestinian olive harvesters in Jenin",
+          "accepted": true,
+          "reason": "high-value source with concrete security-incident term",
+          "security_hits": [
+            "attack"
+          ],
+          "weak_hits": [],
+          "noise_hits": []
+        },
+        {
+          "url": "https://english.wafa.ps/Pages/Details/176908",
           "domain": "english.wafa.ps",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces detain six Palestinians in Jenin and Nablus, injure youth in Qalqilia",
+          "title": "Israeli forces shoot, injure Palestinian south of Jenin",
           "description": "",
           "accepted": false,
           "reason": "no concrete security incident detected",
@@ -337,126 +369,22 @@
           "noise_hits": []
         },
         {
-          "url": "https://tribune.com.pk/story/2639283/israeli-forces-shoot-palestinian-child-detain-2-in-west-bank-raids",
-          "domain": "tribune.com.pk",
+          "url": "https://www.inquirer.com/opinion/commentary/bike-boycott-prayers-for-peace-alliance-palestinian-jewish-philadelphia-20261112.html",
+          "domain": "www.inquirer.com",
           "status": "ok",
           "error": null,
-          "title": "Israeli forces shoot Palestinian child, detain 2 in West Bank raids",
-          "description": "Occupiers separately attack olive harvesters near Jenin, force shops to close in Hebron’s Old City",
+          "title": "The Philly Boycott Ride: A Jewish and Palestinian movement navigates a moment of tension | Opinion",
+          "description": "Palestinians were being killed and displaced while the movement that is supposed to center Palestinian freedom was divided over its response to a bicycle boycott ride.",
           "accepted": true,
           "reason": "contains multiple concrete security-incident terms",
           "security_hits": [
-            "attack",
-            "raid",
-            "raids"
+            "killed",
+            "kill"
           ],
           "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://news.az/news/israeli-forces-arrest-six-palestinians-in-fresh-west-bank-raids",
-          "domain": "news.az",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "https://tribune.com.pk/story/2639100/two-palestinians-wounded-as-rain-causes-collapse-of-wall-in-israeli-damaged-building-in-gaza",
-          "domain": "tribune.com.pk",
-          "status": "ok",
-          "error": null,
-          "title": "Two Palestinians wounded as rain causes collapse of wall in Israeli-damaged building in Gaza",
-          "description": "Heavy rain floods thousands of displacement tents near Gaza City’s port, worsening hardship of Palestinians",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "wounded"
-          ],
-          "weak_hits": [],
-          "noise_hits": []
-        }
-      ]
-    },
-    {
-      "region": "Közel-Kelet",
-      "rank": 4,
-      "title": "Rajtaütés / fegyveres támadás – Qeshm, Kordestan, Iran",
-      "date": "2026-11-03",
-      "country": "Iran",
-      "location": "Qeshm, Kordestan, Iran",
-      "event_type": "Rajtaütés / fegyveres támadás",
-      "original_sources_count": 11,
-      "checked_sources_count": 4,
-      "valid_sources_count": 2,
-      "confidence": "Medium",
-      "inspected_sources": [
-        {
-          "url": "https://www.dailymail.com/news/article-16261459/donald-trump-nuclear-weapon-strike-iran-claim.html",
-          "domain": "www.dailymail.com",
-          "status": "ok",
-          "error": null,
-          "title": "Trump is 'considering nuclear strike on Iran', former CIA agent claims | Daily Mail Online",
-          "description": "John Kiriakou, who worked at the Central Intelligence Agency from 1990 to 2004, warned the US President was seeking to",
-          "accepted": true,
-          "reason": "contains concrete security-incident term and no obvious topic noise",
-          "security_hits": [
-            "strike"
-          ],
-          "weak_hits": [
-            "war",
-            "president"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.cubaheadlines.com/articles/344667",
-          "domain": "www.cubaheadlines.com",
-          "status": "ok",
-          "error": null,
-          "title": "U.S. Strikes Iran's Qeshm Island in Hormuz Strait Amid Rising Tensions",
-          "description": "The United States military conducted limited strikes on Iran's Qeshm Island in the strategic Strait of Hormuz on Monday. Three U.S. officials confirme...",
-          "accepted": true,
-          "reason": "contains multiple concrete security-incident terms",
-          "security_hits": [
-            "strike",
-            "strikes"
-          ],
-          "weak_hits": [
-            "military"
-          ],
-          "noise_hits": []
-        },
-        {
-          "url": "https://www.shippingtribune.com/news/shipping/India+and+Turkey+propose+plans+to+move+grain+shipments+through+Black+Sea,+says+Rubio",
-          "domain": "www.shippingtribune.com",
-          "status": "ok",
-          "error": null,
-          "title": "One moment, please...",
-          "description": "",
-          "accepted": false,
-          "reason": "no concrete security incident detected",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
-        },
-        {
-          "url": "http://www.trinidadtimes.com/news/279406054/india-turkey-proposing-ideas-for-passage-of-grain-shipments-in-black-sea-marco-rubio",
-          "domain": "www.trinidadtimes.com",
-          "status": "error",
-          "error": "HTTP Error 403: Forbidden",
-          "title": "",
-          "description": "",
-          "accepted": false,
-          "reason": "source not readable",
-          "security_hits": [],
-          "weak_hits": [],
-          "noise_hits": []
+          "noise_hits": [
+            "opinion"
+          ]
         }
       ]
     }
